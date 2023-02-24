@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="Order success">8094ea8f6385a1104630628d3b43263f</macroponent>
+        <name>Refresh submitted screen</name>
+        <preset/>
+        <required_translations>[ ]</required_translations>
+        <script><![CDATA[/**
+ * @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ */
+async function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    let {
+        table,
+        sysId,
+        number
+    } = api.context.props;
+    if(table !== "sc_request"){
+        api.setState("successNumber",number);
+        api.setState("successSysId",sysId);
+    }else{
+        api.setState("requestSysId",sysId);
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-02-21 00:48:58</sys_created_on>
+        <sys_id>0494ea8fbb85a110f25115e61dfa9540</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Refresh submitted screen</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_client_script_0494ea8fbb85a110f25115e61dfa9540</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-02-21 00:48:58</sys_updated_on>
+        <target/>
+        <type/>
+    </sys_ux_client_script>
+</record_update>

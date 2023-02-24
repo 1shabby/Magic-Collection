@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="colors" table="x_759224_magic_c_0_mtg_cards" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>colors</element>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>colors</sys_name>
+            <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+            <sys_update_name>sys_choice_x_759224_magic_c_0_mtg_cards_colors</sys_update_name>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Red</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>red</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>White</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>white</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Blue</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>blue</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Black</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>black</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Green</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>green</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>colors</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Colorless</label>
+            <language>en</language>
+            <name>x_759224_magic_c_0_mtg_cards</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>greg</sys_created_by>
+            <sys_created_on>2023-02-20 18:56:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>greg</sys_updated_by>
+            <sys_updated_on>2023-02-20 18:56:14</sys_updated_on>
+            <value>colorless</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

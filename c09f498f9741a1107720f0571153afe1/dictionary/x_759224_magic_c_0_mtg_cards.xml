@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="df1015cf9741a1107720f0571153afc3" label="Cards" max_length="40" name="x_759224_magic_c_0_mtg_cards" text_index="true" type="collection">
+        <element label="Back Image" max_length="40" name="back_image" read_only="true" type="url"/>
+        <element label="Collector Number" max_length="40" name="collector_number" type="integer"/>
+        <element choice="1" label="Colors" mandatory="true" max_length="40" name="colors" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Red" sequence="0" value="red"/>
+                <element inactive_on_update="false" label="White" sequence="1" value="white"/>
+                <element inactive_on_update="false" label="Blue" sequence="2" value="blue"/>
+                <element inactive_on_update="false" label="Black" sequence="3" value="black"/>
+                <element inactive_on_update="false" label="Green" sequence="4" value="green"/>
+                <element inactive_on_update="false" label="Colorless" sequence="5" value="colorless"/>
+            </choice>
+        </element>
+        <element choice="1" label="Foiling" max_length="40" name="foiling" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Foil" sequence="0" value="foil"/>
+                <element inactive_on_update="false" label="Etched" sequence="1" value="etched"/>
+            </choice>
+        </element>
+        <element label="Front Image" max_length="1024" name="front_image" read_only="true" type="url"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element default="0.00" label="Price" mandatory="true" max_length="20" name="price" read_only="true" type="currency"/>
+        <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
+        <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
+        <element label="Subtype" max_length="4000" name="subtype" reference="x_759224_magic_c_0_subtype" type="glide_list"/>
+        <element label="Super Type" mandatory="true" max_length="32" name="super_type" reference="x_759224_magic_c_0_supertype" type="reference"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Type" max_length="4000" name="type" reference="x_759224_magic_c_0_type" type="glide_list"/>
+        <index name="index">
+            <element name="sets"/>
+        </index>
+        <index name="index2">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

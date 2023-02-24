@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>MODAL_SELECTED_RELAY_cc94ea8f3d85a110afca90deaf10284d</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>Open or close modal dialog Relay (Landing Page Default)</label>
+        <props>[{"name":"modalId","fieldType":"string","interfaceApiName":"global.modal","label":"Modal"},{"name":"showModal","fieldType":"boolean","interfaceApiName":null,"label":"Open modal dialog"},{"name":"displayOptions","fieldType":"json","interfaceApiName":null,"label":"Display options (advanced)"},{"name":"bare","fieldType":"boolean","interfaceApiName":"global.modal","label":"Use bare modal"},{"name":"viewportElementId","fieldType":"string","interfaceApiName":null,"label":"Viewport ID"},{"name":"viewportRoute","fieldType":"string","interfaceApiName":null,"label":"Viewport Route"},{"name":"viewportFields","fieldType":"json","interfaceApiName":null,"label":"Viewport Fields"}]</props>
+        <required_translations>[ {
+  "message" : "Display options (advanced)",
+  "comment" : ""
+}, {
+  "message" : "Modal",
+  "comment" : ""
+}, {
+  "message" : "Open modal dialog",
+  "comment" : ""
+}, {
+  "message" : "Use bare modal",
+  "comment" : ""
+}, {
+  "message" : "Viewport Fields",
+  "comment" : ""
+}, {
+  "message" : "Viewport ID",
+  "comment" : ""
+}, {
+  "message" : "Viewport Route",
+  "comment" : ""
+} ]</required_translations>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-02-21 00:48:57</sys_created_on>
+        <sys_id>4c94ea8f6885a110b4ae259687ce0f28</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open or close modal dialog Relay (Landing Page Default)</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_event_4c94ea8f6885a110b4ae259687ce0f28</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-02-21 00:48:57</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="delete_multiple" query="documentkey=4c94ea8f6885a110b4ae259687ce0f28"/>
+</record_update>
