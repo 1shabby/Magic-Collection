@@ -24,10 +24,10 @@
         <element default="0.00" label="Price" mandatory="true" max_length="20" name="price" read_only="true" type="currency"/>
         <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
-        <element label="Subtype" max_length="4000" name="subtype" reference="x_759224_magic_c_0_subtype" type="glide_list"/>
+        <element label="Subtype" mandatory="true" max_length="4000" name="subtype" reference="x_759224_magic_c_0_subtype" type="glide_list"/>
         <element label="Super Type" mandatory="true" max_length="32" name="super_type" reference="x_759224_magic_c_0_supertype" type="reference"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
-        <element label="Type" max_length="4000" name="type" reference="x_759224_magic_c_0_type" type="glide_list"/>
+        <element label="Type" mandatory="true" max_length="4000" name="type" reference="x_759224_magic_c_0_type" type="glide_list"/>
         <index name="index">
             <element name="sets"/>
         </index>
