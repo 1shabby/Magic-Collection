@@ -28,12 +28,12 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-let url = 'https://api.scryfall.com/cards/search?q=set:';
-let id = current.sets.getDisplayValue();
+var url = 'https://api.scryfall.com/cards/search?q=set:';
+var id = current.sets.getDisplayValue();
 
-let name = current.name;
+var name = current.name;
 name = name.toString().replaceAll(' ', '');
-let cn = current.collector_number;
+var cn = current.collector_number;
 
 if(cn != ''){
 url = url + id + '+' + name + 'cn:' + cn;
@@ -48,8 +48,32 @@ var r = new sn_ws.RESTMessageV2();
 	r.setRequestHeader('Accept','application/JSON');
 
 var response = r.execute();
-gs.info("Code " + response.getStatusCode());
-gs.info("Body " + response.getBody());
+var parsedResponse = JSON.parse(response.getBody())
+
+if(currnt.foiling == "foil"){
+	current.setValue('price',parsedResponse.data[0].prices.usd_foil);
+}else if(currnt.foiling == "etched"){
+	current.setValue('price',parsedResponse.data[0].prices.usd_etched);
+}else{
+	current.setValue('price',parsedResponse.data[0].prices.usd);
+}
+
+current.setValue('front_image',parsedResponse.data[0].image_uris.normal);
+
+// try{
+// 	current.setValue('front_image',parsedResponse.data[0].image_uris.normal);
+// }
+// catch{
+// }
+// try {
+// 	current.setValue('front_image', parsedResponse.data[0].card_faces[0].image_uris.normal);
+// 	current.setValue('back_image', parsedResponse.data[0].card_faces[1].image_uris.normal);
+// } catch {
+// 	gs.info('Image failed to get added to card!');
+// }
+
+//current.update();
+gs.eventQueue('x_759224_magic_c_0.updateCard',current,current.getValue('price').toString(),null);
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -58,7 +82,7 @@ gs.info("Body " + response.getBody());
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -66,7 +90,7 @@ gs.info("Body " + response.getBody());
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-02-26 05:09:50</sys_updated_on>
+        <sys_updated_on>2023-02-26 21:46:55</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>

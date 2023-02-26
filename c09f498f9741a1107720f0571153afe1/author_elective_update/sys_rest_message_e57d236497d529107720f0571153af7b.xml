@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="DELETE">
+        <access>package_private</access>
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description>This REST message is used to make get requests to the scryfall api to obtain card data.</description>
+        <name>Scryfall Get Card</name>
+        <oauth2_profile/>
+        <protocol_name/>
+        <rest_endpoint>https://api.scryfall.com</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-25 22:35:11</sys_created_on>
+        <sys_id>e57d236497d529107720f0571153af7b</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Scryfall Get Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_rest_message_e57d236497d529107720f0571153af7b</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-26 07:20:02</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sys_rest_message_e57d236497d529107720f0571153af7b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message"><sys_rest_message action="INSERT_OR_UPDATE"><access>package_private</access><authentication_type>no_authentication</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><description>This REST message is used to make get requests to the scryfall api to obtain card data.</description><name>Scryfall Get Card</name><oauth2_profile/><protocol_name/><rest_endpoint>https://api.scryfall.com</rest_endpoint><sys_class_name>sys_rest_message</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-02-25 22:35:11</sys_created_on><sys_id>e57d236497d529107720f0571153af7b</sys_id><sys_mod_count>7</sys_mod_count><sys_name>Scryfall Get Card</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_rest_message_e57d236497d529107720f0571153af7b</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-02-26 07:20:02</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mutual_auth>false</use_mutual_auth></sys_rest_message></record_update>]]></payload>
+        <payload_hash>1144499411</payload_hash>
+        <record_name>Scryfall Get Card</record_name>
+        <reverted_from/>
+        <source>e1058f8c9755a5107720f0571153aff0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-26 07:20:02</sys_created_on>
+        <sys_id>b10e21b097dd29107720f0571153aff7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1868c97c5540000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-26 07:20:02</sys_updated_on>
+        <type>REST Message</type>
+        <update_guid>790e21b031dd2910f8605330fc257df6</update_guid>
+        <update_guid_history>790e21b031dd2910f8605330fc257df6:1144499411,0cfd61bc379d291049ba550b690e832d:-976463542,adeded70fcdd29101e77bc43fdd2e554:-752601186,c0ad2930b0dd2910f257602e5139c9e7:-976463542,095bbb60821929106a43aba95934fc60:-2124337605,910a3b202919291092cef11136f6e688:-752601186,82e93b200619291091e14bf42d39f467:1827542007,b1e533a811952910fc6086a7770567d8:-976463542</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-26 07:22:19</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message">sys_rest_message</sys_db_object>
+        <sys_id>04e7d7d28d5f4c50a0c16619eedc1810</sys_id>
+        <sys_metadata>e57d236497d529107720f0571153af7b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scryfall Get Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_rest_message_e57d236497d529107720f0571153af7b</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_e57d236497d529107720f0571153af7b">b10e21b097dd29107720f0571153aff7</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-26 07:22:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
