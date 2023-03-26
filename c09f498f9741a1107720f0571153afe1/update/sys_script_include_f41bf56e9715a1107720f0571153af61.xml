@@ -5,13 +5,19 @@
         <api_name>x_759224_magic_c_0.ScryfallAPIHelper</api_name>
         <caller_access/>
         <client_callable>true</client_callable>
-        <description/>
+        <description>Manages various functionality involvin the cards table. This includes getting a list of the current cards, making API calls to Scryfall for the new update price data, and updating the existing card records with the obtained data from Scryfall. &#13;
+&#13;
+Scryfall API documentation (https://scryfall.com/docs/api)</description>
         <name>ScryfallAPIHelper</name>
         <script><![CDATA[var ScryfallAPIHelper = Class.create();
 ScryfallAPIHelper.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-	getCard : function(){
+
+	//Input: a list of cards
+	//Function: Given the card name & set, make a get request to Scryfall and get the associated data
+	//Return: Returns the response from the get request
+
+	getRequest : function(name, sets, collector, foil){
 		try{
-			var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
 			var request = new sn_ws.RESTMessageV2('x_759224_magic_c_0.Scryfall API Request', 'Default GET');
 			request.setStringParameterNoEscape('q', );
 			var response = request.execute();
@@ -24,19 +30,62 @@ ScryfallAPIHelper.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 		
 
 	},
+
+	//Input: None
+	//Function: Query the cards table to get each record
+	//Return: Return a list of objects conaining the card name & set
+
+	getCard : function(){
+		try{
+			var cards = [];
+			var cardGR = new GlideRecordSecure('x_759224_magic_c_0_mtg_cards');
+			
+			while(gr.next()){
+				var cardObj = {
+					name: cardGR.name,
+					sets: cardGR.sets,
+					collector: cardGR.collector_number,
+					foiling: cardGR.foiling,
+					fImg: cardGR.front_image,
+					bImg: cardGR.back_image
+				};
+
+			cards.push(cardObj);	
+			
+			}
+
+		return cards;	
+		}
+		catch(ex){
+			var message  = ex.message;
+		}
+	},
+
+	//Input: List of cards
+	//Function: Using the updated data from the lists of cards, update the records with the new data
+	//Return: None
+
+	setCardData : function(cards){
+		try{
+			
+		}
+		catch(ex){
+			var message  = ex.message;
+		}
+	},
     type: 'ScryfallAPIHelper'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-03 19:29:16</sys_created_on>
         <sys_id>f41bf56e9715a1107720f0571153af61</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>ScryfallAPIHelper</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_f41bf56e9715a1107720f0571153af61</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-03 19:29:16</sys_updated_on>
+        <sys_updated_on>2023-03-26 22:49:30</sys_updated_on>
     </sys_script_include>
 </record_update>
