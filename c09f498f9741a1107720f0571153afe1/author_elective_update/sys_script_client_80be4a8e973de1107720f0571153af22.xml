@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>On submission of a new card, set all the values besides quantity</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Set Read Only</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+//Type appropriate comment here, and begin script below
+var arr = [];
+for (var x = 0; x < g_form.elements.length; x++) {
+arr.push(g_form.elements[x].fieldName);
+}
+for(i in arr){
+	console.log(arr[i]);
+	//g_form.setReadOnly(arr[i],true);
+}
+alert("Done");
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 03:29:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>80be4a8e973de1107720f0571153af22</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Set Read Only</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_client_80be4a8e973de1107720f0571153af22</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 03:54:30</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_cards</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sys_script_client_80be4a8e973de1107720f0571153af22</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;On submission of a new card, set all the values besides quantity&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Set Read Only&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onSubmit() {
+//Type appropriate comment here, and begin script below
+var arr = [];
+for (var x = 0; x &lt; g_form.elements.length; x++) {
+arr.push(g_form.elements[x].fieldName);
+}
+for(i in arr){
+	console.log(arr[i]);
+	//g_form.setReadOnly(arr[i],true);
+}
+alert("Done");
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-03-27 03:29:51&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;80be4a8e973de1107720f0571153af22&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;Set Read Only&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_80be4a8e973de1107720f0571153af22&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-27 03:54:30&lt;/sys_updated_on&gt;&lt;table&gt;x_759224_magic_c_0_mtg_cards&lt;/table&gt;&lt;type&gt;onSubmit&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1832081871</payload_hash>
+        <record_name>Set Read Only</record_name>
+        <reverted_from/>
+        <source>e1058f8c9755a5107720f0571153aff0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 03:54:30</sys_created_on>
+        <sys_id>8e159a86977de1107720f0571153af5c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1872134070f0000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 03:54:30</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>46159a86537de110143c6ab52a9e495c</update_guid>
+        <update_guid_history>46159a86537de110143c6ab52a9e495c:1832081871,30f45686837de1103bd40be1158d9bd8:155832431,08b4da46bd7de1104e37d0d31b05439d:-1220508201,3264d2468b7de1100527452eec0510fc:-1416752766,2f621e82737de110cd025322932cc4ea:-1368151830,d360d2ce4d3de1109506090b5d9b6e9b:1061399848,7f40d202087de1102b74c65646fa432d:-1343667160,707f06cebb3de110b88b6b9ba24cadfe:1061399848</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 04:03:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>eca63c2ea09a429ea87e63fede4138a9</sys_id>
+        <sys_metadata>80be4a8e973de1107720f0571153af22</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Read Only</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="Cards">df1015cf9741a1107720f0571153afc3</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_client_80be4a8e973de1107720f0571153af22</sys_update_name>
+        <sys_update_version display_value="sys_script_client_80be4a8e973de1107720f0571153af22">8e159a86977de1107720f0571153af5c</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 04:03:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

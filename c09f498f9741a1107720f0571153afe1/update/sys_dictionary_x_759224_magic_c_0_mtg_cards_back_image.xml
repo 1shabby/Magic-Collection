@@ -5,7 +5,7 @@
         <attributes/>
         <audit>false</audit>
         <calculation/>
-        <choice>0</choice>
+        <choice/>
         <choice_field/>
         <choice_table/>
         <column_label>Back Image</column_label>
@@ -29,7 +29,7 @@
         <function_field>false</function_field>
         <internal_type display_value="URL">url</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
+        <max_length>1024</max_length>
         <name>x_759224_magic_c_0_mtg_cards</name>
         <next_element/>
         <primary>false</primary>
@@ -53,7 +53,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_cards_back_image</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-02-21 00:26:13</sys_updated_on>
+        <sys_updated_on>2023-03-27 04:43:16</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

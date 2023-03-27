@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="DELETE">
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Card GET</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Scryfall API Request [ Card GET ]</qualified_name>
+        <rest_endpoint>https://api.scryfall.com/cards/search?${query}</rest_endpoint>
+        <rest_message display_value="Scryfall API Request">409e69b097dd29107720f0571153af63</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-26 07:22:51</sys_created_on>
+        <sys_id>87ae69b097dd29107720f0571153af0e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Card GET</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_rest_message_fn_87ae69b097dd29107720f0571153af0e</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 02:44:04</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sys_rest_message_fn_87ae69b097dd29107720f0571153af0e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>no_authentication</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content/><function_name>Card GET</function_name><http_method>get</http_method><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>Scryfall API Request [ Card GET ]</qualified_name><rest_endpoint>https://api.scryfall.com/cards/search?${query}</rest_endpoint><rest_message display_value="Scryfall API Request">409e69b097dd29107720f0571153af63</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-02-26 07:22:51</sys_created_on><sys_id>87ae69b097dd29107720f0571153af0e</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Card GET</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_rest_message_fn_87ae69b097dd29107720f0571153af0e</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-03-27 02:44:04</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+        <payload_hash>1729752850</payload_hash>
+        <record_name>Card GET</record_name>
+        <reverted_from/>
+        <source>e1058f8c9755a5107720f0571153aff0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 02:44:04</sys_created_on>
+        <sys_id>5af44606973de1107720f0571153af9e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18720f38bec0000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 02:44:04</sys_updated_on>
+        <type>HTTP Method</type>
+        <update_guid>12f446064d3de11035bd1a56e5e1429e</update_guid>
+        <update_guid_history>12f446064d3de11035bd1a56e5e1429e:1729752850,7ba44606213de1106b839f323618bf14:1309020305,d45402066e3de110df8b96ed9f67e411:-317399715,6c1fe9b0e0dd2910b43eda94d0d6aab2:676586366,4bae69b063dd2910790a0d119656af0f:1961383737</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 02:45:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn">sys_rest_message_fn</sys_db_object>
+        <sys_id>c1bc28ec3f5c46869155290b990e8544</sys_id>
+        <sys_metadata>87ae69b097dd29107720f0571153af0e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Card GET</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_87ae69b097dd29107720f0571153af0e</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_87ae69b097dd29107720f0571153af0e">5af44606973de1107720f0571153af9e</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 02:45:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
