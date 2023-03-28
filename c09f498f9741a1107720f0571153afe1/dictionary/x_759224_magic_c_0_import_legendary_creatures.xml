@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a18713669731a5107720f0571153affa" extends="sys_import_set_row" label="Import Legendary Creatures" max_length="40" name="x_759224_magic_c_0_import_legendary_creatures" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Back Image" label="Back Image" max_length="93" name="u_back_image" type="string"/>
+        <element attributes="import_attribute_name=Collector Number" label="Collector Number" max_length="40" name="u_collector_number" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Extra" label="Extra" max_length="40" name="u_extra" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Front Image" label="Front Image" max_length="94" name="u_front_image" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
+        <element attributes="import_attribute_name=Old Price" label="Old Price" max_length="15" name="u_old_price" type="decimal"/>
+        <element attributes="import_attribute_name=Price" label="Price" max_length="15" name="u_price" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Price * Quantity" label="Price * Quantity" max_length="40" name="u_price___quantity" type="string"/>
+        <element attributes="import_attribute_name=Quantity" label="Quantity" max_length="40" name="u_quantity" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Set" label="Set" max_length="40" name="u_set" type="string"/>
+    </element>
+</database>
