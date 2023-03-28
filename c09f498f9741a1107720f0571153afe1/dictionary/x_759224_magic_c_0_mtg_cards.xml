@@ -12,10 +12,11 @@
                 <element inactive_on_update="false" label="Colorless" sequence="5" value="colorless"/>
             </choice>
         </element>
-        <element choice="1" label="Foiling" max_length="40" name="foiling" type="choice">
+        <element choice="3" default="none" label="Foiling" max_length="40" name="foiling" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Foil" sequence="0" value="foil"/>
-                <element inactive_on_update="false" label="Etched" sequence="1" value="etched"/>
+                <element inactive_on_update="false" label="None" sequence="0" value="none"/>
+                <element inactive_on_update="false" label="Foil" sequence="1" value="foil"/>
+                <element inactive_on_update="false" label="Etched" sequence="2" value="etched"/>
             </choice>
         </element>
         <element label="Front Image" max_length="1024" name="front_image" read_only="true" type="url"/>
