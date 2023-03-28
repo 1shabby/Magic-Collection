@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>back_image</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-28 03:13:45</sys_created_on>
+        <sys_id>98551bda973165107720f0571153af04</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>back_image</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_98551bda973165107720f0571153af04</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-28 03:13:45</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_cards</table>
+        <ui_policy display_value="Display Back Image Link">313597da973165107720f0571153af16</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>
