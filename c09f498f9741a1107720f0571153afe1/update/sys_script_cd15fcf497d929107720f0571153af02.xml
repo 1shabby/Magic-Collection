@@ -15,9 +15,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_759224_magic_c_0_mtg_cards">price=javascript:global.getCurrencyFilter('x_759224_magic_c_0_mtg_cards','price', 'USD;0.00')^EQ<item endquery="false" field="price" goto="false" newquery="false" operator="=" or="false" value="javascript:global.getCurrencyFilter('x_759224_magic_c_0_mtg_cards','price', 'USD;0.00')"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter_condition>
+        <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
         <name>New Card Added</name>
@@ -64,7 +62,6 @@
         //If the collectors number is not filled, fill it with the collector number from the api
         if (cn == '') {
             current.setValue('collector_number', parsedResponse.data[0].collector_number);
-            url =  "https://api.scryfall.com/cards/search" + url + '+cn:' + parsedResponse.data[0].collector_number;
         }
         //Try to set the value of the front image field
         try {
@@ -79,11 +76,18 @@
             }
         }
         //Set the API Link field to be the generated URL
+		url =  "https://api.scryfall.com/cards/search" + url + '+cn:' + parsedResponse.data[0].collector_number;
         current.setValue('api_link', url);
-
+		if(parsedResponse.data[0].colors.length == 0){
+			current.setValue('colors','colorless');
+		}
+		else{
+			current.setValue('colors',parsedResponse.data[0].colors);
+		}
+		current.setValue('type_line',parsedResponse.data[0].type_line);
+		current.setValue('rarity',parsedResponse.data[0].rarity);
         //Update the card record with the data from scryfall
         current.update();
-        //gs.eventQueue('x_759224_magic_c_0.updateCard', current, current.getValue('price').toString(), null);
     } else {
         current.setAbortAction(true);
     }
@@ -94,7 +98,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -102,7 +106,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 21:56:42</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:48:52</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
