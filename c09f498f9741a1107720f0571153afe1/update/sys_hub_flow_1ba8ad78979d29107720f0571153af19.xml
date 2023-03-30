@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1ba8ad78979d29107720f0571153af19</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>Update Card Prices</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -37,7 +37,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_1ba8ad78979d29107720f0571153af19</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:29</sys_updated_on>
+        <sys_updated_on>2023-03-30 02:24:51</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=1ba8ad78979d29107720f0571153af19"/>
@@ -110,10 +110,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:58:27</sys_created_on>
         <sys_id>a571f28697fde1107720f0571153af64</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -167,10 +167,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:58:27</sys_created_on>
         <sys_id>bd71f28697fde1107720f0571153af7b</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <ui_id>d40681dc-e901-4988-9217-cc5f9ea77f5f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=bd71f28697fde1107720f0571153af7b"/>
@@ -314,10 +314,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:58:27</sys_created_on>
         <sys_id>f571f28697fde1107720f0571153af6d</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <ui_id>2f57f013-56c0-4194-8df5-bbabc738c2eb</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f571f28697fde1107720f0571153af6d"/>
@@ -343,10 +343,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 03:36:56</sys_created_on>
         <sys_id>92aa5352977165107720f0571153af3c</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 03:46:51</sys_updated_on>
-        <value/>
+        <sys_updated_on>2023-03-30 00:56:52</sys_updated_on>
+        <value>sys_updated_onRELATIVELT@dayofweek@ago@1</value>
         <variable display_value="Conditions">8f400a1587003300663ca1bb36cb0b50</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -380,10 +380,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:58:27</sys_created_on>
         <sys_id>f571f28697fde1107720f0571153af82</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <ui_id>3644273c-c548-498c-bc52-3d1bdaef9d5c</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f571f28697fde1107720f0571153af82"/>
@@ -490,10 +490,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 05:12:49</sys_created_on>
         <sys_id>0390735a97b165107720f0571153af4e</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <ui_id>57fa0c3d-307a-40fd-8487-b03990a16cbf</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -552,10 +552,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:58:27</sys_created_on>
         <sys_id>7571f28697fde1107720f0571153af71</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <ui_id>a479dd99-9c35-431f-8f45-7237c1a125cb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -585,7 +585,7 @@
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=1ba8ad78979d29107720f0571153af19^sys_idNOT INddf0a71a977165107720f0571153af67"/>
     <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
         <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
-        <plan/>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"ddf0a71a977165107720f0571153af67","name":"plan","plan_signature":null}}</plan>
         <plan_id>1ba8ad78979d29107720f0571153af19</plan_id>
         <snapshot>09f0671a977165107720f0571153aff1</snapshot>
         <sys_created_by>greg</sys_created_by>
@@ -593,11 +593,11 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ddf0a71a977165107720f0571153af67</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 04:04:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <trigger display_value="">d1f0a71a977165107720f0571153af65</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=1ba8ad78979d29107720f0571153af19"/>
@@ -629,7 +629,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>09f0671a977165107720f0571153aff1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -637,7 +637,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:25</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=09f0671a977165107720f0571153aff1"/>
@@ -652,10 +652,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 04:04:26</sys_created_on>
         <sys_id>d1f0a71a977165107720f0571153af18</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:28</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:26</sys_updated_on>
         <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -709,10 +709,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 04:04:26</sys_created_on>
         <sys_id>1df0a71a977165107720f0571153af0e</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:25</sys_updated_on>
         <ui_id>d40681dc-e901-4988-9217-cc5f9ea77f5f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1df0a71a977165107720f0571153af0e"/>
@@ -808,13 +808,27 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 04:04:26</sys_created_on>
         <sys_id>45f0a71a977165107720f0571153af04</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:24</sys_updated_on>
         <ui_id>2f57f013-56c0-4194-8df5-bbabc738c2eb</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=45f0a71a977165107720f0571153af04"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>45f0a71a977165107720f0571153af04</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-30 01:00:24</sys_created_on>
+        <sys_id>490ac1cb97b5e5107720f0571153af1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-30 01:00:24</sys_updated_on>
+        <value>sys_updated_onRELATIVELT@dayofweek@ago@1</value>
+        <variable display_value="Conditions">8f400a1587003300663ca1bb36cb0b50</variable>
+    </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_instance</document>
         <document_key>45f0a71a977165107720f0571153af04</document_key>
@@ -860,10 +874,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 04:04:26</sys_created_on>
         <sys_id>59f0a71a977165107720f0571153af15</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:25</sys_updated_on>
         <ui_id>3644273c-c548-498c-bc52-3d1bdaef9d5c</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=59f0a71a977165107720f0571153af15"/>
@@ -957,10 +971,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 04:04:26</sys_created_on>
         <sys_id>0df0671a977165107720f0571153aff5</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:25</sys_updated_on>
         <ui_id>a479dd99-9c35-431f-8f45-7237c1a125cb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1002,10 +1016,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-28 05:13:27</sys_created_on>
         <sys_id>dcc0375a97b165107720f0571153afe8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-28 05:13:27</sys_updated_on>
+        <sys_updated_on>2023-03-30 01:00:25</sys_updated_on>
         <ui_id>57fa0c3d-307a-40fd-8487-b03990a16cbf</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1051,6 +1065,6 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>1ba8ad78979d29107720f0571153af19</sys_id>
         <latest_snapshot>09f0671a977165107720f0571153aff1</latest_snapshot>
-        <compiler_build/>
+        <compiler_build>glide-utah-12-21-2022__patch1-03-01-2023_03-13-2023_1716.zip</compiler_build>
     </sys_hub_flow>
 </record_update>

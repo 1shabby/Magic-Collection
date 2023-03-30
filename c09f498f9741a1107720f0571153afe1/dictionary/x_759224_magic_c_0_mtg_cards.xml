@@ -3,13 +3,13 @@
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
         <element label="Back Image" max_length="1024" name="back_image" read_only="true" type="url"/>
         <element label="Collector Number" max_length="40" name="collector_number" type="integer"/>
-        <element choice="1" label="Colors" mandatory="true" max_length="40" name="colors" type="choice">
+        <element choice="3" default="colorless" label="Colors" max_length="40" name="colors" read_only="true" type="glide_list">
             <choice>
-                <element inactive_on_update="false" label="Red" sequence="0" value="red"/>
-                <element inactive_on_update="false" label="White" sequence="1" value="white"/>
-                <element inactive_on_update="false" label="Blue" sequence="2" value="blue"/>
-                <element inactive_on_update="false" label="Black" sequence="3" value="black"/>
-                <element inactive_on_update="false" label="Green" sequence="4" value="green"/>
+                <element inactive_on_update="false" label="White" sequence="0" value="W"/>
+                <element inactive_on_update="false" label="Blue" sequence="1" value="U"/>
+                <element inactive_on_update="false" label="Black" sequence="2" value="B"/>
+                <element inactive_on_update="false" label="Red" sequence="3" value="R"/>
+                <element inactive_on_update="false" label="Green" sequence="4" value="G"/>
                 <element inactive_on_update="false" label="Colorless" sequence="5" value="colorless"/>
             </choice>
         </element>
@@ -23,16 +23,21 @@
         <element label="Front Image" max_length="1024" name="front_image" read_only="true" type="url"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
-        <element default="0.00" label="Price" mandatory="true" max_length="20" name="price" read_only="true" type="currency"/>
+        <element default="0.00" label="Unit Price" mandatory="true" max_length="20" name="price" read_only="true" type="currency"/>
         <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" label="Rarity" max_length="40" name="rarity" type="choice">
-            <choice/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="1" label="Rarity" max_length="40" name="rarity" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Common" sequence="0" value="common"/>
+                <element inactive_on_update="false" label="Uncommon" sequence="1" value="uncommon"/>
+                <element inactive_on_update="false" label="Rare" sequence="2" value="rare"/>
+                <element inactive_on_update="false" label="Mythic Rare" sequence="3" value="mythic"/>
+                <element inactive_on_update="false" label="Special" sequence="4" value="special"/>
+            </choice>
         </element>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
-        <element label="Subtype" max_length="4000" name="subtype" reference="x_759224_magic_c_0_subtype" type="glide_list"/>
-        <element label="Super Type" max_length="32" name="super_type" reference="x_759224_magic_c_0_supertype" type="reference"/>
         <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
-        <element label="Type" max_length="4000" name="type" reference="x_759224_magic_c_0_type" type="glide_list"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var retval = current.quantity * current.price;&#13;&#10;&#9;return retval;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
         <index name="index">
             <element name="sets"/>
         </index>
