@@ -84,8 +84,18 @@
 		else{
 			current.setValue('colors',parsedResponse.data[0].colors);
 		}
+		current.setValue('keywords',parsedResponse.data[0].keywords);
+
 		current.setValue('type_line',parsedResponse.data[0].type_line);
+
+		current.setValue('oracle', parsedResponse.data[0].oracle_text);
+
 		current.setValue('rarity',parsedResponse.data[0].rarity);
+		
+		current.setValue('gatherer',parsedResponse.data[0].related_uris.gatherer);
+
+		current.setValue('edhrec',parsedResponse.data[0].related_uris.edhrec);
+		
         //Update the card record with the data from scryfall
         current.update();
     } else {
@@ -98,7 +108,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>59</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -106,7 +116,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-30 01:48:52</sys_updated_on>
+        <sys_updated_on>2023-03-30 07:04:49</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
