@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="DELETE">
+        <group_id/>
+        <report_id display_value="">b9c1a39797fd29107720f0571153afea</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-31 06:41:56</sys_created_on>
+        <sys_id>31c1a39797fd29107720f0571153afeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>b9c1a39797fd29107720f0571153afea</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_report_users_groups_31c1a39797fd29107720f0571153afeb</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-31 06:41:56</sys_updated_on>
+        <user_id display_value="Greg Sherbert">761b9daa970521107720f0571153af1e</user_id>
+    </sys_report_users_groups>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sys_report_users_groups_31c1a39797fd29107720f0571153afeb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups"><sys_report_users_groups action="INSERT_OR_UPDATE"><group_id/><report_id display_value="">b9c1a39797fd29107720f0571153afea</report_id><sys_class_name>sys_report_users_groups</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-03-31 06:41:56</sys_created_on><sys_id>31c1a39797fd29107720f0571153afeb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>b9c1a39797fd29107720f0571153afea</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_report_users_groups_31c1a39797fd29107720f0571153afeb</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-03-31 06:41:56</sys_updated_on><user_id display_value="Greg Sherbert">761b9daa970521107720f0571153af1e</user_id></sys_report_users_groups></record_update>]]></payload>
+        <payload_hash>-169361743</payload_hash>
+        <record_name>b9c1a39797fd29107720f0571153afea</record_name>
+        <reverted_from/>
+        <source>e1058f8c9755a5107720f0571153aff0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-31 06:41:56</sys_created_on>
+        <sys_id>31c1a39797fd29107720f0571153afed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1873666c2b10000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-31 06:41:56</sys_updated_on>
+        <type>Report Users and Groups</type>
+        <update_guid>75c1a3978bfd291077676e9d999c58ec</update_guid>
+        <update_guid_history>75c1a3978bfd291077676e9d999c58ec:-169361743</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-31 06:48:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_report_users_groups">sys_report_users_groups</sys_db_object>
+        <sys_id>00172691c5d64ee488e353f7eebc3d90</sys_id>
+        <sys_metadata>31c1a39797fd29107720f0571153afeb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>b9c1a39797fd29107720f0571153afea</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_report_users_groups_31c1a39797fd29107720f0571153afeb</sys_update_name>
+        <sys_update_version display_value="sys_report_users_groups_31c1a39797fd29107720f0571153afeb">31c1a39797fd29107720f0571153afed</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-31 06:48:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
