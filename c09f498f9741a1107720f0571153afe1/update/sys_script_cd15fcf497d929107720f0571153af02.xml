@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>New Card Added</name>
-        <order>100</order>
+        <order>200</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -30,6 +30,10 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
     var url = '?q=set:';
     var id = current.sets.getDisplayValue();
+
+	var type_line = '';
+
+	var oracle = '';
 
     var name = current.name;
     name = name.toString().replaceAll(' ', '');
@@ -51,6 +55,7 @@
     }
     if (httpStatus.toString() == '200') {
         var parsedResponse = JSON.parse(response.getBody());
+		//gs.info(parsedResponse);
         //Set the price field based on the foiling option provided
         if (current.foiling == "foil") {
             current.setValue('price', parsedResponse.data[0].prices.usd_foil);
@@ -69,7 +74,15 @@
         } catch {
             //Try to set the value of the front and back image fields if the front image failed
             try {
-                current.setValue('front_image', parsedResponse.data[0].card_faces[0].image_uris.normal);
+				type_line = JSON.stringify(parsedResponse.data[0].card_faces[0].type_line) + ' //  ' + JSON.stringify(parsedResponse.data[0].card_faces[1].type_line);
+				gs.info("TYPE LINE: " + type_line);
+				oracle = parsedResponse.data[0].card_faces[0].oracle_text + '\n\n' + parsedResponse.data[0].card_faces[1].oracle_text;
+				gs.info("ORACLE: " + oracle);
+
+				current.setValue('type_line', type_line);
+				current.setValue('oracle', oracle);
+                
+				current.setValue('front_image', parsedResponse.data[0].card_faces[0].image_uris.normal);
                 current.setValue('back_image', parsedResponse.data[0].card_faces[1].image_uris.normal);
             } catch {
                 gs.info('Image failed to get added to card!');
@@ -78,24 +91,30 @@
         //Set the API Link field to be the generated URL
 		url =  "https://api.scryfall.com/cards/search" + url + '+cn:' + parsedResponse.data[0].collector_number;
         current.setValue('api_link', url);
-		if(parsedResponse.data[0].colors.length == 0){
+		if(parsedResponse.data[0].color_identity.length == 0){
 			current.setValue('colors','colorless');
 		}
 		else{
-			current.setValue('colors',parsedResponse.data[0].colors);
+			current.setValue('colors',parsedResponse.data[0].color_identity);
 		}
 		current.setValue('keywords',parsedResponse.data[0].keywords);
-
-		current.setValue('type_line',parsedResponse.data[0].type_line);
-
-		current.setValue('oracle', parsedResponse.data[0].oracle_text);
-
+		
+		gs.info(type_line);
+		if(type_line == ''){
+			current.setValue('type_line',parsedResponse.data[0].type_line);
+		}
+		gs.info(oracle);
+		if(oracle == ''){
+			current.setValue('oracle', parsedResponse.data[0].oracle_text);
+		}
+		
 		current.setValue('rarity',parsedResponse.data[0].rarity);
 		
 		current.setValue('gatherer',parsedResponse.data[0].related_uris.gatherer);
 
 		current.setValue('edhrec',parsedResponse.data[0].related_uris.edhrec);
 		
+		current.setValue('reserved_list',JSON.stringify(parsedResponse.data[0].reserved));
         //Update the card record with the data from scryfall
         current.update();
     } else {
@@ -108,7 +127,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>79</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -116,7 +135,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-30 07:04:49</sys_updated_on>
+        <sys_updated_on>2023-03-31 06:00:34</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>

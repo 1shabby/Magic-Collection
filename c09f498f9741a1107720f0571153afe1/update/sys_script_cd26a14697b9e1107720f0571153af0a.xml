@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Prevent Duplicate Inserts</name>
-        <order>200</order>
+        <order>100</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -50,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd26a14697b9e1107720f0571153af0a</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Prevent Duplicate Inserts</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -58,7 +58,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd26a14697b9e1107720f0571153af0a</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 04:54:09</sys_updated_on>
+        <sys_updated_on>2023-03-31 04:48:47</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

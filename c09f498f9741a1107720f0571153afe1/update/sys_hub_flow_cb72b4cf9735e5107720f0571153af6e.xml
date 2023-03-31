@@ -2,7 +2,7 @@
     <sys_hub_flow action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
-        <active>true</active>
+        <active>false</active>
         <annotation/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cb72b4cf9735e5107720f0571153af6e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>New Card Insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -37,7 +37,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_cb72b4cf9735e5107720f0571153af6e</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-30 00:59:25</sys_updated_on>
+        <sys_updated_on>2023-03-31 06:09:45</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=cb72b4cf9735e5107720f0571153af6e"/>
@@ -69,16 +69,16 @@
         <table>x_759224_magic_c_0_mtg_cards</table>
     </sys_flow_record_trigger>
     <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
         <identifier>cb72b4cf9735e5107720f0571153af6e</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-30 00:59:25</sys_created_on>
         <sys_id>26c90d8b97b5e5107720f0571153af6a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-30 00:59:25</sys_updated_on>
+        <sys_updated_on>2023-03-31 06:09:47</sys_updated_on>
         <trigger display_value="">aac90d8b97b5e5107720f0571153af69</trigger>
     </sys_trigger_runner_mapping>
     <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN26c90d8b97b5e5107720f0571153af6a"/>
