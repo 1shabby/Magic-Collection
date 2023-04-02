@@ -28,98 +28,195 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
-    var url = '?q=set:';
+
+	//gs.info('Here 1')
     var id = current.sets.getDisplayValue();
-
-	var type_line = '';
-
-	var oracle = '';
-
     var name = current.name;
     name = name.toString().replaceAll(' ', '');
+	var foil = current.foiling;
     var cn = current.collector_number;
+    var endpoint = constructUrl(name, id, cn);
+	//gs.info('Here 2: '+ endpoint);
+    var response = apiCall(endpoint);
+	//gs.info('Here 3: ' + response.code);
+	//gs.info('Here 4: ' + JSON.stringify(response.body));
 
-    if (cn != '') {
-        url = url + id + '+' + name + '+cn:' + cn;
+    if (response.code.toString() == '200') {
+		gs.info('Here 5: 200 code');
+        updateCard(response.body, foil, endpoint, cn);
+		gs.info('Here 7: Post update');
     } else {
-        url = url + id + '+' + name;
+        current.setAbortAction(true);
     }
 
-    try {
-        var r = new sn_ws.RESTMessageV2('x_759224_magic_c_0.ScryFall API', 'Card GET');
-        r.setStringParameterNoEscape('query', url);
-        var response = r.execute();
-        var httpStatus = response.getStatusCode();
-    } catch (ex) {
-        var message = ex.message;
-    }
-    if (httpStatus.toString() == '200') {
-        var parsedResponse = JSON.parse(response.getBody());
-		//gs.info(parsedResponse);
-        //Set the price field based on the foiling option provided
-        if (current.foiling == "foil") {
-            current.setValue('price', parsedResponse.data[0].prices.usd_foil);
-        } else if (current.foiling == "etched") {
-            current.setValue('price', parsedResponse.data[0].prices.usd_etched);
+    //Input: card name, sets, and cn values
+    //Function: using the inputs create the url endpoint for the card
+    //Return: url endpoint
+
+    function constructUrl(name, sets, cn) {
+        var url = '?q=set:';
+        if (cn != '') {
+            url = url + sets + '+' + name + '+cn:' + cn;
         } else {
-            current.setValue('price', parsedResponse.data[0].prices.usd);
+            url = url + id + '+' + name;
         }
-        //If the collectors number is not filled, fill it with the collector number from the api
-        if (cn == '') {
-            current.setValue('collector_number', parsedResponse.data[0].collector_number);
-        }
-        //Try to set the value of the front image field
+        return (url);
+    }
+
+    //Input: Url endpoint
+    //Function: using the provided url make API call
+    //Return: Response object
+
+    function apiCall(url) {
         try {
-            current.setValue('front_image', parsedResponse.data[0].image_uris.normal);
+            var r = new sn_ws.RESTMessageV2('x_759224_magic_c_0.ScryFall API', 'Card GET');
+            r.setStringParameterNoEscape('query', url);
+            var response = r.execute();
+            var httpStatus = response.getStatusCode();
+        } catch (ex) {
+            var message = ex.message;
+        }
+        var parsedResponse = JSON.parse(response.getBody());
+        var responseObj = {
+            code: httpStatus,
+            body: parsedResponse
+        };
+        return (responseObj);
+    }
+
+    //Input: Parsed Response object
+    //Function: serve as the parent function to house all the children update functions
+    //Return: None
+
+    function updateCard(response, foil, url, cn) {
+
+		gs.info('Here 6: ' + response.data[0].prices);
+
+        if (cn == '') {
+            setCn(response);
+        }
+        setPrice(response, foil);
+        setLink(response, url, cn);
+        setColors(response);
+        setKeywords(response);
+        setRarity(response);
+        setDetails(response);
+        setLinks(response);
+        setReserved(response);
+
+        //Update the card record with the data from scryfall
+        current.update();
+    }
+
+    //Input: response, cn
+    //Function: set the cn field on the 
+    //Return: None
+
+    function setCn(response) {
+        current.setValue('collector_number', response.data[0].collector_number);
+    }
+
+    //Input: foil staus and response object
+    //Function: set the price of the card based on the foil status
+    //Return: None
+
+    function setPrice(response, foil) {
+        if (foil == "foil") {
+			gs.info(response.data[0].prices.usd_foil);
+            current.setValue('price', response.data[0].prices.usd_foil);
+        } else if (foil == "etched") {
+            current.setValue('price', response.data[0].prices.usd_etched);
+        } else {
+            current.setValue('price', response.data[0].prices.usd);
+        }
+    }
+
+    //Input: response,url and cn
+    //Function: Take the created endpoint and cn then create
+    //Return: None
+
+    function setLink(response, endpoint, cn) {
+		gs.info(cn)
+        var link = '';
+        //if (cn == '') {
+            link = "https://api.scryfall.com/cards/search" + endpoint + '+cn:' + cn;
+        //} else {
+        //    link = "https://api.scryfall.com/cards/search" + endpoint;
+        //}
+        current.setValue('api_link', link);
+    }
+
+    //Input: response
+    //Function: set the colors field on the card
+    //Return: None
+
+    function setColors(response) {
+        if (response.data[0].color_identity.length == 0) {
+            current.setValue('colors', 'colorless');
+        } else {
+            current.setValue('colors', response.data[0].color_identity);
+        }
+    }
+
+    //Input: response
+    //Function: set the keyword field on the card
+    //Return: None
+
+    function setKeywords(response) {
+        current.setValue('keywords', response.data[0].keywords);
+    }
+
+    //Input: response
+    //Function: set the rarity field on the card
+    //Return: None
+
+    function setRarity(response) {
+        current.setValue('rarity', response.data[0].rarity);
+    }
+
+    //Input: response
+    //Function: Sets the images, type line and oracle fields on the 
+    //Return: None
+
+    function setDetails(response) {
+        try {
+            current.setValue('front_image', response.data[0].image_uris.normal);
+            current.setValue('oracle', response.data[0].oracle_text);
+            current.setValue('type_line', response.data[0].type_line);
         } catch {
             //Try to set the value of the front and back image fields if the front image failed
             try {
-				type_line = JSON.stringify(parsedResponse.data[0].card_faces[0].type_line) + ' //  ' + JSON.stringify(parsedResponse.data[0].card_faces[1].type_line);
-				gs.info("TYPE LINE: " + type_line);
-				oracle = parsedResponse.data[0].card_faces[0].oracle_text + '\n\n' + parsedResponse.data[0].card_faces[1].oracle_text;
-				gs.info("ORACLE: " + oracle);
+                var type_line = JSON.stringify(response.data[0].card_faces[0].type_line) + ' //  ' + JSON.stringify(response.data[0].card_faces[1].type_line);
+                var oracle = response.data[0].card_faces[0].oracle_text + '\n\n' + response.data[0].card_faces[1].oracle_text;
 
-				current.setValue('type_line', type_line);
-				current.setValue('oracle', oracle);
-                
-				current.setValue('front_image', parsedResponse.data[0].card_faces[0].image_uris.normal);
-                current.setValue('back_image', parsedResponse.data[0].card_faces[1].image_uris.normal);
+                current.setValue('type_line', type_line);
+                current.setValue('oracle', oracle);
+
+                current.setValue('front_image', response.data[0].card_faces[0].image_uris.normal);
+                current.setValue('back_image', response.data[0].card_faces[1].image_uris.normal);
             } catch {
                 gs.info('Image failed to get added to card!');
             }
         }
-        //Set the API Link field to be the generated URL
-		url =  "https://api.scryfall.com/cards/search" + url + '+cn:' + parsedResponse.data[0].collector_number;
-        current.setValue('api_link', url);
-		if(parsedResponse.data[0].color_identity.length == 0){
-			current.setValue('colors','colorless');
-		}
-		else{
-			current.setValue('colors',parsedResponse.data[0].color_identity);
-		}
-		current.setValue('keywords',parsedResponse.data[0].keywords);
-		
-		gs.info(type_line);
-		if(type_line == ''){
-			current.setValue('type_line',parsedResponse.data[0].type_line);
-		}
-		gs.info(oracle);
-		if(oracle == ''){
-			current.setValue('oracle', parsedResponse.data[0].oracle_text);
-		}
-		
-		current.setValue('rarity',parsedResponse.data[0].rarity);
-		
-		current.setValue('gatherer',parsedResponse.data[0].related_uris.gatherer);
-
-		current.setValue('edhrec',parsedResponse.data[0].related_uris.edhrec);
-		
-		current.setValue('reserved_list',JSON.stringify(parsedResponse.data[0].reserved));
-        //Update the card record with the data from scryfall
-        current.update();
-    } else {
-        current.setAbortAction(true);
     }
+
+    //Input: response
+    //Function: Set the links on the card record
+    //Return: None
+
+    function setLinks(response) {
+        current.setValue('gatherer', response.data[0].related_uris.gatherer);
+        current.setValue('edhrec', response.data[0].related_uris.edhrec);
+    }
+
+    //Input: response
+    //Function: Set the reserved list field on the card
+    //Return: None
+
+    function setReserved(response) {
+        current.setValue('reserved_list', JSON.stringify(response.data[0].reserved));
+    }
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>greg</sys_created_by>
@@ -127,7 +224,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>79</sys_mod_count>
+        <sys_mod_count>103</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -135,7 +232,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-31 06:00:34</sys_updated_on>
+        <sys_updated_on>2023-04-02 03:36:41</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
