@@ -29,22 +29,16 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
 
-	//gs.info('Here 1')
     var id = current.sets.getDisplayValue();
     var name = current.name;
     name = name.toString().replaceAll(' ', '');
 	var foil = current.foiling;
     var cn = current.collector_number;
     var endpoint = constructUrl(name, id, cn);
-	//gs.info('Here 2: '+ endpoint);
     var response = apiCall(endpoint);
-	//gs.info('Here 3: ' + response.code);
-	//gs.info('Here 4: ' + JSON.stringify(response.body));
 
     if (response.code.toString() == '200') {
-		gs.info('Here 5: 200 code');
         updateCard(response.body, foil, endpoint, cn);
-		gs.info('Here 7: Post update');
     } else {
         current.setAbortAction(true);
     }
@@ -58,7 +52,7 @@
         if (cn != '') {
             url = url + sets + '+' + name + '+cn:' + cn;
         } else {
-            url = url + id + '+' + name;
+            url = url + sets + '+' + name;
         }
         return (url);
     }
@@ -136,13 +130,8 @@
     //Return: None
 
     function setLink(response, endpoint, cn) {
-		gs.info(cn)
         var link = '';
-        //if (cn == '') {
-            link = "https://api.scryfall.com/cards/search" + endpoint + '+cn:' + cn;
-        //} else {
-        //    link = "https://api.scryfall.com/cards/search" + endpoint;
-        //}
+        link = "https://api.scryfall.com/cards/search" + endpoint + '+cn:' + cn;
         current.setValue('api_link', link);
     }
 
@@ -224,7 +213,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cd15fcf497d929107720f0571153af02</sys_id>
-        <sys_mod_count>103</sys_mod_count>
+        <sys_mod_count>105</sys_mod_count>
         <sys_name>New Card Added</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -232,7 +221,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_cd15fcf497d929107720f0571153af02</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-02 03:36:41</sys_updated_on>
+        <sys_updated_on>2023-04-02 03:52:03</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
