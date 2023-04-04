@@ -10,13 +10,13 @@
         <copied_from_name/>
         <description>Fires whenever a new card is inserted into system.</description>
         <internal_name>new_card_insert</internal_name>
-        <label_cache>[{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number","label":"1 - Populate Card➛Collector Number","reference_display":"Collector Number","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"696a4072-fdc9-4890-a3cd-29a536696a9b"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved","label":"1 - Populate Card➛Reserved","reference_display":"Reserved","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"61249374-3848-4c05-a00a-6cc427d67843"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec","label":"1 - Populate Card➛Edhrec","reference_display":"Edhrec","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f53f39ef-a3a2-4aa0-9683-550f0ef68800"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer","label":"1 - Populate Card➛Gatherer","reference_display":"Gatherer","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b9903b02-30a7-4583-af6b-565351ec86bc"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line","label":"1 - Populate Card➛Type Line","reference_display":"Type Line","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"22da8daf-a06b-4010-956f-5bb1f55a0c0e"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle","label":"1 - Populate Card➛Oracle","reference_display":"Oracle","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1a913e9b-f5aa-4ceb-ba76-a78cd6b14faf"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image","label":"1 - Populate Card➛Back Image","reference_display":"Back Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"333459f5-3d26-4fe6-ac63-bb19dcb4e6ea"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image","label":"1 - Populate Card➛Front Image","reference_display":"Front Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4b3b85b6-3548-4f3d-bbb3-22d3bacc7ce6"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity","label":"1 - Populate Card➛Rarity","reference_display":"Rarity","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"318804d2-5b51-40a7-a272-fe10622050af"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords","label":"1 - Populate Card➛Keywords","reference_display":"Keywords","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5f0a92f1-607e-4cfc-95ad-e027f95b7e64"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors","label":"1 - Populate Card➛Colors","reference_display":"Colors","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1fc8de38-b206-44e0-88b4-62f928ce72d8"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price","label":"1 - Populate Card➛Price","reference_display":"Price","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"2d78eb1b-7959-4a28-a33e-148f41fb271c"}},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint","label":"1 - Populate Card➛Endpoint","reference_display":"Endpoint","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"05e8cacb-5ed6-4f24-93ca-d3e49ede70ba"}},{"name":"Created_1.current.api_link","label":"Trigger - Record Created➛Cards Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.api_link","label":"Trigger - Record Created➛Cards Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint","label":"1 - Populate Card➛Endpoint","reference_display":"Endpoint","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"05e8cacb-5ed6-4f24-93ca-d3e49ede70ba"}},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price","label":"1 - Populate Card➛Price","reference_display":"Price","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"2d78eb1b-7959-4a28-a33e-148f41fb271c"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors","label":"1 - Populate Card➛Colors","reference_display":"Colors","type":"array.string","base_type":"array.string","attributes":{"max_rows":"5","pwd2droppable":"true","child_name":"colors_child0","uiUniqueId":"1fc8de38-b206-44e0-88b4-62f928ce72d8","uiTypeLabel":"Array.String","co_type_name":"FDc5cb7b246b4aad107591285e8cc27e31","child_label":"Colors_child0","child_type_label":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.string","child_type":"string","child_uiUniqueId":"6d944f88-5f6b-4e4d-97de-46d1a9cc685b"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords","label":"1 - Populate Card➛Keywords","reference_display":"Keywords","type":"array.string","base_type":"array.string","attributes":{"max_rows":"15","pwd2droppable":"true","child_name":"keywords_child0","uiUniqueId":"5f0a92f1-607e-4cfc-95ad-e027f95b7e64","uiTypeLabel":"Array.String","co_type_name":"FD85cb7b24a64aad1097360eeb8979b733","child_label":"Keywords_child0","child_type_label":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.string","child_type":"string","child_uiUniqueId":"de7b4236-99f0-4ce9-a655-4500079acff2"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity","label":"1 - Populate Card➛Rarity","reference_display":"Rarity","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"318804d2-5b51-40a7-a272-fe10622050af"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image","label":"1 - Populate Card➛Front Image","reference_display":"Front Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4b3b85b6-3548-4f3d-bbb3-22d3bacc7ce6"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image","label":"1 - Populate Card➛Back Image","reference_display":"Back Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"333459f5-3d26-4fe6-ac63-bb19dcb4e6ea"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle","label":"1 - Populate Card➛Oracle","reference_display":"Oracle","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1a913e9b-f5aa-4ceb-ba76-a78cd6b14faf"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line","label":"1 - Populate Card➛Type Line","reference_display":"Type Line","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"22da8daf-a06b-4010-956f-5bb1f55a0c0e"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer","label":"1 - Populate Card➛Gatherer","reference_display":"Gatherer","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b9903b02-30a7-4583-af6b-565351ec86bc"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec","label":"1 - Populate Card➛Edhrec","reference_display":"Edhrec","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f53f39ef-a3a2-4aa0-9683-550f0ef68800"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved","label":"1 - Populate Card➛Reserved","reference_display":"Reserved","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"61249374-3848-4c05-a00a-6cc427d67843"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number","label":"1 - Populate Card➛Collector Number","reference_display":"Collector Number","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"696a4072-fdc9-4890-a3cd-29a536696a9b"}},{"name":"flow_variable.colors","label":"Flow Variables➛Colors","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"2d9e15f9-a2c6-4bcb-840d-b51ec22ab863"}}]</label_cache>
         <master_snapshot>5623f4039775e5107720f0571153af59</master_snapshot>
         <name>New Card Insert</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <remote_trigger_id>4609bae09746ad107720f0571153afb5</remote_trigger_id>
+        <remote_trigger_id>e3b3507097caad107720f0571153afec</remote_trigger_id>
         <run_as>user</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cb72b4cf9735e5107720f0571153af6e</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>New Card Insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -37,7 +37,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_cb72b4cf9735e5107720f0571153af6e</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=cb72b4cf9735e5107720f0571153af6e"/>
@@ -57,15 +57,15 @@
         <run_when_user_setting>any</run_when_user_setting>
         <sys_class_name>sys_flow_record_trigger</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-04-04 00:56:20</sys_created_on>
+        <sys_created_on>2023-04-04 07:32:39</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>4609bae09746ad107720f0571153afb5</sys_id>
+        <sys_id>e3b3507097caad107720f0571153afec</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_overrides/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
     </sys_flow_record_trigger>
     <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
@@ -74,14 +74,14 @@
         <identifier>cb72b4cf9735e5107720f0571153af6e</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-04-04 00:56:20</sys_created_on>
-        <sys_id>ce09bae09746ad107720f0571153afb5</sys_id>
+        <sys_created_on>2023-04-04 07:32:39</sys_created_on>
+        <sys_id>6fb3507097caad107720f0571153afec</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
-        <trigger display_value="">4609bae09746ad107720f0571153afb5</trigger>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
+        <trigger display_value="">e3b3507097caad107720f0571153afec</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cb72b4cf9735e5107720f0571153af6e^sys_idNOT INce09bae09746ad107720f0571153afb5"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN6fb3507097caad107720f0571153afec"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN2c2374039775e5107720f0571153afb5"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -92,10 +92,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>2c2374039775e5107720f0571153afb5</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -208,14 +208,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>202374039775e5107720f0571153afad</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -291,14 +291,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>a42374039775e5107720f0571153afb1</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -328,10 +328,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>682374039775e5107720f0571153afc7</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>108</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 01:09:30</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <ui_id>f9cd4018-5d50-4406-91d4-46fecc9cd34a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=682374039775e5107720f0571153afc7"/>
@@ -380,13 +380,26 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>602374039775e5107720f0571153afc9</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-02 06:21:05</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:20:01</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price}}^api_link={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}^colors={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors}}^keywords={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords}}^rarity={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity}}^front_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image}}^back_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image}}^oracle={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle}}^type_line={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line}}^gatherer={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer}}^edhrec={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec}}^reserved_list={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved}}^collector_number={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number}}</value>
+        <value>price={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price}}^api_link={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}^colors=fd-scripted^keywords=fd-scripted^rarity={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity}}^front_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image}}^back_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image}}^oracle={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle}}^type_line={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line}}^gatherer={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer}}^edhrec={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec}}^reserved_list={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved}}^collector_number={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number}}</value>
     </sys_element_mapping>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=682374039775e5107720f0571153afc7"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=682374039775e5107720f0571153afc7^sys_idNOT IN333f88f8978aad107720f0571153af6f"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>values</input_name>
+        <instance>682374039775e5107720f0571153afc7</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"keywords":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\n\nvar retval \u003d \u0027\u0027;\nif(fd_data._1__construct_endpoint.keywords !\u003d []){\n    for (var i in fd_data._1__construct_endpoint.keywords){\n        if(retval \u003d\u003d \u0027\u0027){\n            retval \u003d retval + fd_data._1__construct_endpoint.keywords[i];\n        }else{\n            retval \u003d retval +  \u0027,\u0027 + fd_data._1__construct_endpoint.keywords[i];\n        }\n    }\n}\nreturn retval;","savedValue":"{{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords}}"},"api_link":{"scriptActive":false,"savedValue":"{{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}"},"colors":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\n\nvar retval \u003d \u0027\u0027;\nif(fd_data._1__construct_endpoint.colors !\u003d []){\n    for (var i in fd_data._1__construct_endpoint.colors){\n        if(retval \u003d\u003d \u0027\u0027){\n            retval \u003d retval + fd_data._1__construct_endpoint.colors[i];\n        }else{\n            retval \u003d retval +  \u0027,\u0027 + fd_data._1__construct_endpoint.colors[i];\n        }\n    }\n}\nelse{\n    retval \u003d \u0027colorless\u0027;\n}\nreturn retval;","savedValue":""}}</script>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-04 07:13:00</sys_created_on>
+        <sys_id>333f88f8978aad107720f0571153af6f</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-04 07:32:32</sys_updated_on>
+    </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=682374039775e5107720f0571153afc7"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -402,10 +415,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-02 04:01:17</sys_created_on>
         <sys_id>c4301d409746e9107720f0571153afbb</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 01:09:30</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <ui_id>ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c4301d409746e9107720f0571153afbb"/>
@@ -496,10 +509,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>642374039775e5107720f0571153afca</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <ui_id>0adbea29-b2d8-407b-965b-7852735b68fb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -533,11 +546,95 @@
         <value/>
         <variable display_value="Timer relative duration operator">dca4105473031300b61e66476bf6a726</variable>
     </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_cb72b4cf9735e5107720f0571153af6e^id=642374039775e5107720f0571153afca"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e^id=642374039775e5107720f0571153afca"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=642374039775e5107720f0571153afca"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=642374039775e5107720f0571153afca"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=cb72b4cf9735e5107720f0571153af6e"/>
-    <sys_hub_flow_variable action="delete_multiple" query="model=cb72b4cf9735e5107720f0571153af6e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN8af80034978aad107720f0571153af86"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2d9e15f9-a2c6-4bcb-840d-b51ec22ab863</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>colors</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Colors</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</model>
+        <model_id>cb72b4cf9735e5107720f0571153af6e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_cb72b4cf9735e5107720f0571153af6e</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-04 06:45:35</sys_created_on>
+        <sys_id>8af80034978aad107720f0571153af86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-04 06:45:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN682374039775e5107720f0571153afb0,682374039775e5107720f0571153afb3"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>current</element>
@@ -593,18 +690,18 @@
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"362338039775e5107720f0571153af16","name":"plan","plan_signature":null}}</plan>
         <plan_id>cb72b4cf9735e5107720f0571153af6e</plan_id>
-        <snapshot>7a0cb6e49746ad107720f0571153aff9</snapshot>
+        <snapshot>5623f4039775e5107720f0571153af59</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:35</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>362338039775e5107720f0571153af16</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
-        <trigger display_value="">4609bae09746ad107720f0571153afb5</trigger>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
+        <trigger display_value="">e3b3507097caad107720f0571153afec</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=cb72b4cf9735e5107720f0571153af6e"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
@@ -618,7 +715,7 @@
         <copied_from_name/>
         <description>Fires whenever a new card is inserted into system.</description>
         <internal_name>new_card_insert</internal_name>
-        <label_cache>[{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number","label":"1 - Populate Card➛Collector Number","reference_display":"Collector Number","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"696a4072-fdc9-4890-a3cd-29a536696a9b"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved","label":"1 - Populate Card➛Reserved","reference_display":"Reserved","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"61249374-3848-4c05-a00a-6cc427d67843"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec","label":"1 - Populate Card➛Edhrec","reference_display":"Edhrec","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f53f39ef-a3a2-4aa0-9683-550f0ef68800"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer","label":"1 - Populate Card➛Gatherer","reference_display":"Gatherer","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b9903b02-30a7-4583-af6b-565351ec86bc"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line","label":"1 - Populate Card➛Type Line","reference_display":"Type Line","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"22da8daf-a06b-4010-956f-5bb1f55a0c0e"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle","label":"1 - Populate Card➛Oracle","reference_display":"Oracle","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1a913e9b-f5aa-4ceb-ba76-a78cd6b14faf"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image","label":"1 - Populate Card➛Back Image","reference_display":"Back Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"333459f5-3d26-4fe6-ac63-bb19dcb4e6ea"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image","label":"1 - Populate Card➛Front Image","reference_display":"Front Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4b3b85b6-3548-4f3d-bbb3-22d3bacc7ce6"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity","label":"1 - Populate Card➛Rarity","reference_display":"Rarity","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"318804d2-5b51-40a7-a272-fe10622050af"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords","label":"1 - Populate Card➛Keywords","reference_display":"Keywords","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5f0a92f1-607e-4cfc-95ad-e027f95b7e64"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors","label":"1 - Populate Card➛Colors","reference_display":"Colors","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1fc8de38-b206-44e0-88b4-62f928ce72d8"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price","label":"1 - Populate Card➛Price","reference_display":"Price","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"2d78eb1b-7959-4a28-a33e-148f41fb271c"}},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint","label":"1 - Populate Card➛Endpoint","reference_display":"Endpoint","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"05e8cacb-5ed6-4f24-93ca-d3e49ede70ba"}},{"name":"Created_1.current.api_link","label":"Trigger - Record Created➛Cards Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.api_link","label":"Trigger - Record Created➛Cards Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint","label":"1 - Populate Card➛Endpoint","reference_display":"Endpoint","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"05e8cacb-5ed6-4f24-93ca-d3e49ede70ba"}},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price","label":"1 - Populate Card➛Price","reference_display":"Price","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"2d78eb1b-7959-4a28-a33e-148f41fb271c"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors","label":"1 - Populate Card➛Colors","reference_display":"Colors","type":"array.string","base_type":"array.string","attributes":{"max_rows":"5","pwd2droppable":"true","child_name":"colors_child0","uiUniqueId":"1fc8de38-b206-44e0-88b4-62f928ce72d8","uiTypeLabel":"Array.String","co_type_name":"FDc5cb7b246b4aad107591285e8cc27e31","child_label":"Colors_child0","child_type_label":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.string","child_type":"string","child_uiUniqueId":"6d944f88-5f6b-4e4d-97de-46d1a9cc685b"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords","label":"1 - Populate Card➛Keywords","reference_display":"Keywords","type":"array.string","base_type":"array.string","attributes":{"max_rows":"15","pwd2droppable":"true","child_name":"keywords_child0","uiUniqueId":"5f0a92f1-607e-4cfc-95ad-e027f95b7e64","uiTypeLabel":"Array.String","co_type_name":"FD85cb7b24a64aad1097360eeb8979b733","child_label":"Keywords_child0","child_type_label":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.string","child_type":"string","child_uiUniqueId":"de7b4236-99f0-4ce9-a655-4500079acff2"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity","label":"1 - Populate Card➛Rarity","reference_display":"Rarity","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"318804d2-5b51-40a7-a272-fe10622050af"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image","label":"1 - Populate Card➛Front Image","reference_display":"Front Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4b3b85b6-3548-4f3d-bbb3-22d3bacc7ce6"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image","label":"1 - Populate Card➛Back Image","reference_display":"Back Image","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"333459f5-3d26-4fe6-ac63-bb19dcb4e6ea"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle","label":"1 - Populate Card➛Oracle","reference_display":"Oracle","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1a913e9b-f5aa-4ceb-ba76-a78cd6b14faf"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line","label":"1 - Populate Card➛Type Line","reference_display":"Type Line","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"22da8daf-a06b-4010-956f-5bb1f55a0c0e"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer","label":"1 - Populate Card➛Gatherer","reference_display":"Gatherer","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b9903b02-30a7-4583-af6b-565351ec86bc"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec","label":"1 - Populate Card➛Edhrec","reference_display":"Edhrec","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f53f39ef-a3a2-4aa0-9683-550f0ef68800"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved","label":"1 - Populate Card➛Reserved","reference_display":"Reserved","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"61249374-3848-4c05-a00a-6cc427d67843"}},{"name":"ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number","label":"1 - Populate Card➛Collector Number","reference_display":"Collector Number","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"696a4072-fdc9-4890-a3cd-29a536696a9b"}},{"name":"flow_variable.colors","label":"Flow Variables➛Colors","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"2d9e15f9-a2c6-4bcb-840d-b51ec22ab863"}}]</label_cache>
         <master>true</master>
         <name>New Card Insert</name>
         <natlang/>
@@ -635,7 +732,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5623f4039775e5107720f0571153af59</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -643,7 +740,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=5623f4039775e5107720f0571153af59"/>
@@ -658,10 +755,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>6623f4039775e5107720f0571153afe3</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:20</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:39</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -774,14 +871,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:33</sys_created_on>
         <sys_id>1623f4039775e5107720f0571153af5b</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -857,14 +954,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>e223f4039775e5107720f0571153afbd</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -894,10 +991,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>2a23f4039775e5107720f0571153afe1</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <ui_id>f9cd4018-5d50-4406-91d4-46fecc9cd34a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2a23f4039775e5107720f0571153afe1"/>
@@ -946,13 +1043,26 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>2e23f4039775e5107720f0571153afe2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-02 06:21:11</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:20:09</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price}}^api_link={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}^colors={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.colors}}^keywords={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords}}^rarity={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity}}^front_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image}}^back_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image}}^oracle={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle}}^type_line={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line}}^gatherer={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer}}^edhrec={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec}}^reserved_list={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved}}^collector_number={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number}}</value>
+        <value>price={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.price}}^api_link={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}^colors=fd-scripted^keywords=fd-scripted^rarity={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.rarity}}^front_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.front_image}}^back_image={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.back_image}}^oracle={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.oracle}}^type_line={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.type_line}}^gatherer={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.gatherer}}^edhrec={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.edhrec}}^reserved_list={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.reserved}}^collector_number={{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.collector_number}}</value>
     </sys_element_mapping>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=2a23f4039775e5107720f0571153afe1"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=2a23f4039775e5107720f0571153afe1^sys_idNOT IN254f0cf8978aad107720f0571153af7b"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>values</input_name>
+        <instance>2a23f4039775e5107720f0571153afe1</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"keywords":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\n\nvar retval \u003d \u0027\u0027;\nif(fd_data._1__construct_endpoint.keywords !\u003d []){\n    for (var i in fd_data._1__construct_endpoint.keywords){\n        if(retval \u003d\u003d \u0027\u0027){\n            retval \u003d retval + fd_data._1__construct_endpoint.keywords[i];\n        }else{\n            retval \u003d retval +  \u0027,\u0027 + fd_data._1__construct_endpoint.keywords[i];\n        }\n    }\n}\nreturn retval;","savedValue":"{{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.keywords}}"},"api_link":{"scriptActive":false,"savedValue":"{{ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613.endpoint}}"},"colors":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\n\nvar retval \u003d \u0027\u0027;\nif(fd_data._1__construct_endpoint.colors !\u003d []){\n    for (var i in fd_data._1__construct_endpoint.colors){\n        if(retval \u003d\u003d \u0027\u0027){\n            retval \u003d retval + fd_data._1__construct_endpoint.colors[i];\n        }else{\n            retval \u003d retval +  \u0027,\u0027 + fd_data._1__construct_endpoint.colors[i];\n        }\n    }\n}\nelse{\n    retval \u003d \u0027colorless\u0027;\n}\nreturn retval;","savedValue":""}}</script>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-04 07:13:07</sys_created_on>
+        <sys_id>254f0cf8978aad107720f0571153af7b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
+    </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=2a23f4039775e5107720f0571153afe1"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -968,10 +1078,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-02 06:21:10</sys_created_on>
         <sys_id>8d307d0897c6e9107720f0571153afb1</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <ui_id>ebcea8cb-dc5d-48e3-bb4d-8d01d73e6613</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=8d307d0897c6e9107720f0571153afb1"/>
@@ -1062,10 +1172,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>2a23f4039775e5107720f0571153afc8</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-04 00:56:19</sys_updated_on>
+        <sys_updated_on>2023-04-04 07:32:38</sys_updated_on>
         <ui_id>0adbea29-b2d8-407b-965b-7852735b68fb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1099,11 +1209,95 @@
         <value/>
         <variable display_value="Timer relative duration operator">dca4105473031300b61e66476bf6a726</variable>
     </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_5623f4039775e5107720f0571153af59^id=2a23f4039775e5107720f0571153afc8"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e^id=2a23f4039775e5107720f0571153afc8"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=2a23f4039775e5107720f0571153afc8"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=2a23f4039775e5107720f0571153afc8"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=5623f4039775e5107720f0571153af59"/>
-    <sys_hub_flow_variable action="delete_multiple" query="model=5623f4039775e5107720f0571153af59"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5623f4039775e5107720f0571153af59^sys_idNOT INe1498834978aad107720f0571153af0b"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=2d9e15f9-a2c6-4bcb-840d-b51ec22ab863</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>colors</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Colors</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="New Card Insert">5623f4039775e5107720f0571153af59</model>
+        <model_id>5623f4039775e5107720f0571153af59</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_5623f4039775e5107720f0571153af59</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-04 06:46:55</sys_created_on>
+        <sys_id>e1498834978aad107720f0571153af0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-04 06:46:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_5623f4039775e5107720f0571153af59^sys_idNOT IN2e23f4039775e5107720f0571153afb9,6e23f4039775e5107720f0571153afc1"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>current</element>
