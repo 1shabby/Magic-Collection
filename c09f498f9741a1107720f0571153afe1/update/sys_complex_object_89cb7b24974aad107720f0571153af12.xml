@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDc5cb7b246d4aad10189ecdc1dd128e12</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FDc5cb7b246d4aad10189ecdc1dd128e12":{"$COCollectionField":["String"],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDc5cb7b246d4aad10189ecdc1dd128e12.$type_facets":{"SimpleMapFacet":"{\"max_rows\":\"5\",\"default_value\":\"\",\"label\":\"colors\",\"mandatory\":\"true\",\"child_name\":\"colors_child0\",\"uiUniqueId\":\"e32bb228-a237-4210-8156-b51f92d2889c\",\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FDc5cb7b246d4aad10189ecdc1dd128e12\",\"child_label\":\"colors_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"order\":\"3\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"92073f0e-f5b5-40f2-aea8-5c56ee79aad1\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-04 05:47:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>89cb7b24974aad107720f0571153af12</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>FDc5cb7b246d4aad10189ecdc1dd128e12</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_complex_object_89cb7b24974aad107720f0571153af12</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-04 06:46:39</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+</record_update>
