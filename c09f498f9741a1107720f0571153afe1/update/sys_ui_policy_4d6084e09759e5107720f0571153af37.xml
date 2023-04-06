@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <conditions table="x_759224_magic_c_0_mtg_cards">collector_number&lt;0^EQ<item endquery="false" field="collector_number" goto="false" newquery="false" operator="&lt;" or="false" value="0"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </conditions>
@@ -29,7 +29,7 @@ g_form.showFieldMsg('collector_number','Please enter a positive integer.','error
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4d6084e09759e5107720f0571153af37</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Collector's Number Logic</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -37,7 +37,7 @@ g_form.showFieldMsg('collector_number','Please enter a positive integer.','error
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_ui_policy_4d6084e09759e5107720f0571153af37</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 03:16:55</sys_updated_on>
+        <sys_updated_on>2023-04-05 06:54:19</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui_type>0</ui_type>
         <view/>
