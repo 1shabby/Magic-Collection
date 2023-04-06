@@ -2,7 +2,7 @@
     <element db_object_id="df1015cf9741a1107720f0571153afc3" label="Cards" max_length="40" name="x_759224_magic_c_0_mtg_cards" text_index="true" type="collection">
         <element label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
         <element label="Back Image" max_length="1024" name="back_image" read_only="true" type="url"/>
-        <element label="Collector Number" max_length="40" name="collector_number" type="integer"/>
+        <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
         <element choice="3" default="colorless" label="Colors" max_length="40" name="colors" read_only="true" type="glide_list">
             <choice>
                 <element inactive_on_update="false" label="White" sequence="0" value="W"/>
