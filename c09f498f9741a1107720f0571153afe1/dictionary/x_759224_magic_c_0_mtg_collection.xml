@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="70f255839781a1107720f0571153afc7" label="Collection" max_length="40" name="x_759224_magic_c_0_mtg_collection" text_index="true" type="collection">
         <element label="Card" max_length="32" name="card" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Name" max_length="100" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="Price" max_length="40" name="price" read_only="true" type="currency"/>
-        <element label="Sets" max_length="1024" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="glide_list"/>
+        <element default="0.00" label="Price" max_length="38" name="price" read_only="true" type="currency"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="0" label="Quantity" max_length="40" name="quantity" type="integer"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Sets" max_length="1024" name="sets" read_only="true" reference="x_759224_magic_c_0_mtg_sets" type="glide_list" virtual="true"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
         <index name="index">
             <element name="card"/>

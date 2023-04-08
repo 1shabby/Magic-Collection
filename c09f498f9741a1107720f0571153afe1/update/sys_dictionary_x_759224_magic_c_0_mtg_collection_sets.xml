@@ -4,8 +4,14 @@
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation/>
-        <choice>0</choice>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
         <choice_field/>
         <choice_table/>
         <column_label>Sets</column_label>
@@ -33,7 +39,7 @@
         <name>x_759224_magic_c_0_mtg_collection</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference display_value="" name="x_759224_magic_c_0_mtg_sets">x_759224_magic_c_0_mtg_sets</reference>
         <reference_cascade_rule/>
@@ -53,14 +59,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_collection_sets</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-02-21 00:25:58</sys_updated_on>
+        <sys_updated_on>2023-04-08 23:18:15</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
