@@ -5,7 +5,7 @@
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element default="0.00" label="Price" max_length="38" name="price" read_only="true" type="currency"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="0" label="Quantity" max_length="40" name="quantity" type="integer"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Sets" max_length="1024" name="sets" read_only="true" reference="x_759224_magic_c_0_mtg_sets" type="glide_list" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Sets" max_length="1024" name="sets" read_only="true" reference="x_759224_magic_c_0_mtg_sets" type="glide_list"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
         <index name="index">
             <element name="card"/>
