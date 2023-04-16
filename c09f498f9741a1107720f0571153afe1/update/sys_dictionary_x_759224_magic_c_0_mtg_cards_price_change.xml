@@ -8,17 +8,17 @@
 
     // Add your code here
 	var retval = '';
-	var percent = (current.total_price / current.pt_price);
-	if (percent == 1){
-		percent = 0;
-	}else{
-		percent = percent.toFixed(2);
-	}
+	// var percent = (current.total_price / current.pt_price);
+	// if (percent == 1){
+	// 	percent = 0;
+	// }else{
+	// 	percent = percent.toFixed(2);
+	// }
 
 	var change = current.total_price - current.pt_price;
 	change = change.toFixed(2);
-	retval = percent.toString() + '% change in price \n\n$' + change.toString() + ' change in price.';
-
+	//retval = percent.toString() + '% change in price \n\n$' + change.toString() + ' change in price.';
+	retval = change.toString() + ' change in price.';
     return retval; // return the calculated value
 
 })(current);]]></calculation>
@@ -46,7 +46,7 @@
         <function_field>false</function_field>
         <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>2000</max_length>
+        <max_length>100</max_length>
         <name>x_759224_magic_c_0_mtg_cards</name>
         <next_element/>
         <primary>false</primary>
@@ -70,7 +70,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_cards_price_change</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-13 18:51:36</sys_updated_on>
+        <sys_updated_on>2023-04-16 04:27:56</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
