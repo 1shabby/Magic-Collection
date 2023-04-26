@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description>Updates the color from "function replaceAll() { [native code for" to "colorless".</description>
+        <name>Update Card Colors</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var cards = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+cards.addEncodedQuery('colors=function replaceAll() { [native code for');
+cards.query();
+
+while(cards.next()){
+	cards.setValue('colors','Colorless');
+	cards.update('Fix Script');
+}]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-04-26 03:05:44</sys_created_on>
+        <sys_id>3769ac37975e25107720f0571153af0f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Update Card Colors</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_fix_3769ac37975e25107720f0571153af0f</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-26 03:23:45</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>
