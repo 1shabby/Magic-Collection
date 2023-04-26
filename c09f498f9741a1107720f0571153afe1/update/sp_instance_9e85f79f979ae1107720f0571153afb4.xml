@@ -16,17 +16,26 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:40:10</sys_created_on>
         <sys_id>9e85f79f979ae1107720f0571153afb4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_instance_9e85f79f979ae1107720f0571153afb4</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-25 04:40:10</sys_updated_on>
+        <sys_updated_on>2023-04-26 03:31:23</sys_updated_on>
         <title>Card</title>
         <url/>
-        <widget_parameters/>
+        <widget_parameters><![CDATA[{
+	"card_name": {
+		"value": "Darksteel Mutation",
+		"displayValue": "Darksteel Mutation"
+	},
+	"card_image": {
+		"value": "https://cards.scryfall.io/normal/front/d/f/df7d800b-0120-4036-81d7-dec60ccc8057.jpg?1562942142",
+		"displayValue": "https://cards.scryfall.io/normal/front/d/f/df7d800b-0120-4036-81d7-dec60ccc8057.jpg?1562942142"
+	}
+}]]></widget_parameters>
     </sp_instance>
     <sys_translated_text action="delete_multiple" query="documentkey=9e85f79f979ae1107720f0571153afb4"/>
 </record_update>
