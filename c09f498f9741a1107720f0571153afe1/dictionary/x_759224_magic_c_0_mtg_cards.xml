@@ -23,7 +23,6 @@
         </element>
         <element label="Front Image" max_length="1024" name="front_image" read_only="true" type="url"/>
         <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
-        <element label="Keywords" max_length="4000" name="keywords" read_only="true" reference="x_759224_magic_c_0_keywords" type="glide_list"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Oracle Text" max_length="50000" name="oracle" read_only="true" type="string"/>

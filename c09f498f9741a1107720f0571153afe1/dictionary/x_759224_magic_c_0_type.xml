@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="b38d43c79749a1107720f0571153af14" label="Type" max_length="40" name="x_759224_magic_c_0_type" type="collection">
-        <element label="SuperType" mandatory="true" max_length="32" name="supertype" reference="x_759224_magic_c_0_supertype" type="reference"/>
-        <element display="true" label="Type" mandatory="true" max_length="40" name="type" type="string"/>
-        <index name="index">
-            <element name="supertype"/>
-        </index>
-    </element>
-</database>

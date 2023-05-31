@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Magic Collection">f55e8fc79749a1107720f0571153af2e</application>
+        <filter/>
+        <name>Subtypes</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_759224_magic_c_0.subtype_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 03:51:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b15e8fc79749a1107720f0571153af31</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Subtypes</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_module_b15e8fc79749a1107720f0571153af31</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 03:51:28</sys_updated_on>
+        <table>x_759224_magic_c_0_subtype</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sys_ui_module_b15e8fc79749a1107720f0571153af31</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Magic Collection">f55e8fc79749a1107720f0571153af2e</application><filter/><name>Subtypes</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_759224_magic_c_0.subtype_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-02-21 03:51:28</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>b15e8fc79749a1107720f0571153af31</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Subtypes</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_ui_module_b15e8fc79749a1107720f0571153af31</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-02-21 03:51:28</sys_updated_on><table>x_759224_magic_c_0_subtype</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>-1875738385</payload_hash>
+        <record_name>Subtypes</record_name>
+        <reverted_from/>
+        <source>009f498f9741a1107720f0571153afe4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 03:51:28</sys_created_on>
+        <sys_id>f15e8fc79749a1107720f0571153af34</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186721906450000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 03:51:28</sys_updated_on>
+        <type>Module</type>
+        <update_guid>395e8fc72a49a110ade1ec67954b2f33</update_guid>
+        <update_guid_history>395e8fc72a49a110ade1ec67954b2f33:-1875738385</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-05-31 15:43:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>4a85017ef4dc45238f788177d3aae7f1</sys_id>
+        <sys_metadata>b15e8fc79749a1107720f0571153af31</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Subtypes</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ui_module_b15e8fc79749a1107720f0571153af31</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_b15e8fc79749a1107720f0571153af31">f15e8fc79749a1107720f0571153af34</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-05-31 15:43:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
