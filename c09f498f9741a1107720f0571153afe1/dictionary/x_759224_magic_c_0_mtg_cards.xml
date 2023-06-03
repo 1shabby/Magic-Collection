@@ -26,6 +26,7 @@
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Oracle Text" max_length="50000" name="oracle" read_only="true" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
         <element default="0.00" label="Unit Price" max_length="20" name="price" read_only="true" type="currency"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;    // Add your code here&#13;&#10;&#9;var retval = '';&#13;&#10;&#9;var change = current.total_price - current.pt_price;&#13;&#10;&#9;change = change.toFixed(2);&#13;&#10;&#9;if(change == 0.00){&#13;&#10;&#9;&#9;retval = current.calculatedFieldValue;&#13;&#10;&#9;}&#13;&#10;&#9;//retval = percent.toString() + '% change in price \n\n$' + change.toString() + ' change in price.';&#13;&#10;&#9;retval = change.toString() + ' change in price.';&#13;&#10;    return retval; // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Price Change" max_length="100" name="price_change" read_only="true" type="string" virtual="true"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
@@ -46,9 +47,12 @@
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
         <element label="Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
         <index name="index">
-            <element name="sets"/>
+            <element name="owner"/>
         </index>
         <index name="index2">
+            <element name="sets"/>
+        </index>
+        <index name="index3">
             <element name="sys_class_name"/>
         </index>
     </element>
