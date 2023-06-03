@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="card" table="x_759224_magic_c_0_favorite_cards">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="user" table="x_759224_magic_c_0_favorite_cards">
         <active>true</active>
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation/>
-        <choice>0</choice>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Card</column_label>
+        <column_label>User</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -21,21 +26,21 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>card</element>
+        <element>user</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Reference">reference</internal_type>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>32</max_length>
         <name>x_759224_magic_c_0_favorite_cards</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
-        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="sys_user">sys_user</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -46,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-05-31 14:54:26</sys_created_on>
-        <sys_name>Card</sys_name>
+        <sys_created_on>2023-06-03 03:10:48</sys_created_on>
+        <sys_name>User</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_dictionary_x_759224_magic_c_0_favorite_cards_card</sys_update_name>
+        <sys_update_name>sys_dictionary_x_759224_magic_c_0_favorite_cards_user</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-03 03:12:42</sys_updated_on>
+        <sys_updated_on>2023-06-03 03:11:48</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
