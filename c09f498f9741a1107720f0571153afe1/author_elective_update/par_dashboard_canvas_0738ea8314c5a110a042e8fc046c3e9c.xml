@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_canvas">
+    <par_dashboard_canvas action="DELETE">
+        <dashboard display_value="">7e38ea83ffc5a110efcfdb3018ab758c</dashboard>
+        <dashboard_tab/>
+        <layout>[]</layout>
+        <sys_class_name>par_dashboard_canvas</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:58</sys_created_on>
+        <sys_id>0738ea8314c5a110a042e8fc046c3e9c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>par_dashboard_canvas_0738ea8314c5a110a042e8fc046c3e9c</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:04:58</sys_updated_on>
+    </par_dashboard_canvas>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>par_dashboard_canvas_0738ea8314c5a110a042e8fc046c3e9c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_canvas"><par_dashboard_canvas action="INSERT_OR_UPDATE"><dashboard display_value="">7e38ea83ffc5a110efcfdb3018ab758c</dashboard><dashboard_tab/><layout>[]</layout><sys_class_name>par_dashboard_canvas</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-02-21 01:04:58</sys_created_on><sys_id>0738ea8314c5a110a042e8fc046c3e9c</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>par_dashboard_canvas_0738ea8314c5a110a042e8fc046c3e9c</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-02-21 01:04:58</sys_updated_on></par_dashboard_canvas></record_update>]]></payload>
+        <payload_hash>1424523652</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>27893a01973121107720f0571153af6e</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2023-03-24 03:59:53</sys_created_on>
+        <sys_id>e06f137297db65107720f0571153afc3</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>18711c5dea80000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>PAR Dashboard Page Canvas</type>
+        <update_guid>a06f137245db651020dc6a94f70b25c3</update_guid>
+        <update_guid_history>a06f137245db651020dc6a94f70b25c3:1424523652</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">2c6f137297db65107720f0571153afc4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-06-12 06:48:43</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_canvas">par_dashboard_canvas</sys_db_object>
+        <sys_id>492df9df7b754aeca27d3238568cff04</sys_id>
+        <sys_metadata>0738ea8314c5a110a042e8fc046c3e9c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>par_dashboard_canvas_0738ea8314c5a110a042e8fc046c3e9c</sys_update_name>
+        <sys_update_version display_value="par_dashboard_canvas_0738ea8314c5a110a042e8fc046c3e9c">e06f137297db65107720f0571153afc3</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-06-12 06:48:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
