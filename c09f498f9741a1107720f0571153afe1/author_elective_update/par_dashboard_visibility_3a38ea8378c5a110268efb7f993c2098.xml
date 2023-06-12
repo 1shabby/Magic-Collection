@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_visibility">
+    <par_dashboard_visibility action="DELETE">
+        <dashboard display_value="">7e38ea83ffc5a110efcfdb3018ab758c</dashboard>
+        <experience display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</experience>
+        <sys_class_name>par_dashboard_visibility</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:58</sys_created_on>
+        <sys_id>3a38ea8378c5a110268efb7f993c2098</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>par_dashboard_visibility_3a38ea8378c5a110268efb7f993c2098</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:04:58</sys_updated_on>
+    </par_dashboard_visibility>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>par_dashboard_visibility_3a38ea8378c5a110268efb7f993c2098</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_visibility"><par_dashboard_visibility action="INSERT_OR_UPDATE"><dashboard display_value="">7e38ea83ffc5a110efcfdb3018ab758c</dashboard><experience display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</experience><sys_class_name>par_dashboard_visibility</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-02-21 01:04:58</sys_created_on><sys_id>3a38ea8378c5a110268efb7f993c2098</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>par_dashboard_visibility_3a38ea8378c5a110268efb7f993c2098</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-02-21 01:04:58</sys_updated_on></par_dashboard_visibility></record_update>]]></payload>
+        <payload_hash>1117460478</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>27893a01973121107720f0571153af6e</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2023-03-24 03:59:53</sys_created_on>
+        <sys_id>a86f137297db65107720f0571153afbc</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>18711c5dea80000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>PAR Dashboard Visibility</type>
+        <update_guid>686f1372c3db65108ef88ed983db1cbc</update_guid>
+        <update_guid_history>686f1372c3db65108ef88ed983db1cbc:1117460478</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">206f137297db65107720f0571153afbe</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-06-12 06:48:43</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_visibility">par_dashboard_visibility</sys_db_object>
+        <sys_id>0f715b9e6c9b457888c481dc41c93a40</sys_id>
+        <sys_metadata>3a38ea8378c5a110268efb7f993c2098</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>par_dashboard_visibility_3a38ea8378c5a110268efb7f993c2098</sys_update_name>
+        <sys_update_version display_value="par_dashboard_visibility_3a38ea8378c5a110268efb7f993c2098">a86f137297db65107720f0571153afbc</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-06-12 06:48:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
