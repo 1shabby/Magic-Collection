@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>add_card</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description>Form Allowing Cards to be added to the instance via the portal</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-07-24 20:35:34</sys_created_on>
+        <sys_id>b44f2aa897dc35507720f0571153af44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>add_card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_page_b44f2aa897dc35507720f0571153af44</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-07-24 20:35:34</sys_updated_on>
+        <title>Add Card</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=b44f2aa897dc35507720f0571153af44"/>
+</record_update>

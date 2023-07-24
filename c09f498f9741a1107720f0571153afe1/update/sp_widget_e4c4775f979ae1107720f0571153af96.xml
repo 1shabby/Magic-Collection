@@ -4,12 +4,13 @@
         <client_script><![CDATA[api.controller=function(spModal) {
   /* widget controller */
   var c = this;
-
+	c.favorite = false;
 // Input:
 // Purpose: Allows the user to favorite a card via button press
 // Return:
 c.favoriteCard = function(){
-
+	c.favorite = !(c.favorite);
+	console.log("Favorite: " + c.favorite);
 };
 // Input:
 // Purpose: Opens a modal that displays all of the card details
@@ -26,42 +27,59 @@ c.viewDetils = function(){
         <description>A widget used to display an MTG card via the provided data on the card.</description>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>mtg_card</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {
   
 }]]></link>
         <name>MTG Card</name>
-        <option_schema>[{"name":"card_name","section":"Data","label":"Card Name","type":"string"},{"name":"card_image","section":"other","label":"Card Image","type":"string"}]</option_schema>
+        <option_schema>[{}]</option_schema>
         <public>false</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-		data.table = $sp.getValue('x_759224_magic_c_0_mtg_cards');
+		//data.table = $sp.getValue('x_759224_magic_c_0_mtg_cards');
+	data.count = 20;
+	if(!input){
+		var cards = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+		cards.setLimit(data.count);
+		cards.query();
+		data.records = [];
+	
+		while(cards.next()){
+			var card = {
+				name: cards.getValue('name'),
+				set: cards.getDisplayValue('sets'),
+				quantity: cards.getValue('quantity'),
+				price: cards.getValue('total_price')
+			};
+			data.records.push(card);
+		}
+	}
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-18 04:48:43</sys_updated_on>
-        <template><![CDATA[<div>
- <div>
-	<image image here/>
- </div>
-  <div>
-    Card text here
-  </div>
+        <sys_updated_on>2023-07-24 22:12:12</sys_updated_on>
+        <template><![CDATA[<div ng-repeat='r in c.data.records'>
+	<div>Name : {{r.name}}</div>
+  <div>Name : {{r.set}}</div>
+  <div>Name : {{r.quantity}}</div>
+  <div>Name : {{r.price}}</div>
+  <button ng-click="c.favoriteCard()">favorite</button>
 </div>
-<button onClick="c.favoriteCard()">favorite<button>]]></template>
+	]]></template>
     </sp_widget>
 </record_update>
