@@ -4,61 +4,63 @@
         <client_script><![CDATA[api.controller=function(spModal) {
   /* widget controller */
   var c = this;
-	c.favorite = false;
-// Input:
-// Purpose: Allows the user to favorite a card via button press
-// Return:
-c.favoriteCard = function(){
-	c.favorite = !(c.favorite);
-	console.log("Favorite: " + c.favorite);
-};
+	c.cards = [];
+
 // Input:
 // Purpose: Opens a modal that displays all of the card details
 // Return:
-c.viewDetils = function(){
-	details = !(details);
-	console.log("Details: " + details);
+c.viewDetails = function(card){
+		var message ="Price: " + card.price  + '<br>' +
+									"Quantity: " + card.quantity + '<br>' +
+									"Foiling: " + card.foil + '<br>' +
+									"Oracle: " + card.oracle + '<br>'
+        spModal.open({
+            title: card.name,
+            message: message,
+            buttons: [
+              {label:'${Close}', primary: true}  
+            ]
+        })
+}
 };
-
-};]]></client_script>
+	]]></client_script>
         <controller_as>c</controller_as>
         <css>.wrapper{
 	display: grid;
-  grid-template-columns: repeat(3, 488px);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, 680px);
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
 }
 
-div{
+.card{
   display:flex;
-	border: black;
-	border-width: 15px;
+  position: relative;
+  border-radius: 1rem;
+	background-color: black;
 }
-img{
-	position: absolute;
-  width: 488px;
-  height: 680px;
-  border-radius: 25px;
- 
+.card:focus{
+  box-shadow: 0 0 0 .5rem #66afe9;
+	outline: .4rem solid transparent;
 }
-button{
-  position: absolute;
-	height: 50px;
-  padding: 5px;
-  
-}
+
 .image-container{
-	position: absolute;
-}
-
-.card-details{
 	position: relative;
-  display: block;
+    overflow:hidden;
 }
 
-.buttons{
-	display:flex;
-  flex-direction:row;
+.foil{
+	position: absolute;
+  top:0;
+  border-radius: 2rem;
+}
+
+.image{
+ border-radius: 1rem; 
+}
+
+img{
+width: 100%;
+display:block;
+ 
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -72,7 +74,7 @@ button{
   
 }]]></link>
         <name>MTG Card</name>
-        <option_schema>[{"name":"limit","section":"other","default_value":"3","label":"Limit","type":"integer"}]</option_schema>
+        <option_schema>[{"name":"limit","section":"other","default_value":"","label":"Limit","type":"integer"},{"name":"query","section":"other","label":"Query","type":"string"}]</option_schema>
         <public>false</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
@@ -87,7 +89,9 @@ button{
 		if(options.query){
 			cards.addEncodedQuery(options.query);
 		}
-		cards.setLimit(options.limit);
+		if(options.limit){
+			cards.setLimit(options.limit);	
+		}
 		cards.query();
 		//Array of cards to use
 		data.records = [];
@@ -99,6 +103,7 @@ button{
 				foil: cards.getDisplayValue('foiling'),
 				quantity: cards.getValue('quantity'),
 				price: cards.getValue('total_price'),
+				oracle: cards.getValue('oracle'),
 				fImg : cards.getValue('front_image'),
 				bImg : cards.getValue('back_image'),
 				displayImg : true
@@ -113,31 +118,21 @@ button{
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>164</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-07-25 15:50:05</sys_updated_on>
+        <sys_updated_on>2023-07-25 21:45:53</sys_updated_on>
         <template><![CDATA[<div class=wrapper>
-  <div  ng-repeat='r in c.data.records'>
+  <button class="card" ng-click="c.viewDetails(r)" ng-repeat='r in c.data.records'>
     <div class=image-container>
-			<img ng-src={{r.fImg}}/>
-      <img ng-if='r.foil == "Foil"' ng-src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
-      <div class=card-detils>
-    <!--<div>Name : {{r.name}}</div>
-    <div>Set : {{r.set}}</div>
-    <div>Quantity : {{r.quantity}}</div>
-    <div>Price : {{r.price}}</div>-->
-    <div class=buttons>
-    	<button ng-click="c.favoriteCard()">Favorite</button>  
-    	<button ng-click="c.viewDetails()">Details</button>
+			<img class="image" ng-src={{r.fImg}} ng-alt={{r.oracle}}/>
+      <img class="foil" ng-if='r.foil == "Foil"' src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
     </div>
-    </div>
-    </div>
-  </div>
+  </button>
 </div>]]></template>
     </sp_widget>
 </record_update>
