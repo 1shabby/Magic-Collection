@@ -24,22 +24,25 @@ c.viewDetils = function(){
         <controller_as>c</controller_as>
         <css>.wrapper{
 	display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 488px);
   gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  border: black;
-	border-width: 5px;
-  background-color: light-blue;
+  grid-auto-rows: minmax(100px, 680px);
 }
 
 div{
+  display:flex;
 	border: black;
 	border-width: 15px;
 }
 img{
-	position: relative;
+	position: absolute;
+  width: 488px;
+  height: 680px;
+  border-radius: 25px;
+ 
 }
 button{
+  position: absolute;
 	height: 50px;
   padding: 5px;
   
@@ -69,7 +72,7 @@ button{
   
 }]]></link>
         <name>MTG Card</name>
-        <option_schema>[{"name":"limit","section":"other","default_value":"1","label":"Limit","type":"integer"}]</option_schema>
+        <option_schema>[{"name":"limit","section":"other","default_value":"3","label":"Limit","type":"integer"}]</option_schema>
         <public>false</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
@@ -93,6 +96,7 @@ button{
 			var card = {
 				name: cards.getValue('name'),
 				set: cards.getDisplayValue('sets'),
+				foil: cards.getDisplayValue('foiling'),
 				quantity: cards.getValue('quantity'),
 				price: cards.getValue('total_price'),
 				fImg : cards.getValue('front_image'),
@@ -109,19 +113,19 @@ button{
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-07-25 03:23:25</sys_updated_on>
+        <sys_updated_on>2023-07-25 15:50:05</sys_updated_on>
         <template><![CDATA[<div class=wrapper>
   <div  ng-repeat='r in c.data.records'>
     <div class=image-container>
-			<img src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
-			<img src={{r.fImg}}/>
+			<img ng-src={{r.fImg}}/>
+      <img ng-if='r.foil == "Foil"' ng-src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
       <div class=card-detils>
     <!--<div>Name : {{r.name}}</div>
     <div>Set : {{r.set}}</div>
