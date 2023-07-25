@@ -16,12 +16,47 @@ c.favoriteCard = function(){
 // Purpose: Opens a modal that displays all of the card details
 // Return:
 c.viewDetils = function(){
-
+	details = !(details);
+	console.log("Details: " + details);
 };
 
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.wrapper{
+	display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border: black;
+	border-width: 5px;
+  background-color: light-blue;
+}
+
+div{
+	border: black;
+	border-width: 15px;
+}
+img{
+	position: relative;
+}
+button{
+	height: 50px;
+  padding: 5px;
+  
+}
+.image-container{
+	position: absolute;
+}
+
+.card-details{
+	position: relative;
+  display: block;
+}
+
+.buttons{
+	display:flex;
+  flex-direction:row;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>A widget used to display an MTG card via the provided data on the card.</description>
@@ -34,18 +69,24 @@ c.viewDetils = function(){
   
 }]]></link>
         <name>MTG Card</name>
-        <option_schema>[{}]</option_schema>
+        <option_schema>[{"name":"limit","section":"other","default_value":"1","label":"Limit","type":"integer"}]</option_schema>
         <public>false</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 		//data.table = $sp.getValue('x_759224_magic_c_0_mtg_cards');
-	data.count = 20;
+
 	if(!input){
+		//Query the Cards Table
 		var cards = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-		cards.setLimit(data.count);
+		//If a query is provided apply it
+		if(options.query){
+			cards.addEncodedQuery(options.query);
+		}
+		cards.setLimit(options.limit);
 		cards.query();
+		//Array of cards to use
 		data.records = [];
 	
 		while(cards.next()){
@@ -53,7 +94,10 @@ c.viewDetils = function(){
 				name: cards.getValue('name'),
 				set: cards.getDisplayValue('sets'),
 				quantity: cards.getValue('quantity'),
-				price: cards.getValue('total_price')
+				price: cards.getValue('total_price'),
+				fImg : cards.getValue('front_image'),
+				bImg : cards.getValue('back_image'),
+				displayImg : true
 			};
 			data.records.push(card);
 		}
@@ -65,21 +109,31 @@ c.viewDetils = function(){
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-07-24 22:12:12</sys_updated_on>
-        <template><![CDATA[<div ng-repeat='r in c.data.records'>
-	<div>Name : {{r.name}}</div>
-  <div>Name : {{r.set}}</div>
-  <div>Name : {{r.quantity}}</div>
-  <div>Name : {{r.price}}</div>
-  <button ng-click="c.favoriteCard()">favorite</button>
-</div>
-	]]></template>
+        <sys_updated_on>2023-07-25 03:23:25</sys_updated_on>
+        <template><![CDATA[<div class=wrapper>
+  <div  ng-repeat='r in c.data.records'>
+    <div class=image-container>
+			<img src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
+			<img src={{r.fImg}}/>
+      <div class=card-detils>
+    <!--<div>Name : {{r.name}}</div>
+    <div>Set : {{r.set}}</div>
+    <div>Quantity : {{r.quantity}}</div>
+    <div>Price : {{r.price}}</div>-->
+    <div class=buttons>
+    	<button ng-click="c.favoriteCard()">Favorite</button>  
+    	<button ng-click="c.viewDetails()">Details</button>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>]]></template>
     </sp_widget>
 </record_update>
