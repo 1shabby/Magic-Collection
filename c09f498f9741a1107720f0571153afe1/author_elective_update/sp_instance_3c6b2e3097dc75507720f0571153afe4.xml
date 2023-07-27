@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ae5b6e3097dc75507720f0571153afc0</sp_column>
+        <sp_widget display_value="MTG Card">e4c4775f979ae1107720f0571153af96</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-07-25 14:56:28</sys_created_on>
+        <sys_id>3c6b2e3097dc75507720f0571153afe4</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_instance_3c6b2e3097dc75507720f0571153afe4</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-07-26 13:57:05</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"limit": {
+		"value": 24,
+		"displayValue": "24"
+	},
+	"query": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=3c6b2e3097dc75507720f0571153afe4"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>754d4503db4af78852dd2f17d49619df</instance_id>
+        <instance_name>dev88119</instance_name>
+        <name>sp_instance_3c6b2e3097dc75507720f0571153afe4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;2&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;ae5b6e3097dc75507720f0571153afc0&lt;/sp_column&gt;&lt;sp_widget display_value="MTG Card"&gt;e4c4775f979ae1107720f0571153af96&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-07-25 14:56:28&lt;/sys_created_on&gt;&lt;sys_id&gt;3c6b2e3097dc75507720f0571153afe4&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_3c6b2e3097dc75507720f0571153afe4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-07-26 13:57:05&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"limit": {
+		"value": 24,
+		"displayValue": "24"
+	},
+	"query": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=3c6b2e3097dc75507720f0571153afe4"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-77087756</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>e1058f8c9755a5107720f0571153aff0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-07-26 13:57:05</sys_created_on>
+        <sys_id>7867ab819790f5507720f0571153af1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189927d329c0000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-07-26 13:57:05</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>7c67ab81c290f550068830eafd7fe21d</update_guid>
+        <update_guid_history>7c67ab81c290f550068830eafd7fe21d:-77087756,7047ab811090f5508fdc5ef68f4e6de9:1793222196,dcf9044d1014b550c9e351ab9045cee4:-1537430405,97a48f785810b550f46c1ca330b05f99:2030500131,12dff6f0c510b55080f51d0c96e33699:78867524,f5dcfe708a10b550180a1095cac8c721:1835601661,80bc32b0fe10b550fe982e890542482d:1792738333,9e2c3a70d810b550c89910ef48352d8e:1289497673,29c6f23c92dc7550e57e644f324062df:-746769109,1beeea3440dc7550d73ad4376e85da0d:-1750549663,164daeb0eadc7550a30265da7e983c5b:1660126691,31db6270e1dc7550317453de1b70a583:-1219979301,66bbe67046dc755053696b00c04cf12c:-746769109,f86b2e3085dc7550d5a6b4619ecbd2e6:-505969719</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">7ada23c59790f5507720f0571153afd4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-07-26 14:12:15</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>5aa55e1d28054a1881900d4af978cfa4</sys_id>
+        <sys_metadata>3c6b2e3097dc75507720f0571153afe4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_instance_3c6b2e3097dc75507720f0571153afe4</sys_update_name>
+        <sys_update_version display_value="sp_instance_3c6b2e3097dc75507720f0571153afe4">7867ab819790f5507720f0571153af1e</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-07-26 14:12:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
