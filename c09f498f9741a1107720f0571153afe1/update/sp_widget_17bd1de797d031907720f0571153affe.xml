@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location, $timeout, $window, $document, $rootScope, spUtil, spAriaUtil, i18n) {
+    var c = this;
+    spUtil.getPreference('glide.ui.accessibility', function(value) {
+        if (value == "true")
+            $scope.tabindex = 0;
+        else
+            $scope.tabindex = -1;
+    });
+	$timeout(function() {
+ 		result = $(".v5001b062d7101200b0b044580e6103eb > .panel");
+		if(!angular.element(result).scope().data.useInstanceTitle){
+			for(var i = 0; i<$scope.data.list.length; i++) {
+				if($scope.data.list[i].selectedFilter == $scope.data.selectedFilter)
+					angular.element(result).scope().data.title = $scope.data.list[i].myListFilter;
+			}
+		}
+ 	},1000);
+		/*DEF0170991: below is the updated url to avoid csm redirection issue*/
+    $scope.caseFilterSelected = function(category) {
+        var url = "?id=csm_my_lists&table=" + category.table + "&view=" + category.view + "&target_page_id=" + category.targetPageId + "&filter=" + category.query + "&sel=" + category.selectedFilter;
+        $location.url(url);
+				spAriaUtil.sendLiveMessage(i18n.format(c.data.pageContentLoadedMsg, {'0': category.myListFilter}), 'status');
+    };
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.category-widget {
+	border: 1px solid $panel-inner-border;
+  
+  .category-list {
+    .fa {
+      margin-right: 5px;
+    }
+    .l-h-1_6x {
+      line-height: 1.6em;
+    }
+    a {
+		width: 100%;
+      	vertical-align: middle;
+	    display: inline-block;
+    }
+    .list-group {
+      margin-bottom: 0;
+    }
+    .list-group-item {
+      padding: 0;
+      border: 0;
+    }
+    .group-item-focus {
+      &amp;:focus {
+      outline: 3px solid $primary !important;
+      outline-offset: -3px;
+      }
+      padding: 10px 15px;
+    }
+    .group-item-default {
+      &amp;:hover, &amp;:focus {
+        background-color: darken($panel-default-heading-bg, 2%);
+      }
+    }
+    .group-item-primary {
+      border-left: 3px solid white;
+      &amp;:hover, &amp;:focus {
+        border-left: 3px solid $primary !important;
+      }
+    }
+    .group-item-success {
+      &amp;:hover {
+        background-color: lighten($panel-success-heading-bg, 3%)
+      }
+    }
+    .group-item-info {
+      &amp;:hover, &amp;:focus {
+        background-color: lighten($panel-info-heading-bg, 3%)
+      }
+    }
+    .group-item-warning {
+      &amp;:hover, &amp;:focus {
+        background-color: $panel-warning-heading-bg
+      }
+    }
+    .group-item-danger {
+      &amp;:hover, &amp;:focus {
+        background-color: lighten($panel-danger-heading-bg, 3%)
+      }
+    }
+    
+    .list-bg-default {
+      background-color: $panel-default-heading-bg;
+    }
+    .list-bg-primary {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-success {
+      background-color: lighten($panel-success-heading-bg, 6%);
+    }
+    .list-bg-info {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-warning {
+      background-color: lighten($panel-warning-heading-bg, 3%);
+    }
+    .list-bg-danger {
+      background-color: lighten($panel-danger-heading-bg, 6%);
+    }
+  }
+}
+.panel-primary .badge {
+  background-color: $primary;
+  color: white;
+}
+.panel-default .badge {
+  background-color: $panel-default-text;
+  color: white
+}
+.panel-success .badge {
+  background-color:  $panel-success-text;
+  color: white;
+}
+.panel-info .badge {
+  background-color: $panel-info-text;
+  color: white;
+}
+.panel-warning .badge {
+  background-color: $panel-warning-text;
+  color: white;
+}
+.panel-danger .badge {
+  background-color: $panel-danger-text;
+  color: white;
+}
+.category-list .badge {
+  text-align: right;
+}
+.text-active {
+   color: $link-color;
+   border-left: 3px solid $primary
+}
+.text-default {
+   color: $text-muted;
+}
+
+.list-group-item {
+	.list-group.sub-category-list {
+  	.list-group-item span.category { // we only want nested list group items to have this indent
+    	padding-left: 15px;
+    }
+  }
+}
+</css>
+        <data_table>sp_instance_vlist</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,color</field_list>
+        <has_preview>false</has_preview>
+        <id>mtg_advanced_filter</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MTG Advanced Filter</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.list = [];
+    data.selectedFilter = $sp.getParameter('sel');
+    data.list = new sn_customerservice.CSMServiceManagementUtil().getMyListsMenu();
+    data.pageContentLoadedMsg = gs.getMessage('{0} content loaded');
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-02 22:20:30</sys_created_on>
+        <sys_id>17bd1de797d031907720f0571153affe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_17bd1de797d031907720f0571153affe</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-02 22:20:30</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{::options.color}} category-widget no-border">
+  <div class="panel-heading">
+    <h2 class="h4 panel-title">
+      {{::options.title}}</h2>
+  </div>
+  <ul class="list-group category-list" role="list" aria-label="${{{::options.title}}}">
+    <li role="listitem"
+        class="list-group-item text-overflow-ellipsis" 
+        ng-include="'category-template.html'" 
+        ng-repeat="category in data.list">
+    </li>
+  </ul>
+</div>
+<script type="text/ng-template" id="category-template.html">
+	<div ng-click="caseFilterSelected(category)"
+		sn-focus="category.selectedFilter == data.selectedFilter"
+        aria-current="{{category.selectedFilter == data.selectedFilter}}"
+        aria-selected="{{category.selectedFilter == data.selectedFilter}}"
+	    ng-class="{true: 'text-active', false: ''}[category.selectedFilter == data.selectedFilter]"
+        tabindex="0" class="group-item-focus group-item-primary">
+      <span class="block text-overflow-ellipsis category" 
+				  id="{{::category.myListFilter}}">
+          {{::category.myListFilter}}
+          <span class="sr-only">${items}</span>
+      </span>
+    </div>
+</script>]]></template>
+    </sp_widget>
+</record_update>
