@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	console.log('Halp');
+c.searchCards = function(){
+	console.log('Halp');
+}
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.input-container{
+	display: flex;
+  align-content: center;
+	justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.search-input{
+	width:100%;
+}
+
+.search-btn{
+  
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mtg_search</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>MTG Search</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-02 21:20:57</sys_created_on>
+        <sys_id>e3ff81eb979031907720f0571153af2d</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>MTG Search</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_e3ff81eb979031907720f0571153af2d</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-02 21:54:32</sys_updated_on>
+        <template><![CDATA[<div class="input-container"	>
+  <input class="search-input"/>
+  <button class="search-btn" ng-Click("c.searchCards">
+    Search
+  </button>
+</div>]]></template>
+    </sp_widget>
+</record_update>
