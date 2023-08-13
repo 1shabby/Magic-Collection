@@ -1,19 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_canvas">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_canvas">
     <par_dashboard_canvas action="INSERT_OR_UPDATE">
         <dashboard display_value="MTG Collection">de18577a979b65107720f0571153afd4</dashboard>
         <dashboard_tab display_value="My Collection">7e9ad7fa979b65107720f0571153af46</dashboard_tab>
-        <layout>[{"sys_id":"342b573e979b65107720f0571153af1f","x":0,"y":0,"w":48,"h":47,"component_id":"7219cee4e0177c3cf2e48d550ce0f71b","component_props":"{\"table\":\"x_759224_magic_c_0_mtg_collection\",\"fixedQuery\":\"\",\"listTitle\":\"All Active Tasks\",\"columns\":\"\",\"maxColumns\":100,\"query\":\"active=true\",\"groupByField\":\"\",\"limit\":20,\"hideViewAll\":false,\"hideHighlightedValues\":false,\"highlightedValueConfigId\":\"\",\"hideHighlightContent\":false,\"highlightContent\":{\"patterns\":[],\"color\":\"\"},\"hideLinks\":false,\"wordWrap\":false,\"overrideWordWrapUserPref\":false,\"maxCharLimit\":4000,\"hideEmptyStateImage\":false,\"hidePersonalization\":false,\"hideDotwalk\":false,\"hideColumnReorder\":false,\"hideRowSelector\":false,\"hideColumnGrouping\":false,\"hideColumnResizing\":false,\"hideColumnFiltering\":false,\"hideColumnSorting\":false,\"hideHeader\":false,\"hideTitle\":false,\"hideTitleRowCount\":false,\"hideLastRefreshedText\":false,\"hideRefreshButton\":false,\"hideInlineEditing\":false,\"refreshRequested\":\"\"}","can_edit":true}]</layout>
+        <layout>[{"sys_id":"342b573e979b65107720f0571153af1f","x":0,"y":0,"w":48,"h":47,"component_id":"2b1c080881e05dc63b917044290b233f","component_props":"{\"table\":\"x_759224_magic_c_0_mtg_collection\",\"fixedQuery\":\"\",\"listTitle\":\"All Active Tasks\",\"columns\":\"\",\"maxColumns\":100,\"query\":\"active=true\",\"groupByField\":\"\",\"limit\":20,\"hideViewAll\":false,\"hideHighlightedValues\":false,\"highlightedValueConfigId\":\"\",\"hideHighlightContent\":false,\"highlightContent\":{\"patterns\":[],\"color\":\"\"},\"hideLinks\":false,\"wordWrap\":false,\"overrideWordWrapUserPref\":false,\"maxCharLimit\":4000,\"hideEmptyStateImage\":false,\"hidePersonalization\":false,\"hideDotwalk\":false,\"hideColumnReorder\":false,\"hideRowSelector\":false,\"hideColumnGrouping\":false,\"hideColumnResizing\":false,\"hideColumnFiltering\":false,\"hideColumnSorting\":false,\"hideHeader\":false,\"hideTitle\":false,\"hideTitleRowCount\":false,\"hideLastRefreshedText\":false,\"hideRefreshButton\":false,\"hideInlineEditing\":false,\"refreshRequested\":\"\"}","can_edit":true}]</layout>
         <sys_class_name>par_dashboard_canvas</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-06-12 06:27:51</sys_created_on>
+        <sys_domain>global</sys_domain>
         <sys_id>be9ad7fa979b65107720f0571153af48</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
+        <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>par_dashboard_canvas_be9ad7fa979b65107720f0571153af48</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-12 06:41:26</sys_updated_on>
+        <sys_updated_on>2023-08-11 17:54:58</sys_updated_on>
     </par_dashboard_canvas>
 </record_update>

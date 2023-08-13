@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">6a18d77a979b65107720f0571153afed</canvas>
+        <component display_value="Line">18ac962264404bcc0039359d184b15f3</component>
+        <component_props>{"configVersion":"23.0.0-ci-SNAPSHOT","showDataLabels":false,"disableTooltip":false,"showXGrid":false,"showYGrid":true,"hideYAxis0":false,"yAxis0Position":"left","hideYAxis1":false,"yAxis1Position":"right","hideYAxis2":false,"yAxis2Position":"right","hideYAxis3":false,"yAxis3Position":"right","hideYAxis4":false,"yAxis4Position":"right","showLegend":true,"showLegendValue":false,"legendPosition":"bottom","legendHorizontalAlignment":"center","legendExpandToFit":false,"yAxisStyle":"default","lineStrokeWidth":"2","colorConfig":{"type":"default"},"chartVariation":"stacked","extensionType":"line","newReporting":false,"additionalGroupByConfig":[],"dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Cards","sourceType":"table","tableOrViewName":"x_759224_magic_c_0_mtg_cards","filterQuery":"name=Gaea's cradle","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV4Xzc1OTIyNF9tYWdpY19jXzBfbXRnX2NhcmRzMTY5MTc3NjQxNzA5OQ==","dataCategories":["trend","group","simple"]}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"wrapTitle":false,"showHeaderSeparator":false,"headerTitle":"Gaea's Cradle Price Trend","showBorder":true,"bareBorder":false,"telemetry":null,"showDataPassthrough":false,"showAdditionalGroupBySelector":false,"dataPassthrough":null,"metrics":[{"dataSource":"dGFibGV4Xzc1OTIyNF9tYWdpY19jXzBfbXRnX2NhcmRzMTY5MTc3NjQxNzA5OQ==","id":"ZEdGaWJHVjRYemMxT1RJeU5GOXRZV2RwWTE5alh6QmZiWFJuWDJOaGNtUnpNVFk1TVRjM05qUXhOekE1T1E9PTE2OTE3NzY0MTg4NTc=","aggregateFunction":"SUM","numberFormat":{"customFormat":false},"axisId":"primary","aggregateField":"total_price"}],"sortBy":null,"sortByOrder":null,"trendBy":{"trendByFrequency":"date","trendByMinuteInterval":null,"trendByFields":[{"field":"sys_updated_on","metric":"ZEdGaWJHVjRYemMxT1RJeU5GOXRZV2RwWTE5alh6QmZiWFJuWDJOaGNtUnpNVFk1TVRjM05qUXhOekE1T1E9PTE2OTE3NzY0MTg4NTc="}]},"showChange":null,"showChangePercentage":null,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":null,"showSparkline":null,"showMetricLabel":null,"showThreshold":false,"showComment":false,"showTotalValue":null,"followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":null,"enableDrilldown":true,"enableCustomEmptyState":false,"emptyStateIllustration":"no-data","emptyStateHeading":"No data available.","emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","refreshFrequency":false,"filterConfigurations":[],"contextMenuActions":[],"showMaximumRange":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"scoreType":"latest","showChangeFrom":null,"dateFormat":"default","noDebounce":""}</component_props>
+        <h>13</h>
+        <name/>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-11 17:54:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>85477e5e9760f510dfffb3b6f053af7a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>par_dashboard_widget_85477e5e9760f510dfffb3b6f053af7a</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-11 17:56:29</sys_updated_on>
+        <visualization/>
+        <w>14</w>
+        <widget_props/>
+        <x>0</x>
+        <y>27</y>
+    </par_dashboard_widget>
+</record_update>
