@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="DELETE">
+        <active>true</active>
+        <ais_search_source display_value="Supertype">ac48ae8397c5a1107720f0571153afb7</ais_search_source>
+        <label>Supertype</label>
+        <name>Supertype</name>
+        <order>300</order>
+        <search_context_config display_value="Collection-Workspace AI Search Configuration">f638ea836cc5a1103df4131e38fee78f</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:04</sys_created_on>
+        <sys_id>e048ae8397c5a1107720f0571153afbd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Supertype</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_search_filter_e048ae8397c5a1107720f0571153afbd</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:04</sys_updated_on>
+    </sys_search_filter>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a7b89adb4cf4109a4dcac505961903</instance_id>
+        <instance_name>dev115816</instance_name>
+        <name>sys_search_filter_e048ae8397c5a1107720f0571153afbd</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ais_search_source display_value="Supertype">ac48ae8397c5a1107720f0571153afb7</ais_search_source>
+        <label>Supertype</label>
+        <name>Supertype</name>
+        <order>300</order>
+        <search_context_config display_value="Collection-Workspace AI Search Configuration">f638ea836cc5a1103df4131e38fee78f</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:04</sys_created_on>
+        <sys_id>e048ae8397c5a1107720f0571153afbd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Supertype</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_search_filter_e048ae8397c5a1107720f0571153afbd</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:04</sys_updated_on>
+    </sys_search_filter>
+</record_update>]]></payload>
+        <payload_hash>2111795626</payload_hash>
+        <record_name>Supertype</record_name>
+        <reverted_from/>
+        <source>c1ec4fc9976c3110dfffb3b6f053afd3</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-07 22:17:54</sys_created_on>
+        <sys_id>711d0b4d976c3110dfffb3b6f053af5b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189d21404550000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-07 22:17:54</sys_updated_on>
+        <type>Navigation Tab</type>
+        <update_guid>311d0b4d5d6c3110df198d98740dc45b</update_guid>
+        <update_guid_history>311d0b4d5d6c3110df198d98740dc45b:2111795626</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-08 07:00:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_search_filter">sys_search_filter</sys_db_object>
+        <sys_id>6700168ad5414d03b781d6d2d638fc91</sys_id>
+        <sys_metadata>e048ae8397c5a1107720f0571153afbd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Supertype</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_search_filter_e048ae8397c5a1107720f0571153afbd</sys_update_name>
+        <sys_update_version display_value="sys_search_filter_e048ae8397c5a1107720f0571153afbd">711d0b4d976c3110dfffb3b6f053af5b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-08 07:00:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
