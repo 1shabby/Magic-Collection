@@ -5,10 +5,15 @@
         <attributes/>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
+	var quantity = 0;
+	var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardGr.addQuery('name', current.getValue('name'));
+	cardGr.addQuery('owner', current.getValue('owner'));
+	cardGr.query();
+	while(cardGr.next()){
+		quantity = parseInt(quantity) + parseInt(cardGr.getValue('quantity'));
+	}
+	return quantity;  // return the calculated value
 })(current);]]></calculation>
         <choice/>
         <choice_field/>
@@ -58,14 +63,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_collection_quantity</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-08 22:10:25</sys_updated_on>
+        <sys_updated_on>2023-08-15 01:09:11</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
