@@ -7,7 +7,14 @@
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
 	// Add your code here
-	return '';  // return the calculated value
+	var value = 0;
+	var collectionGr = new GlideRecord('x_759224_magic_c_0_mtg_collection');
+	collectionGr.addQuery('owner',current.owner);
+	collectionGr.query();
+	while(collectionGr.next()){
+	value = value + +collectionGr.getValue('price');
+	}
+	return value;  // return the calculated value
 
 })(current);]]></calculation>
         <choice/>
@@ -32,13 +39,13 @@
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Decimal">decimal</internal_type>
-        <mandatory>true</mandatory>
+        <internal_type display_value="Currency">currency</internal_type>
+        <mandatory>false</mandatory>
         <max_length>20</max_length>
         <name>x_759224_magic_c_0_complete_collection</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -58,14 +65,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_complete_collection_value</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-21 05:33:05</sys_updated_on>
+        <sys_updated_on>2023-08-15 16:51:17</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>

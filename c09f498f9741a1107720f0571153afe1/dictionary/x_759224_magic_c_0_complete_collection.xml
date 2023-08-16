@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="3f93a93d97eb21507720f0571153af00" label="Complete Collection" max_length="40" name="x_759224_magic_c_0_complete_collection" type="collection">
         <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
-        <element label="Value" mandatory="true" max_length="20" name="value" type="decimal"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var value = 0;&#13;&#10;&#9;var collectionGr = new GlideRecord('x_759224_magic_c_0_mtg_collection');&#13;&#10;&#9;collectionGr.addQuery('owner',current.owner);&#13;&#10;&#9;collectionGr.query();&#13;&#10;&#9;while(collectionGr.next()){&#13;&#10;&#9;value = value + +collectionGr.getValue('price');&#13;&#10;&#9;}&#13;&#10;&#9;return value;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Value" max_length="20" name="value" read_only="true" type="currency" virtual="true"/>
         <index name="index">
             <element name="owner"/>
         </index>
