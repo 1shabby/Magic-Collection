@@ -15,7 +15,7 @@
         <internal_name>scryfall_api_call</internal_name>
         <label_cache>[{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.foil}}","label":"action➛Foil","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.collector}}","label":"action➛Collector","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"76f1b50d-7427-48c6-a987-0db469e42cfa"}},{"name":"{{action.url}}","label":"action➛Url","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.collector_number}}","label":"action➛Collector Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛Collector Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[de2a3b04-f6b8-4879-9c31-521992a1eb08].price}}","label":"step➛Script step➛price","type":"step","ref":"","reference_display":"","base_type":"currency","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"string","uiUniqueId":"eb77dba5-a46a-4e1f-b480-c6488ee46287"}}]</label_cache>
         <master_snapshot>a241fe4697fde1107720f0571153af7b</master_snapshot>
-        <name>Scryfall API Call</name>
+        <name>Scryfall API Call - OLD</name>
         <natlang/>
         <outputs/>
         <outputs/>
@@ -27,15 +27,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>725762ca97bde1107720f0571153af2d</sys_id>
-        <sys_mod_count>122</sys_mod_count>
-        <sys_name>Scryfall API Call</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Scryfall API Call - OLD</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_725762ca97bde1107720f0571153af2d</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-07 04:46:45</sys_updated_on>
+        <sys_updated_on>2023-08-23 18:48:14</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -156,7 +156,7 @@
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=725762ca97bde1107720f0571153af2d^sys_idNOT INfc686a8a97bde1107720f0571153afa5"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</action>
+        <action display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</action>
         <cid>de2a3b04-f6b8-4879-9c31-521992a1eb08</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -172,10 +172,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:18:48</sys_created_on>
         <sys_id>fc686a8a97bde1107720f0571153afa5</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-07 04:46:38</sys_updated_on>
+        <sys_updated_on>2023-08-23 14:22:26</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fc686a8a97bde1107720f0571153afa5"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -242,18 +242,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=fc686a8a97bde1107720f0571153afa5"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>fc686a8a97bde1107720f0571153afa5</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-27 05:18:48</sys_created_on>
-        <sys_id>3c686e0e97bde1107720f0571153af71</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 05:18:48</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>cn</field>
         <id>fc686a8a97bde1107720f0571153afa5</id>
         <sys_created_by>greg</sys_created_by>
@@ -302,18 +290,6 @@
         <value>{{action.name}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>fc686a8a97bde1107720f0571153afa5</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-27 05:18:48</sys_created_on>
-        <sys_id>34686e0e97bde1107720f0571153af72</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 05:18:48</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>Set</field>
         <id>fc686a8a97bde1107720f0571153afa5</id>
         <sys_created_by>greg</sys_created_by>
@@ -339,7 +315,6 @@
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_fc686a8a97bde1107720f0571153afa5^id=fc686a8a97bde1107720f0571153afa5"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=fc686a8a97bde1107720f0571153afa5"/>
-    <sys_translated_text action="delete_multiple" query="documentkey=fc686a8a97bde1107720f0571153afa5"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=fc686a8a97bde1107720f0571153afa5^sys_idNOT IN7cbb3c51970e21507720f0571153af48,cc37305d97ca21507720f0571153afd8"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -657,7 +632,7 @@
         <label>Url</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</model>
+        <model display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</model>
         <model_id>725762ca97bde1107720f0571153af2d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_725762ca97bde1107720f0571153af2d</name>
@@ -741,7 +716,7 @@
         <label>Foil</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</model>
+        <model display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</model>
         <model_id>725762ca97bde1107720f0571153af2d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_725762ca97bde1107720f0571153af2d</name>
@@ -828,7 +803,7 @@
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</model>
+        <model display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</model>
         <model_id>725762ca97bde1107720f0571153af2d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_725762ca97bde1107720f0571153af2d</name>
@@ -915,7 +890,7 @@
         <label>Price</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</model>
+        <model display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</model>
         <model_id>725762ca97bde1107720f0571153af2d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_725762ca97bde1107720f0571153af2d</name>
@@ -1002,7 +977,7 @@
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</model>
+        <model display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</model>
         <model_id>725762ca97bde1107720f0571153af2d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_725762ca97bde1107720f0571153af2d</name>
@@ -1025,14 +1000,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-31 07:43:54</sys_created_on>
         <sys_id>95ffaf1b973169107720f0571153af66</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>69</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-07 04:46:43</sys_updated_on>
+        <sys_updated_on>2023-08-23 18:48:12</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1050,7 +1025,7 @@
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=725762ca97bde1107720f0571153af2d"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=725762ca97bde1107720f0571153af2d^sys_idNOT INe2a7620e97bde1107720f0571153af1f"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</action_type_id>
+        <action_type_id display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</action_type_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:15:38</sys_created_on>
         <sys_id>e2a7620e97bde1107720f0571153af1f</sys_id>
@@ -1180,19 +1155,19 @@
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_725762ca97bde1107720f0571153af2d"/>
     <sys_hub_action_plan action="delete_multiple" query="action_id=725762ca97bde1107720f0571153af2d^sys_idNOT IN4341328697fde1107720f0571153af1f"/>
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
-        <action_id display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</action_id>
+        <action_id display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"4341328697fde1107720f0571153af1f","name":"plan","plan_signature":null}}</plan>
-        <snapshot>d9839555979b21107720f0571153af52</snapshot>
+        <snapshot>62863c5a973c3910dfffb3b6f053af40</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:57:44</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4341328697fde1107720f0571153af1f</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-07 04:46:46</sys_updated_on>
+        <sys_updated_on>2023-08-23 18:48:15</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1208,18 +1183,18 @@
         <internal_name>scryfall_api_call</internal_name>
         <label_cache>[{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.foil}}","label":"action➛Foil","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.collector}}","label":"action➛Collector","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"76f1b50d-7427-48c6-a987-0db469e42cfa"}},{"name":"{{action.url}}","label":"action➛Url","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.collector_number}}","label":"action➛Collector Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛Collector Number","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[de2a3b04-f6b8-4879-9c31-521992a1eb08].price}}","label":"step➛Script step➛price","type":"step","ref":"","reference_display":"","base_type":"currency","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceUiUniqueId":"","sourceType":"","uiType":"string","uiUniqueId":"eb77dba5-a46a-4e1f-b480-c6488ee46287"}}]</label_cache>
         <master>true</master>
-        <name>Scryfall API Call</name>
+        <name>Scryfall API Call - OLD</name>
         <natlang/>
         <outputs/>
         <outputs/>
-        <parent_action display_value="Scryfall API Call">725762ca97bde1107720f0571153af2d</parent_action>
+        <parent_action display_value="Scryfall API Call - OLD">725762ca97bde1107720f0571153af2d</parent_action>
         <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:57:42</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a241fe4697fde1107720f0571153af7b</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1227,7 +1202,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-04-05 23:45:57</sys_updated_on>
+        <sys_updated_on>2023-08-23 18:48:13</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -1348,7 +1323,7 @@
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=a241fe4697fde1107720f0571153af7b^sys_idNOT IN3e41fe4697fde1107720f0571153af9b"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</action>
+        <action display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</action>
         <cid>de2a3b04-f6b8-4879-9c31-521992a1eb08</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -1434,18 +1409,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=3e41fe4697fde1107720f0571153af9b"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>3e41fe4697fde1107720f0571153af9b</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-27 05:57:42</sys_created_on>
-        <sys_id>b241fe4697fde1107720f0571153afb4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 05:57:42</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>cn</field>
         <id>3e41fe4697fde1107720f0571153af9b</id>
         <sys_created_by>greg</sys_created_by>
@@ -1494,18 +1457,6 @@
         <value>{{action.name}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>3e41fe4697fde1107720f0571153af9b</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-27 05:57:42</sys_created_on>
-        <sys_id>7641fe4697fde1107720f0571153afb4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-27 05:57:42</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>set</field>
         <id>3e41fe4697fde1107720f0571153af9b</id>
         <sys_created_by>greg</sys_created_by>
@@ -1531,7 +1482,6 @@
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_3e41fe4697fde1107720f0571153af9b^id=3e41fe4697fde1107720f0571153af9b"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=3e41fe4697fde1107720f0571153af9b"/>
-    <sys_translated_text action="delete_multiple" query="documentkey=3e41fe4697fde1107720f0571153af9b"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=3e41fe4697fde1107720f0571153af9b^sys_idNOT IN572a7011970e21507720f0571153af7f,6e1c3491970e21507720f0571153af5c"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -1849,7 +1799,7 @@
         <label>Url</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</model>
+        <model display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</model>
         <model_id>a241fe4697fde1107720f0571153af7b</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_a241fe4697fde1107720f0571153af7b</name>
@@ -1933,7 +1883,7 @@
         <label>Foil</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</model>
+        <model display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</model>
         <model_id>a241fe4697fde1107720f0571153af7b</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_a241fe4697fde1107720f0571153af7b</name>
@@ -2020,7 +1970,7 @@
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</model>
+        <model display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</model>
         <model_id>a241fe4697fde1107720f0571153af7b</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_a241fe4697fde1107720f0571153af7b</name>
@@ -2107,7 +2057,7 @@
         <label>Price</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</model>
+        <model display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</model>
         <model_id>a241fe4697fde1107720f0571153af7b</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_a241fe4697fde1107720f0571153af7b</name>
@@ -2194,7 +2144,7 @@
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</model>
+        <model display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</model>
         <model_id>a241fe4697fde1107720f0571153af7b</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_a241fe4697fde1107720f0571153af7b</name>
@@ -2217,14 +2167,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:57:42</sys_created_on>
         <sys_id>b641fe4697fde1107720f0571153afbd</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-06-07 04:46:45</sys_updated_on>
+        <sys_updated_on>2023-08-23 18:48:14</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2242,7 +2192,7 @@
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=a241fe4697fde1107720f0571153af7b"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=a241fe4697fde1107720f0571153af7b^sys_idNOT IN7a41fe4697fde1107720f0571153afc6"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Scryfall API Call">a241fe4697fde1107720f0571153af7b</action_type_id>
+        <action_type_id display_value="Scryfall API Call - OLD">a241fe4697fde1107720f0571153af7b</action_type_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-27 05:57:43</sys_created_on>
         <sys_id>7a41fe4697fde1107720f0571153afc6</sys_id>
@@ -2373,6 +2323,6 @@
     <sys_hub_action_type_definition action="UPDATE">
         <sys_id>725762ca97bde1107720f0571153af2d</sys_id>
         <latest_snapshot>a241fe4697fde1107720f0571153af7b</latest_snapshot>
-        <compiler_build>glide-utah-12-21-2022__patch1-03-01-2023_03-13-2023_1716.zip</compiler_build>
+        <compiler_build>glide-vancouver-07-06-2023__patch0-07-18-2023_07-26-2023_1029.zip</compiler_build>
     </sys_hub_action_type_definition>
 </record_update>
