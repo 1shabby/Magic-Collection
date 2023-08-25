@@ -3,7 +3,7 @@
         <element label="API Link" max_length="5000" name="api_link" type="url"/>
         <element label="Back Image" max_length="1024" name="back_image" read_only="true" type="url"/>
         <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
-        <element choice="3" default="colorless" label="Colors" max_length="40" name="colors" read_only="true" type="glide_list">
+        <element choice="3" default="colorless" label="Color Identity" max_length="40" name="colors" read_only="true" type="glide_list">
             <choice>
                 <element inactive_on_update="false" label="White" sequence="0" value="W"/>
                 <element inactive_on_update="false" label="Blue" sequence="1" value="U"/>
@@ -25,12 +25,12 @@
         <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
-        <element label="Oracle Text" max_length="50000" name="oracle" read_only="true" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Front Oracle Text" max_length="50000" name="oracle" read_only="true" type="string"/>
+        <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
         <element default="0.00" label="Unit Price" max_length="20" name="price" read_only="true" type="currency"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;    // Add your code here&#13;&#10;&#9;var retval = '';&#13;&#10;&#9;var change = current.total_price - current.pt_price;&#13;&#10;&#9;change = change.toFixed(2);&#13;&#10;&#9;if(change == 0.00){&#13;&#10;&#9;&#9;retval = current.calculatedFieldValue;&#13;&#10;&#9;}&#13;&#10;&#9;//retval = percent.toString() + '% change in price \n\n$' + change.toString() + ' change in price.';&#13;&#10;&#9;retval = change.toString() + ' change in price.';&#13;&#10;    return retval; // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Price Change" max_length="100" name="price_change" read_only="true" type="string" virtual="true"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Previous Price" max_length="20" name="p_price" read_only="true" type="currency"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var retval = '';&#13;&#10;&#9;var change = current.total_price - current.pt_price;&#13;&#10;&#9;change = change.toFixed(2);&#13;&#10;&#9;if(change == 0.00){&#13;&#10;&#9;&#9;retval = current.calculatedFieldValue;&#13;&#10;&#9;}&#13;&#10;&#9;retval = change;&#13;&#10;    return retval; // return the calculated value&#13;&#10;})(current);" label="Price Change" max_length="100" name="price_change" read_only="true" type="string" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#10;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
+        <element label="Previous Price" max_length="20" name="p_price" read_only="true" type="currency"/>
         <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
         <element choice="1" label="Rarity" max_length="40" name="rarity" read_only="true" type="choice">
             <choice>
@@ -41,11 +41,11 @@
                 <element inactive_on_update="false" label="Special" sequence="4" value="special"/>
             </choice>
         </element>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
+        <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
-        <element label="Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
+        <element label="Front Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
         <index name="index">
             <element name="owner"/>
         </index>
