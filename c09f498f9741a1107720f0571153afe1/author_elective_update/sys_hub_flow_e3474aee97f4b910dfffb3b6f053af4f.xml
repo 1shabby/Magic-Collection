@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="DELETE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>mtg_populate_card</internal_name>
+        <label_cache>[]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>MTG Populate card</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-24 19:19:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e3474aee97f4b910dfffb3b6f053af4f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Populate card</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_hub_flow_e3474aee97f4b910dfffb3b6f053af4f</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-24 19:19:35</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="DELETE" query="documentkey=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_variable_value action="DELETE" query="document_key=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_trigger_instance action="DELETE" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_flow_stage action="DELETE" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_flow_cat_variable_model action="DELETE" query="id=e3474aee97f4b910dfffb3b6f053af4f^sys_idNOT INe3474aee97f4b910dfffb3b6f053af51"/>
+    <sys_flow_cat_variable_model action="DELETE">
+        <id>e3474aee97f4b910dfffb3b6f053af4f</id>
+        <name>MTG Populate card</name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-24 19:19:35</sys_created_on>
+        <sys_id>e3474aee97f4b910dfffb3b6f053af51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-24 19:19:35</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="DELETE" query="flow_catalog_model=e3474aee97f4b910dfffb3b6f053af51"/>
+    <sys_hub_flow_input action="DELETE" query="model=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_flow_output action="DELETE" query="model=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_action_instance action="DELETE" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_sub_flow_instance action="DELETE" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_flow_logic action="DELETE" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_hub_flow_variable action="DELETE" query="model=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_input_e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_input_e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_output_e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_output_e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_flow_trigger_plan action="DELETE" query="plan_id=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_flow_subflow_plan action="DELETE" query="plan_id=e3474aee97f4b910dfffb3b6f053af4f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a7b89adb4cf4109a4dcac505961903</instance_id>
+        <instance_name>dev115816</instance_name>
+        <name>sys_hub_flow_e3474aee97f4b910dfffb3b6f053af4f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow"><sys_hub_flow action="INSERT_OR_UPDATE"><access>public</access><acls/><active>false</active><annotation/><attributes>labelCacheCleanUpExecuted=true</attributes><callable_by_client_api>false</callable_by_client_api><category/><compiler_build/><copied_from/><copied_from_name/><description/><internal_name>mtg_populate_card</internal_name><label_cache>[]</label_cache><latest_snapshot/><master_snapshot/><name>MTG Populate card</name><natlang/><outputs/><pre_compiled>false</pre_compiled><remote_trigger_id/><run_as>user</run_as><run_with_roles/><sc_callable>false</sc_callable><show_draft_actions>false</show_draft_actions><show_triggered_flows>false</show_triggered_flows><status>draft</status><sys_class_name>sys_hub_flow</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-08-24 19:19:35</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>e3474aee97f4b910dfffb3b6f053af4f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>MTG Populate card</sys_name><sys_overrides/><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_hub_flow_e3474aee97f4b910dfffb3b6f053af4f</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-08-24 19:19:35</sys_updated_on><type>subflow</type></sys_hub_flow><sys_translated_text action="delete_multiple" query="documentkey=e3474aee97f4b910dfffb3b6f053af4f"/><sys_variable_value action="delete_multiple" query="document_key=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_trigger_instance action="delete_multiple" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_flow_stage action="delete_multiple" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/><sys_flow_cat_variable_model action="delete_multiple" query="id=e3474aee97f4b910dfffb3b6f053af4f^sys_idNOT INe3474aee97f4b910dfffb3b6f053af51"/><sys_flow_cat_variable_model action="INSERT_OR_UPDATE"><id>e3474aee97f4b910dfffb3b6f053af4f</id><name>MTG Populate card</name><sys_created_by>greg</sys_created_by><sys_created_on>2023-08-24 19:19:35</sys_created_on><sys_id>e3474aee97f4b910dfffb3b6f053af51</sys_id><sys_mod_count>0</sys_mod_count><sys_scope/><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-08-24 19:19:35</sys_updated_on></sys_flow_cat_variable_model><sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=e3474aee97f4b910dfffb3b6f053af51"/><sys_hub_flow_input action="delete_multiple" query="model=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_flow_output action="delete_multiple" query="model=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_alias_mapping action="delete_multiple" query="source_id=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_action_instance action="delete_multiple" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_sub_flow_instance action="delete_multiple" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_flow_logic action="delete_multiple" query="flow=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_pill_compound action="delete_multiple" query="attached_to=e3474aee97f4b910dfffb3b6f053af4f"/><sys_hub_flow_variable action="delete_multiple" query="model=e3474aee97f4b910dfffb3b6f053af4f"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_e3474aee97f4b910dfffb3b6f053af4f"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e3474aee97f4b910dfffb3b6f053af4f"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_e3474aee97f4b910dfffb3b6f053af4f"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e3474aee97f4b910dfffb3b6f053af4f"/><sys_flow_trigger_plan action="delete_multiple" query="plan_id=e3474aee97f4b910dfffb3b6f053af4f"/><sys_flow_subflow_plan action="delete_multiple" query="plan_id=e3474aee97f4b910dfffb3b6f053af4f"/></record_update>]]></payload>
+        <payload_hash>21562965</payload_hash>
+        <record_name>MTG Populate card</record_name>
+        <reverted_from/>
+        <source>914d47c5976c3110dfffb3b6f053af72</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-24 19:19:35</sys_created_on>
+        <sys_id>6f474aee97f4b910dfffb3b6f053af57</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18a28fce1160000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-24 19:19:35</sys_updated_on>
+        <type>Flow</type>
+        <update_guid>63474aee7df4b91054c847ed6eb72c57</update_guid>
+        <update_guid_history>63474aee7df4b91054c847ed6eb72c57:21562965</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-24 19:20:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_flow">sys_hub_flow</sys_db_object>
+        <sys_id>d4231eb1335b4c64913fccfe93686d19</sys_id>
+        <sys_metadata>e3474aee97f4b910dfffb3b6f053af4f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Populate card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_hub_flow_e3474aee97f4b910dfffb3b6f053af4f</sys_update_name>
+        <sys_update_version display_value="sys_hub_flow_e3474aee97f4b910dfffb3b6f053af4f">6f474aee97f4b910dfffb3b6f053af57</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-24 19:20:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
