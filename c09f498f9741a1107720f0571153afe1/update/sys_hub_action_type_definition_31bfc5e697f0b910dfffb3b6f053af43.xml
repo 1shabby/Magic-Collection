@@ -13,7 +13,7 @@
         <description/>
         <ih_action>true</ih_action>
         <internal_name>scryfall_api</internal_name>
-        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FDdd40677e9c743d10a4e0ec19818b7b4b","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"f6ea1126-f538-4139-acc2-c9caf32ea966"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>161219ea97f0b910dfffb3b6f053af37</master_snapshot>
         <name>Scryfall API</name>
         <natlang/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>308</sys_mod_count>
+        <sys_mod_count>313</sys_mod_count>
         <sys_name>Scryfall API</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:19</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:46</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -162,10 +162,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:30:09</sys_created_on>
         <sys_id>0c535ff697343d10dfffb3b6f053af12</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:03:08</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=0c535ff697343d10dfffb3b6f053af12"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -190,10 +190,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:30:09</sys_created_on>
         <sys_id>40535ff697343d10dfffb3b6f053af21</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:03:08</sys_updated_on>
-        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Outlast"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"oracle_text","children":[],"type":"string","jpath":"$.oracle_text","previewValue":"Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach creature you control with a +1/+1 counter on it has lifelink."},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"93038"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A1b44fe0a-4a99-4166-b0b3-102b36b54ffa&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aktk&amp;unique=prints"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.flavor_text","previewValue":"\"Wherever I walk, the ancestors walk too.\""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Khans of Tarkir"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/ktk/1/abzan-battle-priest?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"2710"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{3}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"6c7a715c-ded9-449e-89b0-c665773e9c3c"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"8f5427b1-f1c2-4bb3-8736-701667ac2256"},{"name":"toughness","children":[],"type":"string","jpath":"$.toughness","previewValue":"2"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Abzan+Battle+Priest&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards/54276?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/93038?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/ktk?utm_source=api"},{"name":"watermark","children":[],"type":"string","jpath":"$.watermark","previewValue":"abzan"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Creature — Human Cleric"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"expansion"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"gatherer","children":[],"type":"string","jpath":"$.related_uris.gatherer","previewValue":"https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=386466"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Abzan+Battle+Priest"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"restricted"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"mtgo_foil_id","children":[],"type":"string","jpath":"$.mtgo_foil_id","previewValue":"54277"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"269322"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Abzan Battle Priest"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"4"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"uncommon"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"1b44fe0a-4a99-4166-b0b3-102b36b54ffa"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Chris Rahn"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2014-09-26"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"true"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"81e1eac8-32f6-4be3-b5c2-95f1cb95eb59"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"false"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"7742047e-0f80-4c0f-a530-d07460165e86"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"mtgo_id","children":[],"type":"string","jpath":"$.mtgo_id","previewValue":"54276"},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"1"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"nonfoil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/6c7a715c-ded9-449e-89b0-c665773e9c3c"},{"name":"power","children":[],"type":"string","jpath":"$.power","previewValue":"3"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"1.27"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":"0.02"},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":"0.10"},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":"0.27"},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.78"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"8967"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"ktk"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"false"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.png?1562790236"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"true"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"normal"},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
+        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
         <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -204,48 +204,47 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:30:09</sys_created_on>
         <sys_id>48535ff697343d10dfffb3b6f053af21</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:24:09</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
         <value>{&#13;
   "keywords": [&#13;
-    "Outlast"&#13;
+    "Aftermath"&#13;
   ],&#13;
-  "oracle_text": "Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach creature you control with a +1/+1 counter on it has lifelink.",&#13;
-  "tcgplayer_id": 93038,&#13;
-  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A1b44fe0a-4a99-4166-b0b3-102b36b54ffa&amp;unique=prints",&#13;
+  "tcgplayer_id": 130633,&#13;
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints",&#13;
   "variation": false,&#13;
-  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aktk&amp;unique=prints",&#13;
-  "flavor_text": "\"Wherever I walk, the ancestors walk too.\"",&#13;
-  "set_name": "Khans of Tarkir",&#13;
-  "scryfall_uri": "https://scryfall.com/card/ktk/1/abzan-battle-priest?utm_source=api",&#13;
-  "edhrec_rank": 2710,&#13;
-  "mana_cost": "{3}{W}",&#13;
-  "games": [&#13;
-    "paper",&#13;
-    "mtgo"&#13;
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints",&#13;
+  "promo_types": [&#13;
+    "setpromo",&#13;
+    "prerelease",&#13;
+    "datestamped"&#13;
   ],&#13;
-  "set_id": "6c7a715c-ded9-449e-89b0-c665773e9c3c",&#13;
-  "id": "8f5427b1-f1c2-4bb3-8736-701667ac2256",&#13;
-  "toughness": "2",&#13;
+  "set_name": "Amonkhet Promos",&#13;
+  "scryfall_uri": "https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api",&#13;
+  "edhrec_rank": 962,&#13;
+  "mana_cost": "{2}{W}{W} // {3}{W}{W}",&#13;
+  "games": [&#13;
+    "paper"&#13;
+  ],&#13;
+  "set_id": "c1847ece-b71e-4125-973a-465dfb35e496",&#13;
+  "id": "d3c99f65-2355-444b-b49a-c6b916f268b1",&#13;
   "foil": true,&#13;
   "purchase_uris": {&#13;
-    "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Abzan+Battle+Priest&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall",&#13;
-    "cardhoarder": "https://www.cardhoarder.com/cards/54276?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall",&#13;
-    "tcgplayer": "https://www.tcgplayer.com/product/93038?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
+    "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall",&#13;
+    "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall",&#13;
+    "tcgplayer": "https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
   },&#13;
-  "scryfall_set_uri": "https://scryfall.com/sets/ktk?utm_source=api",&#13;
-  "watermark": "abzan",&#13;
-  "type_line": "Creature — Human Cleric",&#13;
+  "scryfall_set_uri": "https://scryfall.com/sets/pakh?utm_source=api",&#13;
+  "type_line": "Sorcery // Sorcery",&#13;
   "color_identity": [&#13;
     "W"&#13;
   ],&#13;
-  "set_type": "expansion",&#13;
+  "set_type": "promo",&#13;
   "related_uris": {&#13;
-    "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall",&#13;
-    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=386466",&#13;
-    "edhrec": "https://edhrec.com/route/?cc=Abzan+Battle+Priest",&#13;
-    "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
+    "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall",&#13;
+    "edhrec": "https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn",&#13;
+    "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
   },&#13;
   "legalities": {&#13;
     "standard": "not_legal",&#13;
@@ -253,7 +252,7 @@
     "historicbrawl": "legal",&#13;
     "historic": "legal",&#13;
     "legacy": "legal",&#13;
-    "paupercommander": "restricted",&#13;
+    "paupercommander": "not_legal",&#13;
     "oathbreaker": "legal",&#13;
     "gladiator": "legal",&#13;
     "alchemy": "not_legal",&#13;
@@ -271,65 +270,82 @@
     "penny": "legal"&#13;
   },&#13;
   "border_color": "black",&#13;
-  "mtgo_foil_id": 54277,&#13;
-  "cardmarket_id": 269322,&#13;
+  "cardmarket_id": 297656,&#13;
   "reserved": false,&#13;
-  "name": "Abzan Battle Priest",&#13;
-  "cmc": 4,&#13;
+  "card_faces": [&#13;
+    {&#13;
+      "oracle_text": "Destroy all creatures with power 3 or greater.",&#13;
+      "artist": "Noah Bradley",&#13;
+      "mana_cost": "{2}{W}{W}",&#13;
+      "name": "Dusk",&#13;
+      "type_line": "Sorcery",&#13;
+      "artist_id": "81995d11-da98-4f8b-89bd-b88ca2ddb06b",&#13;
+      "object": "card_face",&#13;
+      "illustration_id": "f3d63aed-2784-4ef5-9676-846b1e65e040"&#13;
+    },&#13;
+    {&#13;
+      "flavor_name": "",&#13;
+      "oracle_text": "Aftermath (Cast this spell only from your graveyard. Then exile it.)\nReturn all creature cards with power 2 or less from your graveyard to your hand.",&#13;
+      "artist": "Noah Bradley",&#13;
+      "mana_cost": "{3}{W}{W}",&#13;
+      "name": "Dawn",&#13;
+      "type_line": "Sorcery",&#13;
+      "artist_id": "81995d11-da98-4f8b-89bd-b88ca2ddb06b",&#13;
+      "object": "card_face"&#13;
+    }&#13;
+  ],&#13;
+  "name": "Dusk // Dawn",&#13;
+  "cmc": 9,&#13;
   "object": "card",&#13;
-  "rarity": "uncommon",&#13;
+  "rarity": "rare",&#13;
   "frame": "2015",&#13;
-  "oracle_id": "1b44fe0a-4a99-4166-b0b3-102b36b54ffa",&#13;
-  "artist": "Chris Rahn",&#13;
-  "released_at": "2014-09-26",&#13;
+  "oracle_id": "7bc3f92f-68a2-4934-afc4-89f6d0e8cf98",&#13;
+  "artist": "Noah Bradley",&#13;
+  "released_at": "2017-04-28",&#13;
   "colors": [&#13;
     "W"&#13;
   ],&#13;
-  "booster": true,&#13;
-  "illustration_id": "81e1eac8-32f6-4be3-b5c2-95f1cb95eb59",&#13;
-  "promo": false,&#13;
+  "booster": false,&#13;
+  "illustration_id": "f3d63aed-2784-4ef5-9676-846b1e65e040",&#13;
+  "promo": true,&#13;
   "artist_ids": [&#13;
-    "7742047e-0f80-4c0f-a530-d07460165e86"&#13;
+    "81995d11-da98-4f8b-89bd-b88ca2ddb06b"&#13;
   ],&#13;
-  "mtgo_id": 54276,&#13;
-  "rulings_uri": "https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256/rulings",&#13;
-  "collector_number": "1",&#13;
+  "rulings_uri": "https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings",&#13;
+  "collector_number": "210s",&#13;
+  "security_stamp": "oval",&#13;
   "finishes": [&#13;
-    "nonfoil",&#13;
     "foil"&#13;
   ],&#13;
-  "set_uri": "https://api.scryfall.com/sets/6c7a715c-ded9-449e-89b0-c665773e9c3c",&#13;
-  "power": "3",&#13;
+  "set_uri": "https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496",&#13;
   "lang": "en",&#13;
   "prices": {&#13;
-    "usd_foil": "1.27",&#13;
+    "usd_foil": "2.95",&#13;
     "usd_etched": null,&#13;
-    "tix": "0.02",&#13;
-    "eur": "0.10",&#13;
-    "usd": "0.27",&#13;
-    "eur_foil": "0.78"&#13;
+    "tix": null,&#13;
+    "eur": null,&#13;
+    "usd": null,&#13;
+    "eur_foil": "0.70"&#13;
   },&#13;
-  "penny_rank": 8967,&#13;
+  "penny_rank": 3163,&#13;
   "highres_image": true,&#13;
   "digital": false,&#13;
-  "set": "ktk",&#13;
-  "reprint": false,&#13;
+  "set": "pakh",&#13;
+  "reprint": true,&#13;
   "full_art": false,&#13;
   "image_uris": {&#13;
-    "small": "https://cards.scryfall.io/small/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "normal": "https://cards.scryfall.io/normal/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "large": "https://cards.scryfall.io/large/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "png": "https://cards.scryfall.io/png/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.png?1562790236",&#13;
-    "border_crop": "https://cards.scryfall.io/border_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "art_crop": "https://cards.scryfall.io/art_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"&#13;
+    "small": "https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "normal": "https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "large": "https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "png": "https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595",&#13;
+    "border_crop": "https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "art_crop": "https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"&#13;
   },&#13;
-  "nonfoil": true,&#13;
+  "nonfoil": false,&#13;
   "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",&#13;
-  "uri": "https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256",&#13;
-  "layout": "normal",&#13;
-  "multiverse_ids": [&#13;
-    386466&#13;
-  ],&#13;
+  "uri": "https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1",&#13;
+  "layout": "split",&#13;
+  "multiverse_ids": [],&#13;
   "oversized": false,&#13;
   "story_spotlight": false,&#13;
   "image_status": "highres_scan",&#13;
@@ -393,7 +409,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FDdd40677e9c743d10a4e0ec19818b7b4b,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=f6ea1126-f538-4139-acc2-c9caf32ea966</attributes>
+        <attributes>co_type_name=FD112ae157c3b4bd105f196ab9bbc8e0f1,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -452,14 +468,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 20:26:46</sys_created_on>
         <sys_id>5540677e97743d10dfffb3b6f053af4e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:26:46</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1941,14 +1957,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:25:22</sys_created_on>
         <sys_id>24b19daa97f0b910dfffb3b6f053af9f</sys_id>
-        <sys_mod_count>259</sys_mod_count>
+        <sys_mod_count>263</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:16</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:43</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1967,7 +1983,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FD086d87be86f03d10adf413faea897d4c,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=f6ea1126-f538-4139-acc2-c9caf32ea966,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
+        <attributes>co_type_name=FD086d87be86f03d10adf413faea897d4c,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -2028,14 +2044,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:04:12</sys_created_on>
         <sys_id>806d87be97f03d10dfffb3b6f053af50</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:27:38</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2318,17 +2334,17 @@ var nBody = body.data[0];
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>f56bbfb697383d10dfffb3b6f053af6c</snapshot>
+        <snapshot>1f2ae55797b4bd10dfffb3b6f053af08</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:21</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:48</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2342,7 +2358,7 @@ var nBody = body.data[0];
         <copied_from_name/>
         <description/>
         <internal_name>scryfall_api</internal_name>
-        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FDdd40677e9c743d10a4e0ec19818b7b4b","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"f6ea1126-f538-4139-acc2-c9caf32ea966"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
         <name>Scryfall API</name>
         <natlang/>
@@ -2355,7 +2371,7 @@ var nBody = body.data[0];
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>161219ea97f0b910dfffb3b6f053af37</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2363,7 +2379,7 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:03:20</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -3500,10 +3516,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>a5745b7a97343d10dfffb3b6f053af62</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:03:21</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3514,48 +3530,47 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>29745b7a97343d10dfffb3b6f053af6d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:24:40</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
         <value>{&#13;
   "keywords": [&#13;
-    "Outlast"&#13;
+    "Aftermath"&#13;
   ],&#13;
-  "oracle_text": "Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach creature you control with a +1/+1 counter on it has lifelink.",&#13;
-  "tcgplayer_id": 93038,&#13;
-  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A1b44fe0a-4a99-4166-b0b3-102b36b54ffa&amp;unique=prints",&#13;
+  "tcgplayer_id": 130633,&#13;
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints",&#13;
   "variation": false,&#13;
-  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aktk&amp;unique=prints",&#13;
-  "flavor_text": "\"Wherever I walk, the ancestors walk too.\"",&#13;
-  "set_name": "Khans of Tarkir",&#13;
-  "scryfall_uri": "https://scryfall.com/card/ktk/1/abzan-battle-priest?utm_source=api",&#13;
-  "edhrec_rank": 2710,&#13;
-  "mana_cost": "{3}{W}",&#13;
-  "games": [&#13;
-    "paper",&#13;
-    "mtgo"&#13;
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints",&#13;
+  "promo_types": [&#13;
+    "setpromo",&#13;
+    "prerelease",&#13;
+    "datestamped"&#13;
   ],&#13;
-  "set_id": "6c7a715c-ded9-449e-89b0-c665773e9c3c",&#13;
-  "id": "8f5427b1-f1c2-4bb3-8736-701667ac2256",&#13;
-  "toughness": "2",&#13;
+  "set_name": "Amonkhet Promos",&#13;
+  "scryfall_uri": "https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api",&#13;
+  "edhrec_rank": 962,&#13;
+  "mana_cost": "{2}{W}{W} // {3}{W}{W}",&#13;
+  "games": [&#13;
+    "paper"&#13;
+  ],&#13;
+  "set_id": "c1847ece-b71e-4125-973a-465dfb35e496",&#13;
+  "id": "d3c99f65-2355-444b-b49a-c6b916f268b1",&#13;
   "foil": true,&#13;
   "purchase_uris": {&#13;
-    "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Abzan+Battle+Priest&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall",&#13;
-    "cardhoarder": "https://www.cardhoarder.com/cards/54276?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall",&#13;
-    "tcgplayer": "https://www.tcgplayer.com/product/93038?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
+    "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall",&#13;
+    "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall",&#13;
+    "tcgplayer": "https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
   },&#13;
-  "scryfall_set_uri": "https://scryfall.com/sets/ktk?utm_source=api",&#13;
-  "watermark": "abzan",&#13;
-  "type_line": "Creature — Human Cleric",&#13;
+  "scryfall_set_uri": "https://scryfall.com/sets/pakh?utm_source=api",&#13;
+  "type_line": "Sorcery // Sorcery",&#13;
   "color_identity": [&#13;
     "W"&#13;
   ],&#13;
-  "set_type": "expansion",&#13;
+  "set_type": "promo",&#13;
   "related_uris": {&#13;
-    "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall",&#13;
-    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=386466",&#13;
-    "edhrec": "https://edhrec.com/route/?cc=Abzan+Battle+Priest",&#13;
-    "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
+    "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall",&#13;
+    "edhrec": "https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn",&#13;
+    "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"&#13;
   },&#13;
   "legalities": {&#13;
     "standard": "not_legal",&#13;
@@ -3563,7 +3578,7 @@ var nBody = body.data[0];
     "historicbrawl": "legal",&#13;
     "historic": "legal",&#13;
     "legacy": "legal",&#13;
-    "paupercommander": "restricted",&#13;
+    "paupercommander": "not_legal",&#13;
     "oathbreaker": "legal",&#13;
     "gladiator": "legal",&#13;
     "alchemy": "not_legal",&#13;
@@ -3581,65 +3596,82 @@ var nBody = body.data[0];
     "penny": "legal"&#13;
   },&#13;
   "border_color": "black",&#13;
-  "mtgo_foil_id": 54277,&#13;
-  "cardmarket_id": 269322,&#13;
+  "cardmarket_id": 297656,&#13;
   "reserved": false,&#13;
-  "name": "Abzan Battle Priest",&#13;
-  "cmc": 4,&#13;
+  "card_faces": [&#13;
+    {&#13;
+      "oracle_text": "Destroy all creatures with power 3 or greater.",&#13;
+      "artist": "Noah Bradley",&#13;
+      "mana_cost": "{2}{W}{W}",&#13;
+      "name": "Dusk",&#13;
+      "type_line": "Sorcery",&#13;
+      "artist_id": "81995d11-da98-4f8b-89bd-b88ca2ddb06b",&#13;
+      "object": "card_face",&#13;
+      "illustration_id": "f3d63aed-2784-4ef5-9676-846b1e65e040"&#13;
+    },&#13;
+    {&#13;
+      "flavor_name": "",&#13;
+      "oracle_text": "Aftermath (Cast this spell only from your graveyard. Then exile it.)\nReturn all creature cards with power 2 or less from your graveyard to your hand.",&#13;
+      "artist": "Noah Bradley",&#13;
+      "mana_cost": "{3}{W}{W}",&#13;
+      "name": "Dawn",&#13;
+      "type_line": "Sorcery",&#13;
+      "artist_id": "81995d11-da98-4f8b-89bd-b88ca2ddb06b",&#13;
+      "object": "card_face"&#13;
+    }&#13;
+  ],&#13;
+  "name": "Dusk // Dawn",&#13;
+  "cmc": 9,&#13;
   "object": "card",&#13;
-  "rarity": "uncommon",&#13;
+  "rarity": "rare",&#13;
   "frame": "2015",&#13;
-  "oracle_id": "1b44fe0a-4a99-4166-b0b3-102b36b54ffa",&#13;
-  "artist": "Chris Rahn",&#13;
-  "released_at": "2014-09-26",&#13;
+  "oracle_id": "7bc3f92f-68a2-4934-afc4-89f6d0e8cf98",&#13;
+  "artist": "Noah Bradley",&#13;
+  "released_at": "2017-04-28",&#13;
   "colors": [&#13;
     "W"&#13;
   ],&#13;
-  "booster": true,&#13;
-  "illustration_id": "81e1eac8-32f6-4be3-b5c2-95f1cb95eb59",&#13;
-  "promo": false,&#13;
+  "booster": false,&#13;
+  "illustration_id": "f3d63aed-2784-4ef5-9676-846b1e65e040",&#13;
+  "promo": true,&#13;
   "artist_ids": [&#13;
-    "7742047e-0f80-4c0f-a530-d07460165e86"&#13;
+    "81995d11-da98-4f8b-89bd-b88ca2ddb06b"&#13;
   ],&#13;
-  "mtgo_id": 54276,&#13;
-  "rulings_uri": "https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256/rulings",&#13;
-  "collector_number": "1",&#13;
+  "rulings_uri": "https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings",&#13;
+  "collector_number": "210s",&#13;
+  "security_stamp": "oval",&#13;
   "finishes": [&#13;
-    "nonfoil",&#13;
     "foil"&#13;
   ],&#13;
-  "set_uri": "https://api.scryfall.com/sets/6c7a715c-ded9-449e-89b0-c665773e9c3c",&#13;
-  "power": "3",&#13;
+  "set_uri": "https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496",&#13;
   "lang": "en",&#13;
   "prices": {&#13;
-    "usd_foil": "1.27",&#13;
+    "usd_foil": "2.95",&#13;
     "usd_etched": null,&#13;
-    "tix": "0.02",&#13;
-    "eur": "0.10",&#13;
-    "usd": "0.27",&#13;
-    "eur_foil": "0.78"&#13;
+    "tix": null,&#13;
+    "eur": null,&#13;
+    "usd": null,&#13;
+    "eur_foil": "0.70"&#13;
   },&#13;
-  "penny_rank": 8967,&#13;
+  "penny_rank": 3163,&#13;
   "highres_image": true,&#13;
   "digital": false,&#13;
-  "set": "ktk",&#13;
-  "reprint": false,&#13;
+  "set": "pakh",&#13;
+  "reprint": true,&#13;
   "full_art": false,&#13;
   "image_uris": {&#13;
-    "small": "https://cards.scryfall.io/small/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "normal": "https://cards.scryfall.io/normal/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "large": "https://cards.scryfall.io/large/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "png": "https://cards.scryfall.io/png/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.png?1562790236",&#13;
-    "border_crop": "https://cards.scryfall.io/border_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236",&#13;
-    "art_crop": "https://cards.scryfall.io/art_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"&#13;
+    "small": "https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "normal": "https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "large": "https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "png": "https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595",&#13;
+    "border_crop": "https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595",&#13;
+    "art_crop": "https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"&#13;
   },&#13;
-  "nonfoil": true,&#13;
+  "nonfoil": false,&#13;
   "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",&#13;
-  "uri": "https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256",&#13;
-  "layout": "normal",&#13;
-  "multiverse_ids": [&#13;
-    386466&#13;
-  ],&#13;
+  "uri": "https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1",&#13;
+  "layout": "split",&#13;
+  "multiverse_ids": [],&#13;
   "oversized": false,&#13;
   "story_spotlight": false,&#13;
   "image_status": "highres_scan",&#13;
@@ -3655,10 +3687,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>65745b7a97343d10dfffb3b6f053af6d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:03:21</sys_updated_on>
-        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Outlast"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"oracle_text","children":[],"type":"string","jpath":"$.oracle_text","previewValue":"Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach creature you control with a +1/+1 counter on it has lifelink."},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"93038"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A1b44fe0a-4a99-4166-b0b3-102b36b54ffa&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aktk&amp;unique=prints"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.flavor_text","previewValue":"\"Wherever I walk, the ancestors walk too.\""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Khans of Tarkir"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/ktk/1/abzan-battle-priest?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"2710"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{3}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"6c7a715c-ded9-449e-89b0-c665773e9c3c"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"8f5427b1-f1c2-4bb3-8736-701667ac2256"},{"name":"toughness","children":[],"type":"string","jpath":"$.toughness","previewValue":"2"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Abzan+Battle+Priest&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards/54276?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/93038?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/ktk?utm_source=api"},{"name":"watermark","children":[],"type":"string","jpath":"$.watermark","previewValue":"abzan"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Creature — Human Cleric"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"expansion"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"gatherer","children":[],"type":"string","jpath":"$.related_uris.gatherer","previewValue":"https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=386466"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Abzan+Battle+Priest"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Abzan+Battle+Priest&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"restricted"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"mtgo_foil_id","children":[],"type":"string","jpath":"$.mtgo_foil_id","previewValue":"54277"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"269322"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Abzan Battle Priest"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"4"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"uncommon"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"1b44fe0a-4a99-4166-b0b3-102b36b54ffa"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Chris Rahn"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2014-09-26"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"true"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"81e1eac8-32f6-4be3-b5c2-95f1cb95eb59"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"false"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"7742047e-0f80-4c0f-a530-d07460165e86"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"mtgo_id","children":[],"type":"string","jpath":"$.mtgo_id","previewValue":"54276"},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"1"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"nonfoil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/6c7a715c-ded9-449e-89b0-c665773e9c3c"},{"name":"power","children":[],"type":"string","jpath":"$.power","previewValue":"3"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"1.27"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":"0.02"},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":"0.10"},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":"0.27"},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.78"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"8967"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"ktk"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"false"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.png?1562790236"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/8/f/8f5427b1-f1c2-4bb3-8736-701667ac2256.jpg?1562790236"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"true"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/8f5427b1-f1c2-4bb3-8736-701667ac2256"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"normal"},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
         <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3731,7 +3763,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FD2740e77ee1743d1025ad4ccb17c011ca,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=f6ea1126-f538-4139-acc2-c9caf32ea966</attributes>
+        <attributes>co_type_name=FD2740e77ee1743d1025ad4ccb17c011ca,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -3790,14 +3822,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 20:26:54</sys_created_on>
         <sys_id>2b40e77e97743d10dfffb3b6f053afcc</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:26:54</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4180,7 +4212,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FDc66d0bbe7bf03d10afe689885aa37288,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=f6ea1126-f538-4139-acc2-c9caf32ea966,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
+        <attributes>co_type_name=FDc66d0bbe7bf03d10afe689885aa37288,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -4241,14 +4273,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:04:21</sys_created_on>
         <sys_id>426d0bbe97f03d10dfffb3b6f053af8c</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:27:48</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4415,14 +4447,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:19</sys_updated_on>
+        <sys_updated_on>2023-08-27 01:07:46</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
