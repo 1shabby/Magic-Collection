@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="back_image" table="x_759224_magic_c_0_mtg_cards">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="cmc" table="x_759224_magic_c_0_mtg_cards">
         <active>true</active>
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation/>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Face Two Image</column_label>
+        <column_label>CMC</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -21,19 +26,19 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>back_image</element>
+        <element>cmc</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="URL">url</internal_type>
+        <internal_type display_value="Integer">integer</internal_type>
         <mandatory>false</mandatory>
-        <max_length>1024</max_length>
+        <max_length>40</max_length>
         <name>x_759224_magic_c_0_mtg_cards</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>true</read_only>
+        <read_only>false</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -46,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-02-20 19:03:32</sys_created_on>
-        <sys_name>Face Two Image</sys_name>
+        <sys_created_on>2023-08-28 01:09:00</sys_created_on>
+        <sys_name>CMC</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_cards_back_image</sys_update_name>
+        <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_cards_cmc</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 22:33:02</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:09:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

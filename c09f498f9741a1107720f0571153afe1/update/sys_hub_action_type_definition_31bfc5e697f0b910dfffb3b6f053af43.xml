@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>313</sys_mod_count>
+        <sys_mod_count>344</sys_mod_count>
         <sys_name>Scryfall API</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:46</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:24:33</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -44,55 +44,53 @@
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_definition</document>
         <document_key>31bfc5e697f0b910dfffb3b6f053af43</document_key>
-        <order>1</order>
+        <order>2</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>20b19daa97f0b910dfffb3b6f053afa7</sys_id>
+        <sys_created_on>2023-08-28 01:21:15</sys_created_on>
+        <sys_id>62d63aaf97703150dfffb3b6f053afe9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:25:22</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:15</sys_updated_on>
         <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
-        <variable display_value="Action Status">e0b19daa97f0b910dfffb3b6f053af8e</variable>
+        <variable display_value="Action Status">e2d63aaf97703150dfffb3b6f053afd6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_definition</document>
         <document_key>31bfc5e697f0b910dfffb3b6f053af43</document_key>
-        <order>2</order>
+        <order>3</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>6cb19daa97f0b910dfffb3b6f053afa6</sys_id>
+        <sys_created_on>2023-08-28 01:21:15</sys_created_on>
+        <sys_id>6ad63aaf97703150dfffb3b6f053afe8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:25:22</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:15</sys_updated_on>
         <value>0</value>
-        <variable display_value="Don't Treat as Error">24b19daa97f0b910dfffb3b6f053af9f</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_type_definition</document>
-        <document_key>31bfc5e697f0b910dfffb3b6f053af43</document_key>
-        <order>2</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:30:10</sys_created_on>
-        <sys_id>98535ff697343d10dfffb3b6f053af61</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:24:26</sys_updated_on>
-        <value/>
-        <variable display_value="Parsed Response">806d87be97f03d10dfffb3b6f053af50</variable>
+        <variable display_value="Don't Treat as Error">e2d63aaf97703150dfffb3b6f053afda</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=31bfc5e697f0b910dfffb3b6f053af43"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>parsed_output</field>
+        <id>31bfc5e697f0b910dfffb3b6f053af43</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-28 01:21:25</sys_created_on>
+        <sys_id>85e6baaf97703150dfffb3b6f053af7e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-28 01:21:25</sys_updated_on>
+        <table>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</table>
+        <value>{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}</value>
+    </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>parsed_response</field>
         <id>31bfc5e697f0b910dfffb3b6f053af43</id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 18:24:50</sys_created_on>
         <sys_id>d3544bfe97b03d10dfffb3b6f053af6e</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:27:38</sys_updated_on>
+        <sys_updated_on>2023-08-28 00:02:56</sys_updated_on>
         <table>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</table>
         <value>{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}</value>
     </sys_element_mapping>
@@ -162,10 +160,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:30:09</sys_created_on>
         <sys_id>0c535ff697343d10dfffb3b6f053af12</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:19:54</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=0c535ff697343d10dfffb3b6f053af12"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -190,10 +188,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:30:09</sys_created_on>
         <sys_id>40535ff697343d10dfffb3b6f053af21</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
-        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
+        <sys_updated_on>2023-08-28 01:19:54</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"},{"name":"flavor_text","children":[],"type":"string","jpath":"","previewValue":""},{"name":"oracle_text","children":[],"type":"string","jpath":"","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"","previewValue":""},{"name":"toughness","children":[],"type":"string","jpath":"","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
         <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1804,273 +1802,12 @@ var nBody = body.data[0];
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d6d0d96a97f0b910dfffb3b6f053af66"/>
-    <sys_hub_action_output action="delete_multiple" query="model=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN03fbfd2697f4b910dfffb3b6f053af28,24b19daa97f0b910dfffb3b6f053af9f,806d87be97f03d10dfffb3b6f053af50,e0b19daa97f0b910dfffb3b6f053af8e"/>
+    <sys_hub_action_output action="delete_multiple" query="model=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT INe2d63aaf97703150dfffb3b6f053afd6,e2d63aaf97703150dfffb3b6f053afda,ead63aaf97703150dfffb3b6f053afd1"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=68213c23-ee83-4e02-bc1d-8cd06f72c5bf</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>url</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>URL</label>
-        <mandatory>true</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
-        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
-        <next_element/>
-        <order>1</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:30:07</sys_created_on>
-        <sys_id>03fbfd2697f4b910dfffb3b6f053af28</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 18:14:05</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=03fbfd2697f4b910dfffb3b6f053af28"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=03fbfd2697f4b910dfffb3b6f053af28"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=1cce146d-0648-47c8-9a69-9ad99a3f0704,visible_in_ui=false</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value>true</default_value>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>__dont_treat_as_error__</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Don't Treat as Error</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
-        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
-        <next_element/>
-        <order>4</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>24b19daa97f0b910dfffb3b6f053af9f</sys_id>
-        <sys_mod_count>263</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:43</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=24b19daa97f0b910dfffb3b6f053af9f"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=24b19daa97f0b910dfffb3b6f053af9f"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FD086d87be86f03d10adf413faea897d4c,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>parsed_response</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Parsed Response</label>
-        <mandatory>true</mandatory>
-        <max_length>65000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
-        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
-        <next_element/>
-        <order>2</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:04:12</sys_created_on>
-        <sys_id>806d87be97f03d10dfffb3b6f053af50</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:37</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=806d87be97f03d10dfffb3b6f053af50"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=806d87be97f03d10dfffb3b6f053af50"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=2242d8d8-95d5-459f-979c-f5f7f81c2485</attributes>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=465e1055-9023-43ad-a331-af041868ca1a</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -2113,6 +1850,93 @@ var nBody = body.data[0];
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
         <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>e2d63aaf97703150dfffb3b6f053afd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-28 01:21:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e2d63aaf97703150dfffb3b6f053afd6"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e2d63aaf97703150dfffb3b6f053afd6"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=9dfc846f-c3c9-43ce-95ee-4897fe17658a,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
+        <next_element/>
         <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -2129,16 +1953,16 @@ var nBody = body.data[0];
         <staged>false</staged>
         <sys_class_name>sys_hub_action_output</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>e0b19daa97f0b910dfffb3b6f053af8e</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>e2d63aaf97703150dfffb3b6f053afda</sys_id>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:04:12</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:24:31</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2151,8 +1975,95 @@ var nBody = body.data[0];
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e0b19daa97f0b910dfffb3b6f053af8e"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=e0b19daa97f0b910dfffb3b6f053af8e"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e2d63aaf97703150dfffb3b6f053afda"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e2d63aaf97703150dfffb3b6f053afda"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FDb4977eef02703150e93cda4b54eb1db1,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=b55d3309-1311-407d-b4c9-937cc87292ba</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parsed_output</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Parsed Output</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>ead63aaf97703150dfffb3b6f053afd1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-28 01:24:24</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ead63aaf97703150dfffb3b6f053afd1"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ead63aaf97703150dfffb3b6f053afd1"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=31bfc5e697f0b910dfffb3b6f053af43"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN16d0d96a97f0b910dfffb3b6f053afb0"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
@@ -2236,30 +2147,7 @@ var nBody = body.data[0];
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_31bfc5e697f0b910dfffb3b6f053af43"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN0ffbfd2697f4b910dfffb3b6f053af2a,20b19daa97f0b910dfffb3b6f053afa4,406d87be97f03d10dfffb3b6f053af53,64b19daa97f0b910dfffb3b6f053af9e"/>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>url</element>
-        <help/>
-        <hint/>
-        <label>URL</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:30:07</sys_created_on>
-        <sys_id>0ffbfd2697f4b910dfffb3b6f053af2a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:30:07</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN22d63aaf97703150dfffb3b6f053afdf,26d63aaf97703150dfffb3b6f053afd5,26d63aaf97703150dfffb3b6f053afd9"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__dont_treat_as_error__</element>
         <help/>
@@ -2270,8 +2158,8 @@ var nBody = body.data[0];
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>20b19daa97f0b910dfffb3b6f053afa4</sys_id>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>22d63aaf97703150dfffb3b6f053afdf</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -2279,22 +2167,22 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:25:22</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:14</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>parsed_response</element>
+        <element>parsed_output</element>
         <help/>
         <hint/>
-        <label>Parsed Response</label>
+        <label>Parsed Output</label>
         <language>en</language>
         <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:04:12</sys_created_on>
-        <sys_id>406d87be97f03d10dfffb3b6f053af53</sys_id>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>26d63aaf97703150dfffb3b6f053afd5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -2302,7 +2190,7 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:04:12</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:14</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -2316,8 +2204,8 @@ var nBody = body.data[0];
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 15:25:22</sys_created_on>
-        <sys_id>64b19daa97f0b910dfffb3b6f053af9e</sys_id>
+        <sys_created_on>2023-08-28 01:21:14</sys_created_on>
+        <sys_id>26d63aaf97703150dfffb3b6f053afd9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -2325,7 +2213,7 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:25:22</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:14</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -2334,17 +2222,17 @@ var nBody = body.data[0];
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>1f2ae55797b4bd10dfffb3b6f053af08</snapshot>
+        <snapshot>4797322397b03150dfffb3b6f053af67</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:48</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:24:35</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2415,14 +2303,26 @@ var nBody = body.data[0];
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=161219ea97f0b910dfffb3b6f053af37"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>parsed_output</field>
+        <id>161219ea97f0b910dfffb3b6f053af37</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-28 01:21:38</sys_created_on>
+        <sys_id>10f67eaf97703150dfffb3b6f053af47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-28 01:21:38</sys_updated_on>
+        <table>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</table>
+        <value>{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>parsed_response</field>
         <id>161219ea97f0b910dfffb3b6f053af37</id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 18:25:13</sys_created_on>
         <sys_id>fc744ffe97b03d10dfffb3b6f053afd8</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 20:27:48</sys_updated_on>
+        <sys_updated_on>2023-08-27 23:48:15</sys_updated_on>
         <table>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</table>
         <value>{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}</value>
     </sys_element_mapping>
@@ -3516,10 +3416,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>a5745b7a97343d10dfffb3b6f053af62</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:38</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3687,10 +3587,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>65745b7a97343d10dfffb3b6f053af6d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
-        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"}],"type":"object","jpath":"$","previewValue":""}</value>
+        <sys_updated_on>2023-08-28 01:21:38</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":"Aftermath"}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"130633"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A7bc3f92f-68a2-4934-afc4-89f6d0e8cf98&amp;unique=prints"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Apakh&amp;unique=prints"},{"name":"promo_types","children":[{"name":"promo_types_string","children":[],"type":"string","jpath":"$.promo_types[*]","previewValue":"setpromo"}],"type":"array.string","jpath":"$.promo_types[*]","previewValue":""},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Amonkhet Promos"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/pakh/210s/dusk-dawn?utm_source=api"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"962"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{2}{W}{W} // {3}{W}{W}"},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"paper"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"id","children":[],"type":"string","jpath":"$.id","previewValue":"d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"purchase_uris","children":[{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Dusk+%2F%2F+Dawn&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards?affiliate_id=scryfall&amp;data%5Bsearch%5D=Dusk+%2F%2F+Dawn&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"},{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/130633?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/pakh?utm_source=api"},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Sorcery"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"W"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"promo"},{"name":"related_uris","children":[{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Dusk+%2F%2F+Dawn"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Dusk+%2F%2F+Dawn&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"297656"},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Destroy all creatures with power 3 or greater."},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Noah Bradley"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{2}{W}{W}"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Dusk"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"},{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Dusk // Dawn"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"9"},{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"card"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"rare"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.oracle_id","previewValue":"7bc3f92f-68a2-4934-afc4-89f6d0e8cf98"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Noah Bradley"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2017-04-28"},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"W"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"false"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.illustration_id","previewValue":"f3d63aed-2784-4ef5-9676-846b1e65e040"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"true"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"81995d11-da98-4f8b-89bd-b88ca2ddb06b"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1/rulings"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"210s"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"foil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/c1847ece-b71e-4125-973a-465dfb35e496"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"prices","children":[{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"2.95"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":""},{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":""},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"0.70"}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"penny_rank","children":[],"type":"string","jpath":"$.penny_rank","previewValue":"3163"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"pakh"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"true"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.image_uris.small","previewValue":"https://cards.scryfall.io/small/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"normal","children":[],"type":"string","jpath":"$.image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"large","children":[],"type":"string","jpath":"$.image_uris.large","previewValue":"https://cards.scryfall.io/large/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"png","children":[],"type":"string","jpath":"$.image_uris.png","previewValue":"https://cards.scryfall.io/png/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.png?1562934595"},{"name":"border_crop","children":[],"type":"string","jpath":"$.image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"},{"name":"art_crop","children":[],"type":"string","jpath":"$.image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/d/3/d3c99f65-2355-444b-b49a-c6b916f268b1.jpg?1562934595"}],"type":"object","jpath":"$.image_uris","previewValue":""},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"false"},{"name":"card_back_id","children":[],"type":"string","jpath":"$.card_back_id","previewValue":"0aeebaf5-8c7d-4636-9e82-8c27447861f7"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/d3c99f65-2355-444b-b49a-c6b916f268b1"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"split"},{"name":"multiverse_ids","children":[{"name":"multiverse_ids_string","children":[],"type":"string","jpath":"$.multiverse_ids[*]","previewValue":""}],"type":"array.string","jpath":"$.multiverse_ids[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"},{"name":"flavor_text","children":[],"type":"string","jpath":"","previewValue":""},{"name":"oracle_text","children":[],"type":"string","jpath":"","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"","previewValue":""},{"name":"toughness","children":[],"type":"string","jpath":"","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
         <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -4120,12 +4020,12 @@ var nBody = body.data[0];
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ee1219ea97f0b910dfffb3b6f053af42"/>
-    <sys_hub_action_output action="delete_multiple" query="model=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN090c716697f4b910dfffb3b6f053af52,426d0bbe97f03d10dfffb3b6f053af8c,aa1219ea97f0b910dfffb3b6f053af5c,e21219ea97f0b910dfffb3b6f053af61"/>
+    <sys_hub_action_output action="delete_multiple" query="model=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN5cf67eaf97703150dfffb3b6f053af30,aa1219ea97f0b910dfffb3b6f053af5c,e21219ea97f0b910dfffb3b6f053af61"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=68213c23-ee83-4e02-bc1d-8cd06f72c5bf</attributes>
+        <attributes>co_type_name=FD0b97322333b0315035958d9bec4de957,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=b55d3309-1311-407d-b4c9-937cc87292ba</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -4149,7 +4049,7 @@ var nBody = body.data[0];
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>url</element>
+        <element>parsed_output</element>
         <element_prototype/>
         <element_reference>false</element_reference>
         <foreign_database/>
@@ -4160,9 +4060,9 @@ var nBody = body.data[0];
         <hint/>
         <internal_link/>
         <internal_type display_value="String">string</internal_type>
-        <label>URL</label>
-        <mandatory>true</mandatory>
-        <max_length>8000</max_length>
+        <label>Parsed Output</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
         <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
@@ -4184,8 +4084,8 @@ var nBody = body.data[0];
         <staged>false</staged>
         <sys_class_name>sys_hub_action_output</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:30:15</sys_created_on>
-        <sys_id>090c716697f4b910dfffb3b6f053af52</sys_id>
+        <sys_created_on>2023-08-28 01:21:38</sys_created_on>
+        <sys_id>5cf67eaf97703150dfffb3b6f053af30</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -4193,7 +4093,7 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 18:14:13</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:24:33</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4206,100 +4106,13 @@ var nBody = body.data[0];
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=090c716697f4b910dfffb3b6f053af52"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=090c716697f4b910dfffb3b6f053af52"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5cf67eaf97703150dfffb3b6f053af30"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5cf67eaf97703150dfffb3b6f053af30"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FDc66d0bbe7bf03d10afe689885aa37288,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=d3234e96-c14f-40a8-a8fe-a6cd97e9a3dc,uiType=object,uiTypeLabel=Object,uiUniqueId=1b1df4a2-b36a-4690-af4a-1807c2fdc343</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>parsed_response</element>
-        <element_prototype/>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_link/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Parsed Response</label>
-        <mandatory>true</mandatory>
-        <max_length>65000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
-        <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
-        <model_table>sys_hub_action_type_snapshot</model_table>
-        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
-        <next_element/>
-        <order>2</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_output</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:04:21</sys_created_on>
-        <sys_id>426d0bbe97f03d10dfffb3b6f053af8c</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:45</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_output>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=426d0bbe97f03d10dfffb3b6f053af8c"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=426d0bbe97f03d10dfffb3b6f053af8c"/>
-    <sys_hub_action_output action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=2242d8d8-95d5-459f-979c-f5f7f81c2485</attributes>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=465e1055-9023-43ad-a331-af041868ca1a</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -4342,7 +4155,7 @@ var nBody = body.data[0];
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
         <next_element/>
-        <order>3</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -4360,14 +4173,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>aa1219ea97f0b910dfffb3b6f053af5c</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:04:21</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:21:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4386,7 +4199,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=1cce146d-0648-47c8-9a69-9ad99a3f0704,visible_in_ui=false</attributes>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=9dfc846f-c3c9-43ce-95ee-4897fe17658a,visible_in_ui=false</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -4429,7 +4242,7 @@ var nBody = body.data[0];
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
         <next_element/>
-        <order>4</order>
+        <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -4447,14 +4260,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>125</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 01:07:46</sys_updated_on>
+        <sys_updated_on>2023-08-28 01:24:33</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4552,7 +4365,30 @@ var nBody = body.data[0];
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_161219ea97f0b910dfffb3b6f053af37"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN261219ea97f0b910dfffb3b6f053af60,ae1219ea97f0b910dfffb3b6f053af65,c10c716697f4b910dfffb3b6f053af55,ce6d0bbe97f03d10dfffb3b6f053af8e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN18f67eaf97703150dfffb3b6f053af34,261219ea97f0b910dfffb3b6f053af60,ae1219ea97f0b910dfffb3b6f053af65"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>parsed_output</element>
+        <help/>
+        <hint/>
+        <label>Parsed Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-28 01:21:38</sys_created_on>
+        <sys_id>18f67eaf97703150dfffb3b6f053af34</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-28 01:21:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__action_status__</element>
         <help/>
@@ -4596,52 +4432,6 @@ var nBody = body.data[0];
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-24 15:27:08</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>url</element>
-        <help/>
-        <hint/>
-        <label>URL</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:30:15</sys_created_on>
-        <sys_id>c10c716697f4b910dfffb3b6f053af55</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:30:15</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>parsed_response</element>
-        <help/>
-        <hint/>
-        <label>Parsed Response</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:04:21</sys_created_on>
-        <sys_id>ce6d0bbe97f03d10dfffb3b6f053af8e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:04:21</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
