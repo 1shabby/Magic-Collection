@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a55dbee797b03150dfffb3b6f053afc2" label="MTG Keywords" max_length="40" name="x_759224_magic_c_0_mtg_keywords" type="collection">
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+    </element>
+</database>
