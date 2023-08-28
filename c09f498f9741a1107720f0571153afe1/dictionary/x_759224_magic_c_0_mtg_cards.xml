@@ -4,7 +4,7 @@
         <element label="Face Two Image" max_length="1024" name="back_image" read_only="true" type="url"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="CMC" max_length="40" name="cmc" type="integer"/>
         <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
-        <element choice="3" default="C" label="Color Identity" max_length="40" name="colors" read_only="true" reference="x_759224_magic_c_0_mtg_colors" type="glide_list">
+        <element choice="3" default="C" label="Color Identity" max_length="1000" name="colors" reference="x_759224_magic_c_0_mtg_colors" type="glide_list">
             <choice/>
         </element>
         <element label="EDHREC" max_length="1040" name="edhrec" read_only="true" type="url"/>
@@ -33,6 +33,7 @@
         <element label="Face One Image" max_length="1024" name="front_image" read_only="true" type="url"/>
         <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Is Multi-Faced" max_length="40" name="is_multi_faced" read_only="true" type="boolean"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Keywords" max_length="4000" name="keywords" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
