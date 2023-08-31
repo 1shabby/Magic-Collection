@@ -11,31 +11,31 @@
         <copied_from/>
         <copied_from_name/>
         <description/>
-        <ih_action>false</ih_action>
+        <ih_action>true</ih_action>
         <internal_name>scryfall_api</internal_name>
         <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>161219ea97f0b910dfffb3b6f053af37</master_snapshot>
-        <name>Scryfall API</name>
+        <name>Scryfall API - Card Lookup</name>
         <natlang/>
         <outputs/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <state>draft</state>
+        <state>published</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:16:42</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>386</sys_mod_count>
-        <sys_name>Scryfall API</sys_name>
+        <sys_mod_count>391</sys_mod_count>
+        <sys_name>Scryfall API - Card Lookup</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:59:00</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -158,7 +158,7 @@
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN0c535ff697343d10dfffb3b6f053af12,19299b7297743d10dfffb3b6f053af04,1ed0d96a97f0b910dfffb3b6f053af6f,6d26b5ea97b4b910dfffb3b6f053af69"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action>
+        <action display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action>
         <cid>33271362-8a44-4c1c-844f-59d99bdc7d83</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -553,7 +553,7 @@
         <url_target/>
     </sys_documentation>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action>
+        <action display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action>
         <cid>40f9f720-5c39-462d-89d6-275e8a278258</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -842,7 +842,7 @@ var nBody = body.data[0];
         <url_target/>
     </sys_documentation>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action>
+        <action display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action>
         <cid>4ba03b8b-f932-4dde-936f-0121608ca6d0</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -1104,7 +1104,7 @@ var nBody = body.data[0];
     <sys_hub_input_scripts action="delete_multiple" query="instance=1ed0d96a97f0b910dfffb3b6f053af6f"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_1ed0d96a97f0b910dfffb3b6f053af6f"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action>
+        <action display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action>
         <cid>35fd0583-76d6-4f09-b17f-926a0482e06a</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -1631,7 +1631,7 @@ var nBody = body.data[0];
         <label>CN</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -1715,7 +1715,7 @@ var nBody = body.data[0];
         <label>Set</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -1799,7 +1799,7 @@ var nBody = body.data[0];
         <label>Name</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -1886,7 +1886,7 @@ var nBody = body.data[0];
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -1973,7 +1973,7 @@ var nBody = body.data[0];
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -1996,14 +1996,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:21:14</sys_created_on>
         <sys_id>e2d63aaf97703150dfffb3b6f053afda</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:58:59</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:55</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2060,7 +2060,7 @@ var nBody = body.data[0];
         <label>Parsed Output</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
@@ -2108,7 +2108,7 @@ var nBody = body.data[0];
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=31bfc5e697f0b910dfffb3b6f053af43"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN16d0d96a97f0b910dfffb3b6f053afb0"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action_type_id>
+        <action_type_id display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:21:40</sys_created_on>
         <sys_id>16d0d96a97f0b910dfffb3b6f053afb0</sys_id>
@@ -2261,19 +2261,19 @@ var nBody = body.data[0];
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43"/>
     <sys_hub_action_plan action="delete_multiple" query="action_id=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN721219ea97f0b910dfffb3b6f053afd3"/>
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
-        <action_id display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</action_id>
+        <action_id display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>506c409497c1f150dfffb3b6f053af29</snapshot>
+        <snapshot>efd069b09705b550dfffb3b6f053af73</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:54</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:18:00</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2287,20 +2287,20 @@ var nBody = body.data[0];
         <copied_from_name/>
         <description/>
         <internal_name>scryfall_api</internal_name>
-        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD4e3c8854d1c1f1507d321d829643b57b","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"522e9e03-ddd4-4309-9c67-0bb0096b19b2"}}]</label_cache>
+        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
-        <name>Scryfall API</name>
+        <name>Scryfall API - Card Lookup</name>
         <natlang/>
         <outputs/>
         <outputs/>
-        <parent_action display_value="Scryfall API">31bfc5e697f0b910dfffb3b6f053af43</parent_action>
+        <parent_action display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</parent_action>
         <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>161219ea97f0b910dfffb3b6f053af37</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2308,7 +2308,7 @@ var nBody = body.data[0];
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:51</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:57</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -2417,7 +2417,7 @@ var nBody = body.data[0];
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN5c395f7297743d10dfffb3b6f053af55,661219ea97f0b910dfffb3b6f053af48,87463dea97b4b910dfffb3b6f053af49,a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</action>
+        <action display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action>
         <cid>40f9f720-5c39-462d-89d6-275e8a278258</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -2706,7 +2706,7 @@ var nBody = body.data[0];
         <url_target/>
     </sys_documentation>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</action>
+        <action display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action>
         <cid>4ba03b8b-f932-4dde-936f-0121608ca6d0</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -2954,7 +2954,7 @@ var nBody = body.data[0];
     <sys_hub_input_scripts action="delete_multiple" query="instance=661219ea97f0b910dfffb3b6f053af48"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_661219ea97f0b910dfffb3b6f053af48"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</action>
+        <action display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action>
         <cid>35fd0583-76d6-4f09-b17f-926a0482e06a</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -3441,7 +3441,7 @@ var nBody = body.data[0];
         <url_target/>
     </sys_documentation>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</action>
+        <action display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action>
         <cid>33271362-8a44-4c1c-844f-59d99bdc7d83</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -3457,10 +3457,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>a5745b7a97343d10dfffb3b6f053af62</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3471,9 +3471,9 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>29745b7a97343d10dfffb3b6f053af6d</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
         <value>{&#13;
   "mtgo_id": 83139,&#13;
   "arena_id": 73284,&#13;
@@ -3494,6 +3494,9 @@ var nBody = body.data[0];
   "type_line": "Sorcery // Land",&#13;
   "flavor_text": "\"Now is the death-hour, just before dawn. Wake, sleepers, and haunt the living!\"\n—Vivias, Witch Vessel",&#13;
   "color_identity": [&#13;
+    "B"&#13;
+  ],&#13;
+  "colors": [&#13;
     "B"&#13;
   ],&#13;
   "power": "3",&#13;
@@ -3652,10 +3655,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:35:10</sys_created_on>
         <sys_id>65745b7a97343d10dfffb3b6f053af6d</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
-        <value>{"name":"root","children":[{"name":"mtgo_id","children":[],"type":"string","jpath":"$.mtgo_id","previewValue":"83139"},{"name":"arena_id","children":[],"type":"string","jpath":"$.arena_id","previewValue":"73284"},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"222163"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"496690"},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Agadeem's Awakening // Agadeem, the Undercrypt"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2020-09-25"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/67f4c93b-080c-4196-b095-6a120a221988"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/znr/90/agadeems-awakening-agadeem-the-undercrypt?utm_source=api"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"modal_dfc"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"3.0"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{X}{B}{B}{B}"},{"name":"oracle_text","children":[],"type":"string","jpath":"$.oracle_text","previewValue":"Flying\nWhenever Hakka, …er's hand, then scry 2."},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Land"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.flavor_text","previewValue":"\"Now is the death-hour, just before dawn. Wake, sleepers, and haunt the living!\"\n—Vivias, Witch Vessel"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"B"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"$.power","previewValue":"3"},{"name":"toughness","children":[],"type":"string","jpath":"$.toughness","previewValue":"2"},{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":""}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"produced_mana","children":[{"name":"produced_mana_string","children":[],"type":"string","jpath":"$.produced_mana[*]","previewValue":"B"}],"type":"array.string","jpath":"$.produced_mana[*]","previewValue":""},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Agadeem's Awakening"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{X}{B}{B}{B}"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Return from your graveyard to the battlefield any number of target creature cards that each have a different mana value X or less."},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.card_faces[*].colors[*]","previewValue":"B"}],"type":"array.string","jpath":"$.card_faces[*].colors[*]","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"$.card_faces[*].power","previewValue":"3"},{"name":"toughness","children":[],"type":"string","jpath":"$.card_faces[*].toughness","previewValue":"3"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.card_faces[*].flavor_text","previewValue":"\"Now is the death-hour, just before dawn. Wake, sleepers, and haunt the living!\"\n—Vivias, Witch Vessel"},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Dmitry Burmak"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"9872f5c0-274a-48ce-a9ad-6f0d5654e29c"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"9c4fd66b-b125-4e63-a0ee-d49ec58fc381"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.small","previewValue":"https://cards.scryfall.io/small/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"normal","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"large","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.large","previewValue":"https://cards.scryfall.io/large/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"png","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.png","previewValue":"https://cards.scryfall.io/png/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.png?1604195226"},{"name":"art_crop","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"border_crop","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"}],"type":"object","jpath":"$.card_faces[*].image_uris","previewValue":""},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"not_legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"arena"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"true"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"nonfoil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"false"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"false"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"f4e01fa7-b254-42dd-849f-69b58027a8c4"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"znr"},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Zendikar Rising"},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"expansion"},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/f4e01fa7-b254-42dd-849f-69b58027a8c4"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aznr&amp;unique=prints"},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/znr?utm_source=api"},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/67f4c93b-080c-4196-b095-6a120a221988/rulings"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A562d71b9-1646-474e-9293-55da6947a758&amp;unique=prints"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"90"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"mythic"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Dmitry Burmak"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"9872f5c0-274a-48ce-a9ad-6f0d5654e29c"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"true"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"664"},{"name":"preview","children":[{"name":"source","children":[],"type":"string","jpath":"$.preview.source","previewValue":"Star City Games"},{"name":"source_uri","children":[],"type":"string","jpath":"$.preview.source_uri","previewValue":"https://articles.starcitygames.com/news/black-gets-modal-double-faced-mythic-in-agadeems-awakening/"},{"name":"previewed_at","children":[],"type":"string","jpath":"$.preview.previewed_at","previewValue":"2020-09-08"}],"type":"object","jpath":"$.preview","previewValue":""},{"name":"prices","children":[{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":"13.50"},{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"14.36"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":"20.53"},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"19.50"},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"related_uris","children":[{"name":"gatherer","children":[],"type":"string","jpath":"$.related_uris.gatherer","previewValue":"https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=491723"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Agadeem%27s+Awakening+%2F%2F+Agadeem%2C+the+Undercrypt&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Agadeem%27s+Awakening+%2F%2F+Agadeem%2C+the+Undercrypt&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Agadeem%27s+Awakening"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"purchase_uris","children":[{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/222163?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Agadeem%27s+Awakening&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards/83139?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"mtgo_id","children":[],"type":"string","jpath":"$.mtgo_id","previewValue":"83139"},{"name":"arena_id","children":[],"type":"string","jpath":"$.arena_id","previewValue":"73284"},{"name":"tcgplayer_id","children":[],"type":"string","jpath":"$.tcgplayer_id","previewValue":"222163"},{"name":"cardmarket_id","children":[],"type":"string","jpath":"$.cardmarket_id","previewValue":"496690"},{"name":"name","children":[],"type":"string","jpath":"$.name","previewValue":"Agadeem's Awakening // Agadeem, the Undercrypt"},{"name":"lang","children":[],"type":"string","jpath":"$.lang","previewValue":"en"},{"name":"released_at","children":[],"type":"string","jpath":"$.released_at","previewValue":"2020-09-25"},{"name":"uri","children":[],"type":"string","jpath":"$.uri","previewValue":"https://api.scryfall.com/cards/67f4c93b-080c-4196-b095-6a120a221988"},{"name":"scryfall_uri","children":[],"type":"string","jpath":"$.scryfall_uri","previewValue":"https://scryfall.com/card/znr/90/agadeems-awakening-agadeem-the-undercrypt?utm_source=api"},{"name":"layout","children":[],"type":"string","jpath":"$.layout","previewValue":"modal_dfc"},{"name":"highres_image","children":[],"type":"string","jpath":"$.highres_image","previewValue":"true"},{"name":"image_status","children":[],"type":"string","jpath":"$.image_status","previewValue":"highres_scan"},{"name":"cmc","children":[],"type":"string","jpath":"$.cmc","previewValue":"3.0"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.mana_cost","previewValue":"{X}{B}{B}{B}"},{"name":"oracle_text","children":[],"type":"string","jpath":"$.oracle_text","previewValue":"Flying\nWhenever Hakka, …er's hand, then scry 2."},{"name":"type_line","children":[],"type":"string","jpath":"$.type_line","previewValue":"Sorcery // Land"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.flavor_text","previewValue":"\"Now is the death-hour, just before dawn. Wake, sleepers, and haunt the living!\"\n—Vivias, Witch Vessel"},{"name":"color_identity","children":[{"name":"color_identity_string","children":[],"type":"string","jpath":"$.color_identity[*]","previewValue":"B"}],"type":"array.string","jpath":"$.color_identity[*]","previewValue":""},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.colors[*]","previewValue":"B"}],"type":"array.string","jpath":"$.colors[*]","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"$.power","previewValue":"3"},{"name":"toughness","children":[],"type":"string","jpath":"$.toughness","previewValue":"2"},{"name":"keywords","children":[{"name":"keywords_string","children":[],"type":"string","jpath":"$.keywords[*]","previewValue":""}],"type":"array.string","jpath":"$.keywords[*]","previewValue":""},{"name":"produced_mana","children":[{"name":"produced_mana_string","children":[],"type":"string","jpath":"$.produced_mana[*]","previewValue":"B"}],"type":"array.string","jpath":"$.produced_mana[*]","previewValue":""},{"name":"card_faces","children":[{"name":"card_faces_object","children":[{"name":"object","children":[],"type":"string","jpath":"$.card_faces[*].object","previewValue":"card_face"},{"name":"name","children":[],"type":"string","jpath":"$.card_faces[*].name","previewValue":"Agadeem's Awakening"},{"name":"mana_cost","children":[],"type":"string","jpath":"$.card_faces[*].mana_cost","previewValue":"{X}{B}{B}{B}"},{"name":"type_line","children":[],"type":"string","jpath":"$.card_faces[*].type_line","previewValue":"Sorcery"},{"name":"oracle_text","children":[],"type":"string","jpath":"$.card_faces[*].oracle_text","previewValue":"Return from your graveyard to the battlefield any number of target creature cards that each have a different mana value X or less."},{"name":"colors","children":[{"name":"colors_string","children":[],"type":"string","jpath":"$.card_faces[*].colors[*]","previewValue":"B"}],"type":"array.string","jpath":"$.card_faces[*].colors[*]","previewValue":""},{"name":"power","children":[],"type":"string","jpath":"$.card_faces[*].power","previewValue":"3"},{"name":"toughness","children":[],"type":"string","jpath":"$.card_faces[*].toughness","previewValue":"3"},{"name":"flavor_text","children":[],"type":"string","jpath":"$.card_faces[*].flavor_text","previewValue":"\"Now is the death-hour, just before dawn. Wake, sleepers, and haunt the living!\"\n—Vivias, Witch Vessel"},{"name":"artist","children":[],"type":"string","jpath":"$.card_faces[*].artist","previewValue":"Dmitry Burmak"},{"name":"artist_id","children":[],"type":"string","jpath":"$.card_faces[*].artist_id","previewValue":"9872f5c0-274a-48ce-a9ad-6f0d5654e29c"},{"name":"illustration_id","children":[],"type":"string","jpath":"$.card_faces[*].illustration_id","previewValue":"9c4fd66b-b125-4e63-a0ee-d49ec58fc381"},{"name":"image_uris","children":[{"name":"small","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.small","previewValue":"https://cards.scryfall.io/small/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"normal","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.normal","previewValue":"https://cards.scryfall.io/normal/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"large","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.large","previewValue":"https://cards.scryfall.io/large/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"png","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.png","previewValue":"https://cards.scryfall.io/png/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.png?1604195226"},{"name":"art_crop","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.art_crop","previewValue":"https://cards.scryfall.io/art_crop/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"},{"name":"border_crop","children":[],"type":"string","jpath":"$.card_faces[*].image_uris.border_crop","previewValue":"https://cards.scryfall.io/border_crop/front/6/7/67f4c93b-080c-4196-b095-6a120a221988.jpg?1604195226"}],"type":"object","jpath":"$.card_faces[*].image_uris","previewValue":""},{"name":"flavor_name","children":[],"type":"string","jpath":"$.card_faces[*].flavor_name","previewValue":""}],"type":"object","jpath":"$.card_faces[*]","previewValue":""}],"type":"array.object","jpath":"$.card_faces[*]","previewValue":""},{"name":"legalities","children":[{"name":"standard","children":[],"type":"string","jpath":"$.legalities.standard","previewValue":"not_legal"},{"name":"future","children":[],"type":"string","jpath":"$.legalities.future","previewValue":"not_legal"},{"name":"historic","children":[],"type":"string","jpath":"$.legalities.historic","previewValue":"legal"},{"name":"gladiator","children":[],"type":"string","jpath":"$.legalities.gladiator","previewValue":"legal"},{"name":"pioneer","children":[],"type":"string","jpath":"$.legalities.pioneer","previewValue":"legal"},{"name":"explorer","children":[],"type":"string","jpath":"$.legalities.explorer","previewValue":"legal"},{"name":"modern","children":[],"type":"string","jpath":"$.legalities.modern","previewValue":"legal"},{"name":"legacy","children":[],"type":"string","jpath":"$.legalities.legacy","previewValue":"legal"},{"name":"pauper","children":[],"type":"string","jpath":"$.legalities.pauper","previewValue":"not_legal"},{"name":"vintage","children":[],"type":"string","jpath":"$.legalities.vintage","previewValue":"legal"},{"name":"penny","children":[],"type":"string","jpath":"$.legalities.penny","previewValue":"not_legal"},{"name":"commander","children":[],"type":"string","jpath":"$.legalities.commander","previewValue":"legal"},{"name":"oathbreaker","children":[],"type":"string","jpath":"$.legalities.oathbreaker","previewValue":"legal"},{"name":"brawl","children":[],"type":"string","jpath":"$.legalities.brawl","previewValue":"not_legal"},{"name":"historicbrawl","children":[],"type":"string","jpath":"$.legalities.historicbrawl","previewValue":"legal"},{"name":"alchemy","children":[],"type":"string","jpath":"$.legalities.alchemy","previewValue":"not_legal"},{"name":"paupercommander","children":[],"type":"string","jpath":"$.legalities.paupercommander","previewValue":"not_legal"},{"name":"duel","children":[],"type":"string","jpath":"$.legalities.duel","previewValue":"legal"},{"name":"oldschool","children":[],"type":"string","jpath":"$.legalities.oldschool","previewValue":"not_legal"},{"name":"premodern","children":[],"type":"string","jpath":"$.legalities.premodern","previewValue":"not_legal"},{"name":"predh","children":[],"type":"string","jpath":"$.legalities.predh","previewValue":"not_legal"}],"type":"object","jpath":"$.legalities","previewValue":""},{"name":"games","children":[{"name":"games_string","children":[],"type":"string","jpath":"$.games[*]","previewValue":"arena"}],"type":"array.string","jpath":"$.games[*]","previewValue":""},{"name":"reserved","children":[],"type":"string","jpath":"$.reserved","previewValue":"false"},{"name":"foil","children":[],"type":"string","jpath":"$.foil","previewValue":"true"},{"name":"nonfoil","children":[],"type":"string","jpath":"$.nonfoil","previewValue":"true"},{"name":"finishes","children":[{"name":"finishes_string","children":[],"type":"string","jpath":"$.finishes[*]","previewValue":"nonfoil"}],"type":"array.string","jpath":"$.finishes[*]","previewValue":""},{"name":"oversized","children":[],"type":"string","jpath":"$.oversized","previewValue":"false"},{"name":"promo","children":[],"type":"string","jpath":"$.promo","previewValue":"false"},{"name":"reprint","children":[],"type":"string","jpath":"$.reprint","previewValue":"false"},{"name":"variation","children":[],"type":"string","jpath":"$.variation","previewValue":"false"},{"name":"set_id","children":[],"type":"string","jpath":"$.set_id","previewValue":"f4e01fa7-b254-42dd-849f-69b58027a8c4"},{"name":"set","children":[],"type":"string","jpath":"$.set","previewValue":"znr"},{"name":"set_name","children":[],"type":"string","jpath":"$.set_name","previewValue":"Zendikar Rising"},{"name":"set_type","children":[],"type":"string","jpath":"$.set_type","previewValue":"expansion"},{"name":"set_uri","children":[],"type":"string","jpath":"$.set_uri","previewValue":"https://api.scryfall.com/sets/f4e01fa7-b254-42dd-849f-69b58027a8c4"},{"name":"set_search_uri","children":[],"type":"string","jpath":"$.set_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=set&amp;q=e%3Aznr&amp;unique=prints"},{"name":"scryfall_set_uri","children":[],"type":"string","jpath":"$.scryfall_set_uri","previewValue":"https://scryfall.com/sets/znr?utm_source=api"},{"name":"rulings_uri","children":[],"type":"string","jpath":"$.rulings_uri","previewValue":"https://api.scryfall.com/cards/67f4c93b-080c-4196-b095-6a120a221988/rulings"},{"name":"prints_search_uri","children":[],"type":"string","jpath":"$.prints_search_uri","previewValue":"https://api.scryfall.com/cards/search?order=released&amp;q=oracleid%3A562d71b9-1646-474e-9293-55da6947a758&amp;unique=prints"},{"name":"collector_number","children":[],"type":"string","jpath":"$.collector_number","previewValue":"90"},{"name":"digital","children":[],"type":"string","jpath":"$.digital","previewValue":"false"},{"name":"rarity","children":[],"type":"string","jpath":"$.rarity","previewValue":"mythic"},{"name":"artist","children":[],"type":"string","jpath":"$.artist","previewValue":"Dmitry Burmak"},{"name":"artist_ids","children":[{"name":"artist_ids_string","children":[],"type":"string","jpath":"$.artist_ids[*]","previewValue":"9872f5c0-274a-48ce-a9ad-6f0d5654e29c"}],"type":"array.string","jpath":"$.artist_ids[*]","previewValue":""},{"name":"border_color","children":[],"type":"string","jpath":"$.border_color","previewValue":"black"},{"name":"frame","children":[],"type":"string","jpath":"$.frame","previewValue":"2015"},{"name":"security_stamp","children":[],"type":"string","jpath":"$.security_stamp","previewValue":"oval"},{"name":"full_art","children":[],"type":"string","jpath":"$.full_art","previewValue":"false"},{"name":"textless","children":[],"type":"string","jpath":"$.textless","previewValue":"false"},{"name":"booster","children":[],"type":"string","jpath":"$.booster","previewValue":"true"},{"name":"story_spotlight","children":[],"type":"string","jpath":"$.story_spotlight","previewValue":"false"},{"name":"edhrec_rank","children":[],"type":"string","jpath":"$.edhrec_rank","previewValue":"664"},{"name":"preview","children":[{"name":"source","children":[],"type":"string","jpath":"$.preview.source","previewValue":"Star City Games"},{"name":"source_uri","children":[],"type":"string","jpath":"$.preview.source_uri","previewValue":"https://articles.starcitygames.com/news/black-gets-modal-double-faced-mythic-in-agadeems-awakening/"},{"name":"previewed_at","children":[],"type":"string","jpath":"$.preview.previewed_at","previewValue":"2020-09-08"}],"type":"object","jpath":"$.preview","previewValue":""},{"name":"prices","children":[{"name":"usd","children":[],"type":"string","jpath":"$.prices.usd","previewValue":"13.50"},{"name":"usd_foil","children":[],"type":"string","jpath":"$.prices.usd_foil","previewValue":"14.36"},{"name":"usd_etched","children":[],"type":"string","jpath":"$.prices.usd_etched","previewValue":""},{"name":"eur","children":[],"type":"string","jpath":"$.prices.eur","previewValue":"20.53"},{"name":"eur_foil","children":[],"type":"string","jpath":"$.prices.eur_foil","previewValue":"19.50"},{"name":"tix","children":[],"type":"string","jpath":"$.prices.tix","previewValue":""}],"type":"object","jpath":"$.prices","previewValue":""},{"name":"related_uris","children":[{"name":"gatherer","children":[],"type":"string","jpath":"$.related_uris.gatherer","previewValue":"https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=491723"},{"name":"tcgplayer_infinite_articles","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_articles","previewValue":"https://infinite.tcgplayer.com/search?contentMode=article&amp;game=magic&amp;partner=scryfall&amp;q=Agadeem%27s+Awakening+%2F%2F+Agadeem%2C+the+Undercrypt&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"tcgplayer_infinite_decks","children":[],"type":"string","jpath":"$.related_uris.tcgplayer_infinite_decks","previewValue":"https://infinite.tcgplayer.com/search?contentMode=deck&amp;game=magic&amp;partner=scryfall&amp;q=Agadeem%27s+Awakening+%2F%2F+Agadeem%2C+the+Undercrypt&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"edhrec","children":[],"type":"string","jpath":"$.related_uris.edhrec","previewValue":"https://edhrec.com/route/?cc=Agadeem%27s+Awakening"}],"type":"object","jpath":"$.related_uris","previewValue":""},{"name":"purchase_uris","children":[{"name":"tcgplayer","children":[],"type":"string","jpath":"$.purchase_uris.tcgplayer","previewValue":"https://www.tcgplayer.com/product/222163?page=1&amp;utm_campaign=affiliate&amp;utm_medium=api&amp;utm_source=scryfall"},{"name":"cardmarket","children":[],"type":"string","jpath":"$.purchase_uris.cardmarket","previewValue":"https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&amp;searchString=Agadeem%27s+Awakening&amp;utm_campaign=card_prices&amp;utm_medium=text&amp;utm_source=scryfall"},{"name":"cardhoarder","children":[],"type":"string","jpath":"$.purchase_uris.cardhoarder","previewValue":"https://www.cardhoarder.com/cards/83139?affiliate_id=scryfall&amp;ref=card-profile&amp;utm_campaign=affiliate&amp;utm_medium=card&amp;utm_source=scryfall"}],"type":"object","jpath":"$.purchase_uris","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
         <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3728,7 +3731,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FD2740e77ee1743d1025ad4ccb17c011ca,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=522e9e03-ddd4-4309-9c67-0bb0096b19b2</attributes>
+        <attributes>co_type_name=FD2740e77ee1743d1025ad4ccb17c011ca,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=90adddb4-2b86-457b-964d-e6b219f6ed53</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -3787,14 +3790,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 20:26:54</sys_created_on>
         <sys_id>2b40e77e97743d10dfffb3b6f053afcc</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3873,7 +3876,7 @@ var nBody = body.data[0];
         <label>Set</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_161219ea97f0b910dfffb3b6f053af37</name>
@@ -3957,7 +3960,7 @@ var nBody = body.data[0];
         <label>Name</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_161219ea97f0b910dfffb3b6f053af37</name>
@@ -4041,7 +4044,7 @@ var nBody = body.data[0];
         <label>CN</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_161219ea97f0b910dfffb3b6f053af37</name>
@@ -4090,7 +4093,7 @@ var nBody = body.data[0];
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>co_type_name=FD0b97322333b0315035958d9bec4de957,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=522e9e03-ddd4-4309-9c67-0bb0096b19b2,uiType=object,uiTypeLabel=Object,uiUniqueId=b55d3309-1311-407d-b4c9-937cc87292ba</attributes>
+        <attributes>co_type_name=FD0b97322333b0315035958d9bec4de957,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=33271362-8a44-4c1c-844f-59d99bdc7d83,sourceType=step,sourceUiUniqueId=90adddb4-2b86-457b-964d-e6b219f6ed53,uiType=object,uiTypeLabel=Object,uiUniqueId=b55d3309-1311-407d-b4c9-937cc87292ba</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -4128,7 +4131,7 @@ var nBody = body.data[0];
         <label>Parsed Output</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
@@ -4151,14 +4154,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:21:38</sys_created_on>
         <sys_id>5cf67eaf97703150dfffb3b6f053af30</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4215,7 +4218,7 @@ var nBody = body.data[0];
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
@@ -4302,7 +4305,7 @@ var nBody = body.data[0];
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</model>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
@@ -4325,14 +4328,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>137</sys_mod_count>
+        <sys_mod_count>139</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-29 20:51:52</sys_updated_on>
+        <sys_updated_on>2023-08-31 16:17:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4350,7 +4353,7 @@ var nBody = body.data[0];
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=161219ea97f0b910dfffb3b6f053af37"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN2e1219ea97f0b910dfffb3b6f053af6a"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Scryfall API">161219ea97f0b910dfffb3b6f053af37</action_type_id>
+        <action_type_id display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>2e1219ea97f0b910dfffb3b6f053af6a</sys_id>
