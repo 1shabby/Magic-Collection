@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
     <sys_security_acl action="INSERT_OR_UPDATE">
         <active>true</active>
-        <admin_overrides>false</admin_overrides>
+        <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
         <condition table="x_759224_magic_c_0_mtg_cards">total_price&gt;javascript:global.getCurrencyFilter('x_759224_magic_c_0_mtg_cards','total_price', 'USD;0.00')^EQ<item endquery="false" field="total_price" goto="false" newquery="false" operator="&gt;" or="false" value="javascript:global.getCurrencyFilter('x_759224_magic_c_0_mtg_cards','total_price', 'USD;0.00')"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
@@ -16,14 +16,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-02-20 18:40:00</sys_created_on>
         <sys_id>3f1055cf9741a1107720f0571153af89</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>x_759224_magic_c_0_mtg_cards</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_security_acl_3f1055cf9741a1107720f0571153af89</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-30 22:33:37</sys_updated_on>
+        <sys_updated_on>2023-08-30 23:05:43</sys_updated_on>
         <type display_value="record">record</type>
     </sys_security_acl>
 </record_update>
