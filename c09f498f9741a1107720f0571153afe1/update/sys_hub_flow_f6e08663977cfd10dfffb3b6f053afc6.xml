@@ -11,7 +11,7 @@
         <copied_from_name/>
         <description>Runs in the New Card Insert flow and in the Price Update flow as well. It conditionally inserts based off what is currently populated (ex. if the price isn't populated then it's a new card insert) .</description>
         <internal_name>populate_card</internal_name>
-        <label_cache>[{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"522e9e03-ddd4-4309-9c67-0bb0096b19b2","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Scryfall API➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Scryfall API➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0b4c90c3-1352-4c54-ae47-8c06161300fe","uiTypeLabel":"Reference"}},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"540fed75-977c-4d0f-9d0e-d025b01ce822"}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"price"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Scryfall API➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Scryfall API➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"price"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"540fed75-977c-4d0f-9d0e-d025b01ce822"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0b4c90c3-1352-4c54-ae47-8c06161300fe","uiTypeLabel":"Reference"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Scryfall API➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Scryfall API➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"522e9e03-ddd4-4309-9c67-0bb0096b19b2","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}}]</label_cache>
         <master_snapshot>d9aa7af797f47150dfffb3b6f053afa4</master_snapshot>
         <name>Populate Card</name>
         <natlang/>
@@ -23,14 +23,14 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>published</status>
+        <status>draft</status>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 21:25:36</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f6e08663977cfd10dfffb3b6f053afc6</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>Populate Card</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_f6e08663977cfd10dfffb3b6f053afc6</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:56</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=f6e08663977cfd10dfffb3b6f053afc6"/>
@@ -161,10 +161,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b4209ae797bcfd10dfffb3b6f053afd9</sys_id>
-        <sys_mod_count>116</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>071c84ab-16f6-425a-859f-bc2255413357</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b4209ae797bcfd10dfffb3b6f053afd9"/>
@@ -239,13 +239,13 @@
         <input_name>values</input_name>
         <instance>b4209ae797bcfd10dfffb3b6f053afd9</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\ncolor_id.forEach(setColors);\r\nvar retval \u003d \u0027\u0027\r\nfunction setColors(item){\r\n    return item\r\n    switch(item){\r\n        case 0: \r\n            item \u003d \u0027w\u0027\r\n            retval \u003d retval + \u0027,\u0027 + fd_data.flow_var.white.sys_id\r\n    }\r\n}\r\nreturn retval;","savedValue":""}}</script>
+        <script>{"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\ncolor_id.forEach(setColors);\r\nvar retval \u003d \u0027\u0027\r\nfunction setColors(item){\r\n    return item\r\n    switch(item){\r\n        case 0: \r\n            item \u003d \u0027w\u0027\r\n            retval \u003d retval + \u0027,\u0027 + fd_data.flow_var.white.sys_id;\r\n    }\r\n}\r\nreturn retval;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 23:47:34</sys_created_on>
         <sys_id>5661a66397303150dfffb3b6f053af0e</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:30</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b4209ae797bcfd10dfffb3b6f053afd9"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -263,10 +263,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afa5</sys_id>
-        <sys_mod_count>116</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:43</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>2d2f0291-10c7-48ef-8a7e-65da7e447a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fc209ae797bcfd10dfffb3b6f053afa5"/>
@@ -334,10 +334,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>3c209ae797bcfd10dfffb3b6f053afad</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:43</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>8df16174-85d1-49f6-84fd-ba9e81bfe831</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -382,10 +382,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>70209ae797bcfd10dfffb3b6f053afb1</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:43</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -456,10 +456,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>78209ae797bcfd10dfffb3b6f053afdb</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>a1d0d38a-a21a-486b-b624-ce0f1a96d18d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -530,10 +530,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b0209ae797bcfd10dfffb3b6f053afd2</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -603,10 +603,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:37:32</sys_created_on>
         <sys_id>e8611e6b97bcfd10dfffb3b6f053af01</sys_id>
-        <sys_mod_count>61</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>b2cb14be-b3b5-445f-bec0-7fbc9a38c852</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -638,10 +638,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f4209ae797bcfd10dfffb3b6f053afa9</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:43</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>6ebff54b-685a-4725-a503-af29e288c356</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -866,10 +866,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f8209ae797bcfd10dfffb3b6f053afcf</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:43</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>53823282-11f8-401f-9ad9-cd13f990e97c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -900,10 +900,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afde</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-31 00:00:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 02:57:55</sys_updated_on>
         <ui_id>6fd392c9-1e97-4cf0-8b19-2f35b6a376b2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
