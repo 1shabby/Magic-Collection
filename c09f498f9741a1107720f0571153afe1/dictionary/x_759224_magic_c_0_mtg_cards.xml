@@ -4,19 +4,26 @@
         <element label="Face Two Image" max_length="1024" name="back_image" read_only="true" type="url"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="CMC" max_length="40" name="cmc" type="integer"/>
         <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
-        <element choice="3" default="C" label="Color Identity" max_length="1000" name="colors" reference="x_759224_magic_c_0_mtg_colors" type="glide_list">
-            <choice/>
+        <element choice="3" default="C" label="Color Identity" max_length="1000" name="colors" type="glide_list">
+            <choice>
+                <element inactive_on_update="false" label="Black" value="B"/>
+                <element inactive_on_update="false" label="Blue" value="U"/>
+                <element inactive_on_update="false" label="Colorless" value="C"/>
+                <element inactive_on_update="false" label="Green" value="G"/>
+                <element inactive_on_update="false" label="Red" value="R"/>
+                <element inactive_on_update="false" label="White" value="W"/>
+            </choice>
         </element>
         <element label="EDHREC" max_length="1040" name="edhrec" read_only="true" type="url"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Artist" max_length="250" name="face_one_artist" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Colors" max_length="4000" name="face_one_colors" reference="x_759224_magic_c_0_mtg_colors" type="glide_list"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Colors" max_length="4000" name="face_one_colors" type="glide_list"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Flavor Text" max_length="1000" name="face_one_flavor_text" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Mana Cost" max_length="50" name="face_one_mana_cost" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Oracle Text" max_length="1000" name="face_one_oracle_text" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Power" max_length="40" name="face_one_power" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face One Toughness" max_length="40" name="face_one_toughness" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Artist" max_length="250" name="face_two_artist" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Colors" max_length="4000" name="face_two_colors" reference="x_759224_magic_c_0_mtg_colors" type="glide_list"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Colors" max_length="4000" name="face_two_colors" type="glide_list"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Flavor Text" max_length="1000" name="face_two_flavor_text" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Mana Cost" max_length="50" name="face_two_mana_cost" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Face Two Oracle Text" max_length="1000" name="face_two_oracle_text" type="string"/>
