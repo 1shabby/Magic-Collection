@@ -11,7 +11,7 @@
         <copied_from_name/>
         <description>Runs in the New Card Insert flow and in the Price Update flow as well. It conditionally inserts based off what is currently populated (ex. if the price isn't populated then it's a new card insert) .</description>
         <internal_name>populate_card</internal_name>
-        <label_cache>[{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","type":"string","base_type":"string","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Scryfall API➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"price"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","rawLabel":"None","selected":false,"missing":false,"reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","image":"","rawLabel":"Foil","selected":false,"missing":false,"reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","image":"","rawLabel":"Etched","selected":false,"missing":false,"reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"540fed75-977c-4d0f-9d0e-d025b01ce822"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0b4c90c3-1352-4c54-ae47-8c06161300fe","uiTypeLabel":"Reference"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Scryfall API➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API - Card Lookup➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"90adddb4-2b86-457b-964d-e6b219f6ed53","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd","label":"1 - Card Lookup➛Parsed Output➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Card Lookup➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"90adddb4-2b86-457b-964d-e6b219f6ed53","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Scryfall API➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"0b4c90c3-1352-4c54-ae47-8c06161300fe","uiTypeLabel":"Reference"}},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"540fed75-977c-4d0f-9d0e-d025b01ce822"}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","rawLabel":"None","selected":false,"missing":false,"image":"","reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","rawLabel":"Foil","selected":false,"missing":false,"image":"","reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","rawLabel":"Etched","selected":false,"missing":false,"image":"","reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"price"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Card Lookup➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","type":"string","base_type":"string","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri","label":"1 - Card Lookup➛Parsed Output➛uri","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}}]</label_cache>
         <master_snapshot>d9aa7af797f47150dfffb3b6f053afa4</master_snapshot>
         <name>Populate Card</name>
         <natlang/>
@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f6e08663977cfd10dfffb3b6f053afc6</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name>Populate Card</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_f6e08663977cfd10dfffb3b6f053afc6</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:15</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=f6e08663977cfd10dfffb3b6f053afc6"/>
@@ -145,7 +145,183 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2c209ae797bcfd10dfffb3b6f053af82"/>
     <sys_hub_flow_output action="delete_multiple" query="model=f6e08663977cfd10dfffb3b6f053afc6"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=f6e08663977cfd10dfffb3b6f053afc6"/>
-    <sys_hub_action_instance action="delete_multiple" query="flow=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT INb4209ae797bcfd10dfffb3b6f053afd9,fc209ae797bcfd10dfffb3b6f053afa5"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN271ac6b297893110dfffb3b6f053af65,305ef93297493110dfffb3b6f053afe4,b4209ae797bcfd10dfffb3b6f053afd9,fc209ae797bcfd10dfffb3b6f053afa5"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Populate Card">f6e08663977cfd10dfffb3b6f053afc6</flow>
+        <order>11</order>
+        <parent_ui_id>6fd392c9-1e97-4cf0-8b19-2f35b6a376b2</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>271ac6b297893110dfffb3b6f053af65</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <ui_id>c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=271ac6b297893110dfffb3b6f053af65"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>271ac6b297893110dfffb3b6f053af65</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>631ac6b297893110dfffb3b6f053af68</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <value>x_759224_magic_c_0_mtg_cards</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=271ac6b297893110dfffb3b6f053af65"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>271ac6b297893110dfffb3b6f053af65</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>ef1ac6b297893110dfffb3b6f053af67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{subflow.card_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>271ac6b297893110dfffb3b6f053af65</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>671ac6b297893110dfffb3b6f053af67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>271ac6b297893110dfffb3b6f053af65</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>2f1ac6b297893110dfffb3b6f053af67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>face_one_power={{fd_transform:8cefa992-d73f-41ce-a21f-46019a47a620}}^face_one_toughness={{fd_transform:040d19fa-df09-4592-bc29-1352b47f1858}}^cmc={{fd_transform:cee330c1-9d19-46fe-8e5f-3f0c9147cfc3}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=271ac6b297893110dfffb3b6f053af65^sys_idNOT IN6b1ac6b297893110dfffb3b6f053af66"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>values</input_name>
+        <instance>271ac6b297893110dfffb3b6f053af65</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\r\nvar c \u003d 0;\r\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\r\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\r\nwhile ( c \u003c l){\r\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\r\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\r\n    keywordGr.query();\r\n    keywordGr.next();\r\n    keywords.push(keywordGr.getUniqueValue());\r\n    gs.info(keywords);\r\n    c++\r\n}\r\nreturn keywords;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>6b1ac6b297893110dfffb3b6f053af66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=271ac6b297893110dfffb3b6f053af65"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Populate Card">f6e08663977cfd10dfffb3b6f053afc6</flow>
+        <order>9</order>
+        <parent_ui_id>a1d0d38a-a21a-486b-b624-ce0f1a96d18d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>305ef93297493110dfffb3b6f053afe4</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <ui_id>782544d4-cd93-4210-8789-bfb5fe51699e</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=305ef93297493110dfffb3b6f053afe4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>305ef93297493110dfffb3b6f053afe4</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>3c5ef93297493110dfffb3b6f053afe5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:32</sys_updated_on>
+        <value>x_759224_magic_c_0_mtg_cards</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=305ef93297493110dfffb3b6f053afe4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>305ef93297493110dfffb3b6f053afe4</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>b85ef93297493110dfffb3b6f053afe5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:32</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{subflow.card_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>305ef93297493110dfffb3b6f053afe4</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>345ef93297493110dfffb3b6f053afe5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:32</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>305ef93297493110dfffb3b6f053afe4</id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>f45ef93297493110dfffb3b6f053afe5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:01:29</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>face_one_power={{fd_transform:c6e4db68-d2dc-4ed3-9626-8b2d3d8bbf2a}}^face_one_toughness={{fd_transform:cb71482a-b80f-432b-93bd-bc59fb6ed285}}^cmc={{fd_transform:c37547fe-c885-4740-aeb9-2cde48547a33}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=305ef93297493110dfffb3b6f053afe4^sys_idNOT IN305ef93297493110dfffb3b6f053afe5"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>values</input_name>
+        <instance>305ef93297493110dfffb3b6f053afe4</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\r\nvar c \u003d 0;\r\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\r\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\r\nwhile ( c \u003c l){\r\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\r\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\r\n    keywordGr.query();\r\n    keywordGr.next();\r\n    keywords.push(keywordGr.getUniqueValue());\r\n    gs.info(keywords);\r\n    c++\r\n}\r\nreturn keywords;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:32</sys_created_on>
+        <sys_id>305ef93297493110dfffb3b6f053afe5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:32</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=305ef93297493110dfffb3b6f053afe4"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
         <action_inputs/>
@@ -161,10 +337,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b4209ae797bcfd10dfffb3b6f053afd9</sys_id>
-        <sys_mod_count>152</sys_mod_count>
+        <sys_mod_count>174</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>071c84ab-16f6-425a-859f-bc2255413357</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b4209ae797bcfd10dfffb3b6f053afd9"/>
@@ -227,11 +403,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b8209ae797bcfd10dfffb3b6f053afda</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:01:29</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>face_one_power={{fd_transform:721bd45c-1318-496d-9263-2acfb8c71d77}}^face_one_toughness={{fd_transform:aa03db5e-56a8-4f02-a816-48d4256a5a65}}^cmc={{fd_transform:93f5c106-5eb0-41aa-a744-465f159024f8}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}</value>
+        <value>face_one_power={{fd_transform:721bd45c-1318-496d-9263-2acfb8c71d77}}^face_one_toughness={{fd_transform:aa03db5e-56a8-4f02-a816-48d4256a5a65}}^cmc={{fd_transform:93f5c106-5eb0-41aa-a744-465f159024f8}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=b4209ae797bcfd10dfffb3b6f053afd9^sys_idNOT IN5661a66397303150dfffb3b6f053af0e"/>
     <sys_hub_input_scripts action="INSERT_OR_UPDATE">
@@ -239,13 +415,13 @@
         <input_name>values</input_name>
         <instance>b4209ae797bcfd10dfffb3b6f053afd9</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\r\nvar c \u003d 0;\r\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\r\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\r\nwhile ( c \u003c l){\r\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\r\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\r\n    keywordGr.query();\r\n    keywordGr.next();\r\n    keywords.push(keywordGr.getUniqueValue());\r\n    gs.info(keywords);\r\n    c++\r\n}\r\nreturn keywords;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 23:47:34</sys_created_on>
         <sys_id>5661a66397303150dfffb3b6f053af0e</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:45:07</sys_updated_on>
+        <sys_updated_on>2023-09-06 23:28:32</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b4209ae797bcfd10dfffb3b6f053afd9"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -263,10 +439,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afa5</sys_id>
-        <sys_mod_count>152</sys_mod_count>
+        <sys_mod_count>174</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>2d2f0291-10c7-48ef-8a7e-65da7e447a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fc209ae797bcfd10dfffb3b6f053afa5"/>
@@ -334,10 +510,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>3c209ae797bcfd10dfffb3b6f053afad</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>8df16174-85d1-49f6-84fd-ba9e81bfe831</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -382,10 +558,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>70209ae797bcfd10dfffb3b6f053afb1</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -456,10 +632,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>78209ae797bcfd10dfffb3b6f053afdb</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>a1d0d38a-a21a-486b-b624-ce0f1a96d18d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -530,10 +706,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b0209ae797bcfd10dfffb3b6f053afd2</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -595,7 +771,7 @@
         <flow_variables_assigned/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>10</order>
+        <order>12</order>
         <outputs_assigned/>
         <outputs_to_assign/>
         <parent_ui_id/>
@@ -603,10 +779,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:37:32</sys_created_on>
         <sys_id>e8611e6b97bcfd10dfffb3b6f053af01</sys_id>
-        <sys_mod_count>79</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:15</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>b2cb14be-b3b5-445f-bec0-7fbc9a38c852</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -638,10 +814,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f4209ae797bcfd10dfffb3b6f053afa9</sys_id>
-        <sys_mod_count>79</sys_mod_count>
+        <sys_mod_count>90</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>6ebff54b-685a-4725-a503-af29e288c356</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -866,10 +1042,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f8209ae797bcfd10dfffb3b6f053afcf</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>53823282-11f8-401f-9ad9-cd13f990e97c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -892,7 +1068,7 @@
         <flow_variables_assigned/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>9</order>
+        <order>10</order>
         <outputs_assigned/>
         <outputs_to_assign/>
         <parent_ui_id>53823282-11f8-401f-9ad9-cd13f990e97c</parent_ui_id>
@@ -900,10 +1076,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afde</sys_id>
-        <sys_mod_count>80</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-05 23:52:14</sys_updated_on>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
         <ui_id>6fd392c9-1e97-4cf0-8b19-2f35b6a376b2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -912,7 +1088,24 @@
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_f6e08663977cfd10dfffb3b6f053afc6^id=fc209ae797bcfd10dfffb3b6f053afde"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=fc209ae797bcfd10dfffb3b6f053afde"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=fc209ae797bcfd10dfffb3b6f053afde"/>
-    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN22a83a6397b03150dfffb3b6f053afa3,2a853e2f97703150dfffb3b6f053af1d,2ea83a6397b03150dfffb3b6f053afa3,36834b2397f03150dfffb3b6f053af4d,3a834b2397f03150dfffb3b6f053af4b,3a834b2397f03150dfffb3b6f053af4c,62853e2f97703150dfffb3b6f053af1d,6aa83a6397b03150dfffb3b6f053afa2,6aa83a6397b03150dfffb3b6f053afa3,72834b2397f03150dfffb3b6f053af4d,76834b2397f03150dfffb3b6f053af4c,7e834b2397f03150dfffb3b6f053af4d,a6a83a6397b03150dfffb3b6f053afa3,b2834b2397f03150dfffb3b6f053af4c,ba834b2397f03150dfffb3b6f053af4d,be834b2397f03150dfffb3b6f053af4c,e2a83a6397b03150dfffb3b6f053afa3,f6834b2397f03150dfffb3b6f053af4d,fa834b2397f03150dfffb3b6f053af4c,fe834b2397f03150dfffb3b6f053af4b"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN055ef93297493110dfffb3b6f053aff3,22a83a6397b03150dfffb3b6f053afa3,271ac6b297893110dfffb3b6f053af72,2a853e2f97703150dfffb3b6f053af1d,2b1ac6b297893110dfffb3b6f053af71,2ea83a6397b03150dfffb3b6f053afa3,36834b2397f03150dfffb3b6f053af4d,3a834b2397f03150dfffb3b6f053af4b,3a834b2397f03150dfffb3b6f053af4c,415ef93297493110dfffb3b6f053aff3,4d5ef93297493110dfffb3b6f053aff3,62853e2f97703150dfffb3b6f053af1d,631ac6b297893110dfffb3b6f053af71,631ac6b297893110dfffb3b6f053af72,6aa83a6397b03150dfffb3b6f053afa2,6aa83a6397b03150dfffb3b6f053afa3,72834b2397f03150dfffb3b6f053af4d,76834b2397f03150dfffb3b6f053af4c,7e834b2397f03150dfffb3b6f053af4d,895ef93297493110dfffb3b6f053aff3,8d5ef93297493110dfffb3b6f053aff2,a6a83a6397b03150dfffb3b6f053afa3,af1ac6b297893110dfffb3b6f053af71,b2834b2397f03150dfffb3b6f053af4c,ba834b2397f03150dfffb3b6f053af4d,be834b2397f03150dfffb3b6f053af4c,c55ef93297493110dfffb3b6f053aff3,e2a83a6397b03150dfffb3b6f053afa3,eb1ac6b297893110dfffb3b6f053af71,f6834b2397f03150dfffb3b6f053af4d,fa834b2397f03150dfffb3b6f053af4c,fe834b2397f03150dfffb3b6f053af4b"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
+        <source_ui_id>c6e4db68-d2dc-4ed3-9626-8b2d3d8bbf2a</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>055ef93297493110dfffb3b6f053aff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>acc1d66c-8309-4581-9e94-097c4254d584</ui_id>
+    </sys_hub_pill_compound>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
         <extra_info/>
@@ -935,6 +1128,23 @@
         <extra_info/>
         <order>1</order>
         <prescription/>
+        <source_ui_id>cee330c1-9d19-46fe-8e5f-3f0c9147cfc3</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>271ac6b297893110dfffb3b6f053af72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>5ba4b49d-db32-4924-877d-ff5316ccecb9</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
         <source_ui_id>de12be2c-7478-451b-a7f0-7070ab8c4b43</source_ui_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:15:31</sys_created_on>
@@ -946,6 +1156,23 @@
         <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
         <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
         <ui_id>9c602bb1-12d6-42e5-be1d-2352e0d888d3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
+        <source_ui_id>040d19fa-df09-4592-bc29-1352b47f1858</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>2b1ac6b297893110dfffb3b6f053af71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>8284ec6e-9854-4abc-ac75-5ae028348ef4</ui_id>
     </sys_hub_pill_compound>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
@@ -1019,6 +1246,40 @@
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
         <extra_info/>
         <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>415ef93297493110dfffb3b6f053aff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cb71482a-b80f-432b-93bd-bc59fb6ed285</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
+        <source_ui_id>cb71482a-b80f-432b-93bd-bc59fb6ed285</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>4d5ef93297493110dfffb3b6f053aff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>ad297ea4-088e-4ea7-9f13-b620d89fcf6a</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
         <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc}}</prescription>
         <source_ui_id/>
         <sys_created_by>greg</sys_created_by>
@@ -1031,6 +1292,40 @@
         <transform_compositions>[]</transform_compositions>
         <transform_definition_id/>
         <ui_id>de12be2c-7478-451b-a7f0-7070ab8c4b43</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
+        <source_ui_id>8cefa992-d73f-41ce-a21f-46019a47a620</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>631ac6b297893110dfffb3b6f053af71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>adcad5c9-86f9-4295-bcd6-ae2f5f3a6a0e</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>631ac6b297893110dfffb3b6f053af72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cee330c1-9d19-46fe-8e5f-3f0c9147cfc3</ui_id>
     </sys_hub_pill_compound>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
@@ -1122,6 +1417,40 @@
         <extra_info/>
         <order>1</order>
         <prescription/>
+        <source_ui_id>c37547fe-c885-4740-aeb9-2cde48547a33</source_ui_id>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>895ef93297493110dfffb3b6f053aff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
+        <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
+        <ui_id>988575b3-8bd6-4442-8e72-0e4b65aaa2de</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>8d5ef93297493110dfffb3b6f053aff2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>c37547fe-c885-4740-aeb9-2cde48547a33</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
         <source_ui_id>aa03db5e-56a8-4f02-a816-48d4256a5a65</source_ui_id>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:29:10</sys_created_on>
@@ -1133,6 +1462,23 @@
         <transform_compositions>[{"id":"9c4cf2c60f4130106d1a3a3485767ef7","transformType":null,"transformDefinition":null,"order":0,"parameters":[]}]</transform_compositions>
         <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
         <ui_id>08798a54-f41f-426b-8e3b-3dd6c725af2c</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>af1ac6b297893110dfffb3b6f053af71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>8cefa992-d73f-41ce-a21f-46019a47a620</ui_id>
     </sys_hub_pill_compound>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
@@ -1189,6 +1535,23 @@
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
         <extra_info/>
         <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-06 23:34:33</sys_created_on>
+        <sys_id>c55ef93297493110dfffb3b6f053aff3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-06 23:34:33</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>c6e4db68-d2dc-4ed3-9626-8b2d3d8bbf2a</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
         <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness}}</prescription>
         <source_ui_id/>
         <sys_created_by>greg</sys_created_by>
@@ -1201,6 +1564,23 @@
         <transform_compositions>[]</transform_compositions>
         <transform_definition_id/>
         <ui_id>aa03db5e-56a8-4f02-a816-48d4256a5a65</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-07 00:26:03</sys_created_on>
+        <sys_id>eb1ac6b297893110dfffb3b6f053af71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-07 00:26:03</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>040d19fa-df09-4592-bc29-1352b47f1858</ui_id>
     </sys_hub_pill_compound>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>f6e08663977cfd10dfffb3b6f053afc6</attached_to>
