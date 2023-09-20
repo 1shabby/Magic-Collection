@@ -4,19 +4,7 @@
         <array>false</array>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	var value = 0;
-	var collectionGr = new GlideRecord('x_759224_magic_c_0_mtg_collection');
-	collectionGr.addQuery('owner',current.owner);
-	collectionGr.query();
-	while(collectionGr.next()){
-	value = value + +collectionGr.getValue('price');
-	}
-	return value;  // return the calculated value
-
-})(current);]]></calculation>
+        <calculation/>
         <choice/>
         <choice_field/>
         <choice_table/>
@@ -65,14 +53,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_complete_collection_value</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-15 16:51:17</sys_updated_on>
+        <sys_updated_on>2023-09-20 17:50:25</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>true</virtual>
+        <virtual>false</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
