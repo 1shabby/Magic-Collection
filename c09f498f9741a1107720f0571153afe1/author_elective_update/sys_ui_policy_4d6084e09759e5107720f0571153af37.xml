@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="DELETE">
+        <active>false</active>
+        <conditions table="x_759224_magic_c_0_mtg_cards">collector_number&lt;0^EQ<item endquery="false" field="collector_number" goto="false" newquery="false" operator="&lt;" or="false" value="0"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>false</on_load>
+        <order>100</order>
+        <reverse_if_false>false</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+g_form.hideAllFieldMsgs();
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+g_form.clearValue('collector_number');
+g_form.showFieldMsg('collector_number','Please enter a positive integer.','error');
+}]]></script_true>
+        <set_values/>
+        <short_description>Collector's Number Logic</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-25 04:45:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4d6084e09759e5107720f0571153af37</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Collector's Number Logic</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_4d6084e09759e5107720f0571153af37</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-04-05 06:54:19</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_cards</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a7b89adb4cf4109a4dcac505961903</instance_id>
+        <instance_name>dev115816</instance_name>
+        <name>sys_ui_policy_4d6084e09759e5107720f0571153af37</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_policy"&gt;
+    &lt;sys_ui_policy action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;false&lt;/active&gt;
+        &lt;conditions table="x_759224_magic_c_0_mtg_cards"&gt;collector_number&amp;lt;0^EQ&lt;item endquery="false" field="collector_number" goto="false" newquery="false" operator="&amp;lt;" or="false" value="0"/&gt;
+            &lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;
+        &lt;/conditions&gt;
+        &lt;description/&gt;
+        &lt;global&gt;true&lt;/global&gt;
+        &lt;inherit&gt;false&lt;/inherit&gt;
+        &lt;isolate_script&gt;true&lt;/isolate_script&gt;
+        &lt;model_id/&gt;
+        &lt;model_table/&gt;
+        &lt;on_load&gt;false&lt;/on_load&gt;
+        &lt;order&gt;100&lt;/order&gt;
+        &lt;reverse_if_false&gt;false&lt;/reverse_if_false&gt;
+        &lt;run_scripts&gt;true&lt;/run_scripts&gt;
+        &lt;script_false&gt;&lt;![CDATA[function onCondition() {
+g_form.hideAllFieldMsgs();
+}]]&gt;&lt;/script_false&gt;
+        &lt;script_true&gt;&lt;![CDATA[function onCondition() {
+g_form.clearValue('collector_number');
+g_form.showFieldMsg('collector_number','Please enter a positive integer.','error');
+}]]&gt;&lt;/script_true&gt;
+        &lt;set_values/&gt;
+        &lt;short_description&gt;Collector's Number Logic&lt;/short_description&gt;
+        &lt;sys_class_name&gt;sys_ui_policy&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-02-25 04:45:33&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;
+        &lt;sys_id&gt;4d6084e09759e5107720f0571153af37&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Collector's Number Logic&lt;/sys_name&gt;
+        &lt;sys_overrides/&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_ui_policy_4d6084e09759e5107720f0571153af37&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-04-05 06:54:19&lt;/sys_updated_on&gt;
+        &lt;table&gt;x_759224_magic_c_0_mtg_cards&lt;/table&gt;
+        &lt;ui_type&gt;0&lt;/ui_type&gt;
+        &lt;view/&gt;
+    &lt;/sys_ui_policy&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>1616270067</payload_hash>
+        <record_name>Collector's Number Logic</record_name>
+        <reverted_from/>
+        <source>c1ec4fc9976c3110dfffb3b6f053afd3</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-07 22:18:01</sys_created_on>
+        <sys_id>6f1d4f4d976c3110dfffb3b6f053af29</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189d21420d30000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-07 22:18:01</sys_updated_on>
+        <type>UI Policy</type>
+        <update_guid>2f1d4f4dc76c31106b691a1cf40a8029</update_guid>
+        <update_guid_history>2f1d4f4dc76c31106b691a1cf40a8029:1616270067</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-25 16:14:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy">sys_ui_policy</sys_db_object>
+        <sys_id>3b533606847948f89bf1270271e51f84</sys_id>
+        <sys_metadata>4d6084e09759e5107720f0571153af37</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Collector's Number Logic</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="Cards">df1015cf9741a1107720f0571153afc3</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_4d6084e09759e5107720f0571153af37</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_4d6084e09759e5107720f0571153af37">6f1d4f4d976c3110dfffb3b6f053af29</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-25 16:14:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
