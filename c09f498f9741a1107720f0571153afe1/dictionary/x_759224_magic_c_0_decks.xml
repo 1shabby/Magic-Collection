@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="85fd28d59729311078cb33121153afde" label="Decks" max_length="40" name="x_759224_magic_c_0_decks" type="collection">
+        <element label="Cards" mandatory="true" max_length="4000" name="cards" reference="x_759224_magic_c_0_mtg_cards" type="glide_list"/>
+        <element display="true" label="Commander(s)" mandatory="true" max_length="4000" name="commanders" reference="x_759224_magic_c_0_mtg_cards" reference_qual="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" reference_qual_condition="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" type="glide_list"/>
+        <element label="Name" mandatory="true" max_length="400" name="name" type="string"/>
+        <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="owner"/>
+        </index>
+    </element>
+</database>
