@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Play Test - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="play">63a904999765311078cb33121153af8e</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-26 19:46:50</sys_created_on>
+        <sys_id>980ac8999765311078cb33121153af34</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Play Test - Container 1</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_container_980ac8999765311078cb33121153af34</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-26 20:10:54</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>bd251336db7891104d2bac44d4961962</instance_id>
+        <instance_name>dev129921</instance_name>
+        <name>sp_container_980ac8999765311078cb33121153af34</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Play Test - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="play">63a904999765311078cb33121153af8e</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>greg</sys_created_by><sys_created_on>2023-09-26 19:46:50</sys_created_on><sys_id>980ac8999765311078cb33121153af34</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Play Test - Container 1</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sp_container_980ac8999765311078cb33121153af34</sys_update_name><sys_updated_by>greg</sys_updated_by><sys_updated_on>2023-09-26 20:10:54</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-964324150</payload_hash>
+        <record_name>Play Test - Container 1</record_name>
+        <reverted_from/>
+        <source>8686bb8197e1311078cb33121153afcb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-26 20:10:54</sys_created_on>
+        <sys_id>8d8f405197a5311078cb33121153af24</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18ad31db7570000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-26 20:10:54</sys_updated_on>
+        <type>Container</type>
+        <update_guid>458f4051caa531106fb909eac545a724</update_guid>
+        <update_guid_history>458f4051caa531106fb909eac545a724:-964324150,5c0ac899566531107498bdb3e5466135:1880556681</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Play Test - Container 1">258f405197a5311078cb33121153af54</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-26 20:10:57</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>b6783b4670fc418c9037f0fbce1d5690</sys_id>
+        <sys_metadata>980ac8999765311078cb33121153af34</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Play Test - Container 1</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_container_980ac8999765311078cb33121153af34</sys_update_name>
+        <sys_update_version display_value="sp_container_980ac8999765311078cb33121153af34">8d8f405197a5311078cb33121153af24</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-26 20:10:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
