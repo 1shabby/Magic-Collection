@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>405</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Scryfall API - Card Lookup</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:10:06</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:48</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -459,6 +459,7 @@
         <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
         <value/>
     </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=0c535ff697343d10dfffb3b6f053af12"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=0c535ff697343d10dfffb3b6f053af12"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=0c535ff697343d10dfffb3b6f053af12^sys_idNOT IN4c4df7d797493510dfffb3b6f053afd2"/>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -628,18 +629,6 @@ var nBody = body.data[0];
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=19299b7297743d10dfffb3b6f053af04"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>19299b7297743d10dfffb3b6f053af04</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:55:38</sys_created_on>
-        <sys_id>61299b7297743d10dfffb3b6f053af13</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:55:38</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>response</field>
         <id>19299b7297743d10dfffb3b6f053af04</id>
         <sys_created_by>greg</sys_created_by>
@@ -651,20 +640,9 @@ var nBody = body.data[0];
         <table>var__m_sys_hub_step_ext_input_19299b7297743d10dfffb3b6f053af04</table>
         <value>{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}</value>
     </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>19299b7297743d10dfffb3b6f053af04</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:55:38</sys_created_on>
-        <sys_id>25299b7297743d10dfffb3b6f053af13</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:55:38</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_19299b7297743d10dfffb3b6f053af04^id=19299b7297743d10dfffb3b6f053af04"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=19299b7297743d10dfffb3b6f053af04"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=19299b7297743d10dfffb3b6f053af04"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=19299b7297743d10dfffb3b6f053af04^sys_idNOT INd1299b7297743d10dfffb3b6f053af08"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -1116,6 +1094,7 @@ var nBody = body.data[0];
         <table>var__m_sys_flow_step_definition_input_07a762fb47222200b4fad7527c9a7129</table>
         <value/>
     </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=1ed0d96a97f0b910dfffb3b6f053af6f"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=1ed0d96a97f0b910dfffb3b6f053af6f"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=1ed0d96a97f0b910dfffb3b6f053af6f"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=1ed0d96a97f0b910dfffb3b6f053af6f"/>
@@ -1137,10 +1116,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 18:04:37</sys_created_on>
         <sys_id>6d26b5ea97b4b910dfffb3b6f053af69</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:07</sys_updated_on>
+        <sys_updated_on>2023-09-27 19:59:29</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6d26b5ea97b4b910dfffb3b6f053af69"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1165,20 +1144,23 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 18:04:38</sys_created_on>
         <sys_id>ed26b5ea97b4b910dfffb3b6f053af82</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:07</sys_updated_on>
+        <sys_updated_on>2023-09-27 19:59:29</sys_updated_on>
         <value>(function execute(inputs, outputs) {
 // ... code ...
   var name = inputs.name.replace(/ /g,'');
   var cn = inputs.cn;
-  if(cn.indexOf('★') != -1){
+  cn = encodeURIComponent(cn);
+
+/*  if(cn.indexOf('★') != -1){
 	cn = cn.replace('★','%E2%98%85%27');
 	cn = '%27' + cn;
   }
   else{
   	cn = inputs.cn;
   }
+*/
   var url = 'https://api.scryfall.com/cards/search?q=set:'+inputs.set+'+'+name+"+cn:'"+cn + "'";
  outputs.url = url;
 })(inputs, outputs);
@@ -1186,18 +1168,6 @@ var nBody = body.data[0];
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=6d26b5ea97b4b910dfffb3b6f053af69"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>6d26b5ea97b4b910dfffb3b6f053af69</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:04:38</sys_created_on>
-        <sys_id>ad26b5ea97b4b910dfffb3b6f053af81</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:04:38</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>cn</field>
         <id>6d26b5ea97b4b910dfffb3b6f053af69</id>
@@ -1226,11 +1196,11 @@ var nBody = body.data[0];
         <field>script</field>
         <id>6d26b5ea97b4b910dfffb3b6f053af69</id>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:04:38</sys_created_on>
-        <sys_id>6526b5ea97b4b910dfffb3b6f053af82</sys_id>
+        <sys_created_on>2023-09-27 19:44:28</sys_created_on>
+        <sys_id>af03d5ad976d711078cb33121153afd4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:04:38</sys_updated_on>
+        <sys_updated_on>2023-09-27 19:44:28</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -1248,6 +1218,7 @@ var nBody = body.data[0];
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_6d26b5ea97b4b910dfffb3b6f053af69^id=6d26b5ea97b4b910dfffb3b6f053af69"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=6d26b5ea97b4b910dfffb3b6f053af69"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=6d26b5ea97b4b910dfffb3b6f053af69"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=6d26b5ea97b4b910dfffb3b6f053af69^sys_idNOT IN2526b5ea97b4b910dfffb3b6f053af75,2926b5ea97b4b910dfffb3b6f053af71,6526b5ea97b4b910dfffb3b6f053af77"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -2013,14 +1984,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:21:14</sys_created_on>
         <sys_id>e2d63aaf97703150dfffb3b6f053afda</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:10:03</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2280,17 +2251,17 @@ var nBody = body.data[0];
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>532eb35b97493510dfffb3b6f053af06</snapshot>
+        <snapshot>76c691e197ad711078cb33121153af07</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:10:08</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:51</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2492,18 +2463,6 @@ var nBody = body.data[0];
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=5c395f7297743d10dfffb3b6f053af55"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>5c395f7297743d10dfffb3b6f053af55</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:55:51</sys_created_on>
-        <sys_id>28395f7297743d10dfffb3b6f053af63</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:55:51</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>response</field>
         <id>5c395f7297743d10dfffb3b6f053af55</id>
         <sys_created_by>greg</sys_created_by>
@@ -2515,20 +2474,9 @@ var nBody = body.data[0];
         <table>var__m_sys_hub_step_ext_input_5c395f7297743d10dfffb3b6f053af55</table>
         <value>{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}</value>
     </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>5c395f7297743d10dfffb3b6f053af55</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-25 19:55:51</sys_created_on>
-        <sys_id>e8395f7297743d10dfffb3b6f053af63</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 19:55:51</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_5c395f7297743d10dfffb3b6f053af55^id=5c395f7297743d10dfffb3b6f053af55"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=5c395f7297743d10dfffb3b6f053af55"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=5c395f7297743d10dfffb3b6f053af55"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=5c395f7297743d10dfffb3b6f053af55^sys_idNOT INe0395f7297743d10dfffb3b6f053af59"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -2966,6 +2914,7 @@ var nBody = body.data[0];
         <table>var__m_sys_flow_step_definition_input_07a762fb47222200b4fad7527c9a7129</table>
         <value/>
     </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=661219ea97f0b910dfffb3b6f053af48"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=661219ea97f0b910dfffb3b6f053af48"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=661219ea97f0b910dfffb3b6f053af48"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=661219ea97f0b910dfffb3b6f053af48"/>
@@ -2987,10 +2936,10 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 18:05:17</sys_created_on>
         <sys_id>87463dea97b4b910dfffb3b6f053af49</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:18</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:48</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=87463dea97b4b910dfffb3b6f053af49"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3001,20 +2950,23 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 18:05:17</sys_created_on>
         <sys_id>0f463dea97b4b910dfffb3b6f053af5d</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:25:18</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:48</sys_updated_on>
         <value>(function execute(inputs, outputs) {
 // ... code ...
   var name = inputs.name.replace(/ /g,'');
   var cn = inputs.cn;
-  if(cn.indexOf('★') != -1){
+  cn = encodeURIComponent(cn);
+
+/*  if(cn.indexOf('★') != -1){
 	cn = cn.replace('★','%E2%98%85%27');
 	cn = '%27' + cn;
   }
   else{
   	cn = inputs.cn;
   }
+*/
   var url = 'https://api.scryfall.com/cards/search?q=set:'+inputs.set+'+'+name+"+cn:'"+cn + "'";
  outputs.url = url;
 })(inputs, outputs);
@@ -3036,18 +2988,6 @@ var nBody = body.data[0];
         <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=87463dea97b4b910dfffb3b6f053af49"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>87463dea97b4b910dfffb3b6f053af49</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:05:17</sys_created_on>
-        <sys_id>07463dea97b4b910dfffb3b6f053af5d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:05:17</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>cn</field>
         <id>87463dea97b4b910dfffb3b6f053af49</id>
@@ -3076,11 +3016,11 @@ var nBody = body.data[0];
         <field>script</field>
         <id>87463dea97b4b910dfffb3b6f053af49</id>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-24 18:05:17</sys_created_on>
-        <sys_id>c7463dea97b4b910dfffb3b6f053af5d</sys_id>
+        <sys_created_on>2023-09-27 19:46:43</sys_created_on>
+        <sys_id>9893d1ed976d711078cb33121153af2c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 18:05:17</sys_updated_on>
+        <sys_updated_on>2023-09-27 19:46:43</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -3098,6 +3038,7 @@ var nBody = body.data[0];
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_87463dea97b4b910dfffb3b6f053af49^id=87463dea97b4b910dfffb3b6f053af49"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=87463dea97b4b910dfffb3b6f053af49"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=87463dea97b4b910dfffb3b6f053af49"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=87463dea97b4b910dfffb3b6f053af49^sys_idNOT IN07463dea97b4b910dfffb3b6f053af53,4f463dea97b4b910dfffb3b6f053af4c,87463dea97b4b910dfffb3b6f053af50"/>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -3759,6 +3700,7 @@ var nBody = body.data[0];
         <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
         <value/>
     </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_hub_step_ext_input action="delete_multiple" query="model=a5745b7a97343d10dfffb3b6f053af62"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=a5745b7a97343d10dfffb3b6f053af62^sys_idNOT IN2b40e77e97743d10dfffb3b6f053afcc"/>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -4362,14 +4304,14 @@ var nBody = body.data[0];
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>143</sys_mod_count>
+        <sys_mod_count>147</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:10:06</sys_updated_on>
+        <sys_updated_on>2023-09-27 20:00:48</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
