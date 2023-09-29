@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="85fd28d59729311078cb33121153afde" label="Decks" max_length="40" name="x_759224_magic_c_0_decks" type="collection">
         <element label="Cards" mandatory="true" max_length="4000" name="cards" reference="x_759224_magic_c_0_mtg_cards" type="glide_list"/>
+        <element label="Color Identity" max_length="4000" name="color_identity" read_only="true" type="glide_list"/>
         <element display="true" label="Commander(s)" mandatory="true" max_length="4000" name="commanders" reference="x_759224_magic_c_0_mtg_cards" reference_qual="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" reference_qual_condition="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" type="glide_list"/>
+        <element label="Forest" max_length="40" name="forest" type="integer"/>
+        <element label="Island" max_length="40" name="island" type="integer"/>
+        <element label="Mountain" max_length="40" name="mountain" type="integer"/>
         <element label="Name" mandatory="true" max_length="150" name="name" type="string"/>
         <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Plains" max_length="40" name="plains" type="integer"/>
+        <element label="Swamp" max_length="40" name="swamp" type="integer"/>
         <index name="index">
             <element name="owner"/>
         </index>
