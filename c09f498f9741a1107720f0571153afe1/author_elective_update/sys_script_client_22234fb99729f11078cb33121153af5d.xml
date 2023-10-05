@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>commanders</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name/>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    g_form.getReference('commanders', setColors); // doAlert is our callback function
+}
+ 
+function setColors(commander) { // reference is passed into callback as first arguments
+	console.log(commander.colors);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-28 22:36:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>22234fb99729f11078cb33121153af5d</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_client_22234fb99729f11078cb33121153af5d</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-29 00:40:58</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>bd251336db7891104d2bac44d4961962</instance_id>
+        <instance_name>dev129921</instance_name>
+        <name>sys_script_client_22234fb99729f11078cb33121153af5d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;commanders&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name/&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    g_form.getReference('commanders', setColors); // doAlert is our callback function
+}
+ 
+function setColors(commander) { // reference is passed into callback as first arguments
+	console.log(commander.colors);
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-09-28 22:36:39&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;22234fb99729f11078cb33121153af5d&lt;/sys_id&gt;&lt;sys_mod_count&gt;10&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_22234fb99729f11078cb33121153af5d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-09-29 00:40:58&lt;/sys_updated_on&gt;&lt;table&gt;x_759224_magic_c_0_decks&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1446646618</payload_hash>
+        <record_name/>
+        <reverted_from display_value="sys_script_client_22234fb99729f11078cb33121153af5d">60802b719769f11078cb33121153af79</reverted_from>
+        <source>8686bb8197e1311078cb33121153afcb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-29 00:44:55</sys_created_on>
+        <sys_id>de61ef7d97a9f11078cb33121153af30</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18ade654bb50000001</sys_recorded_at>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-29 00:44:55</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>5661a37d08a9f110f86be4dbc19cb45b</update_guid>
+        <update_guid_history>5661a37d08a9f110f86be4dbc19cb45b:1446646618,f031e37d51a9f110730a4c8dcf29f18d:-291563251,f5b06f3d56a9f110059bdd6edd9ee3dd:1184850958,e4802b712069f110fb1353ebbfa19978:1446646618,3746473df029f110786aa63e66567c59:1345119006,40064bbd8f29f11020e7732eda080261:-662280821,2ac547bd8729f1104212bfafd976e055:2081707853,7f854b3d4b29f1102559053bc86bcb9f:-2144328423,c855cb7d1829f11018e4a59ca0604b62:1958747707,6f15073d3729f11077784f23bfc8d8c0:-1745573537,d384473da929f1103f4064bb3742f563:1664319626,fd64033d9f29f110019959a6380039cf:1615185476,262403b91d29f110cf92ed2d19631086:-556187542,9704cbb95229f11065687ef8c22181a3:-2005161662</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 03:17:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>0965d4a9629545a681ea258749499561</sys_id>
+        <sys_metadata>22234fb99729f11078cb33121153af5d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="Decks">85fd28d59729311078cb33121153afde</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_client_22234fb99729f11078cb33121153af5d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_22234fb99729f11078cb33121153af5d">de61ef7d97a9f11078cb33121153af30</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-05 03:17:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
