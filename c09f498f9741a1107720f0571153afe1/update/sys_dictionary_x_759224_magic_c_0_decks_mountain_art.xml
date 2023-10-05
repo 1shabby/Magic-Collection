@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="swamp" table="x_759224_magic_c_0_decks">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="mountain_art" table="x_759224_magic_c_0_decks">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,10 +13,10 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Swamp</column_label>
+        <column_label>Mountain Art</column_label>
         <comments/>
         <create_roles/>
-        <default_value>0</default_value>
+        <default_value>https://cards.scryfall.io/normal/front/d/d/dd8611ec-6db3-4d29-8d3b-01e87bb38a55.jpg?1648839729</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -26,15 +26,15 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>swamp</element>
+        <element>mountain_art</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="URL">url</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
+        <max_length>300</max_length>
         <name>x_759224_magic_c_0_decks</name>
         <next_element/>
         <primary>false</primary>
@@ -51,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-28 22:20:30</sys_created_on>
-        <sys_name>Swamp</sys_name>
+        <sys_created_on>2023-10-05 01:20:25</sys_created_on>
+        <sys_name>Mountain Art</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_dictionary_x_759224_magic_c_0_decks_swamp</sys_update_name>
+        <sys_update_name>sys_dictionary_x_759224_magic_c_0_decks_mountain_art</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-05 01:47:55</sys_updated_on>
+        <sys_updated_on>2023-10-05 01:47:56</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
