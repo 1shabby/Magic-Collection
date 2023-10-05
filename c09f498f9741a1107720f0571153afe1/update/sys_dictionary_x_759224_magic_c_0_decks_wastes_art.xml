@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="swamp" table="x_759224_magic_c_0_decks">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="wastes_art" table="x_759224_magic_c_0_decks">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,10 +13,10 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Swamp</column_label>
+        <column_label>Wastes Art</column_label>
         <comments/>
         <create_roles/>
-        <default_value>0</default_value>
+        <default_value>https://cards.scryfall.io/normal/front/9/c/9cc070d3-4b83-4684-9caf-063e5c473a77.jpg?1657725364</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -26,15 +26,15 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>swamp</element>
+        <element>wastes_art</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="URL">url</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
+        <max_length>300</max_length>
         <name>x_759224_magic_c_0_decks</name>
         <next_element/>
         <primary>false</primary>
@@ -51,12 +51,12 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-28 22:20:30</sys_created_on>
-        <sys_name>Swamp</sys_name>
+        <sys_created_on>2023-10-05 01:27:59</sys_created_on>
+        <sys_name>Wastes Art</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_dictionary_x_759224_magic_c_0_decks_swamp</sys_update_name>
+        <sys_update_name>sys_dictionary_x_759224_magic_c_0_decks_wastes_art</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-10-05 01:47:55</sys_updated_on>
         <table_reference>false</table_reference>
