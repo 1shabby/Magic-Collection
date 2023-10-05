@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Checks if the length of the deck does not exceed is exactly 100 cards</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Deck Legality onLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var tLen = 0;
+   var commanders = g_form.getValue('commanders').split(',');
+   var cards = g_form.getValue('cards').split(',');
+   var w = parseInt(g_form.getValue('plains'));
+   var u = parseInt(g_form.getValue('island'));
+   var b = parseInt(g_form.getValue('swamp'));
+   var r = parseInt(g_form.getValue('mountain'));
+   var g = parseInt(g_form.getValue('forest'));
+   var c = parseInt(g_form.getValue('wastes'));
+   var basics = w+u+b+r+g+c;
+   tLen = basics + cards.length + commanders.length; 
+   if(tLen != 100){
+	g_form.addErrorMessage('Decks has ' + tLen.toString() + ' cards in it. Please Set it to 100.' )
+   }
+   else{
+	g_form.addInfoMessage('Deck is at ' + tLen.toString() + ' cards.');
+   }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 03:26:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>57cdbaf797e93d1078cb33121153af6c</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Deck Legality onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_client_57cdbaf797e93d1078cb33121153af6c</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-05 04:12:36</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
