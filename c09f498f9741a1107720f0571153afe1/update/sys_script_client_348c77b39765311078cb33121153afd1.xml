@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Leverages the getColors method in the MagicCollectionHelper script include to update the color identity field based on the most recent selected commander</description>
+        <field>commanders</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Set Color Identity</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    var ga = new GlideAjax('MagicCollectionHelper');
+    ga.addParam('sysparm_name', 'getColors');
+    ga.addParam('id', g_form.getValue('commanders'));
+    ga.getXMLAnswer(function(answer) {
+        g_form.setValue('color_identity', answer);
+    });
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 08:01:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>348c77b39765311078cb33121153afd1</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Set Color Identity</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_client_348c77b39765311078cb33121153afd1</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-06 04:26:12</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
