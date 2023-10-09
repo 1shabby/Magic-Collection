@@ -3,7 +3,7 @@
         <element label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
         <element label="Face Two Image" max_length="1024" name="back_image" read_only="true" type="url"/>
         <element label="CMC" max_length="40" name="cmc" read_only="true" type="integer"/>
-        <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
+        <element label="Collector Number" mandatory="true" max_length="40" name="collector_number" type="string"/>
         <element choice="3" label="Color Identity" max_length="1000" name="colors" read_only="true" type="glide_list">
             <choice>
                 <element inactive_on_update="false" label="White" sequence="0" value="W"/>
@@ -33,7 +33,7 @@
         <element label="Face Two Power" max_length="40" name="face_two_power" read_only="true" type="integer"/>
         <element label="Face Two Toughness" max_length="40" name="face_two_toughness" read_only="true" type="integer"/>
         <element label="Face Two Type Line" max_length="250" name="face_two_type_line" read_only="true" type="string"/>
-        <element choice="3" default="none" label="Foiling" max_length="40" name="foiling" type="choice">
+        <element choice="3" default="none" label="Foiling" mandatory="true" max_length="40" name="foiling" type="choice">
             <choice>
                 <element inactive_on_update="false" label="None" sequence="0" value="none"/>
                 <element inactive_on_update="false" label="Foil" sequence="1" value="foil"/>
@@ -45,7 +45,7 @@
         <element label="Is Multi-Faced" max_length="40" name="is_multi_faced" read_only="true" type="boolean"/>
         <element label="Keywords" max_length="4000" name="keywords" read_only="true" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
         <element display="true" label="Name" mandatory="true" max_length="400" name="name" type="string"/>
-        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
         <element default="0.00" label="Unit Price" max_length="20" name="price" read_only="true" type="currency"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#9;var retval = '';&#10;&#9;var change = current.total_price - current.pt_price;&#10;&#9;if(change == 0.00){&#10;&#9;&#9;retval = current.calculatedFieldValue;&#10;&#9;}&#10;&#9;retval = change;&#10;    return retval; // return the calculated value&#10;})(current);" label="Price Change" max_length="38" name="price_change" read_only="true" type="currency" virtual="true"/>
@@ -63,7 +63,7 @@
         </element>
         <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
-        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
         <element label="Face One Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
         <index name="index">
