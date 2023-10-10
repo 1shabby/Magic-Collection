@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_759224_magic_c_0.MagicPlayTestUtil</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>MagicPlayTestUtil</name>
+        <script><![CDATA[var MagicPlayTestUtil = Class.create();
+MagicPlayTestUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	shuffleDeck: function(deck){
+		
+	},
+    type: 'MagicPlayTestUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-10 20:58:07</sys_created_on>
+        <sys_id>8f702cf5973d351078cb33121153af52</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MagicPlayTestUtil</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_include_8f702cf5973d351078cb33121153af52</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-10 21:01:35</sys_updated_on>
+    </sys_script_include>
+</record_update>
