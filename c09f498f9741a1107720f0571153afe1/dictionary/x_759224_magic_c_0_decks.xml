@@ -4,19 +4,19 @@
         <element label="Color Identity" max_length="4000" name="color_identity" read_only="true" type="glide_list"/>
         <element display="true" label="Commander(s)" mandatory="true" max_length="4000" name="commanders" reference="x_759224_magic_c_0_mtg_cards" reference_qual="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" reference_qual_condition="type_lineLIKELegendary Creature^ORface_one_oracle_textLIKEcan be your commander^EQ" type="glide_list"/>
         <element default="0" label="Forest" max_length="40" name="forest" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/5/f/5fca5dbb-8d5e-4471-94f6-e0944cf60ed2.jpg?1648839741" label="Forest Art" max_length="300" name="forest_art" type="url"/>
+        <element label="Forest Art" max_length="300" name="forest_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Forest^ORname=Snow-Covered Forest^EQ" reference_qual_condition="name=Forest^ORname=Snow-Covered Forest^EQ" type="reference"/>
         <element default="0" label="Island" max_length="40" name="island" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/b/d/bd081bbf-8e82-405c-a522-f826fa0a6e1d.jpg?1648839714" label="Island Art" max_length="300" name="island_art" type="url"/>
+        <element label="Island Art" max_length="300" name="island_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Island^ORname=Snow-Covered Island^EQ" reference_qual_condition="name=Island^ORname=Snow-Covered Island^EQ" type="reference"/>
         <element default="0" label="Mountain" max_length="40" name="mountain" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/d/d/dd8611ec-6db3-4d29-8d3b-01e87bb38a55.jpg?1648839729" label="Mountain Art" max_length="300" name="mountain_art" type="url"/>
+        <element label="Mountain Art" max_length="300" name="mountain_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Mountain^ORname=Snow-Covered Mountain^EQ" reference_qual_condition="name=Mountain^ORname=Snow-Covered Mountain^EQ" type="reference"/>
         <element label="Name" mandatory="true" max_length="150" name="name" type="string"/>
         <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
         <element default="0" label="Plains" max_length="40" name="plains" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/c/7/c71446bd-08f2-41fe-ae44-db44814c8afb.jpg?1648839471" label="Plains Art" max_length="300" name="plains_art" type="url"/>
+        <element label="Plains Art" max_length="300" name="plains_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Plains^ORname=Snow-Covered Plains^EQ" reference_qual_condition="name=Plains^ORname=Snow-Covered Plains^EQ" type="reference"/>
         <element default="0" label="Swamp" max_length="40" name="swamp" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/0/8/085b4641-62fb-4820-aded-ccc9403d319e.jpg?1648839722" label="Swamp Art" max_length="300" name="swamp_art" type="url"/>
+        <element label="Swamp Art" max_length="300" name="swamp_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Swamp^ORname=Snow-Covered Swamp^EQ" reference_qual_condition="name=Swamp^ORname=Snow-Covered Swamp^EQ" type="reference"/>
         <element default="0" label="Wastes" max_length="40" name="wastes" type="integer"/>
-        <element default="https://cards.scryfall.io/normal/front/9/c/9cc070d3-4b83-4684-9caf-063e5c473a77.jpg?1657725364" label="Wastes Art" max_length="300" name="wastes_art" type="url"/>
+        <element label="Wastes Art" max_length="300" name="wastes_art" reference="x_759224_magic_c_0_mtg_cards" reference_qual="name=Wastes^EQ" reference_qual_condition="name=Wastes^EQ" type="reference"/>
         <index name="index">
             <element name="owner"/>
         </index>
