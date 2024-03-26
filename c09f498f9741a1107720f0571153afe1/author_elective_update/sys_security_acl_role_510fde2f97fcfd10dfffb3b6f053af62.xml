@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-27 23:37:07</sys_created_on>
+        <sys_id>510fde2f97fcfd10dfffb3b6f053af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_colors.x_759224_magic_c_0.mtg_colors_user</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_security_acl display_value="x_759224_magic_c_0_mtg_colors">1d0fde2f97fcfd10dfffb3b6f053af5b</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_510fde2f97fcfd10dfffb3b6f053af62</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-27 23:37:07</sys_updated_on>
+        <sys_user_role display_value="x_759224_magic_c_0.mtg_colors_user" name="x_759224_magic_c_0.mtg_colors_user">010f522f97fcfd10dfffb3b6f053af08</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>160a39e21b0506d477c7cb7b234bcb74</instance_id>
+        <instance_name>dev249155</instance_name>
+        <name>sys_security_acl_role_510fde2f97fcfd10dfffb3b6f053af62</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-27 23:37:07</sys_created_on>
+        <sys_id>510fde2f97fcfd10dfffb3b6f053af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_colors.x_759224_magic_c_0.mtg_colors_user</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_security_acl display_value="x_759224_magic_c_0_mtg_colors">1d0fde2f97fcfd10dfffb3b6f053af5b</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_510fde2f97fcfd10dfffb3b6f053af62</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-27 23:37:07</sys_updated_on>
+        <sys_user_role display_value="x_759224_magic_c_0.mtg_colors_user" name="x_759224_magic_c_0.mtg_colors_user">010f522f97fcfd10dfffb3b6f053af08</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>]]></payload>
+        <payload_hash>-482938620</payload_hash>
+        <record_name>x_759224_magic_c_0_mtg_colors.x_759224_magic_c_0.mtg_colors_user</record_name>
+        <reverted_from/>
+        <source>8b84b1e7478502102dbef1f4116d43b3</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-26 02:59:25</sys_created_on>
+        <sys_id>7dc471ab478502102dbef1f4116d43fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18e78b2c6a50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-26 02:59:25</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>3dc471aba7850210a1d4bf81a4007cfe</update_guid>
+        <update_guid_history>3dc471aba7850210a1d4bf81a4007cfe:-482938620</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_759224_magic_c_0_mtg_colors.x_759224_magic_c_0.mtg_colors_user">0e69b9a347c502102dbef1f4116d43fd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2024-03-26 03:19:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>2515ab48ee4e4d90883db87e89731584</sys_id>
+        <sys_metadata>510fde2f97fcfd10dfffb3b6f053af62</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_colors.x_759224_magic_c_0.mtg_colors_user</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="">1d0fde2f97fcfd10dfffb3b6f053af5b</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_510fde2f97fcfd10dfffb3b6f053af62</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_510fde2f97fcfd10dfffb3b6f053af62">7dc471ab478502102dbef1f4116d43fe</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2024-03-26 03:19:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
