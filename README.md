@@ -18,6 +18,6 @@ On your ServiceNow Instance do the following:
 9. Make the following selections on the form:
      - Network Protocol : "HTTPS"
      - URL : put the URL link to the repo it should be in the form of "https://github.com/[UserName]/[RepoName].git"
-     - Branch : set this to whatever branch you want to use, my repo has a "PDI" branch that I facilitate all things related to my PDI through so I set it to PDI
+     - Branch : set this to whatever branch you want to use, my repo has a "PDI" branch that I facilitate all things related to my PDI through so I set it to PDI (do note that this IS case sensitive)
      - Credential : here you should see the credential record we created listed  
 
