@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="3ef3ca8847dd82102dbef1f4116d4357" extends="sys_import_set_row" label="Kenrith Deck" max_length="40" name="x_759224_magic_c_0_kenrith_deck" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=1" label="1" max_length="40" name="u_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=20" label="20" max_length="40" name="u_20" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Hopeful Initiate" label="Hopeful Initiate" max_length="54" name="u_hopeful_initiate" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Normal" label="Normal" max_length="40" name="u_normal" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=vow" label="vow" max_length="40" name="u_vow" type="string"/>
+    </element>
+</database>
