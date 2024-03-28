@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="309c8020475502102dbef1f4116d4325" label="MTG Deck Import" max_length="40" name="x_759224_magic_c_0_mtg_deck_import" type="collection">
+        <element label="Archidekt Input" mandatory="true" max_length="40000" name="archidekt_input" type="string"/>
+        <element label="Commander(s)" mandatory="true" max_length="40" name="commander_s" type="string"/>
+        <element label="Deck Name" mandatory="true" max_length="40" name="deck_name" type="string"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>
