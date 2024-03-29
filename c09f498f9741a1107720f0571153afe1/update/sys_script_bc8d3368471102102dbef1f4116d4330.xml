@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_759224_magic_c_0_mtg_deck_import</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Create Card Records</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+var data = current.getValue('archidekt_input');
+// Clean the data to process it
+var result = data.replaceAll(/\n/g, '|').replace(/'/g, "\\'").replace(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/g, ';').replaceAll('"','').replaceAll(/\\/g, '').replaceAll('\r', '');
+// Convert the string into an array
+var arr = result.split('|');
+// Index to track our position
+var i = 0;
+var cards = [];
+while(i < arr.length){
+	var card = arr[i].split(';');
+	//cards.push(card);
+	var quantity = card[0];
+	var name = card[1];
+	var setId = card[2];
+	var foil = card[3];
+	var cn = card[4];
+	// GlideRecord to create each card record;
+	var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardGr.initialize();
+	cardGr.setValue('quantity',quantity);
+	cardGr.setValue('name',name);
+	cardGr.setValue('collector_number',cn);
+	if(foil == 'Normal'){
+		cardGr.setValue('foiling','none');
+	}else if(foil == 'Foil'){
+		cardGr.setValue('foiling','foil');
+	}else{
+		cardGr.setValue('foiling','etched');
+	}
+	var setGr = new GlideRecord('x_759224_magic_c_0_mtg_sets');
+	setGr.addQuery('id',setId);
+	setGr.query();
+	setGr.next();
+	var setSys_id = setGr.getUniqueValue();
+	cardGr.setValue('sets',setSys_id);
+	cardGr.insert();
+	i++;
+}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-29 16:48:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bc8d3368471102102dbef1f4116d4330</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Create Card Records</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_bc8d3368471102102dbef1f4116d4330</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-29 17:56:12</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=bc8d3368471102102dbef1f4116d4330"/>
+</record_update>
