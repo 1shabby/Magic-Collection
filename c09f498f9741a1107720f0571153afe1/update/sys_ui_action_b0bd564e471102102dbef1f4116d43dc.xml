@@ -28,28 +28,30 @@
         <list_style/>
         <messages/>
         <name>Update Card Info</name>
-        <onclick/>
+        <onclick>updateCard()</onclick>
         <order>100</order>
-        <script><![CDATA[var inputs = {};
-var id =  g_form.getValue('sys_id');
-alert(id);
-inputs['card_record'] = { // GlideRecord 
-    table: 'x_759224_magic_c_0_mtg_cards',
-    sys_id: id
-};
+        <script><![CDATA[function updateCard(){
+	var inputs = {};
+	var id =  g_form.getUniqueValue();
+	inputs['card_record'] = { // GlideRecord 
+		table: 'x_759224_magic_c_0_mtg_cards',
+		sys_id: id
+	};
 
-GlideFlow.startSubflow('x_759224_magic_c_0.populate_card', inputs)
-    .then(function(execution) {
-        return execution.awaitCompletion();
-    }, errorResolver)
-    .then(function(completion) {
+	GlideFlow.startSubflow('x_759224_magic_c_0.populate_card', inputs)
+		.then(function(execution) {
+			return execution.awaitCompletion();
+		}, errorResolver)
+		.then(function(completion) {
 
-        var status = completion.status;
+			var status = completion.status;
+			
 
-    });
+		});
 
-function errorResolver(error) {
-    // Handle errors in error resolver
+	function errorResolver(error) {
+		// Handle errors in error resolver
+	}
 }]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -61,7 +63,7 @@ function errorResolver(error) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b0bd564e471102102dbef1f4116d43dc</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Update Card Info</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -69,7 +71,7 @@ function errorResolver(error) {
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_ui_action_b0bd564e471102102dbef1f4116d43dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-03 02:55:10</sys_updated_on>
+        <sys_updated_on>2024-04-04 04:33:42</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
