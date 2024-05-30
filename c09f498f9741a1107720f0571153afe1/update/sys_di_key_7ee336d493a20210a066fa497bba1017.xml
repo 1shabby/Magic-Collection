@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_di_key">
+    <sys_di_key action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <display_name>Face One Toughness</display_name>
+        <group_index>0</group_index>
+        <key_config/>
+        <key_group/>
+        <mandatory>true</mandatory>
+        <name>faceonetoughness</name>
+        <order>4</order>
+        <stp_threshold/>
+        <synonym/>
+        <sys_class_name>sys_di_key</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 18:49:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7ee336d493a20210a066fa497bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Face One Toughness</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_di_key_7ee336d493a20210a066fa497bba1017</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 18:49:31</sys_updated_on>
+        <target_field>face_one_toughness</target_field>
+        <target_table>x_759224_magic_c_0_mtg_cards</target_table>
+        <task_definition display_value="MTG Cards">6ef1fa1493a20210a066fa497bba108a</task_definition>
+        <total_used_positive_samples>0</total_used_positive_samples>
+        <type>integer</type>
+    </sys_di_key>
+</record_update>
