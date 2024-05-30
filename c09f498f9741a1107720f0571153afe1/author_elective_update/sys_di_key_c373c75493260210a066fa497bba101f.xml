@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_di_key">
+    <sys_di_key action="DELETE">
+        <active>true</active>
+        <display_name>Date</display_name>
+        <group_index>0</group_index>
+        <key_config/>
+        <key_group/>
+        <mandatory>true</mandatory>
+        <name>date</name>
+        <order>1</order>
+        <stp_threshold/>
+        <synonym/>
+        <sys_class_name>sys_di_key</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 19:57:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c373c75493260210a066fa497bba101f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Date</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_di_key_c373c75493260210a066fa497bba101f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 19:57:13</sys_updated_on>
+        <target_field>opened_at</target_field>
+        <target_table>incident</target_table>
+        <task_definition display_value="Incident">0b334b1493260210a066fa497bba1059</task_definition>
+        <total_used_positive_samples>0</total_used_positive_samples>
+        <type>date</type>
+    </sys_di_key>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>3d29febddb523d1092f5684e1396196b</instance_id>
+        <instance_name>dev204637</instance_name>
+        <name>sys_di_key_c373c75493260210a066fa497bba101f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_di_key"><sys_di_key action="INSERT_OR_UPDATE"><active>true</active><display_name>Date</display_name><group_index>0</group_index><key_config/><key_group/><mandatory>true</mandatory><name>date</name><order>1</order><stp_threshold/><synonym/><sys_class_name>sys_di_key</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-05-29 19:57:13</sys_created_on><sys_domain>global</sys_domain><sys_id>c373c75493260210a066fa497bba101f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Date</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_di_key_c373c75493260210a066fa497bba101f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-05-29 19:57:13</sys_updated_on><target_field>opened_at</target_field><target_table>incident</target_table><task_definition display_value="Incident">0b334b1493260210a066fa497bba1059</task_definition><total_used_positive_samples>0</total_used_positive_samples><type>date</type></sys_di_key></record_update>]]></payload>
+        <payload_hash>1694891243</payload_hash>
+        <record_name>Date</record_name>
+        <reverted_from/>
+        <source>3c69aed093620210a066fa497bba101c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 19:57:13</sys_created_on>
+        <sys_id>1773c75493260210a066fa497bba1021</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc5ed98750000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 19:57:13</sys_updated_on>
+        <type>Field</type>
+        <update_guid>1b73c7548126021036fd06c6e9b64e20</update_guid>
+        <update_guid_history>1b73c7548126021036fd06c6e9b64e20:1694891243</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 19:57:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_di_key">sys_di_key</sys_db_object>
+        <sys_id>02d7e7c93e3a46d4800ae0583a01d444</sys_id>
+        <sys_metadata>c373c75493260210a066fa497bba101f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Date</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_di_key_c373c75493260210a066fa497bba101f</sys_update_name>
+        <sys_update_version display_value="sys_di_key_c373c75493260210a066fa497bba101f">1773c75493260210a066fa497bba1021</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 19:57:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

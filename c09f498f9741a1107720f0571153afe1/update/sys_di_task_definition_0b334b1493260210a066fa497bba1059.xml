@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_di_task_definition">
+    <sys_di_task_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <autofill>false</autofill>
+        <autofill_threshold>0.01</autofill_threshold>
+        <capability>doc_data_extractor</capability>
+        <component_version>25.1</component_version>
+        <display_name>Incident</display_name>
+        <document_config display_value="Default">978e2d9e4ff16110cbc6efe0b1ce0bf2</document_config>
+        <document_type display_value="Default">2eae24c14fb92110cbc6efe0b1ce0bf0</document_type>
+        <mluc_id/>
+        <parent_task_definition/>
+        <regional_hub_enabled>false</regional_hub_enabled>
+        <source_record/>
+        <source_table_name/>
+        <state>current</state>
+        <stp_autofill_threshold>1</stp_autofill_threshold>
+        <stp_enabled>false</stp_enabled>
+        <sys_class_name>sys_di_task_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 19:56:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0b334b1493260210a066fa497bba1059</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Incident</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_di_task_definition_0b334b1493260210a066fa497bba1059</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 20:16:54</sys_updated_on>
+        <target_table>incident</target_table>
+        <warning_threshold>0.7</warning_threshold>
+        <workflow_solutions_names_initialized>false</workflow_solutions_names_initialized>
+    </sys_di_task_definition>
+</record_update>
