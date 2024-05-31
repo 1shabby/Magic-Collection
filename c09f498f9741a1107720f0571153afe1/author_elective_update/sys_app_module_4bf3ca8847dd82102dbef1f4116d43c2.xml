@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="System Import Sets">import_sets</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Kenrith Deck</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_kenrith_deck</name>
+        <order>1100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-27 17:22:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4bf3ca8847dd82102dbef1f4116d43c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Kenrith Deck</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_4bf3ca8847dd82102dbef1f4116d43c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-27 17:22:49</sys_updated_on>
+        <timeline_page/>
+        <title>Kenrith Deck</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>3d29febddb523d1092f5684e1396196b</instance_id>
+        <instance_name>dev204637</instance_name>
+        <name>sys_app_module_4bf3ca8847dd82102dbef1f4116d43c2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="System Import Sets">import_sets</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Kenrith Deck</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_kenrith_deck</name>
+        <order>1100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-27 17:22:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4bf3ca8847dd82102dbef1f4116d43c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Kenrith Deck</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_4bf3ca8847dd82102dbef1f4116d43c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-27 17:22:49</sys_updated_on>
+        <timeline_page/>
+        <title>Kenrith Deck</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>]]></payload>
+        <payload_hash>446533734</payload_hash>
+        <record_name>Kenrith Deck</record_name>
+        <reverted_from/>
+        <source>d3c8aa5c93220210a066fa497bba1087</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 18:01:20</sys_created_on>
+        <sys_id>71f822dc93220210a066fa497bba106f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc58380aa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 18:01:20</sys_updated_on>
+        <type>Module</type>
+        <update_guid>31f822dce5220210ce94bd3166d7526f</update_guid>
+        <update_guid_history>31f822dce5220210ce94bd3166d7526f:446533734</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Kenrith Deck">241e4845932a4210a066fa497bba1067</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-31 14:40:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>2cdab6edfd744dae886743c1992d8a64</sys_id>
+        <sys_metadata>4bf3ca8847dd82102dbef1f4116d43c2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Kenrith Deck</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_app_module_4bf3ca8847dd82102dbef1f4116d43c2</sys_update_name>
+        <sys_update_version display_value="sys_app_module_4bf3ca8847dd82102dbef1f4116d43c2">71f822dc93220210a066fa497bba106f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-31 14:40:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
