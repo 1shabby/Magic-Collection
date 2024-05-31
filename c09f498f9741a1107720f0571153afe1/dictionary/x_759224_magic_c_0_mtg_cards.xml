@@ -63,7 +63,8 @@
         </element>
         <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
-        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Testing Image" max_length="40" name="testing_image" type="user_image"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
         <element label="Face One Type Line" max_length="250" name="type_line" read_only="true" type="string"/>
         <index name="index">
