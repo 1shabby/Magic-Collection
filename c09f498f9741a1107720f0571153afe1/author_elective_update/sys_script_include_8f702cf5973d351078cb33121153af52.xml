@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_759224_magic_c_0.MagicPlayTestUtil</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>MagicPlayTestUtil</name>
+        <script><![CDATA[var MagicPlayTestUtil = Class.create();
+MagicPlayTestUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	shuffleDeck: function(deck){
+		
+	},
+    type: 'MagicPlayTestUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-10 20:58:07</sys_created_on>
+        <sys_id>8f702cf5973d351078cb33121153af52</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MagicPlayTestUtil</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_include_8f702cf5973d351078cb33121153af52</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-10 21:01:35</sys_updated_on>
+    </sys_script_include>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>3d29febddb523d1092f5684e1396196b</instance_id>
+        <instance_name>dev204637</instance_name>
+        <name>sys_script_include_8f702cf5973d351078cb33121153af52</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;package_private&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;x_759224_magic_c_0.MagicPlayTestUtil&lt;/api_name&gt;
+        &lt;caller_access/&gt;
+        &lt;client_callable&gt;true&lt;/client_callable&gt;
+        &lt;description/&gt;
+        &lt;name&gt;MagicPlayTestUtil&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[var MagicPlayTestUtil = Class.create();
+MagicPlayTestUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	shuffleDeck: function(deck){
+		
+	},
+    type: 'MagicPlayTestUtil'
+});]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-10-10 20:58:07&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;8f702cf5973d351078cb33121153af52&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;MagicPlayTestUtil&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy&gt;read&lt;/sys_policy&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_8f702cf5973d351078cb33121153af52&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-10-10 21:01:35&lt;/sys_updated_on&gt;
+    &lt;/sys_script_include&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>1931298120</payload_hash>
+        <record_name>MagicPlayTestUtil</record_name>
+        <reverted_from/>
+        <source>d3c8aa5c93220210a066fa497bba1087</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-29 18:02:24</sys_created_on>
+        <sys_id>4939629093620210a066fa497bba10c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc58478280000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-29 18:02:24</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>09396290196202104bc0ee5781582dc2</update_guid>
+        <update_guid_history>09396290196202104bc0ee5781582dc2:1931298120</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2024-05-31 14:47:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>3f5005c4ef3645e8a0955f0829818684</sys_id>
+        <sys_metadata>8f702cf5973d351078cb33121153af52</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MagicPlayTestUtil</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_include_8f702cf5973d351078cb33121153af52</sys_update_name>
+        <sys_update_version display_value="sys_script_include_8f702cf5973d351078cb33121153af52">4939629093620210a066fa497bba10c2</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2024-05-31 14:47:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
