@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_759224_magic_c_0.magic_utils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Generic Utils for the Magic Collection application.</description>
+        <name>magic_utils</name>
+        <script><![CDATA[var magic_utils = Class.create();
+magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    /**
+    * Description: Takes in a CSV file and creates each card and associates it to a deck record.   
+    * Parameters: {string}: Data - CSV formatted file;
+    			  {string}: Name - the name of the deck;
+    			  {string}: Commander(s) - the name / names of the commanders for the deck;
+    * Returns: None; Creates a deck record and associates each card from the import with the deck. The card will be 
+    				 created if it doesn't exist presently.
+    */
+
+    importDeck: function(data, name, commander) {
+        data = data || this.getParameter('data');
+        // Converts data into an array.
+        var deck_arr = this._cleanData(data);
+		var cards = this._processArr(deck_arr);
+
+		this._createDeck(cards,name,commander);
+
+    },
+
+    /**
+     * Description: Takes in information pertaining to a card and creates a card record from it.
+     * Parameters: {string}: Card - comma seperated string containing information for the card;
+     * Returns: None; Creates a new card record.
+     */
+
+    _cleanData: function(data) {
+        // Performs several replace operations to allow use to process the data in a meaningful way.
+        var result = data.replaceAll(/\n/g, '|').replace(/'/g, "\\'").replace(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/g, ';').replaceAll('"', '').replaceAll(/\\/g, '').replaceAll('\r', '');
+        // Convert the string into an array, and return
+        return result.split('|');
+    },
+
+    /**
+     * Description: Takes in a CSV file and cleans the data so it can be proccessed
+     * Parameters: {string}: Data - CSV formatted file.
+     * Returns: {array of objects}: Cards - an array of objects containing all the card names and quantities.
+     */
+
+    _processArr: function(arr) {
+        var i = 0;
+		var cards = [];
+
+        while (i < arr.length) {
+            var card = arr[i].split(';');
+            //this._createCard(card);
+			cards = this._trackNames(card,cards);
+			gs.info(JSON.stringify(cards[i]));
+			i++;
+        }
+		// Return the cards
+		return cards;
+    },
+    /**
+     * Description: Takes in a CSV file and cleans the data so it can be proccessed
+     * Parameters: {string}: Data - CSV formatted file;
+     * Returns: None; Creates a new card record.
+     */
+
+    _createCard: function(card) {
+        // Set attributes from card
+        var quantity = card[0];
+        var name = card[1];
+        var set_id = card[2];
+        var foil = card[3];
+        var cn = card[4];
+        // Create GlideRecord
+        var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        cardGr.initialize();
+		// Populate values
+        cardGr.setValue('quantity', quantity);
+        cardGr.setValue('name', name);
+        cardGr.setValue('collector_number', cn);
+		cardGr.setValue('sets',this._getSetRecord(set_id));
+        // Set Foiling
+        if (foil == 'Normal') {
+            cardGr.setValue('foiling', 'none');
+        } else if (foil == 'Foil') {
+            cardGr.setValue('foiling', 'foil');
+        } else {
+            cardGr.setValue('foiling', 'etched');
+        }
+		cardGr.insert();
+    },
+
+    /**
+     * Description: Takes in set_id and returns the sys_id of the record on the system
+     * Parameters: {string}: set_id - the string id used to identify a set;
+     * Returns: {string}: sys_id of the set record from the system.
+     */
+
+    _getSetRecord: function(set_id) {
+        var setGr = new GlideRecord('x_759224_magic_c_0_mtg_sets');
+        setGr.addQuery('id', set_id);
+        setGr.query();
+        setGr.next();
+        return setGr.getUniqueValue();
+    },
+
+	_trackNames: function(card,arr){
+		var obj = {"Name": card[1], "Quantity": card[0], "CN": card[4]};
+		arr.push(obj);
+		return arr;
+	},
+
+	_createDeck: function(arr,name,commander){
+		var deckGr = new GlideRecord('x_759224_magic_c_0_decks');
+		deckGr.initialize();
+		deckGr.setValue('name',name);
+		deckGr.setValue('commanders',this._getCommanders(commander));
+		deckGr.setValue('cards', this._getCardRecord());
+	},
+
+	_getCommanders: function(){
+		
+	},
+
+	_getCardRecord: function(name,cn){
+		var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+		cardGr.addQuery('name',name);
+		if(cn){
+			cardGr.addQuery('collector_number',cn);
+		}
+		cardGr.query();
+
+		if(cardGr.hasNext()){
+			cardGr.next();
+			return cardGr.getUniqueValue();
+		}
+
+	},
+
+    type: 'magic_utils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-31 01:08:27</sys_created_on>
+        <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>magic_utils</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-31 20:21:46</sys_updated_on>
+    </sys_script_include>
+</record_update>
