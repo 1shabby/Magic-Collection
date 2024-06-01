@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4899155000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=24100575000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -14,7 +14,7 @@
         <flow_priority/>
         <generation_source/>
         <internal_name>populate_card</internal_name>
-        <label_cache>[{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.colors.colors_string","label":"27 - For Each➛card_faces_object➛colors➛colors_string","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.artist","label":"27 - For Each➛card_faces_object➛artist","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.image_uris.normal","label":"27 - For Each➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd","label":"1 - Card Lookup➛Parsed Output➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API - Card Lookup➛Parsed Output","reference":"","reference_display":"Parsed Output","type":"object","base_type":"object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Card Lookup➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Card Lookup➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri","label":"1 - Card Lookup➛Parsed Output➛uri","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object","reference":"","reference_display":"","type":"object","base_type":"object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces","label":"1 - Card Lookup➛Parsed Output➛card_faces","reference":"","reference_display":"","type":"array.object","base_type":"array.object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.front_image","label":"Input➛Card Record➛Face One Image","reference":"","reference_display":"Face One Image","type":"url","base_type":"url","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object.image_uris.normal","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.type_line","label":"27 - For Each➛card_faces_object➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.flavor_text","label":"27 - For Each➛card_faces_object➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.mana_cost","label":"27 - For Each➛card_faces_object➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.oracle_text","label":"27 - For Each➛card_faces_object➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.power","label":"27 - For Each➛card_faces_object➛power","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.toughness","label":"27 - For Each➛card_faces_object➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.loyalty","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.loyalty","label":"27 - For Each➛card_faces_object➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item","label":"27 - For Each➛card_faces_object","reference":"","reference_display":"card_faces_object","type":"object","base_type":"object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"subflow.card_record.p_price","label":"Input➛Card Record➛Previous Price","reference":"","reference_display":"Previous Price","type":"currency","base_type":"currency","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"flow_variable.previous_price","label":"Flow Variables➛previous price","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":null},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.name","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛name","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f":["name"],"782544d4-cd93-4210-8789-bfb5fe51699e":["name"],"071c84ab-16f6-425a-859f-bc2255413357":["name"]},"attributes":null}]</label_cache>
+        <label_cache>[{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.colors.colors_string","label":"27 - For Each➛card_faces_object➛colors➛colors_string","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.artist","label":"27 - For Each➛card_faces_object➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.image_uris.normal","label":"27 - For Each➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd","label":"1 - Card Lookup➛Parsed Output➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API - Card Lookup➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","usedInstances":{},"attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"22e55701-c0b2-4b26-ad40-fa73a6d89e38","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Card Lookup➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{}},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","usedInstances":{}},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Card Lookup➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri","label":"1 - Card Lookup➛Parsed Output➛uri","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object","reference":"","reference_display":"","type":"object","base_type":"object","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces","label":"1 - Card Lookup➛Parsed Output➛card_faces","reference":"","reference_display":"","type":"array.object","base_type":"array.object","usedInstances":{}},{"name":"subflow.card_record.front_image","label":"Input➛Card Record➛Face One Image","reference":"","reference_display":"Face One Image","type":"url","base_type":"url","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object.image_uris.normal","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.type_line","label":"27 - For Each➛card_faces_object➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.flavor_text","label":"27 - For Each➛card_faces_object➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.mana_cost","label":"27 - For Each➛card_faces_object➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.oracle_text","label":"27 - For Each➛card_faces_object➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.power","label":"27 - For Each➛card_faces_object➛power","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.toughness","label":"27 - For Each➛card_faces_object➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.loyalty","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.loyalty","label":"27 - For Each➛card_faces_object➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item","label":"27 - For Each➛card_faces_object","reference_display":"card_faces_object","type":"object","base_type":"object","usedInstances":{},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"subflow.card_record.p_price","label":"Input➛Card Record➛Previous Price","reference":"","reference_display":"Previous Price","type":"currency","base_type":"currency","usedInstances":{}},{"name":"flow_variable.previous_price","label":"Flow Variables➛previous price","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.name","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛name","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{"c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f":["name"],"782544d4-cd93-4210-8789-bfb5fe51699e":["name"],"071c84ab-16f6-425a-859f-bc2255413357":["name"]}}]</label_cache>
         <master_snapshot>d9aa7af797f47150dfffb3b6f053afa4</master_snapshot>
         <name>Populate Card</name>
         <natlang/>
@@ -33,7 +33,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f6e08663977cfd10dfffb3b6f053afc6</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Populate Card</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -41,7 +41,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_f6e08663977cfd10dfffb3b6f053afc6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 20:28:38</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=f6e08663977cfd10dfffb3b6f053afc6"/>
@@ -165,10 +165,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>0c677e9397c13510dfffb3b6f053afea</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>90</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>f5e3243a-86d8-4f58-909c-ea114d59b251</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=0c677e9397c13510dfffb3b6f053afea"/>
@@ -233,9 +233,9 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>0c677e9397c13510dfffb3b6f053afeb</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 20:40:34</sys_updated_on>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:55:55</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=0c677e9397c13510dfffb3b6f053afea"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -254,10 +254,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 00:26:03</sys_created_on>
         <sys_id>271ac6b297893110dfffb3b6f053af65</sys_id>
-        <sys_mod_count>94</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 20:28:31</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=271ac6b297893110dfffb3b6f053af65"/>
@@ -318,13 +318,13 @@
         <input_name>values</input_name>
         <instance>271ac6b297893110dfffb3b6f053af65</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"},"keywords":{"scriptActive":true,"savedValue":""},"face_one_produced_mana":{"scriptActive":true,"savedValue":""},"colors":{"scriptActive":true,"savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 00:26:03</sys_created_on>
         <sys_id>6b1ac6b297893110dfffb3b6f053af66</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 20:28:31</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:01:35</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=271ac6b297893110dfffb3b6f053af65"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -343,10 +343,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-06 23:34:32</sys_created_on>
         <sys_id>305ef93297493110dfffb3b6f053afe4</sys_id>
-        <sys_mod_count>98</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 20:26:33</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>782544d4-cd93-4210-8789-bfb5fe51699e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=305ef93297493110dfffb3b6f053afe4"/>
@@ -407,13 +407,13 @@
         <input_name>values</input_name>
         <instance>305ef93297493110dfffb3b6f053afe4</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\nvar c \u003d 0;\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\nwhile ( c \u003c l){\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\n    keywordGr.query();\n    keywordGr.next();\n    keywords.push(keywordGr.getUniqueValue());\n    gs.info(keywords);\n    c++\n}\nreturn keywords;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-06 23:34:32</sys_created_on>
         <sys_id>305ef93297493110dfffb3b6f053afe5</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 20:26:33</sys_updated_on>
+        <sys_updated_on>2024-06-01 19:57:47</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=305ef93297493110dfffb3b6f053afe4"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -432,10 +432,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>76140fc397cdb110dfffb3b6f053af18</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>108</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>130c17c3-eb40-4a25-8366-d52315918eab</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=76140fc397cdb110dfffb3b6f053af18"/>
@@ -484,11 +484,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>b2140fc397cdb110dfffb3b6f053af1a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:52</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:49:05</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=76140fc397cdb110dfffb3b6f053af18"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=76140fc397cdb110dfffb3b6f053af18"/>
@@ -508,10 +508,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 00:33:49</sys_created_on>
         <sys_id>7a75d70f9701f110dfffb3b6f053af3e</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>11c2d5b1-0f74-40b7-8873-058f7b1f9298</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=7a75d70f9701f110dfffb3b6f053af3e"/>
@@ -597,10 +597,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>88677e9397c13510dfffb3b6f053afb4</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>90</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>a90a52a3-104b-4b95-9f66-06c212e9a101</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=88677e9397c13510dfffb3b6f053afb4"/>
@@ -649,11 +649,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>8c677e9397c13510dfffb3b6f053afb5</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:53</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:49:58</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=88677e9397c13510dfffb3b6f053afb4"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=88677e9397c13510dfffb3b6f053afb4"/>
@@ -673,10 +673,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b4209ae797bcfd10dfffb3b6f053afd9</sys_id>
-        <sys_mod_count>264</sys_mod_count>
+        <sys_mod_count>284</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>071c84ab-16f6-425a-859f-bc2255413357</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b4209ae797bcfd10dfffb3b6f053afd9"/>
@@ -755,9 +755,9 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 23:47:34</sys_created_on>
         <sys_id>5661a66397303150dfffb3b6f053af0e</sys_id>
-        <sys_mod_count>20</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 20:22:54</sys_updated_on>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:55:54</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b4209ae797bcfd10dfffb3b6f053afd9"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -776,10 +776,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>b7577e9397c13510dfffb3b6f053afa7</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>90</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>7c42895a-aa32-416d-bd73-5bec6844c6cb</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b7577e9397c13510dfffb3b6f053afa7"/>
@@ -828,11 +828,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>f7577e9397c13510dfffb3b6f053afa9</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:53</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:49:52</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=b7577e9397c13510dfffb3b6f053afa7"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b7577e9397c13510dfffb3b6f053afa7"/>
@@ -852,10 +852,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>c4677e9397c13510dfffb3b6f053afbf</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>90</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>b5ce7b5b-a6d4-4285-9f48-92d52b80a1c6</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c4677e9397c13510dfffb3b6f053afbf"/>
@@ -904,11 +904,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:00:45</sys_created_on>
         <sys_id>c8677e9397c13510dfffb3b6f053afc0</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:53</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:50:04</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=c4677e9397c13510dfffb3b6f053afbf"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c4677e9397c13510dfffb3b6f053afbf"/>
@@ -928,10 +928,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>d1db03cf97cdb110dfffb3b6f053af29</sys_id>
-        <sys_mod_count>84</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>dcb10add-f5c9-49d4-9e03-59655d917b21</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=d1db03cf97cdb110dfffb3b6f053af29"/>
@@ -992,13 +992,13 @@
         <input_name>values</input_name>
         <instance>d1db03cf97cdb110dfffb3b6f053af29</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"return fd_data._27__for_each.item.colors;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"return fd_data._27__for_each.item.colors;"},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 00:01:54</sys_created_on>
         <sys_id>e32e87839701f110dfffb3b6f053afe4</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 20:40:34</sys_updated_on>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:36</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=d1db03cf97cdb110dfffb3b6f053af29"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -1017,10 +1017,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 00:02:59</sys_created_on>
         <sys_id>d76ec3c39701f110dfffb3b6f053af52</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>94</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>2fd61031-f0ee-414d-a26d-c06ee694309e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=d76ec3c39701f110dfffb3b6f053af52"/>
@@ -1106,10 +1106,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>fa140fc397cdb110dfffb3b6f053af2b</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>e5892345-16dc-4d2d-9821-3521f2d3d5ad</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fa140fc397cdb110dfffb3b6f053af2b"/>
@@ -1158,11 +1158,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>fe140fc397cdb110dfffb3b6f053af2c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:52</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:49:16</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^p_price={{flow_variable.previous_price}}^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
+        <value>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=fa140fc397cdb110dfffb3b6f053af2b"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=fa140fc397cdb110dfffb3b6f053af2b"/>
@@ -1182,10 +1182,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afa5</sys_id>
-        <sys_mod_count>264</sys_mod_count>
+        <sys_mod_count>282</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:03</sys_updated_on>
         <ui_id>2d2f0291-10c7-48ef-8a7e-65da7e447a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fc209ae797bcfd10dfffb3b6f053afa5"/>
@@ -1244,10 +1244,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>fe140fc397cdb110dfffb3b6f053af22</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-26 15:54:55</sys_updated_on>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>625ea282-c10d-43bb-a4ef-e2fd49f9bf97</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fe140fc397cdb110dfffb3b6f053af22"/>
@@ -1296,11 +1296,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>f2140fc397cdb110dfffb3b6f053af24</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:52</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:49:10</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=fe140fc397cdb110dfffb3b6f053af22"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=fe140fc397cdb110dfffb3b6f053af22"/>
@@ -1308,7 +1308,7 @@
     <sys_hub_flow_logic action="delete_multiple" query="flow=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN01578f0b97cdb110dfffb3b6f053afb0,11db03cf97cdb110dfffb3b6f053af22,19db03cf97cdb110dfffb3b6f053af2f,1ddb03cf97cdb110dfffb3b6f053af0f,3a140fc397cdb110dfffb3b6f053af10,3c209ae797bcfd10dfffb3b6f053afad,41578f0b97cdb110dfffb3b6f053afac,45578f0b97cdb110dfffb3b6f053afb3,55db03cf97cdb110dfffb3b6f053af1b,55db03cf97cdb110dfffb3b6f053af1e,70209ae797bcfd10dfffb3b6f053afb1,78209ae797bcfd10dfffb3b6f053afdb,95db03cf97cdb110dfffb3b6f053af32,b0209ae797bcfd10dfffb3b6f053afd2,b6140fc397cdb110dfffb3b6f053af1b,d1db03cf97cdb110dfffb3b6f053af2c,d9db03cf97cdb110dfffb3b6f053af13,e8611e6b97bcfd10dfffb3b6f053af01,f4209ae797bcfd10dfffb3b6f053afa9,f8209ae797bcfd10dfffb3b6f053afcf,fc209ae797bcfd10dfffb3b6f053afde,fe140fc397cdb110dfffb3b6f053af24"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5858bbbb9725311078cb33121153aff1</block>
+        <block display_value="">fdee16d193620210a066fa497bba1037</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1330,10 +1330,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:31:59</sys_created_on>
         <sys_id>01578f0b97cdb110dfffb3b6f053afb0</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1357,7 +1357,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=01578f0b97cdb110dfffb3b6f053afb0"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af16</block>
+        <block display_value="">06ee16d193620210a066fa497bba1064</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1379,10 +1379,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>11db03cf97cdb110dfffb3b6f053af22</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>d25a7687-3122-4403-96af-6156549df2dd</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1406,7 +1406,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=11db03cf97cdb110dfffb3b6f053af22"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af24</block>
+        <block display_value="">0aee16d193620210a066fa497bba1070</block>
         <comment>Else it's etched</comment>
         <connected_to>d25a7687-3122-4403-96af-6156549df2dd</connected_to>
         <decision_table/>
@@ -1427,10 +1427,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>19db03cf97cdb110dfffb3b6f053af2f</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:27</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>0925610e-fd36-453e-b71b-524dfbff2dfe</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1441,7 +1441,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=19db03cf97cdb110dfffb3b6f053af2f"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">9c58bbbb9725311078cb33121153aff8</block>
+        <block display_value="">35ee16d193620210a066fa497bba103e</block>
         <comment/>
         <connected_to>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</connected_to>
         <decision_table/>
@@ -1463,10 +1463,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>1ddb03cf97cdb110dfffb3b6f053af0f</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>9df3fea3-54eb-49e2-bd13-059bbf7142ba</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1490,7 +1490,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=1ddb03cf97cdb110dfffb3b6f053af0f"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c858bbbb9725311078cb33121153afaa</block>
+        <block display_value="">f5ee16d193620210a066fa497bba1005</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1512,10 +1512,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>3a140fc397cdb110dfffb3b6f053af10</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>9a53a7d8-d26b-40c2-accc-d8425332f66a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1539,7 +1539,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=3a140fc397cdb110dfffb3b6f053af10"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0c58bbbb9725311078cb33121153af91</block>
+        <block display_value="">edeed2d193620210a066fa497bba10fa</block>
         <comment>If the card is a single face layout.</comment>
         <connected_to/>
         <decision_table/>
@@ -1561,10 +1561,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>3c209ae797bcfd10dfffb3b6f053afad</sys_id>
-        <sys_mod_count>123</sys_mod_count>
+        <sys_mod_count>130</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>8df16174-85d1-49f6-84fd-ba9e81bfe831</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1588,7 +1588,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=3c209ae797bcfd10dfffb3b6f053afad"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1858bbbb9725311078cb33121153afeb</block>
+        <block display_value="">bdee16d193620210a066fa497bba1032</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1610,10 +1610,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:31:59</sys_created_on>
         <sys_id>41578f0b97cdb110dfffb3b6f053afac</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>e4933e7c-0b66-4507-98d8-9436773f76be</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1637,7 +1637,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=41578f0b97cdb110dfffb3b6f053afac"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">d458fbbb9725311078cb33121153af05</block>
+        <block display_value="">75ee16d193620210a066fa497bba1049</block>
         <comment>Else it's a new insert</comment>
         <connected_to>e4933e7c-0b66-4507-98d8-9436773f76be</connected_to>
         <decision_table/>
@@ -1658,10 +1658,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:31:59</sys_created_on>
         <sys_id>45578f0b97cdb110dfffb3b6f053afb3</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>1a892fb8-c141-4c24-b927-01a6c2f80753</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1672,7 +1672,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=45578f0b97cdb110dfffb3b6f053afb3"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af0a</block>
+        <block display_value="">7dee16d193620210a066fa497bba104d</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1694,10 +1694,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>55db03cf97cdb110dfffb3b6f053af1b</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>230e3b7c-a011-41d7-bbd0-1f676e0bd115</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1721,7 +1721,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=55db03cf97cdb110dfffb3b6f053af1b"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1c58fbbb9725311078cb33121153af10</block>
+        <block display_value="">f1ee16d193620210a066fa497bba105f</block>
         <comment>It's face one</comment>
         <connected_to/>
         <decision_table/>
@@ -1743,10 +1743,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>55db03cf97cdb110dfffb3b6f053af1e</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>18c510ef-c6ab-4735-a777-f23859ae86ee</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1770,7 +1770,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=55db03cf97cdb110dfffb3b6f053af1e"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">8458bbbb9725311078cb33121153afa4</block>
+        <block display_value="">b1ee16d193620210a066fa497bba1000</block>
         <comment>This means this is not a new insert.</comment>
         <connected_to/>
         <decision_table/>
@@ -1792,10 +1792,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>70209ae797bcfd10dfffb3b6f053afb1</sys_id>
-        <sys_mod_count>123</sys_mod_count>
+        <sys_mod_count>130</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1845,7 +1845,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=70209ae797bcfd10dfffb3b6f053afb1"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c858bbbb9725311078cb33121153afd8</block>
+        <block display_value="">79ee16d193620210a066fa497bba1022</block>
         <comment/>
         <connected_to>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</connected_to>
         <decision_table/>
@@ -1867,10 +1867,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>78209ae797bcfd10dfffb3b6f053afdb</sys_id>
-        <sys_mod_count>126</sys_mod_count>
+        <sys_mod_count>133</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>a1d0d38a-a21a-486b-b624-ce0f1a96d18d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1920,7 +1920,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=78209ae797bcfd10dfffb3b6f053afdb"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5058fbbb9725311078cb33121153af2b</block>
+        <block display_value="">02ee16d193620210a066fa497bba1076</block>
         <comment>It's Face Two</comment>
         <connected_to>18c510ef-c6ab-4735-a777-f23859ae86ee</connected_to>
         <decision_table/>
@@ -1941,10 +1941,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>95db03cf97cdb110dfffb3b6f053af32</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:27</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>8c7c6698-e4ee-44d8-b5b7-625253c2b1c3</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1955,7 +1955,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=95db03cf97cdb110dfffb3b6f053af32"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c458bbbb9725311078cb33121153afc4</block>
+        <block display_value="">f9ee16d193620210a066fa497bba101b</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1977,10 +1977,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>b0209ae797bcfd10dfffb3b6f053afd2</sys_id>
-        <sys_mod_count>126</sys_mod_count>
+        <sys_mod_count>133</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2030,7 +2030,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=b0209ae797bcfd10dfffb3b6f053afd2"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0058bbbb9725311078cb33121153afb2</block>
+        <block display_value="">3dee16d193620210a066fa497bba100b</block>
         <comment/>
         <connected_to>9a53a7d8-d26b-40c2-accc-d8425332f66a</connected_to>
         <decision_table/>
@@ -2052,10 +2052,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>b6140fc397cdb110dfffb3b6f053af1b</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>c808fc23-d54b-49d1-9ec5-19e48d260442</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2079,7 +2079,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=b6140fc397cdb110dfffb3b6f053af1b"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1458fbbb9725311078cb33121153af1e</block>
+        <block display_value="">caee16d193620210a066fa497bba106a</block>
         <comment/>
         <connected_to>d25a7687-3122-4403-96af-6156549df2dd</connected_to>
         <decision_table/>
@@ -2101,10 +2101,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>d1db03cf97cdb110dfffb3b6f053af2c</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:05</sys_updated_on>
         <ui_id>6da73ff3-e027-47b4-a933-29ce9a2f8c1a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2128,7 +2128,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=d1db03cf97cdb110dfffb3b6f053af2c"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5458bbbb9725311078cb33121153afff</block>
+        <block display_value="">fdee16d193620210a066fa497bba1043</block>
         <comment>Else it's etched</comment>
         <connected_to>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</connected_to>
         <decision_table/>
@@ -2149,10 +2149,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:51:39</sys_created_on>
         <sys_id>d9db03cf97cdb110dfffb3b6f053af13</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>6a0e57bb-3137-481f-a104-920fa98d6e53</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2163,7 +2163,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=d9db03cf97cdb110dfffb3b6f053af13"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1c58bbbb9725311078cb33121153afe5</block>
+        <block display_value="">b1ee16d193620210a066fa497bba102e</block>
         <comment>It's a multi-faced card</comment>
         <connected_to>8df16174-85d1-49f6-84fd-ba9e81bfe831</connected_to>
         <decision_table/>
@@ -2184,10 +2184,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:37:32</sys_created_on>
         <sys_id>e8611e6b97bcfd10dfffb3b6f053af01</sys_id>
-        <sys_mod_count>129</sys_mod_count>
+        <sys_mod_count>136</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>b2cb14be-b3b5-445f-bec0-7fbc9a38c852</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2198,7 +2198,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=e8611e6b97bcfd10dfffb3b6f053af01"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">4458bbbb9725311078cb33121153af89</block>
+        <block display_value="">2deed2d193620210a066fa497bba10f5</block>
         <comment>Sets the single face card types</comment>
         <connected_to/>
         <decision_table/>
@@ -2208,7 +2208,7 @@
         <flow display_value="Populate Card">f6e08663977cfd10dfffb3b6f053afc6</flow>
         <flow_variable/>
         <flow_variable/>
-        <flow_variables_assigned>single_face_types,variable,previous_price</flow_variables_assigned>
+        <flow_variables_assigned>single_face_types,variable</flow_variables_assigned>
         <generation_source/>
         <inputs/>
         <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
@@ -2220,10 +2220,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f4209ae797bcfd10dfffb3b6f053afa9</sys_id>
-        <sys_mod_count>127</sys_mod_count>
+        <sys_mod_count>140</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:03</sys_updated_on>
         <ui_id>6ebff54b-685a-4725-a503-af29e288c356</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2356,7 +2356,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=f4209ae797bcfd10dfffb3b6f053afa9"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">4858bbbb9725311078cb33121153afbe</block>
+        <block display_value="">7dee16d193620210a066fa497bba1016</block>
         <comment>This is a new Insert</comment>
         <connected_to>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</connected_to>
         <decision_table/>
@@ -2377,10 +2377,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>f8209ae797bcfd10dfffb3b6f053afcf</sys_id>
-        <sys_mod_count>126</sys_mod_count>
+        <sys_mod_count>133</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>53823282-11f8-401f-9ad9-cd13f990e97c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2391,7 +2391,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=f8209ae797bcfd10dfffb3b6f053afcf"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0858bbbb9725311078cb33121153afdf</block>
+        <block display_value="">b9ee16d193620210a066fa497bba1028</block>
         <comment>else it's etched</comment>
         <connected_to>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</connected_to>
         <decision_table/>
@@ -2412,10 +2412,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:06</sys_created_on>
         <sys_id>fc209ae797bcfd10dfffb3b6f053afde</sys_id>
-        <sys_mod_count>129</sys_mod_count>
+        <sys_mod_count>136</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>6fd392c9-1e97-4cf0-8b19-2f35b6a376b2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2426,7 +2426,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=fc209ae797bcfd10dfffb3b6f053afde"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c458bbbb9725311078cb33121153afb8</block>
+        <block display_value="">f5ee16d193620210a066fa497bba1011</block>
         <comment>Else it's etched</comment>
         <connected_to>9a53a7d8-d26b-40c2-accc-d8425332f66a</connected_to>
         <decision_table/>
@@ -2447,10 +2447,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-07 23:17:54</sys_created_on>
         <sys_id>fe140fc397cdb110dfffb3b6f053af24</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:26</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:04</sys_updated_on>
         <ui_id>d086c603-4b5e-44a4-8b3c-e5353493e748</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3480,7 +3480,7 @@
         <transform_definition_id/>
         <ui_id>13da0b20-5522-4981-8704-a2e7b82d9869</ui_id>
     </sys_hub_pill_compound>
-    <sys_hub_flow_variable action="delete_multiple" query="model=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN470cfa7b97f47150dfffb3b6f053afd0,b0209ae797bcfd10dfffb3b6f053af8e,fca1863597c6315078cb33121153af53"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN470cfa7b97f47150dfffb3b6f053afd0,b0209ae797bcfd10dfffb3b6f053af8e"/>
     <sys_hub_flow_variable action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -3544,14 +3544,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:22:25</sys_created_on>
         <sys_id>470cfa7b97f47150dfffb3b6f053afd0</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-28 20:22:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3627,97 +3627,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-27 22:32:05</sys_created_on>
         <sys_id>b0209ae797bcfd10dfffb3b6f053af8e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-27 22:32:05</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_flow_variable>
-    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=216f334f-1103-42d2-9495-0835d2e0b8b6</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>previous_price</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="String">string</internal_type>
-        <label>previous price</label>
-        <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="Populate Card">f6e08663977cfd10dfffb3b6f053afc6</model>
-        <model_id>f6e08663977cfd10dfffb3b6f053afc6</model_id>
-        <model_table>sys_hub_flow</model_table>
-        <name>var__m_sys_hub_flow_variable_f6e08663977cfd10dfffb3b6f053afc6</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_flow_variable</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-10-23 14:17:51</sys_created_on>
-        <sys_id>fca1863597c6315078cb33121153af53</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:17:51</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3744,11 +3661,11 @@
         <sys_created_on>2023-08-27 22:32:05</sys_created_on>
         <sys_id>3c209ae797bcfd10dfffb3b6f053af89</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Card Record</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_f6e08663977cfd10dfffb3b6f053afc6_card_record_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-27 22:32:05</sys_updated_on>
         <url/>
@@ -3771,7 +3688,7 @@
         <description>Runs in the New Card Insert flow and in the Price Update flow as well. It conditionally inserts based off what is currently populated (ex. if the price isn't populated then it's a new card insert) .</description>
         <flow_priority/>
         <internal_name>populate_card</internal_name>
-        <label_cache>[{"name":"flow_variable.previous_price","label":"Flow Variables➛previous price","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"216f334f-1103-42d2-9495-0835d2e0b8b6"}},{"name":"subflow.card_record.p_price","label":"Input➛Card Record➛Previous Price","reference":"","reference_display":"Previous Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"p_price"},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item","label":"27 - For Each➛card_faces_object","reference_display":"card_faces_object","type":"object","base_type":"object","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.loyalty","label":"27 - For Each➛card_faces_object➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.loyalty","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.toughness","label":"27 - For Each➛card_faces_object➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.power","label":"27 - For Each➛card_faces_object➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.oracle_text","label":"27 - For Each➛card_faces_object➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.mana_cost","label":"27 - For Each➛card_faces_object➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.flavor_text","label":"27 - For Each➛card_faces_object➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.type_line","label":"27 - For Each➛card_faces_object➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object.image_uris.normal","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.front_image","label":"Input➛Card Record➛Face One Image","reference":"","reference_display":"Face One Image","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"front_image"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces","label":"1 - Card Lookup➛Parsed Output➛card_faces","reference":"","reference_display":"","type":"array.object","base_type":"array.object","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object","type":"object","base_type":"object","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri","label":"1 - Card Lookup➛Parsed Output➛uri","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","type":"string","base_type":"string","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Card Lookup➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"price"},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"label":"None","rawLabel":"None","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"label":"Foil","rawLabel":"Foil","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"label":"Etched","rawLabel":"Etched","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"540fed75-977c-4d0f-9d0e-d025b01ce822"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0b4c90c3-1352-4c54-ae47-8c06161300fe","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Card Lookup➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API - Card Lookup➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"22e55701-c0b2-4b26-ad40-fa73a6d89e38","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd","label":"1 - Card Lookup➛Parsed Output➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.image_uris.normal","label":"27 - For Each➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.artist","label":"27 - For Each➛card_faces_object➛artist","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.colors.colors_string","label":"27 - For Each➛card_faces_object➛colors➛colors_string","type":"string","base_type":"string","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.colors.colors_string","label":"27 - For Each➛card_faces_object➛colors➛colors_string","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.artist","label":"27 - For Each➛card_faces_object➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.image_uris.normal","label":"27 - For Each➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd","label":"1 - Card Lookup➛Parsed Output➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer","label":"1 - Card Lookup➛Parsed Output➛related_uris➛gatherer","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec","label":"1 - Card Lookup➛Parsed Output➛related_uris➛edhrec","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity","label":"1 - Card Lookup➛Parsed Output➛rarity","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output","label":"1 - Scryfall API - Card Lookup➛Parsed Output","reference_display":"Parsed Output","type":"object","base_type":"object","usedInstances":{},"attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD0b97322333b0315035958d9bec4de957","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"22e55701-c0b2-4b26-ad40-fa73a6d89e38","pwd2droppable":"true","uiType":"object","uiUniqueId":"b55d3309-1311-407d-b4c9-937cc87292ba"}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.layout","label":"1 - Card Lookup➛Parsed Output➛layout","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line","label":"1 - Card Lookup➛Parsed Output➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text","label":"1 - Scryfall API➛Parsed Output➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist","label":"1 - Scryfall API➛Parsed Output➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.cmc","label":"1 - Scryfall API➛Parsed Output➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.toughness","label":"1 - Scryfall API➛Parsed Output➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.power","label":"1 - Scryfall API➛Parsed Output➛power","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.image_uris.normal","label":"1 - Scryfall API➛Parsed Response➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.flavor_text","label":"1 - Scryfall API➛Parsed Response➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{}},{"name":"subflow.card_record.sets","label":"Input➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","usedInstances":{}},{"name":"subflow.card_record.sets.id","label":"Input➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.name","label":"Input➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.collector_number","label":"Input➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.frame","label":"1 - Scryfall API➛Parsed Response➛frame","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.layout","label":"1 - Scryfall API➛Parsed Response➛layout","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"flow_variable.single_face_types","label":"Flow Variables➛Single Face Types","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.foiling","label":"Input➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd","label":"1 - Scryfall API➛Parsed Response➛prices➛usd","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"subflow.card_record.price","label":"Input➛Card Record➛Unit Price","reference":"","reference_display":"Unit Price","type":"currency","base_type":"currency","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_foil","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.prices.usd_etched","label":"1 - Scryfall API➛Parsed Response➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.artist","label":"1 - Scryfall API➛Parsed Response➛artist","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.oracle_text","label":"1 - Scryfall API➛Parsed Response➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.type_line","label":"1 - Scryfall API➛Parsed Response➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_response.cmc","label":"1 - Scryfall API➛Parsed Response➛cmc","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil","label":"1 - Card Lookup➛Parsed Output➛prices➛usd_foil","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost","label":"1 - Scryfall API➛Parsed Output➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text","label":"1 - Scryfall API➛Parsed Output➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.color_identity.color_identity_string","label":"1 - Card Lookup➛Parsed Output➛color_identity➛color_identity_string","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri","label":"1 - Card Lookup➛Parsed Output➛uri","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛prices➛usd_etched","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object","reference":"","reference_display":"","type":"object","base_type":"object","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces","label":"1 - Card Lookup➛Parsed Output➛card_faces","reference":"","reference_display":"","type":"array.object","base_type":"array.object","usedInstances":{}},{"name":"subflow.card_record.front_image","label":"Input➛Card Record➛Face One Image","reference":"","reference_display":"Face One Image","type":"url","base_type":"url","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.card_faces.card_faces_object.image_uris.normal","label":"1 - Card Lookup➛Parsed Output➛card_faces➛card_faces_object➛image_uris➛normal","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.type_line","label":"27 - For Each➛card_faces_object➛type_line","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.flavor_text","label":"27 - For Each➛card_faces_object➛flavor_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.mana_cost","label":"27 - For Each➛card_faces_object➛mana_cost","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.oracle_text","label":"27 - For Each➛card_faces_object➛oracle_text","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.power","label":"27 - For Each➛card_faces_object➛power","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.toughness","label":"27 - For Each➛card_faces_object➛toughness","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.loyalty","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item.loyalty","label":"27 - For Each➛card_faces_object➛loyalty","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"230e3b7c-a011-41d7-bbd0-1f676e0bd115.item","label":"27 - For Each➛card_faces_object","reference_display":"card_faces_object","type":"object","base_type":"object","usedInstances":{},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"subflow.card_record.p_price","label":"Input➛Card Record➛Previous Price","reference":"","reference_display":"Previous Price","type":"currency","base_type":"currency","usedInstances":{}},{"name":"flow_variable.previous_price","label":"Flow Variables➛previous price","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{}},{"name":"2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.name","label":"1 - Scryfall API - Card Lookup➛Parsed Output➛name","reference":"","reference_display":"","type":"string","base_type":"string","usedInstances":{"c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f":["name"],"782544d4-cd93-4210-8789-bfb5fe51699e":["name"],"071c84ab-16f6-425a-859f-bc2255413357":["name"]}}]</label_cache>
         <master>true</master>
         <name>Populate Card</name>
         <natlang/>
@@ -3788,15 +3705,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d9aa7af797f47150dfffb3b6f053afa4</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:22</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=d9aa7af797f47150dfffb3b6f053afa4"/>
@@ -3920,10 +3837,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>0da7fed397c13510dfffb3b6f053af00</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>b5ce7b5b-a6d4-4285-9f48-92d52b80a1c6</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=0da7fed397c13510dfffb3b6f053af00"/>
@@ -3972,11 +3889,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>01a7fed397c13510dfffb3b6f053af02</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=0da7fed397c13510dfffb3b6f053af00"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=0da7fed397c13510dfffb3b6f053af00"/>
@@ -3996,10 +3913,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>34a7bed397c13510dfffb3b6f053afda</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>625ea282-c10d-43bb-a4ef-e2fd49f9bf97</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=34a7bed397c13510dfffb3b6f053afda"/>
@@ -4048,11 +3965,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>38a7bed397c13510dfffb3b6f053afdb</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=34a7bed397c13510dfffb3b6f053afda"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=34a7bed397c13510dfffb3b6f053afda"/>
@@ -4072,10 +3989,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>3ca7bed397c13510dfffb3b6f053afee</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>c3b03129-a2e7-4e61-9b4e-2ee7ff950f0f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=3ca7bed397c13510dfffb3b6f053afee"/>
@@ -4124,11 +4041,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>f0a7bed397c13510dfffb3b6f053aff0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:14:31</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>face_one_power={{fd_transform:8cefa992-d73f-41ce-a21f-46019a47a620}}^face_one_toughness={{fd_transform:040d19fa-df09-4592-bc29-1352b47f1858}}^cmc={{fd_transform:cee330c1-9d19-46fe-8e5f-3f0c9147cfc3}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^face_one_produced_mana=fd-scripted^front_image={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal}}</value>
+        <value>face_one_power={{fd_transform:8cefa992-d73f-41ce-a21f-46019a47a620}}^face_one_toughness={{fd_transform:040d19fa-df09-4592-bc29-1352b47f1858}}^cmc={{fd_transform:cee330c1-9d19-46fe-8e5f-3f0c9147cfc3}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^face_one_produced_mana=fd-scripted^front_image={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal}}^name={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.name}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=3ca7bed397c13510dfffb3b6f053afee^sys_idNOT IN3ca7bed397c13510dfffb3b6f053afef"/>
     <sys_hub_input_scripts action="INSERT_OR_UPDATE">
@@ -4136,13 +4053,13 @@
         <input_name>values</input_name>
         <instance>3ca7bed397c13510dfffb3b6f053afee</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\r\nvar c \u003d 0;\r\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\r\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\r\nwhile ( c \u003c l){\r\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\r\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\r\n    keywordGr.query();\r\n    keywordGr.next();\r\n    keywords.push(keywordGr.getUniqueValue());\r\n    gs.info(keywords);\r\n    c++\r\n}\r\nreturn keywords;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"},"keywords":{"scriptActive":true,"savedValue":""},"face_one_produced_mana":{"scriptActive":true,"savedValue":""},"colors":{"scriptActive":true,"savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>3ca7bed397c13510dfffb3b6f053afef</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:45:31</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:56</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=3ca7bed397c13510dfffb3b6f053afee"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -4161,10 +4078,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>41a7fed397c13510dfffb3b6f053af19</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>11c2d5b1-0f74-40b7-8873-058f7b1f9298</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=41a7fed397c13510dfffb3b6f053af19"/>
@@ -4250,10 +4167,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>4da7bed397c13510dfffb3b6f053affa</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>a90a52a3-104b-4b95-9f66-06c212e9a101</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=4da7bed397c13510dfffb3b6f053affa"/>
@@ -4302,11 +4219,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>41a7bed397c13510dfffb3b6f053affc</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=4da7bed397c13510dfffb3b6f053affa"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=4da7bed397c13510dfffb3b6f053affa"/>
@@ -4326,10 +4243,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>4da7fed397c13510dfffb3b6f053af0c</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>2fd61031-f0ee-414d-a26d-c06ee694309e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=4da7fed397c13510dfffb3b6f053af0c"/>
@@ -4415,10 +4332,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>74a7bed397c13510dfffb3b6f053afd4</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>130c17c3-eb40-4a25-8366-d52315918eab</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=74a7bed397c13510dfffb3b6f053afd4"/>
@@ -4467,11 +4384,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>78a7bed397c13510dfffb3b6f053afd5</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=74a7bed397c13510dfffb3b6f053afd4"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=74a7bed397c13510dfffb3b6f053afd4"/>
@@ -4491,10 +4408,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:19</sys_created_on>
         <sys_id>adaabaf797f47150dfffb3b6f053af60</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>071c84ab-16f6-425a-859f-bc2255413357</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=adaabaf797f47150dfffb3b6f053af60"/>
@@ -4580,10 +4497,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>b8a7bed397c13510dfffb3b6f053afe8</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>782544d4-cd93-4210-8789-bfb5fe51699e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b8a7bed397c13510dfffb3b6f053afe8"/>
@@ -4632,11 +4549,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>70a7bed397c13510dfffb3b6f053afea</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 22:14:31</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>face_one_power={{fd_transform:c6e4db68-d2dc-4ed3-9626-8b2d3d8bbf2a}}^face_one_toughness={{fd_transform:cb71482a-b80f-432b-93bd-bc59fb6ed285}}^cmc={{fd_transform:c37547fe-c885-4740-aeb9-2cde48547a33}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^face_one_produced_mana=fd-scripted^face_one_loyalty={{fd_transform:4c470a1e-3e5c-417c-9f44-e5b220de2d35}}^front_image={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal}}</value>
+        <value>face_one_power={{fd_transform:c6e4db68-d2dc-4ed3-9626-8b2d3d8bbf2a}}^face_one_toughness={{fd_transform:cb71482a-b80f-432b-93bd-bc59fb6ed285}}^cmc={{fd_transform:c37547fe-c885-4740-aeb9-2cde48547a33}}^face_one_mana_cost={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.mana_cost}}^face_one_oracle_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.oracle_text}}^face_one_artist={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.artist}}^face_one_flavor_text={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.flavor_text}}^colors=fd-scripted^face_one_colors=fd-scripted^type_line={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.type_line}}^rarity={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.rarity}}^edhrec={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.edhrec}}^gatherer={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.related_uris.gatherer}}^api_link={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.uri}}^keywords=fd-scripted^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_foil}}^face_one_produced_mana=fd-scripted^face_one_loyalty={{fd_transform:4c470a1e-3e5c-417c-9f44-e5b220de2d35}}^front_image={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.image_uris.normal}}^name={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.name}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=b8a7bed397c13510dfffb3b6f053afe8^sys_idNOT INb8a7bed397c13510dfffb3b6f053afe9"/>
     <sys_hub_input_scripts action="INSERT_OR_UPDATE">
@@ -4644,13 +4561,13 @@
         <input_name>values</input_name>
         <instance>b8a7bed397c13510dfffb3b6f053afe8</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\r\nvar c \u003d 0;\r\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\r\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\r\nwhile ( c \u003c l){\r\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\r\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\r\n    keywordGr.query();\r\n    keywordGr.next();\r\n    keywords.push(keywordGr.getUniqueValue());\r\n    gs.info(keywords);\r\n    c++\r\n}\r\nreturn keywords;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\r\nreturn color_id;","savedValue":""}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;"},"keywords":{"scriptActive":true,"script":"var keywords \u003d [];\nvar c \u003d 0;\nvar input \u003d fd_data._1__scryfall_api.parsed_output.keywords;\nvar l \u003d  fd_data._1__scryfall_api.parsed_output.keywords.length;\nwhile ( c \u003c l){\n    var keywordGr \u003d new GlideRecord(\u0027x_759224_magic_c_0_mtg_keywords\u0027);\n    keywordGr.addQuery(\u0027name\u0027,input[c]);\n    keywordGr.query();\n    keywordGr.next();\n    keywords.push(keywordGr.getUniqueValue());\n    gs.info(keywords);\n    c++\n}\nreturn keywords;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""},"colors":{"scriptActive":true,"script":"var color_id \u003d fd_data._1__scryfall_api.parsed_output.color_identity;\nreturn color_id;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>b8a7bed397c13510dfffb3b6f053afe9</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:45:31</sys_updated_on>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:57:54</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b8a7bed397c13510dfffb3b6f053afe8"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -4669,10 +4586,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>bca7bed397c13510dfffb3b6f053aff4</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>7c42895a-aa32-416d-bd73-5bec6844c6cb</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=bca7bed397c13510dfffb3b6f053aff4"/>
@@ -4721,11 +4638,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>b0a7bed397c13510dfffb3b6f053aff6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}^p_price={{flow_variable.previous_price}}</value>
+        <value>price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=bca7bed397c13510dfffb3b6f053aff4"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bca7bed397c13510dfffb3b6f053aff4"/>
@@ -4745,10 +4662,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>c9a7fed397c13510dfffb3b6f053af06</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>dcb10add-f5c9-49d4-9e03-59655d917b21</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c9a7fed397c13510dfffb3b6f053af06"/>
@@ -4809,13 +4726,13 @@
         <input_name>values</input_name>
         <instance>c9a7fed397c13510dfffb3b6f053af06</instance>
         <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"face_one_colors":{"scriptActive":true,"script":"return fd_data._27__for_each.item.colors;","savedValue":""},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""}}</script>
+        <script>{"face_one_colors":{"scriptActive":true,"script":"return fd_data._27__for_each.item.colors;"},"face_one_produced_mana":{"scriptActive":true,"script":"return fd_data._1__scryfall_api.parsed_output.produced_mana;","savedValue":""}}</script>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>c9a7fed397c13510dfffb3b6f053af07</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:45:31</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:56</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c9a7fed397c13510dfffb3b6f053af06"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -4834,10 +4751,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>cda7fed397c13510dfffb3b6f053af12</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>f5e3243a-86d8-4f58-909c-ea114d59b251</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=cda7fed397c13510dfffb3b6f053af12"/>
@@ -4923,10 +4840,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:19</sys_created_on>
         <sys_id>edaabaf797f47150dfffb3b6f053af58</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>2d2f0291-10c7-48ef-8a7e-65da7e447a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=edaabaf797f47150dfffb3b6f053af58"/>
@@ -4985,10 +4902,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>f0a7bed397c13510dfffb3b6f053afe0</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>e5892345-16dc-4d2d-9821-3521f2d3d5ad</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f0a7bed397c13510dfffb3b6f053afe0"/>
@@ -5037,11 +4954,11 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:54</sys_created_on>
         <sys_id>f4a7bed397c13510dfffb3b6f053afe1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 19:51:26</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^p_price={{flow_variable.previous_price}}^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
+        <value>{{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}^price={{2d2f0291-10c7-48ef-8a7e-65da7e447a73.parsed_output.prices.usd_etched}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=f0a7bed397c13510dfffb3b6f053afe0"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=f0a7bed397c13510dfffb3b6f053afe0"/>
@@ -5049,7 +4966,7 @@
     <sys_hub_flow_logic action="delete_multiple" query="flow=d9aa7af797f47150dfffb3b6f053afa4^sys_idNOT IN01a7fed397c13510dfffb3b6f053af4f,05a7fed397c13510dfffb3b6f053af56,11a7fed397c13510dfffb3b6f053af81,11a7fed397c13510dfffb3b6f053af91,1da7fed397c13510dfffb3b6f053af87,1da7fed397c13510dfffb3b6f053afa1,51a7fed397c13510dfffb3b6f053af8e,51a7fed397c13510dfffb3b6f053af98,5da7fed397c13510dfffb3b6f053af9e,61aabaf797f47150dfffb3b6f053af38,65aabaf797f47150dfffb3b6f053af28,65aabaf797f47150dfffb3b6f053af2c,69aabaf797f47150dfffb3b6f053af2f,69aabaf797f47150dfffb3b6f053af33,85a7fed397c13510dfffb3b6f053af52,91a7fed397c13510dfffb3b6f053af8b,95a7fed397c13510dfffb3b6f053af84,a1aabaf797f47150dfffb3b6f053af3b,a5aabaf797f47150dfffb3b6f053af24,d5a7fed397c13510dfffb3b6f053af9b,d9a7fed397c13510dfffb3b6f053af94,e9aabaf797f47150dfffb3b6f053af1a"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c858bbbb9725311078cb33121153afaa</block>
+        <block display_value="">f5ee16d193620210a066fa497bba1005</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5071,10 +4988,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>01a7fed397c13510dfffb3b6f053af4f</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>9a53a7d8-d26b-40c2-accc-d8425332f66a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5098,7 +5015,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=01a7fed397c13510dfffb3b6f053af4f"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c458bbbb9725311078cb33121153afb8</block>
+        <block display_value="">f5ee16d193620210a066fa497bba1011</block>
         <comment>Else it's etched</comment>
         <connected_to>9a53a7d8-d26b-40c2-accc-d8425332f66a</connected_to>
         <decision_table/>
@@ -5119,10 +5036,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>05a7fed397c13510dfffb3b6f053af56</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>d086c603-4b5e-44a4-8b3c-e5353493e748</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5133,7 +5050,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=05a7fed397c13510dfffb3b6f053af56"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1858bbbb9725311078cb33121153afeb</block>
+        <block display_value="">bdee16d193620210a066fa497bba1032</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5155,10 +5072,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>11a7fed397c13510dfffb3b6f053af81</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>e4933e7c-0b66-4507-98d8-9436773f76be</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5182,7 +5099,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=11a7fed397c13510dfffb3b6f053af81"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af0a</block>
+        <block display_value="">7dee16d193620210a066fa497bba104d</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5204,10 +5121,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>11a7fed397c13510dfffb3b6f053af91</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>230e3b7c-a011-41d7-bbd0-1f676e0bd115</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5231,7 +5148,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=11a7fed397c13510dfffb3b6f053af91"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">9c58bbbb9725311078cb33121153aff8</block>
+        <block display_value="">35ee16d193620210a066fa497bba103e</block>
         <comment/>
         <connected_to>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</connected_to>
         <decision_table/>
@@ -5253,10 +5170,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>1da7fed397c13510dfffb3b6f053af87</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>9df3fea3-54eb-49e2-bd13-059bbf7142ba</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5280,7 +5197,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=1da7fed397c13510dfffb3b6f053af87"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5058fbbb9725311078cb33121153af2b</block>
+        <block display_value="">02ee16d193620210a066fa497bba1076</block>
         <comment>It's Face Two</comment>
         <connected_to>18c510ef-c6ab-4735-a777-f23859ae86ee</connected_to>
         <decision_table/>
@@ -5301,10 +5218,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>1da7fed397c13510dfffb3b6f053afa1</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>8c7c6698-e4ee-44d8-b5b7-625253c2b1c3</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5315,7 +5232,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=1da7fed397c13510dfffb3b6f053afa1"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">d458fbbb9725311078cb33121153af05</block>
+        <block display_value="">75ee16d193620210a066fa497bba1049</block>
         <comment>Else it's a new insert</comment>
         <connected_to>e4933e7c-0b66-4507-98d8-9436773f76be</connected_to>
         <decision_table/>
@@ -5336,10 +5253,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>51a7fed397c13510dfffb3b6f053af8e</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>1a892fb8-c141-4c24-b927-01a6c2f80753</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5350,7 +5267,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=51a7fed397c13510dfffb3b6f053af8e"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af16</block>
+        <block display_value="">06ee16d193620210a066fa497bba1064</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5372,10 +5289,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>51a7fed397c13510dfffb3b6f053af98</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>d25a7687-3122-4403-96af-6156549df2dd</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5399,7 +5316,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=51a7fed397c13510dfffb3b6f053af98"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5c58fbbb9725311078cb33121153af24</block>
+        <block display_value="">0aee16d193620210a066fa497bba1070</block>
         <comment>Else it's etched</comment>
         <connected_to>d25a7687-3122-4403-96af-6156549df2dd</connected_to>
         <decision_table/>
@@ -5420,10 +5337,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>5da7fed397c13510dfffb3b6f053af9e</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>0925610e-fd36-453e-b71b-524dfbff2dfe</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5434,7 +5351,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=5da7fed397c13510dfffb3b6f053af9e"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0858bbbb9725311078cb33121153afdf</block>
+        <block display_value="">b9ee16d193620210a066fa497bba1028</block>
         <comment>else it's etched</comment>
         <connected_to>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</connected_to>
         <decision_table/>
@@ -5455,10 +5372,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:19</sys_created_on>
         <sys_id>61aabaf797f47150dfffb3b6f053af38</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>6fd392c9-1e97-4cf0-8b19-2f35b6a376b2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5469,7 +5386,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=61aabaf797f47150dfffb3b6f053af38"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">8458bbbb9725311078cb33121153afa4</block>
+        <block display_value="">b1ee16d193620210a066fa497bba1000</block>
         <comment>This means this is not a new insert.</comment>
         <connected_to/>
         <decision_table/>
@@ -5491,10 +5408,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>65aabaf797f47150dfffb3b6f053af28</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5544,7 +5461,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=65aabaf797f47150dfffb3b6f053af28"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">4858bbbb9725311078cb33121153afbe</block>
+        <block display_value="">7dee16d193620210a066fa497bba1016</block>
         <comment>This is a new Insert</comment>
         <connected_to>9785e8c0-3ffa-4213-a7e8-f3575e5d3311</connected_to>
         <decision_table/>
@@ -5565,10 +5482,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>65aabaf797f47150dfffb3b6f053af2c</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>53823282-11f8-401f-9ad9-cd13f990e97c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5579,7 +5496,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=65aabaf797f47150dfffb3b6f053af2c"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c458bbbb9725311078cb33121153afc4</block>
+        <block display_value="">f9ee16d193620210a066fa497bba101b</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5601,10 +5518,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>69aabaf797f47150dfffb3b6f053af2f</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5654,7 +5571,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=69aabaf797f47150dfffb3b6f053af2f"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">c858bbbb9725311078cb33121153afd8</block>
+        <block display_value="">79ee16d193620210a066fa497bba1022</block>
         <comment/>
         <connected_to>d22d0d37-b6b3-4328-ba6d-19186ee8dfdb</connected_to>
         <decision_table/>
@@ -5676,10 +5593,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:19</sys_created_on>
         <sys_id>69aabaf797f47150dfffb3b6f053af33</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>a1d0d38a-a21a-486b-b624-ce0f1a96d18d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5729,7 +5646,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=69aabaf797f47150dfffb3b6f053af33"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0058bbbb9725311078cb33121153afb2</block>
+        <block display_value="">3dee16d193620210a066fa497bba100b</block>
         <comment/>
         <connected_to>9a53a7d8-d26b-40c2-accc-d8425332f66a</connected_to>
         <decision_table/>
@@ -5751,10 +5668,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>85a7fed397c13510dfffb3b6f053af52</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>c808fc23-d54b-49d1-9ec5-19e48d260442</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5778,7 +5695,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=85a7fed397c13510dfffb3b6f053af52"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5458bbbb9725311078cb33121153afff</block>
+        <block display_value="">fdee16d193620210a066fa497bba1043</block>
         <comment>Else it's etched</comment>
         <connected_to>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</connected_to>
         <decision_table/>
@@ -5799,10 +5716,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>91a7fed397c13510dfffb3b6f053af8b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>6a0e57bb-3137-481f-a104-920fa98d6e53</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5813,7 +5730,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=91a7fed397c13510dfffb3b6f053af8b"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5858bbbb9725311078cb33121153aff1</block>
+        <block display_value="">fdee16d193620210a066fa497bba1037</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -5835,10 +5752,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:55</sys_created_on>
         <sys_id>95a7fed397c13510dfffb3b6f053af84</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>420ef29c-8e72-4d38-8c20-e2fe7a2d7ae2</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5862,7 +5779,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=95a7fed397c13510dfffb3b6f053af84"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1c58bbbb9725311078cb33121153afe5</block>
+        <block display_value="">b1ee16d193620210a066fa497bba102e</block>
         <comment>It's a multi-faced card</comment>
         <connected_to>8df16174-85d1-49f6-84fd-ba9e81bfe831</connected_to>
         <decision_table/>
@@ -5883,10 +5800,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:19</sys_created_on>
         <sys_id>a1aabaf797f47150dfffb3b6f053af3b</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>b2cb14be-b3b5-445f-bec0-7fbc9a38c852</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5897,7 +5814,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=a1aabaf797f47150dfffb3b6f053af3b"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">0c58bbbb9725311078cb33121153af91</block>
+        <block display_value="">edeed2d193620210a066fa497bba10fa</block>
         <comment>If the card is a single face layout.</comment>
         <connected_to/>
         <decision_table/>
@@ -5919,10 +5836,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>a5aabaf797f47150dfffb3b6f053af24</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>8df16174-85d1-49f6-84fd-ba9e81bfe831</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5946,7 +5863,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=a5aabaf797f47150dfffb3b6f053af24"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1458fbbb9725311078cb33121153af1e</block>
+        <block display_value="">caee16d193620210a066fa497bba106a</block>
         <comment/>
         <connected_to>d25a7687-3122-4403-96af-6156549df2dd</connected_to>
         <decision_table/>
@@ -5968,10 +5885,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>d5a7fed397c13510dfffb3b6f053af9b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>6da73ff3-e027-47b4-a933-29ce9a2f8c1a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5995,7 +5912,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=d5a7fed397c13510dfffb3b6f053af9b"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">1c58fbbb9725311078cb33121153af10</block>
+        <block display_value="">f1ee16d193620210a066fa497bba105f</block>
         <comment>It's face one</comment>
         <connected_to/>
         <decision_table/>
@@ -6017,10 +5934,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-09-08 17:01:56</sys_created_on>
         <sys_id>d9a7fed397c13510dfffb3b6f053af94</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:21</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:59</sys_updated_on>
         <ui_id>18c510ef-c6ab-4735-a777-f23859ae86ee</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -6044,7 +5961,7 @@
     <sys_hub_input_scripts action="delete_multiple" query="instance=d9a7fed397c13510dfffb3b6f053af94"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">4458bbbb9725311078cb33121153af89</block>
+        <block display_value="">2deed2d193620210a066fa497bba10f5</block>
         <comment>Sets the single face card types</comment>
         <connected_to/>
         <decision_table/>
@@ -6054,7 +5971,7 @@
         <flow display_value="Populate Card">d9aa7af797f47150dfffb3b6f053afa4</flow>
         <flow_variable/>
         <flow_variable/>
-        <flow_variables_assigned>single_face_types,variable,previous_price</flow_variables_assigned>
+        <flow_variables_assigned>single_face_types,variable</flow_variables_assigned>
         <generation_source/>
         <inputs/>
         <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
@@ -6066,10 +5983,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>e9aabaf797f47150dfffb3b6f053af1a</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:01:58</sys_updated_on>
         <ui_id>6ebff54b-685a-4725-a503-af29e288c356</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -7221,7 +7138,7 @@
         <transform_definition_id display_value="convert_string_to_number">bfac1e0e0f0130106d1a3a3485767e8a</transform_definition_id>
         <ui_id>c8c35436-22e2-4d13-8f77-f92d11fb679e</ui_id>
     </sys_hub_pill_compound>
-    <sys_hub_flow_variable action="delete_multiple" query="model=d9aa7af797f47150dfffb3b6f053afa4^sys_idNOT IN15aabaf797f47150dfffb3b6f053af14,53b18e3597c6315078cb33121153afb7,f32c72bb97f47150dfffb3b6f053af87"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=d9aa7af797f47150dfffb3b6f053afa4^sys_idNOT IN15aabaf797f47150dfffb3b6f053af14,f32c72bb97f47150dfffb3b6f053af87"/>
     <sys_hub_flow_variable action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -7293,89 +7210,6 @@
         <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 20:16:18</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_flow_variable>
-    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=216f334f-1103-42d2-9495-0835d2e0b8b6</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>previous_price</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="String">string</internal_type>
-        <label>previous price</label>
-        <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="Populate Card">d9aa7af797f47150dfffb3b6f053afa4</model>
-        <model_id>d9aa7af797f47150dfffb3b6f053afa4</model_id>
-        <model_table>sys_hub_flow_snapshot</model_table>
-        <name>var__m_sys_hub_flow_variable_d9aa7af797f47150dfffb3b6f053afa4</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_flow_variable</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-10-23 14:18:18</sys_created_on>
-        <sys_id>53b18e3597c6315078cb33121153afb7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -7485,11 +7319,11 @@
         <sys_created_on>2023-08-28 20:16:18</sys_created_on>
         <sys_id>59aa7af797f47150dfffb3b6f053afb9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Card Record</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_d9aa7af797f47150dfffb3b6f053afa4_card_record_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 20:16:18</sys_updated_on>
         <url/>
@@ -7506,18 +7340,18 @@
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f6e08663977cfd10dfffb3b6f053afc6"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f6e08663977cfd10dfffb3b6f053afc6^sys_idNOT IN7daafaf797f47150dfffb3b6f053af37"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"7daafaf797f47150dfffb3b6f053af37","name":"plan","plan_signature":null}}</plan>
+        <plan>com.snc.process_flow.engine.ProcessPlan@2a5efc4e</plan>
         <plan_id display_value="Populate Card">f6e08663977cfd10dfffb3b6f053afc6</plan_id>
-        <snapshot>9546687b470542102dbef1f4116d430b</snapshot>
+        <snapshot>d9aa7af797f47150dfffb3b6f053afa4</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 20:16:20</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7daafaf797f47150dfffb3b6f053af37</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-23 14:18:25</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-01 20:02:03</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>
