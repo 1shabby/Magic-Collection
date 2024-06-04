@@ -23,9 +23,9 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         data = data || this.getParameter('data');
         // Converts data into an array.
         var deck_arr = this._cleanData(data);
-		var cards = this._processArr(deck_arr);
-
-		this._createDeck(cards,name,commander);
+        var cards = this._processArr(deck_arr);
+        //this._createDeck(cards,name,commander);
+        var basics = this._getBasics(cards);
 
     },
 
@@ -50,17 +50,16 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     _processArr: function(arr) {
         var i = 0;
-		var cards = [];
+        var cards = [];
 
         while (i < arr.length) {
             var card = arr[i].split(';');
             //this._createCard(card);
-			cards = this._trackNames(card,cards);
-			gs.info(JSON.stringify(cards[i]));
-			i++;
+            cards = this._trackNames(card, cards);
+            i++;
         }
-		// Return the cards
-		return cards;
+        // Return the cards
+        return cards;
     },
     /**
      * Description: Takes in a CSV file and cleans the data so it can be proccessed
@@ -78,11 +77,11 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         // Create GlideRecord
         var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
         cardGr.initialize();
-		// Populate values
+        // Populate values
         cardGr.setValue('quantity', quantity);
         cardGr.setValue('name', name);
         cardGr.setValue('collector_number', cn);
-		cardGr.setValue('sets',this._getSetRecord(set_id));
+        cardGr.setValue('sets', this._getSetRecord(set_id));
         // Set Foiling
         if (foil == 'Normal') {
             cardGr.setValue('foiling', 'none');
@@ -91,7 +90,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         } else {
             cardGr.setValue('foiling', 'etched');
         }
-		cardGr.insert();
+        cardGr.insert();
     },
 
     /**
@@ -108,38 +107,84 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return setGr.getUniqueValue();
     },
 
-	_trackNames: function(card,arr){
-		var obj = {"Name": card[1], "Quantity": card[0], "CN": card[4]};
-		arr.push(obj);
-		return arr;
-	},
+    _trackNames: function(card, arr) {
+        var obj = {
+            "name": card[1],
+            "quantity": card[0],
+            "cn": card[4]
+        };
+        arr.push(obj);
+        return arr;
+    },
 
-	_createDeck: function(arr,name,commander){
-		var deckGr = new GlideRecord('x_759224_magic_c_0_decks');
-		deckGr.initialize();
-		deckGr.setValue('name',name);
-		deckGr.setValue('commanders',this._getCommanders(commander));
-		deckGr.setValue('cards', this._getCardRecord());
-	},
+    _createDeck: function(arr, name, commander) {
+        var deckGr = new GlideRecord('x_759224_magic_c_0_decks');
+        deckGr.initialize();
+        deckGr.setValue('name', name);
+        deckGr.setValue('commanders', this._getCommanders(commander, '303'));
+        deckGr.setValue('cards', this._getCards(arr));
+        deckGr.insert();
+    },
 
-	_getCommanders: function(){
-		
-	},
+    _getCommanders: function(name, cn) {
+        return this._getCardRecord(name, cn);
+    },
 
-	_getCardRecord: function(name,cn){
-		var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-		cardGr.addQuery('name',name);
-		if(cn){
-			cardGr.addQuery('collector_number',cn);
-		}
-		cardGr.query();
+    _getBasics: function(arr) {
+		var basics = {};
+        var count = 0;
+        while (count < arr.length) {
+			gs.info(arr[count].name);
+            switch (arr[count].name) {
+                case 'Plains':
+                    basics.plains = arr[count].quantity;
+                    break;
+                case 'Island':
+                    basics.island = arr[count].quantity;
+                    break;
+                case 'Mountain':
+                    basics.mountain = arr[count].quantity;
+                    break;
+                case 'Swamp':
+                    basics.swamp = arr[count].quantity;
+                    break;
+                case 'Forest':
+                    basics.forest = arr[count].quantity;
+                    break;
+                case 'Wastes':
+                    basics.wastes += arr[count].quantity;
+                    break;
+            }
+            count++;
+        }
+		gs.info(JSON.stringify(basics));
+		return basics;
+    },
 
-		if(cardGr.hasNext()){
-			cardGr.next();
-			return cardGr.getUniqueValue();
-		}
+    _getCards: function(cardsArr) {
+        var count = 0;
+        var cards = [];
+        while (count < cardsArr.length) {
+            var card = this._getCardRecord(cardsArr[count].name, cardsArr[count].cn);
+            cards.push(card);
+            count++;
+        }
+        return cards.join();
+    },
 
-	},
+    _getCardRecord: function(name, cn) {
+        var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        cardGr.addQuery('name', name);
+        if (cn) {
+            cardGr.addQuery('collector_number', cn);
+        }
+        cardGr.query();
+        //gs.info(name + ' | ' + cn + ' | ' + cardGr.getRowCount());
+        if (cardGr.hasNext()) {
+            cardGr.next();
+            return cardGr.getUniqueValue();
+        }
+    },
 
     type: 'magic_utils'
 });]]></script>
@@ -147,13 +192,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-31 20:21:46</sys_updated_on>
+        <sys_updated_on>2024-06-04 21:26:16</sys_updated_on>
     </sys_script_include>
 </record_update>
