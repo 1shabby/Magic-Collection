@@ -11,6 +11,27 @@
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /**
+     * Description: Takes in a url to an image and attaches it to the card record
+     * Parameters: {string}: url - url to the png from scryfall
+	 * 			   {string}: table - name of the table that the record you want to attach it to
+	 * 			   {string}: record - sys_id of the record you want to attach it to
+	 * 			   {string}: filename - the filename for the attachment
+     * Returns: None; A new attachment will be on the card record
+     */
+
+    attachImage: function(url, table, record, filename) {
+        try {
+            var request = new sn_ws.RESTMessageV2();
+            request.setHttpMethod('get');
+            request.setEndpoint(url);
+            request.saveResponseBodyAsAttachment(tablename, recordSysId, filename);
+            var response = request.execute();
+        } catch (e) {
+            gs.info(e.message());
+        }
+    },
+
+    /**
     * Description: Takes in a CSV file and creates each card and associates it to a deck record.   
     * Parameters: {string}: Data - CSV formatted file;
     			  {string}: Name - the name of the deck;
@@ -24,8 +45,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         // Converts data into an array.
         var deck_arr = this._cleanData(data);
         var cards = this._processArr(deck_arr);
-        //this._createDeck(cards,name,commander);
-        var basics = this._getBasics(cards);
+        this._createDeck(cards, name, commander);
 
     },
 
@@ -122,7 +142,35 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         deckGr.initialize();
         deckGr.setValue('name', name);
         deckGr.setValue('commanders', this._getCommanders(commander, '303'));
-        deckGr.setValue('cards', this._getCards(arr));
+        deckGr.setValue('cards', this._getCards(arr, commander));
+        // Set Basics Land fields
+        var basics = this._getBasics(arr);
+        var colors = [];
+        if (basics.plains != null) {
+            deckGr.setValue('plains', basics.plains);
+            colors.push('W');
+        }
+        if (basics.island != null) {
+            deckGr.setValue('island', basics.island);
+            colors.push('U');
+        }
+        if (basics.swamp != null) {
+            deckGr.setValue('swamp', basics.swamp);
+            colors.push('B');
+        }
+        if (basics.mountain != null) {
+            deckGr.setValue('mountain', basics.mountain);
+            colors.push('R');
+        }
+        if (basics.forest != null) {
+            deckGr.setValue('forest', basics.forest);
+            colors.push('G');
+        }
+        if (basics.wastes != null) {
+            deckGr.setValue('wastes', basics.wastes);
+            colors.push('C');
+        }
+        deckGr.setValue('color_identity', colors.join());
         deckGr.insert();
     },
 
@@ -131,10 +179,9 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
 
     _getBasics: function(arr) {
-		var basics = {};
+        var basics = {};
         var count = 0;
         while (count < arr.length) {
-			gs.info(arr[count].name);
             switch (arr[count].name) {
                 case 'Plains':
                     basics.plains = arr[count].quantity;
@@ -157,16 +204,26 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
             count++;
         }
-		gs.info(JSON.stringify(basics));
-		return basics;
+        return basics;
     },
 
-    _getCards: function(cardsArr) {
+    _getCards: function(cardsArr, commander) {
         var count = 0;
         var cards = [];
         while (count < cardsArr.length) {
-            var card = this._getCardRecord(cardsArr[count].name, cardsArr[count].cn);
-            cards.push(card);
+            // Remove Commander and Basics from the list of cards so they're not counted several times
+            if (cardsArr[count].name == 'Plains' ||
+                cardsArr[count].name == 'Island' ||
+                cardsArr[count].name == 'Swamp' ||
+                cardsArr[count].name == 'Mountain' ||
+                cardsArr[count].name == 'Forest' ||
+                cardsArr[count].name == 'Wastes' ||
+                cardsArr[count].name == commander) {
+                gs.info(cardsArr[count].name);
+            } else {
+                var card = this._getCardRecord(cardsArr[count].name, cardsArr[count].cn);
+                cards.push(card);
+            }
             count++;
         }
         return cards.join();
@@ -179,7 +236,6 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             cardGr.addQuery('collector_number', cn);
         }
         cardGr.query();
-        //gs.info(name + ' | ' + cn + ' | ' + cardGr.getRowCount());
         if (cardGr.hasNext()) {
             cardGr.next();
             return cardGr.getUniqueValue();
@@ -192,13 +248,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>43</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-04 21:26:16</sys_updated_on>
+        <sys_updated_on>2024-06-06 03:10:44</sys_updated_on>
     </sys_script_include>
 </record_update>
