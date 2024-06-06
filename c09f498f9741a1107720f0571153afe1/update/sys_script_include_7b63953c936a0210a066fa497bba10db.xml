@@ -10,7 +10,26 @@
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
+    /**
+     * Description: Takes in a url to an image and attaches it to the card record
+     * Parameters: {string}: url - url to the png from scryfall
+	 * 			   {string}: table - name of the table that the record you want to attach it to
+	 * 			   {string}: record - sys_id of the record you want to attach it to
+	 * 			   {string}: filename - the filename for the attachment
+     * Returns: None; A new attachment will be on the card record
+     */
 
+    attachImage: function(url, table, record, filename) {
+        try {
+            var request = new sn_ws.RESTMessageV2();
+            request.setHttpMethod('get');
+            request.setEndpoint(url);
+            request.saveResponseBodyAsAttachment(tablename, recordSysId, filename);
+            var response = request.execute();
+        } catch (e) {
+            gs.info(e.message());
+        }
+    },
 
     /**
     * Description: Takes in a CSV file and creates each card and associates it to a deck record.   
@@ -229,13 +248,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-06 02:36:38</sys_updated_on>
+        <sys_updated_on>2024-06-06 03:10:44</sys_updated_on>
     </sys_script_include>
 </record_update>
