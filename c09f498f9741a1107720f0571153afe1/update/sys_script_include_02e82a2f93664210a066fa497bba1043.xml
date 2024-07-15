@@ -10,43 +10,6 @@
         <script><![CDATA[var symbology_utils = Class.create();
 symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-    findSymbolStrings(input) {
-        var regex = /\{[^}]*\}/g;
-        var match;
-        var matches = [];
-
-        while ((match = regex.exec(input)) !== null) {
-            matches.push(match[0]);
-        }
-        return matches;
-    },
-
-    replaceSymbols(matches, input) {
-        var new_inp = '';
-        for (i in matches) {
-            var symbols = this.symbolMapping(matches[i]);
-
-            var html_tag = this.generateImageTag(symbols);
-            new_inp += new_inp.replace(matches[i], html_tag);
-        }
-        gs.info(new_inp);
-
-    },
-
-    /**
-   * Description: Creates an image tag based on the provided scope and object from the symbolMapping method. 
-   * Parameters: {object}: ret_obj - object containing the following properties:
-    				{string}: image - the name of the image record corresponding to the input provided
-    				{string}: width - the width to pass through into the html image tag that we're going to create. Most are 1 rem, however a few have different values.
-				{string}: scope - the name of the scope in servicenow; usually 'x_759224_magic_c_0.'
-   * Returns: {string}: html <img> where the source is the image record on the instance and the width is applied in the 		style.
-   */
-
-    generateImageTag: function(object, scope) {
-        scope = scope || 'x_759224_magic_c_0.';
-        return '<img style="width:' + object.width + ';" src="' + scope + object.image + '" />';
-    },
-
     /**
     * Description: Takes in a string of a symbol and returns the image name and width needed for it. 
     * Parameters: {string}: Input - string in the form of '{W}' for example which maps to the white mana symbol.
@@ -56,10 +19,11 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     */
 
     symbolMapping: function(input) {
-        var scope_prefix = 'x_759224_magic_c_0.';
-
+        // Scope Prefix for the application
+		var scope_prefix = 'x_759224_magic_c_0.';
+		// The default width value for any of the circular items
         var defaultWidth = '1.5rem';
-
+		// Object containing the mapping of every symbol in Magic: The Gathering
         var symbolMap = {
             '{W}': 'white_mana.svg',
             '{U}': 'blue_mana.svg',
@@ -144,15 +108,15 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         };
 
         var image_name = scope_prefix + (symbolMap[input] || '');
-
+        // Modify the width property for the symbols that have unqiue shapes
         if (input === '{100}') {
             width = '2rem';
         } else if (input === '{1000000}') {
             width = '5rem';
         }
-
-		input = input.replace(/\n/g, '<br>');
-
+        // Replaces the newline character with line breaks
+        input = input.replace(/\n/g, '<br>');
+		// Replaces each instance of a symbol with the corresponding value from the above map
         return input.replace(/\{[^}]+\}/g, function(match) {
             var image_name = scope_prefix + (symbolMap[match] || '');
             var width = defaultWidth;
@@ -162,7 +126,7 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             } else if (match === '{1000000}') {
                 width = '5rem';
             }
-
+			// Return the image tag with the correct width and the source being the name of the image record on the instance
             return '<img style="width:' + width + ';" src="' + image_name + '"/>';
         });
     },
@@ -173,13 +137,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-09 16:17:39</sys_updated_on>
+        <sys_updated_on>2024-07-15 17:10:17</sys_updated_on>
     </sys_script_include>
 </record_update>
