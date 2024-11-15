@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="df1015cf9741a1107720f0571153afc3" label="Cards" max_length="40" name="x_759224_magic_c_0_mtg_cards" text_index="true" type="collection">
-        <element label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
-        <element label="Face Two Image" max_length="1024" name="back_image" read_only="true" type="html"/>
         <element label="CMC" max_length="40" name="cmc" read_only="true" type="integer"/>
-        <element label="Collector Number" mandatory="true" max_length="40" name="collector_number" type="string"/>
-        <element choice="3" label="Color Identity" max_length="1000" name="colors" read_only="true" type="glide_list">
-            <choice>
-                <element inactive_on_update="false" label="White" sequence="0" value="W"/>
-                <element inactive_on_update="false" label="Blue" sequence="1" value="U"/>
-                <element inactive_on_update="false" label="Black" sequence="2" value="B"/>
-                <element inactive_on_update="false" label="Red" sequence="3" value="R"/>
-                <element inactive_on_update="false" label="Green" sequence="4" value="G"/>
-                <element inactive_on_update="false" label="Colorless" sequence="5" value="C"/>
-            </choice>
-        </element>
-        <element label="EDHREC" max_length="1040" name="edhrec" read_only="true" type="url"/>
-        <element label="Face One Artist" max_length="250" name="face_one_artist" read_only="true" type="string"/>
-        <element label="Face One Colors" max_length="4000" name="face_one_colors" read_only="true" type="glide_list"/>
-        <element label="Face One Flavor Text" max_length="1000" name="face_one_flavor_text" read_only="true" type="string"/>
-        <element label="Face One Loyalty" max_length="40" name="face_one_loyalty" read_only="true" type="integer"/>
-        <element label="Face One Mana Cost" max_length="1000" name="face_one_mana_cost" read_only="true" type="html"/>
-        <element label="Face One Oracle Text" max_length="1000" name="face_one_oracle_text" read_only="true" type="html"/>
         <element label="Face One Power" max_length="40" name="face_one_power" read_only="true" type="integer"/>
-        <element label="Produced Mana" max_length="4000" name="face_one_produced_mana" read_only="true" type="glide_list"/>
-        <element label="Face One Toughness" max_length="40" name="face_one_toughness" read_only="true" type="integer"/>
-        <element label="Face Two Artist" max_length="250" name="face_two_artist" read_only="true" type="string"/>
+        <element label="Keywords" max_length="4000" name="keywords" read_only="true" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;var retval = '';&#10;&#9;var change = current.total_price - current.pt_price;&#10;&#9;if(change == 0.00){&#10;&#9;&#9;retval = current.calculatedFieldValue;&#10;&#9;}&#10;&#9;retval = change;&#10;    return retval; // return the calculated value&#10;})(current);" label="Price Change" max_length="38" name="price_change" read_only="true" type="currency" virtual="true"/>
+        <element label="Face One Artist" max_length="250" name="face_one_artist" read_only="true" type="string"/>
         <element label="Face Two Colors" max_length="4000" name="face_two_colors" read_only="true" type="glide_list"/>
-        <element label="Face Two Flavor Text" max_length="1000" name="face_two_flavor_text" read_only="true" type="string"/>
-        <element label="Face Two Loyalty" max_length="40" name="face_two_loyalty" read_only="true" type="integer"/>
-        <element label="Face Two Mana Cost" max_length="1000" name="face_two_mana_cost" read_only="true" type="html"/>
+        <element label="Face One Mana Cost" max_length="1000" name="face_one_mana_cost" read_only="true" type="html"/>
         <element label="Face Two Oracle Text" max_length="1000" name="face_two_oracle_text" read_only="true" type="html"/>
-        <element label="Face Two Power" max_length="40" name="face_two_power" read_only="true" type="integer"/>
-        <element label="Face Two Toughness" max_length="40" name="face_two_toughness" read_only="true" type="integer"/>
-        <element label="Face Two Type Line" max_length="1000" name="face_two_type_line" read_only="true" type="html"/>
         <element choice="3" default="none" label="Foiling" mandatory="true" max_length="40" name="foiling" type="choice">
             <choice>
                 <element inactive_on_update="false" label="None" sequence="0" value="none"/>
-                <element inactive_on_update="false" label="Foil" sequence="1" value="foil"/>
                 <element inactive_on_update="false" label="Etched" sequence="2" value="etched"/>
+                <element inactive_on_update="false" label="Foil" sequence="1" value="foil"/>
             </choice>
         </element>
-        <element label="Face One Image" max_length="1024" name="front_image" read_only="true" type="html"/>
-        <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
-        <element label="Is Multi-Faced" max_length="40" name="is_multi_faced" read_only="true" type="boolean"/>
-        <element label="Keywords" max_length="4000" name="keywords" read_only="true" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
-        <element display="true" label="Name" mandatory="true" max_length="400" name="name" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
-        <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
-        <element default="0.00" label="Unit Price" max_length="20" name="price" read_only="true" type="currency"/>
-        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;var retval = '';&#10;&#9;var change = current.total_price - current.pt_price;&#10;&#9;if(change == 0.00){&#10;&#9;&#9;retval = current.calculatedFieldValue;&#10;&#9;}&#10;&#9;retval = change;&#10;    return retval; // return the calculated value&#10;})(current);" label="Price Change" max_length="38" name="price_change" read_only="true" type="currency" virtual="true"/>
-        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#10;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
-        <element label="Previous Price" max_length="20" name="p_price" read_only="true" type="currency"/>
-        <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
         <element choice="1" label="Rarity" max_length="40" name="rarity" read_only="true" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Common" sequence="0" value="common"/>
-                <element inactive_on_update="false" label="Uncommon" sequence="1" value="uncommon"/>
-                <element inactive_on_update="false" label="Rare" sequence="2" value="rare"/>
                 <element inactive_on_update="false" label="Mythic Rare" sequence="3" value="mythic"/>
+                <element inactive_on_update="false" label="Uncommon" sequence="1" value="uncommon"/>
+                <element inactive_on_update="false" label="Common" sequence="0" value="common"/>
+                <element inactive_on_update="false" label="Rare" sequence="2" value="rare"/>
                 <element inactive_on_update="false" label="Special" sequence="4" value="special"/>
             </choice>
         </element>
-        <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
-        <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
+        <element label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
+        <element label="Face One Image" max_length="1024" name="front_image" read_only="true" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element label="Collector Number" mandatory="true" max_length="40" name="collector_number" type="string"/>
+        <element label="Produced Mana" max_length="4000" name="face_one_produced_mana" read_only="true" type="glide_list"/>
+        <element display="true" label="Name" mandatory="true" max_length="400" name="name" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#10;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
+        <element label="Face One Colors" max_length="4000" name="face_one_colors" read_only="true" type="glide_list"/>
+        <element label="Face Two Flavor Text" max_length="1000" name="face_two_flavor_text" read_only="true" type="string"/>
+        <element label="Face Two Power" max_length="40" name="face_two_power" read_only="true" type="integer"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
+        <element label="Face Two Toughness" max_length="40" name="face_two_toughness" read_only="true" type="integer"/>
+        <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
+        <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
+        <element choice="3" label="Color Identity" max_length="1000" name="colors" read_only="true" type="glide_list">
+            <choice>
+                <element inactive_on_update="false" label="White" sequence="0" value="W"/>
+                <element inactive_on_update="false" label="Black" sequence="2" value="B"/>
+                <element inactive_on_update="false" label="Green" sequence="4" value="G"/>
+                <element inactive_on_update="false" label="Colorless" sequence="5" value="C"/>
+                <element inactive_on_update="false" label="Blue" sequence="1" value="U"/>
+                <element inactive_on_update="false" label="Red" sequence="3" value="R"/>
+            </choice>
+        </element>
+        <element label="Face One Toughness" max_length="40" name="face_one_toughness" read_only="true" type="integer"/>
+        <element label="Previous Price" max_length="20" name="p_price" read_only="true" type="currency"/>
+        <element label="Face One Flavor Text" max_length="1000" name="face_one_flavor_text" read_only="true" type="string"/>
+        <element label="Face Two Loyalty" max_length="40" name="face_two_loyalty" read_only="true" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
+        <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
+        <element label="Face One Loyalty" max_length="40" name="face_one_loyalty" read_only="true" type="integer"/>
+        <element label="Face Two Mana Cost" max_length="1000" name="face_two_mana_cost" read_only="true" type="html"/>
+        <element label="Face Two Type Line" max_length="1000" name="face_two_type_line" read_only="true" type="html"/>
+        <element label="Face Two Image" max_length="1024" name="back_image" read_only="true" type="html"/>
+        <element label="Face One Oracle Text" max_length="1000" name="face_one_oracle_text" read_only="true" type="html"/>
+        <element label="Is Multi-Faced" max_length="40" name="is_multi_faced" read_only="true" type="boolean"/>
+        <element default="0.00" label="Unit Price" max_length="20" name="price" read_only="true" type="currency"/>
+        <element label="EDHREC" max_length="1040" name="edhrec" read_only="true" type="url"/>
+        <element label="Face Two Artist" max_length="250" name="face_two_artist" read_only="true" type="string"/>
+        <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
         <element label="Face One Type Line" max_length="1000" name="type_line" read_only="true" type="html"/>
         <index name="index">
             <element name="owner"/>

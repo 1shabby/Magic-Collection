@@ -20,7 +20,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Update Image</name>
+        <name>Update Face One Image</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -30,10 +30,14 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-	// Add your code here
-	var utils = new x_759224_magic_c_0.magic_utils();
-	current.setValue('front_image','<img style="width: 20rem;" src="' +current.getValue('front_image') +'"/>');
+	// If the image field already has an image tag, return to prevent infinite looping
+	if(current.front_image.contains('<img'))
+		return;
+	// Create image tag using the original value as the source
+	var img = '<img id="fImg" width="244" height="340" src="' + current.front_image + '"/>';
+	// Set the value of front image
+	current.setValue('front_image',img);
+	// Update the record
 	current.update();
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -42,17 +46,28 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4c5532b7932e8210a066fa497bba1045</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Update Image</sys_name>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Update Face One Image</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_4c5532b7932e8210a066fa497bba1045</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-09 16:15:23</sys_updated_on>
+        <sys_updated_on>2024-11-15 21:38:03</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=4c5532b7932e8210a066fa497bba1045"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4c5532b7932e8210a066fa497bba1045</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-15 19:24:14</sys_created_on>
+        <sys_id>993a5e83c3351210b7cebd73e401311b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-15 19:24:14</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
