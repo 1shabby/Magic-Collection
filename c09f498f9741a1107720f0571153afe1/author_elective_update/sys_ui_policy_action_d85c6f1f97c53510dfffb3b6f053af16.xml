@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>face_two_toughness</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-08 20:52:18</sys_created_on>
+        <sys_id>d85c6f1f97c53510dfffb3b6f053af16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>face_two_toughness</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_d85c6f1f97c53510dfffb3b6f053af16</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-08 20:52:18</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_cards</table>
+        <ui_policy display_value="Face Two Power / Toughness Visibility">6c0c6bdb97c53510dfffb3b6f053aff2</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>b9541ca7dbea355405ef1729139619d2</instance_id>
+        <instance_name>dev221040</instance_name>
+        <name>sys_ui_policy_action_d85c6f1f97c53510dfffb3b6f053af16</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>face_two_toughness</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-08 20:52:18</sys_created_on>
+        <sys_id>d85c6f1f97c53510dfffb3b6f053af16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>face_two_toughness</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_d85c6f1f97c53510dfffb3b6f053af16</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-08 20:52:18</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_cards</table>
+        <ui_policy display_value="Face Two Power / Toughness Visibility">6c0c6bdb97c53510dfffb3b6f053aff2</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>]]></payload>
+        <payload_hash>-821712389</payload_hash>
+        <record_name>face_two_toughness</record_name>
+        <reverted_from/>
+        <source>db9ab54bc3311210b7cebd73e4013178</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-15 17:08:46</sys_created_on>
+        <sys_id>853b398fc3311210b7cebd73e4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19330cc77b30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-15 17:08:46</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>453b398f8a3112100dbc7944ed910366</update_guid>
+        <update_guid_history>453b398f8a3112100dbc7944ed910366:-821712389</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2024-11-17 01:44:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>8008897582b8447c951bc402f3e08d10</sys_id>
+        <sys_metadata>d85c6f1f97c53510dfffb3b6f053af16</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>face_two_toughness</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_d85c6f1f97c53510dfffb3b6f053af16</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_d85c6f1f97c53510dfffb3b6f053af16">853b398fc3311210b7cebd73e4013166</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2024-11-17 01:44:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

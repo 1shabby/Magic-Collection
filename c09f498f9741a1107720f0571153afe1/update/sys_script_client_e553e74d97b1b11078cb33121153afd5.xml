@@ -3,7 +3,7 @@
         <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description/>
+        <description>Hides any empty fields with null values that aren't mandatory.</description>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
@@ -11,10 +11,9 @@
         <name>Field Visibility</name>
         <order/>
         <script><![CDATA[function onLoad() {
-    var arr = [];
     for (var x = 0; x < g_form.elements.length; x++) {
         var field = g_form.elements[x].fieldName;
-        if (!g_form.isMandatory(field) && g_form.getValue(field) == '') {
+        if (!g_form.isMandatory(field) && !g_form.getValue(field)) {
             g_form.setDisplay(field, false);
         }
 
@@ -26,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e553e74d97b1b11078cb33121153afd5</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Field Visibility</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -34,7 +33,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_client_e553e74d97b1b11078cb33121153afd5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-01 20:09:31</sys_updated_on>
+        <sys_updated_on>2024-11-17 01:27:27</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>
