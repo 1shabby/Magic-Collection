@@ -21,3 +21,14 @@ On your ServiceNow Instance do the following:
      - Branch : set this to whatever branch you want to use, my repo has a "PDI" branch that I facilitate all things related to my PDI through so I set it to PDI (do note that this IS case sensitive)
      - Credential : here you should see the credential record we created listed  
 
+
+============================================================================================
+
+Backlog:
+
+1. Update widget to grab the src of the img tag instead of the value in the image field
+2. Fix Minor bugs with field visibility ex. mana cost being visible when empty on a land record
+3. Add in banned / restricted information into the card records via the response from the API
+4. Create a workspace to facilitate a back end agent experience
+5. Integrate with PSDS / CSM to off a mock sales service
+6. Potentially make a playtester / leverage Archidekt's playtester
