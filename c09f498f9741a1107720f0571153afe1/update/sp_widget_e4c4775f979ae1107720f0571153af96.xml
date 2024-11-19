@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function(spModal, $rootScope, $scope) {
-  /* widget controller */
-  var c = this;
-	c.cards = [];
-	
-	
-	$rootScope.$on('searchTerm',function(event, msg){
-		c.data.searchTerm = msg;
-		c.server.update();
-		c.server.refresh();
-	});
+        <client_script><![CDATA[api.controller = function(spModal, $rootScope, $scope) {
+    /* widget controller */
+    var c = this;
+    c.cards = [];
 
-// Input:
-// Purpose: Opens a modal that displays all of the card details
-// Return:
-c.viewDetails = function(card){
-		var message ="Price: " + card.price  + '<br>' +
-									"Quantity: " + card.quantity + '<br>' +
-									"Foiling: " + card.foil + '<br>' +
-									"Oracle: " + card.oracle + '<br>'
+
+    $rootScope.$on('searchTerm', function(event, msg) {
+        c.data.searchTerm = msg;
+        c.server.update();
+        c.server.refresh();
+    });
+
+    // Input:
+    // Purpose: Opens a modal that displays all of the card details
+    // Return:
+    c.viewDetails = function(card) {
+        var message = "Price: " + card.price + '<br>' +
+            "Quantity: " + card.quantity + '<br>' +
+            "Foiling: " + card.foil + '<br>' +
+            "Oracle: " + card.oracle + '<br>'
         spModal.open({
             title: card.name,
             message: message,
-            buttons: [
-              {label:'${Close}', primary: true}  
-            ]
+            buttons: [{
+                label: '${Close}',
+                primary: true
+            }]
         })
-}
-};
-	]]></client_script>
+    }
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.wrapper{
 	display: grid;
@@ -107,7 +107,7 @@ display:block;
 		cards.query();
 		//Array of cards to use
 		data.records = [];
-	
+		var utils = new x_759224_magic_c_0.magic_utils();
 		while(cards.next()){
 			var card = {
 				name: cards.getValue('name'),
@@ -116,8 +116,8 @@ display:block;
 				quantity: cards.getValue('quantity'),
 				price: cards.getValue('total_price'),
 				oracle: cards.getValue('oracle'),
-				fImg : cards.getValue('front_image'),
-				bImg : cards.getValue('back_image'),
+				fImg : utils.getImgSrc(cards.getValue('front_image')),
+				bImg : utils.getImgSrc(cards.getValue('back_image')),
 				displayImg : true
 			};
 			data.records.push(card);
@@ -130,14 +130,14 @@ display:block;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>183</sys_mod_count>
+        <sys_mod_count>186</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-11 20:40:31</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-19 01:18:48</sys_updated_on>
         <template><![CDATA[<div class=wrapper>
   <button class="card" ng-click="c.viewDetails(r)" ng-repeat='r in c.data.records'>
     <div class=image-container>
@@ -147,4 +147,15 @@ display:block;
   </button>
 </div>]]></template>
     </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e4c4775f979ae1107720f0571153af96</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-19 01:01:19</sys_created_on>
+        <sys_id>a0240b8cc3021210b7cebd73e4013159</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-19 01:01:19</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
