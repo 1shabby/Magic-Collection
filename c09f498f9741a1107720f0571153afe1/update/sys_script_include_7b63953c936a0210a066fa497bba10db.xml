@@ -6,6 +6,7 @@
         <caller_access/>
         <client_callable>true</client_callable>
         <description>Generic Utils for the Magic Collection application.</description>
+        <mobile_callable>false</mobile_callable>
         <name>magic_utils</name>
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
@@ -31,10 +32,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
     },
 
-	setImage: function(image_name,width) {
-		width = width || '15rem;';
-		return '<img style="width:' + width + ';" src="' + image_name + '"/>';
-	},
+    setImage: function(image_name, width) {
+        width = width || '15rem;';
+        return '<img style="width:' + width + ';" src="' + image_name + '"/>';
+    },
 
     /**
     * Description: Takes in a CSV file and creates each card and associates it to a deck record.   
@@ -211,6 +212,19 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
         return basics;
     },
+    getImgSrc: function(img) {
+        var regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
+        //gs.info(img);
+        if (img)
+            var match = img.match(regex);
+        var retval = '';
+        if (match && match[1]) {
+            retval = match[1];
+        } else {
+            retval = 'https://backs.scryfall.io/normal/2/2/222b7a3b-2321-4d4c-af19-19338b134971.jpg?1677416389';
+        }
+        return retval;
+    },
 
     _getCards: function(cardsArr, commander) {
         var count = 0;
@@ -253,13 +267,24 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-09 16:07:18</sys_updated_on>
+        <sys_updated_on>2024-11-19 01:16:44</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>7b63953c936a0210a066fa497bba10db</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-19 00:52:03</sys_created_on>
+        <sys_id>7c028bc8c3021210b7cebd73e401319a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-19 00:52:03</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
