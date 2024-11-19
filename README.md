@@ -22,11 +22,11 @@ On your ServiceNow Instance do the following:
      - Credential : here you should see the credential record we created listed  
 
 
-============================================================================================
+
 
 Backlog:
 
-1. Update widget to grab the src of the img tag instead of the value in the image field
+1. Update widget to grab the src of the img tag instead of the value in the image field : Complete
 2. Fix Minor bugs with field visibility ex. mana cost being visible when empty on a land record
 3. Add in banned / restricted information into the card records via the response from the API
 4. Create a workspace to facilitate a back end agent experience
