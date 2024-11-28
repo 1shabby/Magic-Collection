@@ -8,6 +8,7 @@
         <element label="Face Two Colors" max_length="4000" name="face_two_colors" read_only="true" type="glide_list"/>
         <element label="Face One Mana Cost" max_length="1000" name="face_one_mana_cost" read_only="true" type="html"/>
         <element label="Face Two Oracle Text" max_length="1000" name="face_two_oracle_text" read_only="true" type="html"/>
+        <element label="Commander Legality" max_length="8000" name="commander_legality" read_only="true" type="html"/>
         <element choice="3" default="none" label="Foiling" mandatory="true" max_length="40" name="foiling" type="choice">
             <choice>
                 <element inactive_on_update="false" label="None" sequence="0" value="none"/>
@@ -24,6 +25,9 @@
                 <element inactive_on_update="false" label="Special" sequence="4" value="special"/>
             </choice>
         </element>
+        <element label="Future Legality" max_length="8000" name="future_legality" read_only="true" type="html"/>
+        <element label="Duel Legality" max_length="8000" name="duel_legality" read_only="true" type="html"/>
+        <element label="Brawl Legality" max_length="8000" name="brawl_legality" read_only="true" type="html"/>
         <element label="API Link" max_length="5000" name="api_link" read_only="true" type="url"/>
         <element label="Face One Image" max_length="1024" name="front_image" read_only="true" type="html"/>
         <element attributes="edge_encryption_enabled=true" label="Number" mandatory="true" max_length="40" name="number" type="string"/>
@@ -31,14 +35,21 @@
         <element label="Produced Mana" max_length="4000" name="face_one_produced_mana" read_only="true" type="glide_list"/>
         <element display="true" label="Name" mandatory="true" max_length="400" name="name" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;return current.p_price * current.quantity;  // return the calculated value&#10;&#10;})(current);" label="Previous Total Price" max_length="20" name="pt_price" read_only="true" type="currency" virtual="true"/>
+        <element label="Alchemy Legality" max_length="8000" name="alchemy_legality" read_only="true" type="html"/>
         <element label="Face One Colors" max_length="4000" name="face_one_colors" read_only="true" type="glide_list"/>
         <element label="Face Two Flavor Text" max_length="1000" name="face_two_flavor_text" read_only="true" type="string"/>
         <element label="Face Two Power" max_length="40" name="face_two_power" read_only="true" type="integer"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Cardmarket Purchase" max_length="1024" name="cardmarket_purchase" read_only="true" type="url"/>
         <element label="Reserved List" max_length="40" name="reserved_list" read_only="true" type="boolean"/>
+        <element label="Timeless Legality" max_length="8000" name="timeless_legality" read_only="true" type="html"/>
+        <element label="Paupercommander Legality" max_length="8000" name="paupercommander_legality" read_only="true" type="html"/>
+        <element label="Vintage Legality" max_length="8000" name="vintage_legality" read_only="true" type="html"/>
         <element label="Face Two Toughness" max_length="40" name="face_two_toughness" read_only="true" type="integer"/>
         <element label="Gatherer" max_length="1040" name="gatherer" read_only="true" type="url"/>
         <element label="Owner" max_length="32" name="owner" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Cardhoarder Purchase" max_length="1024" name="cardhoarder_purchase" read_only="true" type="url"/>
+        <element label="Standardbrawl Legality" max_length="8000" name="standardbrawl_legality" read_only="true" type="html"/>
         <element choice="3" label="Color Identity" max_length="1000" name="colors" read_only="true" type="glide_list">
             <choice>
                 <element inactive_on_update="false" label="White" sequence="0" value="W"/>
@@ -53,8 +64,13 @@
         <element label="Previous Price" max_length="20" name="p_price" read_only="true" type="currency"/>
         <element label="Face One Flavor Text" max_length="1000" name="face_one_flavor_text" read_only="true" type="string"/>
         <element label="Face Two Loyalty" max_length="40" name="face_two_loyalty" read_only="true" type="integer"/>
+        <element label="Modern Legality" max_length="8000" name="modern_legality" read_only="true" type="html"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;var retval = current.quantity * current.price;&#10;&#9;return retval;  // return the calculated value&#10;&#10;})(current);" label="Total Price" max_length="20" name="total_price" read_only="true" type="currency" virtual="true"/>
         <element label="Sets" mandatory="true" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
+        <element label="Penny Legality" max_length="8000" name="penny_legality" read_only="true" type="html"/>
+        <element label="Oldschool Legality" max_length="8000" name="oldschool_legality" read_only="true" type="html"/>
+        <element label="Oathbreaker Legality" max_length="8000" name="oathbreaker_legality" read_only="true" type="html"/>
+        <element label="Premodern Legality" max_length="8000" name="premodern_legality" read_only="true" type="html"/>
         <element label="Face One Loyalty" max_length="40" name="face_one_loyalty" read_only="true" type="integer"/>
         <element label="Face Two Mana Cost" max_length="1000" name="face_two_mana_cost" read_only="true" type="html"/>
         <element label="Face Two Type Line" max_length="1000" name="face_two_type_line" read_only="true" type="html"/>
@@ -65,7 +81,16 @@
         <element label="EDHREC" max_length="1040" name="edhrec" read_only="true" type="url"/>
         <element label="Face Two Artist" max_length="250" name="face_two_artist" read_only="true" type="string"/>
         <element default="1" label="Quantity" mandatory="true" max_length="255" name="quantity" type="integer"/>
+        <element label="Pauper Legality" max_length="8000" name="pauper_legality" read_only="true" type="html"/>
+        <element label="Standard Legality" max_length="8000" name="standard_legality" read_only="true" type="html"/>
+        <element label="Explorer Legality" max_length="8000" name="explorer_legality" read_only="true" type="html"/>
         <element label="Face One Type Line" max_length="1000" name="type_line" read_only="true" type="html"/>
+        <element label="Legacy Legality" max_length="8000" name="legacy_legality" read_only="true" type="html"/>
+        <element label="TCGPlayer Purchase" max_length="1024" name="tcgplayer_purchase" read_only="true" type="url"/>
+        <element label="predh Legality" max_length="8000" name="predh_legality" read_only="true" type="html"/>
+        <element label="Pioneer Legality" max_length="8000" name="pioneer_legality" read_only="true" type="html"/>
+        <element label="Gladiator Legality" max_length="8000" name="gladiator_legality" read_only="true" type="html"/>
+        <element label="Historic Legality" max_length="8000" name="historic_legality" read_only="true" type="html"/>
         <index name="index">
             <element name="owner"/>
         </index>
