@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=3937000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="">{}</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>set_legality_fields</internal_name>
+        <label_cache>[{"name":"subflow.parsed_output.legalities.standardbrawl","label":"Input➛legalities➛standardbrawl","type":"string","base_type":"string","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"944e7a64-653a-4c9c-88aa-91802fd15c28","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.timeless","label":"Input➛legalities➛timeless","type":"string","base_type":"string","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"4a54dac8-4d46-4dfc-8125-720b5af68a7c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.predh","label":"Input➛legalities➛predh","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e4bfc646-2601-4704-a10b-9e5f1a8e2871","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.vintage","label":"Input➛legalities➛vintage","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"d3a147cc-1e27-4452-988c-a5805fbe5102","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.standard","label":"Input➛legalities➛standard","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"79954243-6387-4294-bbbe-bb6ba74bd63e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.premodern","label":"Input➛legalities➛premodern","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"98df509a-cdfb-4087-b0f4-677d26811acb","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.pioneer","label":"Input➛legalities➛pioneer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"28cd6f7f-f599-498d-8a18-8e81bba7a656","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.penny","label":"Input➛legalities➛penny","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"5cedddfe-ee79-4afe-8e32-c5e11d6a0ce2","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.paupercommander","label":"Input➛legalities➛paupercommander","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"b154e072-e875-4b6a-969e-cd620dd1bf2e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.pauper","label":"Input➛legalities➛pauper","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"b9ebba91-ad95-4519-9344-5fb5317438ea","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.oldschool","label":"Input➛legalities➛oldschool","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"62f38d1c-dbc1-4904-95f1-f7658e852cf0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.oathbreaker","label":"Input➛legalities➛oathbreaker","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e0837cfd-7e83-4114-b01f-6851c12f8315","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.modern","label":"Input➛legalities➛modern","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"2c91a3cc-6e1e-40c9-95b1-2b8d8dea17f1","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.legacy","label":"Input➛legalities➛legacy","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"687f7e39-1cab-4c9a-b11d-39cd7c5de359","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.historic","label":"Input➛legalities➛historic","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"97858bb0-52fa-4634-ab3b-5efa35b622f5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.gladiator","label":"Input➛legalities➛gladiator","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"96a3d765-baea-4e4c-8f18-58e106cd08f0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.future","label":"Input➛legalities➛future","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"33221c93-918a-4012-b865-975936ff62be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.explorer","label":"Input➛legalities➛explorer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"350ba414-ebe4-48b8-bc54-0e4c82a41aec","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.duel","label":"Input➛legalities➛duel","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e8d56472-0be0-4ed2-bf80-ebf39905113c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.commander","label":"Input➛legalities➛commander","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"fcde9480-dc06-49c2-a83d-454cacc30a58","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.brawl","label":"Input➛legalities➛brawl","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"6ea61011-3544-4aae-aedd-2cb654930b2c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.alchemy","label":"Input➛legalities➛alchemy","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e772c2ac-30ff-466b-a08d-6a3688c8dc45","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":["record"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"8915b4de-6329-4736-9ca6-e6652642c6d9","uiTypeLabel":"Reference"}}]</label_cache>
+        <master_snapshot>f9e5cb2bc3421210b7cebd73e40131d0</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Set Legality Fields</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>modified</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 21:02:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ace67627c3021210b7cebd73e40131a0</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Set Legality Fields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_hub_flow_ace67627c3021210b7cebd73e40131a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=ace67627c3021210b7cebd73e40131a0^sys_idNOT INece67627c3021210b7cebd73e40131a2"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>ace67627c3021210b7cebd73e40131a0</id>
+        <name>Set Legality Fields</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 21:02:10</sys_created_on>
+        <sys_id>ece67627c3021210b7cebd73e40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 21:02:10</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=ece67627c3021210b7cebd73e40131a2"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=ace67627c3021210b7cebd73e40131a0^sys_idNOT IN99e50f27c3421210b7cebd73e4013161,da9ecfe3c3821210b7cebd73e40131a2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=8915b4de-6329-4736-9ca6-e6652642c6d9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_cards</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>card_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Card Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Set Legality Fields">ace67627c3021210b7cebd73e40131a0</model>
+        <model_id>ace67627c3021210b7cebd73e40131a0</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:46</sys_created_on>
+        <sys_id>99e50f27c3421210b7cebd73e4013161</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=99e50f27c3421210b7cebd73e4013161"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD4e9e87e3e882121000edeb069ec16043</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD4e9e87e3e882121000edeb069ec16043":{},"FlowDesigner:FD4e9e87e3e882121000edeb069ec16043.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Parsed Output\",\"mandatory\":\"true\",\"uiUniqueId\":\"63f16e7b-317d-41b6-99fd-b9851bc8e17d\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD4e9e87e3e882121000edeb069ec16043\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"0\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>029e87e3c3821210b7cebd73e4013144</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD4e9e87e3e882121000edeb069ec16043,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=63f16e7b-317d-41b6-99fd-b9851bc8e17d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>Parsed_Output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Parsed Output</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Set Legality Fields">ace67627c3021210b7cebd73e40131a0</model>
+        <model_id>ace67627c3021210b7cebd73e40131a0</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:47</sys_created_on>
+        <sys_id>da9ecfe3c3821210b7cebd73e40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=da9ecfe3c3821210b7cebd73e40131a2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=ace67627c3021210b7cebd73e40131a0^sys_idNOT INa9e5cb2bc3421210b7cebd73e40131b9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Set Legality Fields">ace67627c3021210b7cebd73e40131a0</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a9e5cb2bc3421210b7cebd73e40131b9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <ui_id>3054a76c-4734-4611-9743-3cc2bcbed3c5</ui_id>
+        <values>H4sIAAAAAAAA/+1Uz2vbMBT+V4LOxthxGtrcBiHQw1roRi+lmGfpORHIkifLabPS/31PspymZevCaA6F+WQ96X0/nj5098SkYAs2Q5HlF/mcF3lRTLNsej7Lq3lR5VNRAGLOEqahQTppkRsraL0F1fsC/QrZtQp2ty8VvpFKWNRscXefsBYsNTu0bPH0ZsvtWiwVVKiocWl436B2k8slYRwrbOy+GZW9Veo5aC0ieil9kba8njxLGD461AKJrgbVYcIa0AKcsTu2cLangkUQ11rt9ic2UrvBaQOPnfxJ+LPMn6uRrPH9FIzkeN06afRQcVCpcdOovtFXg1Y/RKyhV+5giH2HpcDWa/Nsg5T628Y83Iw8K6mDjShLGQ5qvwLnrKx6h52fOyoM7htoW6nXZWvNVoZmktKka0WLtFbmgTg7udYpcK87pUlAuqL6MpRvwUpv4ivBUPNzMF3+6D3vYCMKLoPnYLgMN0JHO25l674Q8BajzOckRrA6e++m+cXLxR5gniSG3z3+5GrAP1bbq+Y/aI1BfFWLOTz7sByenzqHkfqTBfFv8cum7z40B1caEtedKHrYEI7DyYCUHK1tBFhJVKL7jdgxe5Gg3EaC/Tv4YQHM51n4/j+H//Ic3v8CcOL1KZMHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=ace67627c3021210b7cebd73e40131a0^sys_idNOT IN21e5cb2bc3421210b7cebd73e40131bd,21e5cb2bc3421210b7cebd73e40131c0,25e5cb2bc3421210b7cebd73e40131bf,29e5cb2bc3421210b7cebd73e40131be,2de5cb2bc3421210b7cebd73e40131bd,61e5cb2bc3421210b7cebd73e40131bf,65e5cb2bc3421210b7cebd73e40131be,69e5cb2bc3421210b7cebd73e40131bd,6de5cb2bc3421210b7cebd73e40131bc,6de5cb2bc3421210b7cebd73e40131bf,a1e5cb2bc3421210b7cebd73e40131bc,a1e5cb2bc3421210b7cebd73e40131be,a5e5cb2bc3421210b7cebd73e40131bd,a5e5cb2bc3421210b7cebd73e40131c0,a9e5cb2bc3421210b7cebd73e40131bc,a9e5cb2bc3421210b7cebd73e40131bf,ade5cb2bc3421210b7cebd73e40131be,e1e5cb2bc3421210b7cebd73e40131bd,e1e5cb2bc3421210b7cebd73e40131c0,e5e5cb2bc3421210b7cebd73e40131bf,e9e5cb2bc3421210b7cebd73e40131be,ede5cb2bc3421210b7cebd73e40131bd"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.duel}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>21e5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>ce85d2bd-df87-4e26-b14d-df0135498151</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.predh}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>21e5cb2bc3421210b7cebd73e40131c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d6b3af2a-b1a1-4fa3-bdba-cbe4f1043b16</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.pioneer}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>25e5cb2bc3421210b7cebd73e40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>df9f6cdf-c645-45dc-a85f-ea670497dd50</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.oldschool}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>29e5cb2bc3421210b7cebd73e40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cf5d2be8-c7dd-4225-a469-9debda8f0a58</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.historic}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>2de5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>62bfbd1e-9151-48b5-a295-629ec197db15</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.penny}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>61e5cb2bc3421210b7cebd73e40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>37313724-050f-4b1c-a055-0f30a43a0503</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.oathbreaker}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>65e5cb2bc3421210b7cebd73e40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>a1abae88-67b1-48a7-b723-55c0f7acf1bb</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.gladiator}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>69e5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>251c8aac-c8fa-42be-b77f-f5e69a0bc4c0</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.commander}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>6de5cb2bc3421210b7cebd73e40131bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e5a4bd11-a31c-4249-911f-476d2d686ff7</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.vintage}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>6de5cb2bc3421210b7cebd73e40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>5253caa7-5c2e-4c78-83a4-45d7f58683b3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.alchemy}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a1e5cb2bc3421210b7cebd73e40131bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9a6c5138-2ace-48a5-ab8a-82beccf7f042</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.modern}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a1e5cb2bc3421210b7cebd73e40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>15d1249b-c36c-4c23-8af7-ba0ebd0839af</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.future}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a5e5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d1208776-64ce-43b5-80d9-40ecf8566723</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.standardbrawl}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a5e5cb2bc3421210b7cebd73e40131c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9daabf07-a0a5-4a1d-a7d9-56fa5f9cffcf</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.brawl}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a9e5cb2bc3421210b7cebd73e40131bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>4e379b06-fdde-41b1-af52-50b1cba8cd81</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.standard}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>a9e5cb2bc3421210b7cebd73e40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>62d5ff64-7f2b-469b-beb9-52c1fb3ccdc3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.paupercommander}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>ade5cb2bc3421210b7cebd73e40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>602e57cb-e895-46c8-a608-1b047fb50846</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.explorer}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>e1e5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9b3e0a62-0d4d-404c-9c5f-f72388ebef69</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.timeless}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>e1e5cb2bc3421210b7cebd73e40131c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>fe00d6eb-0cd8-44f8-b09c-c7684fcc4450</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.premodern}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>e5e5cb2bc3421210b7cebd73e40131bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cd8c7f94-39a7-4bef-ab57-b431e7dfbe79</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.pauper}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>e9e5cb2bc3421210b7cebd73e40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>090f36ca-b6ab-43da-a1f2-949c268271e9</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>ace67627c3021210b7cebd73e40131a0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.legacy}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:47</sys_created_on>
+        <sys_id>ede5cb2bc3421210b7cebd73e40131bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:47</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>53a6b682-9ba2-4898-96e4-31ac5bdb7c00</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0^sys_idNOT IN5e9ecfe3c3821210b7cebd73e40131a5,9de50f27c3421210b7cebd73e4013164"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>Parsed_Output</element>
+        <help/>
+        <hint/>
+        <label>Parsed Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:47</sys_created_on>
+        <sys_id>5e9ecfe3c3821210b7cebd73e40131a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:47</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>card_record</element>
+        <help/>
+        <hint/>
+        <label>Card Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:46</sys_created_on>
+        <sys_id>9de50f27c3421210b7cebd73e4013164</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:46</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_ace67627c3021210b7cebd73e40131a0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_ace67627c3021210b7cebd73e40131a0"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_ace67627c3021210b7cebd73e40131a0"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="">{}</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>set_legality_fields</internal_name>
+        <label_cache>[{"name":"subflow.parsed_output.legalities.standardbrawl","label":"Input➛legalities➛standardbrawl","type":"string","base_type":"string","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"944e7a64-653a-4c9c-88aa-91802fd15c28","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.timeless","label":"Input➛legalities➛timeless","type":"string","base_type":"string","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"4a54dac8-4d46-4dfc-8125-720b5af68a7c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.predh","label":"Input➛legalities➛predh","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e4bfc646-2601-4704-a10b-9e5f1a8e2871","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.vintage","label":"Input➛legalities➛vintage","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"d3a147cc-1e27-4452-988c-a5805fbe5102","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.standard","label":"Input➛legalities➛standard","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"79954243-6387-4294-bbbe-bb6ba74bd63e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.premodern","label":"Input➛legalities➛premodern","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"98df509a-cdfb-4087-b0f4-677d26811acb","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.pioneer","label":"Input➛legalities➛pioneer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"28cd6f7f-f599-498d-8a18-8e81bba7a656","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.penny","label":"Input➛legalities➛penny","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"5cedddfe-ee79-4afe-8e32-c5e11d6a0ce2","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.paupercommander","label":"Input➛legalities➛paupercommander","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"b154e072-e875-4b6a-969e-cd620dd1bf2e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.pauper","label":"Input➛legalities➛pauper","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"b9ebba91-ad95-4519-9344-5fb5317438ea","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.oldschool","label":"Input➛legalities➛oldschool","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"62f38d1c-dbc1-4904-95f1-f7658e852cf0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.oathbreaker","label":"Input➛legalities➛oathbreaker","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e0837cfd-7e83-4114-b01f-6851c12f8315","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.modern","label":"Input➛legalities➛modern","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"2c91a3cc-6e1e-40c9-95b1-2b8d8dea17f1","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.legacy","label":"Input➛legalities➛legacy","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"687f7e39-1cab-4c9a-b11d-39cd7c5de359","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.historic","label":"Input➛legalities➛historic","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"97858bb0-52fa-4634-ab3b-5efa35b622f5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.gladiator","label":"Input➛legalities➛gladiator","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"96a3d765-baea-4e4c-8f18-58e106cd08f0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.future","label":"Input➛legalities➛future","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"33221c93-918a-4012-b865-975936ff62be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.explorer","label":"Input➛legalities➛explorer","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"350ba414-ebe4-48b8-bc54-0e4c82a41aec","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.duel","label":"Input➛legalities➛duel","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e8d56472-0be0-4ed2-bf80-ebf39905113c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.commander","label":"Input➛legalities➛commander","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"fcde9480-dc06-49c2-a83d-454cacc30a58","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.brawl","label":"Input➛legalities➛brawl","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"6ea61011-3544-4aae-aedd-2cb654930b2c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parsed_output.legalities.alchemy","label":"Input➛legalities➛alchemy","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":[null]},"attributes":{"uiUniqueId":"e772c2ac-30ff-466b-a08d-6a3688c8dc45","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.card_record","label":"Input➛Card Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{"3054a76c-4734-4611-9743-3cc2bcbed3c5":["record"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"8915b4de-6329-4736-9ca6-e6652642c6d9","uiTypeLabel":"Reference"}}]</label_cache>
+        <master>true</master>
+        <name>Set Legality Fields</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Set Legality Fields">ace67627c3021210b7cebd73e40131a0</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f9e5cb2bc3421210b7cebd73e40131d0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:49</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f9e5cb2bc3421210b7cebd73e40131d0^sys_idNOT IN3de5cb2bc3421210b7cebd73e40131d1"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f9e5cb2bc3421210b7cebd73e40131d0</id>
+        <name>Set Legality Fields</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>3de5cb2bc3421210b7cebd73e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=3de5cb2bc3421210b7cebd73e40131d1"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f9e5cb2bc3421210b7cebd73e40131d0^sys_idNOT IN2a9ecfe3c3821210b7cebd73e40131f4,b9e5cb2bc3421210b7cebd73e40131d3"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD669ecfe32482121083caaa8b68825dd4</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD669ecfe32482121083caaa8b68825dd4":{},"FlowDesigner:FD669ecfe32482121083caaa8b68825dd4.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Parsed Output\",\"mandatory\":\"true\",\"uiUniqueId\":\"63f16e7b-317d-41b6-99fd-b9851bc8e17d\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD669ecfe32482121083caaa8b68825dd4\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2a9ecfe3c3821210b7cebd73e40131d4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:49</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD669ecfe32482121083caaa8b68825dd4,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=63f16e7b-317d-41b6-99fd-b9851bc8e17d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>Parsed_Output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Parsed Output</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Set Legality Fields">f9e5cb2bc3421210b7cebd73e40131d0</model>
+        <model_id>f9e5cb2bc3421210b7cebd73e40131d0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:48</sys_created_on>
+        <sys_id>2a9ecfe3c3821210b7cebd73e40131f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:48</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2a9ecfe3c3821210b7cebd73e40131f4"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=8915b4de-6329-4736-9ca6-e6652642c6d9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_cards</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>card_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Card Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Set Legality Fields">f9e5cb2bc3421210b7cebd73e40131d0</model>
+        <model_id>f9e5cb2bc3421210b7cebd73e40131d0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b9e5cb2bc3421210b7cebd73e40131d3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b9e5cb2bc3421210b7cebd73e40131d3"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f9e5cb2bc3421210b7cebd73e40131d0^sys_idNOT INb9e50f2bc3421210b7cebd73e4013108"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Set Legality Fields">f9e5cb2bc3421210b7cebd73e40131d0</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b9e50f2bc3421210b7cebd73e4013108</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:49</sys_updated_on>
+        <ui_id>3054a76c-4734-4611-9743-3cc2bcbed3c5</ui_id>
+        <values>H4sIAAAAAAAA/+WUwW7iMBCGXwX5HKEEKGq5rYqQVuq2UrviUlXRxJ6AJcfJ2g4ti/ruO06cgNhty4ELWk7xjGfmn59Pft4xKdiMTVDEyU0y5eNkPB7F8eh6kmTTcZaMxBgQExYxDQXSTYO8NILOG1C1D9CnkLZSsF3uI3wtlTCo2ez5JWIVGCp2aNhsd5Q6dbqCDBVdfezGH8tx28qfRcnrArVLZRe8C5XzkBl8n1OGirycJI4YvjnUAklIDspixArQAlxptmzmTE0BgyAetNr2N9ZSu3bRAt6s/E2TJ7G/lyNtxoMJ/fEnZArnrUltKp+Dgyfqzl1tes9KydG2vgjMoVbu9jDWXnionCx1W+J841BdqrrQ960rrG9w8J/UFlOBld/Vq29Xy5/W5etjJ3QhdWNLWFOVHFR/AueMzGrn5ewYKmx8LqCqpF6llSk3sikmKcVwpegwzFX5SjOtXOkhcK97SM7CcEHxeRNegpF+iR/UhorfI2a39laBtftVyMf0V+2VtIuFFdLGhcaCtKHBF3MjK/eNRm0wCH+PAuPZ1WeU8Zs9VAc9z8r5CQo6zhtkPlAUUP8rdndYO7hvEwH0q7OBfn1poIdVLp70r/iOR5++ogc0NUjb87J9wvSO7YVEJew/5HRgY0FSHKatvCO4Q3KwDMn+JT8b4ck0bn4Xxvl/86C//AFD0C99tggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f9e5cb2bc3421210b7cebd73e40131d0^sys_idNOT IN31e50f2bc3421210b7cebd73e401310a,31e50f2bc3421210b7cebd73e401310b,35e50f2bc3421210b7cebd73e4013109,35e50f2bc3421210b7cebd73e401310a,35e50f2bc3421210b7cebd73e401310b,39e50f2bc3421210b7cebd73e4013109,39e50f2bc3421210b7cebd73e401310a,39e50f2bc3421210b7cebd73e401310b,3de50f2bc3421210b7cebd73e4013109,3de50f2bc3421210b7cebd73e401310a,3de50f2bc3421210b7cebd73e401310b,b1e50f2bc3421210b7cebd73e4013109,b1e50f2bc3421210b7cebd73e401310a,b1e50f2bc3421210b7cebd73e401310b,b5e50f2bc3421210b7cebd73e4013109,b5e50f2bc3421210b7cebd73e401310a,b5e50f2bc3421210b7cebd73e401310b,b9e50f2bc3421210b7cebd73e4013109,b9e50f2bc3421210b7cebd73e401310a,b9e50f2bc3421210b7cebd73e401310b,bde50f2bc3421210b7cebd73e4013109,bde50f2bc3421210b7cebd73e401310a"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.historic}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>31e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>62bfbd1e-9151-48b5-a295-629ec197db15</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.vintage}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>31e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>5253caa7-5c2e-4c78-83a4-45d7f58683b3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.brawl}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>35e50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>4e379b06-fdde-41b1-af52-50b1cba8cd81</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.predh}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>35e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d6b3af2a-b1a1-4fa3-bdba-cbe4f1043b16</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.oathbreaker}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>35e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>a1abae88-67b1-48a7-b723-55c0f7acf1bb</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.standard}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>39e50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>62d5ff64-7f2b-469b-beb9-52c1fb3ccdc3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.paupercommander}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>39e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>602e57cb-e895-46c8-a608-1b047fb50846</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.alchemy}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>39e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9a6c5138-2ace-48a5-ab8a-82beccf7f042</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.legacy}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>3de50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>53a6b682-9ba2-4898-96e4-31ac5bdb7c00</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.timeless}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>3de50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>fe00d6eb-0cd8-44f8-b09c-c7684fcc4450</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.modern}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>3de50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>15d1249b-c36c-4c23-8af7-ba0ebd0839af</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.future}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b1e50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>d1208776-64ce-43b5-80d9-40ecf8566723</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.premodern}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b1e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cd8c7f94-39a7-4bef-ab57-b431e7dfbe79</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.pauper}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b1e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>090f36ca-b6ab-43da-a1f2-949c268271e9</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.gladiator}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b5e50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>251c8aac-c8fa-42be-b77f-f5e69a0bc4c0</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.pioneer}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b5e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>df9f6cdf-c645-45dc-a85f-ea670497dd50</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.explorer}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b5e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9b3e0a62-0d4d-404c-9c5f-f72388ebef69</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.standardbrawl}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b9e50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>9daabf07-a0a5-4a1d-a7d9-56fa5f9cffcf</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.commander}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b9e50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e5a4bd11-a31c-4249-911f-476d2d686ff7</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.oldschool}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>b9e50f2bc3421210b7cebd73e401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cf5d2be8-c7dd-4225-a469-9debda8f0a58</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.penny}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>bde50f2bc3421210b7cebd73e4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>37313724-050f-4b1c-a055-0f30a43a0503</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>f9e5cb2bc3421210b7cebd73e40131d0</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{subflow.parsed_output.legalities.duel}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>bde50f2bc3421210b7cebd73e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>ce85d2bd-df87-4e26-b14d-df0135498151</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0^sys_idNOT IN6a9ecfe3c3821210b7cebd73e40131f8,fde5cb2bc3421210b7cebd73e40131fc"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>Parsed_Output</element>
+        <help/>
+        <hint/>
+        <label>Parsed Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:45:48</sys_created_on>
+        <sys_id>6a9ecfe3c3821210b7cebd73e40131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:45:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>card_record</element>
+        <help/>
+        <hint/>
+        <label>Card Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:48</sys_created_on>
+        <sys_id>fde5cb2bc3421210b7cebd73e40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f9e5cb2bc3421210b7cebd73e40131d0"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>ace67627c3021210b7cebd73e40131a0</sys_id>
+        <latest_snapshot>f9e5cb2bc3421210b7cebd73e40131d0</latest_snapshot>
+        <compiler_build/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=ace67627c3021210b7cebd73e40131a0"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=ace67627c3021210b7cebd73e40131a0^sys_idNOT IN86e50f2bc3421210b7cebd73e4013111"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@ba93faf</plan>
+        <plan_id display_value="Set Legality Fields">ace67627c3021210b7cebd73e40131a0</plan_id>
+        <snapshot>f9e5cb2bc3421210b7cebd73e40131d0</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-29 22:07:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>86e50f2bc3421210b7cebd73e4013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-29 22:07:49</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
