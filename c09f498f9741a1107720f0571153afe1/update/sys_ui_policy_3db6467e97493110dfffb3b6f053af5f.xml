@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <conditions table="x_759224_magic_c_0_mtg_cards">is_multi_faced=true^EQ<item endquery="false" field="is_multi_faced" goto="false" newquery="false" operator="=" or="false" value="true"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </conditions>
@@ -28,7 +28,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3db6467e97493110dfffb3b6f053af5f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Multi Faced Visibility</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -36,7 +36,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_ui_policy_3db6467e97493110dfffb3b6f053af5f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-26 20:23:24</sys_updated_on>
+        <sys_updated_on>2025-07-18 15:05:38</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui_type>0</ui_type>
         <view/>

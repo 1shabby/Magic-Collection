@@ -12,40 +12,33 @@
         <model_table/>
         <on_load>true</on_load>
         <order>300</order>
-        <reverse_if_false>false</reverse_if_false>
-        <run_scripts>false</run_scripts>
-        <script_false/>
-        <script_true/>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+	g_form.setSectionDisplay('face_two_info',false);
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+	g_form.setSectionDisplay('face_two_info',true);
+}]]></script_true>
         <set_values/>
-        <short_description>Is Multi-Faced</short_description>
+        <short_description>Is Multi-Faced 2</short_description>
         <sys_class_name>sys_ui_policy</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-29 20:08:39</sys_created_on>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 15:43:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>f862c0549781f150dfffb3b6f053afff</sys_id>
-        <sys_mod_count>24</sys_mod_count>
-        <sys_name>Is Multi-Faced</sys_name>
+        <sys_id>91451f7dc3faae100efafbfdd40131df</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Is Multi-Faced 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_ui_policy_f862c0549781f150dfffb3b6f053afff</sys_update_name>
+        <sys_update_name>sys_ui_policy_91451f7dc3faae100efafbfdd40131df</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-18 15:48:39</sys_updated_on>
+        <sys_updated_on>2025-07-18 15:44:17</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui_type>10</ui_type>
         <view/>
     </sys_ui_policy>
-    <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>f862c0549781f150dfffb3b6f053afff</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-11-26 20:22:59</sys_created_on>
-        <sys_id>9d211baac3021210b7cebd73e40131f2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-26 20:22:59</sys_updated_on>
-        <table>sys_ui_policy</table>
-        <use_es_latest>false</use_es_latest>
-    </sys_es_latest_script>
 </record_update>
