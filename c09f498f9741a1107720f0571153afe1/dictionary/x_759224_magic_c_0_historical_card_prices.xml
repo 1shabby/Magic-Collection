@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="8d204e8ac37aee100efafbfdd401319e" label="Historical Card Prices" max_length="40" name="x_759224_magic_c_0_historical_card_prices" type="collection">
-        <element label="Price" max_length="20" name="price" type="currency"/>
-        <element display="true" label="Card" max_length="32" name="card" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
+        <element label="Price" max_length="20" name="price" read_only="true" type="currency"/>
+        <element display="true" label="Card" max_length="32" name="card" read_only="true" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
         <index name="index">
             <element name="card"/>
         </index>
