@@ -6,129 +6,187 @@
         <caller_access/>
         <client_callable>true</client_callable>
         <description>Utilities to manage the various symbols found in magic cards.</description>
+        <mobile_callable>false</mobile_callable>
         <name>symbology_utils</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var symbology_utils = Class.create();
 symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
+    initialize: function() {
+        this.symbolsPrefix = gs.getProperty('x_759224_magic_c_0.application_prefix', 'x_759224_magic_c_0/');
+        this.defaultWidth = gs.getProperty('x_759224_magic_c_0.symbol_width_default', '1.5rem');
+        this.symbolWidthMap = this._parseWidthExceptions(
+            gs.getProperty('x_759224_magic_c_0.symbol_width_exceptions', '{100}:2rem,{1000000}:5rem,{∞}:2rem')
+        );
+    },
+
     /**
-    * Description: Takes in a string of a symbol and returns the image name and width needed for it. 
-    * Parameters: {string}: Input - string in the form of '{W}' for example which maps to the white mana symbol.
-    * Returns: {object}: ret_obj - object containing the following properties:
-    			{string}: image - the name of the image record corresponding to the input provided
-    			{string}: width - the width to pass through into the html image tag that we're going to create. Most are 1 rem, however a few have different values.
-    */
-
-    symbolMapping: function(input) {
-        // Scope Prefix for the application
-		var scope_prefix = 'x_759224_magic_c_0.';
-		// The default width value for any of the circular items
-        var defaultWidth = '1.5rem';
-		// Object containing the mapping of every symbol in Magic: The Gathering
-        var symbolMap = {
-            '{W}': 'white_mana.svg',
-            '{U}': 'blue_mana.svg',
-            '{B}': 'black_mana.svg',
-            '{R}': 'red_mana.svg',
-            '{G}': 'green_mana.svg',
-            '{C}': 'colorless_mana.svg',
-            '{S}': 'snow_mana.svg',
-            '{W/P}': 'phyrexian_white_mana.svg',
-            '{U/P}': 'phyrexian_blue_mana.svg',
-            '{B/P}': 'phyrexian_black_mana.svg',
-            '{R/P}': 'phyrexian_red_mana.svg',
-            '{G/P}': 'phyrexian_green_mana.svg',
-            '{B/G/P}': 'phyrexian_black_green_mana.svg',
-            '{B/R/P}': 'phyrexian_black_red_mana.svg',
-            '{G/U/P}': 'phyrexian_green_blue_mana.svg',
-            '{G/W/P}': 'phyrexian_green_white_mana.svg',
-            '{R/G/P}': 'phyrexian_red_green_mana.svg',
-            '{R/W/P}': 'phyrexian_red_white_mana.svg',
-            '{U/B/P}': 'phyrexian_blue_black_mana.svg',
-            '{U/R/P}': 'phyrexian_blue_red_mana.svg',
-            '{W/B/P}': 'phyrexian_white_black_mana.svg',
-            '{W/U/P}': 'phyrexian_white_blue_mana.svg',
-            '{W/U}': 'white_blue_mana.svg',
-            '{W/B}': 'white_black_mana.svg',
-            '{B/R}': 'black_red_mana.svg',
-            '{B/G}': 'black_green_mana.svg',
-            '{U/B}': 'blue_black_mana.svg',
-            '{U/R}': 'blue_red_mana.svg',
-            '{R/G}': 'red_green_mana.svg',
-            '{R/W}': 'red_white_mana.svg',
-            '{G/W}': 'white_blue_mana.svg',
-            '{G/U}': 'white_blue_mana.svg',
-            '{C/W}': 'colorless_white_mana.svg',
-            '{C/U}': 'colorless_blue_mana.svg',
-            '{C/B}': 'colorless_black_mana.svg',
-            '{C/R}': 'colorless_red_mana.svg',
-            '{C/G}': 'colorless_green_mana.svg',
-            '{2/W}': 'generic_2_white_mana.svg',
-            '{2/U}': 'generic_2_blue_mana.svg',
-            '{2/B}': 'generic_2_black_mana.svg',
-            '{2/R}': 'generic_2_red_mana.svg',
-            '{2/G}': 'generic_2_green_mana.svg',
-            '{0}': 'generic_0.svg',
-            '{½}': 'generic_half.svg',
-            '{1}': 'generic_1.svg',
-            '{2}': 'generic_2.svg',
-            '{3}': 'generic_3.svg',
-            '{4}': 'generic_4.svg',
-            '{5}': 'generic_5.svg',
-            '{6}': 'generic_6.svg',
-            '{7}': 'generic_7.svg',
-            '{8}': 'generic_8.svg',
-            '{9}': 'generic_9.svg',
-            '{10}': 'generic_10.svg',
-            '{11}': 'generic_11.svg',
-            '{12}': 'generic_12.svg',
-            '{13}': 'generic_13.svg',
-            '{14}': 'generic_14.svg',
-            '{15}': 'generic_15.svg',
-            '{16}': 'generic_16.svg',
-            '{17}': 'generic_17.svg',
-            '{18}': 'generic_18.svg',
-            '{19}': 'generic_19.svg',
-            '{20}': 'generic_20.svg',
-            '{100}': 'generic_100.svg',
-            '{1000000}': 'generic_1000000.svg',
-            '{∞}': 'generic_infinity.svg',
-            '{X}': 'generic_x.svg',
-            '{Y}': 'generic_y.svg',
-            '{Z}': 'generic_z.svg',
-            '{HW}': 'half_white_mana.svg',
-            '{HR}': 'half_red_mana.svg',
-            '{E}': 'energy_counter.svg',
-            '{A}': 'acorn_counter.svg',
-            '{TK}': 'ticket_counter.svg',
-            '{T}': 'tap.svg',
-            '{Q}': 'untap.svg',
-            '{PW}': 'planeswalker.svg',
-            '{CHAOS}': 'chaos.svg',
-            '{P}': 'phyrexian.svg'
-        };
-
-        var image_name = scope_prefix + (symbolMap[input] || '');
-        // Modify the width property for the symbols that have unqiue shapes
-        if (input === '{100}') {
-            width = '2rem';
-        } else if (input === '{1000000}') {
-            width = '5rem';
-        }
-        // Replaces the newline character with line breaks
-        input = input.replace(/\n/g, '<br>');
-		// Replaces each instance of a symbol with the corresponding value from the above map
-        return input.replace(/\{[^}]+\}/g, function(match) {
-            var image_name = scope_prefix + (symbolMap[match] || '');
-            var width = defaultWidth;
-
-            if (match === '{100}') {
-                width = '2rem';
-            } else if (match === '{1000000}') {
-                width = '5rem';
+     * Parses a property string like: "{100}:2rem,{1000000}:5rem"
+     * into an object: { "{100}": "2rem", "{1000000}": "5rem" }
+     */
+    _parseWidthExceptions: function(raw) {
+        var map = {};
+        var parts = raw.split(',');
+        for (var i = 0; i < parts.length; i++) {
+            var kv = parts[i].split(':');
+            if (kv.length === 2) {
+                map[kv[0].trim()] = kv[1].trim();
             }
-			// Return the image tag with the correct width and the source being the name of the image record on the instance
-            return '<img style="width:' + width + ';" src="' + image_name + '"/>';
+        }
+        return map;
+    },
+
+    /**
+     * Replaces symbol codes in a string with image <img> tags
+     */
+    convertSymbolsToImages: function(input) {
+        if (!input) return '';
+
+        // Replace newline chars with line breaks
+        input = input.replace(/\n/g, '<br/>');
+
+        // Match all symbol patterns like {W}, {1}, {B/R}, etc.
+        var self = this;
+        return input.replace(/\{[^}]+\}/g, function(match) {
+            var imageName = self.symbolsPrefix + (self._symbolMap[match] || '');
+            var width = self.symbolWidthMap[match] || self.defaultWidth;
+
+            if (!imageName || imageName === self.symbolsPrefix) return match; // fallback to original text
+
+            return '<img style="width:' + width + ';" src="' + imageName + '" />';
         });
+    },
+
+    convertImageUrisToHtml: function(card) {
+        if (!card || !card.image_uris)
+            return {};
+
+        var result = {};
+        var baseImgStyle = 'width:244px; height:340px; display:block; position:relative;';
+
+        for (var key in card.image_uris) {
+            if (card.image_uris.hasOwnProperty(key)) {
+                var url = card.image_uris[key];
+                var altText = card.name + ' - ' + key + ' image';
+
+                if (card.game_changer === true) {
+                    // Add Game Changer overlay HTML
+                    result[key] = '' +
+                        '<div style="position: relative; width: 244px; height: 340px;">' +
+                        '<img id="fImg" width="244" height="340" src="' + url + '" style="display:block;" alt="' + altText + '" />' +
+                        '<div style="position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 2rem; border-color: #c5681b transparent transparent #c5681b; border-radius: 8px 0 0 0; z-index: 10;"></div>' +
+                        '<span style="position: absolute; top: 1.5rem; transform: rotate(-45deg); transform-origin: top  left; z-index:100; color: white; font-size: 1.75rem; font-weight: bold; font-family: sans-serif; line-height: 1; pointer-events: none;">GC</span>' +
+                        '</div>';
+                } else {
+                    // Just the plain image tag
+                    result[key] = '<img id="fImg" width="244" height="340" src="' + url + '" alt="' + altText + '" />';
+                }
+            }
+        }
+        return result;
+    },
+
+    formatLegalities: function(legalities) {
+        if (!legalities || typeof legalities !== 'object') return {};
+
+        const legalHTML = '<p style="color:green;"><img style="width:1.5rem; padding-bottom:4px;" src="x_759224_magic_c_0.success_icon.svg" />Legal</p>';
+        const notLegalHTML = '<p style="color:red;"><img style="width:1.5rem; padding-bottom:4px;" src="x_759224_magic_c_0.failure_icon.svg" />Not Legal</p>';
+
+        var formatted = {};
+
+        for (var key in legalities) {
+            if (legalities.hasOwnProperty(key)) {
+                formatted[key] = (legalities[key] === 'not_legal') ? notLegalHTML : legalHTML;
+            }
+        }
+
+        return formatted;
+    },
+
+    /**
+     * Full symbol map for MTG symbols to image file names
+     */
+    _symbolMap: {
+        '{W}': 'white_mana.svg',
+        '{U}': 'blue_mana.svg',
+        '{B}': 'black_mana.svg',
+        '{R}': 'red_mana.svg',
+        '{G}': 'green_mana.svg',
+        '{C}': 'colorless_mana.svg',
+        '{S}': 'snow_mana.svg',
+        '{W/P}': 'phyrexian_white_mana.svg',
+        '{U/P}': 'phyrexian_blue_mana.svg',
+        '{B/P}': 'phyrexian_black_mana.svg',
+        '{R/P}': 'phyrexian_red_mana.svg',
+        '{G/P}': 'phyrexian_green_mana.svg',
+        '{B/G/P}': 'phyrexian_black_green_mana.svg',
+        '{B/R/P}': 'phyrexian_black_red_mana.svg',
+        '{G/U/P}': 'phyrexian_green_blue_mana.svg',
+        '{G/W/P}': 'phyrexian_green_white_mana.svg',
+        '{R/G/P}': 'phyrexian_red_green_mana.svg',
+        '{R/W/P}': 'phyrexian_red_white_mana.svg',
+        '{U/B/P}': 'phyrexian_blue_black_mana.svg',
+        '{U/R/P}': 'phyrexian_blue_red_mana.svg',
+        '{W/B/P}': 'phyrexian_white_black_mana.svg',
+        '{W/U/P}': 'phyrexian_white_blue_mana.svg',
+        '{W/U}': 'white_blue_mana.svg',
+        '{W/B}': 'white_black_mana.svg',
+        '{B/R}': 'black_red_mana.svg',
+        '{B/G}': 'black_green_mana.svg',
+        '{U/B}': 'blue_black_mana.svg',
+        '{U/R}': 'blue_red_mana.svg',
+        '{R/G}': 'red_green_mana.svg',
+        '{R/W}': 'red_white_mana.svg',
+        '{G/W}': 'white_blue_mana.svg',
+        '{G/U}': 'white_blue_mana.svg',
+        '{C/W}': 'colorless_white_mana.svg',
+        '{C/U}': 'colorless_blue_mana.svg',
+        '{C/B}': 'colorless_black_mana.svg',
+        '{C/R}': 'colorless_red_mana.svg',
+        '{C/G}': 'colorless_green_mana.svg',
+        '{2/W}': 'generic_2_white_mana.svg',
+        '{2/U}': 'generic_2_blue_mana.svg',
+        '{2/B}': 'generic_2_black_mana.svg',
+        '{2/R}': 'generic_2_red_mana.svg',
+        '{2/G}': 'generic_2_green_mana.svg',
+        '{0}': 'generic_0.svg',
+        '{½}': 'generic_half.svg',
+        '{1}': 'generic_1.svg',
+        '{2}': 'generic_2.svg',
+        '{3}': 'generic_3.svg',
+        '{4}': 'generic_4.svg',
+        '{5}': 'generic_5.svg',
+        '{6}': 'generic_6.svg',
+        '{7}': 'generic_7.svg',
+        '{8}': 'generic_8.svg',
+        '{9}': 'generic_9.svg',
+        '{10}': 'generic_10.svg',
+        '{11}': 'generic_11.svg',
+        '{12}': 'generic_12.svg',
+        '{13}': 'generic_13.svg',
+        '{14}': 'generic_14.svg',
+        '{15}': 'generic_15.svg',
+        '{16}': 'generic_16.svg',
+        '{17}': 'generic_17.svg',
+        '{18}': 'generic_18.svg',
+        '{19}': 'generic_19.svg',
+        '{20}': 'generic_20.svg',
+        '{100}': 'generic_100.svg',
+        '{1000000}': 'generic_1000000.svg',
+        '{∞}': 'generic_infinity.svg',
+        '{X}': 'generic_x.svg',
+        '{Y}': 'generic_y.svg',
+        '{Z}': 'generic_z.svg',
+        '{HW}': 'half_white_mana.svg',
+        '{HR}': 'half_red_mana.svg',
+        '{E}': 'energy_counter.svg',
+        '{A}': 'acorn_counter.svg',
+        '{TK}': 'ticket_counter.svg',
+        '{T}': 'tap.svg',
+        '{Q}': 'untap.svg',
+        '{PW}': 'planeswalker.svg',
+        '{CHAOS}': 'chaos.svg',
+        '{P}': 'phyrexian.svg'
     },
 
     type: 'symbology_utils'
@@ -137,13 +195,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-07-15 17:10:17</sys_updated_on>
+        <sys_updated_on>2025-07-20 18:07:18</sys_updated_on>
     </sys_script_include>
 </record_update>
