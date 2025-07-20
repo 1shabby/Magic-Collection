@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>ignore</disabled>
         <field>face_two_oracle_text</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>greg</sys_created_by>
@@ -18,6 +20,9 @@
         <sys_updated_on>2023-08-29 20:11:12</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui_policy display_value="Is Multi-Faced">f862c0549781f150dfffb3b6f053afff</ui_policy>
+        <value/>
+        <value_action/>
         <visible>true</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=f50304949781f150dfffb3b6f053affe"/>
 </record_update>

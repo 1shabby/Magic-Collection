@@ -5,14 +5,19 @@
         <active>true</active>
         <annotation/>
         <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=816276000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description>Creates a new Collection record if None exists. Updates existing collection record to contain an accurate price, quantity, and list of sets</description>
+        <display_name_after_preview/>
+        <flow_priority/>
+        <generation_source/>
         <internal_name>mtg_collection_record_logic</internal_name>
         <label_cache>[{"name":"subflow.card.quantity","label":"Input➛Card➛Quantity","reference":"","reference_display":"Quantity","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"quantity"},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"985b7ab6-0a31-4ce4-b94e-8a71c05ecf06","uiTypeLabel":"Records"}},{"name":"subflow.card.owner","label":"Input➛Card➛Owner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"owner"},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.Record","label":"1 - Look Up Record➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.Record.sets","label":"1 - Look Up Record➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"subflow.card.sets.name","label":"Input➛Card➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card.total_price","label":"Input➛Card➛Total Price","reference":"","reference_display":"Total Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"total_price"}]</label_cache>
         <master_snapshot>5f84693a97e07910dfffb3b6f053af30</master_snapshot>
+        <master_snapshot_digest/>
         <name>MTG Collection Record Logic</name>
         <natlang/>
         <outputs/>
@@ -24,26 +29,28 @@
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
         <status>published</status>
+        <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-11 18:11:40</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>fd1bb69297a0f510dfffb3b6f053af8c</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>MTG Collection Record Logic</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_fd1bb69297a0f510dfffb3b6f053af8c</sys_update_name>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:03</sys_updated_on>
         <type>subflow</type>
+        <updation_source/>
+        <version/>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_variable_value action="delete_multiple" query="document_key=fd1bb69297a0f510dfffb3b6f053af8c"/>
-    <sys_hub_trigger_instance action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=fd1bb69297a0f510dfffb3b6f053af8c^sys_idNOT IN7d1bb69297a0f510dfffb3b6f053af8d"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -145,6 +152,7 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5d8c7e1697a0f510dfffb3b6f053af62"/>
     <sys_hub_flow_output action="delete_multiple" query="model=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=fd1bb69297a0f510dfffb3b6f053af8c"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_action_instance action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c^sys_idNOT IN13c40bde97a0f510dfffb3b6f053af6c,1d8c7e1697a0f510dfffb3b6f053af72,551669ba97e07910dfffb3b6f053af64,851669ba97e07910dfffb3b6f053af59"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -155,17 +163,19 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
+        <generation_source/>
         <order>8</order>
         <parent_ui_id>f55060d3-3272-427c-87fc-94607703469d</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-11 18:54:06</sys_created_on>
         <sys_id>13c40bde97a0f510dfffb3b6f053af6c</sys_id>
-        <sys_mod_count>116</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:52</sys_updated_on>
         <ui_id>ffdc7bd0-42de-404d-b373-29df266827da</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=13c40bde97a0f510dfffb3b6f053af6c"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -231,17 +241,19 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
+        <generation_source/>
         <order>1</order>
         <parent_ui_id/>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-11 18:17:55</sys_created_on>
         <sys_id>1d8c7e1697a0f510dfffb3b6f053af72</sys_id>
-        <sys_mod_count>118</sys_mod_count>
+        <sys_mod_count>120</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-21 04:56:19</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:52</sys_updated_on>
         <ui_id>59944b1e-04a5-4fa3-9300-0f62a416bcf4</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1d8c7e1697a0f510dfffb3b6f053af72"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -320,17 +332,19 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
+        <generation_source/>
         <order>6</order>
         <parent_ui_id>3560c7ba-5c67-4c8e-8f33-7b87456b8a15</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-13 01:17:13</sys_created_on>
         <sys_id>551669ba97e07910dfffb3b6f053af64</sys_id>
-        <sys_mod_count>86</sys_mod_count>
+        <sys_mod_count>88</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:52</sys_updated_on>
         <ui_id>2f2432c5-44d8-41da-a2c4-385890c68adf</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=551669ba97e07910dfffb3b6f053af64"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -422,17 +436,19 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
+        <generation_source/>
         <order>4</order>
         <parent_ui_id>d79d161d-21b4-4af6-86e9-5e1c396bbeb4</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-13 01:17:13</sys_created_on>
         <sys_id>851669ba97e07910dfffb3b6f053af59</sys_id>
-        <sys_mod_count>86</sys_mod_count>
+        <sys_mod_count>88</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:52</sys_updated_on>
         <ui_id>1d2e2266-d4a2-40a1-aa2a-a34b2fb9a3e6</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=851669ba97e07910dfffb3b6f053af59"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -515,7 +531,6 @@
         <sys_updated_on>2023-08-13 02:15:27</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=851669ba97e07910dfffb3b6f053af59"/>
-    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_flow_logic action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c^sys_idNOT IN1f8f657e97247910dfffb3b6f053afbb,5bc40bde97a0f510dfffb3b6f053af54,97c40bde97a0f510dfffb3b6f053af4f,d7c40bde97a0f510dfffb3b6f053af5f"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
@@ -529,6 +544,7 @@
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>7</order>
@@ -544,6 +560,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
         <ui_id>f55060d3-3272-427c-87fc-94607703469d</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -562,6 +579,7 @@
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
@@ -578,6 +596,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
         <ui_id>d79d161d-21b4-4af6-86e9-5e1c396bbeb4</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -635,6 +654,7 @@
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
@@ -651,6 +671,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
         <ui_id>4b0af054-8ad9-4fc8-a1fd-80b7c67cc512</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -708,6 +729,7 @@
         <flow display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>5</order>
@@ -723,15 +745,16 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:20</sys_updated_on>
         <ui_id>3560c7ba-5c67-4c8e-8f33-7b87456b8a15</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
     <sys_variable_value action="delete_multiple" query="document_key=d7c40bde97a0f510dfffb3b6f053af5f"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=d7c40bde97a0f510dfffb3b6f053af5f"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=d7c40bde97a0f510dfffb3b6f053af5f"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=fd1bb69297a0f510dfffb3b6f053af8c"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_fd1bb69297a0f510dfffb3b6f053af8c^sys_idNOT IN958c7e1697a0f510dfffb3b6f053af67"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>card</element>
         <help/>
@@ -745,18 +768,17 @@
         <sys_created_on>2023-08-11 18:17:55</sys_created_on>
         <sys_id>958c7e1697a0f510dfffb3b6f053af67</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_fd1bb69297a0f510dfffb3b6f053af8c_card_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-11 18:17:55</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_fd1bb69297a0f510dfffb3b6f053af8c"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -764,11 +786,13 @@
         <active>true</active>
         <annotation/>
         <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description>Creates a new Collection record if None exists. Updates existing collection record to contain an accurate price, quantity, and list of sets</description>
+        <flow_priority/>
         <internal_name>mtg_collection_record_logic</internal_name>
         <label_cache>[{"name":"subflow.card.quantity","label":"Input➛Card➛Quantity","reference":"","reference_display":"Quantity","type":"integer","base_type":"integer","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"quantity"},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"985b7ab6-0a31-4ce4-b94e-8a71c05ecf06","uiTypeLabel":"Records"}},{"name":"subflow.card.owner","label":"Input➛Card➛Owner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"owner"},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.Record","label":"1 - Look Up Record➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"59944b1e-04a5-4fa3-9300-0f62a416bcf4.Record.sets","label":"1 - Look Up Record➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"subflow.card.sets.name","label":"Input➛Card➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"subflow.card.total_price","label":"Input➛Card➛Total Price","reference":"","reference_display":"Total Price","type":"currency","base_type":"currency","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"total_price"}]</label_cache>
         <master>true</master>
@@ -797,10 +821,10 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <type>subflow</type>
+        <version/>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_variable_value action="delete_multiple" query="document_key=5f84693a97e07910dfffb3b6f053af30"/>
-    <sys_hub_trigger_instance action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=5f84693a97e07910dfffb3b6f053af30^sys_idNOT INd384693a97e07910dfffb3b6f053af31"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -902,6 +926,7 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5384693a97e07910dfffb3b6f053af32"/>
     <sys_hub_flow_output action="delete_multiple" query="model=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=5f84693a97e07910dfffb3b6f053af30"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_action_instance action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30^sys_idNOT IN1f84693a97e07910dfffb3b6f053af5a,2216e9ba97e07910dfffb3b6f053af1b,5f84693a97e07910dfffb3b6f053af6f,e616e9ba97e07910dfffb3b6f053af21"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -912,6 +937,7 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
+        <generation_source/>
         <order>1</order>
         <parent_ui_id/>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
@@ -923,6 +949,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>59944b1e-04a5-4fa3-9300-0f62a416bcf4</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1f84693a97e07910dfffb3b6f053af5a"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1001,6 +1028,7 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
+        <generation_source/>
         <order>4</order>
         <parent_ui_id>d79d161d-21b4-4af6-86e9-5e1c396bbeb4</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
@@ -1012,6 +1040,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>1d2e2266-d4a2-40a1-aa2a-a34b2fb9a3e6</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2216e9ba97e07910dfffb3b6f053af1b"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1103,6 +1132,7 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
+        <generation_source/>
         <order>8</order>
         <parent_ui_id>f55060d3-3272-427c-87fc-94607703469d</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
@@ -1114,6 +1144,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>ffdc7bd0-42de-404d-b373-29df266827da</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5f84693a97e07910dfffb3b6f053af6f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1179,6 +1210,7 @@
         <comment/>
         <display_text/>
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
+        <generation_source/>
         <order>6</order>
         <parent_ui_id>3560c7ba-5c67-4c8e-8f33-7b87456b8a15</parent_ui_id>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
@@ -1190,6 +1222,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>2f2432c5-44d8-41da-a2c4-385890c68adf</ui_id>
+        <updation_source/>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e616e9ba97e07910dfffb3b6f053af21"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1272,7 +1305,6 @@
         <sys_updated_on>2023-08-13 02:20:07</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=e616e9ba97e07910dfffb3b6f053af21"/>
-    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_flow_logic action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30^sys_idNOT IN5f84693a97e07910dfffb3b6f053af4a,caef2dfe97247910dfffb3b6f053af53,d384693a97e07910dfffb3b6f053af4e,db84693a97e07910dfffb3b6f053af46"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <attributes/>
@@ -1286,6 +1318,7 @@
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
@@ -1302,6 +1335,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>d79d161d-21b4-4af6-86e9-5e1c396bbeb4</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -1359,6 +1393,7 @@
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>7</order>
@@ -1374,6 +1409,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>f55060d3-3272-427c-87fc-94607703469d</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -1392,6 +1428,7 @@
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>5</order>
@@ -1407,6 +1444,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>3560c7ba-5c67-4c8e-8f33-7b87456b8a15</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -1425,6 +1463,7 @@
         <flow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
@@ -1441,6 +1480,7 @@
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-21 04:56:18</sys_updated_on>
         <ui_id>4b0af054-8ad9-4fc8-a1fd-80b7c67cc512</ui_id>
+        <updation_source/>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
@@ -1486,9 +1526,9 @@
     </sys_element_mapping>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=db84693a97e07910dfffb3b6f053af46"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=db84693a97e07910dfffb3b6f053af46"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=5f84693a97e07910dfffb3b6f053af30"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_5f84693a97e07910dfffb3b6f053af30^sys_idNOT IN1b84693a97e07910dfffb3b6f053af40"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>card</element>
         <help/>
@@ -1502,30 +1542,29 @@
         <sys_created_on>2023-08-13 01:10:32</sys_created_on>
         <sys_id>1b84693a97e07910dfffb3b6f053af40</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_5f84693a97e07910dfffb3b6f053af30_card_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-13 01:10:32</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5f84693a97e07910dfffb3b6f053af30"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_5f84693a97e07910dfffb3b6f053af30"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5f84693a97e07910dfffb3b6f053af30"/>
     <sys_hub_flow action="UPDATE">
         <sys_id>fd1bb69297a0f510dfffb3b6f053af8c</sys_id>
         <latest_snapshot>5f84693a97e07910dfffb3b6f053af30</latest_snapshot>
-        <compiler_build>glide-vancouver-07-06-2023__patch0-07-18-2023_07-26-2023_1029.zip</compiler_build>
+        <compiler_build>glide-yokohama-12-18-2024__patch5-06-11-2025_06-25-2025_1836.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=fd1bb69297a0f510dfffb3b6f053af8c"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=fd1bb69297a0f510dfffb3b6f053af8c^sys_idNOT IN2784693a97e07910dfffb3b6f053af93"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@6cd539</plan>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"2784693a97e07910dfffb3b6f053af93","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="MTG Collection Record Logic">fd1bb69297a0f510dfffb3b6f053af8c</plan_id>
-        <snapshot>5f84693a97e07910dfffb3b6f053af30</snapshot>
+        <snapshot>71174b79c3baae100efafbfdd40131de</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-13 01:10:32</sys_created_on>
         <sys_domain>global</sys_domain>

@@ -58,31 +58,55 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
 
     convertImageUrisToHtml: function(card) {
-        if (!card || !card.image_uris)
+        if (!card)
             return {};
 
         var result = {};
         var baseImgStyle = 'width:244px; height:340px; display:block; position:relative;';
+        var isGameChanger = card.game_changer === true;
 
-        for (var key in card.image_uris) {
-            if (card.image_uris.hasOwnProperty(key)) {
-                var url = card.image_uris[key];
-                var altText = card.name + ' - ' + key + ' image';
+        function buildImageHtml(url, altText) {
+            if (isGameChanger) {
+                return '' +
+                    '<div style="position: relative; width: 244px; height: 340px;">' +
+                    '<img id="fImg" width="244" height="340" src="' + url + '" style="display:block;" alt="' + altText + '" />' +
+                    '<div style="position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 2rem; border-color: #c5681b transparent transparent #c5681b; border-radius: 8px 0 0 0; z-index: 10;"></div>' +
+                    '<span style="position: absolute; top: 1.5rem; transform: rotate(-45deg); transform-origin: top  left; z-index:100; color: white; font-size: 1.75rem; font-weight: bold; font-family: sans-serif; line-height: 1; pointer-events: none;">GC</span>' +
+                    '</div>';
+            } else {
+                return '<img id="fImg" width="244" height="340" src="' + url + '" alt="' + altText + '" />';
+            }
+        }
 
-                if (card.game_changer === true) {
-                    // Add Game Changer overlay HTML
-                    result[key] = '' +
-                        '<div style="position: relative; width: 244px; height: 340px;">' +
-                        '<img id="fImg" width="244" height="340" src="' + url + '" style="display:block;" alt="' + altText + '" />' +
-                        '<div style="position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 2rem; border-color: #c5681b transparent transparent #c5681b; border-radius: 8px 0 0 0; z-index: 10;"></div>' +
-                        '<span style="position: absolute; top: 1.5rem; transform: rotate(-45deg); transform-origin: top  left; z-index:100; color: white; font-size: 1.75rem; font-weight: bold; font-family: sans-serif; line-height: 1; pointer-events: none;">GC</span>' +
-                        '</div>';
-                } else {
-                    // Just the plain image tag
-                    result[key] = '<img id="fImg" width="244" height="340" src="' + url + '" alt="' + altText + '" />';
+        // Case 1: Double-faced card
+        if (Array.isArray(card.card_faces)) {
+            for (var i = 0; i < card.card_faces.length; i++) {
+                var face = card.card_faces[i];
+                var faceKey = (i === 0) ? 'front' : (i === 1 ? 'back' : 'face' + i);
+
+                if (face.image_uris) {
+                    for (var key in face.image_uris) {
+                        if (face.image_uris.hasOwnProperty(key)) {
+                            var url = face.image_uris[key];
+                            var altText = card.name + ' - ' + face.name + ' (' + key + ')';
+                            result[faceKey + '_' + key] = buildImageHtml(url, altText);
+                        }
+                    }
                 }
             }
         }
+
+        // Case 2: Single-faced card
+        else if (card.image_uris) {
+            for (var key in card.image_uris) {
+                if (card.image_uris.hasOwnProperty(key)) {
+                    var url = card.image_uris[key];
+                    var altText = card.name + ' - ' + key + ' image';
+                    result[key] = buildImageHtml(url, altText);
+                }
+            }
+        }
+
         return result;
     },
 
@@ -195,13 +219,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-20 18:07:18</sys_updated_on>
+        <sys_updated_on>2025-07-20 20:08:12</sys_updated_on>
     </sys_script_include>
 </record_update>

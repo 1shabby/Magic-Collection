@@ -3,11 +3,16 @@
         <active>true</active>
         <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
+        <applies_to/>
         <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
         <description>ACL for data Broker: Display value block transform</description>
+        <local_or_existing/>
         <name>d404f585b7b21010c5e229a6ee11a9fd</name>
         <operation display_value="execute">execute</operation>
         <script/>
+        <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2023-02-21 00:48:57</sys_created_on>

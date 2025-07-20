@@ -3,7 +3,7 @@
         <element label="Card" mandatory="true" max_length="32" name="card" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="User" max_length="32" name="user" read_only="true" reference="sys_user" type="reference"/>
+        <element label="User" max_length="32" name="user" read_only="true" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="card"/>
         </index>

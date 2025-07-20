@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
     <sys_ux_macroponent action="INSERT_OR_UPDATE">
         <associated_types/>
+        <bundles/>
         <category>page</category>
         <component_dependencies/>
         <composition>[ {
@@ -1732,10 +1733,12 @@
   "readEvaluationMode" : "EXPLICIT"
 } ]</data>
         <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
         <dispatched_events>c094ea8fcc85a110ab269e082b948e29,4c94ea8f6885a110b4ae259687ce0f28</dispatched_events>
         <ext_controller_dep/>
         <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
         <extension_point/>
+        <form_factors/>
         <handled_events>0894ea8ff485a110fbbeeec0351b704b,4094ea8fba85a1105099a0a53be4584c,4494ea8fbf85a1101eeb7504f354cb4b,8c94ea8f9f85a11027f68bf23464584b,0094ea8f4d85a1103bb8c59a4690894d</handled_events>
         <interactions/>
         <interfaces/>
@@ -2060,6 +2063,7 @@
         <root_component_config>{ }</root_component_config>
         <root_component_definition/>
         <schema_version>1.0.0</schema_version>
+        <state_persistence_config/>
         <state_properties>[ {
   "name" : "cardID",
   "label" : "cardID",
@@ -2149,6 +2153,7 @@
     "value" : null
   }
 } ]</state_properties>
+        <style_config/>
         <sys_class_name>sys_ux_macroponent</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2023-02-21 00:48:57</sys_created_on>

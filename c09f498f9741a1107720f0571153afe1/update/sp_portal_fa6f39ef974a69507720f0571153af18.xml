@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
     <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
         <css_variables/>
         <dark_theme/>
         <default>false</default>
         <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
         <enable_favorites>false</enable_favorites>
         <hide_portal_name>false</hide_portal_name>
         <homepage display_value="mtg_home">fc7f4e7897d6ad507720f0571153affa</homepage>
         <icon>29f3c85b979cbd507720f0571153afb6</icon>
+        <inactive>false</inactive>
         <kb_knowledge_base/>
         <kb_knowledge_page/>
         <login_page display_value="mtg_home">fc7f4e7897d6ad507720f0571153affa</login_page>
         <logo>8ae348db979cbd507720f0571153af05</logo>
         <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
         <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
         <sc_catalog/>
         <sc_catalog_page/>
         <sc_category_page/>
@@ -44,7 +49,6 @@
         <chunk_size_bytes>700000</chunk_size_bytes>
         <compressed>true</compressed>
         <content_type>image/png</content_type>
-        <encryption_context/>
         <file_name>icon</file_name>
         <hash>5f42cdda55194bcc58cbae12c9d39aba7d5a44ba831b40fd073af99a65b860df</hash>
         <image_height>1280</image_height>
@@ -84,7 +88,6 @@
         <chunk_size_bytes>700000</chunk_size_bytes>
         <compressed>true</compressed>
         <content_type>image/png</content_type>
-        <encryption_context/>
         <file_name>logo</file_name>
         <hash>5f42cdda55194bcc58cbae12c9d39aba7d5a44ba831b40fd073af99a65b860df</hash>
         <image_height>1280</image_height>

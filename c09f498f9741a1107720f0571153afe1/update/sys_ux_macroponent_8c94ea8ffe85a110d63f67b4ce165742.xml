@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
     <sys_ux_macroponent action="INSERT_OR_UPDATE">
         <associated_types/>
+        <bundles/>
         <category>page</category>
         <component_dependencies/>
         <composition>[ {
@@ -3035,10 +3036,12 @@
   "readEvaluationMode" : "EXPLICIT"
 } ]</data>
         <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
         <dispatched_events>c494ea8f8f85a1105a6f1aa09b4bd82b,0c94ea8f3285a110d3e62b5729f4b229</dispatched_events>
         <ext_controller_dep/>
         <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
         <extension_point/>
+        <form_factors/>
         <handled_events/>
         <interactions/>
         <interfaces/>
@@ -3158,6 +3161,7 @@
         <root_component_config>{ }</root_component_config>
         <root_component_definition/>
         <schema_version>1.0.0</schema_version>
+        <state_persistence_config/>
         <state_properties>[ {
   "name" : "currentCommentId",
   "label" : "currentCommentId",
@@ -3214,6 +3218,7 @@
     "value" : [ "4" ]
   }
 } ]</state_properties>
+        <style_config/>
         <sys_class_name>sys_ux_macroponent</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2023-02-21 00:48:59</sys_created_on>

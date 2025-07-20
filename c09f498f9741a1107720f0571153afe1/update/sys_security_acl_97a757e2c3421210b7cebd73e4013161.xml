@@ -6,6 +6,7 @@
         <applies_to/>
         <condition table="x_759224_magic_c_0_mtg_cards.foiling">total_price=javascript:global.getCurrencyFilter('x_759224_magic_c_0_mtg_cards','total_price', 'USD;0')^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
+        <controlled_by_refs/>
         <decision_type>allow</decision_type>
         <description/>
         <local_or_existing>Local</local_or_existing>

@@ -6,6 +6,7 @@
         <applies_to/>
         <condition table="x_759224_magic_c_0_mtg_cards.name">nameISEMPTY^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
+        <controlled_by_refs/>
         <decision_type>allow</decision_type>
         <description>Allow write for name in x_759224_magic_c_0_mtg_cards, for users with role admin, and if the ACL condition (nameISEMPTY^EQ) evaluates to true.</description>
         <local_or_existing>Local</local_or_existing>
