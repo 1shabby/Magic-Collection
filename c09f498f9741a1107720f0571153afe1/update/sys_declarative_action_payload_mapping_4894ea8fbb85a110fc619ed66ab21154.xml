@@ -4,6 +4,7 @@
         <label>Reject Evam</label>
         <model display_value="Evam">035d270073151010c342d5fdbdf6a715</model>
         <payload_map>table={{table}}^sysId={{sys_id}}^EQ</payload_map>
+        <required_translations/>
         <sys_class_name>sys_declarative_action_payload_mapping</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2023-02-21 00:48:57</sys_created_on>

@@ -8,6 +8,7 @@
         <description>Generic Utils for the Magic Collection application.</description>
         <mobile_callable>false</mobile_callable>
         <name>magic_utils</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 

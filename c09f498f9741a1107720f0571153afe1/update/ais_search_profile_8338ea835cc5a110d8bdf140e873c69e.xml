@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile">
     <ais_search_profile action="INSERT_OR_UPDATE">
         <active>true</active>
+        <creator_source/>
         <description>This is default AI Search profile for Collection-Workspace</description>
+        <exclude_from_evaluation>false</exclude_from_evaluation>
         <genius_result_assembly/>
         <label>collection-workspace search profile</label>
         <name>x_759224_magic_c_0_klgcxkon_search_profile</name>
         <publish_id>4b4c2134-9876-4894-b059-58d398587ca4</publish_id>
+        <qna_model_id/>
         <state>DRAFT</state>
         <sys_class_name>ais_search_profile</sys_class_name>
         <sys_created_by>greg</sys_created_by>

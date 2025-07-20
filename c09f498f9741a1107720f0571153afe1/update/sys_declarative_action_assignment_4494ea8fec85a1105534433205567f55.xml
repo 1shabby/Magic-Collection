@@ -6,6 +6,7 @@
         <action_payload/>
         <action_type>type</action_type>
         <active>true</active>
+        <animate_icon>false</animate_icon>
         <button_type>secondary</button_type>
         <client_action display_value="Reject">c894ea8f3485a1102173679d38cdce55</client_action>
         <client_conditions/>
@@ -20,6 +21,9 @@
         <dependency/>
         <description/>
         <design_icon/>
+        <dynamic_record_condition/>
+        <dynamic_script_condition/>
+        <enable_dynamic_evaluation>false</enable_dynamic_evaluation>
         <enable_for_all_experiences>false</enable_for_all_experiences>
         <enabled>true</enabled>
         <experience_restricted>false</experience_restricted>
@@ -40,6 +44,8 @@
         <record_conditions/>
         <record_selection_required>false</record_selection_required>
         <required_roles/>
+        <required_translations/>
+        <required_user_role_names/>
         <requires_value>false</requires_value>
         <script_condition/>
         <scripted_client_condition/>

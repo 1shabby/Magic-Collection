@@ -20,6 +20,7 @@
         <label_cache/>
         <latest_snapshot/>
         <master_snapshot/>
+        <master_snapshot_digest/>
         <name>Update New Card</name>
         <natlang/>
         <outputs/>
@@ -50,9 +51,7 @@
     <sys_hub_action_output action="delete_multiple" query="model=21ce62b393ea8210a066fa497bba102f"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=21ce62b393ea8210a066fa497bba102f"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=21ce62b393ea8210a066fa497bba102f"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_21ce62b393ea8210a066fa497bba102f"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_21ce62b393ea8210a066fa497bba102f"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_21ce62b393ea8210a066fa497bba102f"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_21ce62b393ea8210a066fa497bba102f"/>
     <sys_hub_action_plan action="delete_multiple" query="action_id=21ce62b393ea8210a066fa497bba102f"/>
 </record_update>

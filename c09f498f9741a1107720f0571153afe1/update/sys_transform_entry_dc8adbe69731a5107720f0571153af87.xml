@@ -5,7 +5,7 @@
         <coalesce_case_sensitive>false</coalesce_case_sensitive>
         <coalesce_empty_fields>false</coalesce_empty_fields>
         <date_format>yyyy-MM-dd HH:mm:ss</date_format>
-        <map display_value="Legendary Creatures Mapping">f84adbe69731a5107720f0571153af46</map>
+        <map display_value="Card Mapping">f84adbe69731a5107720f0571153af46</map>
         <reference_value_field>id</reference_value_field>
         <source_field>u_set</source_field>
         <source_script><![CDATA[answer = (function transformEntry(source) {

@@ -1,22 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_user_metadata">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_user_metadata">
     <par_dashboard_user_metadata action="INSERT_OR_UPDATE">
-        <created_by_user display_value="Greg Sherbert">761b9daa970521107720f0571153af1e</created_by_user>
+        <background_color/>
+        <cache_expiration_time/>
+        <card_bg_image/>
+        <created_by_user display_value="">761b9daa970521107720f0571153af1e</created_by_user>
         <created_on>2023-06-12 06:16:53</created_on>
         <dashboard display_value="MTG Collection">de18577a979b65107720f0571153afd4</dashboard>
-        <last_updated_on>2023-07-15 04:52:00</last_updated_on>
+        <edit_locked/>
+        <enable_data_cache>false</enable_data_cache>
+        <include_custom_insights>false</include_custom_insights>
+        <include_key_contributors>false</include_key_contributors>
+        <include_kpi_signals>false</include_kpi_signals>
+        <include_predictive_target>false</include_predictive_target>
+        <include_predictive_thresholds>false</include_predictive_thresholds>
+        <include_process_mining>false</include_process_mining>
+        <include_severity>false</include_severity>
+        <include_target>false</include_target>
+        <include_thresholds>false</include_thresholds>
+        <include_trends>false</include_trends>
+        <include_widget_notification>false</include_widget_notification>
+        <last_updated_on>2023-06-12 06:16:53</last_updated_on>
+        <po_project_id_list/>
+        <refresh_information>false</refresh_information>
+        <refresh_interval/>
         <requested_by_user/>
+        <schedule_repetition>false</schedule_repetition>
+        <show_insights_panel>false</show_insights_panel>
         <sys_class_name>par_dashboard_user_metadata</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-06-12 06:16:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
         <sys_id>1e18577a979b65107720f0571153afd8</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name/>
+        <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>par_dashboard_user_metadata_1e18577a979b65107720f0571153afd8</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-07-15 04:52:00</sys_updated_on>
-        <updated_by_user display_value="Greg Sherbert">761b9daa970521107720f0571153af1e</updated_by_user>
+        <sys_updated_on>2023-06-12 06:16:53</sys_updated_on>
+        <updated_by_user display_value="">761b9daa970521107720f0571153af1e</updated_by_user>
+        <use_custom_tab_colors>false</use_custom_tab_colors>
     </par_dashboard_user_metadata>
 </record_update>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="33d68133970165107720f0571153afa5" extends="sys_import_set_row" label="Creature Types" max_length="40" name="x_759224_magic_c_0_creature_types" type="collection">
-        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=Type" label="Type" max_length="40" name="u_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
     </element>
 </database>

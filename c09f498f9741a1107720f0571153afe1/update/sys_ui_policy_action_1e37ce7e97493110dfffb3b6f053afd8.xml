@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>ignore</disabled>
         <field>is_multi_faced</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>greg</sys_created_by>
@@ -18,6 +20,9 @@
         <sys_updated_on>2023-09-07 00:13:47</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui_policy display_value="Multi Faced Visibility">3db6467e97493110dfffb3b6f053af5f</ui_policy>
+        <value/>
+        <value_action/>
         <visible>true</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=1e37ce7e97493110dfffb3b6f053afd8"/>
 </record_update>

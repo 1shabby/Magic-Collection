@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>ignore</disabled>
         <field>island</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>true</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>greg</sys_created_by>
@@ -18,6 +20,9 @@
         <sys_updated_on>2023-10-05 01:57:20</sys_updated_on>
         <table>x_759224_magic_c_0_decks</table>
         <ui_policy display_value="Island Logic">cb0b2eff97693d1078cb33121153af6d</ui_policy>
+        <value/>
+        <value_action/>
         <visible>true</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=207baa7397a93d1078cb33121153affe"/>
 </record_update>

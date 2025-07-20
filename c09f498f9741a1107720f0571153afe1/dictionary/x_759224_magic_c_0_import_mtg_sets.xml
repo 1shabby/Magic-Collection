@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="b9f2cdfb97cd25107720f0571153af2f" extends="sys_import_set_row" label="import Mtg sets" max_length="40" name="x_759224_magic_c_0_import_mtg_sets" type="collection">
         <element attributes="edge_encryption_enabled=true,import_attribute_name=C" label="C" max_length="40" name="u_c" type="string"/>
-        <element attributes="edge_encryption_enabled=true,import_attribute_name=Code" label="Code" max_length="40" name="u_code" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=Date" label="Date" max_length="40" name="u_date" type="string"/>
-        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="70" name="u_name" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=Notes" label="Notes" max_length="61" name="u_notes" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="70" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Code" label="Code" max_length="40" name="u_code" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=Type" label="Type" max_length="40" name="u_type" type="string"/>
     </element>
 </database>

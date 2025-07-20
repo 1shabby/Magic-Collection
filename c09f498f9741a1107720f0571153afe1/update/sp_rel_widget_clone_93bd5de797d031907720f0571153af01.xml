@@ -3,7 +3,7 @@
         <child display_value="MTG Advanced Filter">17bd1de797d031907720f0571153affe</child>
         <cloned>2023-08-02 22:20:30</cloned>
         <last_validated>2023-08-02 22:20:30</last_validated>
-        <parent display_value="My list filters">dbc4afa2876723003c1c8467a7cb0be5</parent>
+        <parent display_value="">dbc4afa2876723003c1c8467a7cb0be5</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;standard&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, $location, $timeout, $window, $document, $rootScope, spUtil, spAriaUtil, i18n) {
     var c = this;
     spUtil.getPreference('glide.ui.accessibility', function(value) {

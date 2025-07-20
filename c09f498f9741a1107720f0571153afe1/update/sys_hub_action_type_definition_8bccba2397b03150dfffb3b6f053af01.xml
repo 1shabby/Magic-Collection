@@ -18,6 +18,7 @@
         <internal_name>mtg_scryfall__get_keywords</internal_name>
         <label_cache>[{"name":"{{step[dc64d71f-f9df-4482-b82c-fd826f7cff7a].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[c3afb134-ee7c-44d3-8584-228991ef59bd].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD3fde32abc7b03150ca04af50e6626c83","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"34f97950-ca1e-41e4-aaf4-8b4845ee760a"}}]</label_cache>
         <master_snapshot>050f36ab97b03150dfffb3b6f053afea</master_snapshot>
+        <master_snapshot_digest/>
         <name>MTG Scryfall - Get Keywords</name>
         <natlang/>
         <outputs/>
@@ -30,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8bccba2397b03150dfffb3b6f053af01</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>MTG Scryfall - Get Keywords</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -38,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_8bccba2397b03150dfffb3b6f053af01</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-30 19:32:30</sys_updated_on>
+        <sys_updated_on>2025-07-18 14:39:35</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -521,7 +522,6 @@
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
     <sys_hub_input_scripts action="delete_multiple" query="instance=7fde32ab97b03150dfffb3b6f053af7f"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_7fde32ab97b03150dfffb3b6f053af7f^sys_idNOT IN37de32ab97b03150dfffb3b6f053af8a"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>root</element>
         <help/>
@@ -535,11 +535,11 @@
         <sys_created_on>2023-08-28 01:56:17</sys_created_on>
         <sys_id>37de32ab97b03150dfffb3b6f053af8a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>root</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_7fde32ab97b03150dfffb3b6f053af7f_root_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:17</sys_updated_on>
         <url/>
@@ -711,7 +711,6 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-05-30 19:32:17</sys_updated_on>
     </sys_hub_input_scripts>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_d3fcf6e797b03150dfffb3b6f053af10"/>
     <sys_hub_action_input action="delete_multiple" query="model=8bccba2397b03150dfffb3b6f053af01"/>
     <sys_hub_action_output action="delete_multiple" query="model=8bccba2397b03150dfffb3b6f053af01^sys_idNOT IN33de32ab97b03150dfffb3b6f053af90,37fef2ab97b03150dfffb3b6f053afd5,7bde32ab97b03150dfffb3b6f053af94"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -1010,9 +1009,7 @@
         <sys_updated_on>2023-08-28 01:48:03</sys_updated_on>
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=dffcf6e797b03150dfffb3b6f053af43"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_8bccba2397b03150dfffb3b6f053af01"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_8bccba2397b03150dfffb3b6f053af01"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_8bccba2397b03150dfffb3b6f053af01^sys_idNOT IN3ffef2ab97b03150dfffb3b6f053afd8,b7de32ab97b03150dfffb3b6f053af99,bfde32ab97b03150dfffb3b6f053af93"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>parsed_output</element>
         <help/>
@@ -1026,11 +1023,11 @@
         <sys_created_on>2023-08-28 01:56:50</sys_created_on>
         <sys_id>3ffef2ab97b03150dfffb3b6f053afd8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Parsed Output</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_8bccba2397b03150dfffb3b6f053af01_parsed_output_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:50</sys_updated_on>
         <url/>
@@ -1049,11 +1046,11 @@
         <sys_created_on>2023-08-28 01:56:17</sys_created_on>
         <sys_id>b7de32ab97b03150dfffb3b6f053af99</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_8bccba2397b03150dfffb3b6f053af01___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:17</sys_updated_on>
         <url/>
@@ -1072,11 +1069,11 @@
         <sys_created_on>2023-08-28 01:56:17</sys_created_on>
         <sys_id>bfde32ab97b03150dfffb3b6f053af93</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_8bccba2397b03150dfffb3b6f053af01___action_status___en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:17</sys_updated_on>
         <url/>
@@ -1387,7 +1384,6 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-05-30 19:32:29</sys_updated_on>
     </sys_hub_input_scripts>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_850f36ab97b03150dfffb3b6f053afee"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="MTG Scryfall - Get Keywords">050f36ab97b03150dfffb3b6f053afea</action>
         <cid>c3afb134-ee7c-44d3-8584-228991ef59bd</cid>
@@ -1785,7 +1781,6 @@
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
     <sys_hub_input_scripts action="delete_multiple" query="instance=c90f76ab97b03150dfffb3b6f053af02"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_c90f76ab97b03150dfffb3b6f053af02^sys_idNOT INd90f76ab97b03150dfffb3b6f053af48"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>root</element>
         <help/>
@@ -1799,11 +1794,11 @@
         <sys_created_on>2023-08-28 01:56:55</sys_created_on>
         <sys_id>d90f76ab97b03150dfffb3b6f053af48</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>root</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_c90f76ab97b03150dfffb3b6f053af02_root_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:55</sys_updated_on>
         <url/>
@@ -2107,9 +2102,7 @@
         <sys_updated_on>2023-08-28 01:56:56</sys_updated_on>
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=910f76ab97b03150dfffb3b6f053af6e"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_050f36ab97b03150dfffb3b6f053afea"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_050f36ab97b03150dfffb3b6f053afea"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_050f36ab97b03150dfffb3b6f053afea^sys_idNOT IN150f76ab97b03150dfffb3b6f053af63,5d0f76ab97b03150dfffb3b6f053af5f,910f76ab97b03150dfffb3b6f053af68"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__action_status__</element>
         <help/>
@@ -2123,11 +2116,11 @@
         <sys_created_on>2023-08-28 01:56:56</sys_created_on>
         <sys_id>150f76ab97b03150dfffb3b6f053af63</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_050f36ab97b03150dfffb3b6f053afea___action_status___en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:56</sys_updated_on>
         <url/>
@@ -2146,11 +2139,11 @@
         <sys_created_on>2023-08-28 01:56:55</sys_created_on>
         <sys_id>5d0f76ab97b03150dfffb3b6f053af5f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Parsed Output</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_050f36ab97b03150dfffb3b6f053afea_parsed_output_en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:55</sys_updated_on>
         <url/>
@@ -2169,11 +2162,11 @@
         <sys_created_on>2023-08-28 01:56:56</sys_created_on>
         <sys_id>910f76ab97b03150dfffb3b6f053af68</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_050f36ab97b03150dfffb3b6f053afea___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-08-28 01:56:56</sys_updated_on>
         <url/>
@@ -2183,6 +2176,6 @@
     <sys_hub_action_type_definition action="UPDATE">
         <sys_id>8bccba2397b03150dfffb3b6f053af01</sys_id>
         <latest_snapshot>050f36ab97b03150dfffb3b6f053afea</latest_snapshot>
-        <compiler_build>glide-washingtondc-12-20-2023__patch1-02-28-2024_03-09-2024_0815.zip</compiler_build>
+        <compiler_build>glide-yokohama-12-18-2024__patch5-06-11-2025_06-25-2025_1836.zip</compiler_build>
     </sys_hub_action_type_definition>
 </record_update>

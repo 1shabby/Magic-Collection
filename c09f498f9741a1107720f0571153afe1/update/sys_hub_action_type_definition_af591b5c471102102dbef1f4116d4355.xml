@@ -20,6 +20,7 @@
         <label_cache>[{"name":"{{action.variable}}","label":"action➛variable","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.archidekt_input}}","label":"action➛Archidekt Input","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[1a74965b-6f87-4545-b33e-acdbf2e3d6b8].array}}","label":"step➛Script step➛array","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <latest_snapshot/>
         <master_snapshot/>
+        <master_snapshot_digest/>
         <name>Parse Archidekt Input</name>
         <natlang/>
         <outputs/>
@@ -179,18 +180,6 @@ outputs.array = cards;&#13;
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=248a9f10475102102dbef1f4116d4304"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>248a9f10475102102dbef1f4116d4304</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-03-28 18:19:19</sys_created_on>
-        <sys_id>288a9f10475102102dbef1f4116d4328</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 18:19:19</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>archidekt_input</field>
         <id>248a9f10475102102dbef1f4116d4304</id>
         <sys_created_by>admin</sys_created_by>
@@ -201,18 +190,6 @@ outputs.array = cards;&#13;
         <sys_updated_on>2024-03-28 18:21:53</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_248a9f10475102102dbef1f4116d4304</table>
         <value>{{action.archidekt_input}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>248a9f10475102102dbef1f4116d4304</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-03-28 18:19:19</sys_created_on>
-        <sys_id>208a9f10475102102dbef1f4116d4329</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-28 18:19:19</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_248a9f10475102102dbef1f4116d4304^id=248a9f10475102102dbef1f4116d4304"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=248a9f10475102102dbef1f4116d4304"/>
@@ -386,7 +363,6 @@ outputs.array = cards;&#13;
         <xml_view>false</xml_view>
     </sys_hub_step_ext_output>
     <sys_hub_input_scripts action="delete_multiple" query="instance=248a9f10475102102dbef1f4116d4304"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_step_ext_output_248a9f10475102102dbef1f4116d4304^sys_idNOT IN861b9b50475102102dbef1f4116d43d1"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>array</element>
         <help/>
@@ -400,11 +376,11 @@ outputs.array = cards;&#13;
         <sys_created_on>2024-03-28 18:21:53</sys_created_on>
         <sys_id>861b9b50475102102dbef1f4116d43d1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>array</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_248a9f10475102102dbef1f4116d4304_array_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-28 18:21:53</sys_updated_on>
         <url/>
@@ -769,7 +745,6 @@ outputs.array = cards;&#13;
         <sys_updated_on>2024-03-28 18:19:20</sys_updated_on>
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=248a9f10475102102dbef1f4116d434a"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_af591b5c471102102dbef1f4116d4355^sys_idNOT IN648a9f10475102102dbef1f4116d4302"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>archidekt_input</element>
         <help/>
@@ -783,18 +758,17 @@ outputs.array = cards;&#13;
         <sys_created_on>2024-03-28 18:19:19</sys_created_on>
         <sys_id>648a9f10475102102dbef1f4116d4302</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Archidekt Input</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_af591b5c471102102dbef1f4116d4355_archidekt_input_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-28 18:19:19</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_af591b5c471102102dbef1f4116d4355"/>
-    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_af591b5c471102102dbef1f4116d4355^sys_idNOT IN248a9f10475102102dbef1f4116d4333,2c8a9f10475102102dbef1f4116d4338,e88a9f10475102102dbef1f4116d432f"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>array</element>
         <help/>
@@ -808,11 +782,11 @@ outputs.array = cards;&#13;
         <sys_created_on>2024-03-28 18:19:20</sys_created_on>
         <sys_id>248a9f10475102102dbef1f4116d4333</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Array</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_af591b5c471102102dbef1f4116d4355_array_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-28 18:19:20</sys_updated_on>
         <url/>
@@ -831,11 +805,11 @@ outputs.array = cards;&#13;
         <sys_created_on>2024-03-28 18:19:20</sys_created_on>
         <sys_id>2c8a9f10475102102dbef1f4116d4338</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_af591b5c471102102dbef1f4116d4355___dont_treat_as_error___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-28 18:19:20</sys_updated_on>
         <url/>
@@ -854,11 +828,11 @@ outputs.array = cards;&#13;
         <sys_created_on>2024-03-28 18:19:19</sys_created_on>
         <sys_id>e88a9f10475102102dbef1f4116d432f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_af591b5c471102102dbef1f4116d4355___action_status___en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-28 18:19:19</sys_updated_on>
         <url/>
