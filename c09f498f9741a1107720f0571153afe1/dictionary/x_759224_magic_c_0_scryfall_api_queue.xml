@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="09634feec3f6a2500efafbfdd40131d5" label="Scryfall API Queue" max_length="40" name="x_759224_magic_c_0_scryfall_api_queue" type="collection">
+        <element display="true" label="Card" max_length="32" name="card" read_only="true" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
+        <element label="Error Message" max_length="4000" name="error_message" read_only="true" type="journal"/>
+        <element label="Retry Count" max_length="2" name="retry_count" read_only="true" type="integer"/>
+        <element label="Set ID" max_length="5" name="set_id" read_only="true" type="string"/>
+        <element label="Response Timestamp" max_length="40" name="response_timestamp" read_only="true" type="glide_date_time"/>
+        <element label="Collector Number" max_length="5" name="collector_number" read_only="true" type="string"/>
+        <element label="Status Code" max_length="40" name="status_code" read_only="true" type="integer"/>
+        <element choice="1" default="queued" label="Status" max_length="40" name="status" read_only="true" type="choice">
+            <choice>
+                <element hint="API call is queued but not yet begun processing." inactive_on_update="false" label="Queued" sequence="0" value="queued"/>
+                <element hint="API request has failed with an error." inactive_on_update="false" label="Error" sequence="3" value="error"/>
+                <element hint="API request is currently being processed." inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
+                <element hint="API request has been completed successfully." inactive_on_update="false" label="Completed" sequence="2" value="completed"/>
+            </choice>
+        </element>
+        <element label="Response" max_length="4000" name="response" read_only="true" type="journal"/>
+        <element label="Name" max_length="40" name="name" read_only="true" type="string"/>
+        <element label="Last Attempt" max_length="40" name="last_attempt" read_only="true" type="glide_date_time"/>
+        <index name="index">
+            <element name="card"/>
+        </index>
+    </element>
+</database>
