@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>process_scryfall_api_entry</internal_name>
+        <label_cache>[{"name":"subflow.api_request","label":"Input➛API Request","reference":"x_759224_magic_c_0_scryfall_api_queue","reference_display":"Scryfall API Queue","type":"reference","base_type":"reference","usedInstances":{"aa796604-2920-4507-948b-a5cba44e4ef5":["record"],"23175803-0a0f-435b-91b0-8ce957334cf6":["record"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"91eb25d2-860a-4f5d-8557-5bcbe08397cc","uiTypeLabel":"Reference"}},{"name":"subflow.api_request.set_id","label":"Input➛API Request➛Set ID","reference":"","reference_display":"Set ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_scryfall_api_queue","column_name":"set_id","usedInstances":{"89291bd2-2d08-414b-8cff-6657b11a4bf3":["set"]}},{"name":"subflow.api_request.name","label":"Input➛API Request➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_scryfall_api_queue","column_name":"name","usedInstances":{"89291bd2-2d08-414b-8cff-6657b11a4bf3":["name"]}},{"name":"subflow.api_request.collector_number","label":"Input➛API Request➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_scryfall_api_queue","column_name":"collector_number","usedInstances":{"89291bd2-2d08-414b-8cff-6657b11a4bf3":["cn"]}},{"name":"89291bd2-2d08-414b-8cff-6657b11a4bf3.__action_status__.message","label":"3 - Scryfall API - Card Lookup➛Action Status➛Message","reference":"","reference_display":"Message","type":"string","base_type":"string","usedInstances":{"23175803-0a0f-435b-91b0-8ce957334cf6":["response"]},"attributes":{}},{"name":"89291bd2-2d08-414b-8cff-6657b11a4bf3.Parsed_Output","label":"3 - Scryfall API - Card Lookup➛Parsed Output","type":"object","base_type":"object","usedInstances":{"c3e2b160-783e-4242-83f4-18d4716e326f":["condition"]},"attributes":{"sourceId":"33271362-8a44-4c1c-844f-59d99bdc7d83","uiTypeLabel":"Object","co_type_name":"FD07e6aa2aad76a250a713fe3803accf46","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","sourceType":"step","sourceUiUniqueId":"2bb1ed58-d047-48c3-8fe8-9aba641d9455","uiType":"object","uiUniqueId":"1de9808a-caf8-40c1-bcde-14aed36d2315"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Process Scryfall API Entry</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:06:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4100c76ac3f6a2500efafbfdd4013198</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Process Scryfall API Entry</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_hub_flow_4100c76ac3f6a2500efafbfdd4013198</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4100c76ac3f6a2500efafbfdd4013198^sys_idNOT IN010043aac3f6a2500efafbfdd40131d9"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4100c76ac3f6a2500efafbfdd4013198</id>
+        <name>Process Scryfall API Entry</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:06:24</sys_created_on>
+        <sys_id>010043aac3f6a2500efafbfdd40131d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:06:24</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=010043aac3f6a2500efafbfdd40131d9"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4100c76ac3f6a2500efafbfdd4013198^sys_idNOT IN75bacbe6c33aa2500efafbfdd4013156"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=91eb25d2-860a-4f5d-8557-5bcbe08397cc</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_scryfall_api_queue</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>api_request</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>API Request</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</model>
+        <model_id>4100c76ac3f6a2500efafbfdd4013198</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4100c76ac3f6a2500efafbfdd4013198</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_scryfall_api_queue">x_759224_magic_c_0_scryfall_api_queue</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:09</sys_created_on>
+        <sys_id>75bacbe6c33aa2500efafbfdd4013156</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=75bacbe6c33aa2500efafbfdd4013156"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4100c76ac3f6a2500efafbfdd4013198^sys_idNOT IN02bacf6ac33aa2500efafbfdd4013194,4abacf6ac33aa2500efafbfdd4013192,cebacf6ac33aa2500efafbfdd401318e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>02bacf6ac33aa2500efafbfdd4013194</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <ui_id>23175803-0a0f-435b-91b0-8ce957334cf6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U30/bMBD+V6w8bawLSQsMyhMSY+NhsAHihaLIcS6tJ8cJ/lHaof7vOztOKbCxCiFNk9aXype7+77v7rOv7iJeRMNoC4ok3Ut32CAdDPpJ0t/dSvOdQZ72iwEFSKNeJGkFmKmA1arA85QK6wJ3d9rmpahvY9rwTMGNBW0WC8wouG4EnV+GRIywCReFAhkNr657UUMV9jSgouHdo09m3kAmaA4CCw9rZiuQhhwfYo91+XbVZx3hxwIcBp6L0D3jLoifHJ806UUwMyALQLiSCg29qKKyoKZW82holMWAAlqcSjFfZky4NK3Sis40/4H9txKXVwJKY2EKy2MWJtQNp+YMThvDa9lGDM1FN7la2EqetBLcbKGkVpiV2VqN/aBxlB2JlmF5Pqlvzzq8Iy69usBW1IyK5Ykao3huDWi3DhDgh1LRpuFynDWqnnJfjFSqeCzwELutI6bmYxlT5njHOCAaH2H80IcvqeJOxBdsg8ULLz67sQ63lREIZ16zF5z5RWGqZoo35gAbTyHQXPSCYfPt5wzA9u73vdLz3rSz7MP2Xr+/hfrGnGUsSzJEmyOGyJyN0cQWnlr4POSQg6/H5FvIeZmpLxwtctLSWlfSg+LfSAy2fhALrt5+NVfv/iVXB0b/mK3/ZOak/+xrtrJp71+9YmQFuqklDsnwCt9dWjUjmySDoizet4hQPLXxekUv9DVUCGWAtGC9tRV2DY44iEL/QnJn7ACQTQPA8sl+NXenO4n//X+5X+XlbgW1Mcfwqf1c9LmaaHNjJDc2DhgDrYkjuXngWRPHmliNQomZACmLzEfq/DswE5Nz34BUVhuiwFglCSXeODFxHU+dd4i0VY5/XJO6LDUYks/Ju5RwST4qVSvyGU0kHMQ5tLPyZKaUC/+I137xmgRPEIvqSIMqPa1RFI8iQku8Oh09Vw4z1C1giGwU0ZNaGZw7I+1F7BJjXOx4DCpmVqEPTOwT3eK8LkTdd72CsmUXF9wcyRCWcEs+ua0f4q25wJG/ebuPC9R0CsXShYvF4vonNLAtcQ0KAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=02bacf6ac33aa2500efafbfdd4013194"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type>
+        <action_type_parent display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>4abacf6ac33aa2500efafbfdd4013192</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <ui_id>89291bd2-2d08-414b-8cff-6657b11a4bf3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTU/bQBD9Lz7Hlr1OsJ0baoVUqQ1SabkgZM3uzpKV1mtjrwNplP/e2dgJBRWIWg4cOFkzO1/vzTz5ahNoGcyDE0hYUiAUmYp5kcRSKcVTfqLiWQoqhWASWKiQIjt0ZKzA9N7abLqeK1PfRdDossXbHjsXUUyp5XZLgVJ3jYH15bHxYqmNbNEG86vrSdBAS10dtsF88+TJrRssDXA0VPbCtdreUPqxYA6JOzSPoPnC3tiXrFvp+yeTAO8dWonUQoHpcBJUYCW4ul0Hc9f25GgR5Lk160PEUltHxQIfe9/pX1Q5j+PYRyokLAKH14NZjoQNbrGstcDzxunaDh4H3Iw5ojZ9ZRfD7J5qVNAbt6eaPH1H9bDxQ/sxxpnUxbK++75veKbtDt/4aGoB5mCBIxZ477DzC+j1D+Lm61PO0WBF9csKmoY8ZdPWK72rSSNW0Y0hI/I7p1k6fWMjEB5PRNRBdEb+zzv3JbTag/tGZSh5Mrb7cxW9/mk1ncwXv2WR5ihZkoXAsiycKsCQz3gaSikzDipniUiC7Y7a8rb3oAaSRjrKgVEK6ESrG3dKQ61wRL6djLoA9uIpqYfj2X1eE4YPOl4Wh+i3EMURSPaJiwHKY2DPyIJ9yOKdyaLI42Ja8DCPZyQLhkVYZLNpmCY8z/gsYSwu/lsWiC8d05Q9XI+wr4qCFmZQ0L2Utq84tscL5K+ZbyGWI/DtEz8tnoB9Rijph1Del1A4TnPJQIYoCxVOhWIhJEqFUEiBPE5POPv3/8f1b8arHINZCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4abacf6ac33aa2500efafbfdd4013192"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Set status to processing</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>cebacf6ac33aa2500efafbfdd401318e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <ui_id>aa796604-2920-4507-948b-a5cba44e4ef5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWvbQBD9K0ZnISTLdmPfAsaQQ5M2KbmkYVntju2F1UrZD8eu8X/vrLRynM+aYCiF6jajmTfvzTz2bhsJHk2iAfA0G2cjlmd53k/T/tkgK0Z5kfV5TgGyKI4ULQErNbBKc4xXVDqf2G6NK+ayekxoLYiGBwfG7nZYwYWpJd3chkLMsKWQXIOKJnf3cVRTjZgWdDTZvvhlNzUQSQuQ2DitmCtB2d7FFDGO5dt1X3eEXwrwMzDmAZ0In8Rfnk+WxhGsLSgOOG5OpYE4Kqni1FZ6E02sdpjQQPmVkpt9xVIo2yot6dqIX4g/SH3dHFAaC1vYhyRsqFtOJRhc1VZUqs1YWshuc5V0pbpsJfjdwpw6aQ926wziQe0pexItw/nNsnq87ubNhGrUBbayYlTuI2qtFoWzYPw5QEKzlJLWtVALUutqJZpmpFImC4lB4q+OM41YqIQyzzvBBdFkhvlpk76lWngRXxEGm3eNePLg/NxWRiBMGs2NYNIcCksN06K25wi8gkBzFwfDFsOPDMDGT/c+wHwy7Zp8GY77/QHqWwhGGEkJTtvgDEm8jdHEDl5b+CbU9M6/XfS+h5rPmfqHp9W7bGkdK+lZ8zsSg62f5YKrhydz9dlfcnVg9I/Z+k9mTvsfvmYHl278aw6MbCy1zvx0aZpzFMPAGNT12rnv1n3SvVAiuoVeix8fraMDmAmQ3LwhrLNvGEBWYcD+YT6Zh7NR2nz/3+cTvs/3vwGQN3oIUggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cebacf6ac33aa2500efafbfdd401318e"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4100c76ac3f6a2500efafbfdd4013198^sys_idNOT IN46bacf6ac33aa2500efafbfdd4013193,cabacf6ac33aa2500efafbfdd4013190"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">02bacf6ac33aa2500efafbfdd4013193</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>46bacf6ac33aa2500efafbfdd4013193</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <ui_id>c3e2b160-783e-4242-83f4-18d4716e326f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPifFHnCV5K9sKhbUpayiUUcy1JCdisuRJctIs5L/vyh9JWFMWRh/3Zh/p3nvO8bl4R3TtqtrZhb6yViwVmX1/HhChPIbPOyIYmZEihCKa0ogm8TiJwzCejKJ8nORRzBLgkJABUVByvEm1YsIJrbIGGJA1yNof4CMTtpKwfTwidCUkM7ybWoHBGscNme3+OHLbimcSci6x8MEZoZZYfim3vvBTT+7D1wZ5m7Wfh7jtJ2nDPK0oHBD+4rhiHEcXIC0fkBIUA6fN9oAYDmyu5BFYCeVaxSW8WPELe8dp6i8WHDXSzo7Da9ZZ1bukBeXzyhNsEQe57C3Usi7VXavDm8wLqKU7Mbm22I9XnrRn0VEqHlZ6860feC1UI7A7lJqCPLyBQxvy2nHrPwyXvMRGWQlVheZkldFr0RQjlzJYSnwJCqk3ONQnKgDqiQfoEQTXiH9u4Ecwwqu4xTZY3NLMwQqaNenDds6ghH1jS/az9oRagZ2UrHUDL1hqROWucM6ad6z3gy66U0iLNArT8/EYjc+E4CS1u91kGk+jnMXDmIWT4Sga5cMJLYrheJx+zKMIRnmRBPdgLGfZvNml/f7m4W6++HJ7v3h6nfp36PgeW3OBLa+25rxVb6xK/JdV8R/3wk0Jw/D/qpyuirBZG/lOWzP8nzfl2ce9nWDb3DBOhUUiC4/d9P8Cf7DFAAh6Cm20+eElHLH9b13YRGFVBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">42bacf6ac33aa2500efafbfdd4013190</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Process Scryfall API Entry">4100c76ac3f6a2500efafbfdd4013198</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>cabacf6ac33aa2500efafbfdd4013190</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <ui_id>d52ca4fb-35fc-4972-bd18-03792bfda4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW+bMBD+K4jPWYYhQJNv07pJ+7AXrVG/TBMy5kisOcCMaZdV/e+zwbw0gYS26d6lSAl39t1zvucOX27MtBBZIfJl+iLP6SoxF58+T0yaKJn8fWPSyFyYs7nvuGdo5juWgxzLCj0EnjfzvTD2sH/mmhMzwRuQK6OCY0HTJBDbDKT4CrNCyeFbxiihIqgXSF1E84zh7aVe8kovMTpLyJqyiIOGlWEuvQjg5uJmR6XcBQyHwKSll+uUEuV9LPh647n2bCwr9ANBlV8LiUC7SXmkMCHLmshABSQRSMcxZjlMzA1OIixSvm0kHHD0PmGtYE0TIe2ZavG3nH6XxmeWWheDDJBApWseA31wlbhCUSWrjqPvKA9lQgdg3U5aGx+BSfUV9NngWtdjA3VtfABOIBF41Wsla7Q9duxbmdUIYlww8fJ0IaIThGifKERHhVil731Wqhamo+iFQ6ZzTlJWbJJ3FQ3N5kAuD1VVteT8eHEVuUQFmaKr4p8mY3yxTq8/1lx7TZMSq1aylGDWPGEhOA0LoVJzYwKDjTQUbHCW0WQVZDy9ouVmGcZmumLyYRqz9Fo6Va1miokCMpXVgaevpfy8FF9iTtUBvJVm5ObbkvjB10L5rY5AIw7KA1MLcsJpJl4QlS8NTqWorP4wRpGHPBT6jmfL6ndmxCPgzQEQwnPbaqu8kytBN8CDsgsGEh6o505W93vXg1vVubT+fFmZH4u3h3olYKMEbCjAhkY8OjTd0soklfJAK56gt5W27tPcmuq4V3H8KQyXic+DisI6ttL5o5l/ZjmOY82J6/gNk6IIII79ENmAWnpUnGhJ8jRUf5MIWFXxjoS3T/SDmDWHaePnP3f/VO5CjGYuGbqzhXs86Hn1orlvPbOQ/BiWtVAftE9mZFwASZPo4f27dTwWeM/WoVjuduX9i8gvvHD+5/VDeB0RPEOWO0AP29vlwt4tNEglPJXdDtNxLErIO9yuxaeYoUbgrjcuy6sI371aGx3g40McmLSc32bSqg95Nxd9E1UIccq7L9dG0Awnh2eeI87QvZzZj54+Gt71Thy1dqfeBS9+x3KvEZJtcGgC7CzT1GxJd6w33P0X4UijQLHtRoMF5zvHq+gnzy0jAA91iP15ZURMxwaW2V/wbnxkrfS/wib/TA3FoevK29gAJT17l285WUNUsCeqmCaDdcWMgNe5KspEGWINRpwymQH11IE7FIY+X95xrcvDPWF5OPbd8iCbpAuir1QuWvW/cJ186LXxs2JiZSmvKBUBobl0uFSyN/Xf9EqxlSSgpCu6TvkXBbWV3f4AtWkIQ/AXAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>api_request</element>
+        <help/>
+        <hint/>
+        <label>API Request</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4100c76ac3f6a2500efafbfdd4013198</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 22:53:10</sys_created_on>
+        <sys_id>4abacbe6c33aa2500efafbfdd401315a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 22:53:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=4100c76ac3f6a2500efafbfdd4013198"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=4100c76ac3f6a2500efafbfdd4013198"/>
+</record_update>
