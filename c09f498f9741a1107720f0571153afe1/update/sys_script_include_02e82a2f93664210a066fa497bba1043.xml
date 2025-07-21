@@ -57,11 +57,10 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         });
     },
 
-    convertImageUrisToHtml: function(card) {
+    convertImageUrisToHtml: function(card, isDoubleFaced) {
         if (!card)
             return {};
 
-        var result = {};
         var baseImgStyle = 'width:244px; height:340px; display:block; position:relative;';
         var isGameChanger = card.game_changer === true;
 
@@ -78,36 +77,37 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
         }
 
-        // Case 1: Double-faced card
-        if (Array.isArray(card.card_faces)) {
-            for (var i = 0; i < card.card_faces.length; i++) {
-                var face = card.card_faces[i];
-                var faceKey = (i === 0) ? 'front' : (i === 1 ? 'back' : 'face' + i);
-
-                if (face.image_uris) {
-                    for (var key in face.image_uris) {
-                        if (face.image_uris.hasOwnProperty(key)) {
-                            var url = face.image_uris[key];
-                            var altText = card.name + ' - ' + face.name + ' (' + key + ')';
-                            result[faceKey + '_' + key] = buildImageHtml(url, altText);
-                        }
-                    }
-                }
-            }
-        }
-
-        // Case 2: Single-faced card
-        else if (card.image_uris) {
-            for (var key in card.image_uris) {
-                if (card.image_uris.hasOwnProperty(key)) {
-                    var url = card.image_uris[key];
-                    var altText = card.name + ' - ' + key + ' image';
+        function transformImageUris(imageUris, cardName) {
+            var result = {};
+            for (var key in imageUris) {
+                if (imageUris.hasOwnProperty(key)) {
+                    var url = imageUris[key];
+                    if (!url || typeof url !== 'string') continue;
+                    var altText = cardName + ' - ' + key + ' image';
                     result[key] = buildImageHtml(url, altText);
                 }
             }
+            return result;
         }
 
-        return result;
+        // Case 1: Double-faced card
+        if (isDoubleFaced && Array.isArray(card.card_faces)) {
+            for (var i = 0; i < card.card_faces.length; i++) {
+                var face = card.card_faces[i];
+                if (face.image_uris) {
+                    face.image_uris = transformImageUris(face.image_uris, face.name || ('Face ' + i));
+                }
+            }
+            return card.card_faces;
+        }
+
+        // Case 2: Single-faced card
+        else {
+            if (card.image_uris) {
+                card.image_uris = transformImageUris(card.image_uris, card.name);
+            }
+            return card.image_uris || {};
+        }
     },
 
     formatLegalities: function(legalities) {
@@ -219,13 +219,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-20 20:08:12</sys_updated_on>
+        <sys_updated_on>2025-07-21 15:58:34</sys_updated_on>
     </sys_script_include>
 </record_update>
