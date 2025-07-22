@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Checks if the length of the deck does not exceed is exactly 100 cards</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Deck Legality onLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var tLen = 0;
+   var commanders = g_form.getValue('commanders').split(',');
+   var cards = g_form.getValue('cards').split(',');
+   var w = parseInt(g_form.getValue('plains'));
+   var u = parseInt(g_form.getValue('island'));
+   var b = parseInt(g_form.getValue('swamp'));
+   var r = parseInt(g_form.getValue('mountain'));
+   var g = parseInt(g_form.getValue('forest'));
+   var c = parseInt(g_form.getValue('wastes'));
+   var basics = w+u+b+r+g+c;
+   tLen = basics + cards.length + commanders.length; 
+   if(tLen != 100){
+	g_form.addErrorMessage('Decks has ' + tLen.toString() + ' cards in it. Please Set it to 100.' )
+   }
+   else{
+	g_form.addInfoMessage('Deck is at ' + tLen.toString() + ' cards.');
+   }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 03:26:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>57cdbaf797e93d1078cb33121153af6c</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Deck Legality onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_client_57cdbaf797e93d1078cb33121153af6c</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-05 04:12:36</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_script_client_57cdbaf797e93d1078cb33121153af6c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;
+    &lt;sys_script_client action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;applies_extended&gt;false&lt;/applies_extended&gt;
+        &lt;condition/&gt;
+        &lt;description&gt;Checks if the length of the deck does not exceed is exactly 100 cards&lt;/description&gt;
+        &lt;field/&gt;
+        &lt;global&gt;true&lt;/global&gt;
+        &lt;isolate_script&gt;true&lt;/isolate_script&gt;
+        &lt;messages/&gt;
+        &lt;name&gt;Deck Legality onLoad&lt;/name&gt;
+        &lt;order/&gt;
+        &lt;script&gt;&lt;![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var tLen = 0;
+   var commanders = g_form.getValue('commanders').split(',');
+   var cards = g_form.getValue('cards').split(',');
+   var w = parseInt(g_form.getValue('plains'));
+   var u = parseInt(g_form.getValue('island'));
+   var b = parseInt(g_form.getValue('swamp'));
+   var r = parseInt(g_form.getValue('mountain'));
+   var g = parseInt(g_form.getValue('forest'));
+   var c = parseInt(g_form.getValue('wastes'));
+   var basics = w+u+b+r+g+c;
+   tLen = basics + cards.length + commanders.length; 
+   if(tLen != 100){
+	g_form.addErrorMessage('Decks has ' + tLen.toString() + ' cards in it. Please Set it to 100.' )
+   }
+   else{
+	g_form.addInfoMessage('Deck is at ' + tLen.toString() + ' cards.');
+   }
+}]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-10-05 03:26:13&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;
+        &lt;sys_id&gt;57cdbaf797e93d1078cb33121153af6c&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;15&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Deck Legality onLoad&lt;/sys_name&gt;
+        &lt;sys_overrides/&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_client_57cdbaf797e93d1078cb33121153af6c&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-10-05 04:12:36&lt;/sys_updated_on&gt;
+        &lt;table&gt;x_759224_magic_c_0_decks&lt;/table&gt;
+        &lt;type&gt;onLoad&lt;/type&gt;
+        &lt;ui_type&gt;10&lt;/ui_type&gt;
+        &lt;view/&gt;
+    &lt;/sys_script_client&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-1685984219</payload_hash>
+        <record_name>Deck Legality onLoad</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:40:40</sys_created_on>
+        <sys_id>d4d687f5c3baae100efafbfdd4013187</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfaed3f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:40</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>94d687f504baae10eab60b57f4e28a87</update_guid>
+        <update_guid_history>94d687f504baae10eab60b57f4e28a87:-1685984219</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:20:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>4ca51d8b1a7e4507ba13a53d0ea8ed91</sys_id>
+        <sys_metadata>57cdbaf797e93d1078cb33121153af6c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Deck Legality onLoad</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="">85fd28d59729311078cb33121153afde</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_client_57cdbaf797e93d1078cb33121153af6c</sys_update_name>
+        <sys_update_version display_value="sys_script_client_57cdbaf797e93d1078cb33121153af6c">d4d687f5c3baae100efafbfdd4013187</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:20:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

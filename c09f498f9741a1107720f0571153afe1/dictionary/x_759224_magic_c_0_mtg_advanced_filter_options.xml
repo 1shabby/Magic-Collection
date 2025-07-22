@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="066e51ab97d031907720f0571153af66" label="MTG Advanced Filter Options" max_length="40" name="x_759224_magic_c_0_mtg_advanced_filter_options" type="collection">
-        <element display="true" label="Name" mandatory="true" max_length="120" name="name" type="string"/>
-        <element label="Order" mandatory="true" max_length="3" name="order" type="integer"/>
-        <element label="Condition" mandatory="true" max_length="1000" name="condition" type="string"/>
-        <element label="Description" mandatory="true" max_length="1000" name="description" type="string"/>
-    </element>
-</database>

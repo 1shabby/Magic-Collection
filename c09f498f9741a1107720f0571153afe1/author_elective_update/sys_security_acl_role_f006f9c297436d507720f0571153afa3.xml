@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-05-28 04:57:11</sys_created_on>
+        <sys_id>f006f9c297436d507720f0571153afa3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_favorite_cards.x_759224_magic_c_0.admin</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_security_acl display_value="x_759224_magic_c_0_favorite_cards">7406f9c297436d507720f0571153af9e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f006f9c297436d507720f0571153afa3</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-05-28 04:57:11</sys_updated_on>
+        <sys_user_role display_value="x_759224_magic_c_0.admin" name="x_759224_magic_c_0.admin">c49f498f9741a1107720f0571153afe7</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_security_acl_role_f006f9c297436d507720f0571153afa3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-05-28 04:57:11</sys_created_on>
+        <sys_id>f006f9c297436d507720f0571153afa3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_favorite_cards.x_759224_magic_c_0.admin</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_security_acl display_value="x_759224_magic_c_0_favorite_cards">7406f9c297436d507720f0571153af9e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f006f9c297436d507720f0571153afa3</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-05-28 04:57:11</sys_updated_on>
+        <sys_user_role display_value="x_759224_magic_c_0.admin" name="x_759224_magic_c_0.admin">c49f498f9741a1107720f0571153afe7</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>]]></payload>
+        <payload_hash>289199785</payload_hash>
+        <record_name>x_759224_magic_c_0_favorite_cards.x_759224_magic_c_0.admin</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:40:49</sys_created_on>
+        <sys_id>12d60ff5c3baae100efafbfdd4013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfb0f2b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:49</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>ded60ff556baae105a394bbfca944e83</update_guid>
+        <update_guid_history>ded60ff556baae105a394bbfca944e83:289199785</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_759224_magic_c_0_favorite_cards.x_759224_magic_c_0.admin">bcd11417c3f666500efafbfdd4013164</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:20:48</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>85a77c3216c44104ab9e3a1e76ff00a4</sys_id>
+        <sys_metadata>f006f9c297436d507720f0571153afa3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_favorite_cards.x_759224_magic_c_0.admin</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="">7406f9c297436d507720f0571153af9e</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_f006f9c297436d507720f0571153afa3</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_f006f9c297436d507720f0571153afa3">12d60ff5c3baae100efafbfdd4013184</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:20:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

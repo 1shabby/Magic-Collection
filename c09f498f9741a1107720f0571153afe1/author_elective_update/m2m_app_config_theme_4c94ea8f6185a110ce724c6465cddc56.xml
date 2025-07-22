@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="m2m_app_config_theme">
+    <m2m_app_config_theme action="DELETE">
+        <applicability display_value="Public">8894ea8ff985a110f52f55b6885bc656</applicability>
+        <order>0</order>
+        <sys_class_name>m2m_app_config_theme</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-02-21 00:48:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4c94ea8f6185a110ce724c6465cddc56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>m2m_app_config_theme_4c94ea8f6185a110ce724c6465cddc56</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-02-21 00:48:57</sys_updated_on>
+        <theme display_value="Light Theme">c094ea8fce85a110231e34a564d60c57</theme>
+        <ux_app_configuration display_value="Collection Config">3784ea8f9785a1107720f0571153af01</ux_app_configuration>
+    </m2m_app_config_theme>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>m2m_app_config_theme_4c94ea8f6185a110ce724c6465cddc56</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="m2m_app_config_theme">
+    <m2m_app_config_theme action="INSERT_OR_UPDATE">
+        <applicability display_value="Public">8894ea8ff985a110f52f55b6885bc656</applicability>
+        <order>0</order>
+        <sys_class_name>m2m_app_config_theme</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-02-21 00:48:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4c94ea8f6185a110ce724c6465cddc56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>m2m_app_config_theme_4c94ea8f6185a110ce724c6465cddc56</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-02-21 00:48:57</sys_updated_on>
+        <theme display_value="Light Theme">c094ea8fce85a110231e34a564d60c57</theme>
+        <ux_app_configuration display_value="Collection Config">3784ea8f9785a1107720f0571153af01</ux_app_configuration>
+    </m2m_app_config_theme>
+</record_update>]]></payload>
+        <payload_hash>-1231407219</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:39:09</sys_created_on>
+        <sys_id>06760335c3baae100efafbfdd4013129</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981df988bf0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:39:09</sys_updated_on>
+        <type>UX App Theme</type>
+        <update_guid>c2760335b1baae10e9f94173d225b329</update_guid>
+        <update_guid_history>c2760335b1baae10e9f94173d225b329:-1231407219</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">a9049cd7c3f666500efafbfdd4013187</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2025-07-22 17:30:24</sys_created_on>
+        <sys_db_object display_value="" name="m2m_app_config_theme">m2m_app_config_theme</sys_db_object>
+        <sys_id>21927d3b6e4642709f82a5594cca0e49</sys_id>
+        <sys_metadata>4c94ea8f6185a110ce724c6465cddc56</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>m2m_app_config_theme_4c94ea8f6185a110ce724c6465cddc56</sys_update_name>
+        <sys_update_version display_value="m2m_app_config_theme_4c94ea8f6185a110ce724c6465cddc56">06760335c3baae100efafbfdd4013129</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:30:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

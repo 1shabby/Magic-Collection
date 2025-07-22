@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Magic Collection">45892e0797c5a1107720f0571153af2b</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>MTG Advanced Filter Options</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_mtg_advanced_filter_options</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_759224_magic_c_0.mtg_advanced_filter_options_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-02 22:24:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bb9e596b97d031907720f0571153aff0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter Options</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_bb9e596b97d031907720f0571153aff0</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-02 22:24:22</sys_updated_on>
+        <timeline_page/>
+        <title>MTG Advanced Filter Options</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_app_module_bb9e596b97d031907720f0571153aff0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Magic Collection">45892e0797c5a1107720f0571153af2b</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>MTG Advanced Filter Options</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_mtg_advanced_filter_options</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_759224_magic_c_0.mtg_advanced_filter_options_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-02 22:24:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bb9e596b97d031907720f0571153aff0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter Options</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_bb9e596b97d031907720f0571153aff0</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-02 22:24:22</sys_updated_on>
+        <timeline_page/>
+        <title>MTG Advanced Filter Options</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>]]></payload>
+        <payload_hash>-1368375007</payload_hash>
+        <record_name>MTG Advanced Filter Options</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:39:15</sys_created_on>
+        <sys_id>a7768335c3baae100efafbfdd4013154</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981df9a1010000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:39:15</sys_updated_on>
+        <type>Module</type>
+        <update_guid>6776833550baae10d195113e47cae654</update_guid>
+        <update_guid_history>6776833550baae10d195113e47cae654:-1368375007</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="MTG Advanced Filter Options">d461dc93c3f666500efafbfdd40131b4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:18:51</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>a461ed341f614888ba5e3098dd4c3104</sys_id>
+        <sys_metadata>bb9e596b97d031907720f0571153aff0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter Options</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_app_module_bb9e596b97d031907720f0571153aff0</sys_update_name>
+        <sys_update_version display_value="sys_app_module_bb9e596b97d031907720f0571153aff0">a7768335c3baae100efafbfdd4013154</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:18:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
