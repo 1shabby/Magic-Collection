@@ -53,7 +53,7 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
             if (!imageName || imageName === self.symbolsPrefix) return match; // fallback to original text
 
-            return '<img style="width:' + width + ';" src="' + imageName + '" />';
+            return '<img id="mtg-icon" style="width:' + width + ';" src="' + imageName + '" />';
         });
     },
 
@@ -110,17 +110,28 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
     },
 
-    formatLegalities: function(legalities) {
+    formatLegalities: function(legalities, gc) {
         if (!legalities || typeof legalities !== 'object') return {};
 
         const legalHTML = '<p style="color:green;"><img style="width:1.5rem; padding-bottom:4px;" src="x_759224_magic_c_0.success_icon.svg" />Legal</p>';
+        const gameChangerHTML = '<p style="color:orange;"><img style="width:3rem; padding-bottom:4px;" src="x_759224_magic_c_0.game_changer.png" />Legal</p>';
         const notLegalHTML = '<p style="color:red;"><img style="width:1.5rem; padding-bottom:4px;" src="x_759224_magic_c_0.failure_icon.svg" />Not Legal</p>';
 
         var formatted = {};
 
         for (var key in legalities) {
             if (legalities.hasOwnProperty(key)) {
-                formatted[key] = (legalities[key] === 'not_legal') ? notLegalHTML : legalHTML;
+                const value = legalities[key];
+
+                if (value === 'not_legal') {
+                    formatted[key] = notLegalHTML;
+                } else {
+                    if (gc === true && key === 'commander') {
+                        formatted[key] = gameChangerHTML;
+                    } else {
+                        formatted[key] = legalHTML;
+                    }
+                }
             }
         }
 
@@ -219,13 +230,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 15:58:34</sys_updated_on>
+        <sys_updated_on>2025-07-22 18:07:46</sys_updated_on>
     </sys_script_include>
 </record_update>
