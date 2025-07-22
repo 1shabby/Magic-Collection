@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>98</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_name>Scryfall API - Card Lookup</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:16:04</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -109,6 +109,18 @@
         <sys_updated_on>2023-08-25 18:17:24</sys_updated_on>
         <table>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</table>
         <value>{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>stringified_output</field>
+        <id>31bfc5e697f0b910dfffb3b6f053af43</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 13:57:51</sys_created_on>
+        <sys_id>84636f83c3f266500efafbfdd40131e6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 14:18:24</sys_updated_on>
+        <table>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</table>
+        <value>{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>url</field>
@@ -446,7 +458,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2db8febac3fae2500efafbfdd401319d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -454,7 +466,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:15:59</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:23</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -581,10 +593,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:38</sys_created_on>
         <sys_id>19299b7297743d10dfffb3b6f053af04</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:02:38</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:23</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=19299b7297743d10dfffb3b6f053af04"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -595,9 +607,9 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:38</sys_created_on>
         <sys_id>69299b7297743d10dfffb3b6f053af13</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:02:38</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:23</sys_updated_on>
         <value>
 (function execute(inputs, outputs) {
     var utils = new x_759224_magic_c_0.symbology_utils();
@@ -1886,7 +1898,94 @@ outputs.url = uri;
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d6d0d96a97f0b910dfffb3b6f053af66"/>
-    <sys_hub_action_output action="delete_multiple" query="model=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT INa98ad672c37ae2500efafbfdd401311d,e2d63aaf97703150dfffb3b6f053afd6,e2d63aaf97703150dfffb3b6f053afda"/>
+    <sys_hub_action_output action="delete_multiple" query="model=31bfc5e697f0b910dfffb3b6f053af43^sys_idNOT IN48636f83c3f266500efafbfdd40131ce,a98ad672c37ae2500efafbfdd401311d,e2d63aaf97703150dfffb3b6f053afd6,e2d63aaf97703150dfffb3b6f053afda"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=28ec00bd-b994-44c7-9a2e-b7f4e4119066</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>stringified_output</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Stringified Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
+        <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 13:57:51</sys_created_on>
+        <sys_id>48636f83c3f266500efafbfdd40131ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 13:57:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=48636f83c3f266500efafbfdd40131ce"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=48636f83c3f266500efafbfdd40131ce"/>
     <sys_complex_object action="INSERT_OR_UPDATE">
         <label/>
         <name>FD31b8febae2fae2500b55e311ef06b3a8</name>
@@ -1899,7 +1998,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f1b8febac3fae2500efafbfdd40131a8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1907,7 +2006,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:15:59</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:24</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -2149,14 +2248,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:21:14</sys_created_on>
         <sys_id>e2d63aaf97703150dfffb3b6f053afda</sys_id>
-        <sys_mod_count>189</sys_mod_count>
+        <sys_mod_count>195</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:15:59</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:24</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2300,6 +2399,29 @@ outputs.url = uri;
         <url_target/>
     </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
+        <element>stringified_output</element>
+        <help/>
+        <hint/>
+        <label>Stringified Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_31bfc5e697f0b910dfffb3b6f053af43</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 13:57:51</sys_created_on>
+        <sys_id>84636f83c3f266500efafbfdd40131d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 13:57:51</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
         <element>parsed_output</element>
         <help/>
         <hint/>
@@ -2327,17 +2449,17 @@ outputs.url = uri;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>7a69fefac3fae2500efafbfdd40131ce</snapshot>
+        <snapshot>8a18674bc3f266500efafbfdd401314d</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>91</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:16:06</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:31</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2445,6 +2567,18 @@ outputs.url = uri;
         <sys_updated_on>2023-08-25 18:18:16</sys_updated_on>
         <table>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</table>
         <value>{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>stringified_output</field>
+        <id>161219ea97f0b910dfffb3b6f053af37</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 14:18:28</sys_created_on>
+        <sys_id>c618674bc3f266500efafbfdd401314b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
+        <table>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</table>
+        <value>{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>url</field>
@@ -3837,7 +3971,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e740e77e97743d10dfffb3b6f053afca</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -3845,7 +3979,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:16:03</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -4208,7 +4342,7 @@ outputs.url = uri;
         <xml_view>false</xml_view>
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ee1219ea97f0b910dfffb3b6f053af42"/>
-    <sys_hub_action_output action="delete_multiple" query="model=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN1ca1e6fac37ae2500efafbfdd40131cc,aa1219ea97f0b910dfffb3b6f053af5c,e21219ea97f0b910dfffb3b6f053af61"/>
+    <sys_hub_action_output action="delete_multiple" query="model=161219ea97f0b910dfffb3b6f053af37^sys_idNOT IN1ca1e6fac37ae2500efafbfdd40131cc,4618674bc3f266500efafbfdd4013143,aa1219ea97f0b910dfffb3b6f053af5c,e21219ea97f0b910dfffb3b6f053af61"/>
     <sys_complex_object action="INSERT_OR_UPDATE">
         <label/>
         <name>FD44a1e6fadf7ae250ea5db91e0c34d9c5</name>
@@ -4221,7 +4355,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>08a1e6fac37ae2500efafbfdd40131c5</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -4229,7 +4363,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:16:03</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -4319,6 +4453,93 @@ outputs.url = uri;
     </sys_hub_action_output>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1ca1e6fac37ae2500efafbfdd40131cc"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=1ca1e6fac37ae2500efafbfdd40131cc"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=28ec00bd-b994-44c7-9a2e-b7f4e4119066</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>stringified_output</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Stringified Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
+        <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 14:18:28</sys_created_on>
+        <sys_id>4618674bc3f266500efafbfdd4013143</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4618674bc3f266500efafbfdd4013143"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4618674bc3f266500efafbfdd4013143"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -4471,14 +4692,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>185</sys_mod_count>
+        <sys_mod_count>187</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 16:16:03</sys_updated_on>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4575,6 +4796,29 @@ outputs.url = uri;
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_161219ea97f0b910dfffb3b6f053af37"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>stringified_output</element>
+        <help/>
+        <hint/>
+        <label>Stringified Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_161219ea97f0b910dfffb3b6f053af37</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 14:18:28</sys_created_on>
+        <sys_id>0a18674bc3f266500efafbfdd4013146</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 14:18:28</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>parsed_output</element>
         <help/>

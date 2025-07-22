@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=14077753000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=73068576000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority/>
         <generation_source/>
         <internal_name>new_card_insert</internal_name>
-        <label_cache>[{"name":"Created_1.current.sets.name","label":"Trigger - Record Created➛Cards Record➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"},{"name":"Created_1.current.sys_updated_by","label":"Trigger - Record Created➛Cards Record➛Updated by","reference":"","reference_display":"Updated by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_updated_by"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item","label":"6 - For Each➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item.sets","label":"6 - For Each➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","rawLabel":"None","selected":false,"missing":false,"image":"","reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","rawLabel":"Foil","selected":false,"missing":false,"image":"","reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","rawLabel":"Etched","selected":false,"missing":false,"image":"","reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.sys_created_by","label":"Trigger - Record Created➛Cards Record➛Created by","reference":"","reference_display":"Created by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_created_by"}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.sys_created_by","label":"Trigger - Record Created➛Cards Record➛Created by","reference":"","reference_display":"Created by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_created_by"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{"150285f8-455d-441b-9beb-8fc3cb9b0455":["card_record"]},"attributes":{}},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"image":"","label":"None","reference":false,"used":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"image":"","label":"Foil","reference":false,"used":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"image":"","label":"Etched","reference":false,"used":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item.sets","label":"6 - For Each➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item","label":"6 - For Each➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"Created_1.current.sys_updated_by","label":"Trigger - Record Created➛Cards Record➛Updated by","reference":"","reference_display":"Updated by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_updated_by"},{"name":"Created_1.current.sets.name","label":"Trigger - Record Created➛Cards Record➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"}]</label_cache>
         <master_snapshot>5623f4039775e5107720f0571153af59</master_snapshot>
         <master_snapshot_digest/>
         <name>New Card Insert</name>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cb72b4cf9735e5107720f0571153af6e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>New Card Insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -44,10 +44,10 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_cb72b4cf9735e5107720f0571153af6e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-18 14:39:57</sys_updated_on>
+        <sys_updated_on>2025-07-22 16:07:16</sys_updated_on>
         <type>flow</type>
         <updation_source/>
-        <version/>
+        <version>2</version>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=cb72b4cf9735e5107720f0571153af6e"/>
     <sys_variable_value action="delete_multiple" query="document_key=cb72b4cf9735e5107720f0571153af6e"/>
@@ -84,15 +84,15 @@
         <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
         <identifier>cb72b4cf9735e5107720f0571153af6e</identifier>
         <runner>FDTriggerRunner</runner>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:54</sys_created_on>
-        <sys_id>6fd8b71397493510dfffb3b6f053af05</sys_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:16</sys_created_on>
+        <sys_id>fff0c89bc37666500efafbfdd4013142</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:16</sys_updated_on>
         <trigger display_value="">866c607a971261107720f0571153af41</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN6fd8b71397493510dfffb3b6f053af05"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cb72b4cf9735e5107720f0571153af6e^sys_idNOT INfff0c89bc37666500efafbfdd4013142"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=cb72b4cf9735e5107720f0571153af6e^sys_idNOT INcb72b4cf9735e5107720f0571153af6f"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -112,7 +112,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -171,14 +171,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>202374039775e5107720f0571153afad</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>114</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -196,7 +196,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -255,14 +255,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>a42374039775e5107720f0571153afb1</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>114</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -278,641 +278,80 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a42374039775e5107720f0571153afb1"/>
     <sys_hub_flow_output action="delete_multiple" query="model=cb72b4cf9735e5107720f0571153af6e"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=cb72b4cf9735e5107720f0571153af6e"/>
-    <sys_hub_trigger_instance action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN2c2374039775e5107720f0571153afb5"/>
-    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT INd6f0489bc37666500efafbfdd40131d2"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
         <comment>Whenever a new card is inserted</comment>
         <display_text/>
         <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
         <generation_source/>
         <name>Created</name>
+        <published_version/>
         <remote_sys_id/>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>2c2374039775e5107720f0571153afb5</sys_id>
-        <sys_mod_count>203</sys_mod_count>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:10</sys_created_on>
+        <sys_id>d6f0489bc37666500efafbfdd40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:10</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
-        <trigger_inputs/>
+        <trigger_inputs>H4sIAAAAAAAA/+VY2W7jNhT9FUFPLZACWizLytvUyaAB0kzreNqHICUoirSFypQrUUrcQf69l9oia3G8JB07eTEgkr685/Dchbz7porIn81odMVjgTmht6v4ylPPVYMYpj3QTMe2LWrpmm0bGtMsW9ctEzPXUs/UALs0gKVT7AYUvn0uaMRxMF0tKQwLOYw4Xsi5BeYeFmG0Us9FlNAzlUXhYkoXywALWMxwEMNgGHk0Us/1MzX7W2ED/p7iIJHfj8i2HMMYoAWe+QQRpKGFmCGCIy+GZZ4fg8HVH8XqcTG8xBGYE9L0N5XM/cCLKFfP7+7PVAG+ojUgyk3usS9ZIIxgx6AaMXXTMDTNGA10d2i6uuGZmGpaBwsNz0UHGc8w6aOg3KNexUCLp4hi7wsPVtWKOdAMBjNOH2P/X7A+0uQ6RgEVoflc9YkKTvJhMg99Qr8shR/yfCT3M58Mg2TBb3L/JZuU4SQQJZswksRgjy6ly9KJwiN2Ow8fJuWGn32eoSsmg5DgoPrCAuTmJoLG8iiYH8ChoJybOEyizPvJ5fjL5AL9+Wk6/uVygiaXt9PJ1Xh6eaE+ZbjQP4m0mHtY+IJyOE+VBD77NJAHWDAek8hfik9E+Gmptqez19D+OOSen7HZ0j8pp+K6pzVp1M66ZHJTUGhaJS5S27UMjb8uf29HQD64rf7HdY8z/Q+HGHsU9+jfZT1MdLgpOkipI9sUCcXINqEw0LTvFAxFWts3FhahR4OLukpybSKfLxMh2XrAXMRIhAh7HqrxKJeCTy8FR47t6Q1jIUo4bIWqk2xHREZ4xfy1HwPQO8gDJauZMzDPrguTk4QrIRw5/CgkiYBUoZThw66gCBRnwX4rJZ6RWegvxRFCCxSvYjRPXLTGKLKdkaMP+6RtkzUGsyAD03eqev8kT5kGlIiaWtnXuP71qx/HPp/V6K0wZofVglihA9UrJYM51Pi0sN4fktjaEkob0mgkuE0C2TrtlbLMUp6uM+ZSZmi2ZErXTJeB6jULM8/UNGJsFHwvDNGIgDdJfbslvjiLvWCLSGueQem81HWwi4zT9Rgo7BhSM0V+HR+ha406Ye5UKCrd5sMX28v3lZst7KUyr3vb1os3LxUsCB8gP+1RJlxM/p5FYcK9ZiKVNhWfK88rlB8K5n88rTRaLxksjOhmvOsrTgflwcXiWURlAGO+apeJfHC/gmAy3XXogGpQB0woAa7lOC7BBmP20KaG3ivrTjdPohC8EEZpVxz2Zd5OiaZdyt6hHHx/Bw8qCoVGO0tCPvfek//DnHIEICMUyPTeqgGzwPdoOXdYimhtlT7f4RppYocccV24LbGzkUMs3baJDdkSMgQbUBfrA8PCjj00Ry9i3+Ss6ODjf7k3y+IgHenJHl/zqeN6UDpOmcdUCFnzdm90OFwisv/g3L1a9ZcHqmTpK4yUm5D/dPW8TrmlUGWzZ5cT6gXqHc82oKUClXeF2g3FvNXhAdKfYXwNqbzC9Jz5R3staERYuk5lx2vBPoTu+ZJAByPLYWZ3WWDO5lzRj/HoW8gtc1Pam+W6WrVtYz/tTCFV69Zs/vZQQ0NjhWnzhbb145JyUKtcBnLv88k+zn6ItiPrIg/pPaS3FIWsXpIuQgUmFNhE8ZlSeEs9xV0pYk7hMAK4TcGGitz9xGpRvRS3kVeh9q5x57fPVgcCw0pxGTghYK/TXDTiaOM7Uwdf+/UO1LOxZZk9V0qn+ejU5egLOI6+i9g51aRdmWtj1dzNbtNmZ92snfy6UrZsE94x6jd7Muvw4kgr/P1/b4o7rHElAAA=</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
         <updation_source/>
-    </sys_hub_trigger_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=2c2374039775e5107720f0571153afb5"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_trigger_instance</document>
-        <document_key>2c2374039775e5107720f0571153afb5</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>2c2374039775e5107720f0571153afb6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
-        <value>^EQ</value>
-        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_trigger_instance</document>
-        <document_key>2c2374039775e5107720f0571153afb5</document_key>
-        <order>1</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>e02374039775e5107720f0571153afb7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
-        <value>x_759224_magic_c_0_mtg_cards</value>
-        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
-    </sys_variable_value>
-    <sys_hub_action_instance action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN9986bf9b97093510dfffb3b6f053af24"/>
-    <sys_hub_action_instance action="INSERT_OR_UPDATE">
-        <action_inputs/>
-        <action_inputs/>
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN9af0489bc37666500efafbfdd40131d4"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
         <generation_source/>
-        <order>7➛8</order>
-        <parent_ui_id>78757881-7a7a-4f88-86bd-fc04f4f37a0e</parent_ui_id>
-        <sys_class_name>sys_hub_action_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>9986bf9b97093510dfffb3b6f053af24</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Copy of Populate Card">b5b0c09bc37666500efafbfdd40131f4</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/41SW2vbMBT+K0PPjpEvcRq/jY7CYFuh2/pSijiWjh2BLLuynCYL+e87st0Qtj700d85Ot/NTyemFSvZTVpxybeVzDZFUaw5xxrqqlYq50mW1AWLmIUWaVOCU8Kh7JwicA9mDOjpdOsQPCqRxHJ0Dq0/n2mu9NAbOD4ua4TInTaK5qx8eo5YD47OenSsPP0z8scehYEKDT18wBppIpEufFTw29tbUvzp4U3xuzYCF4HuioUGQVUSMTx4tAqJtQYzYMRasAp8546s9G4kgKyre2uOl42dtn6228Jh0H/oeJZGV/dLdhCb9TZNc9FCo6WQgovWNyLoGtjVqlgiXIwMU4Sdlnjfe93ZmcVDZT5wVHZmbO2POYHQDoU2Gn/VzjgQIfbBb3Cw2Kl/7rrXSwV32k7RLEPTSTCXL/De6Wr0OIRGR/3r/2Rn8Ns7zaLBlnhJfd9r24jedXs9cZH0Nm4MfcS16V5J46AbG4MMGcTUBsR3hH+Z4EdwOgTync7Q48D42+qXEb+GP4dXudxyma2SbJ2ucrnOV4D5ZnUjeZEUScZ5jew8NSBexmBtjmoJRcyZ08Igne79Z5Kwx8X/+fkvkguzLlEDAAA=</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:10</sys_created_on>
+        <sys_id>9af0489bc37666500efafbfdd40131d4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-18 14:43:38</sys_updated_on>
-        <ui_id>0c19c061-c4f8-469f-b828-9a4b191d5467</ui_id>
+        <sys_updated_on>2025-07-22 16:07:10</sys_updated_on>
+        <ui_id>150285f8-455d-441b-9beb-8fc3cb9b0455</ui_id>
         <updation_source/>
-    </sys_hub_action_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=9986bf9b97093510dfffb3b6f053af24"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>9986bf9b97093510dfffb3b6f053af24</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>d586bf9b97093510dfffb3b6f053af27</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-        <value>owner=fd-scripted</value>
-        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>9986bf9b97093510dfffb3b6f053af24</document_key>
-        <order>50</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>dd86bf9b97093510dfffb3b6f053af27</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-        <value>x_759224_magic_c_0_mtg_cards</value>
-        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=9986bf9b97093510dfffb3b6f053af24"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>record</field>
-        <id>9986bf9b97093510dfffb3b6f053af24</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>5586bf9b97093510dfffb3b6f053af27</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>table_name</field>
-        <id>9986bf9b97093510dfffb3b6f053af24</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>d986bf9b97093510dfffb3b6f053af26</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>values</field>
-        <id>9986bf9b97093510dfffb3b6f053af24</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>9186bf9b97093510dfffb3b6f053af27</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=9986bf9b97093510dfffb3b6f053af24^sys_idNOT INdd86bf9b97093510dfffb3b6f053af25"/>
-    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <input_name>values</input_name>
-        <instance>9986bf9b97093510dfffb3b6f053af24</instance>
-        <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"owner":{"scriptActive":true,"script":"return gs.getUserID();","savedValue":""}}</script>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>dd86bf9b97093510dfffb3b6f053af25</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:36:38</sys_updated_on>
-    </sys_hub_input_scripts>
-    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9986bf9b97093510dfffb3b6f053af24"/>
-    <sys_hub_flow_logic action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN1f2e908e9734f510dfffb3b6f053af06,5f2e908e9734f510dfffb3b6f053af09,5f2e908e9734f510dfffb3b6f053af1a,642374039775e5107720f0571153afca,9986bf9b97093510dfffb3b6f053af1b"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN2af0489bc37666500efafbfdd40131da"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">532e908e9734f510dfffb3b6f053af06</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Do the following in Parallel">5d31e5dedfe50300b61ecae83df26326</logic_definition>
-        <order>1</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id/>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:18</sys_created_on>
-        <sys_id>1f2e908e9734f510dfffb3b6f053af06</sys_id>
-        <sys_mod_count>107</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=1f2e908e9734f510dfffb3b6f053af06"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=1f2e908e9734f510dfffb3b6f053af06"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=1f2e908e9734f510dfffb3b6f053af06"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9b2e908e9734f510dfffb3b6f053af09</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
-        <order>2</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:18</sys_created_on>
-        <sys_id>5f2e908e9734f510dfffb3b6f053af09</sys_id>
-        <sys_mod_count>107</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=5f2e908e9734f510dfffb3b6f053af09"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=5f2e908e9734f510dfffb3b6f053af09"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=5f2e908e9734f510dfffb3b6f053af09"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9b2e908e9734f510dfffb3b6f053af1a</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
-        <order>5</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:18</sys_created_on>
-        <sys_id>5f2e908e9734f510dfffb3b6f053af1a</sys_id>
-        <sys_mod_count>111</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>11c2e7a5-2305-4a7a-8a32-1567d55621ec</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=5f2e908e9734f510dfffb3b6f053af1a"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=5f2e908e9734f510dfffb3b6f053af1a"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=5f2e908e9734f510dfffb3b6f053af1a"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">a76f88929724b510dfffb3b6f053afc3</block>
+        <block display_value="">aef0489bc37666500efafbfdd40131d9</block>
         <comment>Mandatory wait between api calls</comment>
         <connected_to/>
         <decision_table/>
-        <decision_table_inputs/>
         <display_text/>
-        <extended_inputs/>
         <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <flow_variable/>
         <flow_variables_assigned/>
         <generation_source/>
-        <inputs/>
         <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
-        <order>4</order>
+        <order>2</order>
         <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>642374039775e5107720f0571153afca</sys_id>
-        <sys_mod_count>216</sys_mod_count>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:11</sys_created_on>
+        <sys_id>2af0489bc37666500efafbfdd40131da</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:11</sys_updated_on>
         <ui_id>0adbea29-b2d8-407b-965b-7852735b68fb</ui_id>
         <updation_source/>
-        <workflow_inputs/>
+        <values>H4sIAAAAAAAA/+1Y3Y+bOBD/VxDPuRwOATZ5q7qt1IdrT91oX6oVMmZIrHOAGrPb3Gr/9xsbQ9iEZL+v2w8pUuKZYT5/M4xz7Ra1KmtVLYo3VcWXuTv/cjFyea5p+Pvazeka3Lmb1pIqXuSx2pTgjtxLKmpNh2+l4IyruBVAXsqrUtDNuRV5Z0WcnghbcZFKsOZKKtGKAunOr3dY2lwsaAICNb1dFZxp6zzF03QW+cEJmUa+5xPf85KQQBhOozDJQhqdBCjXPnhqLTuLxvsDQZmvOXpgzRQy1T4RzxthoAryFNBwRkUFI3dN85SqQm46igSafsrFlrDiuUJ9rhb+VvF/UfnU03IZYIAMGl53jG3iGnLjRVOENo6hVB6rRBvAzWir4zMIZF/CkA5peQM6Jn0df4NkkCu6HNRSdtwBPf4NVjWFjNZCvf2JQ2zK96k0rLnra3jRRNias0LU6/xjA0O3S8j5sa5qRE7vbq66Qq+g1HDV+LNgzM5WxdXnFmvveW58tUxRMCq6E1VK8qRWujTXLghYo6J4TcuS58u4lMUlNw9jGOvxUuBhnIniCo3qETKmTDsyxu6g4/dIPzXkcyq5TsBfqAYfvjHAj7/W2m6TAutxbBKmBSomeaneMF0v65wuke3eXg0UX4OMzdSK0Szoc69a+zPp0SPoFLX/uWjUmymUZCQNSUiSyA8nOIX8KQsZhDMAQuhs4vWmUA9SxmHHOOxohx3r8b1Ds6PKJN/QY8t4gZlldD1kaHWofxDofxTkYuGruIGmjc0YfwZEN7XeFv9lIPwhV7Bs4tAAPvF83/dmLPCjDsBpCpBlUUImQAYBvIXqgM8Wm7yz8xuTPzomB16BZBZ5f3gEP47nzfWH7IOUOGfAijx9/LzdGjZohYxMA3Zo6UtgYOnbxWovlttTdH8h+I6L32+8PgWve1teXKBZXbUegmmmjCs7mG3Jz3FHSRmdEi84ANdJ2IPrwqwEcnd1dXqO3z/EAzcZ/9XcZNok79ZiaJ1PICtk/2XYEbrF/fid4vmNPWm773A3uNG33J0+VrJ+jW3cesg28bEbVk/MQnMLurt6/vYt/dED4H++F5BsEqQHOz/yj3T+/n3gHjHddSGY/gTvsif2wPArZ/TL9UbFVpDW4oU6oatM2wlZEgS4tB3ohHBye2XDAjhqBU5WCMysPvXcPRSGzZvsmbawD54R9v7kNuzZOu87MdQCZ1v2r7DWPXZ9u9BIbDRVDaRSYLxCgwtN+9D+Ha0ZGwQBZ33SVSH/0a5uaTf/ASRCgLzYFgAA</values>
         <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=642374039775e5107720f0571153afca"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_flow_logic</document>
-        <document_key>642374039775e5107720f0571153afca</document_key>
-        <order>200</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>202374039775e5107720f0571153afcf</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
-        <value>1970-01-01 00:00:01</value>
-        <variable display_value="Duration">ef145c1473031300b61e66476bf6a7be</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_flow_logic</document>
-        <document_key>642374039775e5107720f0571153afca</document_key>
-        <order>300</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:26</sys_created_on>
-        <sys_id>6c2374039775e5107720f0571153afce</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
-        <value/>
-        <variable display_value="Timer relative duration operator">dca4105473031300b61e66476bf6a726</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e^id=642374039775e5107720f0571153afca"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=642374039775e5107720f0571153afca"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=642374039775e5107720f0571153afca"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9186bf9b97093510dfffb3b6f053af1b</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
-        <order>7</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:36:38</sys_created_on>
-        <sys_id>9986bf9b97093510dfffb3b6f053af1b</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>78757881-7a7a-4f88-86bd-fc04f4f37a0e</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=9986bf9b97093510dfffb3b6f053af1b"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9986bf9b97093510dfffb3b6f053af1b"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=9986bf9b97093510dfffb3b6f053af1b"/>
-    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN88d8331397493510dfffb3b6f053afda,d647653e97e07910dfffb3b6f053afe6"/>
-    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
-        <attributes/>
-        <comment/>
-        <display_text/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <generation_source/>
-        <inputs/>
-        <inputs/>
-        <order>2➛3</order>
-        <parent_ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</parent_ui_id>
-        <subflow display_value="Populate Card">d9aa7af797f47150dfffb3b6f053afa4</subflow>
-        <subflow_instance_inputs/>
-        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:39</sys_created_on>
-        <sys_id>88d8331397493510dfffb3b6f053afda</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>cd0886b7-b96b-4396-b97a-7ac008d449b8</ui_id>
-        <updation_source/>
-    </sys_hub_sub_flow_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=88d8331397493510dfffb3b6f053afda"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_sub_flow_instance</document>
-        <document_key>88d8331397493510dfffb3b6f053afda</document_key>
-        <order>0</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:40</sys_created_on>
-        <sys_id>c4d8331397493510dfffb3b6f053affe</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:40</sys_updated_on>
-        <value>1</value>
-        <variable display_value="Wait For Completion">40d8331397493510dfffb3b6f053afdc</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=88d8331397493510dfffb3b6f053afda"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>card_record</field>
-        <id>88d8331397493510dfffb3b6f053afda</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:40</sys_created_on>
-        <sys_id>c4d8331397493510dfffb3b6f053affd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:40</sys_updated_on>
-        <table>var__m_sys_hub_flow_input_d9aa7af797f47150dfffb3b6f053afa4</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_88d8331397493510dfffb3b6f053afda^id=88d8331397493510dfffb3b6f053afda"/>
-    <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=88d8331397493510dfffb3b6f053afda^sys_idNOT IN40d8331397493510dfffb3b6f053afdc"/>
-    <sys_hub_sub_flow_instance_inputs action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>wait_for_completion</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="">88d8331397493510dfffb3b6f053afda</model>
-        <model_id>88d8331397493510dfffb3b6f053afda</model_id>
-        <model_table>sys_hub_flow_logic_ext_input</model_table>
-        <name>var__m_sys_hub_sub_flow_instance_inputs_88d8331397493510dfffb3b6f053afda</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_sub_flow_instance_inputs</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:39</sys_created_on>
-        <sys_id>40d8331397493510dfffb3b6f053afdc</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:39</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_sub_flow_instance_inputs>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=88d8331397493510dfffb3b6f053afda"/>
-    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
-        <attributes/>
-        <comment/>
-        <display_text/>
-        <flow display_value="New Card Insert">cb72b4cf9735e5107720f0571153af6e</flow>
-        <generation_source/>
-        <inputs/>
-        <inputs/>
-        <order>5➛6</order>
-        <parent_ui_id>11c2e7a5-2305-4a7a-8a32-1567d55621ec</parent_ui_id>
-        <subflow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</subflow>
-        <subflow_instance_inputs/>
-        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-13 01:22:28</sys_created_on>
-        <sys_id>d647653e97e07910dfffb3b6f053afe6</sys_id>
-        <sys_mod_count>216</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
-        <ui_id>b309b2a8-345b-4225-8a3e-3b85b5685f82</ui_id>
-        <updation_source/>
-    </sys_hub_sub_flow_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=d647653e97e07910dfffb3b6f053afe6"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_sub_flow_instance</document>
-        <document_key>d647653e97e07910dfffb3b6f053afe6</document_key>
-        <order>0</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-13 01:22:28</sys_created_on>
-        <sys_id>5247a53e97e07910dfffb3b6f053af04</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-13 01:22:28</sys_updated_on>
-        <value>1</value>
-        <variable display_value="Wait For Completion">1247653e97e07910dfffb3b6f053afe8</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=d647653e97e07910dfffb3b6f053afe6"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>card</field>
-        <id>d647653e97e07910dfffb3b6f053afe6</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-13 01:22:28</sys_created_on>
-        <sys_id>5247a53e97e07910dfffb3b6f053af03</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-13 01:22:28</sys_updated_on>
-        <table>var__m_sys_hub_flow_input_5f84693a97e07910dfffb3b6f053af30</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_d647653e97e07910dfffb3b6f053afe6^id=d647653e97e07910dfffb3b6f053afe6"/>
-    <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=d647653e97e07910dfffb3b6f053afe6^sys_idNOT IN1247653e97e07910dfffb3b6f053afe8"/>
-    <sys_hub_sub_flow_instance_inputs action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>wait_for_completion</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="">d647653e97e07910dfffb3b6f053afe6</model>
-        <model_id>d647653e97e07910dfffb3b6f053afe6</model_id>
-        <model_table>sys_hub_flow_logic_ext_input</model_table>
-        <name>var__m_sys_hub_sub_flow_instance_inputs_d647653e97e07910dfffb3b6f053afe6</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_sub_flow_instance_inputs</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-13 01:22:28</sys_created_on>
-        <sys_id>1247653e97e07910dfffb3b6f053afe8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-13 01:22:28</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_sub_flow_instance_inputs>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=d647653e97e07910dfffb3b6f053afe6"/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=cb72b4cf9735e5107720f0571153af6e^sys_idNOT IN55fc6ab697303d10dfffb3b6f053af3b,81593a7e97703d10dfffb3b6f053afbd,9dfc6ab697303d10dfffb3b6f053af3b,c9593a7e97703d10dfffb3b6f053afbc"/>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>cb72b4cf9735e5107720f0571153af6e</attached_to>
@@ -996,11 +435,11 @@
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>682374039775e5107720f0571153afb0</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Record</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_cb72b4cf9735e5107720f0571153af6e_current_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
         <url/>
@@ -1019,11 +458,11 @@
         <sys_created_on>2023-03-29 23:20:26</sys_created_on>
         <sys_id>682374039775e5107720f0571153afb3</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Table Name</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_cb72b4cf9735e5107720f0571153af6e_table_name_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-03-29 23:20:26</sys_updated_on>
         <url/>
@@ -1045,7 +484,7 @@
         <description>Fires whenever a new card is inserted into system.</description>
         <flow_priority/>
         <internal_name>new_card_insert</internal_name>
-        <label_cache>[{"name":"Created_1.current.sets.name","label":"Trigger - Record Created➛Cards Record➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"},{"name":"Created_1.current.sys_updated_by","label":"Trigger - Record Created➛Cards Record➛Updated by","reference":"","reference_display":"Updated by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_updated_by"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item","label":"6 - For Each➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item.sets","label":"6 - For Each➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","rawLabel":"None","selected":false,"missing":false,"image":"","reference":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Foil","rawLabel":"Foil","selected":false,"missing":false,"image":"","reference":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}},{"used":false,"label":"Etched","rawLabel":"Etched","selected":false,"missing":false,"image":"","reference":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards"}}]},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.sys_created_by","label":"Trigger - Record Created➛Cards Record➛Created by","reference":"","reference_display":"Created by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_created_by"}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.sys_created_by","label":"Trigger - Record Created➛Cards Record➛Created by","reference":"","reference_display":"Created by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_created_by"},{"name":"Created_1.current","label":"Trigger - Record Created➛Cards Record","reference":"x_759224_magic_c_0_mtg_cards","reference_display":"Cards","type":"reference","base_type":"reference","usedInstances":{"150285f8-455d-441b-9beb-8fc3cb9b0455":["card_record"]},"attributes":{}},{"name":"Created_1.current.collector_number","label":"Trigger - Record Created➛Cards Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"Created_1.current.foiling","label":"Trigger - Record Created➛Cards Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"image":"","label":"None","reference":false,"used":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"image":"","label":"Foil","reference":false,"used":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"image":"","label":"Etched","reference":false,"used":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"Created_1.current.sets","label":"Trigger - Record Created➛Cards Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"Created_1.current.name","label":"Trigger - Record Created➛Cards Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"Created_1.current.sets.id","label":"Trigger - Record Created➛Cards Record➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item.sets","label":"6 - For Each➛Collection Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"Sets","type":"glide_list","base_type":"glide_list","parent_table_name":"x_759224_magic_c_0_mtg_collection","column_name":"sets"},{"name":"4b3a6438-b28b-458c-8622-d9969edd42ca.item","label":"6 - For Each➛Collection Record","reference":"x_759224_magic_c_0_mtg_collection","reference_display":"Collection","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"Created_1.current.sys_updated_by","label":"Trigger - Record Created➛Cards Record➛Updated by","reference":"","reference_display":"Updated by","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sys_updated_by"},{"name":"Created_1.current.sets.name","label":"Trigger - Record Created➛Cards Record➛Sets➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"name"}]</label_cache>
         <master>true</master>
         <name>New Card Insert</name>
         <natlang/>
@@ -1062,17 +501,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5623f4039775e5107720f0571153af59</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:16</sys_updated_on>
         <type>flow</type>
-        <version/>
+        <version>2</version>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=5623f4039775e5107720f0571153af59"/>
     <sys_variable_value action="delete_multiple" query="document_key=5623f4039775e5107720f0571153af59"/>
@@ -1154,14 +593,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:33</sys_created_on>
         <sys_id>1623f4039775e5107720f0571153af5b</sys_id>
-        <sys_mod_count>125</sys_mod_count>
+        <sys_mod_count>127</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:14</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1238,14 +677,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>e223f4039775e5107720f0571153afbd</sys_id>
-        <sys_mod_count>125</sys_mod_count>
+        <sys_mod_count>127</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:14</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1261,641 +700,80 @@
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e223f4039775e5107720f0571153afbd"/>
     <sys_hub_flow_output action="delete_multiple" query="model=5623f4039775e5107720f0571153af59"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=5623f4039775e5107720f0571153af59"/>
-    <sys_hub_trigger_instance action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN6623f4039775e5107720f0571153afe3"/>
-    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN13f0889bc37666500efafbfdd401319e"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
         <comment>Whenever a new card is inserted</comment>
         <display_text/>
         <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
         <generation_source/>
         <name>Created</name>
+        <published_version/>
         <remote_sys_id/>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>6623f4039775e5107720f0571153afe3</sys_id>
-        <sys_mod_count>185</sys_mod_count>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:14</sys_created_on>
+        <sys_id>13f0889bc37666500efafbfdd401319e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:54</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:14</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
-        <trigger_inputs/>
+        <trigger_inputs>H4sIAAAAAAAA/+VY2W7jNhT9FUFPLZACWizLytvUyaAB0kzreNqHICUoirSFypQrUUrcQf69l9oia3G8JB07eTEgkr685/Dchbz7porIn81odMVjgTmht6v4ylPPVYMYpj3QTMe2LWrpmm0bGtMsW9ctEzPXUs/UALs0gKVT7AYUvn0uaMRxMF0tKQwLOYw4Xsi5BeYeFmG0Us9FlNAzlUXhYkoXywALWMxwEMNgGHk0Us/1MzX7W2ED/p7iIJHfj8i2HMMYoAWe+QQRpKGFmCGCIy+GZZ4fg8HVH8XqcTG8xBGYE9L0N5XM/cCLKFfP7+7PVAG+ojUgyk3usS9ZIIxgx6AaMXXTMDTNGA10d2i6uuGZmGpaBwsNz0UHGc8w6aOg3KNexUCLp4hi7wsPVtWKOdAMBjNOH2P/X7A+0uQ6RgEVoflc9YkKTvJhMg99Qr8shR/yfCT3M58Mg2TBb3L/JZuU4SQQJZswksRgjy6ly9KJwiN2Ow8fJuWGn32eoSsmg5DgoPrCAuTmJoLG8iiYH8ChoJybOEyizPvJ5fjL5AL9+Wk6/uVygiaXt9PJ1Xh6eaE+ZbjQP4m0mHtY+IJyOE+VBD77NJAHWDAek8hfik9E+Gmptqez19D+OOSen7HZ0j8pp+K6pzVp1M66ZHJTUGhaJS5S27UMjb8uf29HQD64rf7HdY8z/Q+HGHsU9+jfZT1MdLgpOkipI9sUCcXINqEw0LTvFAxFWts3FhahR4OLukpybSKfLxMh2XrAXMRIhAh7HqrxKJeCTy8FR47t6Q1jIUo4bIWqk2xHREZ4xfy1HwPQO8gDJauZMzDPrguTk4QrIRw5/CgkiYBUoZThw66gCBRnwX4rJZ6RWegvxRFCCxSvYjRPXLTGKLKdkaMP+6RtkzUGsyAD03eqev8kT5kGlIiaWtnXuP71qx/HPp/V6K0wZofVglihA9UrJYM51Pi0sN4fktjaEkob0mgkuE0C2TrtlbLMUp6uM+ZSZmi2ZErXTJeB6jULM8/UNGJsFHwvDNGIgDdJfbslvjiLvWCLSGueQem81HWwi4zT9Rgo7BhSM0V+HR+ha406Ye5UKCrd5sMX28v3lZst7KUyr3vb1os3LxUsCB8gP+1RJlxM/p5FYcK9ZiKVNhWfK88rlB8K5n88rTRaLxksjOhmvOsrTgflwcXiWURlAGO+apeJfHC/gmAy3XXogGpQB0woAa7lOC7BBmP20KaG3ivrTjdPohC8EEZpVxz2Zd5OiaZdyt6hHHx/Bw8qCoVGO0tCPvfek//DnHIEICMUyPTeqgGzwPdoOXdYimhtlT7f4RppYocccV24LbGzkUMs3baJDdkSMgQbUBfrA8PCjj00Ry9i3+Ss6ODjf7k3y+IgHenJHl/zqeN6UDpOmcdUCFnzdm90OFwisv/g3L1a9ZcHqmTpK4yUm5D/dPW8TrmlUGWzZ5cT6gXqHc82oKUClXeF2g3FvNXhAdKfYXwNqbzC9Jz5R3staERYuk5lx2vBPoTu+ZJAByPLYWZ3WWDO5lzRj/HoW8gtc1Pam+W6WrVtYz/tTCFV69Zs/vZQQ0NjhWnzhbb145JyUKtcBnLv88k+zn6ItiPrIg/pPaS3FIWsXpIuQgUmFNhE8ZlSeEs9xV0pYk7hMAK4TcGGitz9xGpRvRS3kVeh9q5x57fPVgcCw0pxGTghYK/TXDTiaOM7Uwdf+/UO1LOxZZk9V0qn+ejU5egLOI6+i9g51aRdmWtj1dzNbtNmZ92snfy6UrZsE94x6jd7Muvw4kgr/P1/b4o7rHElAAA=</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
         <updation_source/>
-    </sys_hub_trigger_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=6623f4039775e5107720f0571153afe3"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_trigger_instance</document>
-        <document_key>6623f4039775e5107720f0571153afe3</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>2e23f4039775e5107720f0571153afe4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
-        <value>^EQ</value>
-        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_trigger_instance</document>
-        <document_key>6623f4039775e5107720f0571153afe3</document_key>
-        <order>1</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>ee23f4039775e5107720f0571153afe4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
-        <value>x_759224_magic_c_0_mtg_cards</value>
-        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
-    </sys_variable_value>
-    <sys_hub_action_instance action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN13c677db97093510dfffb3b6f053afc0"/>
-    <sys_hub_action_instance action="INSERT_OR_UPDATE">
-        <action_inputs/>
-        <action_inputs/>
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT INebf0889bc37666500efafbfdd40131d1"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
         <generation_source/>
-        <order>7➛8</order>
-        <parent_ui_id>78757881-7a7a-4f88-86bd-fc04f4f37a0e</parent_ui_id>
-        <sys_class_name>sys_hub_action_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>13c677db97093510dfffb3b6f053afc0</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <order>1</order>
+        <parent_ui_id/>
+        <subflow display_value="Copy of Populate Card">b5b0c09bc37666500efafbfdd40131f4</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/42RQW/bMAyF/8qgs2PIseO0uQ0pAgzYVqDdeikKgZboRIAsu7KUJgvy30fFXmZsPfSoR1J87+PziWnFVuxmXnHJbyuZL8uyXHCONdRVrVTBszyrS5YwCw1SpwSnhEPZOkXiHkyI6um0dggelchSGZxD689nqivddwaOT2MbKXKnjaI6Wz2/JKwDR996dGx1+qf0UV8GKjTUuiZjnx7+GHvXrT92UXRYI62ROEpfxx8eJjoNRFNZwvDg0SokNzWYHhPWgFXgW3dkK+8CCZRc3VtzvHbstPVD2gYOvf5FS/N5Mtm7YgexXNzO54VoYKulkIKLxm9F9NuzSasYCY4BY62+Aw+PtFr64K5UWy2xH8gpghSMX0+1oeG+87q1w4iHynzAiWxNaOz3ASe7fj65aOjJJXYRUow9Mqgfd+3blehG2wvPsWhaCWbSiuDkbqPRxJtfTpcw8N7pKviY4MSC/vH/8QbxvfOhwYbcUKau03YrOtfu9cUBBWrSraFHWpv2jZz3emtTkJFMSoeFdEP63UV+Aqcjpm/0DQ3HjT+tfg34JRrlVSFvucxnWb6Yzwq5KGaAxXJ2I3mZlVnOeY3snLD+2K8N9P1fiBRCvIaIYEA6whPDbeKIdLrzn8nUHkdO55ffLXAi/60DAAA=</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:15</sys_created_on>
+        <sys_id>ebf0889bc37666500efafbfdd40131d1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>0c19c061-c4f8-469f-b828-9a4b191d5467</ui_id>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:15</sys_updated_on>
+        <ui_id>150285f8-455d-441b-9beb-8fc3cb9b0455</ui_id>
         <updation_source/>
-    </sys_hub_action_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=13c677db97093510dfffb3b6f053afc0"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>13c677db97093510dfffb3b6f053afc0</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>1fc677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-        <value>owner=fd-scripted</value>
-        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>13c677db97093510dfffb3b6f053afc0</document_key>
-        <order>50</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>dfc677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-        <value>x_759224_magic_c_0_mtg_cards</value>
-        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=13c677db97093510dfffb3b6f053afc0"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>record</field>
-        <id>13c677db97093510dfffb3b6f053afc0</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>9bc677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>table_name</field>
-        <id>13c677db97093510dfffb3b6f053afc0</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>17c677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>values</field>
-        <id>13c677db97093510dfffb3b6f053afc0</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>d7c677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=13c677db97093510dfffb3b6f053afc0^sys_idNOT IN13c677db97093510dfffb3b6f053afc1"/>
-    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <input_name>values</input_name>
-        <instance>13c677db97093510dfffb3b6f053afc0</instance>
-        <referenced_table>sys_hub_action_instance</referenced_table>
-        <script>{"owner":{"scriptActive":true,"script":"return gs.getUserID();","savedValue":""}}</script>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>13c677db97093510dfffb3b6f053afc1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:37:52</sys_updated_on>
-    </sys_hub_input_scripts>
-    <sys_hub_alias_mapping action="delete_multiple" query="source_id=13c677db97093510dfffb3b6f053afc0"/>
-    <sys_hub_flow_logic action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN2a23f4039775e5107720f0571153afc8,2e3e548e9734f510dfffb3b6f053af8d,5bc677db97093510dfffb3b6f053afdb,663e548e9734f510dfffb3b6f053af7f,e63e548e9734f510dfffb3b6f053af7c"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN67f0889bc37666500efafbfdd40131d7"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">a76f88929724b510dfffb3b6f053afc3</block>
+        <block display_value="">aef0489bc37666500efafbfdd40131d9</block>
         <comment>Mandatory wait between api calls</comment>
         <connected_to/>
         <decision_table/>
-        <decision_table_inputs/>
         <display_text/>
-        <extended_inputs/>
         <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <flow_variable/>
         <flow_variables_assigned/>
         <generation_source/>
-        <inputs/>
         <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
-        <order>4</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>2a23f4039775e5107720f0571153afc8</sys_id>
-        <sys_mod_count>139</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>0adbea29-b2d8-407b-965b-7852735b68fb</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=2a23f4039775e5107720f0571153afc8"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_flow_logic</document>
-        <document_key>2a23f4039775e5107720f0571153afc8</document_key>
-        <order>200</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>6a23f4039775e5107720f0571153afcd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
-        <value>1970-01-01 00:00:01</value>
-        <variable display_value="Duration">ef145c1473031300b61e66476bf6a7be</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_flow_logic</document>
-        <document_key>2a23f4039775e5107720f0571153afc8</document_key>
-        <order>300</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-03-29 23:20:34</sys_created_on>
-        <sys_id>a623f4039775e5107720f0571153afcd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
-        <value/>
-        <variable display_value="Timer relative duration operator">dca4105473031300b61e66476bf6a726</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e^id=2a23f4039775e5107720f0571153afc8"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=2a23f4039775e5107720f0571153afc8"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=2a23f4039775e5107720f0571153afc8"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9b2e908e9734f510dfffb3b6f053af1a</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
-        <order>5</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>2e3e548e9734f510dfffb3b6f053af8d</sys_id>
-        <sys_mod_count>81</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>11c2e7a5-2305-4a7a-8a32-1567d55621ec</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=2e3e548e9734f510dfffb3b6f053af8d"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=2e3e548e9734f510dfffb3b6f053af8d"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=2e3e548e9734f510dfffb3b6f053af8d"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9186bf9b97093510dfffb3b6f053af1b</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
-        <order>7</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:37:52</sys_created_on>
-        <sys_id>5bc677db97093510dfffb3b6f053afdb</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>78757881-7a7a-4f88-86bd-fc04f4f37a0e</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=5bc677db97093510dfffb3b6f053afdb"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=5bc677db97093510dfffb3b6f053afdb"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=5bc677db97093510dfffb3b6f053afdb"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">9b2e908e9734f510dfffb3b6f053af09</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Parallel Branch">a1168de173311300b61e66476bf6a7d0</logic_definition>
         <order>2</order>
         <outputs_assigned/>
-        <outputs_to_assign/>
-        <parent_ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>663e548e9734f510dfffb3b6f053af7f</sys_id>
-        <sys_mod_count>77</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</ui_id>
-        <updation_source/>
-        <workflow_inputs/>
-        <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=663e548e9734f510dfffb3b6f053af7f"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=663e548e9734f510dfffb3b6f053af7f"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=663e548e9734f510dfffb3b6f053af7f"/>
-    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">532e908e9734f510dfffb3b6f053af06</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <decision_table_inputs/>
-        <display_text/>
-        <extended_inputs/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <flow_variable/>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <inputs/>
-        <logic_definition display_value="Do the following in Parallel">5d31e5dedfe50300b61ecae83df26326</logic_definition>
-        <order>1</order>
-        <outputs_assigned/>
-        <outputs_to_assign/>
         <parent_ui_id/>
-        <sys_class_name>sys_hub_flow_logic</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>e63e548e9734f510dfffb3b6f053af7c</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-22 16:07:15</sys_created_on>
+        <sys_id>67f0889bc37666500efafbfdd40131d7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
-        <ui_id>0c48a4f1-ef4e-4287-9524-0b7f05a6d773</ui_id>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:15</sys_updated_on>
+        <ui_id>0adbea29-b2d8-407b-965b-7852735b68fb</ui_id>
         <updation_source/>
-        <workflow_inputs/>
+        <values>H4sIAAAAAAAA/+1Z72/aPBD+V6J8ZixOIBS+Te0qTdr7biqoX6YpcpwLWDNJ5jjteKv+7+85cX5QAisbnZhUCan12Tk/d/c8Fxse7LRQWaHyRfouz/kysWdfvg5snmgb/v9gJ3QN9syOCkkVT5NAbTKwB/YdFYW2w49McMZVUC/AuYjnmaCbW7PkvVlidZawFReRBLNdRiXuokDas4cnUzxCD6PpxBtfkNHEczziOU7oE/D90cQPY59OLsboUNAQBC69MntYiwrnHvjlnxnulXJWjz8aF5e1MZWRhkQcZ4BxKkgiQDQxFTkM7DVNIqpSuWksEmj0KRGtYcUThf5svfhHzv/DHUeOXhcDxsegmmuGgclbZY6vqKJzJQumCmmWVnCrutQB92X3UHFMUM7joPVxAwKn76DPhzRzPT5I18dnkAwSRZe9XrJmtseP+4iFjiCmhVCXpwuRnCBE90QhejrEqnyfsnJqZnuadzQUdXFTUayTfyu+2k1Cbg8JrVpy9XO9FTmigkxTWHPSEDSer9L7m5p/1zwpsZpJkTIqmhFVSvKwULo0DzYIWKOjYE2zjCfLIJPpHS8fxjDWw6XAwTAW6T1uqrvKkDINZIiKocNrtF+V5lsquU7AP+gGH34c2PkmvxQ0z9s0oDyC74VGUiXFxBCUKSwfYZJn6h3TFTRwddGM8DtVUXwNMihbW4BAQI879dttXEf3qTAmkU98Ek4838U+5Y2Yz8CfAhBCp67T6VMdLpW4rBKXpXFZBtizIzDNrMx6aQ86E3VXw3YCbxeV/QUaW+nrFJ2trxXsauco6fwt/EcW5UFFZxNbufmL6KKiUsut0wrhwvE8z5mysTdphBBFAHE8CYkLpFcILeV7wBmOI/FgWaaqy+0PjfWV2a/MLsnT84Im04nzxiH4sRxnpj9kl+rEmgNLk+hoykNMRmO274waQs8Z9SnhO5i3W/q2/eOum/q0coYn1VfW/0HW75xkgxSB6OJv9/fjqB0xOiLOeA+1Xb9D7UV5lpFPD9tWB8bzAR9zSfPOkPrtzYHGCrolqMd9l7EQ4lR238eNobnXHL4u/WQzctRm7m9fXOrt+y8r9ewTQWNKz1HPNUK2CQ5dHjvLDIdbIh4v/u3vLn65E7zMlYfE7jja2xsm3oHesHvVeQb0X73rjM6wP/yRV+NvKqn/DTZ4VRimZQVRIU6spzgcj/EguUdPvrt9jMTMW2oFVpwKTKkedVDtQ2sS1jJ4Wzw3HbsRz/iE4vHcbfGwddIF1yekeTt9BoI6/qwZz4FKtrrmIHSJy7r8bd+ofdUsr3w3mWY8RwgLbftQ/2CgJzYYIWdd030qv2nwre3xf3mDuLN6GAAA</values>
         <workflow_reference/>
-    </sys_hub_flow_logic>
-    <sys_variable_value action="delete_multiple" query="document_key=e63e548e9734f510dfffb3b6f053af7c"/>
-    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=e63e548e9734f510dfffb3b6f053af7c"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=e63e548e9734f510dfffb3b6f053af7c"/>
-    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=5623f4039775e5107720f0571153af59^sys_idNOT IN83d8771397493510dfffb3b6f053af40,ae3e548e9734f510dfffb3b6f053af8f"/>
-    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
-        <attributes/>
-        <comment/>
-        <display_text/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <generation_source/>
-        <inputs/>
-        <inputs/>
-        <order>2➛3</order>
-        <parent_ui_id>fdfca53a-363c-431b-8f95-c8c91384245e</parent_ui_id>
-        <subflow display_value="Populate Card">d9aa7af797f47150dfffb3b6f053afa4</subflow>
-        <subflow_instance_inputs/>
-        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:52</sys_created_on>
-        <sys_id>83d8771397493510dfffb3b6f053af40</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>cd0886b7-b96b-4396-b97a-7ac008d449b8</ui_id>
-        <updation_source/>
-    </sys_hub_sub_flow_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=83d8771397493510dfffb3b6f053af40"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_sub_flow_instance</document>
-        <document_key>83d8771397493510dfffb3b6f053af40</document_key>
-        <order>0</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:52</sys_created_on>
-        <sys_id>1bd8771397493510dfffb3b6f053af4f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
-        <value>1</value>
-        <variable display_value="Wait For Completion">4fd8771397493510dfffb3b6f053af40</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=83d8771397493510dfffb3b6f053af40"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>card_record</field>
-        <id>83d8771397493510dfffb3b6f053af40</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:52</sys_created_on>
-        <sys_id>9fd8771397493510dfffb3b6f053af4e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
-        <table>var__m_sys_hub_flow_input_d9aa7af797f47150dfffb3b6f053afa4</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_83d8771397493510dfffb3b6f053af40^id=83d8771397493510dfffb3b6f053af40"/>
-    <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=83d8771397493510dfffb3b6f053af40^sys_idNOT IN4fd8771397493510dfffb3b6f053af40"/>
-    <sys_hub_sub_flow_instance_inputs action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>wait_for_completion</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="">83d8771397493510dfffb3b6f053af40</model>
-        <model_id>83d8771397493510dfffb3b6f053af40</model_id>
-        <model_table>sys_hub_flow_logic_ext_input</model_table>
-        <name>var__m_sys_hub_sub_flow_instance_inputs_83d8771397493510dfffb3b6f053af40</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_sub_flow_instance_inputs</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-09-08 21:46:52</sys_created_on>
-        <sys_id>4fd8771397493510dfffb3b6f053af40</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:52</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_sub_flow_instance_inputs>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=83d8771397493510dfffb3b6f053af40"/>
-    <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
-        <attributes/>
-        <comment/>
-        <display_text/>
-        <flow display_value="New Card Insert">5623f4039775e5107720f0571153af59</flow>
-        <generation_source/>
-        <inputs/>
-        <inputs/>
-        <order>5➛6</order>
-        <parent_ui_id>11c2e7a5-2305-4a7a-8a32-1567d55621ec</parent_ui_id>
-        <subflow display_value="MTG Collection Record Logic">5f84693a97e07910dfffb3b6f053af30</subflow>
-        <subflow_instance_inputs/>
-        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>ae3e548e9734f510dfffb3b6f053af8f</sys_id>
-        <sys_mod_count>152</sys_mod_count>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-09-08 21:46:53</sys_updated_on>
-        <ui_id>b309b2a8-345b-4225-8a3e-3b85b5685f82</ui_id>
-        <updation_source/>
-    </sys_hub_sub_flow_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=ae3e548e9734f510dfffb3b6f053af8f"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_sub_flow_instance</document>
-        <document_key>ae3e548e9734f510dfffb3b6f053af8f</document_key>
-        <order>0</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>3a3e548e9734f510dfffb3b6f053afa3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-22 22:23:32</sys_updated_on>
-        <value>1</value>
-        <variable display_value="Wait For Completion">ee3e548e9734f510dfffb3b6f053af90</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=ae3e548e9734f510dfffb3b6f053af8f"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>card</field>
-        <id>ae3e548e9734f510dfffb3b6f053af8f</id>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>f63e548e9734f510dfffb3b6f053afa2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-22 22:23:32</sys_updated_on>
-        <table>var__m_sys_hub_flow_input_5f84693a97e07910dfffb3b6f053af30</table>
-        <value>{{Created_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_ae3e548e9734f510dfffb3b6f053af8f^id=ae3e548e9734f510dfffb3b6f053af8f"/>
-    <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=ae3e548e9734f510dfffb3b6f053af8f^sys_idNOT INee3e548e9734f510dfffb3b6f053af90"/>
-    <sys_hub_sub_flow_instance_inputs action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>wait_for_completion</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
-        <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <model display_value="">ae3e548e9734f510dfffb3b6f053af8f</model>
-        <model_id>ae3e548e9734f510dfffb3b6f053af8f</model_id>
-        <model_table>sys_hub_flow_logic_ext_input</model_table>
-        <name>var__m_sys_hub_sub_flow_instance_inputs_ae3e548e9734f510dfffb3b6f053af8f</name>
-        <next_element/>
-        <order>0</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_sub_flow_instance_inputs</sys_class_name>
-        <sys_created_by>greg</sys_created_by>
-        <sys_created_on>2023-08-22 22:23:32</sys_created_on>
-        <sys_id>ee3e548e9734f510dfffb3b6f053af90</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-22 22:23:32</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_sub_flow_instance_inputs>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=ae3e548e9734f510dfffb3b6f053af8f"/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=5623f4039775e5107720f0571153af59^sys_idNOT IN200d6eb697303d10dfffb3b6f053afed,a40d6eb697303d10dfffb3b6f053afe0,bb597e7e97703d10dfffb3b6f053af73,f7597e7e97703d10dfffb3b6f053af73"/>
     <sys_hub_pill_compound action="INSERT_OR_UPDATE">
         <attached_to>5623f4039775e5107720f0571153af59</attached_to>
@@ -1979,11 +857,11 @@
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>2e23f4039775e5107720f0571153afb9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Record</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_5623f4039775e5107720f0571153af59_current_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
         <url/>
@@ -2002,11 +880,11 @@
         <sys_created_on>2023-03-29 23:20:34</sys_created_on>
         <sys_id>6e23f4039775e5107720f0571153afc1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Table Name</sys_name>
+        <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_5623f4039775e5107720f0571153af59_table_name_en</sys_update_name>
+        <sys_update_name/>
         <sys_updated_by>greg</sys_updated_by>
         <sys_updated_on>2023-03-29 23:20:34</sys_updated_on>
         <url/>
@@ -2024,17 +902,17 @@
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"362338039775e5107720f0571153af16","name":"plan","plan_signature":null}}</plan>
         <plan_id>cb72b4cf9735e5107720f0571153af6e</plan_id>
-        <snapshot>6b778bb9c3baae100efafbfdd40131c3</snapshot>
+        <snapshot>525104dbc37666500efafbfdd40131a0</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-03-29 23:20:35</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>362338039775e5107720f0571153af16</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-25 22:21:44</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-22 16:07:16</sys_updated_on>
         <trigger display_value="">866c607a971261107720f0571153af41</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=cb72b4cf9735e5107720f0571153af6e"/>
