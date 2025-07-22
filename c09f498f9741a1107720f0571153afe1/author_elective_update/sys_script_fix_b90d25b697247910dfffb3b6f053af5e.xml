@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="DELETE">
+        <before>false</before>
+        <description>Uses the "MTG Collection Record Logic" subflow to create a collection record for each card record.</description>
+        <name>MTG Create Collection Records</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[(function() {
+	try{
+	var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardGr.query();
+	while(cardGr.next()){
+			var inputs = {};
+			inputs['card'] = cardGr; // GlideRecord of table: x_759224_magic_c_0_mtg_cards 
+			var result = sn_fd.FlowAPI.getRunner().subflow('x_759224_magic_c_0.mtg_collection_record_logic').inForeground().withInputs(inputs).run();
+			var outputs = result.getOutputs();
+			}
+				
+	} catch (ex) {
+		var message = ex.getMessage();
+		gs.error(message);
+	}	
+})();]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-13 01:52:17</sys_created_on>
+        <sys_id>b90d25b697247910dfffb3b6f053af5e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Create Collection Records</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_fix_b90d25b697247910dfffb3b6f053af5e</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-13 01:52:17</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_script_fix_b90d25b697247910dfffb3b6f053af5e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;
+    &lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;
+        &lt;before&gt;false&lt;/before&gt;
+        &lt;description&gt;Uses the "MTG Collection Record Logic" subflow to create a collection record for each card record.&lt;/description&gt;
+        &lt;name&gt;MTG Create Collection Records&lt;/name&gt;
+        &lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {
+	try{
+	var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardGr.query();
+	while(cardGr.next()){
+			var inputs = {};
+			inputs['card'] = cardGr; // GlideRecord of table: x_759224_magic_c_0_mtg_cards 
+			var result = sn_fd.FlowAPI.getRunner().subflow('x_759224_magic_c_0.mtg_collection_record_logic').inForeground().withInputs(inputs).run();
+			var outputs = result.getOutputs();
+			}
+				
+	} catch (ex) {
+		var message = ex.getMessage();
+		gs.error(message);
+	}	
+})();]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-08-13 01:52:17&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;b90d25b697247910dfffb3b6f053af5e&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;MTG Create Collection Records&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_fix_b90d25b697247910dfffb3b6f053af5e&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-08-13 01:52:17&lt;/sys_updated_on&gt;
+        &lt;unloadable&gt;false&lt;/unloadable&gt;
+    &lt;/sys_script_fix&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>553553813</payload_hash>
+        <record_name>MTG Create Collection Records</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:40:41</sys_created_on>
+        <sys_id>dcd687f5c3baae100efafbfdd40131af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfaee750000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:41</sys_updated_on>
+        <type>Fix Script</type>
+        <update_guid>9cd687f510baae10114ad380a9ae18af</update_guid>
+        <update_guid_history>9cd687f510baae10114ad380a9ae18af:553553813</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:24:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_fix">sys_script_fix</sys_db_object>
+        <sys_id>38f394b9582a4541a7effec553ee2299</sys_id>
+        <sys_metadata>b90d25b697247910dfffb3b6f053af5e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Create Collection Records</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_fix_b90d25b697247910dfffb3b6f053af5e</sys_update_name>
+        <sys_update_version display_value="sys_script_fix_b90d25b697247910dfffb3b6f053af5e">dcd687f5c3baae100efafbfdd40131af</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:24:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

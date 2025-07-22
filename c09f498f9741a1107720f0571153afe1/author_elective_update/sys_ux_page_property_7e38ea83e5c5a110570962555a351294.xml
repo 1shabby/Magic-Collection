@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="DELETE">
+        <choices/>
+        <description>Ribbon Config ID</description>
+        <name>ribbonConfigId</name>
+        <page display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</page>
+        <required_translations/>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>7e38ea83e5c5a110570962555a351294</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ribbonConfigId</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_page_property_7e38ea83e5c5a110570962555a351294</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:04:59</sys_updated_on>
+        <type>string</type>
+        <unique_name>x_759224_magic_c_0.f238ea8395c5a11085ed3187593e208b.root.ribbonConfigId</unique_name>
+        <value>7a38ea832cc5a110d3ef50409fa04289</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="DELETE" query="documentkey=7e38ea83e5c5a110570962555a351294"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_ux_page_property_7e38ea83e5c5a110570962555a351294</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Ribbon Config ID</description>
+        <name>ribbonConfigId</name>
+        <page display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</page>
+        <required_translations/>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>7e38ea83e5c5a110570962555a351294</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ribbonConfigId</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_page_property_7e38ea83e5c5a110570962555a351294</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:04:59</sys_updated_on>
+        <type>string</type>
+        <unique_name>x_759224_magic_c_0.f238ea8395c5a11085ed3187593e208b.root.ribbonConfigId</unique_name>
+        <value>7a38ea832cc5a110d3ef50409fa04289</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=7e38ea83e5c5a110570962555a351294"/>
+</record_update>]]></payload>
+        <payload_hash>1918028567</payload_hash>
+        <record_name>ribbonConfigId</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:41:07</sys_created_on>
+        <sys_id>b6e6c739c3baae100efafbfdd4013167</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfb55730000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:07</sys_updated_on>
+        <type>UX Page Property</type>
+        <update_guid>76e6c739aabaae101057992256f90867</update_guid>
+        <update_guid_history>76e6c739aabaae101057992256f90867:1918028567</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:31:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_page_property">sys_ux_page_property</sys_db_object>
+        <sys_id>1f4b3165f59a4374b65a18ef3d689710</sys_id>
+        <sys_metadata>7e38ea83e5c5a110570962555a351294</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ribbonConfigId</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ux_page_property_7e38ea83e5c5a110570962555a351294</sys_update_name>
+        <sys_update_version display_value="sys_ux_page_property_7e38ea83e5c5a110570962555a351294">b6e6c739c3baae100efafbfdd4013167</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:31:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

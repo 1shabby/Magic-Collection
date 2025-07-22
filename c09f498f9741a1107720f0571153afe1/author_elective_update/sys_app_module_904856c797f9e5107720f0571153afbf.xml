@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="System Import Sets">import_sets</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Import Keywords</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_import_keywords</name>
+        <order>1100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-30 06:42:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>904856c797f9e5107720f0571153afbf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import Keywords</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_904856c797f9e5107720f0571153afbf</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-30 06:42:14</sys_updated_on>
+        <timeline_page/>
+        <title>Import Keywords</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_app_module_904856c797f9e5107720f0571153afbf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="System Import Sets">import_sets</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Import Keywords</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_759224_magic_c_0_import_keywords</name>
+        <order>1100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-30 06:42:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>904856c797f9e5107720f0571153afbf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import Keywords</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_app_module_904856c797f9e5107720f0571153afbf</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-30 06:42:14</sys_updated_on>
+        <timeline_page/>
+        <title>Import Keywords</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>]]></payload>
+        <payload_hash>894137145</payload_hash>
+        <record_name>Import Keywords</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:39:15</sys_created_on>
+        <sys_id>27768335c3baae100efafbfdd401314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981df9a0a50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:39:15</sys_updated_on>
+        <type>Module</type>
+        <update_guid>e376833515baae105614fe8adbd57d4c</update_guid>
+        <update_guid_history>e376833515baae105614fe8adbd57d4c:894137145</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Import Keywords">0011d093c3f666500efafbfdd40131d2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:17:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>1cdcb51ec3f6412e883c134021aca944</sys_id>
+        <sys_metadata>904856c797f9e5107720f0571153afbf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import Keywords</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_app_module_904856c797f9e5107720f0571153afbf</sys_update_name>
+        <sys_update_version display_value="sys_app_module_904856c797f9e5107720f0571153afbf">27768335c3baae100efafbfdd401314c</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:17:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

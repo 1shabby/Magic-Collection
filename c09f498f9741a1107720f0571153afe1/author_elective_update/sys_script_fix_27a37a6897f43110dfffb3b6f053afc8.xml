@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="DELETE">
+        <before>false</before>
+        <description/>
+        <name>MTG Set Collection Owner</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var cards = new GlideRecord('x_759224_magic_c_0_mtg_collection');
+cards.addEncodedQuery('owner=NULL');
+cards.query();
+while(cards.next()){
+	cards.setValue('owner',gs.getUserID());
+	cards.update();
+}	]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-18 17:26:00</sys_created_on>
+        <sys_id>27a37a6897f43110dfffb3b6f053afc8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>MTG Set Collection Owner</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_fix_27a37a6897f43110dfffb3b6f053afc8</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-18 17:28:13</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_script_fix_27a37a6897f43110dfffb3b6f053afc8</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;
+    &lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;
+        &lt;before&gt;false&lt;/before&gt;
+        &lt;description/&gt;
+        &lt;name&gt;MTG Set Collection Owner&lt;/name&gt;
+        &lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;
+        &lt;script&gt;&lt;![CDATA[var cards = new GlideRecord('x_759224_magic_c_0_mtg_collection');
+cards.addEncodedQuery('owner=NULL');
+cards.query();
+while(cards.next()){
+	cards.setValue('owner',gs.getUserID());
+	cards.update();
+}	]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-08-18 17:26:00&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;27a37a6897f43110dfffb3b6f053afc8&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;MTG Set Collection Owner&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_fix_27a37a6897f43110dfffb3b6f053afc8&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-08-18 17:28:13&lt;/sys_updated_on&gt;
+        &lt;unloadable&gt;false&lt;/unloadable&gt;
+    &lt;/sys_script_fix&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-1080463813</payload_hash>
+        <record_name>MTG Set Collection Owner</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:40:40</sys_created_on>
+        <sys_id>9cd687f5c3baae100efafbfdd40131a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfaedc20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:40</sys_updated_on>
+        <type>Fix Script</type>
+        <update_guid>5cd687f52fbaae10138967c94ea21ea8</update_guid>
+        <update_guid_history>5cd687f52fbaae10138967c94ea21ea8:-1080463813</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:24:37</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_fix">sys_script_fix</sys_db_object>
+        <sys_id>07258c262608458c84c307685d915b10</sys_id>
+        <sys_metadata>27a37a6897f43110dfffb3b6f053afc8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Set Collection Owner</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_script_fix_27a37a6897f43110dfffb3b6f053afc8</sys_update_name>
+        <sys_update_version display_value="sys_script_fix_27a37a6897f43110dfffb3b6f053afc8">9cd687f5c3baae100efafbfdd40131a8</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:24:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

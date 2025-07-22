@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="DELETE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_759224_magic_c_0_mtg_collection</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:38:24</sys_created_on>
+        <sys_id>c7464fb1c3baae100efafbfdd4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_collection</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ua_table_licensing_config_c7464fb1c3baae100efafbfdd4013166</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:38:24</sys_updated_on>
+    </ua_table_licensing_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>ua_table_licensing_config_c7464fb1c3baae100efafbfdd4013166</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="INSERT_OR_UPDATE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_759224_magic_c_0_mtg_collection</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-18 14:38:24</sys_created_on><sys_id>c7464fb1c3baae100efafbfdd4013166</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_759224_magic_c_0_mtg_collection</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>ua_table_licensing_config_c7464fb1c3baae100efafbfdd4013166</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-18 14:38:24</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+        <payload_hash>-1847983947</payload_hash>
+        <record_name>x_759224_magic_c_0_mtg_collection</record_name>
+        <reverted_from/>
+        <source>3cf9c403c32222100efafbfdd4013102</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2025-07-09 11:52:12</sys_created_on>
+        <sys_id>33e68b39c3baae100efafbfdd401315c</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>197ef0771e00000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Table Subscription Configuration</type>
+        <update_guid>ffe68b39debaae10daf33ec80a46575b</update_guid>
+        <update_guid_history>ffe68b39debaae10daf33ec80a46575b:-1847983947</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:16:51</sys_created_on>
+        <sys_db_object display_value="" name="ua_table_licensing_config">ua_table_licensing_config</sys_db_object>
+        <sys_id>137bc86d5a4940ea83db0314fed52019</sys_id>
+        <sys_metadata>c7464fb1c3baae100efafbfdd4013166</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_collection</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>ua_table_licensing_config_c7464fb1c3baae100efafbfdd4013166</sys_update_name>
+        <sys_update_version display_value="ua_table_licensing_config_c7464fb1c3baae100efafbfdd4013166">33e68b39c3baae100efafbfdd401315c</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:16:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

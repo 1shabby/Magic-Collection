@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="DELETE">
+        <choices/>
+        <description>Tabs Configuration</description>
+        <name>chrome_tab</name>
+        <page display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</page>
+        <required_translations>[ {
+  "message" : "New Cards",
+  "comment" : ""
+}, {
+  "message" : "New Collection",
+  "comment" : ""
+}, {
+  "message" : "New Subtype",
+  "comment" : ""
+}, {
+  "message" : "New Supertype",
+  "comment" : ""
+}, {
+  "message" : "New Type",
+  "comment" : ""
+} ]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>f638ea83d5c5a1100599ad3a41cb2096</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>chrome_tab</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_page_property_f638ea83d5c5a1100599ad3a41cb2096</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:04</sys_updated_on>
+        <type>json</type>
+        <unique_name>x_759224_magic_c_0.f238ea8395c5a11085ed3187593e208b.root.chrome_tab</unique_name>
+        <value>{"contextual":["record"],"newTabMenu":[{"label":{"translatable":true,"message":"New Collection"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_mtg_collection","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_mtg_collection","canCreate":true}}},{"label":{"translatable":true,"message":"New Type"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_type","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_type","canCreate":true}}},{"label":{"translatable":true,"message":"New Supertype"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_supertype","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_supertype","canCreate":true}}},{"label":{"translatable":true,"message":"New Subtype"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_subtype","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_subtype","canCreate":true}}},{"label":{"translatable":true,"message":"New Cards"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_mtg_cards","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_mtg_cards","canCreate":true}}}],"maxMainTabLimit":10,"maxTotalSubTabLimit":30}</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="DELETE" query="documentkey=f638ea83d5c5a1100599ad3a41cb2096"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_ux_page_property_f638ea83d5c5a1100599ad3a41cb2096</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Tabs Configuration</description>
+        <name>chrome_tab</name>
+        <page display_value="Collection-Workspace">f238ea8395c5a11085ed3187593e208b</page>
+        <required_translations>[ {
+  "message" : "New Cards",
+  "comment" : ""
+}, {
+  "message" : "New Collection",
+  "comment" : ""
+}, {
+  "message" : "New Subtype",
+  "comment" : ""
+}, {
+  "message" : "New Supertype",
+  "comment" : ""
+}, {
+  "message" : "New Type",
+  "comment" : ""
+} ]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:04:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>f638ea83d5c5a1100599ad3a41cb2096</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>chrome_tab</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ux_page_property_f638ea83d5c5a1100599ad3a41cb2096</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:04</sys_updated_on>
+        <type>json</type>
+        <unique_name>x_759224_magic_c_0.f238ea8395c5a11085ed3187593e208b.root.chrome_tab</unique_name>
+        <value>{"contextual":["record"],"newTabMenu":[{"label":{"translatable":true,"message":"New Collection"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_mtg_collection","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_mtg_collection","canCreate":true}}},{"label":{"translatable":true,"message":"New Type"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_type","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_type","canCreate":true}}},{"label":{"translatable":true,"message":"New Supertype"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_supertype","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_supertype","canCreate":true}}},{"label":{"translatable":true,"message":"New Subtype"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_subtype","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_subtype","canCreate":true}}},{"label":{"translatable":true,"message":"New Cards"},"routeInfo":{"route":"record","fields":{"table":"x_759224_magic_c_0_mtg_cards","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_759224_magic_c_0_mtg_cards","canCreate":true}}}],"maxMainTabLimit":10,"maxTotalSubTabLimit":30}</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=f638ea83d5c5a1100599ad3a41cb2096"/>
+</record_update>]]></payload>
+        <payload_hash>-1816487757</payload_hash>
+        <record_name>chrome_tab</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:41:07</sys_created_on>
+        <sys_id>7ee6c739c3baae100efafbfdd40131b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfb56ce0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:41:07</sys_updated_on>
+        <type>UX Page Property</type>
+        <update_guid>3ee6c739e7baae1035dc573d3eb5fdb8</update_guid>
+        <update_guid_history>3ee6c739e7baae1035dc573d3eb5fdb8:-1816487757</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:31:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_page_property">sys_ux_page_property</sys_db_object>
+        <sys_id>868b854cd2d94f8186e155501abf3f19</sys_id>
+        <sys_metadata>f638ea83d5c5a1100599ad3a41cb2096</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>chrome_tab</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ux_page_property_f638ea83d5c5a1100599ad3a41cb2096</sys_update_name>
+        <sys_update_version display_value="sys_ux_page_property_f638ea83d5c5a1100599ad3a41cb2096">7ee6c739c3baae100efafbfdd40131b8</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:31:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

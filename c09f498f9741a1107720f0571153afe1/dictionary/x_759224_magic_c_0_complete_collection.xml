@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="3f93a93d97eb21507720f0571153af00" label="Complete Collection" max_length="40" name="x_759224_magic_c_0_complete_collection" type="collection">
-        <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
-        <element label="Value" max_length="20" name="value" read_only="true" type="currency"/>
-        <index name="index">
-            <element name="owner"/>
-        </index>
-    </element>
-</database>
