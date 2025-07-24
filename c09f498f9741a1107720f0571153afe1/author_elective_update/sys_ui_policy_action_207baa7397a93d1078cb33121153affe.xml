@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>island</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 01:57:20</sys_created_on>
+        <sys_id>207baa7397a93d1078cb33121153affe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>island</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_207baa7397a93d1078cb33121153affe</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-05 01:57:20</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <ui_policy display_value="Island Logic">cb0b2eff97693d1078cb33121153af6d</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_ui_policy_action_207baa7397a93d1078cb33121153affe</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>island</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-10-05 01:57:20</sys_created_on>
+        <sys_id>207baa7397a93d1078cb33121153affe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>island</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_207baa7397a93d1078cb33121153affe</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-10-05 01:57:20</sys_updated_on>
+        <table>x_759224_magic_c_0_decks</table>
+        <ui_policy display_value="Island Logic">cb0b2eff97693d1078cb33121153af6d</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>]]></payload>
+        <payload_hash>1105760155</payload_hash>
+        <record_name>island</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:40:53</sys_created_on>
+        <sys_id>d3d6cff5c3baae100efafbfdd4013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981dfb1e6f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:40:53</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>93d6cff5bfbaae107640673001167084</update_guid>
+        <update_guid_history>93d6cff5bfbaae107640673001167084:1105760155</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-07-22 17:20:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>0d12c112691445b88164e8d3d31a7a10</sys_id>
+        <sys_metadata>207baa7397a93d1078cb33121153affe</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>island</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="">cb0b2eff97693d1078cb33121153af6d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_207baa7397a93d1078cb33121153affe</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_207baa7397a93d1078cb33121153affe">d3d6cff5c3baae100efafbfdd4013184</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-07-22 17:20:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

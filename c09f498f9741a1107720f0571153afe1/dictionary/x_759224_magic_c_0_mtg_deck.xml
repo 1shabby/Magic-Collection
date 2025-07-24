@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="1fc12327c33ee6500efafbfdd4013180" label="MTG Deck" max_length="40" name="x_759224_magic_c_0_mtg_deck" type="collection">
-        <element label="Color Identity" max_length="4000" name="color_identity" type="glide_list"/>
+        <element label="Color Identity" max_length="4000" name="color_identity" read_only="true" type="glide_list"/>
         <element label="Bracket" max_length="1" name="bracket" type="integer"/>
         <element label="Public" max_length="40" name="public" type="boolean"/>
         <element label="Description" max_length="4000" name="description" type="html"/>

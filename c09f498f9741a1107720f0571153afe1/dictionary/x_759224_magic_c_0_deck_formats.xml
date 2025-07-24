@@ -5,7 +5,7 @@
         <element label="Uses Sideboard" max_length="40" name="uses_sideboard" type="boolean"/>
         <element label="Deck Size Max" max_length="3" name="deck_size_max" type="integer"/>
         <element label="Code" max_length="40" name="code" type="string"/>
-        <element label="Deck Size Min" max_length="3" name="deck_size_min" type="integer"/>
+        <element label="Deck Size Min" mandatory="true" max_length="3" name="deck_size_min" type="integer"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
     </element>
 </database>

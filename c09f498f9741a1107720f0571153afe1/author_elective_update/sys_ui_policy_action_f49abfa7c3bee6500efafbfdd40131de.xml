@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>color_identity</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 04:56:10</sys_created_on>
+        <sys_id>f49abfa7c3bee6500efafbfdd40131de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>color_identity</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_policy_action_f49abfa7c3bee6500efafbfdd40131de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 04:56:10</sys_updated_on>
+        <table>x_759224_magic_c_0_mtg_deck</table>
+        <ui_policy display_value="Bracket Visibility">68e03b6bc37ee6500efafbfdd401314d</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=f49abfa7c3bee6500efafbfdd40131de"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sys_ui_policy_action_f49abfa7c3bee6500efafbfdd40131de</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>color_identity</field><field_message/><field_message_type>none</field_message_type><mandatory>true</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-24 04:56:10</sys_created_on><sys_id>f49abfa7c3bee6500efafbfdd40131de</sys_id><sys_mod_count>0</sys_mod_count><sys_name>color_identity</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sys_ui_policy_action_f49abfa7c3bee6500efafbfdd40131de</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-24 04:56:10</sys_updated_on><table>x_759224_magic_c_0_mtg_deck</table><ui_policy display_value="Bracket Visibility">68e03b6bc37ee6500efafbfdd401314d</ui_policy><value/><value_action>ignore</value_action><visible>true</visible></sys_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=f49abfa7c3bee6500efafbfdd40131de"/></record_update>]]></payload>
+        <payload_hash>-2109462673</payload_hash>
+        <record_name>color_identity</record_name>
+        <reverted_from/>
+        <source>11174b79c3baae100efafbfdd401313b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 04:56:10</sys_created_on>
+        <sys_id>b09abfa7c3bee6500efafbfdd40131e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1983ac9f41f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 04:56:10</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>b49abfa717bee650467d9bf4345b2ae0</update_guid>
+        <update_guid_history>b49abfa717bee650467d9bf4345b2ae0:-2109462673</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 04:57:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>40ffcf819c194cd49d353a4118068769</sys_id>
+        <sys_metadata>f49abfa7c3bee6500efafbfdd40131de</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>color_identity</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="Bracket Visibility">68e03b6bc37ee6500efafbfdd401314d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_f49abfa7c3bee6500efafbfdd40131de</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_f49abfa7c3bee6500efafbfdd40131de">b09abfa7c3bee6500efafbfdd40131e1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 04:57:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -2,7 +2,7 @@
     <sys_ui_related sys_domain="global" table="x_759224_magic_c_0_mtg_cards" version="2" view="">
         <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
             <filter/>
-            <list_id display_value="Cards - Default view" name="x_759224_magic_c_0_mtg_cards" related_list="NULL" sys_domain="global" view="Default view">a3cd6f03c33666500efafbfdd4013120</list_id>
+            <list_id display_value="x_759224_magic_c_0_mtg_cards - Default view" name="x_759224_magic_c_0_mtg_cards" related_list="NULL" sys_domain="global" view="Default view">a3cd6f03c33666500efafbfdd4013120</list_id>
             <order_by/>
             <position>0</position>
             <related_list>x_759224_magic_c_0_historical_card_prices.card</related_list>
@@ -16,7 +16,7 @@
         </sys_ui_related_list_entry>
         <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
             <filter/>
-            <list_id display_value="Cards - Default view" name="x_759224_magic_c_0_mtg_cards" related_list="NULL" sys_domain="global" view="Default view">a3cd6f03c33666500efafbfdd4013120</list_id>
+            <list_id display_value="x_759224_magic_c_0_mtg_cards - Default view" name="x_759224_magic_c_0_mtg_cards" related_list="NULL" sys_domain="global" view="Default view">a3cd6f03c33666500efafbfdd4013120</list_id>
             <order_by/>
             <position>1</position>
             <related_list>x_759224_magic_c_0_decks.cards</related_list>
@@ -29,7 +29,7 @@
             <sys_updated_on>2025-07-22 14:43:25</sys_updated_on>
         </sys_ui_related_list_entry>
         <sys_ui_related_list action="INSERT_OR_UPDATE">
-            <calculated_name>Cards - Default view</calculated_name>
+            <calculated_name>x_759224_magic_c_0_mtg_cards - Default view</calculated_name>
             <filter/>
             <name>x_759224_magic_c_0_mtg_cards</name>
             <order_by/>

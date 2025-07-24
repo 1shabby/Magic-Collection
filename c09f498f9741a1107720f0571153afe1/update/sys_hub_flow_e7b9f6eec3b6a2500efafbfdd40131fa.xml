@@ -241,8 +241,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e7b9f6eec3b6a2500efafbfdd40131fa"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e7b9f6eec3b6a2500efafbfdd40131fa^sys_idNOT INff3b674fc3f266500efafbfdd401319c"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type>
-        <action_type_parent display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_parent>
+        <action_type display_value="MTG Scryfall - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type>
+        <action_type_parent display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>161219ea97f0b910dfffb3b6f053af37</compiled_snapshot>
@@ -255,13 +255,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:14</sys_created_on>
         <sys_id>ff3b674fc3f266500efafbfdd401319c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 15:46:34</sys_updated_on>
+        <sys_updated_on>2025-07-22 20:17:46</sys_updated_on>
         <ui_id>4af151e8-3f55-4484-95cc-c03af91607b6</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1V30/bMBD+X/zcRPnRkqRvCIQ0aQNpbLwgVJ3tM7XkOCFxgK7q/75zk5TBBmul7QXxFN3dZ993n+9TrtdMSzZnRxAncYFQZCriRRxJpRRP+ZGKZimoFNiEWSiRkC06Cu7BdD5ar9uOK1M9hAIaGVKxDbXcbAgidVsbWF39HSmW2sgGLZtf30xYDQ11ctiw+fpFaV+qBjgagl5uuT4j7lb1NnCNtrdD/HmEj8mqkb59PGH46NBKpL4KTIsTVoKV4Kpmxeau6SjRIMgLa1Y7xFJbR5cxj31s9Q9ql0dR5JEKaRSBfXUXLgal+rQ6BQfEpBOuawaoWFZaYNuLIFFBZ9zJr7kecFE7Xdn+iANuxtOV6Up73qvAdheMD0OZriUSWPtJPfdhEHW5rB6+jizPtN2KMhRNJcDsInAkHe+c57Nmnf72QuU+85vOaLCkjosS6poyi7qp7vW2C5Euw1tDQeh3hti1+taGIPyEIb0AhGeUP92mr6DRftwvdA0d9u2+W33X4Se/LyLNUSZxFkCSZcFUAQZ8xtNASplxUHkSi5htJqxdtScG2vZJKHqhxV3nx+xlGwRa9Br7I6LRtTsmUvc4aLGZDI6C5M01VU+Luf28ailf3cNPO9hhZtqD5Wim857mc9KH2Cn5sNN7sFORR8W04EEezchOCRZBkc2mQRrzPOOzOEmi4j/YCfGtRZ0mT5sp7OtmorczKGjfFrYrOTZ7GOuPRw4z2R7cR5OdnL8Y5BCDpR8GewcG4zjNZQIyQFmoYCpUEkCsVACFFMij9Ign//J/dfMT0EESpAMKAAA=</values>
+        <values>H4sIAAAAAAAA/+1V30/bMBD+X/zcRPnRkqRvCIQ0aQNpbLwgVJ3tM7XkOCFxgK7q/75zk5TBBmul7QXxFN3dZ993n+9TrtdMSzZnRxAncYFQZCriRRxJpRRP+ZGKZimoFNiEWSiRkC06Cu7BdD5ar9uOK1M9hAIaGVKxDbXcbAgidVsbWF39HSmW2sgGLZtf30xYDQ11ctiw+fpFaV+qBjgagl5uuT4j7lb1NnCNtrdD/HmEj8mqkb59MmH46NBKpL4KTIsTVoKV4Kpmxeau6SjRIMgLa1Y7xFJbR5cxj31s9Q9ql0dR5JEKaRSBfXUXLgal+rQ6BQfEpBOuawaoWFZaYNuLIFFBZ9zJr7kecFE7Xdn+iANuxtOV6Up73qvAdheMD0OZriUSWPtJPfdhEHW5rB6+jizPtN2KMhRNJcDsInAkHe+c57Nmnf72QuU+85vOaLCkjosS6poyi7qp7vW2C5Euw1tDQeh3hti1+taGIPyEIb0AhGeUP92mr6DRftwvdA0d9u2+W33X4Se/LyLNUSZxFkCSZcFUAQZ8xtNASplxUHkSi5htJqxdtScG2vZJKHqhxV3nx+xlGwRa9Br7I6LRtTsmUvc4aLGZDI6C5M01VU+Luf28ailf3cNPO9hhZtqD5Wim857mc9KH2Cn+sNN7sFORR8W04EEezchOCRZBkc2mQRrzPOOzOEmi4j/YCfGtRZ0mT5sp7OtmorczKGjfFrYrOTZ7GOuPRw4z2R7cR5OdnL8Y5BCDpR8GewcG4zjNZQIyQFmoYCpUEkCsVACFFMij9Ign//J/dfMT9qAKlgMKAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ff3b674fc3f266500efafbfdd401319c"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e7b9f6eec3b6a2500efafbfdd40131fa"/>
@@ -578,8 +578,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=c44b674fc3f266500efafbfdd40131eb"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=c44b674fc3f266500efafbfdd40131eb^sys_idNOT INd84ba74fc3f266500efafbfdd4013108"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Scryfall API - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type>
-        <action_type_parent display_value="Scryfall API - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_parent>
+        <action_type display_value="MTG Scryfall - Card Lookup">161219ea97f0b910dfffb3b6f053af37</action_type>
+        <action_type_parent display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>161219ea97f0b910dfffb3b6f053af37</compiled_snapshot>
@@ -690,7 +690,7 @@
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"604ba74fc3f266500efafbfdd4013127","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="Get Scryfall Data">e7b9f6eec3b6a2500efafbfdd40131fa</plan_id>
-        <snapshot>244cbbc3c37666500efafbfdd401316a</snapshot>
+        <snapshot>0d5ab4dbc3ba66500efafbfdd40131be</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:17</sys_created_on>
         <sys_domain>global</sys_domain>
