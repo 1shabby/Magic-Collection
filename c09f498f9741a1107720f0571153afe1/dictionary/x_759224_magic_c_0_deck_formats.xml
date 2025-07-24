@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="16a52f2bc33ee6500efafbfdd4013139" label="Deck Formats" max_length="40" name="x_759224_magic_c_0_deck_formats" type="collection">
+        <element label="Description" max_length="4000" name="description" type="html"/>
+        <element label="Commander Required" max_length="40" name="commander_required" type="boolean"/>
+        <element label="Uses Sideboard" max_length="40" name="uses_sideboard" type="boolean"/>
+        <element label="Deck Size Max" max_length="3" name="deck_size_max" type="integer"/>
+        <element label="Code" max_length="40" name="code" type="string"/>
+        <element label="Deck Size Min" max_length="3" name="deck_size_min" type="integer"/>
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

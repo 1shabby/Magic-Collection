@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5683e3a7c33ee6500efafbfdd40131c1" label="Deck Imports" max_length="40" name="x_759224_magic_c_0_deck_imports" type="collection">
+        <element choice="1" label="Source" max_length="40" name="source" type="choice">
+            <choice/>
+        </element>
+        <element label="Processed At" max_length="40" name="processed_at" type="glide_date_time"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice/>
+        </element>
+        <element label="Raw Input" max_length="4000" name="raw_input" type="string"/>
+        <element choice="1" label="Format" max_length="40" name="format" reference="x_759224_magic_c_0_deck_formats" type="reference">
+            <choice/>
+        </element>
+        <element label="Card Count" max_length="3" name="card_count" read_only="true" type="integer"/>
+        <element label="Deck" max_length="32" name="deck" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
+        <index name="index">
+            <element name="deck"/>
+        </index>
+    </element>
+</database>
