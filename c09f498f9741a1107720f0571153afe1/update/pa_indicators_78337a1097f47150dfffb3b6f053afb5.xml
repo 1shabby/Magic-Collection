@@ -7,8 +7,7 @@
         <calendar_freq/>
         <collect_breakdown_matrix>false</collect_breakdown_matrix>
         <collect_records>true</collect_records>
-        <conditions table="x_759224_magic_c_0_complete_collection">ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="owner" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        <conditions table="x_759224_magic_c_0_complete_collection">ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </conditions>
         <contributor/>
         <cube display_value="Greg's Collection">2d9aaa5497b47150dfffb3b6f053af4f</cube>
@@ -60,7 +59,7 @@ Owner is Greg </description>
         <roles/>
         <score_periods>-1</score_periods>
         <scores_format>kMGTPE</scores_format>
-        <scores_modified_at>2025-07-22 04:01:13</scores_modified_at>
+        <scores_modified_at>2025-07-24 04:01:15</scores_modified_at>
         <script/>
         <scripted>false</scripted>
         <show_delta>true</show_delta>
