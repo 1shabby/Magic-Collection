@@ -6,13 +6,7 @@
         <element label="Description" max_length="4000" name="description" type="html"/>
         <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
         <element choice="1" label="Format" max_length="40" name="format" reference="x_759224_magic_c_0_deck_formats" type="reference">
-            <choice>
-                <element inactive_on_update="false" label="Modern" sequence="2" value="modern"/>
-                <element inactive_on_update="false" label="Pioneer" sequence="3" value="pioneer"/>
-                <element inactive_on_update="false" label="Commander" sequence="0" value="commander"/>
-                <element inactive_on_update="false" label="Standard" sequence="1" value="standard"/>
-                <element inactive_on_update="false" label="Pauper" sequence="4" value="pauper"/>
-            </choice>
+            <choice/>
         </element>
     </element>
 </database>
