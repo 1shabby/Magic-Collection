@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Fires when a deck list import is attached to a deck import record.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>mtg_deck_import_attachment_added</internal_name>
+        <label_cache>[{"name":"Created_1.current.table_sys_id","label":"Trigger - Record Created➛Attachment Record➛Table sys ID","reference":"","reference_display":"Table sys ID","type":"char","base_type":"char","parent_table_name":"sys_attachment","column_name":"table_sys_id","usedInstances":{"64a94ee9-0eda-4e83-908c-23f950cd5f37":["conditions"]}},{"name":"64a94ee9-0eda-4e83-908c-23f950cd5f37.Record","label":"1 - Look Up Record➛Deck Imports Record","reference":"x_759224_magic_c_0_deck_imports","reference_display":"Deck Imports","type":"reference","base_type":"reference","usedInstances":{"e527a1de-49f5-4d01-a204-5d89239fda18":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>MTG Deck Import Attachment Added</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:25:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d3f689e0c3432e500efafbfdd4013128</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MTG Deck Import Attachment Added</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_hub_flow_d3f689e0c3432e500efafbfdd4013128</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=d3f689e0c3432e500efafbfdd4013128^sys_idNOT IN97f689e0c3432e500efafbfdd401312a"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>d3f689e0c3432e500efafbfdd4013128</id>
+        <name>MTG Deck Import Attachment Added</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:25:29</sys_created_on>
+        <sys_id>97f689e0c3432e500efafbfdd401312a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:25:29</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=97f689e0c3432e500efafbfdd401312a"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=d3f689e0c3432e500efafbfdd4013128^sys_idNOT IN0e2c05e8c3432e500efafbfdd4013122,862c4d68c3432e500efafbfdd40131f7"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="MTG Deck Import Attachment Added">d3f689e0c3432e500efafbfdd4013128</model>
+        <model_id>d3f689e0c3432e500efafbfdd4013128</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_d3f689e0c3432e500efafbfdd4013128</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>0e2c05e8c3432e500efafbfdd4013122</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0e2c05e8c3432e500efafbfdd4013122"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="MTG Deck Import Attachment Added">d3f689e0c3432e500efafbfdd4013128</model>
+        <model_id>d3f689e0c3432e500efafbfdd4013128</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_d3f689e0c3432e500efafbfdd4013128</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:03</sys_created_on>
+        <sys_id>862c4d68c3432e500efafbfdd40131f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=862c4d68c3432e500efafbfdd40131f7"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=d3f689e0c3432e500efafbfdd4013128^sys_idNOT IN162c05e8c3432e500efafbfdd401314a"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="MTG Deck Import Attachment Added">d3f689e0c3432e500efafbfdd4013128</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>162c05e8c3432e500efafbfdd401314a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYW2/iOBT+K1GedqSulAuU0rcO7WgrdVuJMrsP3SpyHBusCTabOGmZUf/7HudGyIVyCV36goRtfL7z+TvfsXn6pfvIJb5+qU+Q6xP9TGdckoAjf7JcEBiWatjhaK7m5oh7SIpgqV/KICJnOg3EfELmCx9JWEyRH8KgCDwS6JfmmR4jPyKPy/DWg53g98k22Z56Ng3fw2XoICkRns0JlzDhsRC2XP6VzV+V5/CM+V5AuH759HymL1AAe0oV71dlSkICzlp22n2aBlNwMMVoaBED26ZtWYZhXfRM99x2TcuzETEMWFelpgJfNjC0yp28SsI94hW01MgLCPIeuL8sVsyA+5SoOXoN2U/Y/cJQ6yiBrDBJ54qvTkZTOoxngmHysJBM8HQkxZlOCj+a8/sUvyKYUBT5MicYRqIQ9iMLBVmByBDRx5l4GecBvzGeZJdN+gIjv/gGBxgwN5IkVEdBmQ+H4qTchCIKEvTjm9HD+Nr5+2oy+uNm7IxvHifj29Hk5lp/S/Jy/o3UjinCDIuTpvNWqOIbI746QAhR0B7igC3kFZYsznX4drbS9khwjyXE1PSN86lwXd85AZsEbhitEseliLnMV0L5JzIM23t1Bv2hZfWcOZoy7GDHgBPAPxw2X4hAhntrfVROKdH6+TlCHkEtWndpSetlqhpykQ2slenYpPpsZBvZ9wzjfxJ+5mv76n4uPOJfr7bTYXI6hUpgfBElZ/qCuAwdKRzkeU6JR7UUML1XCGlu9Wp4vwiCiMMWTnFC9VJIiCwYvWMhJPAEtZyzlWwJ8/Qu23IccU3AUcKHhqMAyJJa7o70FmSdcUwfiU+wLMmCfg/L3/5kYcj4tIS6CJqwUotZhAN5aXlKaezwwODPXfpAnfS4Qmal1+1f9fnpJRVvmpS6hFrGQNW7adguNY2B0UfUsw0DW6WKr0NsxS4rQjlK5e9W92EiUX8LQVaJz8Ab5RrZSlzxujJzEpRwMnsZdQPN7AiapaBVbNLeyScLsabD1+ua3ZRax/cK5MUIfuFta5dqwRa+SH3xAha9hye6CP+YBiLiXtWk1J4a49pqhfZbxt+XDv2RioBsBrC+4pSccUV7LlzEl0fzRJua7pD0iAFWaIMLuv3h0MXIonRwPiCWWfHEFbhGxJ/CC9/RYNwk4jZfbJRT3KTCHRzxAIA1d9wZ4OG+mMm10RXTuc/hfy8zwh2AGji+criaDU595pF8rlsPqIWOV1XflQ/cZUklz8aLIe6bgwEewDsIXID2iIvMntVHw8G5fdGvuEAN3ibosoGtD3kdqX9QFJAWh/ieTp3WXwTHlHJIpFSNa/d+zuHGm/wGpUFKPVUdi5YYjQi0e8F/v12t0x4JtMrkidxVY98GhTpY7bgwXCFntZsFhP4K42uh1Y20hZWTe5JVRBKv53qkJxnpXfSH1G42HjpsMp4VxHbwJ38R2bJu4tYKbLqRbFsGcWM1tV4h9hB2RTzlu8WGy09XpJidk2IdjxT74AtXXqGt79B9wH6ixpbcNg7pbiomcQQtW/q10GBCgyAao1r2jyXxNHepyRkBSn24WUNATUU/1MvLvaUOpVDwxwJJ7+q1HgfDWnatOr32VZHCR7ygiTdA/b7dcnceVl/QTTDfyeLkm9nOtRI3ld7GjrbbvtU9G3taScjrOtmyW3WadXPLOizrxqb1XtaHt6NN7/8GFCfaaJ7/A6XIhn4HIAAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=d3f689e0c3432e500efafbfdd4013128^sys_idNOT IN5e2c05e8c3432e500efafbfdd401314d,d22c05e8c3432e500efafbfdd401314c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="MTG Deck Import Attachment Added">d3f689e0c3432e500efafbfdd4013128</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>5e2c05e8c3432e500efafbfdd401314d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <ui_id>e527a1de-49f5-4d01-a204-5d89239fda18</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWsbMRD9K2bP9qL9sOP1LWAMOTQBt+SShkUrzdqi2o9KWieu8X/vaFfrOE6bmmAoheo2M5o3740eeth5gnszLwZOgiSYsCiIopCQcBoH2STKgpBHFCDwhl5JC8CbClilOMYbKhub2O0mMU1igGREgNNRDNNolJApG4VRnowJ4+M8uvKXbd9+j51c6FrS7b0DwAxbC8kVlN7s4XHo1VThLAPKm+1OSmZbQyppBhIb5xVrCijN4GaOGOfq6LuXvZBTYXYGxtyhp8ImsWT5BGTowbOBkgOOy6nUMPQKWnJqKrX1ZkY1mFBA+V0pt4cba1GaTmlBn7X4gfgxsfdyQGnMbeEQpm5D/XIqweCuNqIqu4yhmew3V8mmKG87CXa3kNNGmqPdNhrxoLaULYmOYf55XT0t+3kLUbbqHFtZMSoPETVGiawxoO1zgIR2KQWta1Gu0lpVG9E2I5XCX0kM/FxWTzhTi1XpU2Z5+7gg6i8wP2/T91QJK+ITwmDzvhWffm/s3E6GI5y2mlvBaftQeFUzJWpzjcAbcDT3Q2fkbPyeAVjy8t5HmC9mfk6vxkkYxqhvJVjKUoI62LdUFHWljH5r3jlWBzeH6seM/MVSGdx2VM6V8ar5N7KclV/lnJPHF3Py9C852TH6x6z8JwOT8N0f7OilW8/qI/NqQ02jvzaERPytU0+qH3QqFIhpYNChDs/m3AMsBEiufyGit6obkG7cgMPHezG/BhPSnv//7wX/38ef7WJ4D0oIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5e2c05e8c3432e500efafbfdd401314d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="MTG Deck Import Attachment Added">d3f689e0c3432e500efafbfdd4013128</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>d22c05e8c3432e500efafbfdd401314c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <ui_id>64a94ee9-0eda-4e83-908c-23f950cd5f37</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VYbW/iOBD+K1E+Uy4hQKDfTq2QKt1tpd29/dKtLMd2wFpjZ22nLUX89xvnDQqU97vtfrQ9L8/MPDNMeJj7nPrXPh0Gw3Q47A3iIIiiIOj3I4LDJIn6JAkS3PVbvsRTBpIWJ4LB8QmL3J1fUNwbdjpdNMVjThBBAaKM/EB8miltDUhSbjKBZ98qhVt49e6aVzLhgmom/euHx5afYQ1uLNP+9Xztyc4yhgROmAAjXx0K75OD1Do4gjfKmxE5B/URydK00tRhCVo+e7FMUgauUiwMa/lTLCm2Ss+aG80wvZdieTHh0oJF3wm/GP4K5geBk0sZhEVY+dYcUZWp8ppMFCfsPrNcyfKmBFo+KpFP5acyAJdjluJc2DrHcJMbsMcyh9mBqBClXybq+XPtcMRlEV71KBTBojlhazVPcsuMqwUTbAqGoMpZxuUYZVo98UIZsEzbYwGHdirUMzg1fCzbmDjgbUgRbo/g/ra4/oY1d1H8DWZAGQBxAdVGZdKNynWRlSdERG6KB42lKW35iyJX6GfuUJZRV/GhMkUgYIjmmf0TFJ5YFcqiVZO8t5MiwyUliJKUO59mhelmZhCn33NQpvP5DVTbMorCNsk1ZNO2qxgKqcVik/hH65/WGjer2A+Ne6vytmRUTfLmrmqS8GJN0g2CX9QmVucfr0v28b4MeA/5Q7qTBHRZbwOTGZWZW2H/Jp9PZuiIM0HfDO8DwNXK945sXjJ7D29F0NT5WJvind9+ip9Jz5SiMi9cCi6LHzswCG4+MG97O6mRhGs8KMq/MrPdHTZkk73Ys8p7PX3KFnWt+XsAyFrxCyDyvpYotwCv52ttvqJudDHqRp3jqAvEeZg36JusbUlwvSu50tXyr04er8sDiVYUwsVjQ/2b03yGx/rsOJ9rvRkd1ZyrzCpfbt8h2IU3sf+5iVvO4QRUK3+obFb0zOmY2aX3Wooq+4zFj23vFbuaHirCO3urC3cu/snKVsdTNIU68QzWLM0IUMEgrBlKVS4pqpbMJW1c3VKuja2EN2fIZ2ZzLT0FLefZCfMKaa+RvsRkOSC6WvEu9erwKgzGg/C8IjyvCe+4ZLwzj7oX3PXOmUcjzEWRevhYyFZqx7RW+p2ZtKdqO8p/4MA6EFR4UVDnT7RtfN862fZg/S2+PM+dOoThpNvB/TgKwyAIAxoHgzgOB/0k7eO4my4bDSEjCYxFsJwCMcA8qolQVzXYHC3lbDz57xGYuX+MKhOH4q2Vb5V0H6md2HoOMNTZqwHvD6maF4lSgmG5pGfvlw2Mj/IPSs7d1vfXtgr9V7/cpcs35cj5P5L/zNmdI8WABZ1BSMnVIA7jq25K+1dDintXeJj04ogy0k1P/31+/BfAYP6iXBQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d22c05e8c3432e500efafbfdd401314c"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d3f689e0c3432e500efafbfdd4013128</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>5e2c05e8c3432e500efafbfdd4013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d3f689e0c3432e500efafbfdd4013128</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:48:04</sys_created_on>
+        <sys_id>ce2c05e8c3432e500efafbfdd4013121</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 18:48:04</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=d3f689e0c3432e500efafbfdd4013128"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=d3f689e0c3432e500efafbfdd4013128"/>
+</record_update>
