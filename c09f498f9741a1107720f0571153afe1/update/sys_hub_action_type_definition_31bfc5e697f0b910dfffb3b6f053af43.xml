@@ -16,7 +16,7 @@
         <flow_priority/>
         <ih_action>true</ih_action>
         <internal_name>scryfall_api</internal_name>
-        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c38ed217-a277-4fae-b5b3-ddd7baf821c1"}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c980949b-8057-42e9-9754-31b87b512209"}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"be48d2ad-ed9f-4cf2-a1ff-a9dceb036b21"}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>161219ea97f0b910dfffb3b6f053af37</master_snapshot>
         <master_snapshot_digest/>
         <name>MTG Scryfall - Card Lookup</name>
@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>31bfc5e697f0b910dfffb3b6f053af43</sys_id>
-        <sys_mod_count>116</sys_mod_count>
+        <sys_mod_count>133</sys_mod_count>
         <sys_name>MTG Scryfall - Card Lookup</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_31bfc5e697f0b910dfffb3b6f053af43</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:06</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:34</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -458,7 +458,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2db8febac3fae2500efafbfdd401319d</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -466,7 +466,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:02</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:30</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -593,10 +593,10 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:38</sys_created_on>
         <sys_id>19299b7297743d10dfffb3b6f053af04</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 17:58:11</sys_updated_on>
+        <sys_updated_on>2025-07-25 19:02:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=19299b7297743d10dfffb3b6f053af04"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -607,9 +607,9 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:38</sys_created_on>
         <sys_id>69299b7297743d10dfffb3b6f053af13</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 17:58:11</sys_updated_on>
+        <sys_updated_on>2025-07-25 19:02:45</sys_updated_on>
         <value>
 (function execute(inputs, outputs) {
     var utils = new x_759224_magic_c_0.symbology_utils();
@@ -627,9 +627,12 @@
     }
 
     // Manage faces
-    if (nBody.card_faces &amp;&amp; Array.isArray(nBody.card_faces))    {
-        // If double sided, convert image uris to html then replace card_faces
-        nBody.card_faces = utils.convertImageUrisToHtml(nBody,true);
+    if (nBody.card_faces &amp;&amp; Array.isArray(nBody.card_faces)){
+        if(!nBody.image_uris){
+            nBody.card_faces = utils.convertImageUrisToHtml(nBody,true);
+        }else{
+            nBody.image_uris = utils.convertImageUrisToHtml(nBody,false);
+        }
 
         for (var face = 0; face &lt; nBody.card_faces.length; face++) {
             var thisFace = nBody.card_faces[face];
@@ -1686,7 +1689,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>CN</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
@@ -1711,14 +1714,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:21:39</sys_created_on>
         <sys_id>56d0d96a97f0b910dfffb3b6f053af6a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:21:39</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 13:39:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1770,7 +1773,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>Set</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
@@ -1795,14 +1798,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:21:39</sys_created_on>
         <sys_id>5ad0d96a97f0b910dfffb3b6f053af5e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:00</sys_updated_on>
+        <sys_updated_on>2025-07-25 13:39:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1854,7 +1857,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>Name</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</model>
         <model_id>31bfc5e697f0b910dfffb3b6f053af43</model_id>
@@ -1879,14 +1882,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:21:39</sys_created_on>
         <sys_id>d6d0d96a97f0b910dfffb3b6f053af66</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:00</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:29</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2000,7 +2003,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f1b8febac3fae2500efafbfdd40131a8</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2008,7 +2011,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:02</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:30</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -2250,14 +2253,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-28 01:21:14</sys_created_on>
         <sys_id>e2d63aaf97703150dfffb3b6f053afda</sys_id>
-        <sys_mod_count>203</sys_mod_count>
+        <sys_mod_count>213</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:02</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:30</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2451,17 +2454,17 @@ outputs.url = uri;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="MTG Scryfall - Card Lookup">31bfc5e697f0b910dfffb3b6f053af43</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"721219ea97f0b910dfffb3b6f053afd3","name":"plan","plan_signature":null}}</plan>
-        <snapshot>ed13b093c3ba66500efafbfdd40131d4</snapshot>
+        <snapshot>b750c5e8c3032e500efafbfdd40131ac</snapshot>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>721219ea97f0b910dfffb3b6f053afd3</sys_id>
-        <sys_mod_count>93</sys_mod_count>
+        <sys_mod_count>97</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:09</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:36</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2478,7 +2481,7 @@ outputs.url = uri;
         <description/>
         <flow_priority/>
         <internal_name>scryfall_api</internal_name>
-        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.set}}","label":"action➛Set","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c38ed217-a277-4fae-b5b3-ddd7baf821c1"}},{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c980949b-8057-42e9-9754-31b87b512209"}},{"name":"{{action.cn}}","label":"action➛CN","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"be48d2ad-ed9f-4cf2-a1ff-a9dceb036b21"}},{"name":"{{step[4ba03b8b-f932-4dde-936f-0121608ca6d0].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[35fd0583-76d6-4f09-b17f-926a0482e06a].url}}","label":"step➛Script step➛URL","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"b8e84306-9fd2-4917-a3b6-67a8fe27e039"}},{"name":"{{step[40f9f720-5c39-462d-89d6-275e8a278258].new_response}}","label":"step➛Script step➛new Response","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"16cdbe91-046b-467c-b626-b288c477d9db"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].Parsed_Response}}","label":"step➛JSON Parser step➛Parsed Response","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Object","co_type_name":"FD0bafd33eef743d101efb6e5ed861b808","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","uiUniqueId":"0f681e87-7c80-4b29-bb0c-462911a63807"}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root.uri}}","label":"step➛JSON Parser step➛root➛uri","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[33271362-8a44-4c1c-844f-59d99bdc7d83].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
         <name>MTG Scryfall - Card Lookup</name>
         <natlang/>
@@ -2491,7 +2494,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>161219ea97f0b910dfffb3b6f053af37</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2499,7 +2502,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:05</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:33</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -2636,10 +2639,10 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:51</sys_created_on>
         <sys_id>5c395f7297743d10dfffb3b6f053af55</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 17:58:19</sys_updated_on>
+        <sys_updated_on>2025-07-25 19:02:49</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5c395f7297743d10dfffb3b6f053af55"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2650,9 +2653,9 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-25 19:55:51</sys_created_on>
         <sys_id>20395f7297743d10dfffb3b6f053af64</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 17:58:19</sys_updated_on>
+        <sys_updated_on>2025-07-25 19:02:49</sys_updated_on>
         <value>
 (function execute(inputs, outputs) {
     var utils = new x_759224_magic_c_0.symbology_utils();
@@ -2670,9 +2673,12 @@ outputs.url = uri;
     }
 
     // Manage faces
-    if (nBody.card_faces &amp;&amp; Array.isArray(nBody.card_faces))    {
-        // If double sided, convert image uris to html then replace card_faces
-        nBody.card_faces = utils.convertImageUrisToHtml(nBody,true);
+    if (nBody.card_faces &amp;&amp; Array.isArray(nBody.card_faces)){
+        if(!nBody.image_uris){
+            nBody.card_faces = utils.convertImageUrisToHtml(nBody,true);
+        }else{
+            nBody.image_uris = utils.convertImageUrisToHtml(nBody,false);
+        }
 
         for (var face = 0; face &lt; nBody.card_faces.length; face++) {
             var thisFace = nBody.card_faces[face];
@@ -3975,7 +3981,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e740e77e97743d10dfffb3b6f053afca</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -3983,7 +3989,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:06</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:34</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -4132,7 +4138,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>Set</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
@@ -4157,14 +4163,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>6a1219ea97f0b910dfffb3b6f053af3a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:05</sys_updated_on>
+        <sys_updated_on>2025-07-25 14:11:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4216,7 +4222,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>Name</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
@@ -4241,14 +4247,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>a21219ea97f0b910dfffb3b6f053af3f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:05</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:33</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4300,7 +4306,7 @@ outputs.url = uri;
         <hint/>
         <internal_type display_value="String">string</internal_type>
         <label>CN</label>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="MTG Scryfall - Card Lookup">161219ea97f0b910dfffb3b6f053af37</model>
         <model_id>161219ea97f0b910dfffb3b6f053af37</model_id>
@@ -4325,14 +4331,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>ee1219ea97f0b910dfffb3b6f053af42</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-08-24 15:27:08</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 14:11:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -4359,7 +4365,7 @@ outputs.url = uri;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>08a1e6fac37ae2500efafbfdd40131c5</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -4367,7 +4373,7 @@ outputs.url = uri;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:06</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:34</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -4696,14 +4702,14 @@ outputs.url = uri;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-24 15:27:08</sys_created_on>
         <sys_id>e21219ea97f0b910dfffb3b6f053af61</sys_id>
-        <sys_mod_count>191</sys_mod_count>
+        <sys_mod_count>199</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 19:46:06</sys_updated_on>
+        <sys_updated_on>2025-07-26 17:56:34</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
