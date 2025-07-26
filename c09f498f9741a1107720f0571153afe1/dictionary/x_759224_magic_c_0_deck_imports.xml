@@ -5,8 +5,13 @@
         </element>
         <element label="Processed At" max_length="40" name="processed_at" type="glide_date_time"/>
         <element label="Name" max_length="40" name="name" type="string"/>
-        <element choice="1" label="Status" max_length="40" name="status" type="choice">
-            <choice/>
+        <element choice="1" default="queued" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Queued" sequence="0" value="queued"/>
+                <element inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
+                <element inactive_on_update="false" label="Error" sequence="4" value="error"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+            </choice>
         </element>
         <element label="Raw Input" max_length="4000" name="raw_input" type="string"/>
         <element choice="1" label="Format" max_length="40" name="format" reference="x_759224_magic_c_0_deck_formats" type="reference">

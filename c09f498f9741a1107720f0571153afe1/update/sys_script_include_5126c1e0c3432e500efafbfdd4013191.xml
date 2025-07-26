@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_759224_magic_c_0.deck_utils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Contains various methods related to the decks functionality in the Magic Collection application</description>
+        <mobile_callable>false</mobile_callable>
+        <name>deck_utils</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var deck_utils = Class.create();
+deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    /*
+     * Description: Takes in a line from the deck input and checks if it's 	 	formatted as a txt file or csv
+     * Parameters: [string] line 
+     * Returns: [string] type of file; txt, csv, or unknown	
+     */
+
+    parseDeck: function(deckString) {
+        var lines = deckString.split('\n');
+        var results = [];
+
+        if (lines.length === 0) return results;
+
+        // Format Detection
+        var format = detectFormat(lines[0]);
+
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line) continue;
+
+            var parsed = (format === "txt") ? this._parseTxtLine(line) :
+                (format === "csv") ? this._parseCsvLine(line) :
+                null;
+
+            if (parsed) results.push(parsed);
+        }
+
+        return results;
+    },
+
+    /*
+     * Description: Takes in a line from the deck input and checks if it's 	 	formatted as a txt file or csv
+     * Parameters: [string] line 
+     * Returns: [string] type of file; txt, csv, or unknown	
+     */
+
+    _detectFormat: function(line) {
+        if (/^\d+x\s+.+\([^)]+\)/.test(line)) return "txt";
+        if (/^\d+,.+,.+,.+/.test(line)) return "csv";
+        return "unknown";
+    },
+
+    /*
+     * Description: Parses the deck import if it's a txt file
+     * Parameters: [string] txt import
+     * Returns: [array] returns an array of objects for each line of the input
+     */
+
+    _parseTxtLine: function(line) {
+        var match = line.match(/^(\d+)x\s+(.*)\s+\(([^)]+)\)\s+([^\s\[]+)(.*)$/);
+        if (!match) return null;
+
+        var quantity = parseInt(match[1], 10);
+        var name = match[2].trim();
+        var set = match[3].trim();
+        var collector_number = match[4].trim();
+        var remainder = match[5];
+
+        return {
+            quantity: quantity,
+            name: name,
+            set: set,
+            collector_number: collector_number,
+            isFoil: /\*F\*/.test(remainder),
+            isCommander: /\[.*Commander\{.*\}.*\]/i.test(remainder)
+        };
+    },
+
+    /*
+     * Description: Parses the deck import if it's a csv file
+     * Parameters: [string] csv import
+     * Returns: [array] returns an array of objects for each line of the input
+     */
+
+    _parseCsvLine: function(line) {
+        var parts = line.split(',');
+        if (parts.length < 2) return null;
+
+        return {
+            quantity: parseInt(parts[0], 10),
+            name: parts[1].trim(),
+            set: parts[2]?.trim() || '',
+            collector_number: parts[3]?.trim() || '',
+            isFoil: false, // CSV doesn't support
+            isCommander: false // CSV doesn't support
+        };
+    },
+
+    type: 'deck_utils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 18:22:46</sys_created_on>
+        <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>deck_utils</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 19:50:40</sys_updated_on>
+    </sys_script_include>
+</record_update>
