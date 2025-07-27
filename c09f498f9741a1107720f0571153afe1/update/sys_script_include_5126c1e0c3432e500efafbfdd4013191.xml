@@ -24,7 +24,6 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         if (lines.length === 0) return results;
 
-        // Format Detection
         var format = this._detectFormat(lines[0]);
 
         for (var i = 0; i < lines.length; i++) {
@@ -33,6 +32,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
             var parsed = (format === "txt") ? this._parseTxtLine(line) :
                 (format === "csv") ? this._parseCsvLine(line) :
+                (format === "moxfield") ? this._parseMoxfieldLine(line) :
                 null;
 
             if (parsed) results.push(parsed);
@@ -40,6 +40,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         return results;
     },
+
 
     /*
      * Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
@@ -132,10 +133,12 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     _detectFormat: function(line) {
+        if (/^\d+\s+.+\s+\([^)]+\)\s+\S+/.test(line)) return "moxfield";
         if (/^\d+x\s+.+\([^)]+\)/.test(line)) return "txt";
         if (/^\d+,.+,.+,.+/.test(line)) return "csv";
         return "unknown";
     },
+
 
     /*
      * Description: Parses the deck import if it's a txt file
@@ -200,6 +203,42 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             isCommander: false // CSV doesn't support
         };
     },
+	
+	_parseMoxfieldLine: function(line) {
+    var match = line.match(/^(\d+)\s+(.*?)\s+\(([^)]+)\)\s+(\S+)(.*)$/);
+    if (!match) return null;
+
+    var quantity = parseInt(match[1], 10);
+    var name = match[2].trim();
+    var set = match[3].trim();
+    var collector_number = match[4].trim();
+    var remainder = match[5];
+
+    var isFoil = /\*F\*/i.test(remainder);
+    var isEtched = /\*E\*/i.test(remainder); // Optional: for foiling field logic
+    var isCommander = /\[.*Commander\{.*\}.*\]/i.test(remainder);
+
+    var tagMatch = remainder.match(/\[(.*?)\]/);
+    var rawTags = tagMatch ? tagMatch[1] : '';
+    var cleanedTags = rawTags.replace(/\{.*?\}/g, '').trim();
+    var tagsLower = cleanedTags.toLowerCase();
+    var isMaybeboard = tagsLower.includes('maybeboard');
+    var isSideboard = tagsLower.includes('sideboard');
+
+    return {
+        quantity: quantity,
+        name: name,
+        set: set,
+        collector_number: collector_number,
+        isFoil: isFoil,
+        isEtched: isEtched,
+        isCommander: isCommander,
+        isMaybeboard: isMaybeboard,
+        isSideboard: isSideboard,
+        tags: cleanedTags
+    };
+},
+
 
     type: 'deck_utils'
 });]]></script>
@@ -207,13 +246,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 16:35:36</sys_updated_on>
+        <sys_updated_on>2025-07-27 22:13:12</sys_updated_on>
     </sys_script_include>
 </record_update>
