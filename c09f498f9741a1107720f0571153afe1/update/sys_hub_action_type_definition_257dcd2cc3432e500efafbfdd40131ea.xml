@@ -16,11 +16,12 @@
         <flow_priority/>
         <ih_action>false</ih_action>
         <internal_name>parse_deck_import_attachment</internal_name>
-        <label_cache>[{"name":"{{action.attachment}}","label":"action➛Attachment","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.attachment}}","label":"action➛Deck Input","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c701ce04-199f-42e5-b30e-489b4346feec"}},{"name":"{{action.deck}}","label":"action➛Deck","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.import_record}}","label":"action➛Import Record","type":"action","ref":"","reference_display":"Deck Imports","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}","label":"step➛Script step➛Deck","type":"step","ref":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
         <master_snapshot>5dfe81ecc3432e500efafbfdd4013178</master_snapshot>
         <master_snapshot_digest/>
         <name>Parse Deck Import Attachment</name>
         <natlang/>
+        <outputs/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
         <state>published</state>
@@ -30,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>257dcd2cc3432e500efafbfdd40131ea</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>Parse Deck Import Attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -38,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_257dcd2cc3432e500efafbfdd40131ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -52,10 +53,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>77ee41ecc3432e500efafbfdd40131c5</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <sys_updated_on>2025-07-27 14:15:32</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
         <variable display_value="Action Status">b3ee41ecc3432e500efafbfdd40131b6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -72,7 +73,43 @@
         <value>0</value>
         <variable display_value="Don't Treat as Error">33ee41ecc3432e500efafbfdd40131bb</variable>
     </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea^id=257dcd2cc3432e500efafbfdd40131ea"/>
+    <sys_element_mapping action="delete_multiple" query="id=257dcd2cc3432e500efafbfdd40131ea"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck</field>
+        <id>257dcd2cc3432e500efafbfdd40131ea</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:34</sys_created_on>
+        <sys_id>c34b2db4c38322100efafbfdd40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
+        <table>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</table>
+        <value>{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>257dcd2cc3432e500efafbfdd40131ea</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 19:00:11</sys_created_on>
+        <sys_id>33ee41ecc3432e500efafbfdd40131c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>257dcd2cc3432e500efafbfdd40131ea</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 19:00:11</sys_created_on>
+        <sys_id>7fee41ecc3432e500efafbfdd40131c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <table>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</table>
+        <value/>
+    </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT INb7ee41ecc3432e500efafbfdd4013196"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action>
@@ -91,10 +128,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>b7ee41ecc3432e500efafbfdd4013196</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b7ee41ecc3432e500efafbfdd4013196"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -105,14 +142,19 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>bfee41ecc3432e500efafbfdd40131b2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
-var utils = new x_759224_magic_c_0.deck_utils();&#13;
+    var utils = new x_759224_magic_c_0.deck_utils();&#13;
 &#13;
-var deckArr = utils.parseDeckAttachment(inputs.attachment);&#13;
-gs.info(deckArr);&#13;
+    var deckArr = utils.parseDeck(inputs.deck_input);&#13;
+    gs.info(JSON.stringify(deckArr));&#13;
+    var deckRecord = utils.createDeckFromImport(inputs.import_record);&#13;
+    utils.processCards(deckArr, deckRecord);&#13;
+    &#13;
+    outputs.deck = deckRecord;&#13;
+&#13;
 })(inputs, outputs);&#13;
 </value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -157,6 +199,42 @@ gs.info(deckArr);&#13;
         <value>{{action.attachment}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck</field>
+        <id>b7ee41ecc3432e500efafbfdd4013196</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:31</sys_created_on>
+        <sys_id>f75759f8c30322100efafbfdd4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_b7ee41ecc3432e500efafbfdd4013196</table>
+        <value>{{action.deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck_input</field>
+        <id>b7ee41ecc3432e500efafbfdd4013196</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>c62a91fcc30322100efafbfdd40131f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:42</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_b7ee41ecc3432e500efafbfdd4013196</table>
+        <value>{{action.deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_record</field>
+        <id>b7ee41ecc3432e500efafbfdd4013196</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>062a91fcc30322100efafbfdd40131f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:42</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_b7ee41ecc3432e500efafbfdd4013196</table>
+        <value>{{action.import_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>script</field>
         <id>b7ee41ecc3432e500efafbfdd4013196</id>
         <sys_created_by>admin</sys_created_by>
@@ -168,9 +246,93 @@ gs.info(deckArr);&#13;
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_b7ee41ecc3432e500efafbfdd4013196^id=b7ee41ecc3432e500efafbfdd4013196"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=b7ee41ecc3432e500efafbfdd4013196"/>
     <sys_translated_text action="delete_multiple" query="documentkey=b7ee41ecc3432e500efafbfdd4013196"/>
-    <sys_hub_step_ext_input action="delete_multiple" query="model=b7ee41ecc3432e500efafbfdd4013196^sys_idNOT INbfee41ecc3432e500efafbfdd401319b"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=b7ee41ecc3432e500efafbfdd4013196^sys_idNOT INc22a91fcc30322100efafbfdd40131e8,c62a91fcc30322100efafbfdd40131e5"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">b7ee41ecc3432e500efafbfdd4013196</model>
+        <model_id>b7ee41ecc3432e500efafbfdd4013196</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_b7ee41ecc3432e500efafbfdd4013196</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:41</sys_created_on>
+        <sys_id>c22a91fcc30322100efafbfdd40131e8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:37:21</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -199,7 +361,7 @@ gs.info(deckArr);&#13;
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>attachment</element>
+        <element>deck_input</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -232,8 +394,8 @@ gs.info(deckArr);&#13;
         <staged>false</staged>
         <sys_class_name>sys_hub_step_ext_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:11</sys_created_on>
-        <sys_id>bfee41ecc3432e500efafbfdd401319b</sys_id>
+        <sys_created_on>2025-07-27 14:27:41</sys_created_on>
+        <sys_id>c62a91fcc30322100efafbfdd40131e5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -241,7 +403,7 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:27:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -254,14 +416,12 @@ gs.info(deckArr);&#13;
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_input>
-    <sys_hub_step_ext_output action="delete_multiple" query="model=b7ee41ecc3432e500efafbfdd4013196"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=b7ee41ecc3432e500efafbfdd4013196"/>
-    <sys_hub_action_input action="delete_multiple" query="model=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT IN2bee05acc3432e500efafbfdd4013100"/>
-    <sys_hub_action_input action="INSERT_OR_UPDATE">
+    <sys_hub_step_ext_output action="delete_multiple" query="model=b7ee41ecc3432e500efafbfdd4013196^sys_idNOT INfe4b2db4c38322100efafbfdd4013186"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c701ce04-199f-42e5-b30e-489b4346feec</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=d937b145-3b46-44ae-abd6-0a9926d4be56</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -285,7 +445,199 @@ gs.info(deckArr);&#13;
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>attachment</element>
+        <element>deck</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">b7ee41ecc3432e500efafbfdd4013196</model>
+        <model_id>b7ee41ecc3432e500efafbfdd4013196</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b7ee41ecc3432e500efafbfdd4013196</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:34</sys_created_on>
+        <sys_id>fe4b2db4c38322100efafbfdd4013186</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=b7ee41ecc3432e500efafbfdd4013196"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b7ee41ecc3432e500efafbfdd4013196</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:34</sys_created_on>
+        <sys_id>3a4b2db4c38322100efafbfdd401318a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT IN4a2a91fcc30322100efafbfdd40131c8,7b5759f8c30322100efafbfdd4013120"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=b1aa4224-c91b-49c2-b8ff-741f0b9ec608</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_deck_imports</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Import Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_257dcd2cc3432e500efafbfdd40131ea</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:41</sys_created_on>
+        <sys_id>4a2a91fcc30322100efafbfdd40131c8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4a2a91fcc30322100efafbfdd40131c8"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3b47238b-1edb-46bd-ae1c-f7d1f23d7a45</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -294,7 +646,7 @@ gs.info(deckArr);&#13;
         <help/>
         <hint/>
         <internal_type display_value="String">string</internal_type>
-        <label>Attachment</label>
+        <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
         <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
@@ -318,8 +670,8 @@ gs.info(deckArr);&#13;
         <staged>false</staged>
         <sys_class_name>sys_hub_action_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:10</sys_created_on>
-        <sys_id>2bee05acc3432e500efafbfdd4013100</sys_id>
+        <sys_created_on>2025-07-27 14:15:31</sys_created_on>
+        <sys_id>7b5759f8c30322100efafbfdd4013120</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -327,7 +679,7 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:10</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:15:31</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -340,8 +692,8 @@ gs.info(deckArr);&#13;
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2bee05acc3432e500efafbfdd4013100"/>
-    <sys_hub_action_output action="delete_multiple" query="model=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT IN33ee41ecc3432e500efafbfdd40131bb,b3ee41ecc3432e500efafbfdd40131b6"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=7b5759f8c30322100efafbfdd4013120"/>
+    <sys_hub_action_output action="delete_multiple" query="model=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT IN33ee41ecc3432e500efafbfdd40131bb,724b2db4c38322100efafbfdd4013194,b3ee41ecc3432e500efafbfdd40131b6"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -389,7 +741,7 @@ gs.info(deckArr);&#13;
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
         <next_element/>
-        <order>2</order>
+        <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -407,14 +759,14 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>33ee41ecc3432e500efafbfdd40131bb</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:17</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -429,6 +781,93 @@ gs.info(deckArr);&#13;
     </sys_hub_action_output>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=33ee41ecc3432e500efafbfdd40131bb"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=33ee41ecc3432e500efafbfdd40131bb"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=fe1b6259-98be-4e34-b804-2f445181bebc</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_deck</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:34</sys_created_on>
+        <sys_id>724b2db4c38322100efafbfdd4013194</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=724b2db4c38322100efafbfdd4013194"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=724b2db4c38322100efafbfdd4013194"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -476,7 +915,7 @@ gs.info(deckArr);&#13;
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
         <next_element/>
-        <order>1</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -494,14 +933,14 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>b3ee41ecc3432e500efafbfdd40131b6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -529,17 +968,17 @@ gs.info(deckArr);&#13;
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=bbee41ecc3432e500efafbfdd40131c6"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>attachment</element>
+        <element>deck</element>
         <help/>
         <hint/>
-        <label>Attachment</label>
+        <label>Deck</label>
         <language>en</language>
         <name>var__m_sys_hub_action_input_257dcd2cc3432e500efafbfdd40131ea</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:10</sys_created_on>
-        <sys_id>2bee05acc3432e500efafbfdd4013104</sys_id>
+        <sys_created_on>2025-07-27 14:15:31</sys_created_on>
+        <sys_id>7f5759f8c30322100efafbfdd4013124</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -547,7 +986,30 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:10</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:15:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>import_record</element>
+        <help/>
+        <hint/>
+        <label>Import Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_257dcd2cc3432e500efafbfdd40131ea</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:41</sys_created_on>
+        <sys_id>ca2a91fcc30322100efafbfdd40131cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:41</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -572,6 +1034,29 @@ gs.info(deckArr);&#13;
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-07-26 19:00:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:34</sys_created_on>
+        <sys_id>c74b2db4c38322100efafbfdd4013198</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -603,17 +1088,17 @@ gs.info(deckArr);&#13;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"61fe81ecc3432e500efafbfdd40131d0","name":"plan","plan_signature":null}}</plan>
-        <snapshot>e5fe81ecc3432e500efafbfdd40131a4</snapshot>
+        <snapshot>d34b6db4c38322100efafbfdd401310b</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:19</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>61fe81ecc3432e500efafbfdd40131d0</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:19</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:36</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -630,10 +1115,11 @@ gs.info(deckArr);&#13;
         <description>Parses the attachment associated with the deck import record.</description>
         <flow_priority/>
         <internal_name>parse_deck_import_attachment</internal_name>
-        <label_cache>[{"name":"{{action.attachment}}","label":"action➛Attachment","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.attachment}}","label":"action➛Deck Input","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c701ce04-199f-42e5-b30e-489b4346feec"}},{"name":"{{action.deck}}","label":"action➛Deck","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.import_record}}","label":"action➛Import Record","type":"action","ref":"","reference_display":"Deck Imports","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}","label":"step➛Script step➛Deck","type":"step","ref":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
         <master>true</master>
         <name>Parse Deck Import Attachment</name>
         <natlang/>
+        <outputs/>
         <outputs/>
         <parent_action display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</parent_action>
         <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
@@ -642,7 +1128,7 @@ gs.info(deckArr);&#13;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5dfe81ecc3432e500efafbfdd4013178</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -650,7 +1136,7 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:17</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -678,13 +1164,49 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>edfe81ecc3432e500efafbfdd40131a2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:33</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
+        <variable display_value="Action Status">ddfe81ecc3432e500efafbfdd4013194</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5dfe81ecc3432e500efafbfdd4013178"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck</field>
+        <id>5dfe81ecc3432e500efafbfdd4013178</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:35</sys_created_on>
+        <sys_id>1b4b6db4c38322100efafbfdd4013109</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <table>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</table>
+        <value>{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>5dfe81ecc3432e500efafbfdd4013178</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 19:00:18</sys_created_on>
+        <sys_id>a9fe81ecc3432e500efafbfdd40131a2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
-        <variable display_value="Action Status">ddfe81ecc3432e500efafbfdd4013194</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178^id=5dfe81ecc3432e500efafbfdd4013178"/>
+        <table>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>5dfe81ecc3432e500efafbfdd4013178</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-26 19:00:18</sys_created_on>
+        <sys_id>e5fe81ecc3432e500efafbfdd40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <table>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</table>
+        <value/>
+    </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT INd1fe81ecc3432e500efafbfdd4013184"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</action>
@@ -703,10 +1225,10 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>d1fe81ecc3432e500efafbfdd4013184</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=d1fe81ecc3432e500efafbfdd4013184"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -717,14 +1239,19 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>11fe81ecc3432e500efafbfdd4013192</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
-var utils = new x_759224_magic_c_0.deck_utils();&#13;
+    var utils = new x_759224_magic_c_0.deck_utils();&#13;
 &#13;
-var deckArr = utils.parseDeckAttachment(inputs.attachment);&#13;
-gs.info(deckArr);&#13;
+    var deckArr = utils.parseDeck(inputs.deck_input);&#13;
+    gs.info(JSON.stringify(deckArr));&#13;
+    var deckRecord = utils.createDeckFromImport(inputs.import_record);&#13;
+    utils.processCards(deckArr, deckRecord);&#13;
+    &#13;
+    outputs.deck = deckRecord;&#13;
+&#13;
 })(inputs, outputs);&#13;
 </value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -769,6 +1296,42 @@ gs.info(deckArr);&#13;
         <value>{{action.attachment}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck</field>
+        <id>d1fe81ecc3432e500efafbfdd4013184</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:33</sys_created_on>
+        <sys_id>4c6759f8c30322100efafbfdd40131db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:33</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_d1fe81ecc3432e500efafbfdd4013184</table>
+        <value>{{action.deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deck_input</field>
+        <id>d1fe81ecc3432e500efafbfdd4013184</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:43</sys_created_on>
+        <sys_id>5a2ad1fcc30322100efafbfdd4013165</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:43</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_d1fe81ecc3432e500efafbfdd4013184</table>
+        <value>{{action.deck}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>import_record</field>
+        <id>d1fe81ecc3432e500efafbfdd4013184</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:43</sys_created_on>
+        <sys_id>962ad1fcc30322100efafbfdd4013165</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:43</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_d1fe81ecc3432e500efafbfdd4013184</table>
+        <value>{{action.import_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>script</field>
         <id>d1fe81ecc3432e500efafbfdd4013184</id>
         <sys_created_by>admin</sys_created_by>
@@ -780,9 +1343,93 @@ gs.info(deckArr);&#13;
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_d1fe81ecc3432e500efafbfdd4013184^id=d1fe81ecc3432e500efafbfdd4013184"/>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=d1fe81ecc3432e500efafbfdd4013184"/>
     <sys_translated_text action="delete_multiple" query="documentkey=d1fe81ecc3432e500efafbfdd4013184"/>
-    <sys_hub_step_ext_input action="delete_multiple" query="model=d1fe81ecc3432e500efafbfdd4013184^sys_idNOT IN11fe81ecc3432e500efafbfdd4013188"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=d1fe81ecc3432e500efafbfdd4013184^sys_idNOT IN1a2ad1fcc30322100efafbfdd4013149,da2ad1fcc30322100efafbfdd4013145"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>import_record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">d1fe81ecc3432e500efafbfdd4013184</model>
+        <model_id>d1fe81ecc3432e500efafbfdd4013184</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_d1fe81ecc3432e500efafbfdd4013184</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>1a2ad1fcc30322100efafbfdd4013149</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:37:25</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
     <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -811,7 +1458,7 @@ gs.info(deckArr);&#13;
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>attachment</element>
+        <element>deck_input</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -820,7 +1467,7 @@ gs.info(deckArr);&#13;
         <help/>
         <hint/>
         <internal_type display_value="String">string</internal_type>
-        <label>attachment</label>
+        <label>deck_input</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
         <model display_value="Script step">d1fe81ecc3432e500efafbfdd4013184</model>
@@ -844,8 +1491,8 @@ gs.info(deckArr);&#13;
         <staged>false</staged>
         <sys_class_name>sys_hub_step_ext_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:18</sys_created_on>
-        <sys_id>11fe81ecc3432e500efafbfdd4013188</sys_id>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>da2ad1fcc30322100efafbfdd4013145</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -853,7 +1500,7 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:27:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -866,14 +1513,12 @@ gs.info(deckArr);&#13;
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_step_ext_input>
-    <sys_hub_step_ext_output action="delete_multiple" query="model=d1fe81ecc3432e500efafbfdd4013184"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=d1fe81ecc3432e500efafbfdd4013184"/>
-    <sys_hub_action_input action="delete_multiple" query="model=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT IN9dfe81ecc3432e500efafbfdd401317b"/>
-    <sys_hub_action_input action="INSERT_OR_UPDATE">
+    <sys_hub_step_ext_output action="delete_multiple" query="model=d1fe81ecc3432e500efafbfdd4013184^sys_idNOT IN434b2db4c38322100efafbfdd40131ed"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c701ce04-199f-42e5-b30e-489b4346feec</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=d937b145-3b46-44ae-abd6-0a9926d4be56</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -897,7 +1542,115 @@ gs.info(deckArr);&#13;
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>attachment</element>
+        <element>deck</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">d1fe81ecc3432e500efafbfdd4013184</model>
+        <model_id>d1fe81ecc3432e500efafbfdd4013184</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_d1fe81ecc3432e500efafbfdd4013184</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:35</sys_created_on>
+        <sys_id>434b2db4c38322100efafbfdd40131ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d1fe81ecc3432e500efafbfdd4013184"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_d1fe81ecc3432e500efafbfdd4013184</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:35</sys_created_on>
+        <sys_id>cf4b2db4c38322100efafbfdd40131ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT IN846759f8c30322100efafbfdd40131aa,962ad1fcc30322100efafbfdd4013138"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3b47238b-1edb-46bd-ae1c-f7d1f23d7a45</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -906,7 +1659,7 @@ gs.info(deckArr);&#13;
         <help/>
         <hint/>
         <internal_type display_value="String">string</internal_type>
-        <label>Attachment</label>
+        <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
         <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
@@ -930,8 +1683,8 @@ gs.info(deckArr);&#13;
         <staged>false</staged>
         <sys_class_name>sys_hub_action_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:17</sys_created_on>
-        <sys_id>9dfe81ecc3432e500efafbfdd401317b</sys_id>
+        <sys_created_on>2025-07-27 14:15:32</sys_created_on>
+        <sys_id>846759f8c30322100efafbfdd40131aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -939,7 +1692,7 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:17</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:15:32</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -952,8 +1705,92 @@ gs.info(deckArr);&#13;
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_action_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9dfe81ecc3432e500efafbfdd401317b"/>
-    <sys_hub_action_output action="delete_multiple" query="model=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT IN65fe81ecc3432e500efafbfdd4013199,ddfe81ecc3432e500efafbfdd4013194"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=846759f8c30322100efafbfdd40131aa"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=b1aa4224-c91b-49c2-b8ff-741f0b9ec608</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_deck_imports</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Import Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>962ad1fcc30322100efafbfdd4013138</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:27:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=962ad1fcc30322100efafbfdd4013138"/>
+    <sys_hub_action_output action="delete_multiple" query="model=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT IN65fe81ecc3432e500efafbfdd4013199,874b2db4c38322100efafbfdd40131f9,ddfe81ecc3432e500efafbfdd4013194"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -1001,7 +1838,7 @@ gs.info(deckArr);&#13;
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
         <next_element/>
-        <order>2</order>
+        <order>3</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -1019,14 +1856,14 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>65fe81ecc3432e500efafbfdd4013199</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1041,6 +1878,93 @@ gs.info(deckArr);&#13;
     </sys_hub_action_output>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=65fe81ecc3432e500efafbfdd4013199"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=65fe81ecc3432e500efafbfdd4013199"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=fe1b6259-98be-4e34-b804-2f445181bebc</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_deck</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:35</sys_created_on>
+        <sys_id>874b2db4c38322100efafbfdd40131f9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=874b2db4c38322100efafbfdd40131f9"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=874b2db4c38322100efafbfdd40131f9"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -1088,7 +2012,7 @@ gs.info(deckArr);&#13;
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
         <next_element/>
-        <order>1</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -1106,14 +2030,14 @@ gs.info(deckArr);&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>ddfe81ecc3432e500efafbfdd4013194</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1141,17 +2065,17 @@ gs.info(deckArr);&#13;
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=25fe81ecc3432e500efafbfdd40131a4"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>attachment</element>
+        <element>import_record</element>
         <help/>
         <hint/>
-        <label>Attachment</label>
+        <label>Import Record</label>
         <language>en</language>
         <name>var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-26 19:00:18</sys_created_on>
-        <sys_id>19fe81ecc3432e500efafbfdd401317f</sys_id>
+        <sys_created_on>2025-07-27 14:27:42</sys_created_on>
+        <sys_id>162ad1fcc30322100efafbfdd401313c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -1159,11 +2083,57 @@ gs.info(deckArr);&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:00:18</sys_updated_on>
+        <sys_updated_on>2025-07-27 14:27:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:32</sys_created_on>
+        <sys_id>8c6759f8c30322100efafbfdd40131ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:32</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:42:35</sys_created_on>
+        <sys_id>1f4b2db4c38322100efafbfdd40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__action_status__</element>
         <help/>

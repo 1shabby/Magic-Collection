@@ -2,13 +2,12 @@
     <sys_hub_flow action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
-        <active>false</active>
+        <active>true</active>
         <annotation/>
-        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=76321000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>27000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
-        <compiler_build/>
         <copied_from/>
         <copied_from_name/>
         <description/>
@@ -16,9 +15,8 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>get_imported_deck_data</internal_name>
-        <label_cache>null</label_cache>
-        <latest_snapshot/>
-        <master_snapshot/>
+        <label_cache>[{"name":"c142e550-a156-4e91-bfc1-8413b3ab0295.deck","label":"1 - Parse Deck Import Attachment➛Deck","reference":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","type":"reference","base_type":"reference","usedInstances":{"acee6232-30f7-4870-a9e2-4b76bcaed2f4":["deck-1"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"fe1b6259-98be-4e34-b804-2f445181bebc"}},{"name":"subflow.deck_input","label":"Input➛Deck Input","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"c142e550-a156-4e91-bfc1-8413b3ab0295":["deck"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a9c4aca0-f1cf-4e79-895c-8c09b48cda8c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.import_record","label":"Input➛Import Record","reference":"x_759224_magic_c_0_deck_imports","reference_display":"Deck Imports","type":"reference","base_type":"reference","column_name":"","usedInstances":{"c142e550-a156-4e91-bfc1-8413b3ab0295":["import_record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"078d49c5-ff53-44fc-9f95-6c46db1df7c1","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"c142e550-a156-4e91-bfc1-8413b3ab0295.__action_status__","label":"1 - Parse Deck Import Attachment➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{"acee6232-30f7-4870-a9e2-4b76bcaed2f4":["deck-1"]},"attributes":{"uiTypeLabel":"Object","co_type_name":"FDa49be1f49b8322100715867580ab4ed8","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"cc5c71a5-02bb-408e-8b10-bccb331c2376"}}]</label_cache>
+        <master_snapshot>9e771df8c30322100efafbfdd40131df</master_snapshot>
         <master_snapshot_digest/>
         <name>Get Imported Deck Data</name>
         <natlang/>
@@ -30,7 +28,7 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>draft</status>
+        <status>published</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -38,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1da8c1a4c3432e500efafbfdd4013159</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Get Imported Deck Data</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -46,13 +44,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_1da8c1a4c3432e500efafbfdd4013159</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 18:32:42</sys_updated_on>
+        <sys_updated_on>2025-07-27 15:44:45</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=1da8c1a4c3432e500efafbfdd4013159"/>
     <sys_variable_value action="delete_multiple" query="document_key=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159^id=1da8c1a4c3432e500efafbfdd4013159"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT INd1a8c1a4c3432e500efafbfdd401315a"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -67,17 +66,1070 @@
         <sys_updated_on>2025-07-26 18:32:42</sys_updated_on>
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=d1a8c1a4c3432e500efafbfdd401315a"/>
-    <sys_hub_flow_input action="delete_multiple" query="model=1da8c1a4c3432e500efafbfdd4013159"/>
-    <sys_hub_flow_output action="delete_multiple" query="model=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT IN9ee65d78c30322100efafbfdd401315b,c74ad1fcc30322100efafbfdd40131db"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=a9c4aca0-f1cf-4e79-895c-8c09b48cda8c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck_input</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deck Input</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</model>
+        <model_id>1da8c1a4c3432e500efafbfdd4013159</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_1da8c1a4c3432e500efafbfdd4013159</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:13:31</sys_created_on>
+        <sys_id>9ee65d78c30322100efafbfdd401315b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9ee65d78c30322100efafbfdd401315b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=078d49c5-ff53-44fc-9f95-6c46db1df7c1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_deck_imports</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Import Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</model>
+        <model_id>1da8c1a4c3432e500efafbfdd4013159</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_1da8c1a4c3432e500efafbfdd4013159</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:28:18</sys_created_on>
+        <sys_id>c74ad1fcc30322100efafbfdd40131db</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c74ad1fcc30322100efafbfdd40131db"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT IN6ecb69f4c38322100efafbfdd401311b,b508a9b0c38322100efafbfdd4013150"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=9ccaf2d2-fb5f-450a-b22f-712e5837d208</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_deck</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</model>
+        <model_id>1da8c1a4c3432e500efafbfdd4013159</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:44:43</sys_created_on>
+        <sys_id>6ecb69f4c38322100efafbfdd401311b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:43</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6ecb69f4c38322100efafbfdd401311b"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=da3f6b36-ac90-42a4-a92c-a253a6552a70</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>status</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</model>
+        <model_id>1da8c1a4c3432e500efafbfdd4013159</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:17</sys_created_on>
+        <sys_id>b508a9b0c38322100efafbfdd4013150</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:43:30</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b508a9b0c38322100efafbfdd4013150"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=1da8c1a4c3432e500efafbfdd4013159"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159"/>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT INce771df8c30322100efafbfdd40131a4"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</action_type>
+        <action_type_parent display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5dfe81ecc3432e500efafbfdd4013178</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:57</sys_created_on>
+        <sys_id>ce771df8c30322100efafbfdd40131a4</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:46:28</sys_updated_on>
+        <ui_id>c142e550-a156-4e91-bfc1-8413b3ab0295</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71U204bMRD9FeTnbLQ3kk3eEFEkpLZI0PKC0GrWl8Sq17v4AqRR/r3j7CYkFASVEI8zPvacOTPHt2siGZmSIh+NTyeioFmcpWkSx1yAqARjeZxkCQAZEA01RyTj9DdGD6B8CNdr6yuhmsdhOCilbr3bbBDApG0VrG7ew9GlVMxwTaa3dwPSgsEyjhsyXb84+ihPBRVXCJ11RI9pu1UbIuuM1Is+/tZfuN4lG8MCgWRA+JPjmnGsLEBZPiA1aAauMSsydcZjwnBgl1qt9oil1A4fIwH7ZOUfLFfEcRyQgmMzlHen+7DslerSYgYOkImnzpseSpeNpNx2MjDs2Ct3fpjrAJetk43urjio1O52o3ytf3QykP0Du8FgxlskwdvQaeDeNyKul83j1Y7lXOqtKP2haiiofQQOpau8C3zWxMufL1TuMv/ozBWvsWJZQ9tipmxN8yC3VZB0PVwoDIZhZ5CdlQs9BBo6HOIEYDjH/GybvgEjQ7vf8Rm8HMr90vLe84uwMVmVj9OsqKKEsyrKRxWLgCc0EmOWiDRjY8hPyWZA7MqeK7D2WSicUHnvQ5udbL1AZadxuEKNbN0ZknrgvRabQW+oySgFLEBfX9SseN5MWbeNcaXhFPfuVWcdIV4z13/b6APsdja62BY/udrRe4N1b6znJT/21tVBvrdX+ln2ytJjcz2V+EWkaY57tZC0pGVcdn/OlrJ9w3vhuzi52EM+2Yfvc/oCm4prDoYu55KrsATbSb5p3sNJHvv3cJZfYuEKP/YcxYvoJEELT2gaVYUQ0ThPRFxNOB3FxSda+O4voHLdGhUHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ce771df8c30322100efafbfdd40131a4"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT IN7908a9b0c38322100efafbfdd4013159"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">bd08a9b0c38322100efafbfdd4013158</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>status,deck</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:17</sys_created_on>
+        <sys_id>7908a9b0c38322100efafbfdd4013159</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:43</sys_updated_on>
+        <ui_id>acee6232-30f7-4870-a9e2-4b76bcaed2f4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/41Ty27bMBD8F54tgXq5sm8BigAB2gZo3FyKQlg+ZBOhSEWk7LiG/r1LS37A8aHHHe7Ozs5yD8T2vu29W9kH59TakOXvA1GCLAkraAkLRnlWZmmaUCprqFktRE6TLCkomREDjcRM58H3DuMt6D4A3Datll4KxIRyrYb9650nvlFadDL0/DMjLXRI52VHloebJ79vZaWBSY0ML75TZo3l/6vyVHiWeSs70B/jidh2IqhIZ0R+eGkEil3WoJ2ckQaMAG+7/RnpJIhnoy/ARhmPbCQkfzj1F6lLSmnIrCWOxOX4eg6ryaIR5huruHxuvbJmRDwwPdVwq/vG/Bj1B3Nx2l77k7mI9A75ZBtUBxmTpvplY3c/Tw0flTkOOD1qy0GfI/BoA+u9dGEPvVrdmDMi326XIbVssGPVQNsiUrWd3apjl7DyeK0xiGttd6gu/LMYeJgwRjchfkT86xF+hU6Fcb8jDRaHdr+Meu/lU1i2gKyes2weAV/QKE8hj2CR8gjSIoN5UaTwhZLhaG313oehRpMmO6rRUUxwvFOtf0AJW3mefARx6mGYTTcAZcnmSZ3f/10lu3wmIfnb1QUcDjzJU1kUNIKkmEe5XCQRq3kSlXmSsQwYTRdFHKqG4fOVfDqOO4IHhJUJtzumbCfrphCplUOHVwF7usoTe5Ss+DW0s91b2M0FG/4Bw3jM2xkEAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=1da8c1a4c3432e500efafbfdd4013159"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>import_record</element>
+        <help/>
+        <hint/>
+        <label>Import Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1da8c1a4c3432e500efafbfdd4013159</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:28:18</sys_created_on>
+        <sys_id>434ad1fcc30322100efafbfdd40131df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck_input</element>
+        <help/>
+        <hint/>
+        <label>Deck Input</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1da8c1a4c3432e500efafbfdd4013159</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:13:31</sys_created_on>
+        <sys_id>a6e69db8c30322100efafbfdd4013186</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:13:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <help/>
+        <hint/>
+        <label>status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:17</sys_created_on>
+        <sys_id>3908a9b0c38322100efafbfdd4013153</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:28:17</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:44:43</sys_created_on>
+        <sys_id>e2cb69f4c38322100efafbfdd401311f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:43</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>get_imported_deck_data</internal_name>
+        <label_cache>[{"name":"c142e550-a156-4e91-bfc1-8413b3ab0295.deck","label":"1 - Parse Deck Import Attachment➛Deck","reference":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","type":"reference","base_type":"reference","usedInstances":{"acee6232-30f7-4870-a9e2-4b76bcaed2f4":["deck-1"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"fe1b6259-98be-4e34-b804-2f445181bebc"}},{"name":"subflow.deck_input","label":"Input➛Deck Input","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"c142e550-a156-4e91-bfc1-8413b3ab0295":["deck"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a9c4aca0-f1cf-4e79-895c-8c09b48cda8c","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.import_record","label":"Input➛Import Record","reference":"x_759224_magic_c_0_deck_imports","reference_display":"Deck Imports","type":"reference","base_type":"reference","column_name":"","usedInstances":{"c142e550-a156-4e91-bfc1-8413b3ab0295":["import_record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"078d49c5-ff53-44fc-9f95-6c46db1df7c1","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"c142e550-a156-4e91-bfc1-8413b3ab0295.__action_status__","label":"1 - Parse Deck Import Attachment➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{"acee6232-30f7-4870-a9e2-4b76bcaed2f4":["deck-1"]},"attributes":{"uiTypeLabel":"Object","co_type_name":"FDa49be1f49b8322100715867580ab4ed8","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true","uiUniqueId":"cc5c71a5-02bb-408e-8b10-bccb331c2376"}}]</label_cache>
+        <master>true</master>
+        <name>Get Imported Deck Data</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9e771df8c30322100efafbfdd40131df</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:44</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=9e771df8c30322100efafbfdd40131df"/>
+    <sys_variable_value action="delete_multiple" query="document_key=9e771df8c30322100efafbfdd40131df"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df^id=9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=9e771df8c30322100efafbfdd40131df"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=9e771df8c30322100efafbfdd40131df^sys_idNOT IN12771df8c30322100efafbfdd40131e1"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>9e771df8c30322100efafbfdd40131df</id>
+        <name>Get Imported Deck Data</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:57</sys_created_on>
+        <sys_id>12771df8c30322100efafbfdd40131e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:57</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=12771df8c30322100efafbfdd40131e1"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=9e771df8c30322100efafbfdd40131df^sys_idNOT IN874ad5fcc30322100efafbfdd401310c,96771df8c30322100efafbfdd40131e2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=078d49c5-ff53-44fc-9f95-6c46db1df7c1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_deck_imports</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>import_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Import Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</model>
+        <model_id>9e771df8c30322100efafbfdd40131df</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_9e771df8c30322100efafbfdd40131df</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_deck_imports">x_759224_magic_c_0_deck_imports</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:28:18</sys_created_on>
+        <sys_id>874ad5fcc30322100efafbfdd401310c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=874ad5fcc30322100efafbfdd401310c"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=a9c4aca0-f1cf-4e79-895c-8c09b48cda8c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck_input</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deck Input</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</model>
+        <model_id>9e771df8c30322100efafbfdd40131df</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_9e771df8c30322100efafbfdd40131df</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:57</sys_created_on>
+        <sys_id>96771df8c30322100efafbfdd40131e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=96771df8c30322100efafbfdd40131e2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=9e771df8c30322100efafbfdd40131df^sys_idNOT IN4e08a9b0c38322100efafbfdd4013193,aacb69f4c38322100efafbfdd401315f"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=da3f6b36-ac90-42a4-a92c-a253a6552a70</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>status</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</model>
+        <model_id>9e771df8c30322100efafbfdd40131df</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:18</sys_created_on>
+        <sys_id>4e08a9b0c38322100efafbfdd4013193</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:43:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4e08a9b0c38322100efafbfdd4013193"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=9ccaf2d2-fb5f-450a-b22f-712e5837d208</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_759224_magic_c_0_mtg_deck</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deck</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Deck</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</model>
+        <model_id>9e771df8c30322100efafbfdd40131df</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_deck">x_759224_magic_c_0_mtg_deck</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:44:44</sys_created_on>
+        <sys_id>aacb69f4c38322100efafbfdd401315f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:44</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=aacb69f4c38322100efafbfdd401315f"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=9e771df8c30322100efafbfdd40131df^sys_idNOT IN1e771df8c30322100efafbfdd40131f0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</action_type>
+        <action_type_parent display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5dfe81ecc3432e500efafbfdd4013178</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:58</sys_created_on>
+        <sys_id>1e771df8c30322100efafbfdd40131f0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:31</sys_updated_on>
+        <ui_id>c142e550-a156-4e91-bfc1-8413b3ab0295</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71U204bMRD9FeTnbLQ3kk3eEFEkpLZI0PKC0GrWl8Sq17v4AqRR/r3j7CYkFASVEI8zPvacOTPHt2siGZmSIh+NTyeioFmcpWkSx1yAqARjeZxkCQAZEA01RyTj9DdGD6B8CNdr6yuhmsdhOCilbr3bbBDApG0VrG7ew9GlVMxwTaa3dwPSgsEyjhsyXb84+ihPBRVXCJ11RI9pu1UbIuuM1Is+/tZfuN4lG8MCgWRA+JPjmnGsLEBZPiA1aAauMSsydcZjwnBgl1qt9oil1A4fIwH7ZOUfLFfEcRyQgmMzlHen+7DslerSYgYOkImnzpseSpeNpNx2MjDs2Ct3fpjrAJetk43urjio1O52o3ytf3QykP0Du8FgxlskwdvQaeDeNyKul83j1Y7lXOqtKP2haiiofQQOpau8C3zWxMufL1TuMv/ozBWvsWJZQ9tipmxN8yC3VZB0PVwoDIZhZ5CdlQs9BBo6HOIEYDjH/GybvgEjQ7vf8Rm8HMr90vLe84uwMVmVj9OsqKKEsyrKRxWLgCc0EmOWiDRjY8hPyWZA7MqeK7D2WSicUHnvQ5udbL1AZadxuEKNbN0ZknrgvRabQW+oySgFLEBfX9SseN5MWbeNcaXhFPfuVWcdIV4z13/b6APsdja62BY/udrRe4N1b6znJT/21tVBvrdX+ln2ytJjcz2V+EWkaY57tZC0pGVcdn/OlrJ9w3vhuzi52EM+2Yfvc/oCm4prDoYu55KrsATbSb5p3sNJHvv3cJZfYuEKP/YcxYvoJEELT2gaVYUQ0ThPRFxNOB3FxSda+O4voHLdGhUHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1e771df8c30322100efafbfdd40131f0"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=9e771df8c30322100efafbfdd40131df^sys_idNOT IN4e08a9b0c38322100efafbfdd40131aa"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">bd08a9b0c38322100efafbfdd4013158</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Get Imported Deck Data">9e771df8c30322100efafbfdd40131df</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>status,deck</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:18</sys_created_on>
+        <sys_id>4e08a9b0c38322100efafbfdd40131aa</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:44</sys_updated_on>
+        <ui_id>acee6232-30f7-4870-a9e2-4b76bcaed2f4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71Vy27bMBD8lUJny6AoyZZ8CxKkCJA0QJLmUhTC8mUToR6RKCeu4X/v0pJtOY+iByM375ArzszuwGuvbG3V2uahPGsaPS+82a+1p4U381hMEkgZ4WESUhoQIhUopoSISBAGMfFGXgG5xJuNBds2WC/BtA7gZV4ZaaVATOimMrB6/OCIL7QRtXRv/h55FdT4OStrb4YMCvxRgLnWxRN2vbv8vwwNMGmGFN9Stquqq2tdzPv6um+634FlLRwtOvLkq5WFQPYzBaaRIy+HQoAt69UeqSWI28IcgAWK6TTk8NroP/heQghxN5VERVx2p/sy6z3rYHUBFpBKy21by50Zpeay6bwQKLs19nyIdRduK6vLomuxwMyuuzRtXvzonPD2H9iNCJG2QRKyclId916Iul+UL3c7lpe62LrSH5qSg9lXYNE71lrHZ+21+uGNzR3yzmhpZI4vZjlUFSJZVZdLvX3FLc54brAYK1O+IDu3rWPgTuEYRwDjS8QvtvAj1NrJvcHPYLN77mehn1t55dZGQKgmLJz4wFPiRxQiH1LKfaBxCJM4pjAl3mbkNavm3EDTHIzCCWXPrZPZ2dYblHUeuxZe68qeIaml3HvRgejDZjPqswVJwiaBij7e3IQdFlVI/jRI1nrNg4jKOCY+BPHEj2Qa+EzxwE+iIGQhMELTeOy6Npv36TtB6CaSs0n6GfWADUJ30XE/VtIH7rD7x5m7G+B97IKTxS6kx6F7zaZxSmmE+zbXPOMZyXI7z3qmH+Xx5uH7t17WiXP5by5fEFl1L6Hmi0stjZvzdmqfBnk4vuMsDwf4JXFOOQdFBfUVi5UfxQR8RqnypwHmJAmngpLkdHHeuBwU7h+zG+iy57afOdcNSnhw2NXgnlihoZoPoZeyfnLiD9jmLxqT49WPBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=9e771df8c30322100efafbfdd40131df"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>import_record</element>
+        <help/>
+        <hint/>
+        <label>Import Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9e771df8c30322100efafbfdd40131df</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:28:19</sys_created_on>
+        <sys_id>434ad5fcc30322100efafbfdd4013117</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:28:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck_input</element>
+        <help/>
+        <hint/>
+        <label>Deck Input</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9e771df8c30322100efafbfdd40131df</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:58</sys_created_on>
+        <sys_id>de771df8c30322100efafbfdd40131e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 14:15:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_9e771df8c30322100efafbfdd40131df"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <help/>
+        <hint/>
+        <label>status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:28:18</sys_created_on>
+        <sys_id>0e08a9b0c38322100efafbfdd40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:28:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deck</element>
+        <help/>
+        <hint/>
+        <label>Deck</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 15:44:44</sys_created_on>
+        <sys_id>aacb69f4c38322100efafbfdd4013166</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:44</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_9e771df8c30322100efafbfdd40131df"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>1da8c1a4c3432e500efafbfdd4013159</sys_id>
+        <latest_snapshot>9e771df8c30322100efafbfdd40131df</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch5-06-11-2025_06-25-2025_1836.zip</compiler_build>
+    </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=1da8c1a4c3432e500efafbfdd4013159"/>
-    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=1da8c1a4c3432e500efafbfdd4013159"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=1da8c1a4c3432e500efafbfdd4013159^sys_idNOT IN92775df8c30322100efafbfdd4013106"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"92775df8c30322100efafbfdd4013106","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Get Imported Deck Data">1da8c1a4c3432e500efafbfdd4013159</plan_id>
+        <snapshot>843ce138c38322100efafbfdd40131dc</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-27 14:15:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>92775df8c30322100efafbfdd4013106</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 15:44:45</sys_updated_on>
+    </sys_flow_subflow_plan>
 </record_update>
