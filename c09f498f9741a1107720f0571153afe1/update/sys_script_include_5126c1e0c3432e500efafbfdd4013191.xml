@@ -25,7 +25,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (lines.length === 0) return results;
 
         // Format Detection
-        var format = detectFormat(lines[0]);
+        var format = this._detectFormat(lines[0]);
 
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i].trim();
@@ -39,6 +39,90 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
 
         return results;
+    },
+
+    /*
+     * Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
+     * Parameters: [object] deck import GlideRecord object 
+     * Returns: [object] deck record GlideRecord object	
+     */
+
+    createDeckFromImport: function(importGR) {
+        if (!importGR || !importGR.isValidRecord()) {
+            gs.warn("DeckImportUtils: Invalid import record");
+            return null;
+        }
+
+        var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+        deckGR.initialize();
+        deckGR.name = importGR.name;
+        deckGR.format = importGR.format;
+        deckGR.deck_import = importGR.sys_id; // Optional back-reference
+        deckGR.insert();
+
+        return deckGR;
+    },
+
+    processCards: function(cardArray, deck) {
+        for (var i = 0; i < cardArray.length; i++) {
+            var card = cardArray[i];
+            this._checkExistingCards(card, deck);
+        }
+    },
+
+    _checkExistingCards: function(card, deck) {
+        var foil_value = card.isFoil ? 'foil' : 'none';
+        var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        cardGr.addQuery('name', card.name);
+        cardGr.addQuery('collector_number', card.collector_number);
+        cardGr.addQuery('foiling', foil_value);
+        cardGr.query();
+
+        // If a card exists in the system create a deck card record associating it to the deck
+        if (cardGr.next()) {
+            this._createDeckCard(card, cardGr, deck);
+        } else {
+            // We need to create a cards record in the system first then create the deck card record.
+            cardGr = this._createCard(card);
+            this._createDeckCard(card, cardGr, deck)
+        }
+    },
+
+    _createDeckCard: function(import_card, card, deck) {
+        var deckCardGr = new GlideRecord('x_759224_magic_c_0_deck_card');
+        deckCardGr.initialize();
+        deckCardGr.deck = deck.getUniqueValue();
+        deckCardGr.card = card.getUniqueValue();
+        deckCardGr.quantity = import_card.quantity || 1;
+        deckCardGr.is_commander = import_card.isCommander || false;
+        deckCardGr.is_sideboard = import_card.isSideboard;
+        deckCardGr.is_maybeboard = import_card.isMaybeboard;
+        deckCardGr.notes = import_card.tags;
+        deckCardGr.insert();
+    },
+
+    _createCard: function(card) {
+        // Get the set sys_id
+        var setGr = new GlideRecord('x_759224_magic_c_0_mtg_sets');
+        setGr.addQuery('id', card.set);
+        setGr.query();
+
+        if (!setGr.next()) {
+            gs.error('Set not found for code: ' + card.set);
+            return null;
+        }
+        // convert true / false into foil / none
+        var foil_value = card.isFoil ? 'foil' : 'none';
+        // create cards record
+        var newCardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        newCardGr.initialize();
+        newCardGr.name = card.name;
+        newCardGr.collector_number = card.collector_number;
+        newCardGr.sets = setGr.getUniqueValue();
+        newCardGr.foiling = foil_value;
+        newCardGr.insert();
+        // return the newly created card GlideRecord
+        return newCardGr;
     },
 
     /*
@@ -69,13 +153,31 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         var collector_number = match[4].trim();
         var remainder = match[5];
 
+        var isFoil = /\*F\*/.test(remainder);
+        var isCommander = /\[.*Commander\{.*\}.*\]/i.test(remainder);
+
+        // Extract raw tags from brackets
+        var tagMatch = remainder.match(/\[(.*?)\]/);
+        var rawTags = tagMatch ? tagMatch[1] : '';
+
+        // Strip any {...} notation inside tags
+        var cleanedTags = rawTags.replace(/\{.*?\}/g, '').trim();
+
+        // Determine flags from cleaned tags
+        var tagsLower = cleanedTags.toLowerCase();
+        var isMaybeboard = tagsLower.includes('maybeboard');
+        var isSideboard = tagsLower.includes('sideboard');
+
         return {
             quantity: quantity,
             name: name,
             set: set,
             collector_number: collector_number,
-            isFoil: /\*F\*/.test(remainder),
-            isCommander: /\[.*Commander\{.*\}.*\]/i.test(remainder)
+            isFoil: isFoil,
+            isCommander: isCommander,
+            isMaybeboard: isMaybeboard,
+            isSideboard: isSideboard,
+            tags: cleanedTags
         };
     },
 
@@ -105,13 +207,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-26 19:50:40</sys_updated_on>
+        <sys_updated_on>2025-07-27 16:35:36</sys_updated_on>
     </sys_script_include>
 </record_update>
