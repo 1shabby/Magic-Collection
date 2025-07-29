@@ -67,13 +67,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         function buildImageHtml(url, altText) {
             if (isGameChanger) {
                 return '' +
-                    '<div style="position: relative; width: 244px; height: 340px;">' +
-                    '<img id="fImg" width="244" height="340" src="' + url + '" style="display:block;" alt="' + altText + '" />' +
+                    '<div style="position: relative; width: 200px; height: 280px;">' +
+                    '<img id="fImg" width="200" height="280" src="' + url + '" style="display:block;" alt="' + altText + '" />' +
                     '<div style="position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 2rem; border-color: #c5681b transparent transparent #c5681b; border-radius: 8px 0 0 0; z-index: 10;"></div>' +
                     '<span style="position: absolute; top: 1.5rem; transform: rotate(-45deg); transform-origin: top  left; z-index:100; color: white; font-size: 1.75rem; font-weight: bold; font-family: sans-serif; line-height: 1; pointer-events: none;">GC</span>' +
                     '</div>';
             } else {
-                return '<img id="fImg" width="244" height="340" src="' + url + '" alt="' + altText + '" />';
+                return '<img id="fImg" width="200" height="280" src="' + url + '" alt="' + altText + '" />';
             }
         }
 
@@ -230,13 +230,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-25 14:25:01</sys_updated_on>
+        <sys_updated_on>2025-07-28 00:25:55</sys_updated_on>
     </sys_script_include>
 </record_update>

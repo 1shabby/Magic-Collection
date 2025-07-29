@@ -7,9 +7,9 @@
             </choice>
         </element>
         <element label="Deck Link" max_length="140" name="deck_link" type="url"/>
-        <element label="Processed At" max_length="40" name="processed_at" type="glide_date_time"/>
+        <element label="Processed At" max_length="40" name="processed_at" read_only="true" type="glide_date_time"/>
         <element label="Name" max_length="40" name="name" type="string"/>
-        <element choice="1" default="queued" label="Status" max_length="40" name="status" type="choice">
+        <element choice="1" default="queued" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Queued" sequence="0" value="queued"/>
                 <element inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
@@ -22,7 +22,7 @@
             <choice/>
         </element>
         <element label="Card Count" max_length="3" name="card_count" read_only="true" type="integer"/>
-        <element label="Deck" max_length="32" name="deck" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
+        <element label="Deck" max_length="32" name="deck" read_only="true" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
         <index name="index">
             <element name="deck"/>
         </index>
