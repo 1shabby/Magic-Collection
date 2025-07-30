@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($rootScope, $scope) {
-  /* widget controller */
+        <client_script><![CDATA[api.controller = function($rootScope) {
   var c = this;
-c.searchCards = function(){
-	console.log('Halp');
-	$rootScope.$broadcast('searchTerm','forest')
+  c.searchTerm = '';
+
+  c.searchCards = function() {
+    $rootScope.$broadcast('searchTerm', c.searchTerm);
+  };
 };
-	
-};]]></client_script>
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.input-container{
 	display: flex;
@@ -50,17 +50,21 @@ c.searchCards = function(){
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-02 21:20:57</sys_created_on>
         <sys_id>e3ff81eb979031907720f0571153af2d</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>MTG Search</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e3ff81eb979031907720f0571153af2d</sys_update_name>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-11 20:23:12</sys_updated_on>
-        <template><![CDATA[<div class="input-container"	>
-  <input class="search-input"/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-30 02:20:44</sys_updated_on>
+        <template><![CDATA[<div class="input-container">
+  <input type="text"
+         ng-model="c.searchTerm"
+         placeholder="Search cards or decks..."
+         ng-change="$root.$broadcast('searchTerm', c.searchTerm)" />
   <button class="btn btn-primary" ng-click="c.searchCards()">Search</button>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
