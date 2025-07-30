@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function(spModal, $rootScope, $scope) {
-    /* widget controller */
+        <client_script><![CDATA[api.controller = function(spModal, $rootScope) {
     var c = this;
-    c.cards = [];
 
-
-    $rootScope.$on('searchTerm', function(event, msg) {
-        c.data.searchTerm = msg;
-        c.server.update();
-        c.server.refresh();
+    // Listen for search term broadcasts
+    $rootScope.$on('searchTerm', function(event, term) {
+        c.data.searchTerm = term;
+        c.server.update({
+            searchTerm: term
+        });
     });
 
-    // Input:
-    // Purpose: Opens a modal that displays all of the card details
-    // Return:
     c.viewDetails = function(card) {
-        var message = "Price: " + card.price + '<br>' +
-            "Quantity: " + card.quantity + '<br>' +
-            "Foiling: " + card.foil + '<br>' +
-            "Oracle: " + card.oracle + '<br>'
+        var message = "<style>.oracle-text img {width:16px;height:auto;}</style>" +
+              "<div class='oracle-text'>" +
+              "Price: " + card.price + "<br>" +
+              "Quantity: " + card.quantity + "<br>" +
+              "Foiling: " + card.foil + "<br>" +
+              "Oracle: <br>" + card.oracle + 
+              "</div>";
+
+
         spModal.open({
             title: card.name,
             message: message,
@@ -28,47 +29,64 @@
                 label: '${Close}',
                 primary: true
             }]
-        })
-    }
-};]]></client_script>
+        });
+    };
+}]]></client_script>
         <controller_as>c</controller_as>
-        <css>.wrapper{
-	display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
-}
-
-.card{
-  display:flex;
-  position: relative;
-  border-radius: 1rem;
-	background-color: black;
-}
-.card:focus{
-  box-shadow: 0 0 0 .5rem #66afe9;
-	outline: .4rem solid transparent;
-}
-
-.image-container{
-	position: relative;
-    overflow:hidden;
-}
-
-.foil{
-	position: absolute;
-  top:0;
-  border-radius: 2rem;
-}
-
-.image{
- border-radius: 1rem; 
-}
-
-img{
-width: 100%;
-display:block;
- 
-}</css>
+        <css>.wrapper{&#13;
+	display: grid;&#13;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));&#13;
+  gap: 20px;&#13;
+}&#13;
+&#13;
+.card{&#13;
+  display:flex;&#13;
+  position: relative;&#13;
+  border-radius: 1rem;&#13;
+	background-color: black;&#13;
+}&#13;
+.card:focus{&#13;
+  box-shadow: 0 0 0 .5rem #66afe9;&#13;
+	outline: .4rem solid transparent;&#13;
+}&#13;
+&#13;
+.image-container{&#13;
+	position: relative;&#13;
+    overflow:hidden;&#13;
+}&#13;
+&#13;
+.foil{&#13;
+	position: absolute;&#13;
+  top:0;&#13;
+  border-radius: 2rem;&#13;
+}&#13;
+&#13;
+.image{&#13;
+ border-radius: 1rem; &#13;
+}&#13;
+&#13;
+img{&#13;
+width: 100%;&#13;
+display:block;&#13;
+}&#13;
+&#13;
+.modal-message {&#13;
+  font-size: 0.9rem;       /* Smaller font size */&#13;
+  line-height: 1.3;        /* Better readability */&#13;
+  max-height: 400px;       /* Limit max height */&#13;
+  overflow-y: auto;        /* Scroll if too long */&#13;
+  word-wrap: break-word;   /* Wrap long words */&#13;
+}&#13;
+&#13;
+.sp-modal .modal-body img,&#13;
+.sp-modal .sp-modal-body img {&#13;
+  max-width: 16px !important;&#13;
+  max-height: 16px !important;&#13;
+  display: inline-block;&#13;
+}&#13;
+&#13;
+&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>A widget used to display an MTG card via the provided data on the card.</description>
@@ -85,64 +103,57 @@ display:block;
         <public>false</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-		//data.table = $sp.getValue('x_759224_magic_c_0_mtg_cards');
+    data.records = [];
+    var utils = new x_759224_magic_c_0.magic_utils();
 
-	if(!input){
-		data.searchTerm = '';
-		//Query the Cards Table
-		var cards = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-		//If a query is provided apply it
-		cards.orderBy('name');
-		if(options.query){
-			cards.addEncodedQuery(options.query);
-		}
-		if(data.searchTerm){
-			cards.addQuery('name',data.searchTerm);
-		}
-		if(options.limit){
-			cards.setLimit(options.limit);	
-		}
-		cards.query();
-		//Array of cards to use
-		data.records = [];
-		var utils = new x_759224_magic_c_0.magic_utils();
-		while(cards.next()){
-			var card = {
-				name: cards.getValue('name'),
-				set: cards.getDisplayValue('sets'),
-				foil: cards.getDisplayValue('foiling'),
-				quantity: cards.getValue('quantity'),
-				price: cards.getValue('total_price'),
-				oracle: cards.getValue('face_one_oracle_text'),
-				fImg : utils.getImgSrc(cards.getValue('front_image')),
-				bImg : utils.getImgSrc(cards.getValue('back_image')),
-				displayImg : true
-			};
-			data.records.push(card);
-		}
-	}
+    var searchTerm = input?.searchTerm?.trim() || '';
 
-})();]]></script>
+    var cardsGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    cardsGR.orderBy('name');
+
+    if (searchTerm) {
+        cardsGR.addQuery('name', 'CONTAINS', searchTerm);
+    }
+
+    if (options.limit) {
+        cardsGR.setLimit(options.limit);
+    }
+
+    cardsGR.query();
+
+    while (cardsGR.next()) {
+        data.records.push({
+            name: cardsGR.getValue('name'),
+            set: cardsGR.getDisplayValue('sets'),
+            foil: cardsGR.getDisplayValue('foiling'),
+            quantity: cardsGR.getValue('quantity'),
+            price: cardsGR.getValue('total_price'),
+            oracle: cardsGR.getValue('face_one_oracle_text'),
+            fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
+            bImg: utils.getImgSrc(cardsGR.getValue('back_image')),
+            displayImg: true
+        });
+    }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>187</sys_mod_count>
+        <sys_mod_count>204</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-18 20:40:53</sys_updated_on>
+        <sys_updated_on>2025-07-30 02:41:48</sys_updated_on>
         <template><![CDATA[<div class=wrapper>
   <button class="card" ng-click="c.viewDetails(r)" ng-repeat='r in c.data.records'>
     <div class=image-container>
 			<img class="image" ng-src={{r.fImg}} ng-alt={{r.oracle}}/>
-      <img class="foil" ng-if='r.foil != "None"' src='https://www.slightlymagic.net/forum/download/file.php?id=3458&mode=view'/>
+      <img class="foil" ng-if='r.foil != "None"' src='x_759224_magic_c_0.foil.png'/>
     </div>
   </button>
 </div>]]></template>

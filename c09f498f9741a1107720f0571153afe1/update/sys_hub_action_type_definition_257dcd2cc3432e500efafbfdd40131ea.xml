@@ -19,7 +19,7 @@
         <label_cache>[{"name":"{{action.attachment}}","label":"action➛Deck Input","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c701ce04-199f-42e5-b30e-489b4346feec"}},{"name":"{{action.deck}}","label":"action➛Deck","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.import_record}}","label":"action➛Import Record","type":"action","ref":"","reference_display":"Deck Imports","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}","label":"step➛Script step➛Deck","type":"step","ref":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
         <master_snapshot>5dfe81ecc3432e500efafbfdd4013178</master_snapshot>
         <master_snapshot_digest/>
-        <name>Parse Deck Import Attachment</name>
+        <name>Parse Deck Import</name>
         <natlang/>
         <outputs/>
         <outputs/>
@@ -31,15 +31,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>257dcd2cc3432e500efafbfdd40131ea</sys_id>
-        <sys_mod_count>30</sys_mod_count>
-        <sys_name>Parse Deck Import Attachment</sys_name>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Parse Deck Import</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_257dcd2cc3432e500efafbfdd40131ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <sys_updated_on>2025-07-29 04:07:28</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -112,7 +112,7 @@
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT INb7ee41ecc3432e500efafbfdd4013196"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action>
+        <action display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</action>
         <cid>97dace50-a144-4170-8680-14ecee91ef75</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -565,7 +565,7 @@
         <label>Import Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
-        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</model>
         <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_257dcd2cc3432e500efafbfdd40131ea</name>
@@ -649,7 +649,7 @@
         <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</model>
         <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_input_257dcd2cc3432e500efafbfdd40131ea</name>
@@ -736,7 +736,7 @@
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</model>
         <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
@@ -759,14 +759,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>33ee41ecc3432e500efafbfdd40131bb</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 15:42:34</sys_updated_on>
+        <sys_updated_on>2025-07-29 04:07:27</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -823,7 +823,7 @@
         <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
-        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</model>
         <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
@@ -910,7 +910,7 @@
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</model>
+        <model display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</model>
         <model_id>257dcd2cc3432e500efafbfdd40131ea</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
         <name>var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea</name>
@@ -958,7 +958,7 @@
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=257dcd2cc3432e500efafbfdd40131ea"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT INbbee41ecc3432e500efafbfdd40131c6"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action_type_id>
+        <action_type_id display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</action_type_id>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:11</sys_created_on>
         <sys_id>bbee41ecc3432e500efafbfdd40131c6</sys_id>
@@ -1086,19 +1086,19 @@
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_257dcd2cc3432e500efafbfdd40131ea"/>
     <sys_hub_action_plan action="delete_multiple" query="action_id=257dcd2cc3432e500efafbfdd40131ea^sys_idNOT IN61fe81ecc3432e500efafbfdd40131d0"/>
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
-        <action_id display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</action_id>
+        <action_id display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"61fe81ecc3432e500efafbfdd40131d0","name":"plan","plan_signature":null}}</plan>
-        <snapshot>d34b6db4c38322100efafbfdd401310b</snapshot>
+        <snapshot>d06fd951c3cba2100efafbfdd40131f7</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:19</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>61fe81ecc3432e500efafbfdd40131d0</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 15:42:36</sys_updated_on>
+        <sys_updated_on>2025-07-29 04:07:29</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1117,18 +1117,18 @@
         <internal_name>parse_deck_import_attachment</internal_name>
         <label_cache>[{"name":"{{action.attachment}}","label":"action➛Deck Input","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"c701ce04-199f-42e5-b30e-489b4346feec"}},{"name":"{{action.deck}}","label":"action➛Deck","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.import_record}}","label":"action➛Import Record","type":"action","ref":"","reference_display":"Deck Imports","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[97dace50-a144-4170-8680-14ecee91ef75].deck}}","label":"step➛Script step➛Deck","type":"step","ref":"x_759224_magic_c_0_mtg_deck","reference_display":"MTG Deck","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
         <master>true</master>
-        <name>Parse Deck Import Attachment</name>
+        <name>Parse Deck Import</name>
         <natlang/>
         <outputs/>
         <outputs/>
-        <parent_action display_value="Parse Deck Import Attachment">257dcd2cc3432e500efafbfdd40131ea</parent_action>
+        <parent_action display_value="Parse Deck Import">257dcd2cc3432e500efafbfdd40131ea</parent_action>
         <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:17</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5dfe81ecc3432e500efafbfdd4013178</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1136,7 +1136,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <sys_updated_on>2025-07-29 04:07:28</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -1209,7 +1209,7 @@
     </sys_element_mapping>
     <sys_hub_step_instance action="delete_multiple" query="action=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT INd1fe81ecc3432e500efafbfdd4013184"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</action>
+        <action display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</action>
         <cid>97dace50-a144-4170-8680-14ecee91ef75</cid>
         <error_handling_type>1</error_handling_type>
         <extended_inputs/>
@@ -1662,7 +1662,7 @@
         <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</model>
         <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178</name>
@@ -1746,7 +1746,7 @@
         <label>Import Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
-        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</model>
         <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_input_5dfe81ecc3432e500efafbfdd4013178</name>
@@ -1833,7 +1833,7 @@
         <label>Don't Treat as Error</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
-        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</model>
         <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
@@ -1856,14 +1856,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>65fe81ecc3432e500efafbfdd4013199</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 15:42:35</sys_updated_on>
+        <sys_updated_on>2025-07-29 04:07:28</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1920,7 +1920,7 @@
         <label>Deck</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
-        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</model>
         <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
@@ -2007,7 +2007,7 @@
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
-        <model display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</model>
+        <model display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</model>
         <model_id>5dfe81ecc3432e500efafbfdd4013178</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
         <name>var__m_sys_hub_action_output_5dfe81ecc3432e500efafbfdd4013178</name>
@@ -2055,7 +2055,7 @@
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=5dfe81ecc3432e500efafbfdd4013178"/>
     <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=5dfe81ecc3432e500efafbfdd4013178^sys_idNOT IN25fe81ecc3432e500efafbfdd40131a4"/>
     <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
-        <action_type_id display_value="Parse Deck Import Attachment">5dfe81ecc3432e500efafbfdd4013178</action_type_id>
+        <action_type_id display_value="Parse Deck Import">5dfe81ecc3432e500efafbfdd4013178</action_type_id>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 19:00:18</sys_created_on>
         <sys_id>25fe81ecc3432e500efafbfdd40131a4</sys_id>
