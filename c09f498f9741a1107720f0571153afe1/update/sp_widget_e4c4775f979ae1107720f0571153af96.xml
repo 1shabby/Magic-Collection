@@ -1,91 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function(spModal, $rootScope) {
+        <client_script><![CDATA[api.controller = function(spModal, $rootScope, $sce, $scope) {
     var c = this;
 
-    // Listen for search term broadcasts
-    $rootScope.$on('searchTerm', function(event, term) {
-        c.data.searchTerm = term;
-        c.server.update({
-            searchTerm: term
-        });
-    });
+    // Pagination settings
+    c.pageSize = 12;
+    c.currentPage = 1;
+
+    // Watch for data load and log info
+    $scope.$watch(
+        () => c.data.records,
+        function(records) {
+            if (Array.isArray(records) && records.length) {
+                console.log("Total cards:", records.length);
+                console.log("Cards on current page:", c.paginatedRecords().length);
+                c.currentPage = 1; // Reset to first page when data changes
+            }
+        }
+    );
+
+    c.pageCount = function() {
+        if (!c.data || !Array.isArray(c.data.records)) return 0;
+        return Math.ceil(c.data.records.length / c.pageSize);
+    };
+
+    c.paginatedRecords = function() {
+        if (!c.data || !Array.isArray(c.data.records)) return [];
+        const start = (c.currentPage - 1) * c.pageSize;
+        const paged = c.data.records.slice(start, start + c.pageSize);
+        return paged;
+    };
+
+    c.nextPage = function() {
+        if (c.currentPage < c.pageCount()) {
+            c.currentPage++;
+        }
+    };
+
+    c.prevPage = function() {
+        if (c.currentPage > 1) {
+            c.currentPage--;
+        }
+    };
+
+    c.setPage = function(page) {
+        c.currentPage = page;
+    };
+
+    c.middlePages = function() {
+        const total = c.pageCount();
+        const current = c.currentPage;
+        const range = [];
+
+        const start = Math.max(2, current - 2); // don't duplicate "1"
+        const end = Math.min(total - 1, current + 2); // don't duplicate "last"
+
+        for (let i = start; i <= end; i++) {
+            range.push(i);
+        }
+
+        return range;
+    };
 
     c.viewDetails = function(card) {
-        var message = "<style>.oracle-text img {width:16px;height:auto;}</style>" +
-              "<div class='oracle-text'>" +
-              "Price: " + card.price + "<br>" +
-              "Quantity: " + card.quantity + "<br>" +
-              "Foiling: " + card.foil + "<br>" +
-              "Oracle: <br>" + card.oracle + 
-              "</div>";
+        var message =
+            "<style>.oracle-text img {width:16px;height:auto;}</style>" +
+            "<div class='oracle-text'>" +
+            "Set: " + card.sets + "<br>" +
+            "Price: " + card.price + "<br>" +
+            "Foiling: " + card.foil + "<br>" +
+            "Oracle: <br>" + card.oracle +
+            "</div>";
 
+        c.trustedMessage = $sce.trustAsHtml(message);
 
         spModal.open({
             title: card.name,
-            message: message,
+            message: c.trustedMessage,
             buttons: [{
                 label: '${Close}',
                 primary: true
             }]
         });
     };
-}]]></client_script>
+
+    // Listen for external search broadcast
+    $rootScope.$on('searchTerm', function(event, term) {
+        c.data.searchTerm = term;
+        c.currentPage = 1;
+        c.server.update({
+            searchTerm: term
+        });
+    });
+};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.wrapper{&#13;
-	display: grid;&#13;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));&#13;
+        <css>.wrapper {&#13;
+  display: grid;&#13;
   gap: 20px;&#13;
+  justify-items: center;&#13;
+  padding: 1rem;&#13;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));&#13;
 }&#13;
 &#13;
-.card{&#13;
-  display:flex;&#13;
+@media (max-width: 768px) {&#13;
+  .wrapper {&#13;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 480px) {&#13;
+  .wrapper {&#13;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));&#13;
+  }&#13;
+}&#13;
+&#13;
+.card {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
   position: relative;&#13;
   border-radius: 1rem;&#13;
-	background-color: black;&#13;
-}&#13;
-.card:focus{&#13;
-  box-shadow: 0 0 0 .5rem #66afe9;&#13;
-	outline: .4rem solid transparent;&#13;
+  background-color: black;&#13;
+  max-width: 350px;&#13;
+  width: 100%;&#13;
 }&#13;
 &#13;
-.image-container{&#13;
-	position: relative;&#13;
-    overflow:hidden;&#13;
+.card:focus-visible {&#13;
+  outline: 2px solid #66afe9;&#13;
+  outline-offset: 4px;&#13;
 }&#13;
 &#13;
-.foil{&#13;
-	position: absolute;&#13;
-  top:0;&#13;
+.image-container {&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
+}&#13;
+&#13;
+.foil {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
   border-radius: 2rem;&#13;
 }&#13;
 &#13;
-.image{&#13;
- border-radius: 1rem; &#13;
+.image {&#13;
+  border-radius: 1rem;&#13;
 }&#13;
 &#13;
-img{&#13;
-width: 100%;&#13;
-display:block;&#13;
+img {&#13;
+  width: 100%;&#13;
+  display: block;&#13;
 }&#13;
 &#13;
-.modal-message {&#13;
-  font-size: 0.9rem;       /* Smaller font size */&#13;
-  line-height: 1.3;        /* Better readability */&#13;
-  max-height: 400px;       /* Limit max height */&#13;
-  overflow-y: auto;        /* Scroll if too long */&#13;
-  word-wrap: break-word;   /* Wrap long words */&#13;
+.pagination {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  justify-content: center;&#13;
+  gap: 4px;&#13;
+  margin-top: 2rem;&#13;
 }&#13;
 &#13;
-.sp-modal .modal-body img,&#13;
-.sp-modal .sp-modal-body img {&#13;
-  max-width: 16px !important;&#13;
-  max-height: 16px !important;&#13;
-  display: inline-block;&#13;
+.pagination button {&#13;
+  padding: 6px 10px;&#13;
+  min-width: 36px;&#13;
+  background-color: #f1f1f1;&#13;
+  border: 1px solid #ccc;&#13;
+  border-radius: 4px;&#13;
+  color: #333;&#13;
+  font-size: 14px;&#13;
+  cursor: pointer;&#13;
+  transition: background-color 0.2s ease, transform 0.1s ease;&#13;
 }&#13;
 &#13;
+.pagination button:hover:not(:disabled) {&#13;
+  background-color: #ddd;&#13;
+  transform: translateY(-1px);&#13;
+}&#13;
 &#13;
+.pagination button:disabled {&#13;
+  opacity: 0.5;&#13;
+  cursor: default;&#13;
+}&#13;
+&#13;
+.pagination button.active-page {&#13;
+  background-color: #007acc;&#13;
+  color: white;&#13;
+  font-weight: bold;&#13;
+  border-color: #007acc;&#13;
+}&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -124,16 +224,17 @@ display:block;&#13;
     while (cardsGR.next()) {
         data.records.push({
             name: cardsGR.getValue('name'),
-            set: cardsGR.getDisplayValue('sets'),
+            sets: cardsGR.getDisplayValue('sets'),
             foil: cardsGR.getDisplayValue('foiling'),
             quantity: cardsGR.getValue('quantity'),
-            price: cardsGR.getValue('total_price'),
+            price: cardsGR.getValue('price'),
             oracle: cardsGR.getValue('face_one_oracle_text'),
             fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
             bImg: utils.getImgSrc(cardsGR.getValue('back_image')),
             displayImg: true
         });
     }
+	gs.info(JSON.stringify(data.records));
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -141,22 +242,60 @@ display:block;&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>204</sys_mod_count>
+        <sys_mod_count>236</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-30 02:41:48</sys_updated_on>
-        <template><![CDATA[<div class=wrapper>
-  <button class="card" ng-click="c.viewDetails(r)" ng-repeat='r in c.data.records'>
-    <div class=image-container>
-			<img class="image" ng-src={{r.fImg}} ng-alt={{r.oracle}}/>
-      <img class="foil" ng-if='r.foil != "None"' src='x_759224_magic_c_0.foil.png'/>
+        <sys_updated_on>2025-07-31 21:25:04</sys_updated_on>
+        <template><![CDATA[<div class="wrapper">
+  <button class="card"
+          ng-repeat="r in c.paginatedRecords()"
+          ng-click="c.viewDetails(r)">
+    <div class="image-container">
+      <img class="image" ng-src="{{r.fImg}}" ng-alt="{{r.oracle}}" />
+      <img class="foil" ng-if="r.foil != 'None'" src="x_759224_magic_c_0.foil.png"/>
     </div>
   </button>
-</div>]]></template>
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button ng-click="c.prevPage()" ng-disabled="c.currentPage === 1">‹</button>
+
+  <!-- Always show first page -->
+  <button ng-click="c.setPage(1)" ng-class="{'active-page': c.currentPage === 1}">1</button>
+
+  <!-- Ellipsis before -->
+  <span ng-if="c.currentPage > 4">…</span>
+
+  <!-- Dynamic page range -->
+  <span ng-repeat="n in c.middlePages() track by $index">
+    <button ng-click="c.setPage(n)" ng-class="{'active-page': c.currentPage === n}">
+      {{n}}
+    </button>
+  </span>
+
+  <!-- Ellipsis after -->
+  <span ng-if="c.currentPage < c.pageCount() - 3">…</span>
+
+  <!-- Always show last page -->
+  <button ng-if="c.pageCount() > 1"
+          ng-click="c.setPage(c.pageCount())"
+          ng-class="{'active-page': c.currentPage === c.pageCount()}">
+    {{c.pageCount()}}
+  </button>
+
+  <button ng-click="c.nextPage()" ng-disabled="c.currentPage === c.pageCount()">›</button>
+</div>
+
+<!-- Fallback if no cards -->
+<div ng-if="c.pageCount() === 0" style="text-align:center; margin-top: 2rem;">
+  No cards found.
+</div>
+]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e4c4775f979ae1107720f0571153af96</id>
