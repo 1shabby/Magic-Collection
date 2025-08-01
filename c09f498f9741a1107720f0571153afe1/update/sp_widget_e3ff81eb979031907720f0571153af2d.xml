@@ -24,11 +24,12 @@
   padding: 0.5rem; /* Adds padding to make the input more spacious */&#13;
   border-radius: 0.5rem; /* Optional: rounded corners */&#13;
   border: 1px solid #ccc; /* Optional: border for styling */&#13;
-  font-size: 1rem; /* Optional: adjust text size */&#13;
+  font-size: 1.3rem; /* Optional: adjust text size */&#13;
 }&#13;
 &#13;
 .search-btn {&#13;
   /* You can add styling for the button here if needed */&#13;
+  font-size: 1.3rem;&#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -56,14 +57,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-02 21:20:57</sys_created_on>
         <sys_id>e3ff81eb979031907720f0571153af2d</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>MTG Search</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e3ff81eb979031907720f0571153af2d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-01 03:49:47</sys_updated_on>
+        <sys_updated_on>2025-08-01 05:01:20</sys_updated_on>
         <template><![CDATA[<div class="input-container">
   <input type="text"
          class="search-input"
