@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location, $timeout, $window, $document, $rootScope, spUtil, spAriaUtil, i18n) {
+    var c = this;
+    spUtil.getPreference('glide.ui.accessibility', function(value) {
+        if (value == "true")
+            $scope.tabindex = 0;
+        else
+            $scope.tabindex = -1;
+    });
+	$timeout(function() {
+ 		result = $(".v5001b062d7101200b0b044580e6103eb > .panel");
+		if(!angular.element(result).scope().data.useInstanceTitle){
+			for(var i = 0; i<$scope.data.list.length; i++) {
+				if($scope.data.list[i].selectedFilter == $scope.data.selectedFilter)
+					angular.element(result).scope().data.title = $scope.data.list[i].myListFilter;
+			}
+		}
+ 	},1000);
+		/*DEF0170991: below is the updated url to avoid csm redirection issue*/
+    $scope.caseFilterSelected = function(category) {
+        var url = "?id=csm_my_lists&table=" + category.table + "&view=" + category.view + "&target_page_id=" + category.targetPageId + "&filter=" + category.query + "&sel=" + category.selectedFilter;
+        $location.url(url);
+				spAriaUtil.sendLiveMessage(i18n.format(c.data.pageContentLoadedMsg, {'0': category.myListFilter}), 'status');
+    };
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.category-widget {
+	border: 1px solid $panel-inner-border;
+  
+  .category-list {
+    .fa {
+      margin-right: 5px;
+    }
+    .l-h-1_6x {
+      line-height: 1.6em;
+    }
+    a {
+		width: 100%;
+      	vertical-align: middle;
+	    display: inline-block;
+    }
+    .list-group {
+      margin-bottom: 0;
+    }
+    .list-group-item {
+      padding: 0;
+      border: 0;
+    }
+    .group-item-focus {
+      &amp;:focus {
+      outline: 3px solid $primary !important;
+      outline-offset: -3px;
+      }
+      padding: 10px 15px;
+    }
+    .group-item-default {
+      &amp;:hover, &amp;:focus {
+        background-color: darken($panel-default-heading-bg, 2%);
+      }
+    }
+    .group-item-primary {
+      border-left: 3px solid white;
+      &amp;:hover, &amp;:focus {
+        border-left: 3px solid $primary !important;
+      }
+    }
+    .group-item-success {
+      &amp;:hover {
+        background-color: lighten($panel-success-heading-bg, 3%)
+      }
+    }
+    .group-item-info {
+      &amp;:hover, &amp;:focus {
+        background-color: lighten($panel-info-heading-bg, 3%)
+      }
+    }
+    .group-item-warning {
+      &amp;:hover, &amp;:focus {
+        background-color: $panel-warning-heading-bg
+      }
+    }
+    .group-item-danger {
+      &amp;:hover, &amp;:focus {
+        background-color: lighten($panel-danger-heading-bg, 3%)
+      }
+    }
+    
+    .list-bg-default {
+      background-color: $panel-default-heading-bg;
+    }
+    .list-bg-primary {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-success {
+      background-color: lighten($panel-success-heading-bg, 6%);
+    }
+    .list-bg-info {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-warning {
+      background-color: lighten($panel-warning-heading-bg, 3%);
+    }
+    .list-bg-danger {
+      background-color: lighten($panel-danger-heading-bg, 6%);
+    }
+  }
+}
+.panel-primary .badge {
+  background-color: $primary;
+  color: white;
+}
+.panel-default .badge {
+  background-color: $panel-default-text;
+  color: white
+}
+.panel-success .badge {
+  background-color:  $panel-success-text;
+  color: white;
+}
+.panel-info .badge {
+  background-color: $panel-info-text;
+  color: white;
+}
+.panel-warning .badge {
+  background-color: $panel-warning-text;
+  color: white;
+}
+.panel-danger .badge {
+  background-color: $panel-danger-text;
+  color: white;
+}
+.category-list .badge {
+  text-align: right;
+}
+.text-active {
+   color: $link-color;
+   border-left: 3px solid $primary
+}
+.text-default {
+   color: $text-muted;
+}
+
+.list-group-item {
+	.list-group.sub-category-list {
+  	.list-group-item span.category { // we only want nested list group items to have this indent
+    	padding-left: 15px;
+    }
+  }
+}
+</css>
+        <data_table>sp_instance_vlist</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,color</field_list>
+        <has_preview>false</has_preview>
+        <id>mtg_advanced_filter</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MTG Advanced Filter</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.list = [];
+    data.selectedFilter = $sp.getParameter('sel');
+    data.list = new sn_customerservice.CSMServiceManagementUtil().getMyListsMenu();
+    data.pageContentLoadedMsg = gs.getMessage('{0} content loaded');
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-02 22:20:30</sys_created_on>
+        <sys_id>17bd1de797d031907720f0571153affe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_17bd1de797d031907720f0571153affe</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-02 22:20:30</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{::options.color}} category-widget no-border">
+  <div class="panel-heading">
+    <h2 class="h4 panel-title">
+      {{::options.title}}</h2>
+  </div>
+  <ul class="list-group category-list" role="list" aria-label="${{{::options.title}}}">
+    <li role="listitem"
+        class="list-group-item text-overflow-ellipsis" 
+        ng-include="'category-template.html'" 
+        ng-repeat="category in data.list">
+    </li>
+  </ul>
+</div>
+<script type="text/ng-template" id="category-template.html">
+	<div ng-click="caseFilterSelected(category)"
+		sn-focus="category.selectedFilter == data.selectedFilter"
+        aria-current="{{category.selectedFilter == data.selectedFilter}}"
+        aria-selected="{{category.selectedFilter == data.selectedFilter}}"
+	    ng-class="{true: 'text-active', false: ''}[category.selectedFilter == data.selectedFilter]"
+        tabindex="0" class="group-item-focus group-item-primary">
+      <span class="block text-overflow-ellipsis category" 
+				  id="{{::category.myListFilter}}">
+          {{::category.myListFilter}}
+          <span class="sr-only">${items}</span>
+      </span>
+    </div>
+</script>]]></template>
+    </sp_widget>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sp_widget_17bd1de797d031907720f0571153affe</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[function($scope, $location, $timeout, $window, $document, $rootScope, spUtil, spAriaUtil, i18n) {
+    var c = this;
+    spUtil.getPreference('glide.ui.accessibility', function(value) {
+        if (value == "true")
+            $scope.tabindex = 0;
+        else
+            $scope.tabindex = -1;
+    });
+	$timeout(function() {
+ 		result = $(".v5001b062d7101200b0b044580e6103eb &gt; .panel");
+		if(!angular.element(result).scope().data.useInstanceTitle){
+			for(var i = 0; i&lt;$scope.data.list.length; i++) {
+				if($scope.data.list[i].selectedFilter == $scope.data.selectedFilter)
+					angular.element(result).scope().data.title = $scope.data.list[i].myListFilter;
+			}
+		}
+ 	},1000);
+		/*DEF0170991: below is the updated url to avoid csm redirection issue*/
+    $scope.caseFilterSelected = function(category) {
+        var url = "?id=csm_my_lists&amp;table=" + category.table + "&amp;view=" + category.view + "&amp;target_page_id=" + category.targetPageId + "&amp;filter=" + category.query + "&amp;sel=" + category.selectedFilter;
+        $location.url(url);
+				spAriaUtil.sendLiveMessage(i18n.format(c.data.pageContentLoadedMsg, {'0': category.myListFilter}), 'status');
+    };
+
+}]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css&gt;.category-widget {
+	border: 1px solid $panel-inner-border;
+  
+  .category-list {
+    .fa {
+      margin-right: 5px;
+    }
+    .l-h-1_6x {
+      line-height: 1.6em;
+    }
+    a {
+		width: 100%;
+      	vertical-align: middle;
+	    display: inline-block;
+    }
+    .list-group {
+      margin-bottom: 0;
+    }
+    .list-group-item {
+      padding: 0;
+      border: 0;
+    }
+    .group-item-focus {
+      &amp;amp;:focus {
+      outline: 3px solid $primary !important;
+      outline-offset: -3px;
+      }
+      padding: 10px 15px;
+    }
+    .group-item-default {
+      &amp;amp;:hover, &amp;amp;:focus {
+        background-color: darken($panel-default-heading-bg, 2%);
+      }
+    }
+    .group-item-primary {
+      border-left: 3px solid white;
+      &amp;amp;:hover, &amp;amp;:focus {
+        border-left: 3px solid $primary !important;
+      }
+    }
+    .group-item-success {
+      &amp;amp;:hover {
+        background-color: lighten($panel-success-heading-bg, 3%)
+      }
+    }
+    .group-item-info {
+      &amp;amp;:hover, &amp;amp;:focus {
+        background-color: lighten($panel-info-heading-bg, 3%)
+      }
+    }
+    .group-item-warning {
+      &amp;amp;:hover, &amp;amp;:focus {
+        background-color: $panel-warning-heading-bg
+      }
+    }
+    .group-item-danger {
+      &amp;amp;:hover, &amp;amp;:focus {
+        background-color: lighten($panel-danger-heading-bg, 3%)
+      }
+    }
+    
+    .list-bg-default {
+      background-color: $panel-default-heading-bg;
+    }
+    .list-bg-primary {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-success {
+      background-color: lighten($panel-success-heading-bg, 6%);
+    }
+    .list-bg-info {
+      background-color: lighten($panel-info-heading-bg, 6%);
+    }
+    .list-bg-warning {
+      background-color: lighten($panel-warning-heading-bg, 3%);
+    }
+    .list-bg-danger {
+      background-color: lighten($panel-danger-heading-bg, 6%);
+    }
+  }
+}
+.panel-primary .badge {
+  background-color: $primary;
+  color: white;
+}
+.panel-default .badge {
+  background-color: $panel-default-text;
+  color: white
+}
+.panel-success .badge {
+  background-color:  $panel-success-text;
+  color: white;
+}
+.panel-info .badge {
+  background-color: $panel-info-text;
+  color: white;
+}
+.panel-warning .badge {
+  background-color: $panel-warning-text;
+  color: white;
+}
+.panel-danger .badge {
+  background-color: $panel-danger-text;
+  color: white;
+}
+.category-list .badge {
+  text-align: right;
+}
+.text-active {
+   color: $link-color;
+   border-left: 3px solid $primary
+}
+.text-default {
+   color: $text-muted;
+}
+
+.list-group-item {
+	.list-group.sub-category-list {
+  	.list-group-item span.category { // we only want nested list group items to have this indent
+    	padding-left: 15px;
+    }
+  }
+}
+&lt;/css&gt;
+        &lt;data_table&gt;sp_instance_vlist&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list&gt;title,color&lt;/field_list&gt;
+        &lt;has_preview&gt;false&lt;/has_preview&gt;
+        &lt;id&gt;mtg_advanced_filter&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;
+        &lt;name&gt;MTG Advanced Filter&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {
+    data.list = [];
+    data.selectedFilter = $sp.getParameter('sel');
+    data.list = new sn_customerservice.CSMServiceManagementUtil().getMyListsMenu();
+    data.pageContentLoadedMsg = gs.getMessage('{0} content loaded');
+})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-08-02 22:20:30&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;17bd1de797d031907720f0571153affe&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;MTG Advanced Filter&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_17bd1de797d031907720f0571153affe&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-08-02 22:20:30&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div class="panel panel-{{::options.color}} category-widget no-border"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h2 class="h4 panel-title"&gt;
+      {{::options.title}}&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;ul class="list-group category-list" role="list" aria-label="${{{::options.title}}}"&gt;
+    &lt;li role="listitem"
+        class="list-group-item text-overflow-ellipsis" 
+        ng-include="'category-template.html'" 
+        ng-repeat="category in data.list"&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;script type="text/ng-template" id="category-template.html"&gt;
+	&lt;div ng-click="caseFilterSelected(category)"
+		sn-focus="category.selectedFilter == data.selectedFilter"
+        aria-current="{{category.selectedFilter == data.selectedFilter}}"
+        aria-selected="{{category.selectedFilter == data.selectedFilter}}"
+	    ng-class="{true: 'text-active', false: ''}[category.selectedFilter == data.selectedFilter]"
+        tabindex="0" class="group-item-focus group-item-primary"&gt;
+      &lt;span class="block text-overflow-ellipsis category" 
+				  id="{{::category.myListFilter}}"&gt;
+          {{::category.myListFilter}}
+          &lt;span class="sr-only"&gt;${items}&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/script&gt;]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-1455972805</payload_hash>
+        <record_name>MTG Advanced Filter</record_name>
+        <reverted_from/>
+        <source>78468bb1c3baae100efafbfdd4013191</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-18 14:39:14</sys_created_on>
+        <sys_id>5f764335c3baae100efafbfdd40131f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1981df99de50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 14:39:14</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>1f764335c2baae1046bb7e9077350cf2</update_guid>
+        <update_guid_history>1f764335c2baae1046bb7e9077350cf2:-1455972805</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="MTG Advanced Filter">fb7590d6c3c7e6100efafbfdd4013192</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-08-01 01:18:36</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>4380f86ae657445796b6aaaf33df6591</sys_id>
+        <sys_metadata>17bd1de797d031907720f0571153affe</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Filter</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_widget_17bd1de797d031907720f0571153affe</sys_update_name>
+        <sys_update_version display_value="sp_widget_17bd1de797d031907720f0571153affe">5f764335c3baae100efafbfdd40131f2</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-08-01 01:18:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

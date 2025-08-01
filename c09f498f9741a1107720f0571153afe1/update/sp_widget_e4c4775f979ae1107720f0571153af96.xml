@@ -5,7 +5,7 @@
     var c = this;
 
     // Pagination settings
-    c.pageSize = 12;
+    c.pageSize = 24;
     c.currentPage = 1;
 
     // Watch for data load and log info
@@ -95,12 +95,19 @@
     });
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>.wrapper {&#13;
+        <css>body {&#13;
+  min-height: 100vh;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+}&#13;
+&#13;
+.wrapper {&#13;
   display: grid;&#13;
-  gap: 20px;&#13;
   justify-items: center;&#13;
   padding: 1rem;&#13;
+  gap: 1rem;&#13;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));&#13;
+  flex: 1; /* lets wrapper fill available space */&#13;
 }&#13;
 &#13;
 @media (max-width: 768px) {&#13;
@@ -123,26 +130,37 @@
   background-color: black;&#13;
   max-width: 350px;&#13;
   width: 100%;&#13;
-}&#13;
-&#13;
-.card:focus-visible {&#13;
-  outline: 2px solid #66afe9;&#13;
-  outline-offset: 4px;&#13;
+  height: fit-content;&#13;
 }&#13;
 &#13;
 .image-container {&#13;
   position: relative;&#13;
   overflow: hidden;&#13;
+  width: 100%;         &#13;
+  max-width: 350px;    &#13;
+  height: auto;&#13;
+}&#13;
+&#13;
+.image {&#13;
+  border-radius: 1rem;&#13;
+  width: 100%;     &#13;
+  height: auto;    &#13;
+  display: block;&#13;
 }&#13;
 &#13;
 .foil {&#13;
   position: absolute;&#13;
   top: 0;&#13;
+  right: 0;  &#13;
   border-radius: 2rem;&#13;
+  width: 100%;  &#13;
+  height: 100%;&#13;
+  object-fit: cover;&#13;
+  transition: transform 0.2s ease; /* Added transition */&#13;
 }&#13;
 &#13;
-.image {&#13;
-  border-radius: 1rem;&#13;
+.card:hover {&#13;
+  transform: scale(1.05); /* Slightly enlarge the card on hover */&#13;
 }&#13;
 &#13;
 img {&#13;
@@ -185,8 +203,7 @@ img {&#13;
   color: white;&#13;
   font-weight: bold;&#13;
   border-color: #007acc;&#13;
-}&#13;
-</css>
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>A widget used to display an MTG card via the provided data on the card.</description>
@@ -200,7 +217,7 @@ img {&#13;
 }]]></link>
         <name>MTG Card</name>
         <option_schema>[{"name":"limit","section":"other","default_value":"","label":"Limit","type":"integer"},{"name":"query","section":"other","label":"Query","type":"string"}]</option_schema>
-        <public>false</public>
+        <public>true</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
     data.records = [];
@@ -242,14 +259,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>236</sys_mod_count>
+        <sys_mod_count>255</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-31 21:25:04</sys_updated_on>
+        <sys_updated_on>2025-08-01 03:49:09</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="r in c.paginatedRecords()"
@@ -261,39 +278,28 @@ img {&#13;
   </button>
 </div>
 
+<!-- Fallback if no cards -->
+<div ng-if="c.pageCount() === 0" class="no-cards-message">
+  No cards found.
+</div>
+
 <!-- Pagination Controls -->
 <div class="pagination">
   <button ng-click="c.prevPage()" ng-disabled="c.currentPage === 1">‹</button>
-
-  <!-- Always show first page -->
   <button ng-click="c.setPage(1)" ng-class="{'active-page': c.currentPage === 1}">1</button>
-
-  <!-- Ellipsis before -->
   <span ng-if="c.currentPage > 4">…</span>
-
-  <!-- Dynamic page range -->
   <span ng-repeat="n in c.middlePages() track by $index">
     <button ng-click="c.setPage(n)" ng-class="{'active-page': c.currentPage === n}">
       {{n}}
     </button>
   </span>
-
-  <!-- Ellipsis after -->
   <span ng-if="c.currentPage < c.pageCount() - 3">…</span>
-
-  <!-- Always show last page -->
   <button ng-if="c.pageCount() > 1"
           ng-click="c.setPage(c.pageCount())"
           ng-class="{'active-page': c.currentPage === c.pageCount()}">
     {{c.pageCount()}}
   </button>
-
   <button ng-click="c.nextPage()" ng-disabled="c.currentPage === c.pageCount()">›</button>
-</div>
-
-<!-- Fallback if no cards -->
-<div ng-if="c.pageCount() === 0" style="text-align:center; margin-top: 2rem;">
-  No cards found.
 </div>
 ]]></template>
     </sp_widget>
