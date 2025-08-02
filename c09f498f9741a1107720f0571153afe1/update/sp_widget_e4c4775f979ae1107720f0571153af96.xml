@@ -77,128 +77,127 @@
         }
     };
 
-   c.viewDetails = function(card) {
-		 console.log(JSON.stringify(card));
-var message =
-  "<style>" +
-  ".flip-card-wrapper {" +
-    "flex-grow: 1;" +
-    "max-width: 100%;" +
-    "width: 100%;" +
-    "perspective: 1000px;" +
-    "margin: 0 auto;" +
-  "}" +
-  ".flip-card {" +
-    "width: 100%;" +
-    "height: auto;" +
-    "position: relative;" +
-  "}" +
-  ".flip-card-inner {" +
-    "position: relative;" +
-    "width: 100%;" +
-    "padding-top: 140%; /* MTG card aspect ratio (~2.5 x 3.5 inches) */" +
-    "transition: transform 0.8s;" +
-    "transform-style: preserve-3d;" +
-  "}" +
-  ".flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }" +
-  ".flip-card-front, .flip-card-back {" +
-    "position: absolute;" +
-    "top: 0; left: 0;" +
-    "width: 100%; height: 100%;" +
-    "border-radius: 8px;" +
-    "backface-visibility: hidden;" +
-    "display: flex; align-items: center; justify-content: center;" +
-  "}" +
-  ".flip-card-back { transform: rotateY(180deg); }" +
+    c.viewDetails = function(card) {
+        console.log(JSON.stringify(card));
+        var message =
+            "<style>" +
+            ".flip-card-wrapper {" +
+            "flex-grow: 1;" +
+            "max-width: 100%;" +
+            "width: 100%;" +
+            "perspective: 1000px;" +
+            "margin: 0 auto;" +
+            "}" +
+            ".flip-card {" +
+            "width: 100%;" +
+            "height: auto;" +
+            "position: relative;" +
+            "}" +
+            ".flip-card-inner {" +
+            "position: relative;" +
+            "width: 100%;" +
+            "padding-top: 140%; /* MTG card aspect ratio (~2.5 x 3.5 inches) */" +
+            "transition: transform 0.8s;" +
+            "transform-style: preserve-3d;" +
+            "}" +
+            ".flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }" +
+            ".flip-card-front, .flip-card-back {" +
+            "position: absolute;" +
+            "top: 0; left: 0;" +
+            "width: 100%; height: 100%;" +
+            "border-radius: 5%;" +
+            "backface-visibility: hidden;" +
+            "display: flex; align-items: center; justify-content: center;" +
+            "}" +
+            ".flip-card-back { transform: rotateY(180deg); }" +
 
-  ".flip-card-front img, .flip-card-back img {" +
-    "width: 100%;" +
-    "height: 100%;" +
-    "object-fit: contain;" +
-    "border-radius: 8px;" +
-  "}" +
+            ".flip-card-front img, .flip-card-back img {" +
+            "width: 100%;" +
+            "height: 100%;" +
+            "object-fit: contain;" +
+            "border-radius: 5%;" +
+            "}" +
 
-  "@media (max-width: 768px) {" +
-    ".card-modal-content { flex-direction: column !important; align-items: center; }" +
-    ".flip-card-wrapper { " +
-      "max-width: 90%;" +
-      "min-width: 300px;" +         // Added min-width to keep card readable
-    "}" +
-    ".flip-card-inner { " +
-      "min-height: 430px;" +       // Added min-height to maintain aspect ratio and size
-    "}" +
-  "}" +
-  "</style>" +
+            "@media (max-width: 768px) {" +
+            ".card-modal-content { flex-direction: column !important; align-items: center; }" +
+            ".flip-card-wrapper { " +
+            "max-width: 90%;" +
+            "min-width: 300px;" + // Added min-width to keep card readable
+            "}" +
+            ".flip-card-inner { " +
+            "min-height: 430px;" + // Added min-height to maintain aspect ratio and size
+            "}" +
+            "}" +
+            "</style>" +
 
-  "<div class='card-modal-content' style='display: flex; gap: 20px; max-width: 100%;'>" +
+            "<div class='card-modal-content' style='display: flex; gap: 20px; max-width: 100%;'>" +
 
-    // Column 1 – Card image, button, metadata
-    "<div style='flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center;'>" +
-      "<div class='flip-card-wrapper'>" +
-        "<div class='flip-card' id='flipCard'>" +
-          "<div class='flip-card-inner'>" +
+            // Column 1 – Card image, button, metadata
+            "<div style='flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center;'>" +
+            "<div class='flip-card-wrapper'>" +
+            "<div class='flip-card' id='flipCard'>" +
+            "<div class='flip-card-inner'>" +
             "<div class='flip-card-front'>" +
-              "<img src='" + card.fImg + "' />" +
+            "<img src='" + card.fImg + "' />" +
             "</div>" +
-            (card.bImg
-              ? "<div class='flip-card-back'>" +
-                  "<img src='" + card.bImg + "' />" +
-                "</div>"
-              : "") +
-          "</div>" +
-        "</div>" +
-      "</div>" +
+            (card.bImg ?
+                "<div class='flip-card-back'>" +
+                "<img src='" + card.bImg + "' />" +
+                "</div>" :
+                "") +
+            "</div>" +
+            "</div>" +
+            "</div>" +
 
-      (card.multiFaced
-        ? "<button id='flipBtn' style='margin-top: 10px; padding: 8px 12px; background: #007acc; color: #fff; border: none; border-radius: 5px; cursor: pointer;'>Flip Card</button>"
-        : "") +
+            (card.multiFaced ?
+                "<button id='flipBtn' style='margin-top: 10px; padding: 8px 12px; background: #007acc; color: #fff; border: none; border-radius: 5px; cursor: pointer;'>Flip Card</button>" :
+                "") +
 
-      "<div style='margin-top: 10px;'><strong>Set:</strong> " + card.sets + "</div>" +
-      "<div><strong>Price:</strong> $" + card.price + "</div>" +
-      "<div><strong>Foiling:</strong> " + card.foil + "</div>" +
-    "</div>" +
+            "<div style='margin-top: 10px;'><strong>Set:</strong> " + card.sets + "</div>" +
+            "<div><strong>Price:</strong> $" + card.price + "</div>" +
+            "<div><strong>Foiling:</strong> " + card.foil + "</div>" +
+            "</div>" +
 
-    // Column 2 – Oracle & Flavor
-    "<div style='flex: 2;'>" +
-      "<div style='margin-bottom: 15px;'><strong>Oracle:</strong><br>" + (card.oracle || "N/A") + "</div>" +
-      "<div><strong>Flavor:</strong><br>" + (card.frontFlavor || "N/A") + "</div>" +
-    "</div>" +
+            // Column 2 – Oracle & Flavor
+            "<div style='flex: 2;'>" +
+            "<div style='margin-bottom: 15px;'><strong>Oracle:</strong><br>" + (card.oracle || "N/A") + "</div>" +
+            "<div><strong>Flavor:</strong><br>" + (card.frontFlavor || "N/A") + "</div>" +
+            "</div>" +
 
-    // Column 3 – Links
-    "<div style='flex: 1;'>" +
-      "<div><a href='" + card.tcg + "' target='_blank'>TCGPlayer</a></div>" +
-      "<div><a href='" + card.cardMarket + "' target='_blank'>Cardmarket</a></div>" +
-      "<div><a href='" + card.cardHoarder + "' target='_blank'>Cardhoarder</a></div>" +
-      "<div><a href='" + card.edhrec + "' target='_blank'>EDHREC</a></div>" +
-    "</div>" +
-  "</div>" +
+            // Column 3 – Links
+            "<div style='flex: 1;'>" +
+            "<div><a href='" + card.tcg + "' target='_blank'>TCGPlayer</a></div>" +
+            "<div><a href='" + card.cardMarket + "' target='_blank'>Cardmarket</a></div>" +
+            "<div><a href='" + card.cardHoarder + "' target='_blank'>Cardhoarder</a></div>" +
+            "<div><a href='" + card.edhrec + "' target='_blank'>EDHREC</a></div>" +
+            "</div>" +
+            "</div>" +
 
-  "<script>" +
-    "setTimeout(function() {" +
-      "var flipBtn = document.getElementById('flipBtn');" +
-      "var flipCard = document.getElementById('flipCard');" +
-      "if (flipBtn && flipCard) {" +
-        "flipBtn.addEventListener('click', function() {" +
-          "flipCard.classList.toggle('flipped');" +
-        "});" +
-      "}" +
-    "}, 100);" +
-  "</script>";
-;
+            "<script>" +
+            "setTimeout(function() {" +
+            "var flipBtn = document.getElementById('flipBtn');" +
+            "var flipCard = document.getElementById('flipCard');" +
+            "if (flipBtn && flipCard) {" +
+            "flipBtn.addEventListener('click', function() {" +
+            "flipCard.classList.toggle('flipped');" +
+            "});" +
+            "}" +
+            "}, 100);" +
+            "</script>";;
 
 
-    c.trustedMessage = $sce.trustAsHtml(message);
+        c.trustedMessage = $sce.trustAsHtml(message);
 
-    spModal.open({
-        title: card.name,
-        message: c.trustedMessage,
-			  size: 'custom',
-        buttons: [{
-            label: '${Close}',
-            primary: true
-        }]
-    });
-};
+        spModal.open({
+            title: card.name,
+            message: c.trustedMessage,
+            size: 'custom',
+            buttons: [{
+                label: '${Close}',
+                primary: true
+            }]
+        });
+    };
 
 
 
@@ -212,145 +211,145 @@ var message =
     });
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.wrapper {
-  display: grid;
-  justify-items: center;
-  padding: 1rem;
-  gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-@media (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  }
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 1rem;
-  background-color: black;
-  max-width: 350px;
-  width: 100%;
-  height: fit-content;
-}
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;         
-  max-width: 350px;    
-  height: auto;
-}
-
-.image {
-  border-radius: 1rem;
-  width: 100%;     
-  height: auto;    
-  display: block;
-}
-
-.foil {
-  position: absolute;
-  top: 0;
-  right: 0;  
-  border-radius: 2rem;
-  width: 100%;  
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-.pagination {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.pagination button {
-  padding: 6px 10px;
-  min-width: 36px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: #ddd;
-  transform: translateY(-1px);
-}
-
-.pagination button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.pagination button.active-page {
-  background-color: #007acc;
-  color: white;
-  font-weight: bold;
-  border-color: #007acc;
-}
-
-.go-to-page {
-  margin-left: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.go-to-page input[type="number"] {
-  width: 60px;
-  padding: 4px 6px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.go-to-page button {
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: #333;
-  cursor: pointer;
-  color: white;
-}
-
-.go-to-page label {
-  color: white !important;
-}
-
-.go-to-page button:hover {
-  background-color: #444;
+        <css>body {&#13;
+  min-height: 100vh;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+}&#13;
+&#13;
+.wrapper {&#13;
+  display: grid;&#13;
+  justify-items: center;&#13;
+  padding: 1rem;&#13;
+  gap: 2.5rem;&#13;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));&#13;
+}&#13;
+&#13;
+@media (max-width: 768px) {&#13;
+  .wrapper {&#13;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 480px) {&#13;
+  .wrapper {&#13;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));&#13;
+  }&#13;
+}&#13;
+&#13;
+.card {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  position: relative;&#13;
+  border-radius: 5%;&#13;
+  background-color: black;&#13;
+  max-width: 350px;&#13;
+  width: 100%;&#13;
+  height: fit-content;&#13;
+}&#13;
+&#13;
+.image-container {&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
+  width: 100%;         &#13;
+  max-width: 350px;    &#13;
+  height: auto;&#13;
+}&#13;
+&#13;
+.image {&#13;
+  width: 100%;     &#13;
+  height: auto;    &#13;
+  display: block;&#13;
+  border-radius: 5%;&#13;
+}&#13;
+&#13;
+.foil {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  right: 0;  &#13;
+  border-radius: 5%;&#13;
+  width: 100%;  &#13;
+  height: 100%;&#13;
+  object-fit: cover;&#13;
+  transition: transform 0.2s ease;&#13;
+}&#13;
+&#13;
+.card:hover {&#13;
+  transform: scale(1.1);&#13;
+}&#13;
+&#13;
+img {&#13;
+  width: 100%;&#13;
+  display: block;&#13;
+}&#13;
+&#13;
+.pagination {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  gap: 0.75rem;&#13;
+  margin-top: 2rem;&#13;
+}&#13;
+&#13;
+.pagination button {&#13;
+  padding: 6px 10px;&#13;
+  min-width: 36px;&#13;
+  background-color: #f1f1f1;&#13;
+  border: 1px solid #ccc;&#13;
+  border-radius: 4px;&#13;
+  color: #333;&#13;
+  font-size: 14px;&#13;
+  cursor: pointer;&#13;
+  transition: background-color 0.2s ease, transform 0.1s ease;&#13;
+}&#13;
+&#13;
+.pagination button:hover:not(:disabled) {&#13;
+  background-color: #ddd;&#13;
+  transform: translateY(-1px);&#13;
+}&#13;
+&#13;
+.pagination button:disabled {&#13;
+  opacity: 0.5;&#13;
+  cursor: default;&#13;
+}&#13;
+&#13;
+.pagination button.active-page {&#13;
+  background-color: #007acc;&#13;
+  color: white;&#13;
+  font-weight: bold;&#13;
+  border-color: #007acc;&#13;
+}&#13;
+&#13;
+.go-to-page {&#13;
+  margin-left: 1rem;&#13;
+  display: inline-flex;&#13;
+  align-items: center;&#13;
+  gap: 0.5rem;&#13;
+}&#13;
+&#13;
+.go-to-page input[type="number"] {&#13;
+  width: 60px;&#13;
+  padding: 4px 6px;&#13;
+  border-radius: 4px;&#13;
+  border: 1px solid #ccc;&#13;
+}&#13;
+&#13;
+.go-to-page button {&#13;
+  padding: 4px 10px;&#13;
+  border-radius: 4px;&#13;
+  border: 1px solid #555;&#13;
+  background-color: #333;&#13;
+  cursor: pointer;&#13;
+  color: white;&#13;
+}&#13;
+&#13;
+.go-to-page label {&#13;
+  color: white !important;&#13;
+}&#13;
+&#13;
+.go-to-page button:hover {&#13;
+  background-color: #444;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -370,7 +369,7 @@ img {
         <script><![CDATA[(function() {
     data.records = [];
     var utils = new x_759224_magic_c_0.magic_utils();
-		
+
     var searchTerm = input?.searchTerm?.trim() || '';
 
     var cardsGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
@@ -387,39 +386,38 @@ img {
     cardsGR.query();
 
     while (cardsGR.next()) {
-                data.records.push({
+        data.records.push({
             name: cardsGR.getValue('name'),
             sets: cardsGR.getDisplayValue('sets'),
             foil: cardsGR.getDisplayValue('foiling'),
             price: cardsGR.getValue('price'),
-						typeLine: cardsGR.getValue('type_line'),
-					  frontFlavor: cardsGR.getValue('face_one_flavor_text'),
+            typeLine: cardsGR.getValue('type_line'),
+            frontFlavor: cardsGR.getValue('face_one_flavor_text'),
             oracle: cardsGR.getValue('face_one_oracle_text'),
             multiFaced: cardsGR.getValue('is_multi_faced'),
-						fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
+            fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
             bImg: utils.getImgSrc(cardsGR.getValue('back_image')),
-						tcg: cardsGR.getValue('tcgplayer_purchase'),
-						cardMarket: cardsGR.getValue('cardmarket_purchase'),
-						cardHoarder: cardsGR.getValue('cardHoarder_purchase'),
-						edhrec: cardsGR.getValue('edhrec'),
+            tcg: cardsGR.getValue('tcgplayer_purchase'),
+            cardMarket: cardsGR.getValue('cardmarket_purchase'),
+            cardHoarder: cardsGR.getValue('cardHoarder_purchase'),
+            edhrec: cardsGR.getValue('edhrec'),
             displayImg: true
         });
     }
-})();
-]]></script>
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>320</sys_mod_count>
+        <sys_mod_count>328</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-01 18:58:50</sys_updated_on>
+        <sys_updated_on>2025-08-01 20:30:28</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="r in c.paginatedRecords()"
