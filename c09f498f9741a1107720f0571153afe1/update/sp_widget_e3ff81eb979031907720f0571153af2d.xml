@@ -8,28 +8,47 @@
   c.searchCards = function() {
     $rootScope.$broadcast('searchTerm', c.searchTerm);
   };
-};
-]]></client_script>
+
+  c.clearSearch = function() {
+    c.searchTerm = '';
+    $rootScope.$broadcast('searchTerm', c.searchTerm);
+  };
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.input-container {&#13;
   display: flex;&#13;
-  align-items: center; /* Use align-items instead of align-content for centering */&#13;
+  align-items: center;&#13;
   justify-content: center;&#13;
   gap: 1rem;&#13;
   padding-top: 1rem;&#13;
 }&#13;
 &#13;
-.search-input {&#13;
-  width: 500px; /* You can adjust this width value */&#13;
-  padding: 0.5rem; /* Adds padding to make the input more spacious */&#13;
-  border-radius: 0.5rem; /* Optional: rounded corners */&#13;
-  border: 1px solid #ccc; /* Optional: border for styling */&#13;
-  font-size: 1.3rem; /* Optional: adjust text size */&#13;
+.input-wrapper {&#13;
+  position: relative;&#13;
+  width: 500px;&#13;
 }&#13;
 &#13;
-.search-btn {&#13;
-  /* You can add styling for the button here if needed */&#13;
+.search-input {&#13;
+  width: 100%;&#13;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem; /* Extra right padding for 'x' icon */&#13;
+  border-radius: 0.5rem;&#13;
+  border: 1px solid #ccc;&#13;
   font-size: 1.3rem;&#13;
+}&#13;
+&#13;
+.clear-icon {&#13;
+  position: absolute;&#13;
+  right: 10px;&#13;
+  top: 50%;&#13;
+  transform: translateY(-50%);&#13;
+  cursor: pointer;&#13;
+  font-size: 2rem;&#13;
+  color: #aaa;&#13;
+  user-select: none;&#13;
+}&#13;
+&#13;
+.clear-icon:hover {&#13;
+  color: #000;&#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -57,21 +76,25 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-02 21:20:57</sys_created_on>
         <sys_id>e3ff81eb979031907720f0571153af2d</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>MTG Search</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e3ff81eb979031907720f0571153af2d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-01 05:01:20</sys_updated_on>
+        <sys_updated_on>2025-08-02 18:01:30</sys_updated_on>
         <template><![CDATA[<div class="input-container">
-  <input type="text"
-         class="search-input"
-         ng-model="c.searchTerm"
-         placeholder="Search card name"
-         ng-change="$root.$broadcast('searchTerm', c.searchTerm)" />
+  <div class="input-wrapper">
+    <input type="text"
+           class="search-input"
+           ng-model="c.searchTerm"
+           placeholder="Search card name"
+           ng-change="$root.$broadcast('searchTerm', c.searchTerm)" />
+    <span class="clear-icon" ng-show="c.searchTerm" ng-click="c.clearSearch()">×</span>
+  </div>
   <button class="btn btn-primary" ng-click="c.searchCards()">Search</button>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
