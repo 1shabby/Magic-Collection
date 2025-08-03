@@ -85,7 +85,6 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     'line-height: 1; pointer-events: none;">GC</span>' +
                     '</div>';
             } else {
-                gs.info("Is Foil: " + isFoil);
                 return '' +
                     '<div style="position: relative; width: 200px; height: 280px;">' +
                     '<img id="fImg" width="200" height="280" src="' + url + '" alt="' + altText + '" />' +
@@ -247,13 +246,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 21:12:39</sys_updated_on>
+        <sys_updated_on>2025-08-03 01:18:27</sys_updated_on>
     </sys_script_include>
 </record_update>
