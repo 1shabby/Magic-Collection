@@ -3,79 +3,74 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller = function(spModal, $rootScope, $sce, $scope) {
     var c = this;
+    c.currentPage = c.data.currentPage || 1;
+    c.pageInput = c.currentPage;
+    c.searchTerm = c.data.searchTerm || '';
 
-    // Pagination settings
-    c.pageSize = 24;
-    c.currentPage = 1;
-
-    // Watch for data load and log info
-    $scope.$watch(
-        () => c.data.records,
-        function(records) {
-            if (Array.isArray(records) && records.length) {
-                c.currentPage = 1; // Reset to first page when data changes
-            }
-        }
-    );
+    // Listen for searchTerm broadcasts
+    $scope.$on('searchTerm', function(event, term) {
+        c.searchTerm = term || '';
+        c.currentPage = 1;
+        c.pageInput = 1;
+        c.updatePage(1);
+    });
 
     c.pageCount = function() {
-        if (!c.data || !Array.isArray(c.data.records)) return 0;
-        return Math.ceil(c.data.records.length / c.pageSize);
-    };
-
-    c.paginatedRecords = function() {
-        if (!c.data || !Array.isArray(c.data.records)) return [];
-        const start = (c.currentPage - 1) * c.pageSize;
-        const paged = c.data.records.slice(start, start + c.pageSize);
-        return paged;
-    };
-
-    c.nextPage = function() {
-        if (c.currentPage < c.pageCount()) {
-            c.currentPage++;
-        }
-    };
-
-    c.prevPage = function() {
-        if (c.currentPage > 1) {
-            c.currentPage--;
-        }
-    };
-
-    c.setPage = function(page) {
-        c.currentPage = page;
+        return Math.ceil(c.data.totalCount / c.data.pageSize);
     };
 
     c.middlePages = function() {
-        const total = c.pageCount();
-        const current = c.currentPage;
-        const range = [];
-
-        const start = Math.max(2, current - 2); // don't duplicate "1"
-        const end = Math.min(total - 1, current + 2); // don't duplicate "last"
-
-        for (let i = start; i <= end; i++) {
-            range.push(i);
-        }
-
-        return range;
+        var pages = [];
+        var start = Math.max(2, c.currentPage - 2);
+        var end = Math.min(c.pageCount() - 1, c.currentPage + 2);
+        for (var i = start; i <= end; i++) pages.push(i);
+        return pages;
     };
 
-    c.pageInput = '';
+    c.updatePage = function(page) {
+        c.currentPage = page;
+        c.pageInput = page;
 
-    c.jumpToPage = function() {
-        const page = parseInt(c.pageInput, 10);
-        if (!isNaN(page) && page >= 1 && page <= c.pageCount()) {
-            c.currentPage = page;
-            c.pageInput = ''; // optional: clear input after jump
-        }
+        c.server.get({
+            page: page,
+            searchTerm: c.searchTerm.trim()
+        }).then(function(response) {
+            c.data.records = response.data.records;
+            c.data.totalCount = response.data.totalCount;
+            c.data.pageSize = response.data.pageSize;
+            c.currentPage = response.data.currentPage;
+            c.pageInput = response.data.currentPage;
+        });
+    };
+
+    // Pagination helpers
+    c.prevPage = function() {
+        if (c.currentPage > 1) c.updatePage(c.currentPage - 1);
+    };
+
+    c.nextPage = function() {
+        if (c.currentPage < c.pageCount()) c.updatePage(c.currentPage + 1);
+    };
+
+    c.setPage = function(page) {
+        c.updatePage(page);
     };
 
     c.handlePageInput = function(event) {
-        if (event.which === 13) { // Enter key
+        if (event.key === 'Enter') {
             c.jumpToPage();
         }
     };
+
+    c.jumpToPage = function() {
+        var page = parseInt(c.pageInput, 10);
+        if (!isNaN(page) && page >= 1 && page <= c.pageCount()) {
+            c.updatePage(page);
+        }
+    };
+
+    // Initial fetch
+    c.updatePage(c.currentPage);
 
     c.viewDetails = function(card) {
         var isFoil = card.foil && card.foil.toLowerCase() !== 'none';
@@ -334,18 +329,6 @@
             }]
         });
     };
-
-
-
-
-    // Listen for external search broadcast
-    $rootScope.$on('searchTerm', function(event, term) {
-        c.data.searchTerm = term;
-        c.currentPage = 1;
-        c.server.update({
-            searchTerm: term
-        });
-    });
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>body {&#13;
@@ -500,104 +483,129 @@ img {&#13;
   
 }]]></link>
         <name>MTG Card</name>
-        <option_schema>[{"name":"page_limit","section":"other","default_value":"24","label":"Cards Per Page","type":"integer"}]</option_schema>
+        <option_schema>[{"name":"page_limit","section":"other","default_value":"24","label":"Cards Per Page","type":"integer"},{"name":"page","section":"other","default_value":"1","label":"Page","type":"integer"},{"name":"searchterm","section":"other","label":"Search Term","type":"string"}]</option_schema>
         <public>true</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
     data.records = [];
 
-    data.cardsPerPage = options.page_limit;
+    gs.info("DEBUG (Start): Input → " + JSON.stringify(input));
+
+    // ✅ Detect first load vs. pagination
+    var isFirstLoad = !input;
+    var page = (input && input.page) ? parseInt(input.page, 10) : 1;
+    var pageSize = parseInt(options.page_limit || 18, 10);
+    var offset = (page - 1) * pageSize;
+    var searchTerm = (input && input.searchTerm) ? input.searchTerm.trim() : '';
+
+    gs.info("DEBUG (Parsed Page): " + page);
+    if (typeof input !== 'undefined') {
+        gs.info("DEBUG (Raw Page Field): " + input.page);
+    }
+    gs.info('DEBUG: Page ' + page + ', Offset ' + offset);
 
     var utils = new x_759224_magic_c_0.magic_utils();
 
-    var searchTerm = input?.searchTerm?.trim() || '';
+    // ✅ Count total cards
+    var countGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    if (searchTerm) countGR.addQuery('name', 'CONTAINS', searchTerm);
+    countGR.query();
+    data.totalCount = countGR.getRowCount();
 
+    // ✅ Fetch paginated records
     var cardsGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    if (searchTerm) cardsGR.addQuery('name', 'CONTAINS', searchTerm);
     cardsGR.orderBy('name');
-
-    if (searchTerm) {
-        cardsGR.addQuery('name', 'CONTAINS', searchTerm);
-    }
-
     cardsGR.query();
 
+    var i = 0, added = 0;
     while (cardsGR.next()) {
-        data.records.push({
-            // Core details
-			sysId: cardsGR.getValue('sys_id'),
-            name: cardsGR.getValue('name'),
-            collectorNumber: cardsGR.getValue('collector_number'),
-            cmc: cardsGR.getValue('cmc'),
-            rarity: cardsGR.getValue('rarity'),
-            foil: cardsGR.getDisplayValue('foiling'),
-            price: cardsGR.getValue('price'),
-            sets: cardsGR.getDisplayValue('sets'),
-			producedMana: cardsGR.getValue('face_one_produced_mana'),
+        if (i >= offset && added < pageSize) {
+            data.records.push({
+                sysId: cardsGR.getValue('sys_id'),
+                name: cardsGR.getValue('name'),
+                collectorNumber: cardsGR.getValue('collector_number'),
+                cmc: cardsGR.getValue('cmc'),
+                rarity: cardsGR.getValue('rarity'),
+                foil: cardsGR.getDisplayValue('foiling'),
+                price: cardsGR.getValue('price'),
+                sets: cardsGR.getDisplayValue('sets'),
+                producedMana: cardsGR.getValue('face_one_produced_mana'),
 
-            // Legalities
-            standard: cardsGR.getValue('standard_legality'),
-            standardBrawl: cardsGR.getValue('standardbrawl_legality'),
-            historic: cardsGR.getValue('historic_legality'),
-            alchemy: cardsGR.getValue('alchemy_legality'),
-            pioneer: cardsGR.getValue('pioneer_legality'),
-            explorer: cardsGR.getValue('explorer_legality'),
-            modern: cardsGR.getValue('modern_legality'),
-            legacy: cardsGR.getValue('legacy_legality'),
-            vintage: cardsGR.getValue('vintage_legality'),
-            pauper: cardsGR.getValue('pauper_legality'),
-            paupercommander: cardsGR.getValue('paupercommander_legality'),
-            commander: cardsGR.getValue('commander_legality'),
-            brawl: cardsGR.getValue('brawl_legality'),
-            oathbreaker: cardsGR.getValue('oathbreaker_legality'),
-            gladiator: cardsGR.getValue('gladiator_legality'),
-            future: cardsGR.getValue('future_legality'),
-            oldschool: cardsGR.getValue('oldschool_legality'),
-            preDH: cardsGR.getValue('predh_legality'),
-            premodern: cardsGR.getValue('premodern_legality'),
-            timeless: cardsGR.getValue('timeless_legality'),
+                // Legalities
+                standard: cardsGR.getValue('standard_legality'),
+                standardBrawl: cardsGR.getValue('standardbrawl_legality'),
+                historic: cardsGR.getValue('historic_legality'),
+                alchemy: cardsGR.getValue('alchemy_legality'),
+                pioneer: cardsGR.getValue('pioneer_legality'),
+                explorer: cardsGR.getValue('explorer_legality'),
+                modern: cardsGR.getValue('modern_legality'),
+                legacy: cardsGR.getValue('legacy_legality'),
+                vintage: cardsGR.getValue('vintage_legality'),
+                pauper: cardsGR.getValue('pauper_legality'),
+                paupercommander: cardsGR.getValue('paupercommander_legality'),
+                commander: cardsGR.getValue('commander_legality'),
+                brawl: cardsGR.getValue('brawl_legality'),
+                oathbreaker: cardsGR.getValue('oathbreaker_legality'),
+                gladiator: cardsGR.getValue('gladiator_legality'),
+                future: cardsGR.getValue('future_legality'),
+                oldschool: cardsGR.getValue('oldschool_legality'),
+                preDH: cardsGR.getValue('predh_legality'),
+                premodern: cardsGR.getValue('premodern_legality'),
+                timeless: cardsGR.getValue('timeless_legality'),
 
-            // Front face
-            frontFlavor: cardsGR.getValue('face_one_flavor_text'),
-            frontOracle: cardsGR.getValue('face_one_oracle_text'),
-            frontManaCost: cardsGR.getValue('face_one_mana_cost'),
-            frontPower: cardsGR.getValue('face_one_power'),
-            frontToughness: cardsGR.getValue('face_one_toughness'),
-			typeLine: cardsGR.getValue('type_line'),
-            frontColors: cardsGR.getValue('face_one_colors'),
-            frontArtist: cardsGR.getValue('face_one_artist'),
+                // Front face
+                frontFlavor: cardsGR.getValue('face_one_flavor_text'),
+                frontOracle: cardsGR.getValue('face_one_oracle_text'),
+                frontManaCost: cardsGR.getValue('face_one_mana_cost'),
+                frontPower: cardsGR.getValue('face_one_power'),
+                frontToughness: cardsGR.getValue('face_one_toughness'),
+                typeLine: cardsGR.getValue('type_line'),
+                frontColors: cardsGR.getValue('face_one_colors'),
+                frontArtist: cardsGR.getValue('face_one_artist'),
+                frontLoyalty: cardsGR.getValue('face_one_loyalty'),
 
-            frontLoyalty: cardsGR.getValue('face_one_loyalty'),
+                // Back face
+                backFlavor: cardsGR.getValue('face_two_flavor_text'),
+                backOracle: cardsGR.getValue('face_two_oracle_text'),
+                backManaCost: cardsGR.getValue('face_two_mana_cost'),
+                backPower: cardsGR.getValue('face_two_power'),
+                backToughness: cardsGR.getValue('face_two_toughness'),
+                backTypeLine: cardsGR.getValue('face_two_type_line'),
+                backArtist: cardsGR.getValue('face_two_artist'),
+                backColors: cardsGR.getValue('face_two_colors'),
+                backLoyalty: cardsGR.getValue('face_two_loyalty'),
 
-            // Back face
-            backFlavor: cardsGR.getValue('face_two_flavor_text'),
-            backOracle: cardsGR.getValue('face_two_oracle_text'),
-            backManaCost: cardsGR.getValue('face_two_mana_cost'),
-            backPower: cardsGR.getValue('face_two_power'),
-            backToughness: cardsGR.getValue('face_two_toughness'),
-            backTypeLine: cardsGR.getValue('face_two_type_line'),
-            backArtist: cardsGR.getValue('face_two_artist'),
-            backColors: cardsGR.getValue('face_two_colors'),
-            backLoyalty: cardsGR.getValue('face_two_loyalty'),
+                // Images
+                fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
+                bImg: utils.getImgSrc(cardsGR.getValue('back_image')),
+                displayImg: true,
 
-            // Images
-            fImg: utils.getImgSrc(cardsGR.getValue('front_image')),
-            bImg: utils.getImgSrc(cardsGR.getValue('back_image')),
-            displayImg: true,
+                // Links
+                tcg: cardsGR.getValue('tcgplayer_purchase'),
+                cardMarket: cardsGR.getValue('cardmarket_purchase'),
+                cardHoarder: cardsGR.getValue('cardhoarder_purchase'),
+                edhrec: cardsGR.getValue('edhrec'),
+                gatherer: cardsGR.getValue('gatherer'),
 
-            // Links
-            tcg: cardsGR.getValue('tcgplayer_purchase'),
-            cardMarket: cardsGR.getValue('cardmarket_purchase'),
-            cardHoarder: cardsGR.getValue('cardhoarder_purchase'),
-            edhrec: cardsGR.getValue('edhrec'),
-            gatherer: cardsGR.getValue('gatherer'),
-
-            // Other
-            isMultiFaced: cardsGR.getValue('is_multi_faced'),
-            gameChanger: cardsGR.getValue('game_changer'),
-			reserved: cardsGR.getValue('reserved_list'),
-            keywords: cardsGR.getValue('keywords')
-        });
+                // Other
+                isMultiFaced: cardsGR.getValue('is_multi_faced'),
+                gameChanger: cardsGR.getValue('game_changer'),
+                reserved: cardsGR.getValue('reserved_list'),
+                keywords: cardsGR.getValue('keywords')
+            });
+            added++;
+        }
+        i++;
+        if (added >= pageSize) break;
     }
+
+    // ✅ Final response
+    data.records = data.records || [];
+    data.totalCount = data.totalCount || 0;
+    data.pageSize = pageSize;
+    data.currentPage = page;
+    data.searchTerm = searchTerm;
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -605,17 +613,17 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>374</sys_mod_count>
+        <sys_mod_count>400</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-03 00:04:12</sys_updated_on>
+        <sys_updated_on>2025-08-03 01:58:13</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
-          ng-repeat="r in c.paginatedRecords()"
+          ng-repeat="r in c.data.records"
           ng-click="c.viewDetails(r)">
     <div class="image-container">
       <img class="image" ng-src="{{r.fImg}}" ng-alt="{{r.oracle}}" />
