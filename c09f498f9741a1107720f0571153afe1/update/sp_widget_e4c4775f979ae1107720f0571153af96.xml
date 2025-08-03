@@ -201,7 +201,10 @@
 
             // Right Column- Text info
             "<div class='info-col' style='flex: 1.5;'>" +
-            "<div id='cardName'>" + (hasValue(card.name) ? card.name : 'Unknown Card') + "</div>" +
+            "<div id='cardName'>" +
+            (hasValue(card.frontFlavorName) ? card.frontFlavorName :
+                (hasValue(card.frontName) ? card.frontName : card.name)) +
+            "</div>" +
 
             // Mana Cost and Type Line rows, shown only if present
             ((showManaFront || hasValue(card.typeLine)) ?
@@ -251,39 +254,35 @@
             "      flipCard.classList.toggle('flipped');" +
             "      var isFlipped = flipCard.classList.contains('flipped');" +
 
-            // Mana cost toggle, only if present
+            "      var frontMana = " + JSON.stringify(card.frontManaCost || "") + ";" +
+            "      var backMana = " + JSON.stringify(card.backManaCost || "") + ";" +
             "      var manaCostEl = document.getElementById('manaCost');" +
-            "      if(manaCostEl) {" +
-            "        manaCostEl.innerHTML = isFlipped ? `" + (hasValue(card.backManaCost) ? card.backManaCost : "") + "` : `" + (hasValue(card.frontManaCost) ? card.frontManaCost : "") + "`;" +
-            "        if(!manaCostEl.innerHTML.trim()) manaCostEl.parentElement.style.display = 'none'; else manaCostEl.parentElement.style.display = 'inline';" +
+            "      if (manaCostEl) {" +
+            "        manaCostEl.innerHTML = isFlipped ? backMana : frontMana;" +
+            "        manaCostEl.parentElement.style.display = manaCostEl.innerHTML.trim() ? 'inline' : 'none';" +
             "      }" +
 
-            // Colors toggle
             "      var colorsEl = document.getElementById('colors');" +
-            "      if(colorsEl) {" +
-            "        colorsEl.innerText = isFlipped ? `" + backColorsFull + "` : `" + frontColorsFull + "`;" +
-            "        if(!colorsEl.innerText.trim()) colorsEl.parentElement.style.display = 'none'; else colorsEl.parentElement.style.display = 'inline';" +
+            "      if (colorsEl) {" +
+            "        colorsEl.innerText = isFlipped ? " + JSON.stringify(backColorsFull) + " : " + JSON.stringify(frontColorsFull) + ";" +
+            "        colorsEl.parentElement.style.display = colorsEl.innerText.trim() ? 'inline' : 'none';" +
             "      }" +
 
-            // Type line toggle
             "      var typeLineEl = document.getElementById('typeLine');" +
-            "      if(typeLineEl) {" +
-            "        typeLineEl.innerText = isFlipped ? `" + (card.backTypeLine || "") + "` : `" + (card.typeLine || "") + "`;" +
-            "        if(!typeLineEl.innerText.trim()) typeLineEl.parentElement.style.display = 'inline'; else typeLineEl.parentElement.style.display = 'inline';" +
+            "      if (typeLineEl) {" +
+            "        typeLineEl.innerText = isFlipped ? " + JSON.stringify(card.backTypeLine || "") + " : " + JSON.stringify(card.typeLine || "") + ";" +
             "      }" +
 
-            // Oracle text toggle
             "      var oracleEl = document.getElementById('oracle');" +
-            "      if(oracleEl) {" +
-            "        oracleEl.innerHTML = isFlipped ? `" + (card.backOracle || "") + "` : `" + (card.frontOracle || "") + "`;" +
-            "        if(!oracleEl.innerHTML.trim()) oracleEl.parentElement.style.display = 'none'; else oracleEl.parentElement.style.display = 'block';" +
+            "      if (oracleEl) {" +
+            "        oracleEl.innerHTML = isFlipped ? " + JSON.stringify(card.backOracle || "") + " : " + JSON.stringify(card.frontOracle || "") + ";" +
+            "        oracleEl.parentElement.style.display = oracleEl.innerHTML.trim() ? 'block' : 'none';" +
             "      }" +
 
-            // Flavor text toggle
             "      var flavorEl = document.getElementById('flavor');" +
             "      if (flavorEl) {" +
-            "        var backFlavor = `" + (card.backFlavor || "") + "`;" +
-            "        var frontFlavor = `" + (card.frontFlavor || "") + "`;" +
+            "        var backFlavor = " + JSON.stringify(card.backFlavor || "") + ";" +
+            "        var frontFlavor = " + JSON.stringify(card.frontFlavor || "") + ";" +
             "        if (isFlipped && backFlavor.trim() && backFlavor.trim() !== '-') {" +
             "          flavorEl.innerText = backFlavor;" +
             "          flavorEl.parentElement.style.display = 'block';" +
@@ -295,13 +294,12 @@
             "        }" +
             "      }" +
 
-            // Power/Toughness toggle
             "      var ptEl = document.getElementById('pt');" +
             "      if (ptEl) {" +
-            "        var backPower = `" + (hasValue(card.backPower) ? card.backPower : "") + "`;" +
-            "        var backToughness = `" + (hasValue(card.backToughness) ? card.backToughness : "") + "`;" +
-            "        var frontPower = `" + (hasValue(card.frontPower) ? card.frontPower : "") + "`;" +
-            "        var frontToughness = `" + (hasValue(card.frontToughness) ? card.frontToughness : "") + "`;" +
+            "        var backPower = " + JSON.stringify(card.backPower || "") + ";" +
+            "        var backToughness = " + JSON.stringify(card.backToughness || "") + ";" +
+            "        var frontPower = " + JSON.stringify(card.frontPower || "") + ";" +
+            "        var frontToughness = " + JSON.stringify(card.frontToughness || "") + ";" +
             "        if (isFlipped && backPower.trim() && backToughness.trim()) {" +
             "          ptEl.innerText = backPower + ' / ' + backToughness;" +
             "          ptEl.parentElement.style.display = 'inline';" +
@@ -312,10 +310,24 @@
             "          ptEl.parentElement.style.display = 'none';" +
             "        }" +
             "      }" +
+
+            "      var nameEl = document.getElementById('cardName');" +
+            "      if (nameEl) {" +
+            "        var backFlavorName = " + JSON.stringify(card.backFlavorName || "") + ";" +
+            "        var backName = " + JSON.stringify(card.backName || "") + ";" +
+            "        var frontFlavorName = " + JSON.stringify(card.frontFlavorName || "") + ";" +
+            "        var frontName = " + JSON.stringify(card.frontName || "") + ";" +
+            "        if (isFlipped) {" +
+            "          nameEl.innerText = backFlavorName.trim() ? backFlavorName : (backName.trim() ? backName : 'Unknown Card');" +
+            "        } else {" +
+            "          nameEl.innerText = frontFlavorName.trim() ? frontFlavorName : (frontName.trim() ? frontName : 'Unknown Card');" +
+            "        }" +
+            "      }" +
             "    });" +
             "  }" +
             "}, 100);" +
             "</script>";
+
 
         c.trustedMessage = $sce.trustAsHtml(message);
 
@@ -547,6 +559,8 @@ img {&#13;
 
                 // Front face
                 frontFlavor: cardsGR.getValue('face_one_flavor_text'),
+				frontFlavorName: cardsGR.getValue('face_one_flavor_name'),
+				frontName: cardsGR.getValue('face_one_name'),
                 frontOracle: cardsGR.getValue('face_one_oracle_text'),
                 frontManaCost: cardsGR.getValue('face_one_mana_cost'),
                 frontPower: cardsGR.getValue('face_one_power'),
@@ -558,6 +572,8 @@ img {&#13;
 
                 // Back face
                 backFlavor: cardsGR.getValue('face_two_flavor_text'),
+				backFlavorName: cardsGR.getValue('face_two_flavor_name'),
+				backName: cardsGR.getValue('face_two_name'),
                 backOracle: cardsGR.getValue('face_two_oracle_text'),
                 backManaCost: cardsGR.getValue('face_two_mana_cost'),
                 backPower: cardsGR.getValue('face_two_power'),
@@ -604,14 +620,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>401</sys_mod_count>
+        <sys_mod_count>410</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-03 13:53:55</sys_updated_on>
+        <sys_updated_on>2025-08-03 14:41:39</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="r in c.data.records"
