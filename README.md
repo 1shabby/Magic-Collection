@@ -11,7 +11,7 @@ On your ServiceNow Instance do the following:
 2. Create a new record
 3. Select the type of "Basic Auth"
 4. In the User Name field, enter your GitHub user name
-5. In the Password field, paste the token passphrase we copied in step 5, part 1
+5. In the Password field, paste the token passphrase we copied in part 1, step 5
 6. Save the record
 7. Navigate to Studio
 8. In the header, click "Import App"
