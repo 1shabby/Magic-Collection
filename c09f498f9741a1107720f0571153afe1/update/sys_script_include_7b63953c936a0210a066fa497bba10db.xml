@@ -13,120 +13,12 @@
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /**
-     * Description: Takes in a url to an image and attaches it to the card record
-     * Parameters: {string}: url - url to the png from scryfall
-     * 			   {string}: table - name of the table that the record you want to attach it to
-     * 			   {string}: record - sys_id of the record you want to attach it to
-     * 			   {string}: filename - the filename for the attachment
-     * Returns: None; A new attachment will be on the card record
-     */
-
-    attachImage: function(url, table, record, filename) {
-        try {
-            var request = new sn_ws.RESTMessageV2();
-            request.setHttpMethod('get');
-            request.setEndpoint(url);
-            request.saveResponseBodyAsAttachment(tablename, recordSysId, filename);
-            var response = request.execute();
-        } catch (e) {
-            gs.info(e.message());
-        }
-    },
-
-    setImage: function(image_name, width) {
-        width = width || '15rem;';
-        return '<img style="width:' + width + ';" src="' + image_name + '"/>';
-    },
-
-    /**
-    * Description: Takes in a CSV file and creates each card and associates it to a deck record.   
-    * Parameters: {string}: Data - CSV formatted file;
-    			  {string}: Name - the name of the deck;
-    			  {string}: Commander(s) - the name / names of the commanders for the deck;
-    * Returns: None; Creates a deck record and associates each card from the import with the deck. The card will be 
-    				 created if it doesn't exist presently.
-    */
-
-    importDeck: function(data, name, commander) {
-        data = data || this.getParameter('data');
-        // Converts data into an array.
-        var deck_arr = this._cleanData(data);
-        var cards = this._processArr(deck_arr);
-        this._createDeck(cards, name, commander);
-
-    },
-
-    /**
-     * Description: Takes in information pertaining to a card and creates a card record from it.
-     * Parameters: {string}: Card - comma seperated string containing information for the card;
-     * Returns: None; Creates a new card record.
-     */
-
-    _cleanData: function(data) {
-        // Performs several replace operations to allow use to process the data in a meaningful way.
-        var result = data.replaceAll(/\n/g, '|').replace(/'/g, "\\'").replace(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/g, ';').replaceAll('"', '').replaceAll(/\\/g, '').replaceAll('\r', '');
-        // Convert the string into an array, and return
-        return result.split('|');
-    },
-
-    /**
-     * Description: Takes in a CSV file and cleans the data so it can be proccessed
-     * Parameters: {string}: Data - CSV formatted file.
-     * Returns: {array of objects}: Cards - an array of objects containing all the card names and quantities.
-     */
-
-    _processArr: function(arr) {
-        var i = 0;
-        var cards = [];
-
-        while (i < arr.length) {
-            var card = arr[i].split(';');
-            //this._createCard(card);
-            cards = this._trackNames(card, cards);
-            i++;
-        }
-        // Return the cards
-        return cards;
-    },
-    /**
-     * Description: Takes in a CSV file and cleans the data so it can be proccessed
-     * Parameters: {string}: Data - CSV formatted file;
-     * Returns: None; Creates a new card record.
-     */
-
-    _createCard: function(card) {
-        // Set attributes from card
-        var quantity = card[0];
-        var name = card[1];
-        var set_id = card[2];
-        var foil = card[3];
-        var cn = card[4];
-        // Create GlideRecord
-        var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-        cardGr.initialize();
-        // Populate values
-        cardGr.setValue('quantity', quantity);
-        cardGr.setValue('name', name);
-        cardGr.setValue('collector_number', cn);
-        cardGr.setValue('sets', this._getSetRecord(set_id));
-        // Set Foiling
-        if (foil == 'Normal') {
-            cardGr.setValue('foiling', 'none');
-        } else if (foil == 'Foil') {
-            cardGr.setValue('foiling', 'foil');
-        } else {
-            cardGr.setValue('foiling', 'etched');
-        }
-        cardGr.insert();
-    },
-
-    /**
      * Description: Takes in set_id and returns the sys_id of the record on the system
-     * Parameters: {string}: set_id - the string id used to identify a set;
-     * Returns: {string}: sys_id of the set record from the system.
+     * Parameters: [string]: set_id - the string id used to identify a set;
+     * Returns: [string]: sys_id of the set record from the system.
      */
 
-    _getSetRecord: function(set_id) {
+    getSetRecord: function(set_id) {
         var setGr = new GlideRecord('x_759224_magic_c_0_mtg_sets');
         setGr.addQuery('id', set_id);
         setGr.query();
@@ -134,85 +26,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return setGr.getUniqueValue();
     },
 
-    _trackNames: function(card, arr) {
-        var obj = {
-            "name": card[1],
-            "quantity": card[0],
-            "cn": card[4]
-        };
-        arr.push(obj);
-        return arr;
-    },
-
-    _createDeck: function(arr, name, commander) {
-        var deckGr = new GlideRecord('x_759224_magic_c_0_decks');
-        deckGr.initialize();
-        deckGr.setValue('name', name);
-        deckGr.setValue('commanders', this._getCommanders(commander, '303'));
-        deckGr.setValue('cards', this._getCards(arr, commander));
-        // Set Basics Land fields
-        var basics = this._getBasics(arr);
-        var colors = [];
-        if (basics.plains != null) {
-            deckGr.setValue('plains', basics.plains);
-            colors.push('W');
-        }
-        if (basics.island != null) {
-            deckGr.setValue('island', basics.island);
-            colors.push('U');
-        }
-        if (basics.swamp != null) {
-            deckGr.setValue('swamp', basics.swamp);
-            colors.push('B');
-        }
-        if (basics.mountain != null) {
-            deckGr.setValue('mountain', basics.mountain);
-            colors.push('R');
-        }
-        if (basics.forest != null) {
-            deckGr.setValue('forest', basics.forest);
-            colors.push('G');
-        }
-        if (basics.wastes != null) {
-            deckGr.setValue('wastes', basics.wastes);
-            colors.push('C');
-        }
-        deckGr.setValue('color_identity', colors.join());
-        deckGr.insert();
-    },
-
-    _getCommanders: function(name, cn) {
-        return this._getCardRecord(name, cn);
-    },
-
-    _getBasics: function(arr) {
-        var basics = {};
-        var count = 0;
-        while (count < arr.length) {
-            switch (arr[count].name) {
-                case 'Plains':
-                    basics.plains = arr[count].quantity;
-                    break;
-                case 'Island':
-                    basics.island = arr[count].quantity;
-                    break;
-                case 'Mountain':
-                    basics.mountain = arr[count].quantity;
-                    break;
-                case 'Swamp':
-                    basics.swamp = arr[count].quantity;
-                    break;
-                case 'Forest':
-                    basics.forest = arr[count].quantity;
-                    break;
-                case 'Wastes':
-                    basics.wastes += arr[count].quantity;
-                    break;
-            }
-            count++;
-        }
-        return basics;
-    },
+    /**
+     * Description: Takes in an image string (generally the html one from a card) and grabs the source link of the image. If there isn't one, sets it to be the default mtg backing.
+     * Parameters: [string]: img - The value from the image field on a card.
+     * Returns: [string]: source url for the image, or the default back image.
+     */
+   
     getImgSrc: function(img) {
         var regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
         //gs.info(img);
@@ -227,55 +46,20 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return retval;
     },
 
-    _getCards: function(cardsArr, commander) {
-        var count = 0;
-        var cards = [];
-        while (count < cardsArr.length) {
-            // Remove Commander and Basics from the list of cards so they're not counted several times
-            if (cardsArr[count].name == 'Plains' ||
-                cardsArr[count].name == 'Island' ||
-                cardsArr[count].name == 'Swamp' ||
-                cardsArr[count].name == 'Mountain' ||
-                cardsArr[count].name == 'Forest' ||
-                cardsArr[count].name == 'Wastes' ||
-                cardsArr[count].name == commander) {
-                gs.info(cardsArr[count].name);
-            } else {
-                var card = this._getCardRecord(cardsArr[count].name, cardsArr[count].cn);
-                cards.push(card);
-            }
-            count++;
-        }
-        return cards.join();
-    },
-
-    _getCardRecord: function(name, cn) {
-        var cardGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-        cardGr.addQuery('name', name);
-        if (cn) {
-            cardGr.addQuery('collector_number', cn);
-        }
-        cardGr.query();
-        if (cardGr.hasNext()) {
-            cardGr.next();
-            return cardGr.getUniqueValue();
-        }
-    },
-
     type: 'magic_utils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>70</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 01:16:44</sys_updated_on>
+        <sys_updated_on>2025-08-04 13:55:30</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
