@@ -1,167 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope) {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller = function($scope, $element, $timeout) {
+    var c = this;
 
-  c.dragStart = function (event) {
-    //change target appearance so we can see we have grabbed it
-    event.target.style.opacity = '0.7';
-    //change cursor
-    event.target.style.cursor = 'grabbing';
-    //prep for move
-    event.dataTransfer.effectAllowed = 'move';
-    event.dataTransfer.setData('text/html', event.target.innerHTML);
-    c.draggedNode = event.target.id;
-    //ignore all other tasks until we are done
-    document.querySelectorAll('.task').forEach(function (cur) {
-      if (cur.id !== event.target.id) {
-        cur.classList.add('disabled');
-      }
-    })
-  };
+    // Prevent undefined errors
+    c.cards = c.data.cards || [];
 
-  c.dragEnd = function (event) {
-    event.target.style.opacity = '1';
-    event.target.style.cursor = 'grab';
-    var cols = document.querySelectorAll('.task-col-content');
-    cols.forEach(function (cur) {
-      cur.classList.remove('over')
-    });
-    document.querySelectorAll('.task').forEach(function (cur) {
-      cur.classList.remove('disabled');
-    })
-  };
+    // Initialize player health
+    c.playerHealth = 20;
 
-  c.dragEnter = function (event) {
-    //set class for things being dragged over
-    if (event.target && event.target.classList) {
-      event.target.classList.add('over');
-    }
-  };
+    c.modifyHealth = function(amount) {
+        $scope.$applyAsync(function() {
+            c.playerHealth = Math.max(0, c.playerHealth + amount);
+			console.log(c.playerHealth);
+        });
+    };
 
-  c.dragLeave = function (event) {
-    //remove class for things being dragged over
-    if (event.target && event.target.classList) {
-      event.target.classList.remove('over');
-    }
-  };
+    c.$onInit = function() {
+        $timeout(function() {
+            var playmatEl = $element[0];
+            var handZone = playmatEl.querySelector('.hand');
+            var zones = playmatEl.querySelectorAll('.zone');
 
-  c.dragOver = function (event) {
-    if (event.preventDefault) {
-      event.preventDefault(); // Necessary. Allows us to drop.
-    }
-    event.dataTransfer.dropEffect = 'move';
-    return false;
-  };
+            var zoneRect = handZone.getBoundingClientRect();
+            var playmatRect = playmatEl.getBoundingClientRect();
 
-  //recursive function to determine where we drop
-  function findColType(element) {
-    var maxLevels = 4;
-    return checkElement(element, 1);
+            var cardWidth = 110;
+            var cardHeight = 160;
+            var gapX = 10;
+            var gapY = 10;
 
-    function checkElement(element, level) {
-      if (!element) {
-        return null;
-      }
-      if (level >= maxLevels) {
-        return null;
-      }
-      if (element.classList && element.classList.contains('task-col')) {
-        return element.id;
-      }
-      return checkElement(element.parentElement, level++);
-    }
-  }
+            // Set initial positions for cards in hand
+            c.cards.forEach(function(card, index) {
+                card.left = zoneRect.left - playmatRect.left + 10 + index * (cardWidth + gapX);
+                card.top = zoneRect.bottom - playmatRect.top - cardHeight - 10;
+            });
 
-  c.drop = function (event) {
-    if (event.stopPropagation) {
-      event.stopPropagation(); // stops the browser from redirecting.
-    }
-    var colType = findColType(event.target);
-    c.data.tasks[parseInt(c.draggedNode)].state = colType;
-    //apply changes to angular if necessary
-    $scope.$apply();
-  };
-};]]></client_script>
+            var cardsEls = playmatEl.querySelectorAll('.draggable-card');
+            var draggingCard = null;
+            var offsetX = 0;
+            var offsetY = 0;
+
+            function getDistance(rect1, rect2) {
+                var dx = (rect1.left + rect1.width / 2) - (rect2.left + rect2.width / 2);
+                var dy = (rect1.top + rect1.height / 2) - (rect2.top + rect2.height / 2);
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+
+            function getOverlapArea(rect1, rect2) {
+                var x_overlap = Math.max(0, Math.min(rect1.right, rect2.right) - Math.max(rect1.left, rect2.left));
+                var y_overlap = Math.max(0, Math.min(rect1.bottom, rect2.bottom) - Math.max(rect1.top, rect2.top));
+                return x_overlap * y_overlap;
+            }
+
+            // Setup drag start
+            cardsEls.forEach(function(cardEl) {
+                cardEl.style.position = 'absolute';
+
+                // Drag start
+                cardEl.addEventListener('mousedown', function(e) {
+                    draggingCard = cardEl;
+                    offsetX = e.clientX - cardEl.offsetLeft;
+                    offsetY = e.clientY - cardEl.offsetTop;
+                    cardEl.style.cursor = 'grabbing';
+                    cardEl.style.transition = 'none';
+                    e.preventDefault();
+                });
+
+                // Double-click to tap/untap
+                cardEl.addEventListener('dblclick', function() {
+                    cardEl.classList.toggle('rotated');
+                });
+            });
+
+            // Drag move
+            document.addEventListener('mousemove', function(e) {
+                if (!draggingCard) return;
+                draggingCard.style.left = (e.clientX - offsetX) + 'px';
+                draggingCard.style.top = (e.clientY - offsetY) + 'px';
+            });
+
+            // Drag stop
+            document.addEventListener('mouseup', function() {
+                if (!draggingCard) return;
+
+                draggingCard.style.cursor = 'grab';
+                draggingCard.style.transition = 'all 0.05s ease';
+
+                var cardRect = draggingCard.getBoundingClientRect();
+                var overlappingZone = null;
+                var maxOverlapArea = 0;
+                var closestZone = null;
+                var minDistance = Infinity;
+
+                zones.forEach(function(zone) {
+                    var rect = zone.getBoundingClientRect();
+                    var overlapArea = getOverlapArea(cardRect, rect);
+                    if (overlapArea > maxOverlapArea) {
+                        maxOverlapArea = overlapArea;
+                        overlappingZone = zone;
+                    }
+
+                    var distance = getDistance(cardRect, rect);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestZone = zone;
+                    }
+                });
+
+                var targetZone = overlappingZone || (minDistance < 200 ? closestZone : null);
+
+                if (targetZone) {
+                    // Battlefield and Hand = grid snapping
+                    if (targetZone.classList.contains('battlefield') || targetZone.classList.contains('hand')) {
+                        var zoneRect = targetZone.getBoundingClientRect();
+
+                        // How many cards fit horizontally
+                        var slotsPerRow = Math.floor((zoneRect.width + gapX) / (cardWidth + gapX));
+                        var cardsInZone = Array.from(playmatEl.querySelectorAll('.draggable-card')).filter(function(card) {
+                            if (card === draggingCard) return false;
+                            var rect = card.getBoundingClientRect();
+                            return (
+                                rect.left + 5 > zoneRect.left &&
+                                rect.right - 5 < zoneRect.right &&
+                                rect.top + 5 > zoneRect.top &&
+                                rect.bottom - 5 < zoneRect.bottom
+                            );
+                        });
+
+                        var grid = [];
+
+                        function getSlotPos(row, col) {
+                            var x = zoneRect.left + col * (cardWidth + gapX);
+                            var y = zoneRect.bottom - ((row + 1) * (cardHeight + gapY));
+                            return {
+                                x: x,
+                                y: y
+                            };
+                        }
+
+                        // Mark slots
+                        cardsInZone.forEach(function(card) {
+                            var rect = card.getBoundingClientRect();
+                            var col = Math.floor((rect.left - zoneRect.left) / (cardWidth + gapX));
+                            var row = Math.floor((zoneRect.bottom - rect.top) / (cardHeight + gapY));
+                            if (!grid[row]) grid[row] = [];
+                            grid[row][col] = true;
+                        });
+
+                        var dropX = cardRect.left;
+                        var dropY = cardRect.top;
+                        var chosenSlot = null;
+                        var chosenDistance = Infinity;
+
+                        for (var row = 0; row < 10; row++) {
+                            if (!grid[row]) grid[row] = [];
+                            for (var col = 0; col < slotsPerRow; col++) {
+                                if (!grid[row][col]) {
+                                    var pos = getSlotPos(row, col);
+                                    var dx = dropX - pos.x;
+                                    var dy = dropY - pos.y;
+                                    var dist = Math.sqrt(dx * dx + dy * dy);
+                                    if (dist < chosenDistance) {
+                                        chosenDistance = dist;
+                                        chosenSlot = {
+                                            x: pos.x,
+                                            y: pos.y
+                                        };
+                                    }
+                                }
+                            }
+                        }
+
+                        if (!chosenSlot) {
+                            chosenSlot = {
+                                x: zoneRect.left + gapX,
+                                y: zoneRect.bottom - cardHeight - gapY
+                            };
+                        }
+
+                        draggingCard.style.left = (chosenSlot.x - playmatRect.left) + 'px';
+                        draggingCard.style.top = (chosenSlot.y - playmatRect.top) + 'px';
+
+                    } else {
+                        // ✅ Other zones = center snapping
+                        var rect = targetZone.getBoundingClientRect();
+                        var zoneCenterX = rect.left + rect.width / 2 - cardRect.width / 2;
+                        var zoneCenterY = rect.top + rect.height / 2 - cardRect.height / 2;
+
+                        draggingCard.style.left = (zoneCenterX - playmatRect.left) + 'px';
+                        draggingCard.style.top = (zoneCenterY - playmatRect.top) + 'px';
+                    }
+                }
+
+                draggingCard = null;
+            });
+        });
+    };
+}]]></client_script>
         <controller_as>c</controller_as>
-        <css>[draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  /* Required to make elements draggable in old WebKit */
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
-}
-
-div{
-    --col-header-color: rgb(242, 242, 242);
-    --taskboard-border-color: rgb(210, 214, 215); 
-    --col-highlight-color: rgb(255, 255, 210);
-}
-
-#drag-n-drop{
-    background-color:white;
-    border-radius: 6px;
-    padding: 6px;
-}
-
-#playtest-container {
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr;
-    border: 1px solid var(--taskboard-border-color);
-    height: 600px;
-}
-
-
-.taskboard-header&gt;h1 {
-    text-align:center;
-}
-
-.task-col {
-    overflow-y: auto;
-    display:flex;
-    flex-direction: column;
-}
-
-.task-col-content{
-    padding: 6px;
-    height: 100%;
-}
-
-.task-col-content.over {
-    background-color: var(--col-highlight-color);
-}
-
-.task-col-header {
-    background-color: var(--col-header-color);
-    text-align: center;
-    font-weight: bold;
-}
-
-.task-col.right-border {
-    border-right: 1px solid var(--taskboard-border-color);
-}
-
-.task {
-    margin: 6px;
-    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.37);
-    border-radius: 3px;
-    padding: 3px;
-    cursor: grab;
-    pointer-events: all;
-}
-
-.task.disabled {
-    pointer-events:none;
-}
-
-.task-header {
-    font-weight: bold;
-}</css>
+        <css>.playtester-basic {&#13;
+  position: relative;&#13;
+  width: 100%;&#13;
+  height: 600px; /* lower height, wider layout */&#13;
+  background: #3a3a3a;&#13;
+  border: 2px solid #222;&#13;
+}&#13;
+&#13;
+.playmat {&#13;
+  position: relative;&#13;
+  width: 100%;&#13;
+  height: 650px; /* rectangular, wider and shorter */&#13;
+  background: black;&#13;
+  border: 2px solid #333;&#13;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;&#13;
+  user-select: none;&#13;
+}&#13;
+&#13;
+/* Shared size for zones that hold one card */&#13;
+.library,&#13;
+.graveyard,&#13;
+.exile,&#13;
+.command-zone {&#13;
+  width: 140px;&#13;
+  height: 190px;&#13;
+  padding: 4px;&#13;
+  border: 1px dashed #fff;&#13;
+  color: white;&#13;
+  text-align: center;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+/* Left zones: library, graveyard, exile stacked vertically */&#13;
+.library {&#13;
+  position: absolute;&#13;
+  top: 20px;&#13;
+  left: 20px;&#13;
+}&#13;
+&#13;
+.graveyard {&#13;
+  position: absolute;&#13;
+  top: 230px; /* below library */&#13;
+  left: 20px;&#13;
+}&#13;
+&#13;
+/* Keep exile stacked below graveyard */&#13;
+.exile {&#13;
+  position: absolute;&#13;
+  top: 440px;  /* same as before */&#13;
+  left: 20px;  /* stays at left container */&#13;
+  width: 140px; /* explicit width to prevent overflow */&#13;
+  height: 190px; /* match other zones */&#13;
+  border: 1px dashed #fff;&#13;
+  color: white;&#13;
+  text-align: center;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+/* Right zones: command zone top right */&#13;
+.command-zone {&#13;
+  position: absolute;&#13;
+  top: 20px;&#13;
+  right: 20px;&#13;
+  background: #b03030;&#13;
+  border: 1px solid #fff;&#13;
+  padding: 6px 10px;&#13;
+  border-radius: 4px;&#13;
+}&#13;
+&#13;
+/* Health display under command zone */&#13;
+.health-display {&#13;
+  position: absolute;&#13;
+  top: 220px; /* below command zone */&#13;
+  right: 20px;&#13;
+  color: #eee;&#13;
+  font-size: 20px;&#13;
+  text-align: center;&#13;
+  user-select: none;&#13;
+}&#13;
+&#13;
+.health-display button {&#13;
+  margin: 5px;&#13;
+  padding: 6px 12px;&#13;
+  font-size: 16px;&#13;
+  background: #444;&#13;
+  border: none;&#13;
+  border-radius: 4px;&#13;
+  color: white;&#13;
+  cursor: pointer;&#13;
+  user-select: none;&#13;
+}&#13;
+&#13;
+.health-display button:hover {&#13;
+  background: #666;&#13;
+}&#13;
+&#13;
+/* Adjust hand zone to align with battlefield left edge */&#13;
+.hand {&#13;
+  position: absolute;&#13;
+  bottom: 20px;&#13;
+  left: 180px;      /* changed from 20px */&#13;
+  right: 180px;     /* keep same */&#13;
+  height: 200px;&#13;
+  border: 1px dashed #fff;&#13;
+  color: white;&#13;
+  text-align: center;&#13;
+  font-weight: bold;&#13;
+  user-select: none;&#13;
+}&#13;
+&#13;
+/* Battlefield larger and centered between zones */&#13;
+.battlefield {&#13;
+  position: absolute;&#13;
+  top: 20px;&#13;
+  left: 180px; /* leaves space for left zones */&#13;
+  right: 180px; /* leaves space for command and health */&#13;
+  bottom: 240px; /* space for hand */&#13;
+  border: 1px dashed #fff;&#13;
+  color: white;&#13;
+  text-align: center;&#13;
+  font-weight: bold;&#13;
+  overflow: hidden;&#13;
+}&#13;
+&#13;
+/* Draggable card tweaks */&#13;
+.draggable-card {&#13;
+  position: absolute;&#13;
+  width: 110px;&#13;
+  cursor: grab;&#13;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);&#13;
+  background: white;&#13;
+  border-radius: 6px;&#13;
+  user-select: none;&#13;
+  z-index: 1000;&#13;
+  transform-origin: center center;&#13;
+  transition: transform 0.2s ease;&#13;
+}&#13;
+&#13;
+.draggable-card img {&#13;
+  width: 100%;&#13;
+  border-radius: 6px;&#13;
+  height: 160px;&#13;
+}&#13;
+&#13;
+.draggable-card.rotated {&#13;
+  transform: rotate(90deg);&#13;
+}&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -178,88 +364,61 @@ div{
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-  var tasks = [
-    {"id":0, "title":"My Task!", "description":"this is a description text","state":"todo"},
-    {"id":1, "title":"Task2", "description":"task2 description :D","state":"todo"},
-    {"id":2, "title":"Delete Task2", "description":"I find it offensive","state":"todo"}
-  ];
-	var cards = [];
-	var cardsGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-	cardsGr.addEncodedQuery('ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe');
-	cardsGr.query();
-	
-	while (cardsGr.next()){
-		cards.push(cardsGr.getValue('front_image'));
-	}
-	
-  data.tasks = tasks;
+
+    data.playerHealth = 20;
+
+    var cardSysIds = [
+        'cd0ee9f8c38322100efafbfdd4013163',
+        '50275bbec303ea100efafbfdd401310a',
+        '601686edc38326100efafbfdd401313d',
+        '301686edc38326100efafbfdd401318d',
+        'fc1686edc38326100efafbfdd401315f'
+    ];
+
+    var utils = new x_759224_magic_c_0.magic_utils();
+    data.cards = [];
+
+    var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    cardSysIds.forEach(function(sysId) {
+        if (cardGR.get(sysId)) {
+            data.cards.push({
+                sys_id: cardGR.getUniqueValue(),
+                name: cardGR.getValue('name'),
+                image_url: utils.getImgSrc(cardGR.getValue('front_image'))
+            });
+        }
+    });
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>MTG Card Drag &amp;Drop</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
-        <sys_updated_by>greg</sys_updated_by>
-        <sys_updated_on>2023-10-05 05:08:54</sys_updated_on>
-        <template><![CDATA[<div id="drag-n-drop">
-  <!-- script for accessing angular from outside -->
-  <script>
-    //gets the angular scope from outside because 
-    //we don't have access to it for drag events
-    function getScope() {
-      return angular.element('#drag-n-drop').scope().c;
-    }
-  </script>
-  <!-- container for drag n drop task board -->
-  <div id="playtest-container">
-    <div class="task-col right-border" id="todo">
-      <div class="task-col-header">
-        In Play
-      </div>
-      <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
-           ondragleave="getScope().dragLeave(event)" 
-           ondragover="getScope().dragOver(event)" 
-           ondrop="getScope().drop(event)">
-        <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='todo'" id="{{task.id}}"
-             draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
-          <div class="task-header">
-            {{task.title}}
-          </div>
-          <div class="task-description">
-            {{task.description}}
-          </div>
-        </div>
-      </div>
-    </div>
-  <div class="playtest-header">
-    <div class="task-col right-border" id="in-progress">
-            <div class="task-col-header">
-                Hand
-            </div>
-            <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
-            ondragleave="getScope().dragLeave(event)" 
-            ondragover="getScope().dragOver(event)" 
-            ondrop="getScope().drop(event)">
-                <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='in-progress'" id="{{task.id}}"
-                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
-                    <div class="task-header">
-                        {{task.title}}
-                    </div>
-                    <div class="task-description">
-                        {{task.description}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>]]></template>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 05:01:47</sys_updated_on>
+        <template><![CDATA[<div class="playmat">
+  <div class="zone library">Library</div>
+  <div class="zone graveyard">Graveyard</div>
+  <div class="zone exile">Exile</div> <!-- moved under graveyard -->
+  <div class="zone hand">Hand</div> <!-- renamed from lands -->
+  <div class="zone command-zone">Command Zone</div>
+  <div class="health-display">
+    <div class="player-health">Health: {{c.playerHealth}}</div>
+    <button ng-click="c.modifyHealth(-1)">-1</button>
+    <button ng-click="c.modifyHealth(1)">+1</button>
+  </div>
+  <div class="zone battlefield">Battlefield</div>
+
+  <div class="draggable-card" ng-repeat="card in c.cards" style="left: {{card.left}}px; top: {{card.top}}px;">
+    <img ng-src="{{card.image_url}}" alt="{{card.name}}">
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
