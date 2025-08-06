@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">a9e4983fc307ee100efafbfdd4013165</sp_column>
+        <sp_widget display_value="MTG Card Drag &amp;Drop">b4bd4bbb972d3d1078cb33121153afcd</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:07:02</sys_created_on>
+        <sys_id>40f4d43fc307ee100efafbfdd40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_instance_40f4d43fc307ee100efafbfdd40131fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:07:02</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=40f4d43fc307ee100efafbfdd40131fe"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sp_instance_40f4d43fc307ee100efafbfdd40131fe</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">a9e4983fc307ee100efafbfdd4013165</sp_column><sp_widget display_value="MTG Card Drag &amp;Drop">b4bd4bbb972d3d1078cb33121153afcd</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-05 17:07:02</sys_created_on><sys_id>40f4d43fc307ee100efafbfdd40131fe</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sp_instance_40f4d43fc307ee100efafbfdd40131fe</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-05 17:07:02</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=40f4d43fc307ee100efafbfdd40131fe"/></record_update>]]></payload>
+        <payload_hash>-1431675024</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>11174b79c3baae100efafbfdd401313b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:07:02</sys_created_on>
+        <sys_id>ccf4183fc307ee100efafbfdd4013100</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1987b3365d80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:07:02</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>c0f4183f5207ee1061956631efd0c500</update_guid>
+        <update_guid_history>c0f4183f5207ee1061956631efd0c500:-1431675024</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">65f4d83fc307ee100efafbfdd40131f3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:07:09</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>404a0f177b164c45a468513866b57051</sys_id>
+        <sys_metadata>40f4d43fc307ee100efafbfdd40131fe</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_instance_40f4d43fc307ee100efafbfdd40131fe</sys_update_name>
+        <sys_update_version display_value="sp_instance_40f4d43fc307ee100efafbfdd40131fe">ccf4183fc307ee100efafbfdd4013100</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:07:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

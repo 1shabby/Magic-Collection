@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Playtest - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="playtest">63a904999765311078cb33121153af8e</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:07:56</sys_created_on>
+        <sys_id>5125dc3fc307ee100efafbfdd4013198</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Playtest - Container 2</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_container_5125dc3fc307ee100efafbfdd4013198</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:07:56</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sp_container_5125dc3fc307ee100efafbfdd4013198</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Playtest - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="playtest">63a904999765311078cb33121153af8e</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-08-05 17:07:56</sys_created_on><sys_id>5125dc3fc307ee100efafbfdd4013198</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Playtest - Container 2</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sp_container_5125dc3fc307ee100efafbfdd4013198</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-05 17:07:56</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>862904759</payload_hash>
+        <record_name>Playtest - Container 2</record_name>
+        <reverted_from/>
+        <source>11174b79c3baae100efafbfdd401313b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:07:56</sys_created_on>
+        <sys_id>1d25dc3fc307ee100efafbfdd401319a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1987b3439af0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:07:56</sys_updated_on>
+        <type>Container</type>
+        <update_guid>1125dc3ff207ee10f93aac29d303019a</update_guid>
+        <update_guid_history>1125dc3ff207ee10f93aac29d303019a:862904759</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Playtest - Container 2">4435183fc307ee100efafbfdd40131a8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 17:08:08</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>234954c4627147b587c580faaa062371</sys_id>
+        <sys_metadata>5125dc3fc307ee100efafbfdd4013198</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Playtest - Container 2</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_container_5125dc3fc307ee100efafbfdd4013198</sys_update_name>
+        <sys_update_version display_value="sp_container_5125dc3fc307ee100efafbfdd4013198">1d25dc3fc307ee100efafbfdd401319a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 17:08:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
