@@ -200,82 +200,97 @@
     };
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>.playtester-basic {&#13;
-  position: relative;&#13;
+        <css>/* Container wrapper */&#13;
+.playtester-basic {&#13;
   width: 100%;&#13;
-  height: 600px; /* lower height, wider layout */&#13;
+  height: 600px;&#13;
   background: #3a3a3a;&#13;
   border: 2px solid #222;&#13;
 }&#13;
 &#13;
+/* Playmat grid layout */&#13;
 .playmat {&#13;
-  position: relative;&#13;
+  display: grid;&#13;
+  grid-template-columns: 160px 1fr 160px; /* Left / Center / Right columns */&#13;
+  grid-template-rows: 1fr;&#13;
+  gap: 0;&#13;
   width: 100%;&#13;
-  height: 650px; /* rectangular, wider and shorter */&#13;
+  height: 75vh;&#13;
   background: black;&#13;
-  border: 2px solid #333;&#13;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
   user-select: none;&#13;
 }&#13;
 &#13;
-/* Shared size for zones that hold one card */&#13;
-.library,&#13;
-.graveyard,&#13;
-.exile,&#13;
-.command-zone {&#13;
+/* Left column zones stacked */&#13;
+.left-column {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  justify-content: flex-start;&#13;
+  align-items: center;&#13;
+  gap: 20px;&#13;
+  padding: 20px 0;&#13;
+}&#13;
+&#13;
+/* Right column zones stacked */&#13;
+.right-column {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  justify-content: flex-start;&#13;
+  align-items: center;&#13;
+  gap: 20px;&#13;
+  padding: 20px 0;&#13;
+}&#13;
+&#13;
+/* Center column: battlefield (top), hand (bottom) */&#13;
+.center-column {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  justify-content: space-between;&#13;
+  padding: 20px;&#13;
+}&#13;
+&#13;
+/* Zones shared style */&#13;
+.zone {&#13;
+  border: 1px dashed white;&#13;
+  color: white;&#13;
+  text-align: center;&#13;
+  font-weight: bold;&#13;
+  padding: 4px;&#13;
+  box-sizing: border-box;&#13;
+}&#13;
+&#13;
+/* Specific zone sizing */&#13;
+.library, .graveyard, .exile, .command-zone {&#13;
   width: 140px;&#13;
   height: 190px;&#13;
-  padding: 4px;&#13;
-  border: 1px dashed #fff;&#13;
-  color: white;&#13;
-  text-align: center;&#13;
-  font-weight: bold;&#13;
 }&#13;
 &#13;
-/* Left zones: library, graveyard, exile stacked vertically */&#13;
-.library {&#13;
-  position: absolute;&#13;
-  top: 20px;&#13;
-  left: 20px;&#13;
+/* Battlefield fills most of center */&#13;
+.battlefield {&#13;
+  flex-grow: 1;&#13;
+  margin-bottom: 20px;&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
 }&#13;
 &#13;
-.graveyard {&#13;
-  position: absolute;&#13;
-  top: 230px; /* below library */&#13;
-  left: 20px;&#13;
+/* Hand zone at bottom */&#13;
+.hand {&#13;
+  height: 200px;&#13;
 }&#13;
 &#13;
-/* Keep exile stacked below graveyard */&#13;
-.exile {&#13;
-  position: absolute;&#13;
-  top: 440px;  /* same as before */&#13;
-  left: 20px;  /* stays at left container */&#13;
-  width: 140px; /* explicit width to prevent overflow */&#13;
-  height: 190px; /* match other zones */&#13;
-  border: 1px dashed #fff;&#13;
-  color: white;&#13;
-  text-align: center;&#13;
-  font-weight: bold;&#13;
-}&#13;
-&#13;
-/* Right zones: command zone top right */&#13;
+/* Command zone styling */&#13;
 .command-zone {&#13;
-  position: absolute;&#13;
-  top: 20px;&#13;
-  right: 20px;&#13;
   background: #b03030;&#13;
   border: 1px solid #fff;&#13;
-  padding: 6px 10px;&#13;
   border-radius: 4px;&#13;
 }&#13;
 &#13;
-/* Health display under command zone */&#13;
+/* Health display */&#13;
 .health-display {&#13;
-  position: absolute;&#13;
-  top: 220px; /* below command zone */&#13;
-  right: 20px;&#13;
   color: #eee;&#13;
-  font-size: 20px;&#13;
+  font-size: 18px;&#13;
   text-align: center;&#13;
   user-select: none;&#13;
 }&#13;
@@ -289,42 +304,13 @@
   border-radius: 4px;&#13;
   color: white;&#13;
   cursor: pointer;&#13;
-  user-select: none;&#13;
 }&#13;
 &#13;
 .health-display button:hover {&#13;
   background: #666;&#13;
 }&#13;
 &#13;
-/* Adjust hand zone to align with battlefield left edge */&#13;
-.hand {&#13;
-  position: absolute;&#13;
-  bottom: 20px;&#13;
-  left: 180px;      /* changed from 20px */&#13;
-  right: 180px;     /* keep same */&#13;
-  height: 200px;&#13;
-  border: 1px dashed #fff;&#13;
-  color: white;&#13;
-  text-align: center;&#13;
-  font-weight: bold;&#13;
-  user-select: none;&#13;
-}&#13;
-&#13;
-/* Battlefield larger and centered between zones */&#13;
-.battlefield {&#13;
-  position: absolute;&#13;
-  top: 20px;&#13;
-  left: 180px; /* leaves space for left zones */&#13;
-  right: 180px; /* leaves space for command and health */&#13;
-  bottom: 240px; /* space for hand */&#13;
-  border: 1px dashed #fff;&#13;
-  color: white;&#13;
-  text-align: center;&#13;
-  font-weight: bold;&#13;
-  overflow: hidden;&#13;
-}&#13;
-&#13;
-/* Draggable card tweaks */&#13;
+/* Draggable cards */&#13;
 .draggable-card {&#13;
   position: absolute;&#13;
   width: 110px;&#13;
@@ -394,29 +380,43 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>MTG Card Drag &amp;Drop</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-05 05:01:47</sys_updated_on>
-        <template><![CDATA[<div class="playmat">
-  <div class="zone library">Library</div>
-  <div class="zone graveyard">Graveyard</div>
-  <div class="zone exile">Exile</div> <!-- moved under graveyard -->
-  <div class="zone hand">Hand</div> <!-- renamed from lands -->
-  <div class="zone command-zone">Command Zone</div>
-  <div class="health-display">
-    <div class="player-health">Health: {{c.playerHealth}}</div>
-    <button ng-click="c.modifyHealth(-1)">-1</button>
-    <button ng-click="c.modifyHealth(1)">+1</button>
-  </div>
-  <div class="zone battlefield">Battlefield</div>
+        <sys_updated_on>2025-08-05 17:20:47</sys_updated_on>
+        <template><![CDATA[<div class="playtester-basic">
+  <div class="playmat">
+    <!-- Left Column -->
+    <div class="left-column">
+      <div class="zone library">Library</div>
+      <div class="zone graveyard">Graveyard</div>
+      <div class="zone exile">Exile</div>
+    </div>
 
-  <div class="draggable-card" ng-repeat="card in c.cards" style="left: {{card.left}}px; top: {{card.top}}px;">
-    <img ng-src="{{card.image_url}}" alt="{{card.name}}">
+    <!-- Center Column -->
+    <div class="center-column">
+      <div class="zone battlefield">Battlefield</div>
+      <div class="zone hand">Hand</div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+      <div class="zone command-zone">Command Zone</div>
+      <div class="health-display">
+        <div class="player-health">Health: {{c.playerHealth}}</div>
+        <button ng-click="c.modifyHealth(-1)">-1</button>
+        <button ng-click="c.modifyHealth(1)">+1</button>
+      </div>
+    </div>
+
+    <!-- Draggable Cards -->
+    <div class="draggable-card" ng-repeat="card in c.cards" style="left: {{card.left}}px; top: {{card.top}}px;">
+      <img ng-src="{{card.image_url}}" alt="{{card.name}}">
+    </div>
   </div>
 </div>
 ]]></template>
