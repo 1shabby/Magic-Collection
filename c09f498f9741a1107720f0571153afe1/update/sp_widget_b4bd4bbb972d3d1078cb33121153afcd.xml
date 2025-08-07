@@ -4,16 +4,11 @@
         <client_script><![CDATA[api.controller = function($scope, $element, $timeout) {
     var c = this;
 
-    // Prevent undefined errors
-    c.cards = c.data.cards || [];
-
-    // Initialize player health
     c.playerHealth = 20;
 
     c.modifyHealth = function(amount) {
         $scope.$applyAsync(function() {
             c.playerHealth = Math.max(0, c.playerHealth + amount);
-			console.log(c.playerHealth);
         });
     };
 
@@ -21,9 +16,13 @@
         $timeout(function() {
             var playmatEl = $element[0];
             var handZone = playmatEl.querySelector('.hand');
+            var commandZone = playmatEl.querySelector('.command-zone');
+            var libraryZone = playmatEl.querySelector('.library');
             var zones = playmatEl.querySelectorAll('.zone');
 
-            var zoneRect = handZone.getBoundingClientRect();
+            var handRect = handZone.getBoundingClientRect();
+            var commandRect = commandZone.getBoundingClientRect();
+            var libraryRect = libraryZone.getBoundingClientRect();
             var playmatRect = playmatEl.getBoundingClientRect();
 
             var cardWidth = 110;
@@ -31,174 +30,191 @@
             var gapX = 10;
             var gapY = 10;
 
-            // Set initial positions for cards in hand
-            c.cards.forEach(function(card, index) {
-                card.left = zoneRect.left - playmatRect.left + 10 + index * (cardWidth + gapX);
-                card.top = zoneRect.bottom - playmatRect.top - cardHeight - 10;
+            // Defensive fallbacks if arrays are missing
+            var commanders = c.data.commanders || [];
+            var hand = c.data.hand || [];
+            var library = c.data.library || [];
+
+            // Position commanders in command zone horizontally
+            commanders.forEach(function(card, index) {
+                card.left = commandRect.left - playmatRect.left + 10 + index * (cardWidth + gapX);
+                card.top = commandRect.top - playmatRect.top + 10;
             });
 
-            var cardsEls = playmatEl.querySelectorAll('.draggable-card');
-            var draggingCard = null;
-            var offsetX = 0;
-            var offsetY = 0;
-
-            function getDistance(rect1, rect2) {
-                var dx = (rect1.left + rect1.width / 2) - (rect2.left + rect2.width / 2);
-                var dy = (rect1.top + rect1.height / 2) - (rect2.top + rect2.height / 2);
-                return Math.sqrt(dx * dx + dy * dy);
-            }
-
-            function getOverlapArea(rect1, rect2) {
-                var x_overlap = Math.max(0, Math.min(rect1.right, rect2.right) - Math.max(rect1.left, rect2.left));
-                var y_overlap = Math.max(0, Math.min(rect1.bottom, rect2.bottom) - Math.max(rect1.top, rect2.top));
-                return x_overlap * y_overlap;
-            }
-
-            // Setup drag start
-            cardsEls.forEach(function(cardEl) {
-                cardEl.style.position = 'absolute';
-
-                // Drag start
-                cardEl.addEventListener('mousedown', function(e) {
-                    draggingCard = cardEl;
-                    offsetX = e.clientX - cardEl.offsetLeft;
-                    offsetY = e.clientY - cardEl.offsetTop;
-                    cardEl.style.cursor = 'grabbing';
-                    cardEl.style.transition = 'none';
-                    e.preventDefault();
-                });
-
-                // Double-click to tap/untap
-                cardEl.addEventListener('dblclick', function() {
-                    cardEl.classList.toggle('rotated');
-                });
+            // Position hand cards in hand zone horizontally
+            hand.forEach(function(card, index) {
+                card.left = handRect.left - playmatRect.left + 10 + index * (cardWidth + gapX);
+                card.top = handRect.bottom - playmatRect.top - cardHeight - 10;
             });
 
-            // Drag move
-            document.addEventListener('mousemove', function(e) {
-                if (!draggingCard) return;
-                draggingCard.style.left = (e.clientX - offsetX) + 'px';
-                draggingCard.style.top = (e.clientY - offsetY) + 'px';
+            // Position library cards stacked vertically
+            library.forEach(function(card, index) {
+                card.left = libraryRect.left - playmatRect.left + 10;
+                card.top = libraryRect.top - playmatRect.top + 10 + index * 20;
             });
 
-            // Drag stop
-            document.addEventListener('mouseup', function() {
-                if (!draggingCard) return;
+            // Combine all cards for rendering and drag/drop logic
+            c.cards = commanders.concat(hand, library);
 
-                draggingCard.style.cursor = 'grab';
-                draggingCard.style.transition = 'all 0.05s ease';
+            $timeout(function() {
+                var cardsEls = playmatEl.querySelectorAll('.draggable-card');
+                var draggingCard = null;
+                var offsetX = 0;
+                var offsetY = 0;
 
-                var cardRect = draggingCard.getBoundingClientRect();
-                var overlappingZone = null;
-                var maxOverlapArea = 0;
-                var closestZone = null;
-                var minDistance = Infinity;
+                function getDistance(rect1, rect2) {
+                    var dx = (rect1.left + rect1.width / 2) - (rect2.left + rect2.width / 2);
+                    var dy = (rect1.top + rect1.height / 2) - (rect2.top + rect2.height / 2);
+                    return Math.sqrt(dx * dx + dy * dy);
+                }
 
-                zones.forEach(function(zone) {
-                    var rect = zone.getBoundingClientRect();
-                    var overlapArea = getOverlapArea(cardRect, rect);
-                    if (overlapArea > maxOverlapArea) {
-                        maxOverlapArea = overlapArea;
-                        overlappingZone = zone;
+                function getOverlapArea(rect1, rect2) {
+                    var x_overlap = Math.max(0, Math.min(rect1.right, rect2.right) - Math.max(rect1.left, rect2.left));
+                    var y_overlap = Math.max(0, Math.min(rect1.bottom, rect2.bottom) - Math.max(rect1.top, rect2.top));
+                    return x_overlap * y_overlap;
+                }
+
+                cardsEls.forEach(function(cardEl, i) {
+                    cardEl.style.position = 'absolute';
+
+                    if (c.cards[i]) {
+                        cardEl.style.left = c.cards[i].left + 'px';
+                        cardEl.style.top = c.cards[i].top + 'px';
                     }
 
-                    var distance = getDistance(cardRect, rect);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        closestZone = zone;
-                    }
+                    cardEl.addEventListener('mousedown', function(e) {
+                        draggingCard = cardEl;
+                        offsetX = e.clientX - cardEl.offsetLeft;
+                        offsetY = e.clientY - cardEl.offsetTop;
+                        cardEl.style.cursor = 'grabbing';
+                        cardEl.style.transition = 'none';
+                        e.preventDefault();
+                    });
+
+                    cardEl.addEventListener('dblclick', function() {
+                        cardEl.classList.toggle('rotated');
+                    });
                 });
 
-                var targetZone = overlappingZone || (minDistance < 200 ? closestZone : null);
+                document.addEventListener('mousemove', function(e) {
+                    if (!draggingCard) return;
+                    draggingCard.style.left = (e.clientX - offsetX) + 'px';
+                    draggingCard.style.top = (e.clientY - offsetY) + 'px';
+                });
 
-                if (targetZone) {
-                    // Battlefield and Hand = grid snapping
-                    if (targetZone.classList.contains('battlefield') || targetZone.classList.contains('hand')) {
-                        var zoneRect = targetZone.getBoundingClientRect();
+                document.addEventListener('mouseup', function() {
+                    if (!draggingCard) return;
 
-                        // How many cards fit horizontally
-                        var slotsPerRow = Math.floor((zoneRect.width + gapX) / (cardWidth + gapX));
-                        var cardsInZone = Array.from(playmatEl.querySelectorAll('.draggable-card')).filter(function(card) {
-                            if (card === draggingCard) return false;
-                            var rect = card.getBoundingClientRect();
-                            return (
-                                rect.left + 5 > zoneRect.left &&
-                                rect.right - 5 < zoneRect.right &&
-                                rect.top + 5 > zoneRect.top &&
-                                rect.bottom - 5 < zoneRect.bottom
-                            );
-                        });
+                    draggingCard.style.cursor = 'grab';
+                    draggingCard.style.transition = 'all 0.05s ease';
 
-                        var grid = [];
+                    var cardRect = draggingCard.getBoundingClientRect();
+                    var overlappingZone = null;
+                    var maxOverlapArea = 0;
+                    var closestZone = null;
+                    var minDistance = Infinity;
 
-                        function getSlotPos(row, col) {
-                            var x = zoneRect.left + col * (cardWidth + gapX);
-                            var y = zoneRect.bottom - ((row + 1) * (cardHeight + gapY));
-                            return {
-                                x: x,
-                                y: y
-                            };
+                    zones.forEach(function(zone) {
+                        var rect = zone.getBoundingClientRect();
+                        var overlapArea = getOverlapArea(cardRect, rect);
+                        if (overlapArea > maxOverlapArea) {
+                            maxOverlapArea = overlapArea;
+                            overlappingZone = zone;
                         }
 
-                        // Mark slots
-                        cardsInZone.forEach(function(card) {
-                            var rect = card.getBoundingClientRect();
-                            var col = Math.floor((rect.left - zoneRect.left) / (cardWidth + gapX));
-                            var row = Math.floor((zoneRect.bottom - rect.top) / (cardHeight + gapY));
-                            if (!grid[row]) grid[row] = [];
-                            grid[row][col] = true;
-                        });
+                        var distance = getDistance(cardRect, rect);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestZone = zone;
+                        }
+                    });
 
-                        var dropX = cardRect.left;
-                        var dropY = cardRect.top;
-                        var chosenSlot = null;
-                        var chosenDistance = Infinity;
+                    var targetZone = overlappingZone || (minDistance < 200 ? closestZone : null);
 
-                        for (var row = 0; row < 10; row++) {
-                            if (!grid[row]) grid[row] = [];
-                            for (var col = 0; col < slotsPerRow; col++) {
-                                if (!grid[row][col]) {
-                                    var pos = getSlotPos(row, col);
-                                    var dx = dropX - pos.x;
-                                    var dy = dropY - pos.y;
-                                    var dist = Math.sqrt(dx * dx + dy * dy);
-                                    if (dist < chosenDistance) {
-                                        chosenDistance = dist;
-                                        chosenSlot = {
-                                            x: pos.x,
-                                            y: pos.y
-                                        };
+                    if (targetZone) {
+                        if (targetZone.classList.contains('battlefield') || targetZone.classList.contains('hand')) {
+                            var zoneRect = targetZone.getBoundingClientRect();
+                            var slotsPerRow = Math.floor((zoneRect.width + gapX) / (cardWidth + gapX));
+                            var cardsInZone = Array.from(playmatEl.querySelectorAll('.draggable-card')).filter(function(card) {
+                                if (card === draggingCard) return false;
+                                var rect = card.getBoundingClientRect();
+                                return (
+                                    rect.left + 5 > zoneRect.left &&
+                                    rect.right - 5 < zoneRect.right &&
+                                    rect.top + 5 > zoneRect.top &&
+                                    rect.bottom - 5 < zoneRect.bottom
+                                );
+                            });
+
+                            var grid = [];
+
+                            function getSlotPos(row, col) {
+                                var x = zoneRect.left + col * (cardWidth + gapX);
+                                var y = zoneRect.bottom - ((row + 1) * (cardHeight + gapY));
+                                return {
+                                    x: x,
+                                    y: y
+                                };
+                            }
+
+                            cardsInZone.forEach(function(card) {
+                                var rect = card.getBoundingClientRect();
+                                var col = Math.floor((rect.left - zoneRect.left) / (cardWidth + gapX));
+                                var row = Math.floor((zoneRect.bottom - rect.top) / (cardHeight + gapY));
+                                if (!grid[row]) grid[row] = [];
+                                grid[row][col] = true;
+                            });
+
+                            var dropX = cardRect.left;
+                            var dropY = cardRect.top;
+                            var chosenSlot = null;
+                            var chosenDistance = Infinity;
+
+                            for (var row = 0; row < 10; row++) {
+                                if (!grid[row]) grid[row] = [];
+                                for (var col = 0; col < slotsPerRow; col++) {
+                                    if (!grid[row][col]) {
+                                        var pos = getSlotPos(row, col);
+                                        var dx = dropX - pos.x;
+                                        var dy = dropY - pos.y;
+                                        var dist = Math.sqrt(dx * dx + dy * dy);
+                                        if (dist < chosenDistance) {
+                                            chosenDistance = dist;
+                                            chosenSlot = {
+                                                x: pos.x,
+                                                y: pos.y
+                                            };
+                                        }
                                     }
                                 }
                             }
+
+                            if (!chosenSlot) {
+                                chosenSlot = {
+                                    x: zoneRect.left + gapX,
+                                    y: zoneRect.bottom - cardHeight - gapY
+                                };
+                            }
+
+                            draggingCard.style.left = (chosenSlot.x - playmatRect.left) + 'px';
+                            draggingCard.style.top = (chosenSlot.y - playmatRect.top) + 'px';
+                        } else {
+                            var rect = targetZone.getBoundingClientRect();
+                            var zoneCenterX = rect.left + rect.width / 2 - cardRect.width / 2;
+                            var zoneCenterY = rect.top + rect.height / 2 - cardRect.height / 2;
+
+                            draggingCard.style.left = (zoneCenterX - playmatRect.left) + 'px';
+                            draggingCard.style.top = (zoneCenterY - playmatRect.top) + 'px';
                         }
-
-                        if (!chosenSlot) {
-                            chosenSlot = {
-                                x: zoneRect.left + gapX,
-                                y: zoneRect.bottom - cardHeight - gapY
-                            };
-                        }
-
-                        draggingCard.style.left = (chosenSlot.x - playmatRect.left) + 'px';
-                        draggingCard.style.top = (chosenSlot.y - playmatRect.top) + 'px';
-
-                    } else {
-                        // ✅ Other zones = center snapping
-                        var rect = targetZone.getBoundingClientRect();
-                        var zoneCenterX = rect.left + rect.width / 2 - cardRect.width / 2;
-                        var zoneCenterY = rect.top + rect.height / 2 - cardRect.height / 2;
-
-                        draggingCard.style.left = (zoneCenterX - playmatRect.left) + 'px';
-                        draggingCard.style.top = (zoneCenterY - playmatRect.top) + 'px';
                     }
-                }
 
-                draggingCard = null;
+                    draggingCard = null;
+                });
             });
         });
     };
-}]]></client_script>
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Container wrapper */&#13;
 .playtester-basic {&#13;
@@ -346,48 +362,84 @@
   
 }]]></link>
         <name>MTG Card Drag &amp;Drop</name>
-        <option_schema/>
-        <public>false</public>
+        <option_schema>[{"name":"deck_sys_id","section":"other","default_value":"d81646edc38326100efafbfdd401318f","label":"Deck Sys ID","type":"string"}]</option_schema>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+    var deckId = options.deck_sys_id || input.deck_sys_id;
 
     data.playerHealth = 20;
+    data.commanders = [];
+    data.hand = [];
+    data.library = [];
 
-    var cardSysIds = [
-        'cd0ee9f8c38322100efafbfdd4013163',
-        '50275bbec303ea100efafbfdd401310a',
-        '601686edc38326100efafbfdd401313d',
-        '301686edc38326100efafbfdd401318d',
-        'fc1686edc38326100efafbfdd401315f'
-    ];
+    if (!deckId) {
+        data.error = "No deck_sys_id provided.";
+        return;
+    }
 
     var utils = new x_759224_magic_c_0.magic_utils();
-    data.cards = [];
 
-    var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-    cardSysIds.forEach(function(sysId) {
-        if (cardGR.get(sysId)) {
-            data.cards.push({
+    // Fetch all cards in deck
+    var deckCardGR = new GlideRecord('x_759224_magic_c_0_deck_card');
+    deckCardGR.addQuery('deck', deckId);
+    deckCardGR.query();
+
+    var commanders = [];
+    var nonCommanders = [];
+
+    while (deckCardGR.next()) {
+        var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        if (cardGR.get(deckCardGR.getValue('card'))) {
+            var cardObj = {
                 sys_id: cardGR.getUniqueValue(),
                 name: cardGR.getValue('name'),
-                image_url: utils.getImgSrc(cardGR.getValue('front_image'))
-            });
+                image_url: utils.getImgSrc(cardGR.getValue('front_image')),
+                is_commander: deckCardGR.getValue('is_commander') === 'true'
+            };
+            if (cardObj.is_commander) {
+                commanders.push(cardObj);
+            } else {
+                nonCommanders.push(cardObj);
+            }
         }
-    });
+    }
+
+    // Shuffle non-commander cards using Fisher-Yates
+    function shuffle(array) {
+        var currentIndex = array.length, randomIndex;
+
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            var temp = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temp;
+        }
+        return array;
+    }
+
+    shuffle(nonCommanders);
+
+    // Put first 7 in hand, rest in library
+    data.hand = nonCommanders.slice(0, 7);
+    data.library = nonCommanders.slice(7);
+    data.commanders = commanders;
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>MTG Card Drag &amp;Drop</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-05 17:20:47</sys_updated_on>
+        <sys_updated_on>2025-08-07 03:31:44</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -412,11 +464,10 @@
         <button ng-click="c.modifyHealth(1)">+1</button>
       </div>
     </div>
-
     <!-- Draggable Cards -->
-    <div class="draggable-card" ng-repeat="card in c.cards" style="left: {{card.left}}px; top: {{card.top}}px;">
-      <img ng-src="{{card.image_url}}" alt="{{card.name}}">
-    </div>
+   	<div class="draggable-card" ng-repeat="card in c.cards" style="left: {{card.left}}px; top: {{card.top}}px;">
+  		<img ng-src="{{card.image_url}}" alt="{{card.name}}">
+	</div>
   </div>
 </div>
 ]]></template>
