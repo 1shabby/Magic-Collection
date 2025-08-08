@@ -17,6 +17,7 @@
         });
     };
 
+	// Method to draw cards from the top of the library.
     c.drawCard = function() {
         if (c.data.library.length === 0) return;
 
@@ -137,8 +138,6 @@
 .playtester-basic {&#13;
   width: 100%;&#13;
   height: 1000px; /* Increased for larger cards */&#13;
-  background: #3a3a3a;&#13;
-  border: 2px solid #222;&#13;
 }&#13;
 &#13;
 /* Playmat grid layout */&#13;
@@ -239,7 +238,6 @@
   width: 181px;&#13;
   cursor: grab;&#13;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);&#13;
-  background: white;&#13;
   border-radius: 6px;&#13;
   user-select: none;&#13;
   z-index: 1000;&#13;
@@ -272,6 +270,11 @@
   height: 264px;&#13;
   transform: translate(-50%, -50%);&#13;
   cursor: pointer;&#13;
+  border-radius: 0.6%;&#13;
+}&#13;
+&#13;
+img {&#13;
+ border-radius: 0.6rem; &#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -285,7 +288,7 @@
         <link><![CDATA[function link(scope, element, attrs, controller) {
   
 }]]></link>
-        <name>MTG Card Drag &amp;Drop</name>
+        <name>MTG Deck Playtest</name>
         <option_schema>[{"name":"deck_sys_id","section":"other","default_value":"d81646edc38326100efafbfdd401318f","label":"Deck Sys ID","type":"string"}]</option_schema>
         <public>true</public>
         <roles/>
@@ -311,17 +314,24 @@
     var commanders = [];
     var nonCommanders = [];
 
+	// Loop through each of the deck card records
     while (deckCardGR.next()) {
+		// Get quantity so we add
         var quantity = parseInt(deckCardGR.getValue('quantity'), 10) || 1;
         var isCommander = deckCardGR.is_commander.toString() === 'true';
-
+		var isSideboard = deckCardGR.is_sideboard.toString() === 'true';
+		var isMaybeboard = deckCardGR.is_maybeboard.toString() === 'true';
+		// If the card exists and is not sideboard nor maybeboard
         var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-        if (cardGR.get(deckCardGR.getValue('card'))) {
+        if (cardGR.get(deckCardGR.getValue('card')) && !isSideboard && !isMaybeboard) {
             var cardData = {
                 sys_id: cardGR.getUniqueValue(),
                 name: cardGR.getValue('name'),
-                image_url: utils.getImgSrc(cardGR.getValue('front_image')),
-                is_commander: isCommander
+                front_image: utils.getImgSrc(cardGR.getValue('front_image')),
+				back_image: utils.getImgSrc(cardGR.getValue('back_image')),
+                is_commander: isCommander,
+				notes: deckCardGR.getValue('notes')
+
             };
 
             var targetArray = cardData.is_commander ? commanders : nonCommanders;
@@ -358,14 +368,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>82</sys_mod_count>
-        <sys_name>MTG Card Drag &amp;Drop</sys_name>
+        <sys_mod_count>89</sys_mod_count>
+        <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-07 20:57:48</sys_updated_on>
+        <sys_updated_on>2025-08-08 03:16:58</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -401,7 +411,7 @@
          ng-repeat="card in c.cards"
          ng-class="{'rotated': card.isTapped}"
          style="left: {{card.left}}px; top: {{card.top}}px;">
-      <img ng-src="{{card.image_url}}" alt="{{card.name}}">
+      <img ng-src="{{card.front_image}}" alt="{{card.name}}">
     </div>
   </div>
 </div>]]></template>
