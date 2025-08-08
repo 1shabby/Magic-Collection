@@ -1,142 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="8e7eb32fc3bee6500efafbfdd40131e2" sys_domain="global" table="x_759224_magic_c_0_deck_card" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.begin_split</element>
+            <element>deck</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>827e336fc3bee6500efafbfdd4013114</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>30dde8a0c317e2500efafbfdd40131a5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
-            <sys_user/>
-            <type>.begin_split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>deck</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>8a7e336fc3bee6500efafbfdd4013114</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>quantity</element>
-            <position>2</position>
+            <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>827e336fc3bee6500efafbfdd4013115</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>34dde8a0c317e2500efafbfdd40131d7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>is_sideboard</element>
-            <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>8a7e336fc3bee6500efafbfdd4013115</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>827e336fc3bee6500efafbfdd4013116</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>card</element>
-            <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>8a7e336fc3bee6500efafbfdd4013116</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>is_commander</element>
-            <position>6</position>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>827e336fc3bee6500efafbfdd4013117</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>3cdde8a0c317e2500efafbfdd40131d7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>notes</element>
-            <position>7</position>
+            <element>.split</element>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>8a7e336fc3bee6500efafbfdd4013117</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>34dde8a0c317e2500efafbfdd40131d8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>card</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>3cdde8a0c317e2500efafbfdd40131d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>is_maybeboard</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>34dde8a0c317e2500efafbfdd40131d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>is_sideboard</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>3cdde8a0c317e2500efafbfdd40131d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>8</position>
+            <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-24 05:13:11</sys_created_on>
-            <sys_id>827e336fc3bee6500efafbfdd4013118</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>34dde8a0c317e2500efafbfdd40131da</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-24 05:13:11</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>is_maybeboard</element>
-            <position>9</position>
+            <element>notes</element>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-27 16:19:14</sys_created_on>
-            <sys_id>40b3b534c3c322100efafbfdd401317e</sys_id>
+            <sys_created_on>2025-08-08 02:51:13</sys_created_on>
+            <sys_id>3cdde8a0c317e2500efafbfdd40131da</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_759224_magic_c_0_deck_card" sys_domain="global" view="Default view">8e7eb32fc3bee6500efafbfdd40131e2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-27 16:19:14</sys_updated_on>
+            <sys_updated_on>2025-08-08 02:51:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
