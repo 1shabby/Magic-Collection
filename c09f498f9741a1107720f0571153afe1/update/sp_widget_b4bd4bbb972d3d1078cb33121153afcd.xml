@@ -2,262 +2,274 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($scope, $element, $timeout) {
-  var c = this;
+    var c = this;
 
-  c.playerHealth = c.data.playerHealth || 20;
-  c.cards = []; // All draggable cards (commanders + hand + any new cards)
+    c.playerHealth = c.data.playerHealth || 20;
+    c.cards = []; // All draggable cards (commanders + hand + any new cards)
 
-  var draggingCard = null;
-  var offsetX = 0, offsetY = 0;
+    var draggingCard = null;
+    var offsetX = 0,
+        offsetY = 0;
 
-  // Card metrics
-  var CARD_WIDTH = 181;
-  var CARD_HEIGHT = 264;
-  var DEFAULT_GAP_X = 10;
-  var MIN_STEP_X = 24; // minimal overlap step to handle overflow
+    // Card metrics
+    var CARD_WIDTH = 181;
+    var CARD_HEIGHT = 264;
+    var DEFAULT_GAP_X = 10;
+    var MIN_STEP_X = 24; // minimal overlap step to handle overflow
 
-  c.modifyHealth = function(amount) {
-    $scope.$applyAsync(function() {
-      c.playerHealth = Math.max(0, c.playerHealth + amount);
-    });
-  };
-
-  // Helper: DOM rects for zones
-  function getZoneRects() {
-    var playmatEl = $element[0];
-    return {
-      playmat: playmatEl.getBoundingClientRect(),
-      hand: playmatEl.querySelector('.hand').getBoundingClientRect(),
-      battlefield: playmatEl.querySelector('.battlefield').getBoundingClientRect(),
-      command: playmatEl.querySelector('.command-zone').getBoundingClientRect(),
-      graveyard: playmatEl.querySelector('.graveyard').getBoundingClientRect(),
-      exile: playmatEl.querySelector('.exile').getBoundingClientRect()
+    c.modifyHealth = function(amount) {
+        $scope.$applyAsync(function() {
+            c.playerHealth = Math.max(0, c.playerHealth + amount);
+        });
     };
-  }
 
-  function pointInRect(x, y, rect) {
-    return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
-  }
-
-  function removeFromHand(card) {
-    var idx = c.data.hand.indexOf(card);
-    if (idx !== -1) c.data.hand.splice(idx, 1);
-  }
-
-  function ensureInHand(card, atStart) {
-    var idx = c.data.hand.indexOf(card);
-    if (idx === -1) {
-      if (atStart) c.data.hand.unshift(card);
-      else c.data.hand.push(card);
-    }
-  }
-
-  // Layout all cards that are in the hand zone (by membership), left-to-right.
-  c.layoutHand = function() {
-    var playmatEl = $element[0];
-    var rects = getZoneRects();
-    var playmatRect = rects.playmat;
-    var handRect = rects.hand;
-
-    var leftStart = handRect.left - playmatRect.left + 10; // small inner padding
-    var topPos = handRect.bottom - playmatRect.top - CARD_HEIGHT - 10;
-    var availableWidth = handRect.width - 20; // padding on both sides
-
-    // Get all cards that are in hand zone
-    var handCards = c.data.hand.filter(function(card) {
-      return card.currentZone === 'hand';
-    });
-
-    if (handCards.length === 0) return;
-
-    var step;
-    
-    // Calculate spacing based on number of cards
-    if (handCards.length === 1) {
-      // Single card - center it
-      step = 0;
-      leftStart = leftStart + (availableWidth - CARD_WIDTH) / 2;
-    } else if (handCards.length * (CARD_WIDTH + DEFAULT_GAP_X) <= availableWidth) {
-      // Enough space for generous spacing
-      step = CARD_WIDTH + DEFAULT_GAP_X;
-    } else {
-      // Need to compress - calculate overlap
-      var totalCardsWidth = handCards.length * CARD_WIDTH;
-      var neededOverlap = (totalCardsWidth - availableWidth) / Math.max(1, handCards.length - 1);
-      
-      // For extreme cases (30+ cards), allow heavy overlap but ensure minimum visibility
-      var minVisibleWidth = Math.max(20, CARD_WIDTH * 0.1); // At least 10% of card width visible
-      var maxOverlap = CARD_WIDTH - minVisibleWidth;
-      
-      var overlapAmount = Math.min(maxOverlap, neededOverlap);
-      step = CARD_WIDTH - overlapAmount;
+    // Helper: DOM rects for zones
+    function getZoneRects() {
+        var playmatEl = $element[0];
+        return {
+            playmat: playmatEl.getBoundingClientRect(),
+            hand: playmatEl.querySelector('.hand').getBoundingClientRect(),
+            battlefield: playmatEl.querySelector('.battlefield').getBoundingClientRect(),
+            command: playmatEl.querySelector('.command-zone').getBoundingClientRect(),
+            graveyard: playmatEl.querySelector('.graveyard').getBoundingClientRect(),
+            exile: playmatEl.querySelector('.exile').getBoundingClientRect()
+        };
     }
 
-    // Position ALL hand cards in order to ensure proper fanning
-    handCards.forEach(function(card, index) {
-      card.left = Math.round(leftStart + index * step);
-      card.top = Math.round(topPos);
-    });
-  };
-
-  // Draw from the top of the library; new card goes to LEFTMOST of the hand.
-  c.drawCard = function() {
-    if (c.data.library.length === 0) return;
-
-    var drawnCard = c.data.library.shift();
-
-    // Establish default zone for drawn card
-    drawnCard.currentZone = 'hand';
-
-    // Reset position - will be assigned by layoutHand
-    drawnCard.left = undefined;
-    drawnCard.top = undefined;
-
-    // New draws go to the end of the hand (next to existing cards)
-    ensureInHand(drawnCard, false);
-
-    // Keep it on top visually
-    c.cards.push(drawnCard);
-
-    c.renderCards();
-  };
-
-  c.renderCards = function() {
-    var playmatEl = $element[0];
-    var rects = getZoneRects();
-    var playmatRect = rects.playmat;
-    var commandRect = rects.command;
-    var handRect = rects.hand;
-
-    // Initialize zone and position if needed
-    c.cards.forEach(function(card) {
-      if (card.currentZone === undefined) {
-        if (card.is_commander) card.currentZone = 'command';
-        else card.currentZone = 'hand';
-      }
-
-      // Commanders: center in command zone if no position yet
-      if (card.is_commander && (card.left === undefined || card.top === undefined)) {
-        var zoneLeft = commandRect.left - playmatRect.left;
-        var zoneTop = commandRect.top - playmatRect.top;
-        card.left = Math.round(zoneLeft + (commandRect.width - CARD_WIDTH) / 2);
-        card.top = Math.round(zoneTop + (commandRect.height - CARD_HEIGHT) / 2);
-      }
-      // Non-commander, non-hand: if no position, leave as-is (user will drag)
-    });
-
-    // Always layout hand if there are cards in hand to ensure proper fanning
-    var handCards = c.data.hand.filter(function(card) {
-      return card.currentZone === 'hand';
-    });
-    
-    if (handCards.length > 0) {
-      c.layoutHand();
+    function pointInRect(x, y, rect) {
+        return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
     }
 
-    // Apply to DOM and wire DnD
-    $timeout(function() {
-      var cardsEls = playmatEl.querySelectorAll('.draggable-card');
+    function removeFromHand(card) {
+        var idx = c.data.hand.indexOf(card);
+        if (idx !== -1) c.data.hand.splice(idx, 1);
+    }
 
-      cardsEls.forEach(function(cardEl, i) {
-        cardEl.style.position = 'absolute';
+    function ensureInHand(card, atStart) {
+        var idx = c.data.hand.indexOf(card);
+        if (idx === -1) {
+            if (atStart) c.data.hand.unshift(card);
+            else c.data.hand.push(card);
+        }
+    }
 
-        var card = c.cards[i];
-        if (!card) return;
+    // Layout all cards that are in the hand zone (by membership), left-to-right.
+    c.layoutHand = function() {
+        var playmatEl = $element[0];
+        var rects = getZoneRects();
+        var playmatRect = rects.playmat;
+        var handRect = rects.hand;
 
-        cardEl.style.left = card.left + 'px';
-        cardEl.style.top = card.top + 'px';
+        var leftStart = handRect.left - playmatRect.left + 10; // small inner padding
+        var topPos = handRect.bottom - playmatRect.top - CARD_HEIGHT - 10;
+        var availableWidth = handRect.width - 20; // padding on both sides
 
-        if (card.isTapped) cardEl.classList.add('rotated');
-        else cardEl.classList.remove('rotated');
+        // Get all cards that are in hand zone
+        var handCards = c.data.hand.filter(function(card) {
+            return card.currentZone === 'hand';
+        });
 
-        // Clean old handlers
-        cardEl.onmousedown = null;
-        cardEl.onmouseup = null;
-        cardEl.ondblclick = null;
-        document.onmousemove = null;
+        if (handCards.length === 0) return;
 
-        cardEl.addEventListener('mousedown', function(e) {
-          draggingCard = card;
-          var currentRects = getZoneRects(); // refresh per interaction
-          var localPlaymatRect = currentRects.playmat;
+        var step;
 
-          offsetX = e.clientX - card.left;
-          offsetY = e.clientY - card.top;
-          cardEl.style.cursor = 'grabbing';
-          cardEl.style.transition = 'none';
-          e.preventDefault();
+        // Calculate spacing based on number of cards
+        if (handCards.length === 1) {
+            // Single card - center it
+            step = 0;
+            leftStart = leftStart + (availableWidth - CARD_WIDTH) / 2;
+        } else if (handCards.length * (CARD_WIDTH + DEFAULT_GAP_X) <= availableWidth) {
+            // Enough space for generous spacing
+            step = CARD_WIDTH + DEFAULT_GAP_X;
+        } else {
+            // Need to compress - calculate overlap
+            var totalCardsWidth = handCards.length * CARD_WIDTH;
+            var neededOverlap = (totalCardsWidth - availableWidth) / Math.max(1, handCards.length - 1);
 
-          document.onmousemove = function(e2) {
-            if (!draggingCard) return;
-            draggingCard.left = e2.clientX - offsetX;
-            draggingCard.top = e2.clientY - offsetY;
+            // For extreme cases (30+ cards), allow heavy overlap but ensure minimum visibility
+            var minVisibleWidth = Math.max(20, CARD_WIDTH * 0.1); // At least 10% of card width visible
+            var maxOverlap = CARD_WIDTH - minVisibleWidth;
 
-            cardEl.style.left = draggingCard.left + 'px';
-            cardEl.style.top = draggingCard.top + 'px';
-          };
+            var overlapAmount = Math.min(maxOverlap, neededOverlap);
+            step = CARD_WIDTH - overlapAmount;
+        }
 
-          document.onmouseup = function() {
-            if (!draggingCard) return;
+        // Position ALL hand cards in order to ensure proper fanning
+        handCards.forEach(function(card, index) {
+            card.left = Math.round(leftStart + index * step);
+            card.top = Math.round(topPos);
+        });
+    };
 
-            // Determine drop zone by card center in page coords
-            var centerX = draggingCard.left + CARD_WIDTH / 2 + localPlaymatRect.left;
-            var centerY = draggingCard.top + CARD_HEIGHT / 2 + localPlaymatRect.top;
+    // Draw from the top of the library; new card goes to LEFTMOST of the hand.
+    c.drawCard = function() {
+        if (c.data.library.length === 0) return;
 
-            var dropZone = null;
-            var rectsNow = getZoneRects();
-            if (pointInRect(centerX, centerY, rectsNow.hand)) dropZone = 'hand';
-            else if (pointInRect(centerX, centerY, rectsNow.battlefield)) dropZone = 'battlefield';
-            else if (pointInRect(centerX, centerY, rectsNow.command)) dropZone = 'command';
-            else if (pointInRect(centerX, centerY, rectsNow.graveyard)) dropZone = 'graveyard';
-            else if (pointInRect(centerX, centerY, rectsNow.exile)) dropZone = 'exile';
+        var drawnCard = c.data.library.shift();
 
-            $scope.$applyAsync(function() {
-              if (dropZone === 'hand') {
-                draggingCard.currentZone = 'hand';
-                ensureInHand(draggingCard, false); // append if user drops into hand
-                // Reset position so layoutHand can position it properly
-                draggingCard.left = undefined;
-                draggingCard.top = undefined;
-                c.layoutHand();
-              } else {
-                if (draggingCard.currentZone === 'hand') {
-                  removeFromHand(draggingCard);
-                }
-                draggingCard.currentZone = dropZone || 'free';
-                // Keep position where user dropped it
-              }
+        // Establish default zone for drawn card
+        drawnCard.currentZone = 'hand';
+
+        // Reset position - will be assigned by layoutHand
+        drawnCard.left = undefined;
+        drawnCard.top = undefined;
+
+        // New draws go to the end of the hand (next to existing cards)
+        ensureInHand(drawnCard, false);
+
+        // Keep it on top visually
+        c.cards.push(drawnCard);
+
+        c.renderCards();
+    };
+
+    c.renderCards = function() {
+        var playmatEl = $element[0];
+        var rects = getZoneRects();
+        var playmatRect = rects.playmat;
+        var commandRect = rects.command;
+        var handRect = rects.hand;
+
+        // Initialize zone and position if needed
+        c.cards.forEach(function(card) {
+            if (card.currentZone === undefined) {
+                if (card.is_commander) card.currentZone = 'command';
+                else card.currentZone = 'hand';
+            }
+
+            // Commanders: center in command zone if no position yet
+            if (card.is_commander && (card.left === undefined || card.top === undefined)) {
+                var zoneLeft = commandRect.left - playmatRect.left;
+                var zoneTop = commandRect.top - playmatRect.top;
+                card.left = Math.round(zoneLeft + (commandRect.width - CARD_WIDTH) / 2);
+                card.top = Math.round(zoneTop + (commandRect.height - CARD_HEIGHT) / 2);
+            }
+            // Non-commander, non-hand: if no position, leave as-is (user will drag)
+        });
+
+        // Always layout hand if there are cards in hand to ensure proper fanning
+        var handCards = c.data.hand.filter(function(card) {
+            return card.currentZone === 'hand';
+        });
+
+        if (handCards.length > 0) {
+            c.layoutHand();
+        }
+
+        // Apply to DOM and wire DnD
+        $timeout(function() {
+            var cardsEls = playmatEl.querySelectorAll('.draggable-card');
+
+            cardsEls.forEach(function(cardEl, i) {
+                cardEl.style.position = 'absolute';
+
+                var card = c.cards[i];
+                if (!card) return;
+
+                cardEl.style.left = card.left + 'px';
+                cardEl.style.top = card.top + 'px';
+
+                if (card.isTapped) cardEl.classList.add('rotated');
+                else cardEl.classList.remove('rotated');
+
+                // Clean old handlers
+                cardEl.onmousedown = null;
+                cardEl.onmouseup = null;
+                cardEl.ondblclick = null;
+                document.onmousemove = null;
+
+                cardEl.addEventListener('mousedown', function(e) {
+                    //console.log(card);
+                    draggingCard = card;
+                    //console.log(draggingCard.currentZone);
+                    var currentRects = getZoneRects(); // refresh per interaction
+                    var localPlaymatRect = currentRects.playmat;
+
+                    offsetX = e.clientX - card.left;
+                    offsetY = e.clientY - card.top;
+                    cardEl.style.cursor = 'grabbing';
+                    cardEl.style.transition = 'none';
+                    e.preventDefault();
+
+                    document.onmousemove = function(e2) {
+                        if (!draggingCard) return;
+                        draggingCard.left = e2.clientX - offsetX;
+                        draggingCard.top = e2.clientY - offsetY;
+
+                        cardEl.style.left = draggingCard.left + 'px';
+                        cardEl.style.top = draggingCard.top + 'px';
+                    };
+
+                    document.onmouseup = function() {
+                        if (!draggingCard) return;
+
+						//var draggingCard = card;
+
+                        // Determine drop zone by card center in page coords
+                        var centerX = draggingCard.left + CARD_WIDTH / 2 + localPlaymatRect.left;
+                        var centerY = draggingCard.top + CARD_HEIGHT / 2 + localPlaymatRect.top;
+
+                        var dropZone = null;
+                        var rectsNow = getZoneRects();
+                        if (pointInRect(centerX, centerY, rectsNow.hand)) dropZone = 'hand';
+                        else if (pointInRect(centerX, centerY, rectsNow.battlefield)) dropZone = 'battlefield';
+                        else if (pointInRect(centerX, centerY, rectsNow.command)) dropZone = 'command';
+                        else if (pointInRect(centerX, centerY, rectsNow.graveyard)) dropZone = 'graveyard';
+                        else if (pointInRect(centerX, centerY, rectsNow.exile)) dropZone = 'exile';
+
+                        console.log(dropZone);
+
+                        $scope.$applyAsync(function() {
+                            if (dropZone === 'hand') {
+                                console.log("HELLO WORLD");
+                                draggingCard.currentZone = 'hand';
+                                ensureInHand(draggingCard, false); // append if user drops into hand
+                                // Reset position so layoutHand can position it properly
+                                draggingCard.left = undefined;
+                                draggingCard.top = undefined;
+                                c.layoutHand();
+                            } else {
+                                if (draggingCard.currentZone === 'hand') {
+                                    removeFromHand(draggingCard);
+                                }
+                                draggingCard.currentZone = dropZone || 'free';
+                                // Keep position where user dropped it
+                            }
+                        });
+
+                        cardEl.style.cursor = 'grab';
+                        cardEl.style.transition = '';
+                        //draggingCard = null;
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    };
+                });
+
+                cardEl.addEventListener('dblclick', function() {
+                    $scope.$applyAsync(function() {
+                        card.isTapped = !card.isTapped;
+                    });
+                });
             });
+        });
+    };
 
-            cardEl.style.cursor = 'grab';
-            cardEl.style.transition = '';
-            draggingCard = null;
-            document.onmousemove = null;
-            document.onmouseup = null;
-          };
+    c.$onInit = function() {
+        // Combine commanders and hand into cards array for rendering & dragging
+        c.cards = (c.data.commanders || []).concat(c.data.hand || []);
+
+        // Initialize zones for existing cards
+        (c.data.commanders || []).forEach(function(card) {
+            card.currentZone = 'command';
+        });
+        (c.data.hand || []).forEach(function(card) {
+            card.currentZone = 'hand';
         });
 
-        cardEl.addEventListener('dblclick', function() {
-          $scope.$applyAsync(function() {
-            card.isTapped = !card.isTapped;
-          });
+        $timeout(function() {
+            c.renderCards();
         });
-      });
-    });
-  };
-
-  c.$onInit = function() {
-    // Combine commanders and hand into cards array for rendering & dragging
-    c.cards = (c.data.commanders || []).concat(c.data.hand || []);
-
-    // Initialize zones for existing cards
-    (c.data.commanders || []).forEach(function(card) { card.currentZone = 'command'; });
-    (c.data.hand || []).forEach(function(card) { card.currentZone = 'hand'; });
-
-    $timeout(function() {
-      c.renderCards();
-    });
-  };
+    };
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Container wrapper */&#13;
@@ -530,14 +542,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>111</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-09 20:03:19</sys_updated_on>
+        <sys_updated_on>2025-08-09 21:24:07</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
