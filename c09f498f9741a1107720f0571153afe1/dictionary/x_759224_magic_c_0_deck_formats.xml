@@ -7,5 +7,6 @@
         <element label="Code" max_length="40" name="code" type="string"/>
         <element label="Deck Size Min" mandatory="true" max_length="3" name="deck_size_min" type="integer"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="20" label="Starting HP" max_length="2" name="starting_hp" type="integer"/>
     </element>
 </database>
