@@ -4,7 +4,7 @@
         <client_script><![CDATA[api.controller = function($scope, $element, $timeout) {
     var c = this;
 
-    c.playerHealth = 20;
+    c.playerHealth = c.data.playerHealth || 20;
     c.cards = []; // Holds all draggable cards (commanders + hand)
 
     var draggingCard = null;
@@ -296,7 +296,24 @@ img {&#13;
         <script><![CDATA[(function() {
     var deckId = options.deck_sys_id || input.deck_sys_id;
 
+    // Default fallback
     data.playerHealth = 20;
+
+    // Load deck record
+    var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+    if (deckGR.get(deckId)) {
+        var formatSysId = deckGR.getValue('format');
+
+        // Load related format record
+        var formatGR = new GlideRecord('x_759224_magic_c_0_deck_formats');
+        if (formatGR.get(formatSysId)) {
+            var hp = parseInt(formatGR.getValue('starting_hp'), 10);
+            if (!isNaN(hp)) {
+                data.playerHealth = hp;
+            }
+        }
+    }
+
     data.commanders = [];
     data.hand = [];
     data.library = [];
@@ -315,23 +332,23 @@ img {&#13;
     var commanders = [];
     var nonCommanders = [];
 
-	// Loop through each of the deck card records
+    // Loop through each of the deck card records
     while (deckCardGR.next()) {
-		// Get quantity so we add
+        // Get quantity so we add
         var quantity = parseInt(deckCardGR.getValue('quantity'), 10) || 1;
         var isCommander = deckCardGR.is_commander.toString() === 'true';
-		var isSideboard = deckCardGR.is_sideboard.toString() === 'true';
-		var isMaybeboard = deckCardGR.is_maybeboard.toString() === 'true';
-		// If the card exists and is not sideboard nor maybeboard
+        var isSideboard = deckCardGR.is_sideboard.toString() === 'true';
+        var isMaybeboard = deckCardGR.is_maybeboard.toString() === 'true';
+        // If the card exists and is not sideboard nor maybeboard
         var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
         if (cardGR.get(deckCardGR.getValue('card')) && !isSideboard && !isMaybeboard) {
             var cardData = {
                 sys_id: cardGR.getUniqueValue(),
                 name: cardGR.getValue('name'),
                 front_image: utils.getImgSrc(cardGR.getValue('front_image')),
-				back_image: utils.getImgSrc(cardGR.getValue('back_image')),
+                back_image: utils.getImgSrc(cardGR.getValue('back_image')),
                 is_commander: isCommander,
-				notes: deckCardGR.getValue('notes')
+                notes: deckCardGR.getValue('notes')
 
             };
 
@@ -344,7 +361,8 @@ img {&#13;
 
     // Shuffle non-commander cards
     function shuffle(array) {
-        var currentIndex = array.length, randomIndex;
+        var currentIndex = array.length,
+            randomIndex;
 
         while (currentIndex != 0) {
             randomIndex = Math.floor(Math.random() * currentIndex);
@@ -369,14 +387,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>93</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-08 04:25:06</sys_updated_on>
+        <sys_updated_on>2025-08-09 17:42:43</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
