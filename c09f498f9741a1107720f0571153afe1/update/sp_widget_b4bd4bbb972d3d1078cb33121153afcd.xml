@@ -454,6 +454,7 @@
       c.data.sideboard = c.data.sideboard || [];
 
       // Combine all cards into a single array for rendering
+      // Only include visible/draggable zones in c.cards (not library)
       c.cards = (c.data.showCommandZone ? c.data.commanders : [])
         .concat(c.data.hand)
         .concat(c.data.battlefield)
@@ -486,6 +487,8 @@
           zoneCards = c.data.graveyard;
       } else if (zoneName === 'exile') {
           zoneCards = c.data.exile;
+      } else if (zoneName === 'library') {
+          zoneCards = c.data.library; // Show library in order
       } else {
           zoneCards = [];
       }
@@ -505,8 +508,18 @@
 
   // Hide modal
   c.hideZoneModal = function() {
+      if (c.currentModalZone === 'library') {
+        c.shuffleLibrary();
+      }
       c.showModal = false;
       c.modalCards = [];
+  };
+
+  c.shuffleLibrary = function() {
+    for (let i = c.data.library.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [c.data.library[i], c.data.library[j]] = [c.data.library[j], c.data.library[i]];
+    }
   };
 
   // Make getCardZone available to template
@@ -538,6 +551,131 @@
       c.floatingCardEl = floatingCard;
 
   };
+
+  // Library context menu state
+  c.libraryMenuVisible = false;
+  c.libraryMenuX = 0;
+  c.libraryMenuY = 0;
+
+  c.showLibraryContextMenu = function(event) {
+    event.preventDefault();
+    $scope.$applyAsync(function() {
+      c.libraryMenuVisible = true;
+      c.libraryMenuX = event.clientX;
+      c.libraryMenuY = event.clientY;
+    });
+    // Hide menu on click elsewhere
+    $timeout(function() {
+      document.addEventListener('mousedown', c.hideLibraryContextMenuOnce, { once: true });
+    });
+  };
+  c.hideLibraryContextMenu = function() {
+    c.libraryMenuVisible = false;
+  };
+  c.hideLibraryContextMenuOnce = function(e) {
+    // Only hide if not clicking the menu itself
+    if (!e.target.closest('.library-context-menu')) {
+      $scope.$applyAsync(function() { c.libraryMenuVisible = false; });
+    }
+  };
+
+  // Modal card context menu state
+  c.modalCardMenuVisible = false;
+  c.modalCardMenuX = 0;
+  c.modalCardMenuY = 0;
+  c.modalCardMenuCard = null;
+
+  c.showModalCardMenu = function(event, card) {
+    event.preventDefault();
+    event.stopPropagation();
+    $scope.$applyAsync(function() {
+      c.modalCardMenuVisible = true;
+      c.modalCardMenuX = event.clientX;
+      c.modalCardMenuY = event.clientY;
+      c.modalCardMenuCard = card;
+    });
+    $timeout(function() {
+      document.addEventListener('mousedown', c.hideModalCardMenuOnce, { once: true });
+    });
+  };
+  c.hideModalCardMenu = function() {
+    c.modalCardMenuVisible = false;
+    c.modalCardMenuCard = null;
+  };
+  c.hideModalCardMenuOnce = function(e) {
+    if (!e.target.closest('.modal-card-context-menu')) {
+      $scope.$applyAsync(function() { c.hideModalCardMenu(); });
+    }
+  };
+  c.getAvailableZonesForModalCard = function() {
+    var zones = ['hand', 'battlefield', 'graveyard', 'exile'];
+    if (c.data.showCommandZone) zones.push('command');
+    if (c.data.showSideboardZone) zones.push('sideboard');
+    return zones.filter(function(z) {
+      return c.getCardZone(c.modalCardMenuCard) !== z;
+    });
+  };
+  c.moveModalCardToZone = function(zone) {
+    var card = c.modalCardMenuCard;
+    if (!card) return;
+    // Remove from all zones, including library
+    if (c.data.showCommandZone) c.removeFromZone(card, 'command');
+    if (c.data.showSideboardZone) c.removeFromZone(card, 'sideboard');
+    c.removeFromZone(card, 'hand');
+    c.removeFromZone(card, 'battlefield');
+    c.removeFromZone(card, 'graveyard');
+    c.removeFromZone(card, 'exile');
+    // Remove from library if present
+    var libIdx = c.data.library.indexOf(card);
+    if (libIdx !== -1) c.data.library.splice(libIdx, 1);
+    // Add to target zone and snap position if needed
+    if (zone === 'command' && c.data.showCommandZone) {
+      c.data.commanders.push(card);
+      $timeout(function() { snapToCommand(card); });
+    } else if (zone === 'sideboard' && c.data.showSideboardZone) {
+      c.data.sideboard.push(card);
+      $timeout(function() { snapToSideboard(card); });
+    } else if (zone === 'hand') {
+      c.data.hand.push(card);
+      card.left = undefined;
+      card.top = undefined;
+      $timeout(function() { c.layoutHand(); });
+    } else if (zone === 'battlefield') {
+      c.data.battlefield.push(card);
+      // Always snap to center of battlefield
+      $timeout(function() {
+        var rects = getZoneRects();
+        var playmatRect = rects.playmat;
+        var battlefieldRect = rects.battlefield;
+        if (battlefieldRect) {
+          var zoneLeft = battlefieldRect.left - playmatRect.left;
+          var zoneTop = battlefieldRect.top - playmatRect.top;
+          card.left = Math.round(zoneLeft + (battlefieldRect.width - CARD_WIDTH) / 2);
+          card.top = Math.round(zoneTop + (battlefieldRect.height - CARD_HEIGHT) / 2);
+        }
+      });
+    } else if (zone === 'graveyard') {
+      c.data.graveyard.push(card);
+      $timeout(function() { snapToGraveyard(card); });
+    } else if (zone === 'exile') {
+      c.data.exile.push(card);
+      $timeout(function() { snapToExile(card); });
+    } else if (zone === 'library') {
+      c.data.library.unshift(card); // Add to top of library
+    }
+    // Update cards array (do NOT include library)
+    c.cards = (c.data.showCommandZone ? c.data.commanders : [])
+      .concat(c.data.hand)
+      .concat(c.data.battlefield)
+      .concat(c.data.graveyard)
+      .concat(c.data.exile)
+      .concat(c.data.showSideboardZone ? c.data.sideboard : []);
+    c.hideModalCardMenu();
+    c.hideZoneModal();
+    $timeout(function() { c.renderCards(); });
+  };
+  // Expose removeFromZone for modal menu logic
+  c.removeFromZone = removeFromZone;
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Container wrapper */&#13;
@@ -555,7 +693,7 @@
   width: 100%;&#13;
   height: 88vh;&#13;
   background: cadetblue;&#13;
-  border-radius:1%;&#13;
+  border-radius: 1%;&#13;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;&#13;
   position: relative;&#13;
   overflow: hidden;&#13;
@@ -581,7 +719,7 @@
 }&#13;
 &#13;
 /* Zones shared style */&#13;
-.zone {&#13;
+.zone, .sideboard-zone {&#13;
   border: 1px dashed white;&#13;
   color: white;&#13;
   text-align: center;&#13;
@@ -591,14 +729,14 @@
 }&#13;
 &#13;
 /* Zone sizes for new card size */&#13;
-.library, .graveyard, .exile, .command-zone {&#13;
+.library, .graveyard, .exile, .command-zone, .sideboard-zone {&#13;
   width: 181px;&#13;
   height: 264px;&#13;
   position: relative;&#13;
 }&#13;
 &#13;
-.graveyard, .exile {&#13;
-  z-index: 10000;&#13;
+.graveyard, .exile, .sideboard-zone, .command-zone {&#13;
+  z-index: 20;&#13;
 }&#13;
 &#13;
 /* Battlefield */&#13;
@@ -612,15 +750,27 @@
 /* Hand */&#13;
 .hand {&#13;
   height: 284px;&#13;
-  position: relative; /* helps when computing rects and improves UX */&#13;
-  overflow: hidden;   /* visual containment; cards are absolutely positioned on playmat */&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
 }&#13;
 &#13;
 /* Command zone styling */&#13;
 .command-zone {&#13;
-  background: #b03030;&#13;
   border: 1px solid #fff;&#13;
   border-radius: 4px;&#13;
+  background: transparent;&#13;
+}&#13;
+&#13;
+/* Sideboard zone styling */&#13;
+.sideboard-zone {&#13;
+  background: #3a3a7a;&#13;
+  border: 1px solid #fff;&#13;
+  border-radius: 4px;&#13;
+  margin-top: 10px;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  cursor: pointer;&#13;
 }&#13;
 &#13;
 /* Health display */&#13;
@@ -646,7 +796,7 @@
   background: #666;&#13;
 }&#13;
 &#13;
-/* Draggable cards (scaled up again) */&#13;
+/* Draggable cards */&#13;
 .draggable-card {&#13;
   position: absolute;&#13;
   width: 181px;&#13;
@@ -654,7 +804,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);&#13;
   border-radius: 6px;&#13;
   user-select: none;&#13;
-  z-index: 1000;&#13;
+  z-index: 10;&#13;
   transform-origin: center center;&#13;
   transition: transform 0.2s ease, z-index 0.2s ease, box-shadow 0.2s ease, left 0.3s ease, top 0.3s ease;&#13;
 }&#13;
@@ -669,26 +819,20 @@
   transform: rotate(90deg);&#13;
 }&#13;
 &#13;
-/* Hand card hover effects - only when actually in hand zone */&#13;
+/* Hand card hover effects */&#13;
 .draggable-card[data-zone="hand"]:hover {&#13;
-  z-index: 2000 !important;&#13;
+  z-index: 21 !important;&#13;
   transform: scale(1.3) !important;&#13;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;&#13;
 }&#13;
 &#13;
-/* Handle rotated cards in hand */&#13;
 .draggable-card[data-zone="hand"].rotated:hover {&#13;
-  z-index: 2000 !important;&#13;
+  z-index: 21 !important;&#13;
   transform: rotate(90deg) scale(1.3) !important;&#13;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;&#13;
 }&#13;
 &#13;
-/* Ensure cards not in hand don't get hover effects */&#13;
-.draggable-card:not([data-zone="hand"]):hover {&#13;
-  /* No hover effects for cards outside hand */&#13;
-}&#13;
-&#13;
-/* Library card back (match new size) */&#13;
+/* Library card back */&#13;
 .zone.library {&#13;
   position: relative;&#13;
   width: 181px;&#13;
@@ -707,7 +851,7 @@
 }&#13;
 &#13;
 img {&#13;
- border-radius: 0.6rem; &#13;
+  border-radius: 0.6rem;&#13;
 }&#13;
 &#13;
 /* Zone Modal Styles */&#13;
@@ -718,7 +862,7 @@ img {&#13;
   width: 100%;&#13;
   height: 100%;&#13;
   background: rgba(0, 0, 0, 0.8);&#13;
-  z-index: 3000;&#13;
+  z-index: 100;&#13;
   display: flex;&#13;
   justify-content: center;&#13;
   align-items: center;&#13;
@@ -831,24 +975,73 @@ img {&#13;
   object-fit: cover;&#13;
 }&#13;
 &#13;
-/* Sideboard zone styling */&#13;
-.sideboard-zone {&#13;
-  background: #3a3a7a;&#13;
-  border: 1px solid #fff;&#13;
-  border-radius: 4px;&#13;
-  width: 181px;&#13;
-  height: 264px;&#13;
-  color: white;&#13;
-  text-align: center;&#13;
-  font-weight: bold;&#13;
-  padding: 4px;&#13;
-  box-sizing: border-box;&#13;
-  margin-top: 10px;&#13;
-  display: flex;&#13;
-  align-items: center;&#13;
-  justify-content: center;&#13;
+/* Library context menu styles */&#13;
+.library-context-menu {&#13;
+  position: fixed;&#13;
+  z-index: 200;&#13;
+  background: #232323;&#13;
+  color: #fff;&#13;
+  border: 1px solid #444;&#13;
+  border-radius: 6px;&#13;
+  min-width: 160px;&#13;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);&#13;
+  padding: 0;&#13;
+  margin: 0;&#13;
+  list-style: none;&#13;
+  font-size: 16px;&#13;
+}&#13;
+&#13;
+.library-context-menu li {&#13;
+  padding: 10px 18px;&#13;
   cursor: pointer;&#13;
-}</css>
+  border-bottom: 1px solid #333;&#13;
+  transition: background 0.15s;&#13;
+}&#13;
+&#13;
+.library-context-menu li:last-child {&#13;
+  border-bottom: none;&#13;
+}&#13;
+&#13;
+.library-context-menu li:hover {&#13;
+  background: #444;&#13;
+}&#13;
+&#13;
+/* Modal card context menu styles */&#13;
+.modal-card-context-menu {&#13;
+  position: fixed;&#13;
+  z-index: 200;&#13;
+  background: #232323;&#13;
+  color: #fff;&#13;
+  border: 1px solid #444;&#13;
+  border-radius: 6px;&#13;
+  min-width: 140px;&#13;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);&#13;
+  padding: 0;&#13;
+  margin: 0;&#13;
+  list-style: none;&#13;
+  font-size: 15px;&#13;
+}&#13;
+&#13;
+.modal-card-context-menu li {&#13;
+  padding: 8px 16px;&#13;
+  cursor: pointer;&#13;
+  border-bottom: 1px solid #333;&#13;
+  transition: background 0.15s;&#13;
+}&#13;
+&#13;
+.modal-card-context-menu li:last-child {&#13;
+  border-bottom: none;&#13;
+}&#13;
+&#13;
+.modal-card-context-menu li:hover {&#13;
+  background: #444;&#13;
+}&#13;
+&#13;
+.draggable-card:focus {&#13;
+  outline: 5px solid #ffd700;&#13;
+  outline-offset: 2px;&#13;
+}&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -975,19 +1168,19 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>147</sys_mod_count>
+        <sys_mod_count>167</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-10 18:28:01</sys_updated_on>
+        <sys_updated_on>2025-08-11 01:53:44</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
     <div class="left-column">
-      <div class="zone library" ng-click="c.drawCard()">
+      <div class="zone library" ng-click="c.showZoneModal('library')" ng-right-click="c.showLibraryContextMenu($event)">
         <img ng-if="c.data.library.length > 0"
              src="https://backs.scryfall.io/normal/2/2/222b7a3b-2321-4d4c-af19-19338b134971.jpg?1677416389"
              alt="Library Card Back"
@@ -1015,13 +1208,14 @@ img {&#13;
     </div>
 
     <!-- Draggable Cards -->
-    <div class="draggable-card"
-         ng-repeat="card in c.cards"
-         ng-class="{'rotated': card.isTapped, 'hand-card': c.getCardZone(card) === 'hand'}"
-         ng-attr-data-zone="{{c.getCardZone(card)}}"
-         ng-style="{'left': card.left + 'px', 'top': card.top + 'px'}">
+    <button class="draggable-card"
+        ng-repeat="card in c.cards"
+        ng-class="{'rotated': card.isTapped, 'hand-card': c.getCardZone(card) === 'hand'}"
+        ng-attr-data-zone="{{c.getCardZone(card)}}"
+        ng-style="{'left': card.left + 'px', 'top': card.top + 'px'}"
+        tabindex="0">
       <img ng-src="{{card.front_image}}" alt="{{card.name}}">
-    </div>
+    </button>
   </div>
 
   <!-- Zone Modal -->
@@ -1036,13 +1230,28 @@ img {&#13;
           <div class="modal-card"
                ng-repeat="card in c.modalCards"
                ng-class="{'rotated': card.isTapped}"
-               ng-mousedown="c.startModalDrag($event, card)">
+               ng-mousedown="c.startModalDrag($event, card)"
+               ng-click="c.showModalCardMenu($event, card)">
             <img ng-src="{{card.front_image}}" alt="{{card.name}}">
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Custom context menu for library -->
+  <ul class="library-context-menu" ng-show="c.libraryMenuVisible" ng-style="{'top': c.libraryMenuY + 'px', 'left': c.libraryMenuX + 'px'}">
+    <li ng-click="c.drawCard(); c.hideLibraryContextMenu()">Draw</li>
+    <li ng-click="c.shuffleLibrary(); c.hideLibraryContextMenu()">Shuffle</li>
+    <li ng-click="c.showZoneModal('library'); c.hideLibraryContextMenu()">View Library</li>
+    <li ng-click="c.hideLibraryContextMenu()">Cancel</li>
+  </ul>
+
+  <!-- Modal card context menu -->
+  <ul class="modal-card-context-menu" ng-show="c.modalCardMenuVisible" ng-style="{'top': c.modalCardMenuY + 'px', 'left': c.modalCardMenuX + 'px'}">
+    <li ng-repeat="zone in c.getAvailableZonesForModalCard()" ng-click="c.moveModalCardToZone(zone)">{{zone | uppercase}}</li>
+    <li ng-click="c.hideModalCardMenu()">Cancel</li>
+  </ul>
 </div>]]></template>
     </sp_widget>
 </record_update>
