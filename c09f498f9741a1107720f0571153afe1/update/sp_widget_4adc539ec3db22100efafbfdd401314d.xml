@@ -46,13 +46,30 @@
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
-  display: flex;          /* Horizontal row layout */&#13;
-  gap: 2rem;              /* Space between columns */&#13;
-  overflow-x: auto;       /* Horizontal scroll if needed */&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  align-items: flex-start;&#13;
   padding: 1rem;&#13;
-  height: 100vh;          /* Fill height */&#13;
+  gap: 2rem;&#13;
+  width: 100%;&#13;
+  overflow-x: auto;&#13;
 }&#13;
 &#13;
+.deck-columns {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  gap: 2rem;&#13;
+  flex: 1;&#13;
+}&#13;
+&#13;
+.deck-anchored-columns {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 2rem;&#13;
+  flex-shrink: 0;&#13;
+}&#13;
+&#13;
+/* Column Styling */&#13;
 .deck-column {&#13;
   flex: 0 0 auto;&#13;
   min-width: 200px;&#13;
@@ -60,6 +77,7 @@
   display: flex;&#13;
   flex-direction: column;&#13;
   align-items: center;&#13;
+  overflow: visible;&#13;
 }&#13;
 &#13;
 .deck-column-header {&#13;
@@ -70,30 +88,45 @@
   text-align: center;&#13;
 }&#13;
 &#13;
+/* Card Stack */&#13;
 .card-stack {&#13;
   position: relative;&#13;
   width: 100%;&#13;
+  overflow: visible;&#13;
 }&#13;
 &#13;
+/* Stack Overlap */&#13;
 .stacked-card {&#13;
   position: relative;&#13;
-  margin-top: -200px; /* controls the overlap */&#13;
-  transition: margin 0.2s ease;&#13;
+  margin-top: -25rem;&#13;
+  transition: transform 0.2s ease;&#13;
+  z-index: 1;&#13;
 }&#13;
 &#13;
+/* Top card and single-card columns shouldn't overlap */&#13;
 .stacked-card:first-child {&#13;
   margin-top: 0;&#13;
 }&#13;
 &#13;
+/* Prevent shifting on hover if it's the only card */&#13;
+.card-stack:only-child .stacked-card:hover {&#13;
+  transform: none !important;&#13;
+}&#13;
+&#13;
+/* Only shift hovered card forward */&#13;
 .stacked-card:hover {&#13;
-  margin-bottom: 280px; /* Push rest down */&#13;
   z-index: 999 !important;&#13;
 }&#13;
 &#13;
+/* Move only the cards *after* the hovered one downward */&#13;
+.stacked-card:hover ~ .stacked-card {&#13;
+  transform: translateY(25rem);&#13;
+}&#13;
+&#13;
+/* Image Container */&#13;
 .image-container {&#13;
   width: 100%;&#13;
   max-width: 200px;&#13;
-  height: auto;&#13;
   border-radius: 5%;&#13;
   overflow: hidden;&#13;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);&#13;
@@ -170,24 +203,49 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-14 03:01:06</sys_updated_on>
-        <template><![CDATA[<div class="deck-column"
-     ng-repeat="col in sortedColumns()">
-  <div class="deck-column-header">{{ col.key }}</div>
+        <sys_updated_on>2025-08-14 14:47:29</sys_updated_on>
+        <template><![CDATA[<div class="deck-container">
+  <!-- Wrapping Deck Columns -->
+  <div class="deck-columns">
+    <div class="deck-column"
+         ng-repeat="col in sortedColumns() track by col.key"
+         ng-if="col.key !== 'Maybeboard' && col.key !== 'Sideboard'">
+      <div class="deck-column-header">{{ col.key }}</div>
 
-  <div class="card-stack">
-    <div class="stacked-card"
-         ng-repeat="card in col.cards"
-         ng-style="{'z-index': ($index + 1) * 10}">
-      <div class="image-container">
-        <img class="image" ng-src="{{card.front_image_url}}" ng-alt="{{card.name}}" />
+      <div class="card-stack">
+        <div class="stacked-card"
+             ng-repeat="card in col.cards"
+             ng-style="{'z-index': ($index + 1) * 10}">
+          <div class="image-container">
+            <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anchored Columns: Maybeboard + Sideboard -->
+  <div class="deck-anchored-columns">
+    <div class="deck-column"
+         ng-repeat="col in sortedColumns() track by col.key"
+         ng-if="col.key === 'Maybeboard' || col.key === 'Sideboard'">
+      <div class="deck-column-header">{{ col.key }}</div>
+
+      <div class="card-stack">
+        <div class="stacked-card"
+             ng-repeat="card in col.cards"
+             ng-style="{'z-index': ($index + 1) * 10}">
+          <div class="image-container">
+            <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
