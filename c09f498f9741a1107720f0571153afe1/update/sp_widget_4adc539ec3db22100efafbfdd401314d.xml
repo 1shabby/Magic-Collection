@@ -1,78 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $window) {
-    /* widget controller */
-    var c = this;
+        <client_script><![CDATA[api.controller = function($scope, $window, $timeout) {
+  var c = this;
 
-    c.$onInit = function() {
-        // Extract deck_id from URL if present and set it on input
-        var params = new URLSearchParams($window.location.search);
-        var deckIdParam = params.get('deck_id');
-        if (deckIdParam) {
-            c.data.deck_sys_id = deckIdParam;
-        }
-        $scope.customColumnSort = function(key) {
-            return key === "Commander" ? '0000' : key;
-        };
+  c.$onInit = function() {
+    // Get deck_id from URL
+    var params = new URLSearchParams($window.location.search);
+    var deckIdParam = params.get('deck_id');
+    if (deckIdParam) {
+      c.data.deck_sys_id = deckIdParam;
+    }
 
-        $scope.sortedColumns = function() {
-            const columns = [];
-
-            angular.forEach($scope.data.columns, function(cards, key) {
-                columns.push({
-                    key: key,
-                    cards: cards
-                });
-            });
-
-            return columns.sort(function(a, b) {
-                if (a.key === 'Commander') return -1;
-                if (b.key === 'Commander') return 1;
-                return a.key.localeCompare(b.key);
-            });
-        };
-
-
-
-        $scope.getCardTags = function(card) {
-            var tags = [];
-            if (card.is_commander) tags.push("Commander");
-            if (card.is_maybeboard) tags.push("Maybeboard");
-            if (card.is_sideboard) tags.push("Sideboard");
-            return tags.join(", ");
-        };
+    // Utility methods
+    $scope.customColumnSort = function(key) {
+      return key === "Commander" ? '0000' : key;
     };
-};]]></client_script>
+
+    $scope.sortedColumns = function() {
+      const columns = [];
+      angular.forEach($scope.data.columns, function(cards, key) {
+        columns.push({
+          key: key,
+          cards: cards
+        });
+      });
+
+      return columns.sort(function(a, b) {
+        if (a.key === 'Commander') return -1;
+        if (b.key === 'Commander') return 1;
+        return a.key.localeCompare(b.key);
+      });
+    };
+
+    $scope.getCardTags = function(card) {
+      var tags = [];
+      if (card.is_commander) tags.push("Commander");
+      if (card.is_maybeboard) tags.push("Maybeboard");
+      if (card.is_sideboard) tags.push("Sideboard");
+      return tags.join(", ");
+    };
+
+    $scope.viewDeck = function(deckId) {
+      $window.location.href = '?id=deck_view&deck_id=' + deckId;
+    };
+
+    // Main layout logic (after DOM render)
+    $timeout(function renderBalancedColumns() {
+      const columnsContainer = document.getElementById('dynamic-deck-columns');
+      if (!columnsContainer || !$scope.data.columns) return;
+
+      const NUM_COLUMNS = 7;
+      const OVERLAP_PER_CARD = 25 * 16; // rem to px (25rem * 16)
+      const columnHeights = Array(NUM_COLUMNS).fill(0);
+      const columns = [];
+
+      // Create empty columns
+      for (let i = 0; i < NUM_COLUMNS; i++) {
+        const col = document.createElement('div');
+        col.className = 'deck-column';
+        columns.push(col);
+        columnsContainer.appendChild(col);
+      }
+
+      // Split out Maybeboard and Sideboard
+      const allColumns = $scope.sortedColumns();
+      const dynamicCols = allColumns.filter(col =>
+        col.key !== 'Maybeboard' && col.key !== 'Sideboard'
+      );
+
+      // Estimate column "height" using card count
+      dynamicCols.forEach(col => {
+        const estimatedHeight = col.cards.length * OVERLAP_PER_CARD;
+        const shortestIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        const targetCol = columns[shortestIndex];
+        columnHeights[shortestIndex] += estimatedHeight;
+
+        // Build column DOM
+        const colHeader = document.createElement('div');
+        colHeader.className = 'deck-column-header';
+        colHeader.textContent = col.key;
+        targetCol.appendChild(colHeader);
+
+        const stack = document.createElement('div');
+        stack.className = 'card-stack';
+
+        col.cards.forEach((card, index) => {
+          const cardButton = document.createElement('button');
+          cardButton.className = 'stacked-card card-button';
+          cardButton.style.zIndex = (index + 1) * 10;
+          cardButton.type = 'button'; // prevent form submission
+
+          const imgContainer = document.createElement('div');
+          imgContainer.className = 'image-container';
+
+          const img = document.createElement('img');
+          img.className = 'image';
+          img.src = card.front_image_url;
+          img.alt = card.name;
+
+          imgContainer.appendChild(img);
+          cardButton.appendChild(imgContainer);
+          stack.appendChild(cardButton);
+        });
+
+        targetCol.appendChild(stack);
+      });
+    }, 0); // Wait for DOM to render
+  };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
   display: flex;&#13;
-  flex-wrap: wrap;&#13;
+  flex-wrap: nowrap; /* no wrapping */&#13;
   align-items: flex-start;&#13;
   padding: 1rem;&#13;
   gap: 2rem;&#13;
   width: 100%;&#13;
   overflow-x: auto;&#13;
+  justify-content: space-between;&#13;
 }&#13;
 &#13;
+/* Left side dynamic columns */&#13;
 .deck-columns {&#13;
-  display: flex;&#13;
-  flex-wrap: wrap;&#13;
-  gap: 2rem;&#13;
-  flex: 1;&#13;
+  display: grid;&#13;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Uniform column width */&#13;
+  gap: 2rem; /* defined gap between dynamic columns */&#13;
+  flex: 1 1 auto;&#13;
+  min-width: 0;&#13;
 }&#13;
 &#13;
+/* Right side fixed horizontal row of Maybeboard + Sideboard */&#13;
 .deck-anchored-columns {&#13;
   display: flex;&#13;
-  flex-direction: column;&#13;
-  gap: 2rem;&#13;
-  flex-shrink: 0;&#13;
+  flex-direction: row;&#13;
+  gap: 1rem; /* smaller gap between Maybeboard and Sideboard */&#13;
+  flex: 0 0 auto;&#13;
+  min-width: auto;&#13;
+  max-width: none;&#13;
+  justify-content: flex-end;&#13;
+  margin-left: 1rem; /* reduce gap between last dynamic column and Maybeboard */&#13;
 }&#13;
 &#13;
 /* Column Styling */&#13;
 .deck-column {&#13;
-  flex: 0 0 auto;&#13;
-  min-width: 200px;&#13;
+  min-width: 250px; /* Same width for dynamic and anchored columns */&#13;
   max-width: 250px;&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
@@ -82,7 +155,7 @@
 &#13;
 .deck-column-header {&#13;
   font-weight: bold;&#13;
-  font-size: 1.1rem;&#13;
+  font-size: 2rem;&#13;
   color: white;&#13;
   margin-bottom: 1rem;&#13;
   text-align: center;&#13;
@@ -98,7 +171,7 @@
 /* Stack Overlap */&#13;
 .stacked-card {&#13;
   position: relative;&#13;
-  margin-top: -25rem;&#13;
+  margin-top: -31rem;&#13;
   transition: transform 0.2s ease;&#13;
   z-index: 1;&#13;
 }&#13;
@@ -123,19 +196,44 @@
   transform: translateY(25rem);&#13;
 }&#13;
 &#13;
-/* Image Container */&#13;
 .image-container {&#13;
+  max-width: 250px; /* match column width */&#13;
   width: 100%;&#13;
-  max-width: 200px;&#13;
   border-radius: 5%;&#13;
   overflow: hidden;&#13;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);&#13;
 }&#13;
 &#13;
+/* Image */&#13;
 .image {&#13;
   width: 100%;&#13;
   border-radius: 5%;&#13;
   display: block;&#13;
+}&#13;
+&#13;
+/* Button styling for cards */&#13;
+.card-button {&#13;
+  width: 100%;&#13;
+  max-width: 250px;&#13;
+  background: none;&#13;
+  border: none;&#13;
+  padding: 0;&#13;
+  cursor: pointer;&#13;
+  outline: none;&#13;
+  display: block;&#13;
+  transition: transform 0.2s ease;&#13;
+}&#13;
+&#13;
+/* Focus style for accessibility */&#13;
+.card-button:focus {&#13;
+  outline: 3px solid #00aaff;&#13;
+  outline-offset: 3px;&#13;
+}&#13;
+&#13;
+/* Hover scale effect */&#13;
+.card-button:hover {&#13;
+  transform: scale(1.05);&#13;
+  transition: transform 0.2s ease;&#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -273,32 +371,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-15 18:04:38</sys_updated_on>
+        <sys_updated_on>2025-08-15 20:18:46</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
-  <div class="deck-columns">
-    <div class="deck-column"
-         ng-repeat="col in sortedColumns() track by col.key"
-         ng-if="col.key !== 'Maybeboard' && col.key !== 'Sideboard'">
-      <div class="deck-column-header">{{ col.key }}</div>
-
-      <div class="card-stack">
-        <div class="stacked-card"
-             ng-repeat="card in col.cards"
-             ng-style="{'z-index': ($index + 1) * 10}">
-          <div class="image-container">
-            <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="deck-columns" id="dynamic-deck-columns">
   </div>
 
   <!-- Anchored Columns: Maybeboard + Sideboard -->
