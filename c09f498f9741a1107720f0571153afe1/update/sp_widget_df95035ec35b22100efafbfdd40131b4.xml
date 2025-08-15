@@ -12,9 +12,8 @@
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-grid-container {&#13;
-  display: grid;&#13;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));&#13;
-  gap: 16px;&#13;
+  column-width: 280px;&#13;
+  column-gap: 16px;&#13;
   padding: 20px;&#13;
 }&#13;
 &#13;
@@ -25,9 +24,10 @@
   padding: 16px;&#13;
   cursor: pointer;&#13;
   transition: box-shadow 0.2s ease-in-out;&#13;
-  display: flex;&#13;
-  flex-direction: column;&#13;
-  justify-content: space-between;&#13;
+  display: inline-block;&#13;
+  width: 100%;&#13;
+  break-inside: avoid;&#13;
+  margin-bottom: 16px;&#13;
 }&#13;
 &#13;
 .deck-card:hover {&#13;
@@ -99,14 +99,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 00:28:37</sys_created_on>
         <sys_id>df95035ec35b22100efafbfdd40131b4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>MTG Deck Lists</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_df95035ec35b22100efafbfdd40131b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-15 17:18:12</sys_updated_on>
+        <sys_updated_on>2025-08-15 18:19:51</sys_updated_on>
         <template><![CDATA[<div class="deck-grid-container">
   <div class="deck-card" ng-repeat="deck in data.decks" ng-click="viewDeck(deck.sys_id)">
     <div class="deck-header">
