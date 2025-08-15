@@ -156,6 +156,7 @@
         <script><![CDATA[(function() {
   var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
   data.columns = {};
+  data.deck_sys_id = deckId;
 
   if (!deckId) {
     data.error = "Missing deck_id";
@@ -170,31 +171,94 @@
     var cardGR = deckCardGR.card.getRefRecord();
     if (!cardGR.isValidRecord()) continue;
 
-    var notes = deckCardGR.getValue("notes") || "";
-    var tags = notes.split(",");
-    var category = tags.length ? tags[0].trim() : "Other";
+    var frontImage = getImageURL(cardGR.getValue("front_image"));
+
+    var cardData = {
+      name: cardGR.getValue("name"),
+      quantity: deckCardGR.getValue("quantity"),
+      price: cardGR.getValue("price"),
+      front_image_url: frontImage,
+      is_commander: deckCardGR.getValue("is_commander") == "1",
+      is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
+      is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
+    };
+
+    let category = "";
+
+    // Commander category renamed here
+    if (cardData.is_commander) {
+      category = "Commander";
+    } else {
+      var notes = deckCardGR.getValue("notes") || "";
+      var trimmedNote = notes.trim();
+
+      if (trimmedNote) {
+        var tags = trimmedNote.split(",");
+        if (tags.length && tags[0].trim()) {
+          category = tags[0].trim();
+        }
+      }
+
+      if (!category) {
+        if (cardData.is_maybeboard) {
+          category = "Maybeboard";
+        } else if (cardData.is_sideboard) {
+          category = "Sideboard";
+        }
+      }
+
+      if (!category) {
+        var typeLine = (cardGR.getValue("type_line") || "").toLowerCase();
+        typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+
+        var typePriority = [
+          { type: "creature", category: "Creature" },
+          { type: "planeswalker", category: "Planeswalker" },
+          { type: "instant", category: "Instant" },
+          { type: "sorcery", category: "Sorcery" },
+          { type: "enchantment", category: "Enchantment" },
+          { type: "artifact", category: "Artifact" },
+          { type: "battle", category: "Battle" },
+          { type: "land", category: "Land" }
+        ];
+
+        for (var i = 0; i < typePriority.length; i++) {
+          if (typeLine.indexOf(typePriority[i].type) !== -1) {
+            category = typePriority[i].category;
+            break;
+          }
+        }
+
+        if (!category) {
+          category = "Other";
+        }
+      }
+    }
 
     if (!data.columns[category]) {
       data.columns[category] = [];
     }
 
-    var frontImage = getImageURL(cardGR.getValue("front_image"));
-
-    data.columns[category].push({
-      name: cardGR.getValue("name"),
-      quantity: deckCardGR.getValue("quantity"),
-      price: cardGR.getValue("price"),
-      front_image_url: frontImage,
-      is_commander: deckCardGR.getValue("is_commander") == "true",
-      is_maybeboard: deckCardGR.getValue("is_maybeboard") == "true",
-      is_sideboard: deckCardGR.getValue("is_sideboard") == "true",
-    });
+    data.columns[category].push(cardData);
   }
 
   for (var column in data.columns) {
     data.columns[column].sort(function(a, b) {
       return a.name.localeCompare(b.name);
     });
+  }
+
+  // Rename here too: ensure Commander first
+  if (data.columns["Commander"]) {
+    const reordered = { "Commander": data.columns["Commander"] };
+
+    Object.keys(data.columns).sort().forEach(function(key) {
+      if (key !== "Commander") {
+        reordered[key] = data.columns[key];
+      }
+    });
+
+    data.columns = reordered;
   }
 
   function getImageURL(html) {
@@ -209,14 +273,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-15 17:22:27</sys_updated_on>
+        <sys_updated_on>2025-08-15 18:04:38</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns">
