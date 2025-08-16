@@ -150,16 +150,17 @@
   max-width: 250px;&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
-  align-items: center;&#13;
   overflow: visible;&#13;
 }&#13;
 &#13;
 .deck-column-header {&#13;
   font-weight: bold;&#13;
-  font-size: 2rem;&#13;
+  font-size: 1.5rem;&#13;
   color: white;&#13;
-  margin-bottom: 1rem;&#13;
-  text-align: center;&#13;
+  z-index: 10;&#13;
+  background-color: black;&#13;
+  margin-top: 1rem;&#13;
+  padding-bottom: 1rem;&#13;
 }&#13;
 &#13;
 /* Card Stack */&#13;
@@ -167,12 +168,14 @@
   position: relative;&#13;
   width: 100%;&#13;
   overflow: visible;&#13;
+  z-index: 10;&#13;
+  background-color: black;&#13;
 }&#13;
 &#13;
 /* Stack Overlap */&#13;
 .stacked-card {&#13;
   position: relative;&#13;
-  margin-top: -31rem;&#13;
+  margin-top: -31rem; /*controls how tightly stacked they are in the column*/&#13;
   transition: transform 0.2s ease;&#13;
   z-index: 1;&#13;
 }&#13;
@@ -194,7 +197,8 @@
 &#13;
 /* Move only the cards *after* the hovered one downward */&#13;
 .stacked-card:hover ~ .stacked-card {&#13;
-  transform: translateY(25rem);&#13;
+  transform: translateY(35rem);&#13;
+  z-index: -999 !important /* Moves cards below the card stack z-index*/&#13;
 }&#13;
 &#13;
 .image-container {&#13;
@@ -380,14 +384,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-15 20:42:54</sys_updated_on>
+        <sys_updated_on>2025-08-16 03:02:46</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
