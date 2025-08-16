@@ -4,6 +4,10 @@
         <client_script><![CDATA[api.controller = function($scope, $window, $timeout) {
     var c = this;
 
+    if (c.data.deck_name) {
+        document.title = c.data.deck_name;
+    }
+
     c.$onInit = function() {
         var params = new URLSearchParams($window.location.search);
         var deckIdParam = params.get('deck_id');
@@ -69,10 +73,9 @@
                 columnsContainer.appendChild(col);
             }
 
-            const dynamicCols = $scope.columnsList;
-			// .filter(col =>
-            //     col.key !== 'Maybeboard' && col.key !== 'Sideboard'
-            // );
+            const dynamicCols = $scope.columnsList.filter(col =>
+                col.key !== 'Maybeboard' && col.key !== 'Sideboard'
+            );
 
             dynamicCols.forEach(col => {
                 const estimatedHeight = col.cards.length * OVERLAP_PER_CARD;
@@ -106,6 +109,14 @@
                     img.className = 'image';
                     img.src = card.front_image_url;
                     img.alt = card.name;
+
+                    if (card.foil) {
+                        const foilOverlay = document.createElement('img');
+                        foilOverlay.className = 'foil-overlay';
+                        foilOverlay.src = 'x_759224_magic_c_0.foil.png';
+                        foilOverlay.alt = 'Foil overlay';
+                        imgContainer.appendChild(foilOverlay);
+                    }
 
                     imgContainer.appendChild(img);
                     cardButton.appendChild(imgContainer);
@@ -275,8 +286,6 @@
     pointer-events: none;&#13;
 }&#13;
 &#13;
-&#13;
-&#13;
 .quantity-tag span {&#13;
   position: absolute;&#13;
   top: -30px;&#13;
@@ -287,7 +296,17 @@
   white-space: nowrap;&#13;
   pointer-events: none;&#13;
 }&#13;
-</css>
+&#13;
+.foil-overlay {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  pointer-events: none; /* So it doesn’t block clicks */&#13;
+  opacity: 0.7; /* Adjust transparency */&#13;
+  border-radius: 10px; /* Match your card corners */&#13;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -304,133 +323,168 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
-  data.columns = {};
-  data.deck_sys_id = deckId;
+    var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
+    data.columns = {};
+    data.deck_sys_id = deckId;
 
-  if (!deckId) {
-    data.error = "Missing deck_id";
-    return;
-  }
-
-  var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
-  deckCardGR.addQuery("deck", deckId);
-  deckCardGR.query();
-
-  while (deckCardGR.next()) {
-    var cardGR = deckCardGR.card.getRefRecord();
-    if (!cardGR.isValidRecord()) continue;
-
-    var frontImage = getImageURL(cardGR.getValue("front_image"));
-
-    var cardData = {
-      name: cardGR.getValue("name"),
-      quantity: deckCardGR.getValue("quantity"),
-      price: cardGR.getValue("price"),
-      front_image_url: frontImage,
-      is_commander: deckCardGR.getValue("is_commander") == "1",
-      is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
-      is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
-    };
-
-    let category = "";
-
-    // Commander category renamed here
-    if (cardData.is_commander) {
-      category = "Commander";
-    } else {
-      var notes = deckCardGR.getValue("notes") || "";
-      var trimmedNote = notes.trim();
-
-      if (trimmedNote) {
-        var tags = trimmedNote.split(",");
-        if (tags.length && tags[0].trim()) {
-          category = tags[0].trim();
-        }
-      }
-
-      if (!category) {
-        if (cardData.is_maybeboard) {
-          category = "Maybeboard";
-        } else if (cardData.is_sideboard) {
-          category = "Sideboard";
-        }
-      }
-
-      if (!category) {
-        var typeLine = (cardGR.getValue("type_line") || "").toLowerCase();
-        typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
-
-        var typePriority = [
-          { type: "creature", category: "Creature" },
-          { type: "planeswalker", category: "Planeswalker" },
-          { type: "instant", category: "Instant" },
-          { type: "sorcery", category: "Sorcery" },
-          { type: "enchantment", category: "Enchantment" },
-          { type: "artifact", category: "Artifact" },
-          { type: "battle", category: "Battle" },
-          { type: "land", category: "Land" }
-        ];
-
-        for (var i = 0; i < typePriority.length; i++) {
-          if (typeLine.indexOf(typePriority[i].type) !== -1) {
-            category = typePriority[i].category;
-            break;
-          }
-        }
-
-        if (!category) {
-          category = "Other";
-        }
-      }
+    if (!deckId) {
+        data.error = "Missing deck_id";
+        return;
     }
 
-    if (!data.columns[category]) {
-      data.columns[category] = [];
+	var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+	deckGR.addQuery('sys_id',deckId);
+	deckGR.query();
+
+	deckGR.next();
+
+	data.deck_name = deckGR.getValue('name');
+	
+
+    var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
+    deckCardGR.addQuery("deck", deckId);
+    deckCardGR.query();
+
+
+    while (deckCardGR.next()) {
+        var cardGR = deckCardGR.card.getRefRecord();
+        if (!cardGR.isValidRecord()) continue;
+
+        var frontImage = getImageURL(cardGR.getValue("front_image"));
+
+        var cardData = {
+            name: cardGR.getValue("name"),
+            quantity: deckCardGR.getValue("quantity"),
+            price: cardGR.getValue("price"),
+            foil: cardGR.getValue('foiling') != 'none',
+            front_image_url: frontImage,
+            is_commander: deckCardGR.getValue("is_commander") == "1",
+            is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
+            is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
+        };
+
+        let category = "";
+
+        // Commander category renamed here
+        if (cardData.is_commander) {
+            category = "Commander";
+        } else {
+            var notes = deckCardGR.getValue("notes") || "";
+            var trimmedNote = notes.trim();
+
+            if (trimmedNote) {
+                var tags = trimmedNote.split(",");
+                if (tags.length && tags[0].trim()) {
+                    category = tags[0].trim();
+                }
+            }
+
+            if (!category) {
+                if (cardData.is_maybeboard) {
+                    category = "Maybeboard";
+                } else if (cardData.is_sideboard) {
+                    category = "Sideboard";
+                }
+            }
+
+            if (!category) {
+                var typeLine = (cardGR.getValue("type_line") || "").toLowerCase();
+                typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+
+                var typePriority = [{
+                        type: "creature",
+                        category: "Creature"
+                    },
+                    {
+                        type: "planeswalker",
+                        category: "Planeswalker"
+                    },
+                    {
+                        type: "instant",
+                        category: "Instant"
+                    },
+                    {
+                        type: "sorcery",
+                        category: "Sorcery"
+                    },
+                    {
+                        type: "enchantment",
+                        category: "Enchantment"
+                    },
+                    {
+                        type: "artifact",
+                        category: "Artifact"
+                    },
+                    {
+                        type: "battle",
+                        category: "Battle"
+                    },
+                    {
+                        type: "land",
+                        category: "Land"
+                    }
+                ];
+
+                for (var i = 0; i < typePriority.length; i++) {
+                    if (typeLine.indexOf(typePriority[i].type) !== -1) {
+                        category = typePriority[i].category;
+                        break;
+                    }
+                }
+
+                if (!category) {
+                    category = "Other";
+                }
+            }
+        }
+
+        if (!data.columns[category]) {
+            data.columns[category] = [];
+        }
+
+        data.columns[category].push(cardData);
     }
 
-    data.columns[category].push(cardData);
-  }
+    for (var column in data.columns) {
+        data.columns[column].sort(function(a, b) {
+            return a.name.localeCompare(b.name);
+        });
+    }
 
-  for (var column in data.columns) {
-    data.columns[column].sort(function(a, b) {
-      return a.name.localeCompare(b.name);
-    });
-  }
+    // Rename here too: ensure Commander first
+    if (data.columns["Commander"]) {
+        const reordered = {
+            "Commander": data.columns["Commander"]
+        };
 
-  // Rename here too: ensure Commander first
-  if (data.columns["Commander"]) {
-    const reordered = { "Commander": data.columns["Commander"] };
+        Object.keys(data.columns).sort().forEach(function(key) {
+            if (key !== "Commander") {
+                reordered[key] = data.columns[key];
+            }
+        });
 
-    Object.keys(data.columns).sort().forEach(function(key) {
-      if (key !== "Commander") {
-        reordered[key] = data.columns[key];
-      }
-    });
+        data.columns = reordered;
+    }
 
-    data.columns = reordered;
-  }
-
-  function getImageURL(html) {
-    if (!html) return "";
-    var match = html.match(/<img[^>]+src="([^"]+)"/);
-    return match ? match[1] : "";
-  }
-})();
-]]></script>
+    function getImageURL(html) {
+        if (!html) return "";
+        var match = html.match(/<img[^>]+src="([^"]+)"/);
+        return match ? match[1] : "";
+    }
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>82</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-16 13:08:09</sys_updated_on>
+        <sys_updated_on>2025-08-16 13:33:28</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -452,6 +506,7 @@
           <div class="image-container">
             <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
             <div class="quantity-tag">{{card.quantity}}</div>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.foil"/>
           </div>
         </div>
       </div>
