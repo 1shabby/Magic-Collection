@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    /* widget controller */
+    var c = this;
+
+    c.$onInit = function() {
+        var params = new URLSearchParams($window.location.search);
+        var deckIdParam = params.get('deck_id');
+        if (deckIdParam) {
+            c.data.deck_sys_id = deckIdParam;
+        }
+    }
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.deck-header {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: flex-start;&#13;
+  color: white;&#13;
+  padding: 20px;&#13;
+  font-family: sans-serif;&#13;
+  margin-bottom: 10px;&#13;
+}&#13;
+&#13;
+.deck-info {&#13;
+  flex-grow: 1;&#13;
+}&#13;
+&#13;
+.deck-title {&#13;
+  margin: 0;&#13;
+  font-size: 24px;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.deck-meta {&#13;
+  font-size: 14px;&#13;
+  margin-top: 5px;&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  gap: 10px;&#13;
+}&#13;
+&#13;
+.legal {&#13;
+  color: #00e676;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.deck-tags {&#13;
+  margin-top: 8px;&#13;
+  font-size: 13px;&#13;
+  color: #ccc;&#13;
+}&#13;
+&#13;
+.deck-actions {&#13;
+  margin-top: 10px;&#13;
+}&#13;
+&#13;
+.deck-actions button {&#13;
+  background: #333;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  border-radius: 4px;&#13;
+  margin-right: 8px;&#13;
+  padding: 6px 10px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.deck-actions button:hover {&#13;
+  background: #555;&#13;
+}&#13;
+&#13;
+.user-info {&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.user-avatar img {&#13;
+  width: 40px;&#13;
+  height: 40px;&#13;
+  border-radius: 50%;&#13;
+}&#13;
+&#13;
+.username {&#13;
+  margin-top: 5px;&#13;
+  font-size: 14px;&#13;
+}&#13;
+&#13;
+.deck-meta span {&#13;
+  color: #ccc;&#13;
+  margin-right: 15px;&#13;
+}&#13;
+&#13;
+.deck-meta span strong {&#13;
+  color: #ff8c00; /* orange highlight */&#13;
+  font-weight: 600;&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mtg_deck_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>MTG Deck Header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // Get the deck_id from the URL or input
+    var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
+    data.columns = {};
+    data.deck_sys_id = deckId;
+
+    if (!deckId) {
+        data.error = "No deck ID provided.";
+        return;
+    }
+
+    // Query the deck record
+    var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+    if (deckGR.get(deckId)) {
+        data.deck_name = deckGR.getValue('name'); // Raw value
+        data.deck_format = deckGR.getDisplayValue('format'); // Display value
+        data.deck_creator = deckGR.getValue('sys_created_by');  // Add this line
+    } else {
+        data.error = "Deck not found.";
+        return;
+    }
+
+    data.total_card_count = 0;
+    data.total_price = 0.0;
+
+    var cardPriceCache = {};
+
+    var cardGR = new GlideRecord('x_759224_magic_c_0_deck_card');
+    cardGR.addQuery('deck', deckId);
+    cardGR.addQuery('is_sideboard', false);
+    cardGR.addQuery('is_maybeboard', false);
+    cardGR.query();
+
+    while (cardGR.next()) {
+        var qty = parseInt(cardGR.getValue('quantity'), 10);
+        if (isNaN(qty)) qty = 0;
+        data.total_card_count += qty;
+
+        var cardSysId = cardGR.getValue('card');
+        if (cardSysId) {
+            var price = cardPriceCache[cardSysId];
+            if (typeof price === 'undefined') {
+                var cardRec = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+                if (cardRec.get(cardSysId)) {
+                    var priceStr = cardRec.getValue('price');
+                    price = parseFloat(priceStr);
+                    if (isNaN(price)) price = 0.0;
+                } else {
+                    price = 0.0;
+                }
+                cardPriceCache[cardSysId] = price;
+            }
+            data.total_price += price * qty;
+        }
+    }
+
+    data.total_price = data.total_price.toFixed(2);
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-17 15:55:03</sys_created_on>
+        <sys_id>47177d23c39ba6100efafbfdd40131ec</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>MTG Deck Header</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_47177d23c39ba6100efafbfdd40131ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-17 16:25:12</sys_updated_on>
+        <template><![CDATA[<div class="deck-header">
+  <div class="deck-info">
+    <h1 class="deck-title">{{ data.deck_name || 'Unnamed Deck' }}</h1>
+    <div class="deck-meta">
+      <span>Format: {{ data.deck_format || 'Unknown' }}</span>
+      <span>Deck Size: {{ data.total_card_count || 0 }}</span>
+      <span>Est deck cost: ${{ data.total_price || '0.00' }}</span>
+      <!-- Add more fields here dynamically later -->
+    </div>
+  </div>
+
+  <div class="user-info">
+    <div class="user-avatar">
+      <img src="x_759224_magic_c_0.game_changer_diamond.png" alt="User avatar" />
+    </div>
+    <div class="username">{{ data.deck_creator || 'Unknown User' }}</div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
