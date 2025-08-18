@@ -2,7 +2,6 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($window) {
-    /* widget controller */
     var c = this;
 
     c.$onInit = function() {
@@ -11,8 +10,15 @@
         if (deckIdParam) {
             c.data.deck_sys_id = deckIdParam;
         }
-    }
-};]]></client_script>
+    };
+
+    c.goToPlaytest = function() {
+        if (c.data.deck_sys_id) {
+            $window.location.href = "/mtg?id=playtest&deck_id=" + c.data.deck_sys_id;
+        }
+    };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-header {&#13;
   display: flex;&#13;
@@ -22,6 +28,9 @@
   padding: 20px;&#13;
   font-family: sans-serif;&#13;
   margin-bottom: 10px;&#13;
+  background-color: #232323;&#13;
+  border-radius: 5px;&#13;
+  margin-top: 20px;&#13;
 }&#13;
 &#13;
 .deck-info {&#13;
@@ -30,7 +39,7 @@
 &#13;
 .deck-title {&#13;
   margin: 0;&#13;
-  font-size: 24px;&#13;
+  font-size: 32px;&#13;
   font-weight: bold;&#13;
 }&#13;
 &#13;
@@ -76,9 +85,8 @@
 }&#13;
 &#13;
 .user-avatar img {&#13;
-  width: 40px;&#13;
-  height: 40px;&#13;
-  border-radius: 50%;&#13;
+  width: 50px;&#13;
+  height: 50px;&#13;
 }&#13;
 &#13;
 .username {&#13;
@@ -95,6 +103,21 @@
   color: #ff8c00; /* orange highlight */&#13;
   font-weight: 600;&#13;
 }&#13;
+&#13;
+.deck-actions button {&#13;
+  background-color: #ff8c00;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  padding: 6px 12px;&#13;
+  border-radius: 4px;&#13;
+  cursor: pointer;&#13;
+  font-size: 13px;&#13;
+}&#13;
+&#13;
+.deck-actions button:hover {&#13;
+  background-color: #e27c00;&#13;
+}&#13;
+&#13;
 &#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -129,6 +152,7 @@
         data.deck_name = deckGR.getValue('name'); // Raw value
         data.deck_format = deckGR.getDisplayValue('format'); // Display value
         data.deck_creator = deckGR.getValue('sys_created_by');  // Add this line
+		data.bracket = deckGR.getValue('bracket');
     } else {
         data.error = "Deck not found.";
         return;
@@ -176,30 +200,35 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-17 15:55:03</sys_created_on>
         <sys_id>47177d23c39ba6100efafbfdd40131ec</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>MTG Deck Header</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_47177d23c39ba6100efafbfdd40131ec</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-18 14:39:51</sys_updated_on>
+        <sys_updated_on>2025-08-18 19:27:37</sys_updated_on>
         <template><![CDATA[<div class="deck-header">
   <div class="deck-info">
     <h1 class="deck-title">{{ data.deck_name || 'Unnamed Deck' }}</h1>
     <div class="deck-meta">
       <span>Format: {{ data.deck_format || 'Unknown' }}</span>
       <span>Deck Size: {{ data.total_card_count || 0 }}</span>
-      <span>Est deck cost: ${{ data.total_price || '0.00' }}</span>
-      <!-- Add more fields here dynamically later -->
+    </div>
+    <div class="deck-meta">
+      <span>Est deck cost: <strong>${{ data.total_price || '0.00' }}</strong></span>
+      <span ng-if="data.deck_format === 'commander'">Bracket: <strong>{{ data.bracket}}</strong></span>
     </div>
   </div>
 
   <div class="user-info">
     <div class="user-avatar">
-      <img src="x_759224_magic_c_0.game_changer_diamond.png" alt="User avatar" />
+      <img src="x_759224_magic_c_0.archidekt_logo.svg" alt="User avatar" />
     </div>
     <div class="username">{{ data.deck_creator || 'Unknown User' }}</div>
+    <div class="deck-actions">
+      <button ng-click="c.goToPlaytest()">Playtest</button>
+    </div>
   </div>
 </div>
 ]]></template>
