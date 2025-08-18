@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function() {
+        <client_script><![CDATA[api.controller = function($window) {
     /* widget controller */
     var c = this;
 
@@ -176,14 +176,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-17 15:55:03</sys_created_on>
         <sys_id>47177d23c39ba6100efafbfdd40131ec</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>MTG Deck Header</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_47177d23c39ba6100efafbfdd40131ec</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-17 16:25:12</sys_updated_on>
+        <sys_updated_on>2025-08-18 14:39:51</sys_updated_on>
         <template><![CDATA[<div class="deck-header">
   <div class="deck-info">
     <h1 class="deck-title">{{ data.deck_name || 'Unnamed Deck' }}</h1>
