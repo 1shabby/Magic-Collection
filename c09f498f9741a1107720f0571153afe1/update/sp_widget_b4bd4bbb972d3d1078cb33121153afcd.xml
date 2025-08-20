@@ -13,7 +13,7 @@
       offsetY = 0;
 
   // Card metrics
-  var CARD_WIDTH = 181;
+  var CARD_WIDTH = 190;
   var CARD_HEIGHT = 264;
   var DEFAULT_GAP_X = 10;
 
@@ -552,6 +552,12 @@
 
   };
 
+  c.goToDeck = function() {
+        if (c.data.deck_sys_id) {
+            $window.location.href = "/mtg?id=deck_view&deck_id=" + c.data.deck_id;
+        }
+    };
+
   // Library context menu state
   c.libraryMenuVisible = false;
   c.libraryMenuX = 0;
@@ -712,7 +718,7 @@
   justify-content: flex-start;&#13;
   align-items: center;&#13;
   gap: 1rem;&#13;
-  padding: 2rem 0;&#13;
+  padding: 1rem 0;&#13;
   margin-left: 1rem;&#13;
   margin-right:1rem;&#13;
 }&#13;
@@ -770,7 +776,7 @@
 &#13;
 /* Sideboard zone styling */&#13;
 .sideboard-zone {&#13;
-  background: #3a3a7a;&#13;
+  background: transparent;&#13;
   border: 1px solid #fff;&#13;
   border-radius: 4px;&#13;
   margin-top: 10px;&#13;
@@ -1046,7 +1052,21 @@
   outline: 5px solid #ffd700;&#13;
   outline-offset: 2px;&#13;
 }&#13;
-</css>
+&#13;
+.view-deck {&#13;
+  background-color: $brand-secondary;&#13;
+  color: $black;&#13;
+  border: none;&#13;
+  padding: 6px 12px;&#13;
+  border-radius: 4px;&#13;
+  cursor: pointer;&#13;
+  font-size: 13px;&#13;
+  font-weight: bold; &#13;
+}&#13;
+&#13;
+.view-deck:hover {&#13;
+  background-color: #e27c00;&#13;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -1067,6 +1087,7 @@
     var urlDeckId = $sp && $sp.getParameter ? $sp.getParameter("deck_id") : null;
     var deckId = urlDeckId || options.deck_sys_id || input.deck_sys_id;
 
+	data.deck_id = deckId;
     // Default fallback
     data.playerHealth = 20;
     var showCommandZone = false;
@@ -1173,14 +1194,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>199</sys_mod_count>
+        <sys_mod_count>204</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-20 04:34:03</sys_updated_on>
+        <sys_updated_on>2025-08-20 04:57:18</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -1196,6 +1217,7 @@
       <div class="hand-counter" style="text-align:center; color:white; margin-top:8px; font-size:16px;">
         Cards: {{c.data.hand.length}}
       </div>
+      <button class="view-deck" ng-click="c.goToDeck()">View Deck</button>
     </div>
 
     <!-- Center Column -->
