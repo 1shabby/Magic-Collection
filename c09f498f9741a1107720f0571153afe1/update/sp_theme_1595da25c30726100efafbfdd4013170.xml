@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
     <sp_theme action="INSERT_OR_UPDATE">
-        <css_variables/>
+        <css_variables>/* COLORS */&#13;
+&#13;
+/* whites */&#13;
+$white: #FFF;&#13;
+&#13;
+/* mtg dark green */&#13;
+$servos-mid-blue: #0874A5;&#13;
+$mtg-dark-purple: #32213A;&#13;
+$mtg-medium-tan: #D1CAA1;&#13;
+$servos-mid-blue-lightest: #F1F9FC;&#13;
+$servos-mid-blue-light: #9CC7DB;&#13;
+$servos-dark-blue: #00517D;&#13;
+&#13;
+/* servos orange */&#13;
+$servos-orange: #ED7D31;&#13;
+$servos-orange-lightest: #FDF2EA;&#13;
+$servos-orange-light: #F6BE98;&#13;
+$servos-orange-dark: #773F19;&#13;
+&#13;
+/* servos navy */&#13;
+$servos-navy: #012B49;&#13;
+$servos-navy-lighter: #678092;&#13;
+$servos-navy-light: #34556D;&#13;
+&#13;
+/* servos light blue */&#13;
+$servos-light-blue: #069BD1;&#13;
+$servos-light-blue-lightest: #CDEBF6;&#13;
+$servos-light-blue-light: #83CDE8;&#13;
+&#13;
+/* servos teal */&#13;
+$servos-teal: #00B49E;&#13;
+$servos-teal-lightest: #E6F8F5;&#13;
+$servos-teal-light: #99E1D8;&#13;
+$servos-teal-darker: #006C6F;&#13;
+&#13;
+/* grays */&#13;
+$gray: #5B5E62;&#13;
+$gray-light: #8C8E91;&#13;
+$gray-lighter: #BDBFC0;&#13;
+$gray-lightest: #DEDFE0;&#13;
+$gray-lightest-tint-2: #F6F7F8;&#13;
+$gray-lightest-tint-1: #EDEFF1;&#13;
+$gray-dark: #494B4E;&#13;
+$gray-darker: #37383B;&#13;
+&#13;
+/* greens */&#13;
+$black-green: #282E27;&#13;
+$green: #007E6F;&#13;
+$green-faded: #90C8C1;&#13;
+&#13;
+/* oranges */&#13;
+$neon-carrot: #FFA348;&#13;
+&#13;
+/* yellows */&#13;
+$yellow: #F2B705;&#13;
+&#13;
+/* blacks */&#13;
+$black: #131B22;&#13;
+&#13;
+/* whites */&#13;
+$white-smoke: #F1F6F1;&#13;
+&#13;
+/* reds */&#13;
+$red: #AB1C1C;&#13;
+$red-dark: #891616;&#13;
+$red-light: #F7E8E8;&#13;
+$red-faded: #D99A9A;&#13;
+&#13;
+/* Bootstrap colors/brand colors */&#13;
+$brand-primary: $black-green;&#13;
+$brand-secondary: $neon-carrot;&#13;
+$brand-tertiary: $white-smoke;&#13;
+$brand-success: $servos-teal-darker;&#13;
+$brand-info: $servos-mid-blue;&#13;
+$brand-warning: $servos-orange;&#13;
+$brand-danger: $red;&#13;
+&#13;
+/* other colors */&#13;
+$link-color: $brand-info;&#13;
+$btn-ghost: #007698;&#13;
+$btn-ghost-hover: #E6F3F6;&#13;
+$btn-ghost-active: #00517D;&#13;
+$link-hover-color: $servos-dark-blue;&#13;
+$text-color: $white;&#13;
+$text-muted: $gray-light;&#13;
+$link-color-dark: $servos-light-blue-light;&#13;
+$link-color-dark-hover: #60BDE8;&#13;
+$link-color-disabled: $gray-light;&#13;
+$link-color-dark-visited: #6CB0FF;&#13;
+$table-border-color: $gray-lightest;&#13;
+$progress-bar-start: $servos-light-blue-lightest;&#13;
+&#13;
+/* footer */&#13;
+$footer-color: $servos-navy;&#13;
+&#13;
+/* header */&#13;
+/*$sp-navbar-height: 72px !default;&#13;
+$sp-logo-y: 17px !default;&#13;
+$sp-logo-max-height: 18px !default;&#13;
+$sp-logo-margin-x: 16px !default;&#13;
+$sp-logo-x: 17px !default;&#13;
+$navbar-inverse-bg: $brand-secondary !default;&#13;
+$navbar-inverse-link-color: $white !default;&#13;
+$navbar-inverse-link-hover-color: white !default;&#13;
+$navbar-inverse-link-hover-bg: $brand-primary !default;&#13;
+$sp-navbar-divider-color: #FAFAFA; !default;&#13;
+$navbar-brand-bg: white !default;&#13;
+$navbar-accent-bg: #F9B900 !default;&#13;
+$mega-menu-box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.16) !default;&#13;
+$sp-space--sm: 8px !default;&#13;
+$sp-space--xxs: 2px !default;&#13;
+$sp-space--md: 16px !default; */&#13;
+&#13;
+/* spacing */&#13;
+$single-space: 8px;&#13;
+$double-space: 16px;&#13;
+$triple-space: 24px;&#13;
+$quad-space: 32px;&#13;
+$quintuple-space: 40px;</css_variables>
         <footer display_value="LegalFooter">64407ec3532332000d620d0323dc3436</footer>
         <footer_fixed>true</footer_fixed>
         <header display_value="Stock Header">bf5ec2f2cb10120000f8d856634c9c0c</header>
@@ -10,14 +128,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-02 02:59:20</sys_updated_on>
+        <sys_updated_on>2025-08-20 03:10:14</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>
