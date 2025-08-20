@@ -685,7 +685,7 @@
         <css>/* Container wrapper */&#13;
 .playtester-basic {&#13;
   width: 100%;&#13;
-  height: 1000px; /* Increased for larger cards */&#13;
+  height: 1000px;&#13;
 }&#13;
 &#13;
 /* Playmat grid layout */&#13;
@@ -696,12 +696,13 @@
   gap: 0;&#13;
   width: 100%;&#13;
   height: 88vh;&#13;
-  background: cadetblue;&#13;
+  background: $brand-primary;&#13;
   border-radius: 1%;&#13;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;&#13;
   position: relative;&#13;
   overflow: hidden;&#13;
   user-select: none;&#13;
+  margin-top: 1rem;&#13;
 }&#13;
 &#13;
 /* Left &amp; Right Columns */&#13;
@@ -710,8 +711,10 @@
   flex-direction: column;&#13;
   justify-content: flex-start;&#13;
   align-items: center;&#13;
-  gap: 20px;&#13;
-  padding: 20px 0;&#13;
+  gap: 1rem;&#13;
+  padding: 2rem 0;&#13;
+  margin-left: 1rem;&#13;
+  margin-right:1rem;&#13;
 }&#13;
 &#13;
 /* Center column zones */&#13;
@@ -719,13 +722,13 @@
   display: flex;&#13;
   flex-direction: column;&#13;
   justify-content: space-between;&#13;
-  padding: 20px;&#13;
+  padding: 1rem;&#13;
 }&#13;
 &#13;
 /* Zones shared style */&#13;
 .zone, .sideboard-zone {&#13;
-  border: 1px dashed white;&#13;
-  color: white;&#13;
+  border: 1px dashed $brand-secondary;&#13;
+  color: $brand-secondary;&#13;
   text-align: center;&#13;
   font-weight: bold;&#13;
   padding: 4px;&#13;
@@ -734,7 +737,7 @@
 &#13;
 /* Zone sizes for new card size */&#13;
 .library, .graveyard, .exile, .command-zone, .sideboard-zone {&#13;
-  width: 181px;&#13;
+  width: 19rem;&#13;
   height: 264px;&#13;
   position: relative;&#13;
 }&#13;
@@ -809,6 +812,9 @@
   border-radius: 6px;&#13;
   user-select: none;&#13;
   z-index: 10;&#13;
+  padding:0px; &#13;
+  border:0px;&#13;
+  border-radius:5%;&#13;
   transform-origin: center center;&#13;
   transition: transform 0.2s ease, z-index 0.2s ease, box-shadow 0.2s ease, left 0.3s ease, top 0.3s ease;&#13;
 }&#13;
@@ -816,7 +822,7 @@
 .draggable-card img {&#13;
   width: 100%;&#13;
   height: 264px;&#13;
-  border-radius: 6px;&#13;
+  border-radius:5%&#13;
 }&#13;
 &#13;
 .draggable-card.rotated {&#13;
@@ -839,7 +845,7 @@
 /* Library card back */&#13;
 .zone.library {&#13;
   position: relative;&#13;
-  width: 181px;&#13;
+  width: 19rem;&#13;
   height: 264px;&#13;
 }&#13;
 &#13;
@@ -847,15 +853,11 @@
   position: absolute;&#13;
   top: 50%;&#13;
   left: 50%;&#13;
-  width: 181px;&#13;
+  width: 19rem;&#13;
   height: 264px;&#13;
   transform: translate(-50%, -50%);&#13;
   cursor: pointer;&#13;
-  border-radius: 0.6%;&#13;
-}&#13;
-&#13;
-img {&#13;
-  border-radius: 0.6rem;&#13;
+  border-radius: 5%;&#13;
 }&#13;
 &#13;
 /* Zone Modal Styles */&#13;
@@ -880,7 +882,6 @@ img {&#13;
   max-height: 90%;&#13;
   width: 800px;&#13;
   height: 600px;&#13;
-  display: flex;&#13;
   flex-direction: column;&#13;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);&#13;
 }&#13;
@@ -935,7 +936,7 @@ img {&#13;
 }&#13;
 &#13;
 .modal-card {&#13;
-  width: 181px;&#13;
+  width: 19rem;&#13;
   height: 264px;&#13;
   cursor: grab;&#13;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);&#13;
@@ -1172,14 +1173,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>181</sys_mod_count>
+        <sys_mod_count>199</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-13 00:55:56</sys_updated_on>
+        <sys_updated_on>2025-08-20 04:34:03</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
