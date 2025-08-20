@@ -2,10 +2,12 @@
     <element db_object_id="1fc12327c33ee6500efafbfdd4013180" label="MTG Deck" max_length="40" name="x_759224_magic_c_0_mtg_deck" type="collection">
         <element label="Color Identity" max_length="4000" name="color_identity" read_only="true" type="glide_list"/>
         <element label="Deck Import" max_length="32" name="deck_import" read_only="true" reference="x_759224_magic_c_0_deck_imports" type="reference"/>
+        <element label="Cards" max_length="3" name="cards" read_only="true" type="integer"/>
         <element label="Bracket" max_length="1" name="bracket" type="integer"/>
         <element label="Public" max_length="40" name="public" type="boolean"/>
         <element label="Description" max_length="4000" name="description" type="html"/>
         <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element label="Legal" max_length="40" name="legal" read_only="true" type="boolean"/>
         <element choice="1" label="Format" max_length="40" name="format" reference="x_759224_magic_c_0_deck_formats" type="reference">
             <choice/>
         </element>
