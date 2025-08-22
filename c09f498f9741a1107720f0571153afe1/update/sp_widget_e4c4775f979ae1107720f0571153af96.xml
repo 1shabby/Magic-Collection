@@ -378,6 +378,8 @@
   max-width: 350px;&#13;
   width: 100%;&#13;
   height: fit-content;&#13;
+  padding:0px;&#13;
+  border:0px;&#13;
 }&#13;
 &#13;
 .image-container {&#13;
@@ -427,7 +429,7 @@ img {&#13;
 .pagination button {&#13;
   padding: 6px 10px;&#13;
   min-width: 36px;&#13;
-  background-color: #f1f1f1;&#13;
+  background-color: $brand-secondary;&#13;
   border: 1px solid #ccc;&#13;
   border-radius: 4px;&#13;
   color: #333;&#13;
@@ -471,7 +473,7 @@ img {&#13;
   padding: 4px 10px;&#13;
   border-radius: 4px;&#13;
   border: 1px solid #555;&#13;
-  background-color: #333;&#13;
+  background-color: $brand-secondary;&#13;
   cursor: pointer;&#13;
   color: white;&#13;
 }&#13;
@@ -620,14 +622,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>411</sys_mod_count>
+        <sys_mod_count>416</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-16 03:17:54</sys_updated_on>
+        <sys_updated_on>2025-08-21 23:22:39</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="r in c.data.records"
