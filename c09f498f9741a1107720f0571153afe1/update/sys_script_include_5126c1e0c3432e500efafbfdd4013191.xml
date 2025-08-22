@@ -41,6 +41,10 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return results;
     },
 
+    _stripHtmlTags: function(html) {
+        return html.replace(/<[^>]*>/g, '').trim();
+    },
+
 
     /*
      * Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
@@ -203,41 +207,41 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             isCommander: false // CSV doesn't support
         };
     },
-	
-	_parseMoxfieldLine: function(line) {
-    var match = line.match(/^(\d+)\s+(.*?)\s+\(([^)]+)\)\s+(\S+)(.*)$/);
-    if (!match) return null;
 
-    var quantity = parseInt(match[1], 10);
-    var name = match[2].trim();
-    var set = match[3].trim();
-    var collector_number = match[4].trim();
-    var remainder = match[5];
+    _parseMoxfieldLine: function(line) {
+        var match = line.match(/^(\d+)\s+(.*?)\s+\(([^)]+)\)\s+(\S+)(.*)$/);
+        if (!match) return null;
 
-    var isFoil = /\*F\*/i.test(remainder);
-    var isEtched = /\*E\*/i.test(remainder); // Optional: for foiling field logic
-    var isCommander = /\[.*Commander\{.*\}.*\]/i.test(remainder);
+        var quantity = parseInt(match[1], 10);
+        var name = match[2].trim();
+        var set = match[3].trim();
+        var collector_number = match[4].trim();
+        var remainder = match[5];
 
-    var tagMatch = remainder.match(/\[(.*?)\]/);
-    var rawTags = tagMatch ? tagMatch[1] : '';
-    var cleanedTags = rawTags.replace(/\{.*?\}/g, '').trim();
-    var tagsLower = cleanedTags.toLowerCase();
-    var isMaybeboard = tagsLower.includes('maybeboard');
-    var isSideboard = tagsLower.includes('sideboard');
+        var isFoil = /\*F\*/i.test(remainder);
+        var isEtched = /\*E\*/i.test(remainder); // Optional: for foiling field logic
+        var isCommander = /\[.*Commander\{.*\}.*\]/i.test(remainder);
 
-    return {
-        quantity: quantity,
-        name: name,
-        set: set,
-        collector_number: collector_number,
-        isFoil: isFoil,
-        isEtched: isEtched,
-        isCommander: isCommander,
-        isMaybeboard: isMaybeboard,
-        isSideboard: isSideboard,
-        tags: cleanedTags
-    };
-},
+        var tagMatch = remainder.match(/\[(.*?)\]/);
+        var rawTags = tagMatch ? tagMatch[1] : '';
+        var cleanedTags = rawTags.replace(/\{.*?\}/g, '').trim();
+        var tagsLower = cleanedTags.toLowerCase();
+        var isMaybeboard = tagsLower.includes('maybeboard');
+        var isSideboard = tagsLower.includes('sideboard');
+
+        return {
+            quantity: quantity,
+            name: name,
+            set: set,
+            collector_number: collector_number,
+            isFoil: isFoil,
+            isEtched: isEtched,
+            isCommander: isCommander,
+            isMaybeboard: isMaybeboard,
+            isSideboard: isSideboard,
+            tags: cleanedTags
+        };
+    },
 
 
     type: 'deck_utils'
@@ -246,13 +250,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-27 22:13:12</sys_updated_on>
+        <sys_updated_on>2025-08-20 18:29:51</sys_updated_on>
     </sys_script_include>
 </record_update>
