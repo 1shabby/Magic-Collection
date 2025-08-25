@@ -13,7 +13,7 @@
       offsetY = 0;
 
   // Card metrics
-  var CARD_WIDTH = 181;
+  var CARD_WIDTH = 190;
   var CARD_HEIGHT = 264;
   var DEFAULT_GAP_X = 10;
 
@@ -551,6 +551,12 @@
       c.floatingCardEl = floatingCard;
 
   };
+
+  c.goToDeck = function() {
+        if (c.data.deck_sys_id) {
+            $window.location.href = "/mtg?id=deck_view&deck_id=" + c.data.deck_id;
+        }
+    };
 
   // Library context menu state
   c.libraryMenuVisible = false;
@@ -1188,14 +1194,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>211</sys_mod_count>
+        <sys_mod_count>207</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 00:37:08</sys_updated_on>
+        <sys_updated_on>2025-08-25 00:49:42</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -1211,6 +1217,7 @@
       <div class="hand-counter" style="text-align:center; color:white; margin-top:8px; font-size:16px;">
         Cards: {{c.data.hand.length}}
       </div>
+      <button class="view-deck" ng-click="c.goToDeck()">View Deck</button>
     </div>
 
     <!-- Center Column -->
@@ -1272,17 +1279,11 @@
   </ul>
 
   <!-- Modal card context menu -->
-  <ul class="modal-card-context-menu" ng-show="c.modalCardContextMenuVisible" ng-style="{'top': c.modalCardMenuY + 'px', 'left': c.modalCardMenuX + 'px'}">
+  <ul class="modal-card-context-menu" ng-show="c.modalCardMenuVisible" ng-style="{'top': c.modalCardMenuY + 'px', 'left': c.modalCardMenuX + 'px'}">
     <li ng-repeat="zone in c.getAvailableZonesForModalCard()" ng-click="c.moveModalCardToZone(zone)">{{zone | uppercase}}</li>
     <li ng-click="c.hideModalCardMenu()">Cancel</li>
   </ul>
 
-  <!-- Card context menu for draggable cards -->
-  <ul class="card-context-menu" ng-show="c.cardContextMenuVisible" ng-style="{'top': c.cardContextMenuY + 'px', 'left': c.cardContextMenuX + 'px'}">
-    <li>Placeholder Option 1</li>
-    <li>Placeholder Option 2</li>
-    <li ng-click="c.hideCardContextMenu()">Cancel</li>
-  </ul>
 </div>]]></template>
     </sp_widget>
 </record_update>
