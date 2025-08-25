@@ -100,7 +100,7 @@
             if (idx !== -1) zoneArray.splice(idx, 1);
         }
     }
-
+    // Gets the zone that the card is currently within
     function getCardZone(card) {
         if (c.data.showCommandZone && c.data.commanders.indexOf(card) !== -1) return 'command';
         if (c.data.showSideboardZone && c.data.sideboard.indexOf(card) !== -1) return 'sideboard';
@@ -232,7 +232,6 @@
                     cardEl.style.top = card.top + 'px';
                 }
             });
-            // ]]>🛠<![CDATA[️ This is the fix: apply the necessary handlers to the new card
             c.renderCards();
         });
     };
@@ -242,7 +241,7 @@
         var rects = getZoneRects();
         var playmatRect = rects.playmat;
         var commandRect = rects.command;
-        var sideboardRect = rects.sideboard;
+        //var sideboardRect = rects.sideboard;
 
         // Position commanders in command zone
         if (c.data.showCommandZone) {
@@ -439,6 +438,8 @@
                         c.drawCard();
                     } else if (key === 's') { // Shuffle deck on "S"
                         c.shuffleLibrary();
+                    } else if (key === 'n') { // New turn on "N"
+                        c.newTurn();
                     }
                 });
             });
@@ -538,38 +539,7 @@
     // Make getCardZone available to template
     c.getCardZone = getCardZone;
 
-    // Start dragging from modal
-    c.startModalDrag = function(event, card) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        // Set up modal drag state
-        c.modalDraggingCard = card;
-        c.modalDragOffsetX = event.clientX;
-        c.modalDragOffsetY = event.clientY;
-
-        // Create a floating card element for dragging
-        var floatingCard = document.createElement('div');
-        floatingCard.className = 'floating-modal-card';
-        floatingCard.innerHTML = '<img src="' + card.front_image + '" alt="' + card.name + '">';
-        floatingCard.style.position = 'fixed';
-        floatingCard.style.zIndex = '4000';
-        floatingCard.style.pointerEvents = 'none';
-        floatingCard.style.width = '181px';
-        floatingCard.style.height = '264px';
-        floatingCard.style.borderRadius = '6px';
-        floatingCard.style.boxShadow = '0 8px 24px rgba(0,0,0,0.6)';
-
-        document.body.appendChild(floatingCard);
-        c.floatingCardEl = floatingCard;
-
-    };
-
-    c.goToDeck = function() {
-        if (c.data.deck_sys_id) {
-            $window.location.href = "/mtg?id=deck_view&deck_id=" + c.data.deck_id;
-        }
-    };
+	// MODAL METHODS //
 
     // Library context menu state
     c.libraryMenuVisible = false;
@@ -590,6 +560,7 @@
             });
         });
     };
+	// Hides the library context menu
     c.hideLibraryContextMenu = function() {
         c.libraryMenuVisible = false;
     };
@@ -718,6 +689,12 @@
         $timeout(function() {
             c.renderCards();
         });
+    };
+	// Route back to the deck page
+    c.goToDeck = function() {
+        if (c.data.deck_sys_id) {
+            $window.location.href = "/mtg?id=deck_view&deck_id=" + c.data.deck_id;
+        }
     };
     // Expose removeFromZone for modal menu logic
     c.removeFromZone = removeFromZone;
@@ -916,15 +893,15 @@
 }&#13;
 &#13;
 .modal-content {&#13;
-  background: #2a2a2a;&#13;
-  border: 2px solid #444;&#13;
+  background: $brand-primary !important;&#13;
+  border: 2px solid $brand-secondary;&#13;
   border-radius: 8px;&#13;
   max-width: 90%;&#13;
   max-height: 90%;&#13;
   width: 800px;&#13;
   height: 600px;&#13;
   flex-direction: column;&#13;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);&#13;
+  overflow: scroll;&#13;
 }&#13;
 &#13;
 .modal-header {&#13;
@@ -933,20 +910,21 @@
   align-items: center;&#13;
   padding: 15px 20px;&#13;
   border-bottom: 1px solid #444;&#13;
-  background: #333;&#13;
+  background: $brand-secondary;&#13;
   border-radius: 6px 6px 0 0;&#13;
 }&#13;
 &#13;
 .modal-header h3 {&#13;
-  color: white;&#13;
+  color: $black;&#13;
   margin: 0;&#13;
   font-size: 18px;&#13;
+  font-weight: bold;&#13;
 }&#13;
 &#13;
 .close-button {&#13;
   background: none;&#13;
   border: none;&#13;
-  color: #ccc;&#13;
+  color: $black;&#13;
   font-size: 24px;&#13;
   cursor: pointer;&#13;
   padding: 0;&#13;
@@ -958,15 +936,10 @@
   border-radius: 4px;&#13;
 }&#13;
 &#13;
-.close-button:hover {&#13;
-  background: #444;&#13;
-  color: white;&#13;
-}&#13;
-&#13;
 .modal-body {&#13;
   flex: 1;&#13;
   padding: 20px;&#13;
-  overflow-y: auto;&#13;
+  background-color: $brand-primary;&#13;
 }&#13;
 &#13;
 .zone-cards-grid {&#13;
@@ -974,13 +947,13 @@
   grid-template-columns: repeat(auto-fill, minmax(181px, 1fr));&#13;
   gap: 15px;&#13;
   position: relative;&#13;
+  justify-items: center;&#13;
 }&#13;
 &#13;
 .modal-card {&#13;
   width: 19rem;&#13;
   height: 264px;&#13;
   cursor: grab;&#13;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);&#13;
   border-radius: 6px;&#13;
   user-select: none;&#13;
   transition: transform 0.2s ease, box-shadow 0.2s ease;&#13;
@@ -1006,19 +979,6 @@
 &#13;
 .modal-card.rotated:hover {&#13;
   transform: rotate(90deg) scale(1.05);&#13;
-}&#13;
-&#13;
-/* Floating modal card during drag */&#13;
-.floating-modal-card {&#13;
-  pointer-events: none;&#13;
-  z-index: 4000;&#13;
-}&#13;
-&#13;
-.floating-modal-card img {&#13;
-  width: 100%;&#13;
-  height: 100%;&#13;
-  border-radius: 6px;&#13;
-  object-fit: cover;&#13;
 }&#13;
 &#13;
 /* Library context menu styles */&#13;
@@ -1080,7 +1040,7 @@
 }&#13;
 &#13;
 .modal-card-context-menu li:hover {&#13;
-  background: #444;&#13;
+  background: $brand-primary;&#13;
 }&#13;
 &#13;
 .draggable-card:focus {&#13;
@@ -1229,14 +1189,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>208</sys_mod_count>
+        <sys_mod_count>217</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 01:23:55</sys_updated_on>
+        <sys_updated_on>2025-08-25 02:18:38</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -1296,7 +1256,6 @@
           <div class="modal-card"
                ng-repeat="card in c.modalCards"
                ng-class="{'rotated': card.isTapped}"
-               ng-mousedown="c.startModalDrag($event, card)"
                ng-click="c.showModalCardMenu($event, card)">
             <img ng-src="{{card.front_image}}" alt="{{card.name}}">
           </div>
