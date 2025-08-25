@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0d2f6b4ec36be2100efafbfdd4013176" label="Token Association" max_length="40" name="x_759224_magic_c_0_token_association" type="collection">
+        <element label="Token" max_length="32" name="token" read_only="true" reference="x_759224_magic_c_0_mtg_cards" reference_qual="is_token=true^EQ" reference_qual_condition="is_token=true^EQ" type="reference"/>
+        <element label="Card" max_length="32" name="card" read_only="true" reference="x_759224_magic_c_0_mtg_cards" reference_qual="is_token=false^EQ" reference_qual_condition="is_token=false^EQ" type="reference"/>
+        <index name="index">
+            <element name="card"/>
+        </index>
+        <index name="index2">
+            <element name="token"/>
+        </index>
+    </element>
+</database>
