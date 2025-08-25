@@ -100,6 +100,41 @@
                     const imgContainer = document.createElement('div');
                     imgContainer.className = 'image-container';
 
+                    const flipper = document.createElement('div');
+                    flipper.className = 'card-flipper';
+
+                    const front = document.createElement('img');
+                    front.className = 'card-face front-face';
+                    front.src = card.front_image_url;
+                    front.alt = card.name;
+
+                    flipper.appendChild(front);
+
+                    // Add back if it exists
+                    if (card.back_image_url) {
+                        const back = document.createElement('img');
+                        back.className = 'card-face back-face';
+                        back.src = card.back_image_url;
+                        back.alt = `${card.name} (Back)`;
+                        flipper.appendChild(back);
+
+                        // Flip Button
+                        const flipBtn = document.createElement('button');
+                        flipBtn.className = 'flip-button';
+                        flipBtn.innerText = '↺'; // You could use an icon here
+
+                        flipBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            flipper.classList.toggle('flipped');
+                        });
+
+                        imgContainer.appendChild(flipBtn);
+                    }
+
+                    imgContainer.appendChild(flipper);
+                    cardButton.appendChild(imgContainer);
+
                     const quantityTag = document.createElement('div');
                     quantityTag.className = 'quantity-tag';
                     quantityTag.textContent = card.quantity;
@@ -205,7 +240,6 @@
   position: relative;&#13;
   width: 100%;&#13;
   overflow: hidden;&#13;
-  max-height: 1000px;&#13;
   z-index: 10;&#13;
   background-color: $brand-primary;&#13;
 }&#13;
@@ -241,6 +275,7 @@
 &#13;
 .image-container {&#13;
   position: relative;&#13;
+  perspective:1000px;&#13;
   max-width: 250px;&#13;
   width: 100%;&#13;
   border-radius: 5%;&#13;
@@ -273,12 +308,6 @@
 .card-button:focus {&#13;
   outline: 3px solid #00aaff;&#13;
   outline-offset: 3px;&#13;
-}&#13;
-&#13;
-/* Hover scale effect */&#13;
-.card-button:hover {&#13;
-  transform: scale(1.05);&#13;
-  transition: transform 0.2s ease;&#13;
 }&#13;
 &#13;
 .column-count {&#13;
@@ -359,7 +388,52 @@
   pointer-events: none;&#13;
   opacity: 0.7;&#13;
   border-radius: 10px; /* Match card corners */&#13;
-}</css>
+}&#13;
+&#13;
+.card-flipper {&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  position: relative;&#13;
+  transition: transform 0.6s;&#13;
+  transform-style: preserve-3d;&#13;
+}&#13;
+&#13;
+.card-flipper.flipped {&#13;
+  transform: rotateY(180deg);&#13;
+}&#13;
+&#13;
+.card-face {&#13;
+  backface-visibility: hidden;&#13;
+  position: absolute;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  border-radius: 5%;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+}&#13;
+&#13;
+.front-face {&#13;
+  z-index: 2;&#13;
+}&#13;
+&#13;
+.back-face {&#13;
+  transform: rotateY(180deg);&#13;
+}&#13;
+&#13;
+.flip-button {&#13;
+  position: absolute;&#13;
+  bottom: 5px;&#13;
+  right: 5px;&#13;
+  background: rgba(255,255,255,0.8);&#13;
+  border: none;&#13;
+  border-radius: 50%;&#13;
+  width: 30px;&#13;
+  height: 30px;&#13;
+  cursor: pointer;&#13;
+  font-size: 1rem;&#13;
+  z-index: 999;&#13;
+}&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -404,6 +478,7 @@
         if (!cardGR.isValidRecord()) continue;
 
         var frontImage = getImageURL(cardGR.getValue("front_image"));
+		var backImage = getImageURL(cardGR.getValue("bakc_image"));
 
         var cardData = {
             name: cardGR.getValue("name"),
@@ -411,6 +486,8 @@
             price: cardGR.getValue("price"),
             foil: cardGR.getValue("foiling") != 'none',
             front_image_url: frontImage,
+			back_iamge_url: backImage,
+			has_back: !backImage,
 			is_gc: cardGR.getValue("game_changer") == "1",
             is_commander: deckCardGR.getValue("is_commander") == "1",
             is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
@@ -531,14 +608,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-22 19:22:58</sys_updated_on>
+        <sys_updated_on>2025-08-22 19:53:29</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
