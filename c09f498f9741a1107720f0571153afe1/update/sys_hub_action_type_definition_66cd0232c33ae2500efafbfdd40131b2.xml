@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>163</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Set Card Values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_66cd0232c33ae2500efafbfdd40131b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:10</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:12</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -434,7 +434,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e716ff06c3ebe2100efafbfdd40131e8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -442,7 +442,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:08</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:09</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -569,10 +569,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:49</sys_created_on>
         <sys_id>f78126fac37ae2500efafbfdd40131b7</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:08</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -583,9 +583,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:50</sys_created_on>
         <sys_id>449126fac37ae2500efafbfdd40131d8</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:08</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     var card = inputs.card;&#13;
     var resp = inputs.response;&#13;
@@ -604,7 +604,7 @@
         });&#13;
 &#13;
         // Set token to true if type line contains token&#13;
-        if (card.type_line.toLowerCase().indexOf('token') !== -1){&#13;
+        if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
             card.setValue('is_token','true');&#13;
         }&#13;
 &#13;
@@ -747,18 +747,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>f78126fac37ae2500efafbfdd40131b7</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-21 14:31:50</sys_created_on>
-        <sys_id>4c9126fac37ae2500efafbfdd40131d7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 14:31:50</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>card</field>
         <id>f78126fac37ae2500efafbfdd40131b7</id>
         <sys_created_by>admin</sys_created_by>
@@ -786,11 +774,11 @@
         <field>script</field>
         <id>f78126fac37ae2500efafbfdd40131b7</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-21 14:31:50</sys_created_on>
-        <sys_id>009126fac37ae2500efafbfdd40131d8</sys_id>
+        <sys_created_on>2025-08-27 14:44:03</sys_created_on>
+        <sys_id>fb270976c3eba6100efafbfdd40131a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 14:31:50</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -1413,14 +1401,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>a3ed0672c33ae2500efafbfdd4013102</sys_id>
-        <sys_mod_count>99</sys_mod_count>
+        <sys_mod_count>103</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:08</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:09</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1852,17 +1840,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Set Card Values">66cd0232c33ae2500efafbfdd40131b2</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"438b7b83c37666500efafbfdd401314d","name":"plan","plan_signature":null}}</plan>
-        <snapshot>5b4a77cac3ebe2100efafbfdd401318f</snapshot>
+        <snapshot>c2378976c3eba6100efafbfdd4013123</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>438b7b83c37666500efafbfdd401314d</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:11</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:13</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2295,7 +2283,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>228b3b83c37666500efafbfdd40131c4</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2303,7 +2291,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:10</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -2430,10 +2418,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:25</sys_created_on>
         <sys_id>6e8b3b83c37666500efafbfdd40131e8</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:10</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2444,9 +2432,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>6a8b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:10</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     var card = inputs.card;&#13;
     var resp = inputs.response;&#13;
@@ -2465,7 +2453,7 @@
         });&#13;
 &#13;
         // Set token to true if type line contains token&#13;
-        if (card.type_line.toLowerCase().indexOf('token') !== -1){&#13;
+        if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
             card.setValue('is_token','true');&#13;
         }&#13;
 &#13;
@@ -2608,18 +2596,6 @@
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>6e8b3b83c37666500efafbfdd40131e8</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-22 15:43:26</sys_created_on>
-        <sys_id>628b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 15:43:26</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>card</field>
         <id>6e8b3b83c37666500efafbfdd40131e8</id>
         <sys_created_by>admin</sys_created_by>
@@ -2647,11 +2623,11 @@
         <field>script</field>
         <id>6e8b3b83c37666500efafbfdd40131e8</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-22 15:43:26</sys_created_on>
-        <sys_id>268b7b83c37666500efafbfdd401310a</sys_id>
+        <sys_created_on>2025-08-27 14:44:11</sys_created_on>
+        <sys_id>ca378976c3eba6100efafbfdd4013106</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 15:43:26</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -3535,14 +3511,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>be8b7b83c37666500efafbfdd4013112</sys_id>
-        <sys_mod_count>73</sys_mod_count>
+        <sys_mod_count>75</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:51:10</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
