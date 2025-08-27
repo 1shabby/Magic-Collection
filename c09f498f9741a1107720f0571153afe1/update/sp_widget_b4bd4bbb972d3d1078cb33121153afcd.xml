@@ -794,6 +794,7 @@
   position: relative;&#13;
 }&#13;
 &#13;
+/* Styling to put zone above cards within the zone */&#13;
 .graveyard, .exile, .sideboard-zone, .command-zone {&#13;
   z-index: 20;&#13;
 }&#13;
@@ -840,6 +841,7 @@
   user-select: none;&#13;
 }&#13;
 &#13;
+/* Health button styling */&#13;
 .health-display button {&#13;
   margin: 5px;&#13;
   padding: 6px 12px;&#13;
@@ -919,7 +921,7 @@
   left: 0;&#13;
   width: 100%;&#13;
   height: 100%;&#13;
-  background: rgba(0, 0, 0, 0.8);&#13;
+  background: $brand-primary;&#13;
   z-index: 100;&#13;
   display: flex;&#13;
   justify-content: center;&#13;
@@ -1116,7 +1118,7 @@
     var urlDeckId = $sp && $sp.getParameter ? $sp.getParameter("deck_id") : null;
     var deckId = urlDeckId || options.deck_sys_id || input.deck_sys_id;
 
-	data.deck_id = deckId;
+    data.deck_id = deckId;
     // Default fallback
     data.playerHealth = 20;
     var showCommandZone = false;
@@ -1179,7 +1181,28 @@
                 front_image: utils.getImgSrc(cardGR.getValue('front_image')),
                 back_image: utils.getImgSrc(cardGR.getValue('back_image')),
                 is_commander: isCommander,
-                notes: deckCardGR.getValue('notes')
+                notes: deckCardGR.getValue('notes'),
+                counters: { // Counters availble to put on cards
+                    generic: 0,
+                    plusOne: 0,
+                    minusOne: 0,
+                    loyalty: 0,
+                    lore: 0,
+                    time: 0,
+                    shield: 0,
+                    charge: 0,
+                    lifelink: 0,
+                    haste: 0,
+                    indestructible: 0,
+                    flying: 0,
+                    deathtouch: 0,
+                    menace: 0,
+                    trample: 0,
+                    firstStrike: 0,
+                    doubleStrike: 0,
+                    reach: 0,
+                    vigilance: 0
+                }
             };
             if (isSideboard) {
                 for (var i = 0; i < quantity; i++) {
@@ -1223,14 +1246,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>220</sys_mod_count>
+        <sys_mod_count>223</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 21:16:25</sys_updated_on>
+        <sys_updated_on>2025-08-27 14:27:45</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
