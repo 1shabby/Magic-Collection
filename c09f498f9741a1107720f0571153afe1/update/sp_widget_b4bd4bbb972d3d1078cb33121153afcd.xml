@@ -1085,6 +1085,12 @@
   outline-offset: 2px;&#13;
 }&#13;
 &#13;
+.counters {&#13;
+ color:white;&#13;
+  font-size: 2rem;&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
 .view-deck {&#13;
   background-color: $brand-secondary;&#13;
   color: $black;&#13;
@@ -1234,14 +1240,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>231</sys_mod_count>
+        <sys_mod_count>232</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 16:59:51</sys_updated_on>
+        <sys_updated_on>2025-08-30 17:16:19</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -1254,10 +1260,10 @@
       </div>
       <div class="zone graveyard" ng-click="c.showZoneModal('graveyard')">Graveyard</div>
       <div class="zone exile" ng-click="c.showZoneModal('exile')">Exile</div>
-      <div class="hand-counter" style="text-align:center; color:white; margin-top:8px; font-size:16px;">
-        Cards: {{c.data.hand.length}}
+      <div class="counters">
+      	<div class="hand-counter">Cards: {{c.data.hand.length}}</div>
+      	<div class="turn-counter"> Turn: {{c.data.turn}} </div>
       </div>
-      <div class="turn-counter"> Turn: {{c.data.turn}} </div>
       <button class="view-deck" ng-click="c.goToDeck()">View Deck</button>
     </div>
 
@@ -1286,7 +1292,7 @@
         ng-style="{'left': card.left + 'px', 'top': card.top + 'px'}"
         tabindex="0"
         ng-click="c.showCardContextMenu($event, card)">
-      <img ng-src="{{card.face_one.image}}" alt="{{card.name}}">
+      <img ng-src="{{card.front_image}}" alt="{{card.name}}">
     </button>
   </div>
 
@@ -1303,7 +1309,7 @@
                ng-repeat="card in c.modalCards"
                ng-class="{'rotated': card.isTapped}"
                ng-click="c.showModalCardMenu($event, card)">
-            <img ng-src="{{card.face_one.image}}" alt="{{card.name}}">
+            <img ng-src="{{card.front_image}}" alt="{{card.name}}">
           </div>
         </div>
       </div>
