@@ -64,9 +64,9 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getCardData: function(id) {
         var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-        cardGR.get('sys_id', id); // Get the card record
+        cardGR.get('sys_id', id); // Get the card record.
         var cardData = {
-            legality: { // Legalities for the card
+            legality: { // Legalities for the card.
                 alchemy: this.stripHTML(cardGR.getValue('alchemy_legality')),
                 brawl: this.stripHTML(cardGR.getValue('brawl_legality')),
                 commander: this.stripHTML(cardGR.getValue('commander_legality')),
@@ -89,14 +89,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 timeless: this.stripHTML(cardGR.getValue('timeless_legality')),
                 vintage: this.stripHTML(cardGR.getValue('vintage_legality'))
             },
-            flags: { // Card flags
+            flags: { // Card flags.
                 is_foil: cardGR.getValue('foiling') != 'none',
                 is_reserved: cardGR.getValue('reserved_list') == '1',
                 is_gc: cardGR.getValue('game_changer') == '1',
                 is_token: cardGR.getValue('is_token') == '1',
                 is_multifaced: cardGR.getValue('is_multi_faced') == '1'
             },
-            face_one: { // Face one data
+            face_one: { // Face one data.
                 artist: cardGR.getValue('face_one_artist'),
                 colors: cardGR.getValue('face_one_colors'),
                 flavor_name: cardGR.getValue('face_one_flavor_name'),
@@ -124,7 +124,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 toughness: cardGR.getValue('face_two_toughness'),
                 type_line: cardGR.getValue('face_two_type_line')
             },
-            counters: { // Counters availble to put on cards
+            counters: { // Counters availble to put on cards.
                 generic: 0,
                 plusOne: 0,
                 minusOne: 0,
@@ -156,14 +156,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>82</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-29 13:24:53</sys_updated_on>
+        <sys_updated_on>2025-08-31 21:28:56</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
