@@ -433,6 +433,46 @@
   font-size: 1rem;&#13;
   z-index: 999;&#13;
 }&#13;
+&#13;
+.hover-buttons {&#13;
+  position: absolute;&#13;
+  top: 10px;&#13;
+  right: 10px;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 6px;&#13;
+  z-index: 30;&#13;
+}&#13;
+&#13;
+.hover-btn {&#13;
+  background-color: rgba(255, 255, 255, 0.7);&#13;
+  border: none;&#13;
+  border-radius: 4px;&#13;
+  width: 24px;&#13;
+  height: 24px;&#13;
+  font-size: 16px;&#13;
+  font-weight: bold;&#13;
+  color: #333;&#13;
+  cursor: pointer;&#13;
+  transition: background-color 0.3s ease;&#13;
+  padding: 0;&#13;
+  line-height: 1;&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.hover-btn.card-modal {&#13;
+  background-color: rgba(0, 0, 255, 0.5); /* blue background for debug */&#13;
+  border: 1px solid black;&#13;
+  font-size: 18px;&#13;
+  width: 24px;&#13;
+  height: 24px;&#13;
+  z-index: 1000;&#13;
+}&#13;
+&#13;
+&#13;
+.hover-btn:hover {&#13;
+  background-color: rgba(255, 255, 255, 1);&#13;
+}&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -608,14 +648,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>112</sys_mod_count>
+        <sys_mod_count>116</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-22 19:53:29</sys_updated_on>
+        <sys_updated_on>2025-09-01 13:36:31</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -638,9 +678,15 @@
             <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
             <div class="quantity-tag">{{card.quantity}}</div>
             <div class="game-changer-tag" ng-if="card.is_gc">
-              	<img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
+              <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
             </div>
             <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.foil"/>
+
+            <div class="hover-buttons">
+              <button class="hover-btn plus" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
+            </div>
           </div>
         </div>
       </div>
