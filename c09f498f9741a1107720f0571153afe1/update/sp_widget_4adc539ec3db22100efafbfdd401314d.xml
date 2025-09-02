@@ -171,6 +171,58 @@
                     imgContainer.appendChild(img);
                     cardButton.appendChild(imgContainer);
                     stack.appendChild(cardButton);
+
+                    const hoverButtons = document.createElement('div');
+                    hoverButtons.className = 'hover-buttons';
+
+                    const plusBtn = document.createElement('button');
+                    plusBtn.className = 'hover-btn plus';
+                    plusBtn.textContent = '+';
+                    plusBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        $scope.incrementCard(card, e);
+                        $scope.$applyAsync();
+                    });
+
+                    const minusBtn = document.createElement('button');
+                    minusBtn.className = 'hover-btn minus';
+                    minusBtn.textContent = '−';
+                    minusBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        $scope.decrementCard(card, e);
+                        $scope.$applyAsync();
+                    });
+
+                    const modalBtn = document.createElement('button');
+                    modalBtn.className = 'hover-btn card-modal';
+                    modalBtn.textContent = '>';
+                    modalBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        $scope.openCardModal(card, e);
+                        $scope.$applyAsync();
+                    });
+
+                    hoverButtons.appendChild(plusBtn);
+                    hoverButtons.appendChild(minusBtn);
+                    hoverButtons.appendChild(modalBtn);
+
+                    imgContainer.appendChild(hoverButtons);
+                    cardButton.appendChild(imgContainer);
+
+                    const priceInfo = document.createElement('div');
+                    priceInfo.className = 'price-info';
+
+                    const priceDiv = document.createElement('div');
+                    priceDiv.className = 'prices';
+                    priceDiv.textContent = 'Price: $' + card.price;
+
+                    priceInfo.appendChild(priceDiv);
+                    cardButton.appendChild(priceInfo);
+
+                    stack.appendChild(cardButton);
                 });
 
                 targetCol.appendChild(stack);
@@ -472,6 +524,11 @@
 .hover-btn:hover {&#13;
   background-color: rgba(249,250,251,.3);&#13;
 }&#13;
+&#13;
+.price-info {&#13;
+  display:flex;&#13;
+  justify-content:center;&#13;
+}&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -647,14 +704,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>119</sys_mod_count>
+        <sys_mod_count>128</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-01 19:50:38</sys_updated_on>
+        <sys_updated_on>2025-09-02 13:20:48</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -686,6 +743,9 @@
               <button class="hover-btn minus" ng-click="decrementCard(card, $event)">−</button>
               <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
             </div>
+          </div>
+          <div class="price-info">
+            <div class="prices">Price: ${{card.price}} </div>
           </div>
         </div>
       </div>
