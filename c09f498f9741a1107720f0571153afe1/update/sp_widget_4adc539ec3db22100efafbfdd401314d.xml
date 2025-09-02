@@ -704,14 +704,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>128</sys_mod_count>
+        <sys_mod_count>131</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-02 13:20:48</sys_updated_on>
+        <sys_updated_on>2025-09-02 14:54:16</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -739,6 +739,7 @@
             <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.foil"/>
 
             <div class="hover-buttons">
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced">F</button>
               <button class="hover-btn plus" ng-click="incrementCard(card, $event)">+</button>
               <button class="hover-btn minus" ng-click="decrementCard(card, $event)">−</button>
               <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
