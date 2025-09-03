@@ -154,34 +154,39 @@
                     const hoverButtons = document.createElement('div');
                     hoverButtons.className = 'hover-buttons';
 
-					if(card.flags.is_multifaced){
-						const flipBtn = document.createElement('button');
-						flipBtn.className = 'hover-btn flip';
-						flipBtn.textContent = '↺';
+                    if (card.flags.is_multifaced) {
+                        const flipBtn = document.createElement('button');
+                        flipBtn.className = 'hover-btn flip';
+                        flipBtn.textContent = '⟳';
 
-						hoverButtons.appendChild(flipBtn);
+                        hoverButtons.appendChild(flipBtn);
 
-					}
+                    }
+					// If the user is an author, they can change quantity
+                    if (c.data.is_author) {
+                        const plusBtn = document.createElement('button');
+                        plusBtn.className = 'hover-btn plus';
+                        plusBtn.textContent = '+';
+                        plusBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            $scope.incrementCard(card, e);
+                            $scope.$applyAsync();
+                        });
 
-                    const plusBtn = document.createElement('button');
-                    plusBtn.className = 'hover-btn plus';
-                    plusBtn.textContent = '+';
-                    plusBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        $scope.incrementCard(card, e);
-                        $scope.$applyAsync();
-                    });
+                        const minusBtn = document.createElement('button');
+                        minusBtn.className = 'hover-btn minus';
+                        minusBtn.textContent = '−';
+                        minusBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            $scope.decrementCard(card, e);
+                            $scope.$applyAsync();
+                        });
 
-                    const minusBtn = document.createElement('button');
-                    minusBtn.className = 'hover-btn minus';
-                    minusBtn.textContent = '−';
-                    minusBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        $scope.decrementCard(card, e);
-                        $scope.$applyAsync();
-                    });
+                        hoverButtons.appendChild(plusBtn);
+                        hoverButtons.appendChild(minusBtn);
+                    }
 
                     const modalBtn = document.createElement('button');
                     modalBtn.className = 'hover-btn card-modal';
@@ -193,8 +198,7 @@
                         $scope.$applyAsync();
                     });
 
-                    hoverButtons.appendChild(plusBtn);
-                    hoverButtons.appendChild(minusBtn);
+
                     hoverButtons.appendChild(modalBtn);
 
                     imgContainer.appendChild(hoverButtons);
@@ -438,10 +442,6 @@
   transform-style: preserve-3d;&#13;
 }&#13;
 &#13;
-.card-flipper.flipped {&#13;
-  transform: rotateY(180deg);&#13;
-}&#13;
-&#13;
 .card-face {&#13;
   backface-visibility: hidden;&#13;
   position: absolute;&#13;
@@ -460,23 +460,10 @@
   transform: rotateY(180deg);&#13;
 }&#13;
 &#13;
-.flip-button {&#13;
-  position: absolute;&#13;
-  bottom: 5px;&#13;
-  left: 0px;&#13;
-  background: rgba(255,255,255,0.8);&#13;
-  border: none;&#13;
-  border-radius: 50%;&#13;
-  width: 30px;&#13;
-  height: 30px;&#13;
-  cursor: pointer;&#13;
-  font-size: 1rem;&#13;
-  z-index: 999;&#13;
-}&#13;
 &#13;
 .hover-buttons {&#13;
   position: absolute;&#13;
-  top: 8rem;&#13;
+  top: 4.5rem;&#13;
   right: 0px;&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
@@ -512,7 +499,10 @@
   width: 5rem;&#13;
   height: 5rem;&#13;
   z-index: 30;&#13;
-  margin-top: 1rem;&#13;
+}&#13;
+&#13;
+.hover-btn.minus {&#13;
+ margin-bottom:1rem; &#13;
 }&#13;
 &#13;
 .hover-btn:hover {&#13;
@@ -556,7 +546,8 @@
 	deckGR.next();
 
 	data.deck_name = deckGR.getValue('name');
-	
+	var authors = deckGR.getValue("author");
+	data.is_author = authors.indexOf(gs.getUserID()) !== -1;
 	var magicUtils = new x_759224_magic_c_0.magic_utils();
 
     var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
@@ -611,7 +602,7 @@
             }
 
             if (!category) {
-                var typeLine = (cardGR.getValue("type_line") || "").toLowerCase();
+                var typeLine = (cardData.face_one.type_line|| "").toLowerCase();
                 typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
 
                 var typePriority = [{
@@ -700,14 +691,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>151</sys_mod_count>
+        <sys_mod_count>163</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-03 17:06:23</sys_updated_on>
+        <sys_updated_on>2025-09-03 20:21:30</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -735,9 +726,9 @@
             <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
 
             <div class="hover-buttons">
-              <button class="hover-btn flip" ng-if="card.flags.is_multifaced">↺</button>
-              <button class="hover-btn plus" ng-click="incrementCard(card, $event)">+</button>
-              <button class="hover-btn minus" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced">⟳</button>
+              <button class="hover-btn plus" ng-if="c.data.is_author" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-if="c.data.is_author" ng-click="decrementCard(card, $event)">−</button>
               <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
             </div>
           </div>
