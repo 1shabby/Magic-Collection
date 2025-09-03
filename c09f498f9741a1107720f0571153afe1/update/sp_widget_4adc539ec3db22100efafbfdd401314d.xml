@@ -100,39 +100,19 @@
                     const imgContainer = document.createElement('div');
                     imgContainer.className = 'image-container';
 
-                    const flipper = document.createElement('div');
-                    flipper.className = 'card-flipper';
-
                     const front = document.createElement('img');
                     front.className = 'card-face front-face';
-                    front.src = card.front_image_url;
+                    front.src = card.face_one.image;
                     front.alt = card.name;
 
-                    flipper.appendChild(front);
-
                     // Add back if it exists
-                    if (card.back_image_url) {
+                    if (card.face_two.image) {
                         const back = document.createElement('img');
                         back.className = 'card-face back-face';
-                        back.src = card.back_image_url;
+                        back.src = card.face_two.image;
                         back.alt = `${card.name} (Back)`;
-                        flipper.appendChild(back);
-
-                        // Flip Button
-                        const flipBtn = document.createElement('button');
-                        flipBtn.className = 'flip-button';
-                        flipBtn.innerText = '↺'; // You could use an icon here
-
-                        flipBtn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            flipper.classList.toggle('flipped');
-                        });
-
-                        imgContainer.appendChild(flipBtn);
                     }
 
-                    imgContainer.appendChild(flipper);
                     cardButton.appendChild(imgContainer);
 
                     const quantityTag = document.createElement('div');
@@ -141,7 +121,7 @@
                     imgContainer.appendChild(quantityTag);
 
                     // Game Changer tag (top-right)
-                    if (card.is_gc) {
+                    if (card.flags.is_gc) {
                         const gameChangerTag = document.createElement('div');
                         gameChangerTag.className = 'game-changer-tag';
 
@@ -154,13 +134,12 @@
                         imgContainer.appendChild(gameChangerTag);
                     }
 
-
                     const img = document.createElement('img');
                     img.className = 'image';
-                    img.src = card.front_image_url;
+                    img.src = card.face_one.image;
                     img.alt = card.name;
 
-                    if (card.foil) {
+                    if (card.flags.is_foil) {
                         const foilOverlay = document.createElement('img');
                         foilOverlay.className = 'foil-overlay';
                         foilOverlay.src = 'x_759224_magic_c_0.foil.png';
@@ -299,7 +278,7 @@
 /* Stack Overlap */&#13;
 .stacked-card {&#13;
   position: relative;&#13;
-  margin-top: -31rem; /*controls how tightly stacked they are in the column*/&#13;
+  margin-top: -33rem; /*controls how tightly stacked they are in the column*/&#13;
   transition: transform 0.5s ease;&#13;
   z-index: 1;&#13;
 }&#13;
@@ -563,6 +542,7 @@
 
 	data.deck_name = deckGR.getValue('name');
 	
+	var magicUtils = new x_759224_magic_c_0.magic_utils();
 
     var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
     deckCardGR.addQuery("deck", deckId);
@@ -570,30 +550,31 @@
 
 
     while (deckCardGR.next()) {
-        var cardGR = deckCardGR.card.getRefRecord();
-        if (!cardGR.isValidRecord()) continue;
+        //var cardGR = deckCardGR.card.getRefRecord();
+		var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
+		cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
+		cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
+		cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
+		cardData.quantity = deckCardGR.getValue('quantity');
 
-        var frontImage = getImageURL(cardGR.getValue("front_image"));
-		var backImage = getImageURL(cardGR.getValue("bakc_image"));
-
-        var cardData = {
-            name: cardGR.getValue("name"),
-            quantity: deckCardGR.getValue("quantity"),
-            price: cardGR.getValue("price"),
-            foil: cardGR.getValue("foiling") != 'none',
-            front_image_url: frontImage,
-			back_iamge_url: backImage,
-			has_back: !backImage,
-			is_gc: cardGR.getValue("game_changer") == "1",
-            is_commander: deckCardGR.getValue("is_commander") == "1",
-            is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
-            is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
-        };
+        // var cardData = {
+        //     name: cardGR.getValue("name"),
+        //     quantity: deckCardGR.getValue("quantity"),
+        //     price: cardGR.getValue("price"),
+        //     foil: cardGR.getValue("foiling") != 'none',
+        //     front_image_url: frontImage,
+		// 	back_iamge_url: backImage,
+		// 	has_back: !backImage,
+		// 	is_gc: cardGR.getValue("game_changer") == "1",
+        //     is_commander: deckCardGR.getValue("is_commander") == "1",
+        //     is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
+        //     is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
+        // };
 
         let category = "";
 
         // Commander category renamed here
-        if (cardData.is_commander) {
+        if (cardData.flags.is_commander) {
             category = "Commander";
         } else {
             var notes = deckCardGR.getValue("notes") || "";
@@ -704,14 +685,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>131</sys_mod_count>
+        <sys_mod_count>145</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-02 14:54:16</sys_updated_on>
+        <sys_updated_on>2025-09-03 16:00:29</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
@@ -731,15 +712,15 @@
              ng-repeat="card in col.cards"
              ng-style="{'z-index': ($index + 1) * 10}">
           <div class="image-container">
-            <img class="image" ng-src="{{card.front_image_url}}" alt="{{card.name}}" />
+            <img class="image" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <div class="quantity-tag">{{card.quantity}}</div>
-            <div class="game-changer-tag" ng-if="card.is_gc">
+            <div class="game-changer-tag" ng-if="card.flags.is_gc">
               <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
             </div>
-            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.foil"/>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
 
             <div class="hover-buttons">
-              <button class="hover-btn flip" ng-if="card.flags.is_multifaced">F</button>
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced">↺</button>
               <button class="hover-btn plus" ng-click="incrementCard(card, $event)">+</button>
               <button class="hover-btn minus" ng-click="decrementCard(card, $event)">−</button>
               <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
