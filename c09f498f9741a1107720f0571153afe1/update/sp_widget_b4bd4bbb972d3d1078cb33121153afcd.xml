@@ -1104,6 +1104,50 @@
 &#13;
 .view-deck:hover {&#13;
   background-color: #e27c00;&#13;
+}&#13;
+&#13;
+.hover-buttons {&#13;
+  position: absolute;&#13;
+  top: 4.5rem;&#13;
+  right: 0px;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  z-index: 30;&#13;
+}&#13;
+&#13;
+.hover-btn {&#13;
+  background-color: rgba(249,250,251,.05);&#13;
+  border: 2px solid hsla(0,0%,100%,.5);&#13;
+  width: 5rem;&#13;
+  height: 5rem;&#13;
+  font-size: 3.5rem;&#13;
+  font-weight: bolder;&#13;
+  color: white;&#13;
+  cursor: pointer;&#13;
+  transition: background-color .2s ease-in-out;&#13;
+  padding: 0;&#13;
+  line-height: 1;&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.hover-btn.flip {&#13;
+  position: absolute;&#13;
+  left: -20rem;&#13;
+}&#13;
+&#13;
+&#13;
+.hover-btn.card-modal {&#13;
+  background-color: rgba(249,250,251,.05);&#13;
+  border: 2px solid hsla(0,0%,100%,.5);&#13;
+  font-size: 3.5rem;&#13;
+  font-weight: bolder;&#13;
+  width: 4rem;&#13;
+  height: 4rem;&#13;
+  z-index: 30;&#13;
+}&#13;
+&#13;
+.hover-btn:hover {&#13;
+  background-color: rgba(249,250,251,.3);&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -1240,14 +1284,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>233</sys_mod_count>
+        <sys_mod_count>241</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-30 18:21:13</sys_updated_on>
+        <sys_updated_on>2025-09-04 16:30:22</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
@@ -1261,8 +1305,8 @@
       <div class="zone graveyard" ng-click="c.showZoneModal('graveyard')">Graveyard</div>
       <div class="zone exile" ng-click="c.showZoneModal('exile')">Exile</div>
       <div class="counters">
-      	<div class="hand-counter">Cards: {{c.data.hand.length}}</div>
-      	<div class="turn-counter"> Turn: {{c.data.turn}} </div>
+        <div class="hand-counter">Cards: {{c.data.hand.length}}</div>
+        <div class="turn-counter"> Turn: {{c.data.turn}} </div>
       </div>
       <button class="view-deck" ng-click="c.goToDeck()">View Deck</button>
     </div>
@@ -1285,15 +1329,19 @@
     </div>
 
     <!-- Draggable Cards -->
-    <button class="draggable-card"
-        ng-repeat="card in c.cards"
-        ng-class="{'rotated': card.isTapped, 'hand-card': c.getCardZone(card) === 'hand'}"
-        ng-attr-data-zone="{{c.getCardZone(card)}}"
-        ng-style="{'left': card.left + 'px', 'top': card.top + 'px'}"
-        tabindex="0"
-        ng-click="c.showCardContextMenu($event, card)">
+    <div class="draggable-card"
+            ng-repeat="card in c.cards"
+         	role="button"
+            ng-class="{'rotated': card.isTapped, 'hand-card': c.getCardZone(card) === 'hand'}"
+            ng-attr-data-zone="{{c.getCardZone(card)}}"
+            ng-style="{'left': card.left + 'px', 'top': card.top + 'px'}"
+            tabindex="0"
+            ng-click="c.showCardContextMenu($event, card)">
       <img ng-src="{{card.face_one.image}}" alt="{{card.name}}">
-    </button>
+      <div class="hover-buttons">
+        <button class="hover-btn card-modal">⚙</button>
+      </div>
+    </div>
   </div>
 
   <!-- Zone Modal -->
