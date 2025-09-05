@@ -55,6 +55,41 @@
             $window.location.href = '?id=deck_view&deck_id=' + deckId;
         };
 
+        $scope.incrementCard = function(card, event) {
+            const newQty = parseInt(card.quantity || "0", 10) + 1;
+            updateCardQuantity(card, newQty);
+        };
+
+        $scope.decrementCard = function(card, event) {
+            const currentQty = parseInt(card.quantity || "0", 10);
+            if (currentQty > 1) {
+                const newQty = currentQty - 1;
+                updateCardQuantity(card, newQty);
+            }
+        };
+
+        function updateCardQuantity(card, newQuantity) {
+            const payload = {
+                card_sys_id: card.sys_id, // assuming each card has sys_id
+                new_quantity: newQuantity
+            };
+
+            c.server.get(payload).then(function(response) {
+                if (response.success) {
+                    card.quantity = newQuantity;
+
+                    // Refresh quantity display in the column
+                    $scope.columnsList = $scope.columnsList.map(col => {
+                        col.totalQuantity = col.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
+                        return col;
+                    });
+
+                    $scope.$applyAsync();
+				}
+            });
+        }
+
+
         // Main layout logic (after DOM render)
         $timeout(function renderBalancedColumns() {
             const columnsContainer = document.getElementById('dynamic-deck-columns');
@@ -162,7 +197,7 @@
                         hoverButtons.appendChild(flipBtn);
 
                     }
-					// If the user is an author, they can change quantity
+                    // If the user is an author, they can change quantity
                     if (c.data.is_author) {
                         const plusBtn = document.createElement('button');
                         plusBtn.className = 'hover-btn plus';
@@ -530,6 +565,21 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+    // --- Quantity Update Handler ---
+    if (input && input.card_sys_id && input.new_quantity !== undefined) {
+        var updateGR = new GlideRecord("x_759224_magic_c_0_deck_card");
+        if (updateGR.get(input.card_sys_id)) {
+            updateGR.quantity = input.new_quantity;
+            updateGR.update();
+            data.success = true;
+        } else {
+            data.success = false;
+            data.message = "Deck card not found.";
+        }
+        return;
+    }
+
+    // --- Regular Deck Loading Logic ---
     var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
     data.columns = {};
     data.deck_sys_id = deckId;
@@ -539,47 +589,37 @@
         return;
     }
 
-	var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
-	deckGR.addQuery('sys_id',deckId);
-	deckGR.query();
+    var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+    deckGR.addQuery('sys_id', deckId);
+    deckGR.query();
 
-	deckGR.next();
+    if (!deckGR.next()) {
+        data.error = "Deck not found";
+        return;
+    }
 
-	data.deck_name = deckGR.getValue('name');
-	var authors = deckGR.getValue("author");
-	data.is_author = authors.indexOf(gs.getUserID()) !== -1;
-	var magicUtils = new x_759224_magic_c_0.magic_utils();
+    data.deck_name = deckGR.getValue('name');
+    var authors = deckGR.getValue("author");
+    data.is_author = authors.indexOf(gs.getUserID()) !== -1;
+
+    var magicUtils = new x_759224_magic_c_0.magic_utils();
 
     var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
     deckCardGR.addQuery("deck", deckId);
     deckCardGR.query();
 
-
     while (deckCardGR.next()) {
-        //var cardGR = deckCardGR.card.getRefRecord();
-		var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
-		cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
-		cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
-		cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
-		cardData.quantity = deckCardGR.getValue('quantity');
+        var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
 
-        // var cardData = {
-        //     name: cardGR.getValue("name"),
-        //     quantity: deckCardGR.getValue("quantity"),
-        //     price: cardGR.getValue("price"),
-        //     foil: cardGR.getValue("foiling") != 'none',
-        //     front_image_url: frontImage,
-		// 	back_iamge_url: backImage,
-		// 	has_back: !backImage,
-		// 	is_gc: cardGR.getValue("game_changer") == "1",
-        //     is_commander: deckCardGR.getValue("is_commander") == "1",
-        //     is_maybeboard: deckCardGR.getValue("is_maybeboard") == "1",
-        //     is_sideboard: deckCardGR.getValue("is_sideboard") == "1"
-        // };
+        cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
+        cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
+        cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
+        cardData.quantity = deckCardGR.getValue('quantity');
+        cardData.sys_id = deckCardGR.getUniqueValue(); // Needed for updates
 
         let category = "";
 
-        // Commander category renamed here
+        // Commander
         if (cardData.flags.is_commander) {
             category = "Commander";
         } else {
@@ -602,41 +642,18 @@
             }
 
             if (!category) {
-                var typeLine = (cardData.face_one.type_line|| "").toLowerCase();
+                var typeLine = (cardData.face_one.type_line || "").toLowerCase();
                 typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
 
-                var typePriority = [{
-                        type: "creature",
-                        category: "Creature"
-                    },
-                    {
-                        type: "planeswalker",
-                        category: "Planeswalker"
-                    },
-                    {
-                        type: "instant",
-                        category: "Instant"
-                    },
-                    {
-                        type: "sorcery",
-                        category: "Sorcery"
-                    },
-                    {
-                        type: "enchantment",
-                        category: "Enchantment"
-                    },
-                    {
-                        type: "artifact",
-                        category: "Artifact"
-                    },
-                    {
-                        type: "battle",
-                        category: "Battle"
-                    },
-                    {
-                        type: "land",
-                        category: "Land"
-                    }
+                var typePriority = [
+                    { type: "creature", category: "Creature" },
+                    { type: "planeswalker", category: "Planeswalker" },
+                    { type: "instant", category: "Instant" },
+                    { type: "sorcery", category: "Sorcery" },
+                    { type: "enchantment", category: "Enchantment" },
+                    { type: "artifact", category: "Artifact" },
+                    { type: "battle", category: "Battle" },
+                    { type: "land", category: "Land" }
                 ];
 
                 for (var i = 0; i < typePriority.length; i++) {
@@ -659,13 +676,14 @@
         data.columns[category].push(cardData);
     }
 
+    // Sort cards within each category
     for (var column in data.columns) {
         data.columns[column].sort(function(a, b) {
             return a.name.localeCompare(b.name);
         });
     }
 
-    // Rename here too: ensure Commander first
+    // Commander always first
     if (data.columns["Commander"]) {
         const reordered = {
             "Commander": data.columns["Commander"]
@@ -680,6 +698,7 @@
         data.columns = reordered;
     }
 
+    // --- Utility ---
     function getImageURL(html) {
         if (!html) return "";
         var match = html.match(/<img[^>]+src="([^"]+)"/);
@@ -691,14 +710,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>163</sys_mod_count>
+        <sys_mod_count>164</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-03 20:21:30</sys_updated_on>
+        <sys_updated_on>2025-09-05 15:10:38</sys_updated_on>
         <template><![CDATA[<div class="deck-container">
   <!-- Wrapping Deck Columns -->
   <div class="deck-columns" id="dynamic-deck-columns">
