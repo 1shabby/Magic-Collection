@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Set Card Values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_66cd0232c33ae2500efafbfdd40131b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:04</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -434,7 +434,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e716ff06c3ebe2100efafbfdd40131e8</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -442,7 +442,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:50</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:01</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -569,10 +569,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:49</sys_created_on>
         <sys_id>f78126fac37ae2500efafbfdd40131b7</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:46</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:01</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -583,9 +583,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:50</sys_created_on>
         <sys_id>449126fac37ae2500efafbfdd40131d8</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:46</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:01</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
@@ -722,6 +722,37 @@ try {&#13;
         newRec.setValue('card',card.sys_id);&#13;
         newRec.setValue('price',card.price);&#13;
         newRec.insert();&#13;
+    }&#13;
+&#13;
+    // Generate Tokens&#13;
+    if(resp.all_parts){&#13;
+        var c = 0&#13;
+        // Loop through all parts&#13;
+        while(c &lt; resp.all_parts.length){&#13;
+            // If the part is token&#13;
+            if(resp.all_parts[c].component == 'token'){&#13;
+                var tokenGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
+                tokenGR.addQuery('scryfall_id',resp.all_parts[c].id);&#13;
+                tokenGR.query();&#13;
+                // If the token doesn't exist in the system&#13;
+                if(!tokenGR.next()){&#13;
+                    // Create token&#13;
+                    var newToken = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
+                    newToken.initialize();&#13;
+                    newToken.setValue('name',resp.all_parts[c].name);&#13;
+                    newToken.setValue('scryfall_id',resp.all_parts[c].id);&#13;
+                    newToken.insert();&#13;
+                    // Create token association record&#13;
+                    var newTokenAssociation = new GlideRecord('x_759224_magic_c_0_token_association');&#13;
+                    newTokenAssociation.initialize();&#13;
+                    newTokenAssociation.setValue('token',newToken.getUniqueValue());&#13;
+                    newTokenAssociation.setValue('card',card.sys_id);&#13;
+                    newTokenAssociation.insert();&#13;
+                }&#13;
+&#13;
+            }&#13;
+            c++;&#13;
+        }&#13;
     }&#13;
 &#13;
     // Update was a success&#13;
@@ -1406,14 +1437,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>a3ed0672c33ae2500efafbfdd4013102</sys_id>
-        <sys_mod_count>107</sys_mod_count>
+        <sys_mod_count>111</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:50</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:02</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1845,17 +1876,17 @@ try {&#13;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Set Card Values">66cd0232c33ae2500efafbfdd40131b2</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"438b7b83c37666500efafbfdd401314d","name":"plan","plan_signature":null}}</plan>
-        <snapshot>8029f0cec337e6500efafbfdd4013149</snapshot>
+        <snapshot>434505c2c3b7e6500efafbfdd40131f2</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>438b7b83c37666500efafbfdd401314d</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:53</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:05</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2288,7 +2319,7 @@ try {&#13;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>228b3b83c37666500efafbfdd40131c4</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2296,7 +2327,7 @@ try {&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:03</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -2423,10 +2454,10 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:25</sys_created_on>
         <sys_id>6e8b3b83c37666500efafbfdd40131e8</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:03</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2437,9 +2468,9 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>6a8b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:03</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
@@ -2576,6 +2607,37 @@ try {&#13;
         newRec.setValue('card',card.sys_id);&#13;
         newRec.setValue('price',card.price);&#13;
         newRec.insert();&#13;
+    }&#13;
+&#13;
+    // Generate Tokens&#13;
+    if(resp.all_parts){&#13;
+        var c = 0&#13;
+        // Loop through all parts&#13;
+        while(c &lt; resp.all_parts.length){&#13;
+            // If the part is token&#13;
+            if(resp.all_parts[c].component == 'token'){&#13;
+                var tokenGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
+                tokenGR.addQuery('scryfall_id',resp.all_parts[c].id);&#13;
+                tokenGR.query();&#13;
+                // If the token doesn't exist in the system&#13;
+                if(!tokenGR.next()){&#13;
+                    // Create token&#13;
+                    var newToken = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
+                    newToken.initialize();&#13;
+                    newToken.setValue('name',resp.all_parts[c].name);&#13;
+                    newToken.setValue('scryfall_id',resp.all_parts[c].id);&#13;
+                    newToken.insert();&#13;
+                    // Create token association record&#13;
+                    var newTokenAssociation = new GlideRecord('x_759224_magic_c_0_token_association');&#13;
+                    newTokenAssociation.initialize();&#13;
+                    newTokenAssociation.setValue('token',newToken.getUniqueValue());&#13;
+                    newTokenAssociation.setValue('card',card.sys_id);&#13;
+                    newTokenAssociation.insert();&#13;
+                }&#13;
+&#13;
+            }&#13;
+            c++;&#13;
+        }&#13;
     }&#13;
 &#13;
     // Update was a success&#13;
@@ -3521,14 +3583,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>be8b7b83c37666500efafbfdd4013112</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>81</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:56:03</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
