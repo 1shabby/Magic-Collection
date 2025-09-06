@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=715391000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4131151000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>27000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>get_scryfall_data</internal_name>
-        <label_cache>[{"name":"4af151e8-3f55-4484-95cc-c03af91607b6.stringified_output","label":"1 - MTG Scryfall - Card Lookup➛Stringified Output","reference_display":"Stringified Output","type":"string","base_type":"string","usedInstances":{"7743b24e-a22c-4f9f-a07a-be4f46fea39d":["response-0"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28ec00bd-b994-44c7-9a2e-b7f4e4119066"}},{"name":"subflow.card.collector_number","label":"Input➛Card➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["cn"]}},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["name"]}},{"name":"subflow.card.sets.id","label":"Input➛Card➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.sys_id","label":"Input➛Card➛Sets➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"sys_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.foiling","label":"Input➛Card➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","reference":false,"image":"","rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","reference":false,"image":"","rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","reference":false,"image":"","rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}],"usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["foiling"]}}]</label_cache>
+        <label_cache>[{"name":"subflow.card.foiling","label":"Input➛Card➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"label":"None","used":false,"image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"label":"Foil","used":false,"image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"label":"Etched","used":false,"image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}],"usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["foiling"]}},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.sys_id","label":"Input➛Card➛Sets➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"sys_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.id","label":"Input➛Card➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["name"]}},{"name":"subflow.card.collector_number","label":"Input➛Card➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["cn"]}},{"name":"4af151e8-3f55-4484-95cc-c03af91607b6.stringified_output","label":"1 - MTG Scryfall - Card Lookup➛Stringified Output","reference_display":"Stringified Output","type":"string","base_type":"string","usedInstances":{"7743b24e-a22c-4f9f-a07a-be4f46fea39d":["response-0"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28ec00bd-b994-44c7-9a2e-b7f4e4119066"}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"scryfall_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["scryfall_id"]}}]</label_cache>
         <master_snapshot>c44b674fc3f266500efafbfdd40131eb</master_snapshot>
         <master_snapshot_digest/>
         <name>Get Scryfall Data</name>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e7b9f6eec3b6a2500efafbfdd40131fa</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Get Scryfall Data</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -44,7 +44,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_e7b9f6eec3b6a2500efafbfdd40131fa</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:13</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:33</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
@@ -116,7 +116,7 @@
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -255,13 +255,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:14</sys_created_on>
         <sys_id>ff3b674fc3f266500efafbfdd401319c</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:41</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:55</sys_updated_on>
         <ui_id>4af151e8-3f55-4484-95cc-c03af91607b6</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+2V207jMBCG38XXTRTn0CTcrUBIK+2CtOxyg1A1tsfUkpuEHIBu1XffcZO0HBa2lZYbxFXk8Tjzz+/55KsVM4odsSnwkOcIeaoDkfNAaa1FJKY6SCLQEbAJK2CBlNlgS4s7sJ1brVZNJ7Qt730JtfJps/GNWq8pRZmmsrC8/HemnBuraizY0dX1hFVQU6UWa3a0era1r1QLAi2lXmy0PhHeLqvNoq1NcTOsv43pY7CslSsfThg+tFgopLoabIMTtoBCQVvWy22kRlDnhd0F5qZo6W/MJT805jfVy4IgcJkaqReJ/e52ORus6sP6BFogKZ1su3pIlfPSSGx6FxRq6Gx7/DjWJ5xXrSmL/kgLwo6nS9stirPeBrb9wXgzFOkaEoGVa9VpHxrRF/Py/seo8tQUG1eGTVtKsNsVtOSd6FqnZ8U68/OZzX3khdFocUEVZwuoKorMqrq8M5sqJHrh31ha+G5oSF1jbgofpOvQpysA/5TiJ5vwJdTGtfudfkOHXblfhbnt8KsbGBllqEKeehCmqRdrQE8kIvKUUqkAnYVccraesGbZHFtomp1RdEOz28612ds2GDTrPXZHZG2q9guJusPBi/VkQArCN+dU7yZz83mVKbe7B1DbtMNo2kPlSNNZL/Op6EN44p88fQie8izI41x4WZAQTyHmXp4msRdxkaUi4WEY5O/AE+JbkxqHu9GUxes00d1ZlDRws6JbCKz3IOuvRw6jbA/tI2XHZ88aOYSw6JOwj0CYwDhTISgPVa69WOrQA661B7mSKIJoKsL3eLEk2aySnMtICnoXgoBc10IrFQc84jLZDaYuje39eAWzIWEPuh5nHgbVHnJHqE63el80cAhe8SdeHwGvJE3CQNOLhZFEL0515mUxTzweZdME4hSiVP9HvK7/AGtc10hlDQAA</values>
+        <values>H4sIAAAAAAAA/+2Xy27bMBBFf6XQ2jQoinplVyQoEKBNgb42RWAMyWFCgJYUPdK6Rv69I0u2U7duZaDZBNnY4HCouXM1Bza/rgNngrMggVCEOUKeWq7ykBtrrYpUYnkcgY0gmAUFLJEyG2xpcQ++61frddMp68tvcw21mdNmM3fm4YFSjGsqD6sv/87Ut86bGovg7Ov1LKigpkot1sHZ+mBrqlQPCj2lftxo/UV4u6o2i7Z2xc24frtN3wbL2vTlxSzA7y0WBqmuBd/gLFhCYaAt69UuUiOY94XfB25d0dLTgj75e+N+UL2Mc95nWqReNA67u+VitGoI2wtogaR0uu3qMVXflk5jM7hg0ELn2/PHsSHhfdW6shiOtKD89nTpu2VxNdgQ7B6wfTMU6RoSgVXfaq99bMR+vC2/fdiqfOOKjSvjpi81+N0KWvJOdW2vZx107tOBzUPkN6PR45IqLpZQVRRZVHV57zZVSPRyfuNpMe+HhtQ17qaYg+47nNMrgPkbil9swl+gdn277+gxdLgv97lwdx1e9gOjowyNCFMGIk2ZtIBMxSpixphUgc1EqMPgYRY0q+bcQ9PsjaI3tLjr+jYH20aDFoPH/RFdu6p9TaLucfTiYTYiBeKvc2r3k7n5OspUvzsBqF3aaTRNULml6WqQ+avoU3gKX3h6FjzlGc9lrljGY+JJYM7yNJYsClWWqjgUgudPwBPi3yZViv1o6uI4TfTuPGoauEXRLRXWE8j645HTKJugfUvZ+dVBI6cQFr0Q9hwIUygzI8AwNLllUlvBILSWQW40Kh4lSjzFL5Ymm02chzrSin4XOCfXrbLGSB5GoY73g2lL5wc/jmA2Jkyg63HmaVBNkLuFaq/3twZOwSt+wes54BVlwLVNIoJKKiZ5Tn8ItdUslpDxRCciidUT4KVAotUy0VGaYhIfzKtRj64qul7RWb+gc8fvWvukKfetg+zTUJsgfXfnGgu9urw41tApyMkX5J4DclaIJExBsv6TSRlxlocomDSpTJWQqJPkPyJ3/RNeeGis2BAAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ff3b674fc3f266500efafbfdd401319c"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e7b9f6eec3b6a2500efafbfdd40131fa"/>
@@ -284,10 +284,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:15</sys_created_on>
         <sys_id>3f3b674fc3f266500efafbfdd401319e</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:11</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:31</sys_updated_on>
         <ui_id>7743b24e-a22c-4f9f-a07a-be4f46fea39d</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/61Ty27bMBD8F54tQapExfYtQBEgQNsAiZtLUQgUubSJUiRDUnZcw//epSXbgXvpoccd7mNmdnkgdohuiGFl70NQa0OWPw5ECbIkVVd1zV0teSU/NQ0tCpBMdlKIuiirckHJjBjWA2Z6CM6aAIhsmR4SdDjUTJa0hHlWSUqzup7X2YJynvGiYnJRNsVd1+QhemXWSioQ7UjkeMQuQgWn2f71vzTjG6WFh6Ts54w45pF0BE+Wh5unuHfQataBxpkvp2ZY/q9enAufr2b8bU8agUg4N7deJCbljMB7BCMAh0mmA8xIz4xg0fr9BfHAxJPRV2CjTMRuJCW/B/UbW8+LokiZElAWh/H1EraTsSPMN1ZxeHJRWTMikXV6quFWD735NipIK0HFg47nlSAyBOwHLrFONCZO8mVjd8/ngQ/KnAROj9pypi8Ri2hDN0QIaReDWt2YMyJfbhcCGnqc2PbMOURa5+1WnaYg6T5fawxyqe0O2aWLzhlPCnN0k+UPiH8+wa/MqyT3K7bB4jTuu1FvAzymhVPGOQXRZQC0zOqSNlnXNTxjdC5LwZs5ACPHk7Xt25BEjSZNdrSjo5gQuFcu3iOFLUzKj3hryqRPN97ddmIyhQK4Ckh4lbDHD3lijwel+EdoZ/2vJPWKHf8AQajoYNIDAAA=</values>
@@ -357,7 +357,7 @@
         <description>Calls the Scryfall API action.</description>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>get_scryfall_data</internal_name>
-        <label_cache>[{"name":"4af151e8-3f55-4484-95cc-c03af91607b6.stringified_output","label":"1 - MTG Scryfall - Card Lookup➛Stringified Output","reference_display":"Stringified Output","type":"string","base_type":"string","usedInstances":{"7743b24e-a22c-4f9f-a07a-be4f46fea39d":["response-0"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28ec00bd-b994-44c7-9a2e-b7f4e4119066"}},{"name":"subflow.card.collector_number","label":"Input➛Card➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["cn"]}},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["name"]}},{"name":"subflow.card.sets.id","label":"Input➛Card➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.sys_id","label":"Input➛Card➛Sets➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"sys_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.foiling","label":"Input➛Card➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","reference":false,"image":"","rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","reference":false,"image":"","rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","reference":false,"image":"","rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}],"usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["foiling"]}}]</label_cache>
+        <label_cache>[{"name":"subflow.card.foiling","label":"Input➛Card➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"label":"None","used":false,"image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"label":"Foil","used":false,"image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"label":"Etched","used":false,"image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}],"usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["foiling"]}},{"name":"subflow.card.sets","label":"Input➛Card➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.sys_id","label":"Input➛Card➛Sets➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"sys_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.sets.id","label":"Input➛Card➛Sets➛Code","reference":"","reference_display":"Code","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["set"]}},{"name":"subflow.card.name","label":"Input➛Card➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["name"]}},{"name":"subflow.card.collector_number","label":"Input➛Card➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["cn"]}},{"name":"4af151e8-3f55-4484-95cc-c03af91607b6.stringified_output","label":"1 - MTG Scryfall - Card Lookup➛Stringified Output","reference_display":"Stringified Output","type":"string","base_type":"string","usedInstances":{"7743b24e-a22c-4f9f-a07a-be4f46fea39d":["response-0"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28ec00bd-b994-44c7-9a2e-b7f4e4119066"}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"scryfall_id","usedInstances":{"4af151e8-3f55-4484-95cc-c03af91607b6":["scryfall_id"]}}]</label_cache>
         <master>true</master>
         <name>Get Scryfall Data</name>
         <natlang/>
@@ -374,7 +374,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c44b674fc3f266500efafbfdd40131eb</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -382,7 +382,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:12</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:33</sys_updated_on>
         <type>subflow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -453,7 +453,7 @@
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -592,13 +592,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:16</sys_created_on>
         <sys_id>d84ba74fc3f266500efafbfdd4013108</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:12</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:33</sys_updated_on>
         <ui_id>4af151e8-3f55-4484-95cc-c03af91607b6</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+2V207jMBCG38XXTRTn0CTcrUBIK+2CtOxyg1A1tsfUkpuEHIBu1XffcZO0HBa2lZYbxFXk8Tjzz+/55KsVM4odsSnwkOcIeaoDkfNAaa1FJKY6SCLQEbAJK2CBlNlgS4s7sJ1brVZNJ7Qt730JtfJps/GNWq8pRZmmsrC8/HemnBuraizY0dX1hFVQU6UWa3a0era1r1QLAi2lXmy0PhHeLqvNoq1NcTOsv43pY7CslSsfThg+tFgopLoabIMTtoBCQVvWy22kRlDnhd0F5qZo6W/MJT805jfVy4IgcJkaqReJ/e52ORus6sP6BFogKZ1su3pIlfPSSGx6FxRq6Gx7/DjWJ5xXrSmL/kgLwo6nS9stirPeBrb9wXgzFOkaEoGVa9VpHxrRF/Py/seo8tQUG1eGTVtKsNsVtOSd6FqnZ8U68/OZzX3khdFocUEVZwuoKorMqrq8M5sqJHrh31ha+G5oSF1jbgofpOvQpysA/5TiJ5vwJdTGtfudfkOHXblfhbnt8KsbGBllqEKeehCmqRdrQE8kIvKUUqkAnYVccraesGbZHFtomp1RdEOz28612ds2GDTrPXZHZG2q9guJusPBi/VkQArCN+dU7yZz83mVKbe7B1DbtMNo2kPlSNNZL/Op6EN44p88fQie8izI41x4WZAQTyHmXp4msRdxkaUi4WEY5O/AE+JbkxqHu9GUxes00d1ZlDRws6JbCKz3IOuvRw6jbA/tI2XHZ88aOYSw6JOwj0CYwDhTISgPVa69WOrQA661B7mSKIJoKsL3eLEk2aySnMtICnoXgoBc10IrFQc84jLZDaYuje39eAWzIWEPuh5nHgbVHnJHqE63el80cAhe8SdeHwGvJE3CQNOLhZFEL0515mUxTzweZdME4hSiVP9HvK7/AGtc10hlDQAA</values>
+        <values>H4sIAAAAAAAA/+2Xy27bMBBFf6XQ2jQoinplVyQoEKBNgb42RWAMyWFCgJYUPdK6Rv69I0u2U7duZaDZBNnY4HCouXM1Bza/rgNngrMggVCEOUKeWq7ykBtrrYpUYnkcgY0gmAUFLJEyG2xpcQ++61frddMp68tvcw21mdNmM3fm4YFSjGsqD6sv/87Ut86bGovg7Ov1LKigpkot1sHZ+mBrqlQPCj2lftxo/UV4u6o2i7Z2xc24frtN3wbL2vTlxSzA7y0WBqmuBd/gLFhCYaAt69UuUiOY94XfB25d0dLTgj75e+N+UL2Mc95nWqReNA67u+VitGoI2wtogaR0uu3qMVXflk5jM7hg0ELn2/PHsSHhfdW6shiOtKD89nTpu2VxNdgQ7B6wfTMU6RoSgVXfaq99bMR+vC2/fdiqfOOKjSvjpi81+N0KWvJOdW2vZx107tOBzUPkN6PR45IqLpZQVRRZVHV57zZVSPRyfuNpMe+HhtQ17qaYg+47nNMrgPkbil9swl+gdn277+gxdLgv97lwdx1e9gOjowyNCFMGIk2ZtIBMxSpixphUgc1EqMPgYRY0q+bcQ9PsjaI3tLjr+jYH20aDFoPH/RFdu6p9TaLucfTiYTYiBeKvc2r3k7n5OspUvzsBqF3aaTRNULml6WqQ+avoU3gKX3h6FjzlGc9lrljGY+JJYM7yNJYsClWWqjgUgudPwBPi3yZViv1o6uI4TfTuPGoauEXRLRXWE8j645HTKJugfUvZ+dVBI6cQFr0Q9hwIUygzI8AwNLllUlvBILSWQW40Kh4lSjzFL5Ymm02chzrSin4XOCfXrbLGSB5GoY73g2lL5wc/jmA2Jkyg63HmaVBNkLuFaq/3twZOwSt+wes54BVlwLVNIoJKKiZ5Tn8ItdUslpDxRCciidUT4KVAotUy0VGaYhIfzKtRj64qul7RWb+gc8fvWvukKfetg+zTUJsgfXfnGgu9urw41tApyMkX5J4DclaIJExBsv6TSRlxlocomDSpTJWQqJPkPyJ3/RNeeGis2BAAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=d84ba74fc3f266500efafbfdd4013108"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=c44b674fc3f266500efafbfdd40131eb"/>
@@ -621,10 +621,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:16</sys_created_on>
         <sys_id>5c4ba74fc3f266500efafbfdd4013107</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:12</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:33</sys_updated_on>
         <ui_id>7743b24e-a22c-4f9f-a07a-be4f46fea39d</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/61Ty27bMBD8F54tQ6olxc4tSBAgQNoAiZtLURgrcmkToUiFpOy4hv+9y1B+IL700Bt3uI+ZWXLHbB+6Pvi5vfFeLQ27/rVjSrBrNmkmTX1VSj6R3+q6ynOUIBspRJkXk2JWsREz0CJlOvSdNR4JWYPuI7TblSCLqsBpNpFVlZXltMxmFecZzycgZ0WdXzX12AenzFJJhWKRiOz31EUo32nYvv6XZnyltHAYlf0esQ4ckQ7o2DXpNHQwoB+VeaM5F8n/6oOGBjWlPp+MuLQmbLuIJJZD/DgUvhxA60SkVowYfgQ0AomBBO1xxFowAoJ12yPiEMST0SdgRYKSjhY+vPpD86Z5nsdMiaSKY7o9hovB6QTLOwhAVHoeeocHQ6zi6JMfgqT3OtyeYynhqQvKmlQSoNGHaqv71vxIXrBjg8NiCek9kcAuSo3cByHyZWU3zweW98p8ujJcastBHyMI5F3Th8hnx3o1/2JzQi6MRo0tTVy00HWELDpn1+pzCpFux0tNwVhquyF28V+MgUeFY1oBjO8Jv/uEX8GpKPc7taHiOO6nUe89PsSnUwHnFYomQ6yKrCyqOmuammdQTWUheD1FBLYfMb/1txq8PxlFG1q891Fmsm0waJE8jiXcqS7cEKk1Dl7s44s18TOnzawHbsflceVJwjxiD2d5YkuPVfFzaGPdWxR/wvZ/AQMviX4qBAAA</values>
@@ -690,16 +690,16 @@
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"604ba74fc3f266500efafbfdd4013127","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="Get Scryfall Data">e7b9f6eec3b6a2500efafbfdd40131fa</plan_id>
-        <snapshot>8faa6991c30fa2100efafbfdd40131e1</snapshot>
+        <snapshot>97e8cd0ac3b7e6500efafbfdd401313a</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 14:32:17</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>604ba74fc3f266500efafbfdd4013127</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-29 04:22:13</sys_updated_on>
+        <sys_updated_on>2025-09-06 17:11:33</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>
