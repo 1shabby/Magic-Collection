@@ -50,6 +50,7 @@
         </element>
         <element label="Modern Legality" max_length="8000" name="modern_legality" read_only="true" type="html"/>
         <element label="Legacy Legality" max_length="8000" name="legacy_legality" read_only="true" type="html"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Scryfall ID" max_length="200" name="scryfall_id" read_only="true" type="string"/>
         <element label="Face Two Flavor Name" max_length="200" name="face_two_flavor_name" read_only="true" type="string"/>
         <element label="Face One Name" max_length="200" name="face_one_name" read_only="true" type="string"/>
         <element label="CMC" max_length="40" name="cmc" read_only="true" type="integer"/>

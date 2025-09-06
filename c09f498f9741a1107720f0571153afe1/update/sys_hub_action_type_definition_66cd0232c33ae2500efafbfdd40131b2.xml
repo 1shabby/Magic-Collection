@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Set Card Values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_66cd0232c33ae2500efafbfdd40131b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:12</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -434,7 +434,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e716ff06c3ebe2100efafbfdd40131e8</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -442,7 +442,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:09</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:50</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -569,10 +569,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:49</sys_created_on>
         <sys_id>f78126fac37ae2500efafbfdd40131b7</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:46</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -583,150 +583,155 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:50</sys_created_on>
         <sys_id>449126fac37ae2500efafbfdd40131d8</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:46</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
-    var card = inputs.card;&#13;
-    var resp = inputs.response;&#13;
+var card = inputs.card;&#13;
+var resp = inputs.response;&#13;
 &#13;
-    try {&#13;
-        // Fields to always populate&#13;
-        var topFields = [&#13;
-            'name', 'rarity', 'colors', 'cmc', 'game_changer', 'keywords',&#13;
-            'reserved_list', 'is_multi_faced'&#13;
-        ];&#13;
+try {&#13;
+    // Fields to always populate&#13;
+    var topFields = [&#13;
+        'name', 'rarity', 'colors', 'cmc', 'game_changer', 'keywords',&#13;
+        'reserved_list', 'is_multi_faced'&#13;
+    ];&#13;
 &#13;
-        topFields.forEach(function(field) {&#13;
-            if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
-                card.setValue(field, resp[field]);&#13;
-            }&#13;
-        });&#13;
-&#13;
-        // Set token to true if type line contains token&#13;
-        if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
-            card.setValue('is_token','true');&#13;
+    topFields.forEach(function(field) {&#13;
+        if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
+            card.setValue(field, resp[field]);&#13;
         }&#13;
+    });&#13;
 &#13;
-        // Related URIs (links)&#13;
-        if (resp.related_uris) {&#13;
-            if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
-            if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
-        }&#13;
+    // Set Scryfall ID&#13;
+    if(resp.id &amp;&amp; !card.getValue('scryfall_id')){&#13;
+        card.setValue('scryfall_id',resp.id);&#13;
+    }&#13;
 &#13;
-        if (resp.purchase_uris) {&#13;
-            if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
-            if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
-            if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
-        }&#13;
+    // Set token to true if type line contains token&#13;
+    if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
+        card.setValue('is_token','true');&#13;
+    }&#13;
 &#13;
-        // Legality&#13;
-        if (resp.legalities) {&#13;
-            for (var format in resp.legalities) {&#13;
-                var fieldName = format + '_legality';&#13;
-                if (card.isValidField(fieldName)) {&#13;
-                    card.setValue(fieldName, resp.legalities[format]);&#13;
-                }&#13;
-            }&#13;
-        }&#13;
+    // Related URIs (links)&#13;
+    if (resp.related_uris) {&#13;
+        if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
+        if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
+    }&#13;
 &#13;
-        if (resp.uri) card.setValue('api_link', resp.uri);&#13;
+    if (resp.purchase_uris) {&#13;
+        if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
+        if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
+        if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
+    }&#13;
 &#13;
-        // Price&#13;
-        if (resp.prices) {&#13;
-            var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
-            var priceKey = 'usd';&#13;
-            if (foiling === 'foil') priceKey = 'usd_foil';&#13;
-            else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
-&#13;
-            var newPrice = parseFloat(resp.prices[priceKey]);&#13;
-            var currentPrice = parseFloat(card.getValue('price'));&#13;
-            var priceChange = newPrice - currentPrice;&#13;
-&#13;
-            card.setValue('price', newPrice.toFixed(2));&#13;
-            if(priceChange != 0)&#13;
-                card.setValue('price_change', priceChange);&#13;
-        }   &#13;
-&#13;
-        // Multi-faced card logic&#13;
-        if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
-            var front = resp.card_faces[0];&#13;
-            var back = resp.card_faces[1];&#13;
-            card.setValue('is_multi_faced',true);&#13;
-&#13;
-            if (front) {&#13;
-                if (front.name) card.setValue('face_one_name', front.name);&#13;
-                if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
-                if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
-                if (front.type_line) card.setValue('type_line', front.type_line);&#13;
-                if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
-                if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
-                if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
-                if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
-                if (front.power) card.setValue('face_one_power', front.power);&#13;
-                if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
-                if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
-                if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
-                if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
-                if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-            }&#13;
-&#13;
-            if (back) {&#13;
-                if (back.name) card.setValue('face_two_name', back.name);&#13;
-                if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
-                if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
-                if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
-                if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
-                if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
-                if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
-                if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
-                if (back.power) card.setValue('face_two_power', back.power);&#13;
-                if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
-                if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
-                if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
-                if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
-                if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
+    // Legality&#13;
+    if (resp.legalities) {&#13;
+        for (var format in resp.legalities) {&#13;
+            var fieldName = format + '_legality';&#13;
+            if (card.isValidField(fieldName)) {&#13;
+                card.setValue(fieldName, resp.legalities[format]);&#13;
             }&#13;
         }&#13;
+    }&#13;
 &#13;
-        // Single-faced card logic → populate face_one_* fields from top-level&#13;
-        else {&#13;
-            if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
-            if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
-            if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
-            if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
-            if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
-            if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
-            if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
-            if (resp.power) card.setValue('face_one_power', resp.power);&#13;
-            if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
-            if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
-            if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
+    if (resp.uri) card.setValue('api_link', resp.uri);&#13;
+&#13;
+    // Price&#13;
+    if (resp.prices) {&#13;
+        var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
+        var priceKey = 'usd';&#13;
+        if (foiling === 'foil') priceKey = 'usd_foil';&#13;
+        else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
+&#13;
+        var newPrice = parseFloat(resp.prices[priceKey]);&#13;
+        var currentPrice = parseFloat(card.getValue('price'));&#13;
+        var priceChange = newPrice - currentPrice;&#13;
+&#13;
+        card.setValue('price', newPrice.toFixed(2));&#13;
+        if(priceChange != 0)&#13;
+            card.setValue('price_change', priceChange);&#13;
+    }   &#13;
+&#13;
+    // Multi-faced card logic&#13;
+    if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
+        var front = resp.card_faces[0];&#13;
+        var back = resp.card_faces[1];&#13;
+        card.setValue('is_multi_faced',true);&#13;
+&#13;
+        if (front) {&#13;
+            if (front.name) card.setValue('face_one_name', front.name);&#13;
+            if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
+            if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
+            if (front.type_line) card.setValue('type_line', front.type_line);&#13;
+            if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
+            if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
+            if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
+            if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
+            if (front.power) card.setValue('face_one_power', front.power);&#13;
+            if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
+            if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
+            if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
+            if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
             if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
         }&#13;
-        // Update card record&#13;
-        card.update();&#13;
 &#13;
-        // Generate Historical Price record&#13;
-        var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-        historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
-        historicalPriceGr.query();&#13;
-        if(historicalPriceGr.getRowCount() == 0){&#13;
-            var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-            newRec.initialize();&#13;
-            newRec.setValue('card',card.sys_id);&#13;
-            newRec.setValue('price',card.price);&#13;
-            newRec.insert();&#13;
+        if (back) {&#13;
+            if (back.name) card.setValue('face_two_name', back.name);&#13;
+            if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
+            if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
+            if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
+            if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
+            if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
+            if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
+            if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
+            if (back.power) card.setValue('face_two_power', back.power);&#13;
+            if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
+            if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
+            if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
+            if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
+            if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
         }&#13;
-&#13;
-        // Update was a success&#13;
-        outputs.status = 'success';&#13;
-        outputs.card = card;&#13;
-    } catch (err) {&#13;
-        gs.error('Card population error: ' + err.message);&#13;
-        outputs.status = 'error: ' + err.message;&#13;
-        outputs.card = card;&#13;
     }&#13;
+&#13;
+    // Single-faced card logic → populate face_one_* fields from top-level&#13;
+    else {&#13;
+        if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
+        if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
+        if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
+        if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
+        if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
+        if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
+        if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
+        if (resp.power) card.setValue('face_one_power', resp.power);&#13;
+        if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
+        if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
+        if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
+        if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
+    }&#13;
+    // Update card record&#13;
+    card.update();&#13;
+&#13;
+    // Generate Historical Price record&#13;
+    var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
+    historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
+    historicalPriceGr.query();&#13;
+    if(historicalPriceGr.getRowCount() == 0){&#13;
+        var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
+        newRec.initialize();&#13;
+        newRec.setValue('card',card.sys_id);&#13;
+        newRec.setValue('price',card.price);&#13;
+        newRec.insert();&#13;
+    }&#13;
+&#13;
+    // Update was a success&#13;
+    outputs.status = 'success';&#13;
+    outputs.card = card;&#13;
+} catch (err) {&#13;
+    gs.error('Card population error: ' + err.message);&#13;
+    outputs.status = 'error: ' + err.message;&#13;
+    outputs.card = card;&#13;
+}&#13;
 &#13;
 })(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -1401,14 +1406,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>a3ed0672c33ae2500efafbfdd4013102</sys_id>
-        <sys_mod_count>103</sys_mod_count>
+        <sys_mod_count>107</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:09</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:50</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1840,17 +1845,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Set Card Values">66cd0232c33ae2500efafbfdd40131b2</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"438b7b83c37666500efafbfdd401314d","name":"plan","plan_signature":null}}</plan>
-        <snapshot>c2378976c3eba6100efafbfdd4013123</snapshot>
+        <snapshot>8029f0cec337e6500efafbfdd4013149</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>438b7b83c37666500efafbfdd401314d</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:13</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:53</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2283,7 +2288,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>228b3b83c37666500efafbfdd40131c4</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2291,7 +2296,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -2418,10 +2423,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:25</sys_created_on>
         <sys_id>6e8b3b83c37666500efafbfdd40131e8</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2432,150 +2437,155 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>6a8b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
-    var card = inputs.card;&#13;
-    var resp = inputs.response;&#13;
+var card = inputs.card;&#13;
+var resp = inputs.response;&#13;
 &#13;
-    try {&#13;
-        // Fields to always populate&#13;
-        var topFields = [&#13;
-            'name', 'rarity', 'colors', 'cmc', 'game_changer', 'keywords',&#13;
-            'reserved_list', 'is_multi_faced'&#13;
-        ];&#13;
+try {&#13;
+    // Fields to always populate&#13;
+    var topFields = [&#13;
+        'name', 'rarity', 'colors', 'cmc', 'game_changer', 'keywords',&#13;
+        'reserved_list', 'is_multi_faced'&#13;
+    ];&#13;
 &#13;
-        topFields.forEach(function(field) {&#13;
-            if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
-                card.setValue(field, resp[field]);&#13;
-            }&#13;
-        });&#13;
-&#13;
-        // Set token to true if type line contains token&#13;
-        if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
-            card.setValue('is_token','true');&#13;
+    topFields.forEach(function(field) {&#13;
+        if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
+            card.setValue(field, resp[field]);&#13;
         }&#13;
+    });&#13;
 &#13;
-        // Related URIs (links)&#13;
-        if (resp.related_uris) {&#13;
-            if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
-            if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
-        }&#13;
+    // Set Scryfall ID&#13;
+    if(resp.id &amp;&amp; !card.getValue('scryfall_id')){&#13;
+        card.setValue('scryfall_id',resp.id);&#13;
+    }&#13;
 &#13;
-        if (resp.purchase_uris) {&#13;
-            if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
-            if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
-            if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
-        }&#13;
+    // Set token to true if type line contains token&#13;
+    if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
+        card.setValue('is_token','true');&#13;
+    }&#13;
 &#13;
-        // Legality&#13;
-        if (resp.legalities) {&#13;
-            for (var format in resp.legalities) {&#13;
-                var fieldName = format + '_legality';&#13;
-                if (card.isValidField(fieldName)) {&#13;
-                    card.setValue(fieldName, resp.legalities[format]);&#13;
-                }&#13;
-            }&#13;
-        }&#13;
+    // Related URIs (links)&#13;
+    if (resp.related_uris) {&#13;
+        if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
+        if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
+    }&#13;
 &#13;
-        if (resp.uri) card.setValue('api_link', resp.uri);&#13;
+    if (resp.purchase_uris) {&#13;
+        if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
+        if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
+        if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
+    }&#13;
 &#13;
-        // Price&#13;
-        if (resp.prices) {&#13;
-            var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
-            var priceKey = 'usd';&#13;
-            if (foiling === 'foil') priceKey = 'usd_foil';&#13;
-            else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
-&#13;
-            var newPrice = parseFloat(resp.prices[priceKey]);&#13;
-            var currentPrice = parseFloat(card.getValue('price'));&#13;
-            var priceChange = newPrice - currentPrice;&#13;
-&#13;
-            card.setValue('price', newPrice.toFixed(2));&#13;
-            if(priceChange != 0)&#13;
-                card.setValue('price_change', priceChange);&#13;
-        }   &#13;
-&#13;
-        // Multi-faced card logic&#13;
-        if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
-            var front = resp.card_faces[0];&#13;
-            var back = resp.card_faces[1];&#13;
-            card.setValue('is_multi_faced',true);&#13;
-&#13;
-            if (front) {&#13;
-                if (front.name) card.setValue('face_one_name', front.name);&#13;
-                if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
-                if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
-                if (front.type_line) card.setValue('type_line', front.type_line);&#13;
-                if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
-                if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
-                if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
-                if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
-                if (front.power) card.setValue('face_one_power', front.power);&#13;
-                if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
-                if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
-                if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
-                if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
-                if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-            }&#13;
-&#13;
-            if (back) {&#13;
-                if (back.name) card.setValue('face_two_name', back.name);&#13;
-                if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
-                if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
-                if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
-                if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
-                if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
-                if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
-                if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
-                if (back.power) card.setValue('face_two_power', back.power);&#13;
-                if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
-                if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
-                if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
-                if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
-                if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
+    // Legality&#13;
+    if (resp.legalities) {&#13;
+        for (var format in resp.legalities) {&#13;
+            var fieldName = format + '_legality';&#13;
+            if (card.isValidField(fieldName)) {&#13;
+                card.setValue(fieldName, resp.legalities[format]);&#13;
             }&#13;
         }&#13;
+    }&#13;
 &#13;
-        // Single-faced card logic → populate face_one_* fields from top-level&#13;
-        else {&#13;
-            if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
-            if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
-            if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
-            if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
-            if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
-            if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
-            if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
-            if (resp.power) card.setValue('face_one_power', resp.power);&#13;
-            if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
-            if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
-            if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
+    if (resp.uri) card.setValue('api_link', resp.uri);&#13;
+&#13;
+    // Price&#13;
+    if (resp.prices) {&#13;
+        var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
+        var priceKey = 'usd';&#13;
+        if (foiling === 'foil') priceKey = 'usd_foil';&#13;
+        else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
+&#13;
+        var newPrice = parseFloat(resp.prices[priceKey]);&#13;
+        var currentPrice = parseFloat(card.getValue('price'));&#13;
+        var priceChange = newPrice - currentPrice;&#13;
+&#13;
+        card.setValue('price', newPrice.toFixed(2));&#13;
+        if(priceChange != 0)&#13;
+            card.setValue('price_change', priceChange);&#13;
+    }   &#13;
+&#13;
+    // Multi-faced card logic&#13;
+    if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
+        var front = resp.card_faces[0];&#13;
+        var back = resp.card_faces[1];&#13;
+        card.setValue('is_multi_faced',true);&#13;
+&#13;
+        if (front) {&#13;
+            if (front.name) card.setValue('face_one_name', front.name);&#13;
+            if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
+            if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
+            if (front.type_line) card.setValue('type_line', front.type_line);&#13;
+            if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
+            if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
+            if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
+            if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
+            if (front.power) card.setValue('face_one_power', front.power);&#13;
+            if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
+            if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
+            if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
+            if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
             if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
         }&#13;
-        // Update card record&#13;
-        card.update();&#13;
 &#13;
-        // Generate Historical Price record&#13;
-        var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-        historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
-        historicalPriceGr.query();&#13;
-        if(historicalPriceGr.getRowCount() == 0){&#13;
-            var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-            newRec.initialize();&#13;
-            newRec.setValue('card',card.sys_id);&#13;
-            newRec.setValue('price',card.price);&#13;
-            newRec.insert();&#13;
+        if (back) {&#13;
+            if (back.name) card.setValue('face_two_name', back.name);&#13;
+            if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
+            if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
+            if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
+            if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
+            if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
+            if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
+            if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
+            if (back.power) card.setValue('face_two_power', back.power);&#13;
+            if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
+            if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
+            if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
+            if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
+            if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
         }&#13;
-&#13;
-        // Update was a success&#13;
-        outputs.status = 'success';&#13;
-        outputs.card = card;&#13;
-    } catch (err) {&#13;
-        gs.error('Card population error: ' + err.message);&#13;
-        outputs.status = 'error: ' + err.message;&#13;
-        outputs.card = card;&#13;
     }&#13;
+&#13;
+    // Single-faced card logic → populate face_one_* fields from top-level&#13;
+    else {&#13;
+        if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
+        if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
+        if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
+        if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
+        if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
+        if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
+        if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
+        if (resp.power) card.setValue('face_one_power', resp.power);&#13;
+        if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
+        if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
+        if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
+        if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
+    }&#13;
+    // Update card record&#13;
+    card.update();&#13;
+&#13;
+    // Generate Historical Price record&#13;
+    var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
+    historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
+    historicalPriceGr.query();&#13;
+    if(historicalPriceGr.getRowCount() == 0){&#13;
+        var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
+        newRec.initialize();&#13;
+        newRec.setValue('card',card.sys_id);&#13;
+        newRec.setValue('price',card.price);&#13;
+        newRec.insert();&#13;
+    }&#13;
+&#13;
+    // Update was a success&#13;
+    outputs.status = 'success';&#13;
+    outputs.card = card;&#13;
+} catch (err) {&#13;
+    gs.error('Card population error: ' + err.message);&#13;
+    outputs.status = 'error: ' + err.message;&#13;
+    outputs.card = card;&#13;
+}&#13;
 &#13;
 })(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -3511,14 +3521,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>be8b7b83c37666500efafbfdd4013112</sys_id>
-        <sys_mod_count>75</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
+        <sys_updated_on>2025-09-06 16:02:52</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
