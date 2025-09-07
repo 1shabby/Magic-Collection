@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Set Card Values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_66cd0232c33ae2500efafbfdd40131b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:57</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:19</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -67,10 +67,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>63ed0672c33ae2500efafbfdd401310c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:32:54</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
+        <sys_updated_on>2025-09-07 16:29:44</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">a7edc272c33ae2500efafbfdd40131fd</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=66cd0232c33ae2500efafbfdd40131b2"/>
@@ -434,7 +434,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e716ff06c3ebe2100efafbfdd40131e8</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -442,7 +442,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:55</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:17</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -569,10 +569,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:49</sys_created_on>
         <sys_id>f78126fac37ae2500efafbfdd40131b7</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:55</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:17</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -583,9 +583,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:50</sys_created_on>
         <sys_id>449126fac37ae2500efafbfdd40131d8</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:55</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:17</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
@@ -730,7 +730,8 @@ try {&#13;
     var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
     historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
     historicalPriceGr.query();&#13;
-    if(historicalPriceGr.getRowCount() == 0){&#13;
+    // Historical price is older than 32 hours ago and the current price is greater than 0.&#13;
+    if(historicalPriceGr.getRowCount() == 0 &amp;&amp; card.price &gt; 0){&#13;
         var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
         newRec.initialize();&#13;
         newRec.setValue('card',card.sys_id);&#13;
@@ -824,11 +825,11 @@ try {&#13;
         <field>script</field>
         <id>f78126fac37ae2500efafbfdd40131b7</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-27 14:44:03</sys_created_on>
-        <sys_id>fb270976c3eba6100efafbfdd40131a3</sys_id>
+        <sys_created_on>2025-09-07 16:29:44</sys_created_on>
+        <sys_id>13d842d60f33e21004ca6ac530d1b2ad</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:03</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:29:44</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -1052,7 +1053,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -1266,7 +1267,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -1451,14 +1452,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>a3ed0672c33ae2500efafbfdd4013102</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>117</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:55</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:17</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1611,7 +1612,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -1890,17 +1891,17 @@ try {&#13;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Set Card Values">66cd0232c33ae2500efafbfdd40131b2</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"438b7b83c37666500efafbfdd401314d","name":"plan","plan_signature":null}}</plan>
-        <snapshot>263bcdcac3b7e6500efafbfdd40131b3</snapshot>
+        <snapshot>f35a825a0f33e21004ca6ac530d1b28f</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>438b7b83c37666500efafbfdd401314d</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:58</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:20</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1966,10 +1967,10 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>f68b7b83c37666500efafbfdd401311c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-25 19:32:56</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
+        <sys_updated_on>2025-09-07 16:29:46</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">628b7b83c37666500efafbfdd401310e</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=da8b3b83c37666500efafbfdd40131ab"/>
@@ -2333,7 +2334,7 @@ try {&#13;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>228b3b83c37666500efafbfdd40131c4</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2341,7 +2342,7 @@ try {&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:57</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:19</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -2468,10 +2469,10 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:25</sys_created_on>
         <sys_id>6e8b3b83c37666500efafbfdd40131e8</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:57</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:19</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2482,9 +2483,9 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>6a8b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:57</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:19</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
@@ -2629,7 +2630,8 @@ try {&#13;
     var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
     historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
     historicalPriceGr.query();&#13;
-    if(historicalPriceGr.getRowCount() == 0){&#13;
+    // Historical price is older than 32 hours ago and the current price is greater than 0.&#13;
+    if(historicalPriceGr.getRowCount() == 0 &amp;&amp; card.price &gt; 0){&#13;
         var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
         newRec.initialize();&#13;
         newRec.setValue('card',card.sys_id);&#13;
@@ -2723,11 +2725,11 @@ try {&#13;
         <field>script</field>
         <id>6e8b3b83c37666500efafbfdd40131e8</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-27 14:44:11</sys_created_on>
-        <sys_id>ca378976c3eba6100efafbfdd4013106</sys_id>
+        <sys_created_on>2025-09-07 16:29:46</sys_created_on>
+        <sys_id>3fd882d60f33e21004ca6ac530d1b24b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-27 14:44:11</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:29:46</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -3034,7 +3036,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -3165,7 +3167,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -3336,7 +3338,7 @@ try {&#13;
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="x_759224_magic_c_0_mtg_cards" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
+        <reference display_value="" name="x_759224_magic_c_0_mtg_cards">x_759224_magic_c_0_mtg_cards</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -3611,14 +3613,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>be8b7b83c37666500efafbfdd4013112</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 17:21:57</sys_updated_on>
+        <sys_updated_on>2025-09-07 16:36:19</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3788,6 +3790,6 @@ try {&#13;
     <sys_hub_action_type_definition action="UPDATE">
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
         <latest_snapshot>da8b3b83c37666500efafbfdd40131ab</latest_snapshot>
-        <compiler_build>glide-yokohama-12-18-2024__patch5-06-11-2025_06-25-2025_1836.zip</compiler_build>
+        <compiler_build>glide-zurich-07-01-2025__patch0-07-15-2025_07-23-2025_1759.zip</compiler_build>
     </sys_hub_action_type_definition>
 </record_update>
