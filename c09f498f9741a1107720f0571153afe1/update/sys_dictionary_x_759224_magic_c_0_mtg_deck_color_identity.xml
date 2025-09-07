@@ -7,7 +7,22 @@
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
 	// Add your code here
-	return '';  // return the calculated value
+	var colors = '';
+	var deckCardGR = new GlideRecord('x_759224_magic_c_0_deck_card');
+	deckCardGR.addQuery('deck',current.sys_id);
+	deckCardGR.addQuery('is_commander',true);
+	deckCardGR.query();
+	while(deckCardGR.next()){
+		var card = deckCardGR.card.getRefRecord();
+		if(colors != ''){
+			colors += ',' + card.colors;
+		}else{
+		colors += card.colors;
+		}
+	}
+	
+	
+	return colors;  // return the calculated value
 
 })(current);]]></calculation>
         <choice/>
@@ -58,14 +73,14 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_deck_color_identity</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-20 18:58:19</sys_updated_on>
+        <sys_updated_on>2025-09-07 01:01:31</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
