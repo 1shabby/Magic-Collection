@@ -8,301 +8,72 @@
         document.title = c.data.deck_name;
     }
 
-    c.$onInit = function() {
-        var params = new URLSearchParams($window.location.search);
-        var deckIdParam = params.get('deck_id');
-        if (deckIdParam) {
-            c.data.deck_sys_id = deckIdParam;
-        }
+    $scope.layoutMode = 'columns'; // 'columns' or 'stacked'
+    $scope.categories = c.data.categories || [];
+    $scope.all_cards = c.data.all_cards || [];
+    $scope.is_author = c.data.is_author;
 
-        // Sort and store columns once
-        $scope.columnsList = [];
+    $scope.setLayout = function(mode) {
+        $scope.layoutMode = mode;
+    };
 
-        const computeSortedColumns = function() {
-            const columns = [];
-            angular.forEach($scope.data.columns, function(cards, key) {
-                const totalQuantity = cards.reduce((sum, card) => {
-                    return sum + (parseInt(card.quantity, 10) || 0);
-                }, 0);
+    $scope.flipCard = function(card) {
+        card.flags.is_flipped = !card.flags.is_flipped;
+    };
 
-                columns.push({
-                    key: key,
-                    cards: cards,
-                    totalQuantity: totalQuantity
-                });
-            });
+    $scope.incrementCard = function(card, event) {
+        const newQty = parseInt(card.quantity || "0", 10) + 1;
+        updateCardQuantity(card, newQty);
+    };
 
-            return columns.sort(function(a, b) {
-                if (a.key === 'Commander') return -1;
-                if (b.key === 'Commander') return 1;
-                return a.key.localeCompare(b.key);
-            });
-        };
-
-        // Store precomputed list to avoid digest loop
-        $scope.columnsList = computeSortedColumns();
-
-        // Utility
-        $scope.getCardTags = function(card) {
-            var tags = [];
-            if (card.is_commander) tags.push("Commander");
-            if (card.is_maybeboard) tags.push("Maybeboard");
-            if (card.is_sideboard) tags.push("Sideboard");
-            return tags.join(", ");
-        };
-
-        $scope.viewDeck = function(deckId) {
-            $window.location.href = '?id=deck_view&deck_id=' + deckId;
-        };
-
-        $scope.flipCard = function(card) {
-            card.flags.is_flipped = !card.flags.is_flipped;
-        };
-
-        $scope.incrementCard = function(card, event) {
-            const newQty = parseInt(card.quantity || "0", 10) + 1;
+    $scope.decrementCard = function(card, event) {
+        const currentQty = parseInt(card.quantity || "0", 10);
+        if (currentQty > 1) {
+            const newQty = currentQty - 1;
             updateCardQuantity(card, newQty);
-        };
-
-        $scope.decrementCard = function(card, event) {
-            const currentQty = parseInt(card.quantity || "0", 10);
-            if (currentQty > 1) {
-                const newQty = currentQty - 1;
-                updateCardQuantity(card, newQty);
-            }
-        };
-
-        function updateCardQuantity(card, newQuantity) {
-            card.quantity = newQuantity;
-
-            if (card._quantityTagElement) {
-                card._quantityTagElement.textContent = newQuantity;
-            }
-            const payload = {
-                card_sys_id: card.sys_id, // assuming each card has sys_id
-                new_quantity: newQuantity
-            };
-
-            c.server.get(payload).then(function(response) {
-                if (response.success) {
-                    card.quantity = newQuantity;
-
-                    // Refresh quantity display in the column
-                    $scope.columnsList = $scope.columnsList.map(col => {
-                        col.totalQuantity = col.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
-                        return col;
-                    });
-
-                    $scope.$applyAsync();
-                }
-            });
         }
+    };
 
-
-        // Main layout logic (after DOM render)
-        $timeout(function renderBalancedColumns() {
-            const columnsContainer = document.getElementById('dynamic-deck-columns');
-            if (!columnsContainer || !$scope.data.columns) return;
-
-            const NUM_COLUMNS = 7;
-            const OVERLAP_PER_CARD = 25 * 16;
-            const columnHeights = Array(NUM_COLUMNS).fill(0);
-            const columns = [];
-
-            // Create empty columns
-            for (let i = 0; i < NUM_COLUMNS; i++) {
-                const col = document.createElement('div');
-                col.className = 'deck-column';
-                columns.push(col);
-                columnsContainer.appendChild(col);
+    function updateCardQuantity(card, newQuantity) {
+        card.quantity = newQuantity;
+        const payload = {
+            card_sys_id: card.sys_id,
+            new_quantity: newQuantity
+        };
+        c.server.get(payload).then(function(response) {
+            if (response.success) {
+                card.quantity = newQuantity;
+                $scope.$applyAsync();
             }
+        });
+    }
 
-            const dynamicCols = $scope.columnsList.filter(col =>
-                col.key !== 'Maybeboard' && col.key !== 'Sideboard'
-            );
+    $scope.getCardTags = function(card) {
+        var tags = [];
+        if (card.is_commander) tags.push("Commander");
+        if (card.is_maybeboard) tags.push("Maybeboard");
+        if (card.is_sideboard) tags.push("Sideboard");
+        return tags.join(", ");
+    };
 
-            dynamicCols.forEach(col => {
-                const estimatedHeight = col.cards.length * OVERLAP_PER_CARD;
-                const shortestIndex = columnHeights.indexOf(Math.min(...columnHeights));
-                const targetCol = columns[shortestIndex];
-                columnHeights[shortestIndex] += estimatedHeight;
+    $scope.openCardModal = function(card, event) {
+        // Placeholder for modal logic
+        alert('Card modal for: ' + card.name);
+    };
 
-                const colHeader = document.createElement('div');
-                colHeader.className = 'deck-column-header';
-                colHeader.textContent = col.key; // no quantity for now
-                targetCol.appendChild(colHeader);
-
-                const stack = document.createElement('div');
-                stack.className = 'card-stack';
-
-                col.cards.forEach((card, index) => {
-                    const cardButton = document.createElement('button');
-                    cardButton.className = 'stacked-card card-button';
-                    cardButton.style.zIndex = (index + 1) * 10;
-                    cardButton.type = 'button';
-
-                    const imgContainer = document.createElement('div');
-                    imgContainer.className = 'image-container';
-                    if (card.flags.is_flipped) {
-                        imgContainer.classList.add('flipped');
-                    }
-
-                    // Create inner flipper
-                    const flipper = document.createElement('div');
-                    flipper.className = 'flipper';
-
-                    // FRONT FACE
-                    const front = document.createElement('div');
-                    front.className = 'front';
-
-                    const frontImg = document.createElement('img');
-                    frontImg.className = 'card-face front-face';
-                    frontImg.src = card.face_one.image;
-                    frontImg.alt = card.name;
-
-                    front.appendChild(frontImg);
-
-                    // BACK FACE
-                    const back = document.createElement('div');
-                    back.className = 'back';
-
-                    if (card.face_two.image) {
-                        const backImg = document.createElement('img');
-                        backImg.className = 'card-face back-face';
-                        backImg.src = card.face_two.image;
-                        backImg.alt = `${card.name} (Back)`;
-                        back.appendChild(backImg);
-                    }
-
-                    flipper.appendChild(front);
-                    flipper.appendChild(back);
-                    imgContainer.appendChild(flipper);
-
-                    // Add back if it exists
-                    if (card.face_two.image) {
-                        const back = document.createElement('img');
-                        back.className = 'card-face back-face';
-                        back.src = card.face_two.image;
-                        back.alt = `${card.name} (Back)`;
-                    }
-
-                    cardButton.appendChild(imgContainer);
-
-                    const quantityTag = document.createElement('div');
-                    quantityTag.className = 'quantity-tag';
-                    quantityTag.textContent = card.quantity;
-
-                    card._quantityTagElement = quantityTag;
-
-                    imgContainer.appendChild(quantityTag);
-
-                    // Game Changer tag (top-right)
-                    if (card.flags.is_gc) {
-                        const gameChangerTag = document.createElement('div');
-                        gameChangerTag.className = 'game-changer-tag';
-
-                        const icon = document.createElement('img');
-                        icon.src = 'x_759224_magic_c_0.game_changer_diamond.png';
-                        icon.alt = 'Game Changer';
-                        icon.className = 'game-changer-icon';
-
-                        gameChangerTag.appendChild(icon);
-                        imgContainer.appendChild(gameChangerTag);
-                    }
-
-                    const img = document.createElement('img');
-                    img.className = 'image';
-                    img.src = card.face_one.image;
-                    img.alt = card.name;
-
-                    if (card.flags.is_foil) {
-                        const foilOverlay = document.createElement('img');
-                        foilOverlay.className = 'foil-overlay';
-                        foilOverlay.src = 'x_759224_magic_c_0.foil.png';
-                        foilOverlay.alt = 'Foil overlay';
-                        imgContainer.appendChild(foilOverlay);
-                    }
-
-                    imgContainer.appendChild(img);
-                    cardButton.appendChild(imgContainer);
-                    stack.appendChild(cardButton);
-
-                    const hoverButtons = document.createElement('div');
-                    hoverButtons.className = 'hover-buttons';
-
-                    if (card.flags.is_multifaced) {
-                        const flipBtn = document.createElement('button');
-                        flipBtn.className = 'hover-btn flip';
-                        flipBtn.textContent = '⟳';
-
-                        flipBtn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            card.flags.is_flipped = !card.flags.is_flipped;
-                            imgContainer.classList.toggle('flipped');
-                        });
-
-                        hoverButtons.appendChild(flipBtn);
-
-                    }
-                    // If the user is an author, they can change quantity
-                    if (c.data.is_author) {
-                        const plusBtn = document.createElement('button');
-                        plusBtn.className = 'hover-btn plus';
-                        plusBtn.textContent = '+';
-                        plusBtn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            $scope.incrementCard(card, e);
-                            $scope.$applyAsync();
-                        });
-
-                        const minusBtn = document.createElement('button');
-                        minusBtn.className = 'hover-btn minus';
-                        minusBtn.textContent = '−';
-                        minusBtn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            $scope.decrementCard(card, e);
-                            $scope.$applyAsync();
-                        });
-
-                        hoverButtons.appendChild(plusBtn);
-                        hoverButtons.appendChild(minusBtn);
-                    }
-
-                    const modalBtn = document.createElement('button');
-                    modalBtn.className = 'hover-btn card-modal';
-                    modalBtn.textContent = '>';
-                    modalBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        $scope.openCardModal(card, e);
-                        $scope.$applyAsync();
-                    });
-
-
-                    hoverButtons.appendChild(modalBtn);
-
-                    imgContainer.appendChild(hoverButtons);
-                    cardButton.appendChild(imgContainer);
-
-                    const priceInfo = document.createElement('div');
-                    priceInfo.className = 'price-info';
-
-                    const priceDiv = document.createElement('div');
-                    priceDiv.className = 'prices';
-                    priceDiv.textContent = 'Price: $' + card.price;
-
-                    priceInfo.appendChild(priceDiv);
-                    cardButton.appendChild(priceInfo);
-
-                    stack.appendChild(cardButton);
-                });
-
-                targetCol.appendChild(stack);
-            });
+    $scope.getCategoryQuantity = function(cat) {
+        if (!cat || !cat.cards) return 0;
+        return cat.cards.reduce(function(sum, c) { return sum + (parseInt(c.quantity, 10) || 0); }, 0);
+    };
+    $scope.getCategoryPrice = function(cat) {
+        if (!cat || !cat.cards) return 0;
+        var total = cat.cards.reduce(function(sum, c) {
+            var price = parseFloat(c.price);
+            var qty = parseInt(c.quantity, 10) || 0;
+            if (isNaN(price)) price = 0;
+            return sum + (price * qty);
         }, 0);
+        return total;
     };
 };]]></client_script>
         <controller_as>c</controller_as>
@@ -639,7 +410,8 @@
 
     // --- Regular Deck Loading Logic ---
     var deckId = (typeof input !== 'undefined' && input.deck_id) ? input.deck_id : $sp.getParameter("deck_id");
-    data.columns = {};
+    data.categories = [];
+    data.all_cards = [];
     data.deck_sys_id = deckId;
 
     if (!deckId) {
@@ -666,31 +438,29 @@
     deckCardGR.addQuery("deck", deckId);
     deckCardGR.query();
 
+    var categoryMap = {};
+    var allCards = [];
+
     while (deckCardGR.next()) {
         var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
-
         cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
         cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
         cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
         cardData.quantity = deckCardGR.getValue('quantity');
-        cardData.sys_id = deckCardGR.getUniqueValue(); // Needed for updates
+        cardData.sys_id = deckCardGR.getUniqueValue();
 
         let category = "";
-
-        // Commander
         if (cardData.flags.is_commander) {
             category = "Commander";
         } else {
             var notes = deckCardGR.getValue("notes") || "";
             var trimmedNote = notes.trim();
-
             if (trimmedNote) {
                 var tags = trimmedNote.split(",");
                 if (tags.length && tags[0].trim()) {
                     category = tags[0].trim();
                 }
             }
-
             if (!category) {
                 if (cardData.is_maybeboard) {
                     category = "Maybeboard";
@@ -698,11 +468,9 @@
                     category = "Sideboard";
                 }
             }
-
             if (!category) {
                 var typeLine = (cardData.face_one.type_line || "").toLowerCase();
                 typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
-
                 var typePriority = [
                     { type: "creature", category: "Creature" },
                     { type: "planeswalker", category: "Planeswalker" },
@@ -713,90 +481,76 @@
                     { type: "battle", category: "Battle" },
                     { type: "land", category: "Land" }
                 ];
-
                 for (var i = 0; i < typePriority.length; i++) {
                     if (typeLine.indexOf(typePriority[i].type) !== -1) {
                         category = typePriority[i].category;
                         break;
                     }
                 }
-
                 if (!category) {
                     category = "Other";
                 }
             }
         }
-
-        if (!data.columns[category]) {
-            data.columns[category] = [];
+        if (!categoryMap[category]) {
+            categoryMap[category] = [];
         }
-
-        data.columns[category].push(cardData);
+        categoryMap[category].push(cardData);
+        allCards.push(cardData);
     }
 
     // Sort cards within each category
-    for (var column in data.columns) {
-        data.columns[column].sort(function(a, b) {
-            return a.name.localeCompare(b.name);
+    var orderedCategories = [];
+    var commanderFirst = categoryMap["Commander"] ? ["Commander"] : [];
+    var rest = Object.keys(categoryMap).filter(function(k){return k!=="Commander";}).sort();
+    var allKeys = commanderFirst.concat(rest);
+    allKeys.forEach(function(key) {
+        orderedCategories.push({
+            name: key,
+            cards: categoryMap[key]
         });
-    }
-
-    // Commander always first
-    if (data.columns["Commander"]) {
-        const reordered = {
-            "Commander": data.columns["Commander"]
-        };
-
-        Object.keys(data.columns).sort().forEach(function(key) {
-            if (key !== "Commander") {
-                reordered[key] = data.columns[key];
-            }
-        });
-
-        data.columns = reordered;
-    }
-
-    // --- Utility ---
-    function getImageURL(html) {
-        if (!html) return "";
-        var match = html.match(/<img[^>]+src="([^"]+)"/);
-        return match ? match[1] : "";
-    }
+    });
+    data.categories = orderedCategories;
+    data.all_cards = allCards;
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>174</sys_mod_count>
+        <sys_mod_count>190</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-10 02:53:06</sys_updated_on>
-        <template><![CDATA[<div class="deck-container">
-  <!-- Wrapping Deck Columns -->
-  <div class="deck-columns" id="dynamic-deck-columns">
-  </div>
+        <sys_updated_on>2025-09-10 22:59:26</sys_updated_on>
+        <template><![CDATA[<div class="deck-layout-switcher">
+  <button ng-class="{'active': layoutMode === 'columns'}" ng-click="setLayout('columns')">Columns</button>
+  <button ng-class="{'active': layoutMode === 'stacked'}" ng-click="setLayout('stacked')">Stacked</button>
+</div>
 
-  <!-- Anchored Columns: Maybeboard + Sideboard -->
-  <div class="deck-anchored-columns">
-    <div class="deck-column"
-         ng-repeat="col in columnsList track by col.key"
-         ng-if="col.key === 'Maybeboard' || col.key === 'Sideboard'">
-      <div class="deck-column-header">
-        {{ col.key }} <span class="column-count">({{ col.totalQuantity }})</span>
+<div class="deck-container" ng-if="layoutMode === 'columns'">
+  <div class="deck-columns">
+    <div class="deck-column" ng-repeat="cat in categories track by cat.name">
+      <div class="deck-column-header category-header-flex">
+        <div class="category-title-row">
+          <span class="category-title">{{ cat.name }}</span>
+          <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
+        </div>
+        <div class="category-meta-row">
+          <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
+          <span class="category-price">Price: {{ getCategoryPrice(cat) | number:2 }}</span>
+        </div>
       </div>
-
       <div class="card-stack">
         <div class="stacked-card"
-             ng-repeat="card in col.cards"
+             ng-repeat="card in cat.cards track by card.sys_id"
              ng-style="{'z-index': ($index + 1) * 10}">
           <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
-            <img class="image back-face" ng-if="card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
+            <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
             <div class="game-changer-tag" ng-if="card.flags.is_gc">
               <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
@@ -804,19 +558,59 @@
             <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
             <div class="hover-buttons">
               <button class="hover-btn flip" ng-if="card.flags.is_multifaced" ng-click="flipCard(card)">⟳</button>
-              <button class="hover-btn plus" ng-if="c.data.is_author" ng-click="incrementCard(card, $event)">+</button>
-              <button class="hover-btn minus" ng-if="c.data.is_author" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn plus" ng-if="is_author" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-if="is_author" ng-click="decrementCard(card, $event)">−</button>
               <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
             </div>
           </div>
           <div class="price-info">
-            <div class="prices">Price: ${{card.price}} </div>
+            <div class="prices">{{card.price | number:2}} </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-]]></template>
+
+<div class="deck-container" ng-if="layoutMode === 'stacked'">
+  <div class="deck-stacked">
+    <div ng-repeat="cat in categories track by cat.name">
+      <div class="deck-column-header category-header-flex">
+        <div class="category-title-row">
+          <span class="category-title">{{ cat.name }}</span>
+          <span class="category-header-actions"> </span>
+        </div>
+        <div class="category-meta-row">
+          <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
+          <span class="category-price">Price: {{ getCategoryPrice(cat) | number:2 }}</span>
+        </div>
+      </div>
+      <div class="card-stack stacked-mode">
+        <div class="stacked-card"
+             ng-repeat="card in cat.cards track by card.sys_id"
+             ng-style="{'z-index': ($index + 1) * 10}">
+          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+            <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
+            <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
+            <div class="quantity-tag">{{card.quantity}}</div>
+            <div class="game-changer-tag" ng-if="card.flags.is_gc">
+              <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
+            </div>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
+            <div class="hover-buttons">
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced" ng-click="flipCard(card)">⟳</button>
+              <button class="hover-btn plus" ng-if="is_author" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-if="is_author" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
+            </div>
+          </div>
+          <div class="price-info">
+            <div class="prices">{{card.price | number:2}} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
     </sp_widget>
 </record_update>
