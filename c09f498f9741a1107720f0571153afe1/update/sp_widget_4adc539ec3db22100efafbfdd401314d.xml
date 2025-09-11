@@ -379,14 +379,14 @@
   transform: rotateY(0deg);&#13;
 }&#13;
 &#13;
-.deck-layout-switcher button {&#13;
-  background-color: $brand-secondary;&#13;
-  color: $black;&#13;
-}&#13;
-&#13;
 .category-meta-row{&#13;
- display:flex;&#13;
+  display:flex;&#13;
   justify-content: space-between;&#13;
+  font-weight:normal;&#13;
+  font-size:1.2rem;&#13;
+}&#13;
+.category-title {&#13;
+ font-size:2.5rem; &#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -515,9 +515,13 @@
     // Custom ordering: Commander, (alphabetical others), Maybeboard, Sideboard
     var maybeboard = categoryMap["Maybeboard"] ? ["Maybeboard"] : [];
     var sideboard = categoryMap["Sideboard"] ? ["Sideboard"] : [];
-    var rest = Object.keys(categoryMap).filter(function(k){
-        return k!=="Commander" && k!=="Maybeboard" && k!=="Sideboard";
-    }).sort();
+   var rest = Object.keys(categoryMap)
+    .filter(function(k){
+        return k !== "Commander" && k !== "Maybeboard" && k !== "Sideboard";
+    })
+    .sort(function(a, b) {
+        return categoryMap[a].length - categoryMap[b].length;
+    });
     var allKeys = commanderFirst.concat(rest, maybeboard, sideboard);
     allKeys.forEach(function(key) {
         orderedCategories.push({
@@ -540,7 +544,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-11 01:46:26</sys_updated_on>
+        <sys_updated_on>2025-09-11 19:27:52</sys_updated_on>
         <template><![CDATA[<div class="deck-layout-switcher">
   <button ng-class="{'active': layoutMode === 'columns'}" ng-click="setLayout('columns')">Columns</button>
   <button ng-class="{'active': layoutMode === 'stacked'}" ng-click="setLayout('stacked')">Stacked</button>
@@ -617,7 +621,7 @@
             </div>
           </div>
           <div class="price-info">
-            <div class="prices"ng-bind="'$' + (card.price | number:2)"></div>
+            <div class="prices" ng-bind="'$' + (card.price | number:2)"></div>
           </div>
         </div>
       </div>
@@ -653,6 +657,7 @@
             </div>
           </div>
           <div class="price-info">
+            <div class="prices">{{card.price | number:2}} </div>
             <div class="prices" ng-bind="'$' + (card.price | number:2)"></div>
           </div>
         </div>
@@ -660,7 +665,6 @@
     </div>
   </div>
 </div>
-
 <div class="deck-container" ng-if="layoutMode === 'stacked'">
   <div class="deck-stacked">
     <div ng-repeat="cat in categories track by cat.name">
