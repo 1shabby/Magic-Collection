@@ -246,23 +246,23 @@
 }&#13;
 &#13;
 .game-changer-tag {&#13;
-    position: absolute;&#13;
-    top: 0;&#13;
-    right: 0;&#13;
-    width: 45px;&#13;
-    height: 45px;&#13;
-    background-color: rgba(255, 165, 0, 0.9); /* Orange/gold tone */&#13;
-    color: white;&#13;
-    font-size: 18px;&#13;
-    font-weight: bold;&#13;
-    display: flex;&#13;
-    align-items: flex-start;&#13;
-    justify-content: flex-end;&#13;
-    padding: 4px;&#13;
-    clip-path: polygon(100% 0, 0 0, 100% 100%);&#13;
-    z-index: 20;&#13;
-    pointer-events: none;&#13;
-    text-shadow: 1px 1px 2px black;&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  right: 0;&#13;
+  width: 45px;&#13;
+  height: 45px;&#13;
+  background-color: rgba(255, 165, 0, 0.9); /* Orange/gold tone */&#13;
+  color: white;&#13;
+  font-size: 18px;&#13;
+  font-weight: bold;&#13;
+  display: flex;&#13;
+  align-items: flex-start;&#13;
+  justify-content: flex-end;&#13;
+  padding: 4px;&#13;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);&#13;
+  z-index: 20;&#13;
+  pointer-events: none;&#13;
+  text-shadow: 1px 1px 2px black;&#13;
 }&#13;
 &#13;
 .game-changer-icon {&#13;
@@ -355,7 +355,7 @@
 }&#13;
 &#13;
 .hover-btn.minus {&#13;
- margin-bottom:1rem; &#13;
+  margin-bottom:1rem; &#13;
 }&#13;
 &#13;
 .hover-btn:hover {&#13;
@@ -377,6 +377,16 @@
 .image-container.flipped .back-face {&#13;
   display: block;&#13;
   transform: rotateY(0deg);&#13;
+}&#13;
+&#13;
+.deck-layout-switcher button {&#13;
+  background-color: $brand-secondary;&#13;
+  color: $black;&#13;
+}&#13;
+&#13;
+.category-meta-row{&#13;
+ display:flex;&#13;
+  justify-content: space-between;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -502,8 +512,13 @@
     // Sort cards within each category
     var orderedCategories = [];
     var commanderFirst = categoryMap["Commander"] ? ["Commander"] : [];
-    var rest = Object.keys(categoryMap).filter(function(k){return k!=="Commander";}).sort();
-    var allKeys = commanderFirst.concat(rest);
+    // Custom ordering: Commander, (alphabetical others), Maybeboard, Sideboard
+    var maybeboard = categoryMap["Maybeboard"] ? ["Maybeboard"] : [];
+    var sideboard = categoryMap["Sideboard"] ? ["Sideboard"] : [];
+    var rest = Object.keys(categoryMap).filter(function(k){
+        return k!=="Commander" && k!=="Maybeboard" && k!=="Sideboard";
+    }).sort();
+    var allKeys = commanderFirst.concat(rest, maybeboard, sideboard);
     allKeys.forEach(function(key) {
         orderedCategories.push({
             name: key,
@@ -518,14 +533,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>190</sys_mod_count>
+        <sys_mod_count>203</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-10 22:59:26</sys_updated_on>
+        <sys_updated_on>2025-09-11 01:46:26</sys_updated_on>
         <template><![CDATA[<div class="deck-layout-switcher">
   <button ng-class="{'active': layoutMode === 'columns'}" ng-click="setLayout('columns')">Columns</button>
   <button ng-class="{'active': layoutMode === 'stacked'}" ng-click="setLayout('stacked')">Stacked</button>
@@ -533,7 +548,7 @@
 
 <div class="deck-container" ng-if="layoutMode === 'columns'">
   <div class="deck-columns">
-    <div class="deck-column" ng-repeat="cat in categories track by cat.name">
+    <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name !== 'Maybeboard' && cat.name !== 'Sideboard'">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
           <span class="category-title">{{ cat.name }}</span>
@@ -541,7 +556,7 @@
         </div>
         <div class="category-meta-row">
           <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
-          <span class="category-price">Price: {{ getCategoryPrice(cat) | number:2 }}</span>
+          <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
         </div>
       </div>
       <div class="card-stack">
@@ -564,7 +579,81 @@
             </div>
           </div>
           <div class="price-info">
-            <div class="prices">{{card.price | number:2}} </div>
+            <div class="prices" ng-bind="'$' + (card.price | number:2)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="deck-anchored-columns">
+    <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name === 'Maybeboard'">
+      <div class="deck-column-header category-header-flex">
+        <div class="category-title-row">
+          <span class="category-title">{{ cat.name }}</span>
+          <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
+        </div>
+        <div class="category-meta-row">
+          <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
+          <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
+        </div>
+      </div>
+      <div class="card-stack">
+        <div class="stacked-card"
+             ng-repeat="card in cat.cards track by card.sys_id"
+             ng-style="{'z-index': ($index + 1) * 10}">
+          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+            <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
+            <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
+            <div class="quantity-tag">{{card.quantity}}</div>
+            <div class="game-changer-tag" ng-if="card.flags.is_gc">
+              <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
+            </div>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
+            <div class="hover-buttons">
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced" ng-click="flipCard(card)">⟳</button>
+              <button class="hover-btn plus" ng-if="is_author" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-if="is_author" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
+            </div>
+          </div>
+          <div class="price-info">
+            <div class="prices"ng-bind="'$' + (card.price | number:2)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name === 'Sideboard'">
+      <div class="deck-column-header category-header-flex">
+        <div class="category-title-row">
+          <span class="category-title">{{ cat.name }}</span>
+          <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
+        </div>
+        <div class="category-meta-row">
+          <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
+          <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
+        </div>
+      </div>
+      <div class="card-stack">
+        <div class="stacked-card"
+             ng-repeat="card in cat.cards track by card.sys_id"
+             ng-style="{'z-index': ($index + 1) * 10}">
+          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+            <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
+            <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
+            <div class="quantity-tag">{{card.quantity}}</div>
+            <div class="game-changer-tag" ng-if="card.flags.is_gc">
+              <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
+            </div>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
+            <div class="hover-buttons">
+              <button class="hover-btn flip" ng-if="card.flags.is_multifaced" ng-click="flipCard(card)">⟳</button>
+              <button class="hover-btn plus" ng-if="is_author" ng-click="incrementCard(card, $event)">+</button>
+              <button class="hover-btn minus" ng-if="is_author" ng-click="decrementCard(card, $event)">−</button>
+              <button class="hover-btn card-modal" ng-click="openCardModal(card, $event)">></button>
+            </div>
+          </div>
+          <div class="price-info">
+            <div class="prices" ng-bind="'$' + (card.price | number:2)"></div>
           </div>
         </div>
       </div>
@@ -582,7 +671,7 @@
         </div>
         <div class="category-meta-row">
           <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
-          <span class="category-price">Price: {{ getCategoryPrice(cat) | number:2 }}</span>
+          <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
         </div>
       </div>
       <div class="card-stack stacked-mode">
@@ -605,7 +694,7 @@
             </div>
           </div>
           <div class="price-info">
-            <div class="prices">{{card.price | number:2}} </div>
+            <div class="prices" ng-bind="'$' + (card.price | number:2)"></div>
           </div>
         </div>
       </div>
