@@ -68,8 +68,11 @@ $red-dark: #891616;&#13;
 $red-light: #F7E8E8;&#13;
 $red-faded: #D99A9A;&#13;
 &#13;
+/* grey */&#13;
+$grey-dark: #232323;&#13;
+&#13;
 /* Bootstrap colors/brand colors */&#13;
-$brand-primary: $black-green;&#13;
+$brand-primary: $grey-dark;&#13;
 $brand-secondary: $neon-carrot;&#13;
 $brand-tertiary: $white-smoke;&#13;
 $brand-success: $servos-teal-darker;&#13;
@@ -122,20 +125,21 @@ $quintuple-space: 40px;</css_variables>
         <footer display_value="LegalFooter">64407ec3532332000d620d0323dc3436</footer>
         <footer_fixed>true</footer_fixed>
         <header display_value="Stock Header">bf5ec2f2cb10120000f8d856634c9c0c</header>
+        <matching_now_experience_theme/>
         <name>Magic Theme</name>
         <navbar_fixed>true</navbar_fixed>
         <sys_class_name>sp_theme</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-20 03:10:14</sys_updated_on>
+        <sys_updated_on>2025-09-12 03:16:18</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>
