@@ -382,23 +382,26 @@
 /* Move only the cards *after* the hovered one downward */&#13;
 .stacked-card:hover ~ .stacked-card {&#13;
   transform: translateY(35rem);&#13;
-  z-index: -999 !important /* Moves cards below the card stack z-index*/&#13;
+  z-index: -999 !important; /* Moves cards below the card stack z-index */&#13;
 }&#13;
 &#13;
+/* Unified Image Container */&#13;
 .image-container {&#13;
   position: relative;&#13;
-  perspective:1000px;&#13;
-  max-width: 250px;&#13;
+  perspective: 1000px;&#13;
+  max-width: 250px;       /* unified max width */&#13;
   width: 100%;&#13;
+  aspect-ratio: 2.5 / 3.5; /* consistent aspect ratio */&#13;
   border-radius: 5%;&#13;
   overflow: hidden;&#13;
-  /*box-shadow: 0 4px 8px rgba(0,0,0,0.3); */&#13;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);&#13;
 }&#13;
-&#13;
 &#13;
 /* Image */&#13;
 .image {&#13;
   width: 100%;&#13;
+  height: 100%;&#13;
+  object-fit: cover; /* Ensure image covers container */&#13;
   border-radius: 5%;&#13;
   display: block;&#13;
 }&#13;
@@ -527,7 +530,6 @@
   transform: rotateY(180deg);&#13;
 }&#13;
 &#13;
-&#13;
 .hover-buttons {&#13;
   position: absolute;&#13;
   top: 4.5rem;&#13;
@@ -557,7 +559,6 @@
   left: -20rem;&#13;
 }&#13;
 &#13;
-&#13;
 .hover-btn.card-modal {&#13;
   background-color: rgba(249,250,251,.05);&#13;
   border: 2px solid hsla(0,0%,100%,.5);&#13;
@@ -580,10 +581,13 @@
   display:flex;&#13;
   justify-content:center;&#13;
 }&#13;
+&#13;
+/* Hide back-face by default */&#13;
 .image-container .back-face {&#13;
   display: none;&#13;
 }&#13;
 &#13;
+/* Show/hide faces on flip */&#13;
 .image-container.flipped .front-face {&#13;
   display: none;&#13;
 }&#13;
@@ -601,17 +605,35 @@
 }&#13;
 &#13;
 .deck-controls {&#13;
- justify-content:center;&#13;
+  justify-content:center;&#13;
 }&#13;
 &#13;
 .form-group label {&#13;
- font-weight:bold; &#13;
+  font-weight:bold; &#13;
 }&#13;
 &#13;
 .form-control {&#13;
   background-color:$brand-primary;&#13;
   color:white;&#13;
   border-color:$brand-secondary;&#13;
+}&#13;
+&#13;
+/* Updated grid layout to match column card size and gaps */&#13;
+.card-grid {&#13;
+  display: grid;&#13;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* match columns */&#13;
+  gap: 2rem; /* match columns */&#13;
+}&#13;
+&#13;
+/* Grid card uses full width with max 250px */&#13;
+.grid-card {&#13;
+  position: relative;&#13;
+  width: 100%;&#13;
+  max-width: 250px;&#13;
+}&#13;
+&#13;
+.deck-grid {&#13;
+  width:100%;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -762,14 +784,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>221</sys_mod_count>
+        <sys_mod_count>227</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-12 21:26:45</sys_updated_on>
+        <sys_updated_on>2025-09-12 21:56:55</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -944,9 +966,9 @@
     </div>
   </div>
 </div>
-<div class="deck-container" ng-if="layoutMode === 'stacked'">
-  <div class="deck-stacked">
-    <div ng-repeat="cat in categories track by cat.name">
+<div class="deck-container" ng-if="layoutMode === 'grid'">
+  <div class="deck-grid">
+    <div class="deck-grid-category" ng-repeat="cat in categories track by cat.name">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
           <h4 class="category-title">
@@ -959,25 +981,25 @@
             <!-- Fallback to name (for non-CMC headers like "Unknown") -->
             <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
           </h4>
-          <span class="category-header-actions"> </span>
+          <span class="category-header-actions"></span>
         </div>
         <div class="category-meta-row">
           <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span>
           <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
         </div>
       </div>
-      <div class="card-stack stacked-mode">
-        <div class="stacked-card"
-             ng-repeat="card in cat.cards track by card.sys_id"
-             ng-style="{'z-index': ($index + 1) * 10}">
+
+      <!-- Grid of cards -->
+      <div class="card-grid">
+        <div class="grid-card" ng-repeat="card in cat.cards track by card.sys_id">
           <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
             <div class="game-changer-tag" ng-if="card.flags.is_gc">
-              <img src='x_759224_magic_c_0.game_changer_diamond.png' class="game-changer-icon"/>
+              <img src="x_759224_magic_c_0.game_changer_diamond.png" class="game-changer-icon" />
             </div>
-            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil"/>
+            <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" ng-if="card.flags.is_foil" />
             <div class="hover-buttons">
               <button class="hover-btn flip" ng-if="card.flags.is_multifaced" ng-click="flipCard(card)">⟳</button>
               <button class="hover-btn plus" ng-if="is_author" ng-click="incrementCard(card, $event)">+</button>
