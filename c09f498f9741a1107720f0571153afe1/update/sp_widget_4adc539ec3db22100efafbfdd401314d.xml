@@ -7,17 +7,69 @@
     if (c.data.deck_name) {
         document.title = c.data.deck_name;
     }
+	$scope.is_author = c.data.is_author;
 
     // Initialize model values
-    $scope.layoutMode = 'columns';  // default layout
-    $scope.groupBy = 'category';    // default group
+    $scope.layoutMode = 'columns'; // default layout
+    $scope.groupBy = 'category'; // default group
     $scope.sortBy = 'alphabetical'; // default sort
 
     // Safely initialize card data
     $scope.all_cards = c.data.all_cards || [];
 
+    function getCardType(card) {
+        const line = (card.face_one.type_line || "").toLowerCase();
+        const cleaned = line.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+
+        const priorities = [
+            "creature", "planeswalker", "instant",
+            "sorcery", "enchantment", "artifact",
+            "battle", "land"
+        ];
+
+        for (let i = 0; i < priorities.length; i++) {
+            if (cleaned.includes(priorities[i])) {
+                return priorities[i];
+            }
+        }
+
+        return "other";
+    }
+
+    function sortCards(cards) {
+        if (!Array.isArray(cards)) return [];
+
+        return cards.sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+
+            if ($scope.sortBy === 'cmc') {
+                const cmcA = parseFloat(a.cmc || 0);
+                const cmcB = parseFloat(b.cmc || 0);
+                if (cmcA !== cmcB) return cmcA - cmcB;
+                return nameA.localeCompare(nameB);
+            }
+
+            if ($scope.sortBy === 'type') {
+                const typeA = getCardType(a);
+                const typeB = getCardType(b);
+                if (typeA !== typeB) return typeA.localeCompare(typeB);
+                return nameA.localeCompare(nameB);
+            }
+
+            if ($scope.sortBy === 'price') {
+                const priceA = parseFloat(a.price || 0);
+                const priceB = parseFloat(b.price || 0);
+                if (priceA !== priceB) return priceA - priceB;
+                return nameA.localeCompare(nameB);
+            }
+
+            // Default: alphabetical
+            return nameA.localeCompare(nameB);
+        });
+    }
+
     $scope.groupCards = function() {
-        // Prevent running before cards are available
         if (!$scope.all_cards || !$scope.all_cards.length) {
             return;
         }
@@ -27,7 +79,6 @@
         const sideboard = [];
         const otherCards = [];
 
-        // Separate commander/maybeboard/sideboard
         $scope.all_cards.forEach(card => {
             if (card.flags.is_commander) {
                 commander.push(card);
@@ -42,9 +93,16 @@
 
         let groupMap = {};
 
-        // Group by Category (default)
+        // Group by Category
         if ($scope.groupBy === 'category') {
-            $scope.categories = angular.copy(c.data.categories || []);
+            const original = c.data.categories || [];
+            // Deep copy and sort each category's cards
+            $scope.categories = original.map(cat => {
+                return {
+                    name: cat.name,
+                    cards: sortCards(angular.copy(cat.cards))
+                };
+            });
             return;
         }
 
@@ -54,15 +112,38 @@
                 const typeLine = (card.face_one.type_line || "").toLowerCase();
                 const cleaned = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
 
-                const priorities = [
-                    { type: "creature", category: "Creature" },
-                    { type: "planeswalker", category: "Planeswalker" },
-                    { type: "instant", category: "Instant" },
-                    { type: "sorcery", category: "Sorcery" },
-                    { type: "enchantment", category: "Enchantment" },
-                    { type: "artifact", category: "Artifact" },
-                    { type: "battle", category: "Battle" },
-                    { type: "land", category: "Land" }
+                const priorities = [{
+                        type: "creature",
+                        category: "Creature"
+                    },
+                    {
+                        type: "planeswalker",
+                        category: "Planeswalker"
+                    },
+                    {
+                        type: "instant",
+                        category: "Instant"
+                    },
+                    {
+                        type: "sorcery",
+                        category: "Sorcery"
+                    },
+                    {
+                        type: "enchantment",
+                        category: "Enchantment"
+                    },
+                    {
+                        type: "artifact",
+                        category: "Artifact"
+                    },
+                    {
+                        type: "battle",
+                        category: "Battle"
+                    },
+                    {
+                        type: "land",
+                        category: "Land"
+                    }
                 ];
 
                 let matched = "Other";
@@ -89,7 +170,7 @@
             });
         }
 
-        // Convert group map to array for display
+        // Convert groupMap to array
         const grouped = Object.keys(groupMap)
             .sort((a, b) => {
                 const aNum = parseInt(a, 10);
@@ -98,40 +179,46 @@
             })
             .map(key => ({
                 name: key,
-                cards: groupMap[key]
+                cards: sortCards(groupMap[key])
             }));
 
-        // Attach commander, maybe, sideboard
+        // Commander / Sideboard / Maybeboard
         if (commander.length > 0) {
             grouped.unshift({
                 name: "Commander",
-                cards: commander
+                cards: sortCards(commander)
             });
         }
         if (maybeboard.length > 0) {
             grouped.push({
                 name: "Maybeboard",
-                cards: maybeboard
+                cards: sortCards(maybeboard)
             });
         }
         if (sideboard.length > 0) {
             grouped.push({
                 name: "Sideboard",
-                cards: sideboard
+                cards: sortCards(sideboard)
             });
         }
 
         $scope.categories = grouped;
     };
 
-    // Trigger re-grouping on groupBy change
+    // Watch for changes in groupBy and sortBy
     $scope.$watch('groupBy', function(newVal, oldVal) {
         if (newVal !== oldVal) {
             $scope.groupCards();
         }
     });
 
-    // Run initial grouping (delayed to ensure $scope.all_cards is ready)
+    $scope.$watch('sortBy', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.groupCards();
+        }
+    });
+
+    // Run initial grouping
     $timeout(function() {
         $scope.groupCards();
     });
@@ -150,7 +237,7 @@
         card.flags.is_flipped = !card.flags.is_flipped;
     };
 
-    // Quantity handling
+    // Quantity handlers
     $scope.incrementCard = function(card, event) {
         const newQty = parseInt(card.quantity || "0", 10) + 1;
         updateCardQuantity(card, newQty);
@@ -178,12 +265,12 @@
         });
     }
 
-    // Optional modal placeholder
+    // Optional modal
     $scope.openCardModal = function(card, event) {
         alert('Card modal for: ' + card.name);
     };
 
-    // Utility helpers
+    // Display helpers
     $scope.getCategoryQuantity = function(cat) {
         if (!cat || !cat.cards) return 0;
         return cat.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
@@ -205,8 +292,7 @@
         if (card.flags.is_sideboard) tags.push("Sideboard");
         return tags.join(", ");
     };
-};
-]]></client_script>
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
   display: flex;&#13;
@@ -676,14 +762,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>215</sys_mod_count>
+        <sys_mod_count>221</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-12 20:43:11</sys_updated_on>
+        <sys_updated_on>2025-09-12 21:26:45</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -722,7 +808,16 @@
     <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name !== 'Maybeboard' && cat.name !== 'Sideboard'">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
-          <h4 class="category-title">{{ cat.name }}</h4>
+          <h4 class="category-title">
+            <!-- Use mana pip when grouped by CMC and header is numeric -->
+            <img ng-if="groupBy === 'cmc' && !isNaN(parseInt(cat.name))"
+                 ng-src="x_759224_magic_c_0.generic_{{ cat.name }}.svg"
+                 alt="{{ cat.name }}"
+                 style="height: 24px; vertical-align: middle;" />
+
+            <!-- Fallback to name (for non-CMC headers like "Unknown") -->
+            <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
+          </h4>
           <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
         </div>
         <div class="category-meta-row">
@@ -760,7 +855,16 @@
     <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name === 'Maybeboard'">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
-          <h4 class="category-title">{{ cat.name }}</h4>
+          <h4 class="category-title">
+            <!-- Use mana pip when grouped by CMC and header is numeric -->
+            <img ng-if="groupBy === 'cmc' && !isNaN(parseInt(cat.name))"
+                 ng-src="x_759224_magic_c_0.generic_{{ cat.name }}.svg"
+                 alt="{{ cat.name }}"
+                 style="height: 24px; vertical-align: middle;" />
+
+            <!-- Fallback to name (for non-CMC headers like "Unknown") -->
+            <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
+          </h4>
           <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
         </div>
         <div class="category-meta-row">
@@ -796,7 +900,16 @@
     <div class="deck-column" ng-repeat="cat in categories track by cat.name" ng-if="cat.name === 'Sideboard'">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
-          <h4 class="category-title">{{ cat.name }}</h4>
+          <h4 class="category-title">
+            <!-- Use mana pip when grouped by CMC and header is numeric -->
+            <img ng-if="groupBy === 'cmc' && !isNaN(parseInt(cat.name))"
+                 ng-src="x_759224_magic_c_0.generic_{{ cat.name }}.svg"
+                 alt="{{ cat.name }}"
+                 style="height: 24px; vertical-align: middle;" />
+
+            <!-- Fallback to name (for non-CMC headers like "Unknown") -->
+            <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
+          </h4>
           <span class="category-header-actions"> <!-- placeholder for future actions/menu --> </span>
         </div>
         <div class="category-meta-row">
@@ -836,7 +949,16 @@
     <div ng-repeat="cat in categories track by cat.name">
       <div class="deck-column-header category-header-flex">
         <div class="category-title-row">
-          <h4 class="category-title">{{ cat.name }}</h4>
+          <h4 class="category-title">
+            <!-- Use mana pip when grouped by CMC and header is numeric -->
+            <img ng-if="groupBy === 'cmc' && !isNaN(parseInt(cat.name))"
+                 ng-src="x_759224_magic_c_0.generic_{{ cat.name }}.svg"
+                 alt="{{ cat.name }}"
+                 style="height: 24px; vertical-align: middle;" />
+
+            <!-- Fallback to name (for non-CMC headers like "Unknown") -->
+            <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
+          </h4>
           <span class="category-header-actions"> </span>
         </div>
         <div class="category-meta-row">
