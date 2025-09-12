@@ -8,19 +8,149 @@
         document.title = c.data.deck_name;
     }
 
-    $scope.layoutMode = 'columns'; // 'columns' or 'stacked'
-    $scope.categories = c.data.categories || [];
+    // Initialize model values
+    $scope.layoutMode = 'columns';  // default layout
+    $scope.groupBy = 'category';    // default group
+    $scope.sortBy = 'alphabetical'; // default sort
+
+    // Safely initialize card data
     $scope.all_cards = c.data.all_cards || [];
-    $scope.is_author = c.data.is_author;
+
+    $scope.groupCards = function() {
+        // Prevent running before cards are available
+        if (!$scope.all_cards || !$scope.all_cards.length) {
+            return;
+        }
+
+        const commander = [];
+        const maybeboard = [];
+        const sideboard = [];
+        const otherCards = [];
+
+        // Separate commander/maybeboard/sideboard
+        $scope.all_cards.forEach(card => {
+            if (card.flags.is_commander) {
+                commander.push(card);
+            } else if (card.flags.is_maybeboard) {
+                maybeboard.push(card);
+            } else if (card.flags.is_sideboard) {
+                sideboard.push(card);
+            } else {
+                otherCards.push(card);
+            }
+        });
+
+        let groupMap = {};
+
+        // Group by Category (default)
+        if ($scope.groupBy === 'category') {
+            $scope.categories = angular.copy(c.data.categories || []);
+            return;
+        }
+
+        // Group by Type
+        if ($scope.groupBy === 'type') {
+            otherCards.forEach(card => {
+                const typeLine = (card.face_one.type_line || "").toLowerCase();
+                const cleaned = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+
+                const priorities = [
+                    { type: "creature", category: "Creature" },
+                    { type: "planeswalker", category: "Planeswalker" },
+                    { type: "instant", category: "Instant" },
+                    { type: "sorcery", category: "Sorcery" },
+                    { type: "enchantment", category: "Enchantment" },
+                    { type: "artifact", category: "Artifact" },
+                    { type: "battle", category: "Battle" },
+                    { type: "land", category: "Land" }
+                ];
+
+                let matched = "Other";
+                for (let i = 0; i < priorities.length; i++) {
+                    if (cleaned.includes(priorities[i].type)) {
+                        matched = priorities[i].category;
+                        break;
+                    }
+                }
+
+                if (!groupMap[matched]) groupMap[matched] = [];
+                groupMap[matched].push(card);
+            });
+        }
+
+        // Group by CMC
+        if ($scope.groupBy === 'cmc') {
+            otherCards.forEach(card => {
+                const cmcValue = parseInt(card.cmc || 0, 10);
+                const key = isNaN(cmcValue) ? "Unknown" : cmcValue.toString();
+
+                if (!groupMap[key]) groupMap[key] = [];
+                groupMap[key].push(card);
+            });
+        }
+
+        // Convert group map to array for display
+        const grouped = Object.keys(groupMap)
+            .sort((a, b) => {
+                const aNum = parseInt(a, 10);
+                const bNum = parseInt(b, 10);
+                return isNaN(aNum) || isNaN(bNum) ? a.localeCompare(b) : aNum - bNum;
+            })
+            .map(key => ({
+                name: key,
+                cards: groupMap[key]
+            }));
+
+        // Attach commander, maybe, sideboard
+        if (commander.length > 0) {
+            grouped.unshift({
+                name: "Commander",
+                cards: commander
+            });
+        }
+        if (maybeboard.length > 0) {
+            grouped.push({
+                name: "Maybeboard",
+                cards: maybeboard
+            });
+        }
+        if (sideboard.length > 0) {
+            grouped.push({
+                name: "Sideboard",
+                cards: sideboard
+            });
+        }
+
+        $scope.categories = grouped;
+    };
+
+    // Trigger re-grouping on groupBy change
+    $scope.$watch('groupBy', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.groupCards();
+        }
+    });
+
+    // Run initial grouping (delayed to ensure $scope.all_cards is ready)
+    $timeout(function() {
+        $scope.groupCards();
+    });
+
+    // Layout change hook
+    $scope.onLayoutChange = function() {
+        console.log("Layout changed to:", $scope.layoutMode);
+    };
 
     $scope.setLayout = function(mode) {
         $scope.layoutMode = mode;
     };
 
+    // Card flip
     $scope.flipCard = function(card) {
         card.flags.is_flipped = !card.flags.is_flipped;
     };
 
+    // Quantity handling
     $scope.incrementCard = function(card, event) {
         const newQty = parseInt(card.quantity || "0", 10) + 1;
         updateCardQuantity(card, newQty);
@@ -48,34 +178,35 @@
         });
     }
 
-    $scope.getCardTags = function(card) {
-        var tags = [];
-        if (card.is_commander) tags.push("Commander");
-        if (card.is_maybeboard) tags.push("Maybeboard");
-        if (card.is_sideboard) tags.push("Sideboard");
-        return tags.join(", ");
-    };
-
+    // Optional modal placeholder
     $scope.openCardModal = function(card, event) {
-        // Placeholder for modal logic
         alert('Card modal for: ' + card.name);
     };
 
+    // Utility helpers
     $scope.getCategoryQuantity = function(cat) {
         if (!cat || !cat.cards) return 0;
-        return cat.cards.reduce(function(sum, c) { return sum + (parseInt(c.quantity, 10) || 0); }, 0);
+        return cat.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
     };
+
     $scope.getCategoryPrice = function(cat) {
         if (!cat || !cat.cards) return 0;
-        var total = cat.cards.reduce(function(sum, c) {
-            var price = parseFloat(c.price);
-            var qty = parseInt(c.quantity, 10) || 0;
-            if (isNaN(price)) price = 0;
-            return sum + (price * qty);
+        return cat.cards.reduce((sum, c) => {
+            const price = parseFloat(c.price) || 0;
+            const qty = parseInt(c.quantity, 10) || 0;
+            return sum + price * qty;
         }, 0);
-        return total;
     };
-};]]></client_script>
+
+    $scope.getCardTags = function(card) {
+        const tags = [];
+        if (card.flags.is_commander) tags.push("Commander");
+        if (card.flags.is_maybeboard) tags.push("Maybeboard");
+        if (card.flags.is_sideboard) tags.push("Sideboard");
+        return tags.join(", ");
+    };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
   display: flex;&#13;
@@ -383,9 +514,18 @@
   font-size:1.2rem;&#13;
 }&#13;
 &#13;
-.deck-layout-switcher button {&#13;
-  background-color: $brand-secondary;&#13;
-  color:$black;&#13;
+.deck-controls {&#13;
+ justify-content:center;&#13;
+}&#13;
+&#13;
+.form-group label {&#13;
+ font-weight:bold; &#13;
+}&#13;
+&#13;
+.form-control {&#13;
+  background-color:$brand-primary;&#13;
+  color:white;&#13;
+  border-color:$brand-secondary;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -536,17 +676,45 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>208</sys_mod_count>
+        <sys_mod_count>215</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-12 03:19:44</sys_updated_on>
-        <template><![CDATA[<div class="deck-layout-switcher">
-  <button ng-class="{'active': layoutMode === 'columns'}" ng-click="setLayout('columns')">Columns</button>
-  <button ng-class="{'active': layoutMode === 'stacked'}" ng-click="setLayout('stacked')">Stacked</button>
+        <sys_updated_on>2025-09-12 20:43:11</sys_updated_on>
+        <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
+  <!-- Display As -->
+  <div class="form-group">
+    <label for="displayAs">Display As</label>
+    <select id="displayAs" class="form-control" ng-model="layoutMode" ng-change="onLayoutChange()">
+      <option value="columns">Columns</option>
+      <option value="grid">Grid</option>
+      <option value="text">Text</option>
+    </select>
+  </div>
+
+  <!-- Group By -->
+  <div class="form-group">
+    <label for="groupBy">Group By</label>
+    <select id="groupBy" class="form-control" ng-model="groupBy">
+      <option value="category">Categories</option>
+      <option value="type">Type</option>
+      <option value="cmc">CMC</option>
+    </select>
+  </div>
+
+  <!-- Sort By -->
+  <div class="form-group">
+    <label for="sortBy">Sort By</label>
+    <select id="sortBy" class="form-control" ng-model="sortBy">
+      <option value="alphabetical">Alphabetical</option>
+      <option value="cmc">CMC</option>
+      <option value="type">Type</option>
+      <option value="price">Price</option>
+    </select>
+  </div>
 </div>
 
 <div class="deck-container" ng-if="layoutMode === 'columns'">
