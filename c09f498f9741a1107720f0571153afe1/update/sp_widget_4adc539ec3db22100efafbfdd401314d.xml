@@ -13,6 +13,7 @@
     $scope.layoutMode = 'columns'; // default layout
     $scope.groupBy = 'category'; // default group
     $scope.sortBy = 'alphabetical'; // default sort
+	$scope.is_singleton = c.data.is_singleton; // Stores if it's a singleton deck
 
     // Safely initialize card data
     $scope.all_cards = c.data.all_cards || [];
@@ -285,6 +286,65 @@
         }, 0);
     };
 
+    $scope.isCardIllegal = function(card) {
+        if (!card) return false;
+
+        // Explicitly marked illegal by the server
+        if (card.flags && card.flags.is_legal === false) {
+            return true;
+        }
+
+        const qty = parseInt(card.quantity, 10) || 1;
+        const name = (card.name || "").toLowerCase();
+        const typeLine = (card.face_one?.type_line || "").toLowerCase();
+
+        const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
+            .some(type => name.includes(type));
+
+        // Commander singleton rule (non-basic, non-exception)
+        if ($scope.is_singleton) {
+            if (!isBasicLand && qty > 1) {
+                return true;
+            }
+        }
+
+        // Standard rule: no more than 4 non-basic copies
+        if (!$scope.is_singleton) {
+            if (!isBasicLand && qty > 4) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    $scope.getIllegalityReason = function(card) {
+        if (!card) return "";
+
+        const qty = parseInt(card.quantity, 10) || 1;
+        const name = (card.name || "").toLowerCase();
+        const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
+            .some(type => name.includes(type));
+
+        if (card.flags && card.flags.is_legal === false) {
+            return "This card is illegal in the current format.";
+        }
+
+        if ($scope.is_singleton) {
+            if (!isBasicLand && qty > 1) {
+                return "Only one copy of a card is allowed in "+ c.data.format_name +" (except basic lands).";
+            }
+        } else {
+            if (!isBasicLand && qty > 4) {
+                return "More than four copies are not allowed in this format.";
+            }
+        }
+
+        return "";
+    };
+
+
+
     $scope.getCardTags = function(card) {
         const tags = [];
         if (card.flags.is_commander) tags.push("Commander");
@@ -321,6 +381,31 @@
   border-radius: $single-space;&#13;
   margin-top: $double-space;&#13;
   margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.card-illegal {&#13;
+  position: relative;&#13;
+  border: 0.5rem solid #e53935 !important; /* red border */&#13;
+  box-shadow: 0 0 10px rgba(229, 57, 53, 0.6);&#13;
+}&#13;
+&#13;
+.card-illegal::after {&#13;
+  content: attr(data-illegal-reason);&#13;
+  display: block;&#13;
+  background-color: rgba(200, 0, 0, 0.95);&#13;
+  color: white;&#13;
+  font-size: 14px;&#13;
+  font-weight: bold;&#13;
+  padding: 6px 8px;&#13;
+  text-align: center;&#13;
+  border-radius: 4px;&#13;
+  position: absolute;&#13;
+  bottom: 0;&#13;
+  width: 100%;&#13;
+  z-index: 50;&#13;
+  white-space: normal;     &#13;
+  overflow-wrap: break-word;&#13;
+  line-height: 1.2;          &#13;
 }&#13;
 &#13;
 /* Left side dynamic columns */&#13;
@@ -722,6 +807,19 @@
         return;
     }
 
+    var formatGR = deckGR.getValue('format') ? new GlideRecord('x_759224_magic_c_0_deck_formats') : null;
+    var formatName = '';
+    var isSingleton = false;
+
+    if (formatGR && formatGR.get(deckGR.getValue('format'))) {
+        formatName = formatGR.getValue('name');
+        isSingleton = formatGR.getValue('is_singleton') == '1';
+    }
+
+    data.format_name = formatName;
+    data.is_singleton = isSingleton;
+
+
     data.deck_name = deckGR.getValue('name');
     var authors = deckGR.getValue("author");
     data.is_author = authors.indexOf(gs.getUserID()) !== -1;
@@ -765,15 +863,38 @@
             if (!category) {
                 var typeLine = (cardData.face_one.type_line || "").toLowerCase();
                 typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
-                var typePriority = [
-                    { type: "creature", category: "Creature" },
-                    { type: "planeswalker", category: "Planeswalker" },
-                    { type: "instant", category: "Instant" },
-                    { type: "sorcery", category: "Sorcery" },
-                    { type: "enchantment", category: "Enchantment" },
-                    { type: "artifact", category: "Artifact" },
-                    { type: "battle", category: "Battle" },
-                    { type: "land", category: "Land" }
+                var typePriority = [{
+                        type: "creature",
+                        category: "Creature"
+                    },
+                    {
+                        type: "planeswalker",
+                        category: "Planeswalker"
+                    },
+                    {
+                        type: "instant",
+                        category: "Instant"
+                    },
+                    {
+                        type: "sorcery",
+                        category: "Sorcery"
+                    },
+                    {
+                        type: "enchantment",
+                        category: "Enchantment"
+                    },
+                    {
+                        type: "artifact",
+                        category: "Artifact"
+                    },
+                    {
+                        type: "battle",
+                        category: "Battle"
+                    },
+                    {
+                        type: "land",
+                        category: "Land"
+                    }
                 ];
                 for (var i = 0; i < typePriority.length; i++) {
                     if (typeLine.indexOf(typePriority[i].type) !== -1) {
@@ -799,13 +920,13 @@
     // Custom ordering: Commander, (alphabetical others), Maybeboard, Sideboard
     var maybeboard = categoryMap["Maybeboard"] ? ["Maybeboard"] : [];
     var sideboard = categoryMap["Sideboard"] ? ["Sideboard"] : [];
-   var rest = Object.keys(categoryMap)
-    .filter(function(k){
-        return k !== "Commander" && k !== "Maybeboard" && k !== "Sideboard";
-    })
-    .sort(function(a, b) {
-        return categoryMap[a].length - categoryMap[b].length;
-    });
+    var rest = Object.keys(categoryMap)
+        .filter(function(k) {
+            return k !== "Commander" && k !== "Maybeboard" && k !== "Sideboard";
+        })
+        .sort(function(a, b) {
+            return categoryMap[a].length - categoryMap[b].length;
+        });
     var allKeys = commanderFirst.concat(rest, maybeboard, sideboard);
     allKeys.forEach(function(key) {
         orderedCategories.push({
@@ -821,14 +942,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>228</sys_mod_count>
+        <sys_mod_count>234</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-13 12:56:14</sys_updated_on>
+        <sys_updated_on>2025-09-15 20:38:16</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -888,7 +1009,13 @@
         <div class="stacked-card"
              ng-repeat="card in cat.cards track by card.sys_id"
              ng-style="{'z-index': ($index + 1) * 10}">
-          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+          <div class="image-container"
+               ng-class="{
+                         'flipped': card.flags.is_flipped,
+                         'card-illegal': isCardIllegal(card)
+                         }"
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
+
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -935,7 +1062,12 @@
         <div class="stacked-card"
              ng-repeat="card in cat.cards track by card.sys_id"
              ng-style="{'z-index': ($index + 1) * 10}">
-          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+          <div class="image-container"
+               ng-class="{
+                         'flipped': card.flags.is_flipped,
+                         'card-illegal': isCardIllegal(card)
+                         }"
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -980,7 +1112,12 @@
         <div class="stacked-card"
              ng-repeat="card in cat.cards track by card.sys_id"
              ng-style="{'z-index': ($index + 1) * 10}">
-          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+          <div class="image-container"
+               ng-class="{
+                         'flipped': card.flags.is_flipped,
+                         'card-illegal': isCardIllegal(card)
+                         }"
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1029,7 +1166,12 @@
       <!-- Grid of cards -->
       <div class="card-grid">
         <div class="grid-card" ng-repeat="card in cat.cards track by card.sys_id">
-          <div class="image-container" ng-class="{'flipped': card.flags.is_flipped}">
+          <div class="image-container"
+               ng-class="{
+                         'flipped': card.flags.is_flipped,
+                         'card-illegal': isCardIllegal(card)
+                         }"
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
