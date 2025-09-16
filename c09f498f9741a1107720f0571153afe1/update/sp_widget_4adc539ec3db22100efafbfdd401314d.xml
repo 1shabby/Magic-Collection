@@ -287,13 +287,8 @@
         }, 0);
     };
 
-    $scope.isCardIllegal = function(card) {
+    $scope.isCardIllegal = function(card,formatName) {
         if (!card) return false;
-
-        // Explicitly marked illegal by the server
-        if (card.flags && card.flags.is_legal === false) {
-            return true;
-        }
 
         const qty = parseInt(card.quantity, 10) || 1;
         const name = (card.name || "").toLowerCase();
@@ -302,19 +297,25 @@
             .some(type => name.includes(type));
 
         const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
-		const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
+        const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
 
+		console.log(card.name + ' | ' + card.legality[formatName]);
+
+		if (card.legality[formatName] === false){
+			return true;
+		}
+		
         if (isUnlimitedQtyCard) {
             return false;
         }
-		
-		if(sevenDwarves){
-			if(qty <= 7){
-				return true;
-			}else{
-				return false;
-			}
-		}
+
+        if (sevenDwarves) {
+            if (qty <= 7) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         if ($scope.is_singleton) {
             if (!isBasicLand && qty > 1) {
@@ -337,15 +338,15 @@
         const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
         const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
             .some(type => name.includes(type));
+        const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
 
-        const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
-
-        if (card.flags && card.flags.is_legal === false) {
+        if (card.legality[formatName] === false) {
+			console.log("ILLEGAL CARD")
             return "This card is illegal in " + formatName + ".";
         }
 
-        if (isUnlimitedQtyCard) {
-            return ""; // No quantity limit for this card
+        if (sevenDwarves && qty > 7) {
+            return "A deck can have up to 7 copies of this card.";
         }
 
         if ($scope.is_singleton) {
@@ -380,7 +381,7 @@
             const cmcStr = cmc2 !== undefined ? `${cmc1}/${cmc2}` : `${cmc1}`;
             const price = parseFloat(card.price || 0).toFixed(2);
 
-            return `${qty} ${name} ${cmcStr} $${price}`;
+            return `${qty} ${name} ${cmcStr} ${price}`;
         }).join("\n");
     };
 };]]></client_script>
@@ -833,7 +834,7 @@
         isSingleton = formatGR.getValue('is_singleton') == '1';
     }
 
-    data.format_name = formatName;
+    data.format_name = formatName.toLowerCase();
     data.is_singleton = isSingleton;
 
 
@@ -959,14 +960,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>241</sys_mod_count>
+        <sys_mod_count>254</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-16 14:02:42</sys_updated_on>
+        <sys_updated_on>2025-09-16 18:24:15</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -1029,9 +1030,9 @@
           <div class="image-container"
                ng-class="{
                          'flipped': card.flags.is_flipped,
-                         'card-illegal': isCardIllegal(card)
+                         'card-illegal': isCardIllegal(card,format_name)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card,format_name) ? getIllegalityReason(card,format_name) : '' }}">
 
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
@@ -1082,9 +1083,9 @@
           <div class="image-container"
                ng-class="{
                          'flipped': card.flags.is_flipped,
-                         'card-illegal': isCardIllegal(card)
+                         'card-illegal': isCardIllegal(card,format_name)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card,format_name) ? getIllegalityReason(card,format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1132,9 +1133,9 @@
           <div class="image-container"
                ng-class="{
                          'flipped': card.flags.is_flipped,
-                         'card-illegal': isCardIllegal(card)
+                         'card-illegal': isCardIllegal(card,format_name)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card,format_name) ? getIllegalityReason(card,format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1186,9 +1187,9 @@
           <div class="image-container"
                ng-class="{
                          'flipped': card.flags.is_flipped,
-                         'card-illegal': isCardIllegal(card)
+                         'card-illegal': isCardIllegal(card,format_name)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card, format_name) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card,format_name) ? getIllegalityReason(card, format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
