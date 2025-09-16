@@ -2,377 +2,378 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($scope, $window, $timeout) {
-var c = this;
+    var c = this;
 
-if (c.data.deck_name) {
-	document.title = c.data.deck_name;
-}
-$scope.is_author = c.data.is_author;
+    if (c.data.deck_name) {
+        document.title = c.data.deck_name;
+    }
+    $scope.is_author = c.data.is_author;
 
-// Initialize model values
-$scope.layoutMode = 'columns'; // default layout
-$scope.groupBy = 'category'; // default group
-$scope.sortBy = 'alphabetical'; // default sort
-$scope.is_singleton = c.data.is_singleton; // Stores if it's a singleton deck
+    // Initialize model values
+    $scope.layoutMode = 'columns'; // default layout
+    $scope.groupBy = 'category'; // default group
+    $scope.sortBy = 'alphabetical'; // default sort
+    $scope.is_singleton = c.data.is_singleton; // Stores if it's a singleton deck
+    $scope.format_name = c.data.format_name; // Stores the format name
 
-// Safely initialize card data
-$scope.all_cards = c.data.all_cards || [];
+    // Safely initialize card data
+    $scope.all_cards = c.data.all_cards || [];
 
-function getCardType(card) {
-	const line = (card.face_one.type_line || "").toLowerCase();
-	const cleaned = line.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+    function getCardType(card) {
+        const line = (card.face_one.type_line || "").toLowerCase();
+        const cleaned = line.replace(/legendary|basic|snow|token|tribal/g, '').trim();
 
-	const priorities = [
-		"creature", "planeswalker", "instant",
-		"sorcery", "enchantment", "artifact",
-		"battle", "land"
-	];
+        const priorities = [
+            "creature", "planeswalker", "instant",
+            "sorcery", "enchantment", "artifact",
+            "battle", "land"
+        ];
 
-	for (let i = 0; i < priorities.length; i++) {
-		if (cleaned.includes(priorities[i])) {
-			return priorities[i];
-		}
-	}
+        for (let i = 0; i < priorities.length; i++) {
+            if (cleaned.includes(priorities[i])) {
+                return priorities[i];
+            }
+        }
 
-	return "other";
-}
+        return "other";
+    }
 
-function sortCards(cards) {
-	if (!Array.isArray(cards)) return [];
+    function sortCards(cards) {
+        if (!Array.isArray(cards)) return [];
 
-	return cards.sort((a, b) => {
-		const nameA = a.name.toLowerCase();
-		const nameB = b.name.toLowerCase();
+        return cards.sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
 
-		if ($scope.sortBy === 'cmc') {
-			const cmcA = parseFloat(a.cmc || 0);
-			const cmcB = parseFloat(b.cmc || 0);
-			if (cmcA !== cmcB) return cmcA - cmcB;
-			return nameA.localeCompare(nameB);
-		}
+            if ($scope.sortBy === 'cmc') {
+                const cmcA = parseFloat(a.cmc || 0);
+                const cmcB = parseFloat(b.cmc || 0);
+                if (cmcA !== cmcB) return cmcA - cmcB;
+                return nameA.localeCompare(nameB);
+            }
 
-		if ($scope.sortBy === 'type') {
-			const typeA = getCardType(a);
-			const typeB = getCardType(b);
-			if (typeA !== typeB) return typeA.localeCompare(typeB);
-			return nameA.localeCompare(nameB);
-		}
+            if ($scope.sortBy === 'type') {
+                const typeA = getCardType(a);
+                const typeB = getCardType(b);
+                if (typeA !== typeB) return typeA.localeCompare(typeB);
+                return nameA.localeCompare(nameB);
+            }
 
-		if ($scope.sortBy === 'price') {
-			const priceA = parseFloat(a.price || 0);
-			const priceB = parseFloat(b.price || 0);
-			if (priceA !== priceB) return priceA - priceB;
-			return nameA.localeCompare(nameB);
-		}
+            if ($scope.sortBy === 'price') {
+                const priceA = parseFloat(a.price || 0);
+                const priceB = parseFloat(b.price || 0);
+                if (priceA !== priceB) return priceA - priceB;
+                return nameA.localeCompare(nameB);
+            }
 
-		// Default: alphabetical
-		return nameA.localeCompare(nameB);
-	});
-}
+            // Default: alphabetical
+            return nameA.localeCompare(nameB);
+        });
+    }
 
-$scope.groupCards = function() {
-	if (!$scope.all_cards || !$scope.all_cards.length) {
-		return;
-	}
+    $scope.groupCards = function() {
+        if (!$scope.all_cards || !$scope.all_cards.length) {
+            return;
+        }
 
-	const commander = [];
-	const maybeboard = [];
-	const sideboard = [];
-	const otherCards = [];
+        const commander = [];
+        const maybeboard = [];
+        const sideboard = [];
+        const otherCards = [];
 
-	$scope.all_cards.forEach(card => {
-		if (card.flags.is_commander) {
-			commander.push(card);
-		} else if (card.flags.is_maybeboard) {
-			maybeboard.push(card);
-		} else if (card.flags.is_sideboard) {
-			sideboard.push(card);
-		} else {
-			otherCards.push(card);
-		}
-	});
+        $scope.all_cards.forEach(card => {
+            if (card.flags.is_commander) {
+                commander.push(card);
+            } else if (card.flags.is_maybeboard) {
+                maybeboard.push(card);
+            } else if (card.flags.is_sideboard) {
+                sideboard.push(card);
+            } else {
+                otherCards.push(card);
+            }
+        });
 
-	let groupMap = {};
+        let groupMap = {};
 
-	// Group by Category
-	if ($scope.groupBy === 'category') {
-		const original = c.data.categories || [];
-		// Deep copy and sort each category's cards
-		$scope.categories = original.map(cat => {
-			return {
-				name: cat.name,
-				cards: sortCards(angular.copy(cat.cards))
-			};
-		});
-		return;
-	}
+        // Group by Category
+        if ($scope.groupBy === 'category') {
+            const original = c.data.categories || [];
+            // Deep copy and sort each category's cards
+            $scope.categories = original.map(cat => {
+                return {
+                    name: cat.name,
+                    cards: sortCards(angular.copy(cat.cards))
+                };
+            });
+            return;
+        }
 
-	// Group by Type
-	if ($scope.groupBy === 'type') {
-		otherCards.forEach(card => {
-			const typeLine = (card.face_one.type_line || "").toLowerCase();
-			const cleaned = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+        // Group by Type
+        if ($scope.groupBy === 'type') {
+            otherCards.forEach(card => {
+                const typeLine = (card.face_one.type_line || "").toLowerCase();
+                const cleaned = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
 
-			const priorities = [{
-					type: "creature",
-					category: "Creature"
-				},
-				{
-					type: "planeswalker",
-					category: "Planeswalker"
-				},
-				{
-					type: "instant",
-					category: "Instant"
-				},
-				{
-					type: "sorcery",
-					category: "Sorcery"
-				},
-				{
-					type: "enchantment",
-					category: "Enchantment"
-				},
-				{
-					type: "artifact",
-					category: "Artifact"
-				},
-				{
-					type: "battle",
-					category: "Battle"
-				},
-				{
-					type: "land",
-					category: "Land"
-				}
-			];
+                const priorities = [{
+                        type: "creature",
+                        category: "Creature"
+                    },
+                    {
+                        type: "planeswalker",
+                        category: "Planeswalker"
+                    },
+                    {
+                        type: "instant",
+                        category: "Instant"
+                    },
+                    {
+                        type: "sorcery",
+                        category: "Sorcery"
+                    },
+                    {
+                        type: "enchantment",
+                        category: "Enchantment"
+                    },
+                    {
+                        type: "artifact",
+                        category: "Artifact"
+                    },
+                    {
+                        type: "battle",
+                        category: "Battle"
+                    },
+                    {
+                        type: "land",
+                        category: "Land"
+                    }
+                ];
 
-			let matched = "Other";
-			for (let i = 0; i < priorities.length; i++) {
-				if (cleaned.includes(priorities[i].type)) {
-					matched = priorities[i].category;
-					break;
-				}
-			}
+                let matched = "Other";
+                for (let i = 0; i < priorities.length; i++) {
+                    if (cleaned.includes(priorities[i].type)) {
+                        matched = priorities[i].category;
+                        break;
+                    }
+                }
 
-			if (!groupMap[matched]) groupMap[matched] = [];
-			groupMap[matched].push(card);
-		});
-	}
+                if (!groupMap[matched]) groupMap[matched] = [];
+                groupMap[matched].push(card);
+            });
+        }
 
-	// Group by CMC
-	if ($scope.groupBy === 'cmc') {
-		otherCards.forEach(card => {
-			const cmcValue = parseInt(card.cmc || 0, 10);
-			const key = isNaN(cmcValue) ? "Unknown" : cmcValue.toString();
+        // Group by CMC
+        if ($scope.groupBy === 'cmc') {
+            otherCards.forEach(card => {
+                const cmcValue = parseInt(card.cmc || 0, 10);
+                const key = isNaN(cmcValue) ? "Unknown" : cmcValue.toString();
 
-			if (!groupMap[key]) groupMap[key] = [];
-			groupMap[key].push(card);
-		});
-	}
+                if (!groupMap[key]) groupMap[key] = [];
+                groupMap[key].push(card);
+            });
+        }
 
-	// Convert groupMap to array
-	const grouped = Object.keys(groupMap)
-		.sort((a, b) => {
-			const aNum = parseInt(a, 10);
-			const bNum = parseInt(b, 10);
-			return isNaN(aNum) || isNaN(bNum) ? a.localeCompare(b) : aNum - bNum;
-		})
-		.map(key => ({
-			name: key,
-			cards: sortCards(groupMap[key])
-		}));
+        // Convert groupMap to array
+        const grouped = Object.keys(groupMap)
+            .sort((a, b) => {
+                const aNum = parseInt(a, 10);
+                const bNum = parseInt(b, 10);
+                return isNaN(aNum) || isNaN(bNum) ? a.localeCompare(b) : aNum - bNum;
+            })
+            .map(key => ({
+                name: key,
+                cards: sortCards(groupMap[key])
+            }));
 
-	// Commander / Sideboard / Maybeboard
-	if (commander.length > 0) {
-		grouped.unshift({
-			name: "Commander",
-			cards: sortCards(commander)
-		});
-	}
-	if (maybeboard.length > 0) {
-		grouped.push({
-			name: "Maybeboard",
-			cards: sortCards(maybeboard)
-		});
-	}
-	if (sideboard.length > 0) {
-		grouped.push({
-			name: "Sideboard",
-			cards: sortCards(sideboard)
-		});
-	}
+        // Commander / Sideboard / Maybeboard
+        if (commander.length > 0) {
+            grouped.unshift({
+                name: "Commander",
+                cards: sortCards(commander)
+            });
+        }
+        if (maybeboard.length > 0) {
+            grouped.push({
+                name: "Maybeboard",
+                cards: sortCards(maybeboard)
+            });
+        }
+        if (sideboard.length > 0) {
+            grouped.push({
+                name: "Sideboard",
+                cards: sortCards(sideboard)
+            });
+        }
 
-	$scope.categories = grouped;
-};
+        $scope.categories = grouped;
+    };
 
-// Watch for changes in groupBy and sortBy
-$scope.$watch('groupBy', function(newVal, oldVal) {
-	if (newVal !== oldVal) {
-		$scope.groupCards();
-	}
-});
+    // Watch for changes in groupBy and sortBy
+    $scope.$watch('groupBy', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.groupCards();
+        }
+    });
 
-$scope.$watch('sortBy', function(newVal, oldVal) {
-	if (newVal !== oldVal) {
-		$scope.groupCards();
-	}
-});
+    $scope.$watch('sortBy', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.groupCards();
+        }
+    });
 
-// Run initial grouping
-$timeout(function() {
-	$scope.groupCards();
-});
+    // Run initial grouping
+    $timeout(function() {
+        $scope.groupCards();
+    });
 
-// Layout change hook
-$scope.onLayoutChange = function() {
-	console.log("Layout changed to:", $scope.layoutMode);
-};
+    // Layout change hook
+    $scope.onLayoutChange = function() {
+        console.log("Layout changed to:", $scope.layoutMode);
+    };
 
-$scope.setLayout = function(mode) {
-	$scope.layoutMode = mode;
-};
+    $scope.setLayout = function(mode) {
+        $scope.layoutMode = mode;
+    };
 
-// Card flip
-$scope.flipCard = function(card) {
-	card.flags.is_flipped = !card.flags.is_flipped;
-};
+    // Card flip
+    $scope.flipCard = function(card) {
+        card.flags.is_flipped = !card.flags.is_flipped;
+    };
 
-// Quantity handlers
-$scope.incrementCard = function(card, event) {
-	const newQty = parseInt(card.quantity || "0", 10) + 1;
-	updateCardQuantity(card, newQty);
-};
+    // Quantity handlers
+    $scope.incrementCard = function(card, event) {
+        const newQty = parseInt(card.quantity || "0", 10) + 1;
+        updateCardQuantity(card, newQty);
+    };
 
-$scope.decrementCard = function(card, event) {
-	const currentQty = parseInt(card.quantity || "0", 10);
-	if (currentQty > 1) {
-		const newQty = currentQty - 1;
-		updateCardQuantity(card, newQty);
-	}
-};
+    $scope.decrementCard = function(card, event) {
+        const currentQty = parseInt(card.quantity || "0", 10);
+        if (currentQty > 1) {
+            const newQty = currentQty - 1;
+            updateCardQuantity(card, newQty);
+        }
+    };
 
-function updateCardQuantity(card, newQuantity) {
-	card.quantity = newQuantity;
-	const payload = {
-		card_sys_id: card.sys_id,
-		new_quantity: newQuantity
-	};
-	c.server.get(payload).then(function(response) {
-		if (response.success) {
-			card.quantity = newQuantity;
-			$scope.$applyAsync();
-		}
-	});
-}
+    function updateCardQuantity(card, newQuantity) {
+        card.quantity = newQuantity;
+        const payload = {
+            card_sys_id: card.sys_id,
+            new_quantity: newQuantity
+        };
+        c.server.get(payload).then(function(response) {
+            if (response.success) {
+                card.quantity = newQuantity;
+                $scope.$applyAsync();
+            }
+        });
+    }
 
-// Optional modal
-$scope.openCardModal = function(card, event) {
-	alert('Card modal for: ' + card.name);
-};
+    // Optional modal
+    $scope.openCardModal = function(card, event) {
+        alert('Card modal for: ' + card.name);
+    };
 
-// Display helpers
-$scope.getCategoryQuantity = function(cat) {
-	if (!cat || !cat.cards) return 0;
-	return cat.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
-};
+    // Display helpers
+    $scope.getCategoryQuantity = function(cat) {
+        if (!cat || !cat.cards) return 0;
+        return cat.cards.reduce((sum, c) => sum + (parseInt(c.quantity, 10) || 0), 0);
+    };
 
-$scope.getCategoryPrice = function(cat) {
-	if (!cat || !cat.cards) return 0;
-	return cat.cards.reduce((sum, c) => {
-		const price = parseFloat(c.price) || 0;
-		const qty = parseInt(c.quantity, 10) || 0;
-		return sum + price * qty;
-	}, 0);
-};
+    $scope.getCategoryPrice = function(cat) {
+        if (!cat || !cat.cards) return 0;
+        return cat.cards.reduce((sum, c) => {
+            const price = parseFloat(c.price) || 0;
+            const qty = parseInt(c.quantity, 10) || 0;
+            return sum + price * qty;
+        }, 0);
+    };
 
-$scope.isCardIllegal = function(card) {
-if (!card) return false;
+    $scope.isCardIllegal = function(card) {
+        if (!card) return false;
 
-// Explicitly marked illegal by the server
-if (card.flags && card.flags.is_legal === false) {
-	return true;
-}
+        // Explicitly marked illegal by the server
+        if (card.flags && card.flags.is_legal === false) {
+            return true;
+        }
 
-const qty = parseInt(card.quantity, 10) || 1;
-const name = (card.name || "").toLowerCase();
-const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
-const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
-	.some(type => name.includes(type));
+        const qty = parseInt(card.quantity, 10) || 1;
+        const name = (card.name || "").toLowerCase();
+        const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
+        const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
+            .some(type => name.includes(type));
 
-const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
+        const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
 
-if (isUnlimitedQtyCard) {
-	return false;
-}
+        if (isUnlimitedQtyCard) {
+            return false;
+        }
 
-if ($scope.is_singleton) {
-	if (!isBasicLand && qty > 1) {
-		return true;
-	}
-} else {
-	if (!isBasicLand && qty > 4) {
-		return true;
-	}
-}
+        if ($scope.is_singleton) {
+            if (!isBasicLand && qty > 1) {
+                return true;
+            }
+        } else {
+            if (!isBasicLand && qty > 4) {
+                return true;
+            }
+        }
 
-return false;
-};
+        return false;
+    };
 
-$scope.getIllegalityReason = function(card, formatName) {
-if (!card) return "";
+    $scope.getIllegalityReason = function(card, formatName) {
+        if (!card) return "";
 
-const qty = parseInt(card.quantity, 10) || 1;
-const name = (card.name || "").toLowerCase();
-const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
-const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
-	.some(type => name.includes(type));
+        const qty = parseInt(card.quantity, 10) || 1;
+        const name = (card.name || "").toLowerCase();
+        const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
+        const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
+            .some(type => name.includes(type));
 
-const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
+        const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
 
-if (card.flags && card.flags.is_legal === false) {
-	return "This card is illegal in " + formatName + ".";
-}
+        if (card.flags && card.flags.is_legal === false) {
+            return "This card is illegal in " + formatName + ".";
+        }
 
-if (isUnlimitedQtyCard) {
-	return "";  // No quantity limit for this card
-}
+        if (isUnlimitedQtyCard) {
+            return ""; // No quantity limit for this card
+        }
 
-if ($scope.is_singleton) {
-	if (!isBasicLand && qty > 1) {
-		return "Only one copy of a card is allowed in " + formatName + " (except basic lands).";
-	}
-} else {
-	if (!isBasicLand && qty > 4) {
-		return "More than four copies are not allowed in " + formatName + ".";
-	}
-}
+        if ($scope.is_singleton) {
+            if (!isBasicLand && qty > 1) {
+                return "Only one copy of a card is allowed in " + formatName + " (except basic lands).";
+            }
+        } else {
+            if (!isBasicLand && qty > 4) {
+                return "More than four copies are not allowed in " + formatName + ".";
+            }
+        }
 
-return "";
-};
+        return "";
+    };
 
 
-$scope.getCardTags = function(card) {
-	const tags = [];
-	if (card.flags.is_commander) tags.push("Commander");
-	if (card.flags.is_maybeboard) tags.push("Maybeboard");
-	if (card.flags.is_sideboard) tags.push("Sideboard");
-	return tags.join(", ");
-};
-$scope.getTextLines = function(cards) {
-	if (!cards || !cards.length) return "";
+    $scope.getCardTags = function(card) {
+        const tags = [];
+        if (card.flags.is_commander) tags.push("Commander");
+        if (card.flags.is_maybeboard) tags.push("Maybeboard");
+        if (card.flags.is_sideboard) tags.push("Sideboard");
+        return tags.join(", ");
+    };
+    $scope.getTextLines = function(cards) {
+        if (!cards || !cards.length) return "";
 
-	return cards.map(card => {
-		const qty = card.quantity || 1;
-		const name = card.name || "Unknown";
-		const cmc1 = card.face_one?.cmc || 0;
-		const cmc2 = card.face_two?.cmc;
-		const cmcStr = cmc2 !== undefined ? `${cmc1}/${cmc2}` : `${cmc1}`;
-		const price = parseFloat(card.price || 0).toFixed(2);
+        return cards.map(card => {
+            const qty = card.quantity || 1;
+            const name = card.name || "Unknown";
+            const cmc1 = card.face_one?.cmc || 0;
+            const cmc2 = card.face_two?.cmc;
+            const cmcStr = cmc2 !== undefined ? `${cmc1}/${cmc2}` : `${cmc1}`;
+            const price = parseFloat(card.price || 0).toFixed(2);
 
-		return `${qty} ${name} ${cmcStr} $${price}`;
-	}).join("\n");
-};
+            return `${qty} ${name} ${cmcStr} $${price}`;
+        }).join("\n");
+    };
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
@@ -949,14 +950,14 @@ $scope.getTextLines = function(cards) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>237</sys_mod_count>
+        <sys_mod_count>240</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-15 20:56:27</sys_updated_on>
+        <sys_updated_on>2025-09-16 03:35:19</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -1021,7 +1022,7 @@ $scope.getTextLines = function(cards) {
                          'flipped': card.flags.is_flipped,
                          'card-illegal': isCardIllegal(card)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
 
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
@@ -1074,7 +1075,7 @@ $scope.getTextLines = function(cards) {
                          'flipped': card.flags.is_flipped,
                          'card-illegal': isCardIllegal(card)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1124,7 +1125,7 @@ $scope.getTextLines = function(cards) {
                          'flipped': card.flags.is_flipped,
                          'card-illegal': isCardIllegal(card)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card,format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1178,7 +1179,7 @@ $scope.getTextLines = function(cards) {
                          'flipped': card.flags.is_flipped,
                          'card-illegal': isCardIllegal(card)
                          }"
-               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card) : '' }}">
+               data-illegal-reason="{{ isCardIllegal(card) ? getIllegalityReason(card, format_name) : '' }}">
             <img class="image front-face" ng-src="{{card.face_one.image}}" alt="{{card.name}}" />
             <img class="image back-face" ng-if="card.face_two && card.face_two.image" ng-src="{{card.face_two.image}}" alt="{{card.name}} (Back)" />
             <div class="quantity-tag">{{card.quantity}}</div>
@@ -1206,7 +1207,16 @@ $scope.getTextLines = function(cards) {
     <div class="text-category" 
          ng-repeat="cat in categories track by cat.name"
          ng-style="{'min-width': '250px', 'margin-right': '2rem', 'display': 'inline-block', 'vertical-align': 'top'}">
-      <h4 class="category-title">{{ cat.name }}</h4>
+      <h4 class="category-title">
+        <!-- Use mana pip when grouped by CMC and header is numeric -->
+        <img ng-if="groupBy === 'cmc' && !isNaN(parseInt(cat.name))"
+             ng-src="x_759224_magic_c_0.generic_{{ cat.name }}.svg"
+             alt="{{ cat.name }}"
+             style="height: 24px; vertical-align: middle;" />
+
+        <!-- Fallback to name (for non-CMC headers like "Unknown") -->
+        <span ng-if="groupBy !== 'cmc' || isNaN(parseInt(cat.name))">{{ cat.name }}</span>
+      </h4>
       <div class="category-meta-row">
         <span class="category-qty">Qty: {{ getCategoryQuantity(cat) }}</span> |
         <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
