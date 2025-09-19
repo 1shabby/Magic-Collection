@@ -273,9 +273,18 @@
         });
     }
 
-    // Optional modal
+    // Modal state
+    $scope.modalCard = null;
+
+    // Modal open/close handlers
     $scope.openCardModal = function(card, event) {
-        alert('Card modal for: ' + card.name);
+        $scope.modalCard = card;
+        if (event) event.stopPropagation();
+    };
+
+    $scope.closeCardModal = function(event) {
+        $scope.modalCard = null;
+        if (event) event.stopPropagation();
     };
 
     // Display helpers
@@ -973,14 +982,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>280</sys_mod_count>
+        <sys_mod_count>281</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-18 19:14:02</sys_updated_on>
+        <sys_updated_on>2025-09-19 19:43:47</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
@@ -1245,6 +1254,40 @@
         <span class="category-price" ng-bind="'$' + (getCategoryPrice(cat) | number:2)"></span>
       </div>
       <pre class="text-card-list">{{ cat.textLines }}</pre>
+    </div>
+  </div>
+</div>
+
+<!-- Card Modal -->
+<div class="modal-backdrop" ng-if="modalCard" ng-click="closeCardModal($event)" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);z-index:1000;"></div>
+<div class="card-modal-window" ng-if="modalCard" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#222;color:white;z-index:1001;padding:2rem;border-radius:12px;max-width:90vw;max-height:90vh;overflow:auto;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+  <button style="position:absolute;top:1rem;right:1rem;font-size:2rem;background:none;border:none;color:white;cursor:pointer;z-index:1100;" ng-click="closeCardModal($event)">&times;</button>
+  <div ng-if="modalCard">
+    <div style="display:flex;gap:2rem;align-items:flex-start;">
+      <img ng-src="{{modalCard.face_one.image}}" alt="{{modalCard.name}}" style="width:250px;max-width:40vw;border-radius:8px;box-shadow:0 2px 8px #000;">
+      <div style="flex:1;min-width:200px;">
+        <h2 style="margin-top:0;">{{modalCard.name}}</h2>
+        <div><b>Type:</b> {{modalCard.face_one.type_line}}</div>
+        <div ng-if="modalCard.face_one.oracle_text"><b>Text:</b> <span style="white-space:pre-line;">{{modalCard.face_one.oracle_text}}</span></div>
+        <div ng-if="modalCard.face_two && modalCard.face_two.name">
+          <hr>
+          <h3>{{modalCard.face_two.name}}</h3>
+          <div><b>Type:</b> {{modalCard.face_two.type_line}}</div>
+          <div ng-if="modalCard.face_two.oracle_text"><b>Text:</b> <span style="white-space:pre-line;">{{modalCard.face_two.oracle_text}}</span></div>
+        </div>
+        <div style="margin-top:1rem;">
+          <b>Quantity:</b> {{modalCard.quantity}}<br>
+          <b>CMC:</b> {{modalCard.cmc}}<br>
+          <b>Price:</b> ${{modalCard.price | number:2}}<br>
+          <b>Tags:</b> {{getCardTags(modalCard)}}
+        </div>
+        <div style="margin-top:1rem;" ng-if="modalCard.legality">
+          <b>Legality:</b>
+          <ul>
+            <li ng-repeat="(fmt, legal) in modalCard.legality">{{fmt}}: <span ng-if="legal">Legal</span><span ng-if="!legal">Illegal</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>]]></template>
