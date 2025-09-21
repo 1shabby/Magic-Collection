@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $window, $timeout) {
+        <client_script><![CDATA[api.controller = function($scope, $window, $timeout,MTGCard) {
     var c = this;
 
     if (c.data.deck_name) {
@@ -278,6 +278,7 @@
     // Modal open/close handlers
     $scope.openCardModal = function(card, event) {
         $scope.modalCard = card;
+		//MTGCard.setCard(card);
         if (event) event.stopPropagation();
     };
 
@@ -977,14 +978,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>282</sys_mod_count>
+        <sys_mod_count>284</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-20 17:50:22</sys_updated_on>
+        <sys_updated_on>2025-09-21 17:06:53</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">

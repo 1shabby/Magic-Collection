@@ -1,188 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope) {
+        <client_script><![CDATA[api.controller = function($scope, cardDataService) {
     // card and onClose are passed as widget input variables
-	var c = this;
-    setTimeout(function () {
-    var flipBtn = document.getElementById('flipBtn');
-    var flipCard = document.getElementById('flipCard');
-    if (flipBtn && flipCard) {
-      flipBtn.addEventListener('click', function () {
-        flipCard.classList.toggle('flipped');
-        var isFlipped = flipCard.classList.contains('flipped');
+    var c = this;
 
-        const manaCostEl = document.getElementById('manaCost');
-        if (manaCostEl) {
-          manaCostEl.innerHTML = isFlipped ? "{{ card.backManaCost }}" : "{{ card.frontManaCost }}";
-          manaCostEl.parentElement.style.display = manaCostEl.innerHTML.trim() ? 'inline' : 'none';
-        }
+    $scope.card = cardDataService.getCard();
 
-        const colorsEl = document.getElementById('colors');
-        if (colorsEl) {
-          colorsEl.innerText = isFlipped ? "{{ backColorsFull }}" : "{{ frontColorsFull }}";
-          colorsEl.parentElement.style.display = colorsEl.innerText.trim() ? 'inline' : 'none';
+    $scope.$watch(function() {
+        return cardDataService.getCard();
+    }, function(newVal) {
+        if (newVal) {
+            $scope.card = newVal;
         }
+    });
 
-        const typeLineEl = document.getElementById('typeLine');
-        if (typeLineEl) {
-          typeLineEl.innerText = isFlipped ? "{{ card.backTypeLine }}" : "{{ card.typeLine }}";
-        }
+    setTimeout(function() {
+        var flipBtn = document.getElementById('flipBtn');
+        var flipCard = document.getElementById('flipCard');
+        if (flipBtn && flipCard) {
+            flipBtn.addEventListener('click', function() {
+                flipCard.classList.toggle('flipped');
+                var isFlipped = flipCard.classList.contains('flipped');
 
-        const oracleEl = document.getElementById('oracle');
-        if (oracleEl) {
-          oracleEl.innerHTML = isFlipped ? "{{ card.backOracle }}" : "{{ card.frontOracle }}";
-          oracleEl.parentElement.style.display = oracleEl.innerHTML.trim() ? 'block' : 'none';
-        }
+                const manaCostEl = document.getElementById('manaCost');
+                if (manaCostEl) {
+                    manaCostEl.innerHTML = isFlipped ? "{{ card.backManaCost }}" : "{{ card.frontManaCost }}";
+                    manaCostEl.parentElement.style.display = manaCostEl.innerHTML.trim() ? 'inline' : 'none';
+                }
 
-        const flavorEl = document.getElementById('flavor');
-        if (flavorEl) {
-          const backFlavor = "{{ card.backFlavor }}".trim();
-          const frontFlavor = "{{ card.frontFlavor }}".trim();
-          if (isFlipped && backFlavor && backFlavor !== "-") {
-            flavorEl.innerText = backFlavor;
-            flavorEl.parentElement.style.display = 'block';
-          } else if (!isFlipped && frontFlavor && frontFlavor !== "-") {
-            flavorEl.innerText = frontFlavor;
-            flavorEl.parentElement.style.display = 'block';
-          } else {
-            flavorEl.parentElement.style.display = 'none';
-          }
-        }
+                const colorsEl = document.getElementById('colors');
+                if (colorsEl) {
+                    colorsEl.innerText = isFlipped ? "{{ backColorsFull }}" : "{{ frontColorsFull }}";
+                    colorsEl.parentElement.style.display = colorsEl.innerText.trim() ? 'inline' : 'none';
+                }
 
-        const ptEl = document.getElementById('pt');
-        if (ptEl) {
-          const backPower = "{{ card.backPower }}";
-          const backToughness = "{{ card.backToughness }}";
-          const frontPower = "{{ card.frontPower }}";
-          const frontToughness = "{{ card.frontToughness }}";
-          if (isFlipped && backPower && backToughness) {
-            ptEl.innerText = backPower + " / " + backToughness;
-            ptEl.parentElement.style.display = 'inline';
-          } else if (!isFlipped && frontPower && frontToughness) {
-            ptEl.innerText = frontPower + " / " + frontToughness;
-            ptEl.parentElement.style.display = 'inline';
-          } else {
-            ptEl.parentElement.style.display = 'none';
-          }
-        }
+                const typeLineEl = document.getElementById('typeLine');
+                if (typeLineEl) {
+                    typeLineEl.innerText = isFlipped ? "{{ card.backTypeLine }}" : "{{ card.typeLine }}";
+                }
 
-        const nameEl = document.getElementById('cardName');
-        if (nameEl) {
-          const backFlavorName = "{{ card.backFlavorName }}";
-          const backName = "{{ card.backName }}";
-          const frontFlavorName = "{{ card.frontFlavorName }}";
-          const frontName = "{{ card.frontName }}";
-          nameEl.innerText = isFlipped
-            ? (backFlavorName.trim() || backName.trim() || "Unknown Card")
-            : (frontFlavorName.trim() || frontName.trim() || "Unknown Card");
+                const oracleEl = document.getElementById('oracle');
+                if (oracleEl) {
+                    oracleEl.innerHTML = isFlipped ? "{{ card.backOracle }}" : "{{ card.frontOracle }}";
+                    oracleEl.parentElement.style.display = oracleEl.innerHTML.trim() ? 'block' : 'none';
+                }
+
+                const flavorEl = document.getElementById('flavor');
+                if (flavorEl) {
+                    const backFlavor = "{{ card.backFlavor }}".trim();
+                    const frontFlavor = "{{ card.frontFlavor }}".trim();
+                    if (isFlipped && backFlavor && backFlavor !== "-") {
+                        flavorEl.innerText = backFlavor;
+                        flavorEl.parentElement.style.display = 'block';
+                    } else if (!isFlipped && frontFlavor && frontFlavor !== "-") {
+                        flavorEl.innerText = frontFlavor;
+                        flavorEl.parentElement.style.display = 'block';
+                    } else {
+                        flavorEl.parentElement.style.display = 'none';
+                    }
+                }
+
+                const ptEl = document.getElementById('pt');
+                if (ptEl) {
+                    const backPower = "{{ card.backPower }}";
+                    const backToughness = "{{ card.backToughness }}";
+                    const frontPower = "{{ card.frontPower }}";
+                    const frontToughness = "{{ card.frontToughness }}";
+                    if (isFlipped && backPower && backToughness) {
+                        ptEl.innerText = backPower + " / " + backToughness;
+                        ptEl.parentElement.style.display = 'inline';
+                    } else if (!isFlipped && frontPower && frontToughness) {
+                        ptEl.innerText = frontPower + " / " + frontToughness;
+                        ptEl.parentElement.style.display = 'inline';
+                    } else {
+                        ptEl.parentElement.style.display = 'none';
+                    }
+                }
+
+                const nameEl = document.getElementById('cardName');
+                if (nameEl) {
+                    const backFlavorName = "{{ card.backFlavorName }}";
+                    const backName = "{{ card.backName }}";
+                    const frontFlavorName = "{{ card.frontFlavorName }}";
+                    const frontName = "{{ card.frontName }}";
+                    nameEl.innerText = isFlipped ?
+                        (backFlavorName.trim() || backName.trim() || "Unknown Card") :
+                        (frontFlavorName.trim() || frontName.trim() || "Unknown Card");
+                }
+            });
         }
-      });
-    }
-  }, 100);
-};
-]]></client_script>
+    }, 100);
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.card-modal-content {&#13;
-      display: flex;&#13;
-      flex-wrap: wrap;&#13;
-      gap: 20px;&#13;
-      max-width: 1100px;&#13;
-      margin: auto;&#13;
-      color: #eee;&#13;
-      background: #1e1e1e;&#13;
-    }&#13;
-    .flip-card-wrapper {&#13;
-      flex-grow: 1;&#13;
-      max-width: 100%;&#13;
-      width: 100%;&#13;
-      perspective: 1000px;&#13;
-      margin: 0 auto;&#13;
-    }&#13;
-    .flip-card {&#13;
-      width: 100%;&#13;
-      position: relative;&#13;
-    }&#13;
-    .flip-card-inner {&#13;
-      position: relative;&#13;
-      width: 100%;&#13;
-      padding-top: 135%;&#13;
-      transition: transform 0.8s;&#13;
-      transform-style: preserve-3d;&#13;
-    }&#13;
-    .flip-card.flipped .flip-card-inner {&#13;
-      transform: rotateY(180deg);&#13;
-    }&#13;
-    .flip-card-front, .flip-card-back {&#13;
-      position: absolute;&#13;
-      top: 0;&#13;
-      left: 0;&#13;
-      width: 100%;&#13;
-      height: 100%;&#13;
-      border-radius: 4%;&#13;
-      backface-visibility: hidden;&#13;
-      display: flex;&#13;
-      align-items: center;&#13;
-      justify-content: center;&#13;
-      background: #000;&#13;
-    }&#13;
-    .flip-card-back {&#13;
-      transform: rotateY(180deg);&#13;
-    }&#13;
-    .flip-card-front img, .flip-card-back img {&#13;
-      width: 100%;&#13;
-      height: 100%;&#13;
-      border-radius: 4%;&#13;
-      display: block;&#13;
-    }&#13;
-    .card-img-container {&#13;
-      position: relative;&#13;
-      width: 100%;&#13;
-      height: 100%;&#13;
-    }&#13;
-    .foil-overlay {&#13;
-      position: absolute;&#13;
-      top: 0;&#13;
-      left: 0;&#13;
-      width: 100%;&#13;
-      height: 100%;&#13;
-      pointer-events: none;&#13;
-      border-radius: 4%;&#13;
-      z-index: 2;&#13;
-      display: block;&#13;
-    }&#13;
-    .icon-links img {&#13;
-      width: 32px;&#13;
-      height: 32px;&#13;
-      margin: 4px;&#13;
-      cursor: pointer;&#13;
-    }&#13;
-    .info-col {&#13;
-      font-size: 1.2rem;&#13;
-      line-height: 1.6;&#13;
-      font-weight: 600;&#13;
-      color: #eee;&#13;
-    }&#13;
-    .info-col strong {&#13;
-      font-weight: 700;&#13;
-      font-size: 1.35rem;&#13;
-    }&#13;
-    #cardName {&#13;
-      font-weight: 900;&#13;
-      font-size: 1.8rem;&#13;
-      margin-bottom: 12px;&#13;
-      color: #fff;&#13;
-    }&#13;
-    @media (max-width: 768px) {&#13;
-      .card-modal-content {&#13;
-        flex-direction: column !important;&#13;
-        align-items: center;&#13;
-      }&#13;
-      .flip-card-wrapper {&#13;
-        max-width: 90%;&#13;
-        min-width: 300px;&#13;
-      }&#13;
-    }</css>
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  gap: 20px;&#13;
+  max-width: 1100px;&#13;
+  margin: auto;&#13;
+  color: #eee;&#13;
+  background: #1e1e1e;&#13;
+}&#13;
+.flipBtn&#13;
+.flip-card-wrapper {&#13;
+  flex-grow: 1;&#13;
+  max-width: 100%;&#13;
+  width: 100%;&#13;
+  perspective: 1000px;&#13;
+  margin: 0 auto;&#13;
+}&#13;
+.flip-card {&#13;
+  width: 100%;&#13;
+  position: relative;&#13;
+}&#13;
+.flip-card-inner {&#13;
+  position: relative;&#13;
+  width: 100%;&#13;
+  padding-top: 135%;&#13;
+  transition: transform 0.8s;&#13;
+  transform-style: preserve-3d;&#13;
+}&#13;
+.flip-card.flipped .flip-card-inner {&#13;
+  transform: rotateY(180deg);&#13;
+}&#13;
+.flip-card-front, .flip-card-back {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  border-radius: 4%;&#13;
+  backface-visibility: hidden;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  background: #000;&#13;
+}&#13;
+.flip-card-back {&#13;
+  transform: rotateY(180deg);&#13;
+}&#13;
+.flip-card-front img, .flip-card-back img {&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  border-radius: 4%;&#13;
+  display: block;&#13;
+}&#13;
+.card-img-container {&#13;
+  position: relative;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+}&#13;
+.foil-overlay {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  pointer-events: none;&#13;
+  border-radius: 4%;&#13;
+  z-index: 2;&#13;
+  display: block;&#13;
+}&#13;
+.icon-links img {&#13;
+  width: 32px;&#13;
+  height: 32px;&#13;
+  margin: 4px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+.info-col {&#13;
+  font-size: 1.2rem;&#13;
+  line-height: 1.6;&#13;
+  font-weight: 600;&#13;
+  color: #eee;&#13;
+}&#13;
+.info-col strong {&#13;
+  font-weight: 700;&#13;
+  font-size: 1.35rem;&#13;
+}&#13;
+#cardName {&#13;
+  font-weight: 900;&#13;
+  font-size: 1.8rem;&#13;
+  margin-bottom: 12px;&#13;
+  color: #fff;&#13;
+}&#13;
+#flipBtn {&#13;
+  margin-top: 10px;&#13;
+  padding: 6px 10px;&#13;
+  background: $brand-secondary;&#13;
+  color: black;&#13;
+  border: none;&#13;
+  border-radius: 5px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+@media (max-width: 768px) {&#13;
+  .card-modal-content {&#13;
+    flex-direction: column !important;&#13;
+    align-items: center;&#13;
+  }&#13;
+  .flip-card-wrapper {&#13;
+    max-width: 90%;&#13;
+    min-width: 300px;&#13;
+  }&#13;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -208,14 +228,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-20 17:19:36</sys_updated_on>
+        <sys_updated_on>2025-09-21 16:56:53</sys_updated_on>
         <template><![CDATA[<body>
 
   <div class="card-modal-content">
@@ -227,36 +247,25 @@
             <!-- Front -->
             <div class="flip-card-front">
               <div class="card-img-container">
-                <img src="{{ card.fImg }}" alt="Card Front" />
-                {{#if isFoil}}
-                <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
-                {{/if}}
+                <img src="{{ card.face_one.image }}" alt="Card Front" />
+                <img class="foil-overlay" ng-if="card.flags.is_foil" src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
+
               </div>
             </div>
 
             <!-- Back -->
-            {{#if card.bImg}}
             <div class="flip-card-back">
               <div class="card-img-container">
-                <img src="{{ card.bImg }}" alt="Card Back" />
-                {{#if isFoil}}
-                {{#unless isGenericBack}}
-                <img class="foil-overlay" src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
-                {{/unless}}
-                {{/if}}
+                <img src="{{ card.face_two.image }}" alt="Card Back" />
+                <img class="foil-overlay" ng-if="card.flags.is_foil" src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
               </div>
             </div>
-            {{/if}}
           </div>
         </div>
       </div>
-
-      {{#if (and card.bImg (not isGenericBack))}}
-      <button id="flipBtn" style="margin-top: 10px; padding: 6px 10px; background: #007acc; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+      <button id="flipBtn">
         Flip Card
       </button>
-      {{/if}}
-
       <div style="margin-top: 10px;">
         <strong>Price:</strong><br> ${{ card.price || 'N/A' }}
       </div>
@@ -271,7 +280,7 @@
 
     <!-- Right Column -->
     <div class="info-col" style="flex: 1.5;">
-      <div id="cardName">{{ card.frontFlavorName || card.frontName || card.name }}</div>
+      <div id="cardName">{{ card.face_one.flavor_name || card.face_one.name || card.name }}</div>
 
       {{#if (or showManaFront card.typeLine)}}
       <div style="display: flex; gap: 20px; margin-bottom: 8px;">
