@@ -14,8 +14,12 @@
             $scope.card = card;
 
             // Trust the oracle text HTML
-            $scope.trustedOracle = $sce.trustAsHtml(card.face_one.oracle_text || '');
-			$scope.trustedManaCost = $sce.trustAsHtml(card.face_one.mana_cost || '');
+            $scope.trustedFaceOneOracle = $sce.trustAsHtml(card.face_one.oracle_text || '');
+            $scope.trustedFaceOneManaCost = $sce.trustAsHtml(card.face_one.mana_cost || '');
+            if (card.flags.is_multifaced) {
+                $scope.trustedFaceTwoOracle = $sce.trustAsHtml(card.face_two.oracle_text || '');
+                $scope.trustedFaceTwoManaCost = $sce.trustAsHtml(card.face_two.mana_cost || '');
+            }
         }
     };
 
@@ -24,15 +28,18 @@
             $scope.card = updatedCard;
 
             // Trust the oracle text HTML
-            $scope.trustedOracle = $sce.trustAsHtml(updatedCard.face_one.oracle_text || '');
-			$scope.trustedManaCost = $sce.trustAsHtml(updatedCard.face_one.mana_cost || '');
+            $scope.trustedFaceOneOracle = $sce.trustAsHtml(updatedCard.face_one.oracle_text || '');
+            $scope.trustedFaceOneManaCost = $sce.trustAsHtml(updatedCard.face_one.mana_cost || '');
+            if (updatedCard.flags.is_multifaced) {
+                $scope.trustedFaceTwoOracle = $sce.trustAsHtml(updatedCard.face_two.oracle_text || '');
+                $scope.trustedFaceTwoManaCost = $sce.trustAsHtml(updatedCard.face_two.mana_cost || '');
+            }
         });
     });
 
     // Initial load (optional)
     $scope.getCard();
-};
-]]></client_script>
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.card-modal-content {&#13;
   display: flex;&#13;
@@ -46,6 +53,7 @@
 }&#13;
 .flip-card-wrapper{&#13;
   width:35rem;&#13;
+  margin:2rem;&#13;
 }&#13;
 .flipBtn&#13;
 .flip-card-wrapper {&#13;
@@ -174,14 +182,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-22 17:53:57</sys_updated_on>
+        <sys_updated_on>2025-09-22 19:05:27</sys_updated_on>
         <template><![CDATA[<div>
   <div class="card-modal-content" ng-if="card">
     <!-- Left Column -->
@@ -229,7 +237,7 @@
       <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="card.face_one.mana_cost || card.face_one.type_line">
         <div ng-if="card.face_one.mana_cost">
           <strong>Mana Cost:</strong><br>
-          <span ng-bind-html="trustedManaCost"></span>
+          <span ng-bind-html="trustedFaceOneManaCost"></span>
         </div>
 
         <div ng-if="card.face_one.type_line"><strong>Type:</strong><br> {{ card.face_one.type_line }}</div>
@@ -243,7 +251,7 @@
       </div>
 
       <div ng-if="card.face_one.oracle_text" style="margin-bottom: 10px;">
-        <strong>Oracle Text:</strong><br><span ng-bind-html="trustedOracle"></span>
+        <strong>Oracle Text:</strong><br><span ng-bind-html="trustedFaceOneOracle"></span>
       </div>
 
       <div ng-if="card.face_one.flavor_text" style="font-style: italic; margin-bottom: 12px;">
