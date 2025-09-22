@@ -174,14 +174,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-22 16:31:48</sys_updated_on>
+        <sys_updated_on>2025-09-22 17:53:57</sys_updated_on>
         <template><![CDATA[<div>
   <div class="card-modal-content" ng-if="card">
     <!-- Left Column -->
@@ -215,16 +215,16 @@
       </div>
 
       <div ng-if="card.links" class="icon-links" style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 8px;">
-        <a ng-if="card.tcg" ng-href="{{ card.tcg }}" target="_blank"><img src="x_759224_magic_c_0.icon_tcgplayer.png" title="TCGPlayer" alt="TCGPlayer" /></a>
-        <a ng-if="card.cardMarket" ng-href="{{ card.cardMarket }}" target="_blank"><img src="x_759224_magic_c_0.icon_cardmarket.png" title="Cardmarket" alt="Cardmarket" /></a>
-        <a ng-if="card.cardHoarder" ng-href="{{ card.cardHoarder }}" target="_blank"><img src="x_759224_magic_c_0.icon_cardhoarder.png" title="Cardhoarder" alt="Cardhoarder" /></a>
-        <a ng-if="card.edhrec" ng-href="{{ card.edhrec }}" target="_blank"><img src="x_759224_magic_c_0.icon_edhrec.png" title="EDHREC" alt="EDHREC" /></a>
+        <a ng-if="card.links.tcgplayer" ng-href="{{ card.links.tcgplayer }}" target="_blank"><img src="x_759224_magic_c_0.icon_tcgplayer.png" title="TCGPlayer" alt="TCGPlayer" /></a>
+        <a ng-if="card.links.cardmarket" ng-href="{{ card.links.cardmarket }}" target="_blank"><img src="x_759224_magic_c_0.icon_cardmarket.png" title="Cardmarket" alt="Cardmarket" /></a>
+        <a ng-if="card.links.cardhoarder" ng-href="{{ card.links.cardhoarder }}" target="_blank"><img src="x_759224_magic_c_0.icon_cardhoarder.png" title="Cardhoarder" alt="Cardhoarder" /></a>
+        <a ng-if="card.links.edhrec" ng-href="{{ card.links.edhrec }}" target="_blank"><img src="x_759224_magic_c_0.icon_edhrec.png" title="EDHREC" alt="EDHREC" /></a>
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="info-col" style="flex: 1.5;">
-      <div>{{ card.face_one.flavor_name || card.face_one.name || card.name }}</div>
+      <h2>{{ card.face_one.flavor_name || card.face_one.name || card.name }}</h2>
 
       <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="card.face_one.mana_cost || card.face_one.type_line">
         <div ng-if="card.face_one.mana_cost">
