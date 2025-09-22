@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
     <sp_angular_provider action="INSERT_OR_UPDATE">
-        <name>MTGCards</name>
-        <script><![CDATA[function MTGCards() {
+        <name>mtgCards</name>
+        <script><![CDATA[function() {
+    var cardObj;
+    var listeners = [];
 
-}]]></script>
+    function setCard(card) {
+        cardObj = card;
+        console.log("Card set:", cardObj);
+
+        // Notify all listeners
+        listeners.forEach(function(callback) {
+            if (typeof callback === 'function') {
+                callback(cardObj);
+            }
+        });
+    }
+
+    function getCard() {
+        console.log("Getting card:", cardObj);
+        return cardObj;
+    }
+
+    function onChange(callback) {
+        if (typeof callback === 'function') {
+            listeners.push(callback);
+        }
+    }
+
+    return {
+        setCard: setCard,
+        getCard: getCard,
+        onChange: onChange
+    };
+}
+]]></script>
         <sys_class_name>sp_angular_provider</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-20 17:44:25</sys_created_on>
         <sys_id>b18651a2c30c72100efafbfdd401310a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>MTGCards</sys_name>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>mtgCards</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_angular_provider_b18651a2c30c72100efafbfdd401310a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-21 16:29:33</sys_updated_on>
+        <sys_updated_on>2025-09-22 15:11:08</sys_updated_on>
         <type>service</type>
     </sp_angular_provider>
 </record_update>

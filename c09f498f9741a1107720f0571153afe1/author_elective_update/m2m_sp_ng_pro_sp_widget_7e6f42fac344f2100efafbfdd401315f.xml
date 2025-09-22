@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="MTGCards">b18651a2c30c72100efafbfdd401310a</sp_angular_provider>
+        <sp_widget display_value="MTG Deck View">4adc539ec3db22100efafbfdd401314d</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-21 16:31:02</sys_created_on>
+        <sys_id>7e6f42fac344f2100efafbfdd401315f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTGCards.MTG Deck View</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_7e6f42fac344f2100efafbfdd401315f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-21 16:31:02</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_7e6f42fac344f2100efafbfdd401315f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="MTGCards">b18651a2c30c72100efafbfdd401310a</sp_angular_provider><sp_widget display_value="MTG Deck View">4adc539ec3db22100efafbfdd401314d</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-09-21 16:31:02</sys_created_on><sys_id>7e6f42fac344f2100efafbfdd401315f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>MTGCards.MTG Deck View</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_7e6f42fac344f2100efafbfdd401315f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-09-21 16:31:02</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>-1526139035</payload_hash>
+        <record_name>MTGCards.MTG Deck View</record_name>
+        <reverted_from/>
+        <source>5cb62136c36fa6100efafbfdd401313c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-21 16:31:02</sys_created_on>
+        <sys_id>ba6f8a3ec344f2100efafbfdd40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1996d1d54500000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-21 16:31:02</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>326f8a3e7844f2106e78a257008198be</update_guid>
+        <update_guid_history>326f8a3e7844f2106e78a257008198be:-1526139035</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="MTGCards.MTG Deck View">9713c303c34032100efafbfdd4013184</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-22 14:55:23</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>0b3d10586b844a108d522c187cc08f90</sys_id>
+        <sys_metadata>7e6f42fac344f2100efafbfdd401315f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTGCards.MTG Deck View</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_7e6f42fac344f2100efafbfdd401315f</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_7e6f42fac344f2100efafbfdd401315f">ba6f8a3ec344f2100efafbfdd40131be</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-22 14:55:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
