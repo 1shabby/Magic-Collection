@@ -153,7 +153,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 			price: cardGR.getValue('price'),
 			quantity: 0,
 			name: cardGR.getValue('name'),
-			cmc: cardGR.getValue('cmc')
+			cmc: cardGR.getValue('cmc'),
+			colors: cardGR.getValue('colors'),
+			sets: cardGR.getDisplayValue('sets'),
+			cn: cardGR.getValue('collector_number')
 
         };
         return cardData;
@@ -165,14 +168,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>89</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-15 01:10:35</sys_updated_on>
+        <sys_updated_on>2025-09-22 15:41:20</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
