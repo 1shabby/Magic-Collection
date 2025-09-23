@@ -57,6 +57,36 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
 
     /**
+     * Description: Takes in a comma separated string of colors and converts them to the full color name. 
+     * Parameters: [string]: colors - The colors field (ex: W,U = White, Blue).
+     * Returns: [string]: Comma separated string of colors in the form of White,Blue rather than W,U.
+     */
+
+    convertColors: function(colors) {
+        if (!colors) return "";
+
+        var map = {
+            B: 'Black',
+            W: 'White',
+            U: 'Blue',
+            R: 'Red',
+            G: 'Green',
+            C: 'Colorless'
+        };
+
+        var order = ['White', 'Blue', 'Black', 'Red', 'Green', 'Colorless'];
+
+        return colors
+            .toUpperCase()
+            .split('')
+            .map(c => map[c] || '')
+            .filter(c => c && c.trim() !== '')
+            .sort((a, b) => order.indexOf(a) - order.indexOf(b))
+            .join(', ');
+    },
+
+
+    /**
      * Description: Takes in an id string for a card. 
      * Parameters: [string]: id - The sys id of the card record.
      * Returns: [object]: cardData - JSON object containing all the data from the card record.
@@ -95,15 +125,15 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 is_gc: cardGR.getValue('game_changer') == '1',
                 is_token: cardGR.getValue('is_token') == '1',
                 is_multifaced: cardGR.getValue('is_multi_faced') == '1',
-				// Deck card flags
-				is_commander: false,
-				is_maybeboard: false,
-				is_sideboard: false,
-				is_flipped: false
+                // Deck card flags
+                is_commander: false,
+                is_maybeboard: false,
+                is_sideboard: false,
+                is_flipped: false
             },
             face_one: { // Face one data.
                 artist: cardGR.getValue('face_one_artist'),
-                colors: cardGR.getValue('face_one_colors'),
+                colors: this.convertColors(cardGR.getValue('face_one_colors')),
                 flavor_name: cardGR.getValue('face_one_flavor_name'),
                 flavor_text: cardGR.getValue('face_one_flavor_text'),
                 image: this.getImgSrc(cardGR.getValue('front_image')),
@@ -117,7 +147,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             },
             face_two: { // Face two data
                 artist: cardGR.getValue('face_two_artist'),
-                colors: cardGR.getValue('face_two_colors'),
+                colors: this.convertColors(cardGR.getValue('face_two_colors')),
                 flavor_name: cardGR.getValue('face_two_flavor_name'),
                 flavor_text: cardGR.getValue('face_two_flavor_text'),
                 image: this.getImgSrc(cardGR.getValue('back_image')),
@@ -129,13 +159,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 toughness: cardGR.getValue('face_two_toughness'),
                 type_line: cardGR.getValue('face_two_type_line')
             },
-			links: { // Links associated to the card
-				edhrec: cardGR.getValue('edhrec'),
-				gatherer: cardGR.getValue('gatherer'),
-				cardhoarder: cardGR.getValue('cardhoarder_purchase'),
-				cardmarket: cardGR.getValue('cardmarket_purchase'),
-				tcgplayer: cardGR.getValue('tcgplayer_purchase')
-			},
+            links: { // Links associated to the card
+                edhrec: cardGR.getValue('edhrec'),
+                gatherer: cardGR.getValue('gatherer'),
+                cardhoarder: cardGR.getValue('cardhoarder_purchase'),
+                cardmarket: cardGR.getValue('cardmarket_purchase'),
+                tcgplayer: cardGR.getValue('tcgplayer_purchase')
+            },
             counters: { // Counters availble to put on cards.
                 generic: 0,
                 plusOne: 0,
@@ -156,14 +186,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 doubleStrike: 0,
                 reach: 0,
                 vigilance: 0
-			},
-			price: cardGR.getValue('price'),
-			quantity: 0,
-			name: cardGR.getValue('name'),
-			cmc: cardGR.getValue('cmc'),
-			colors: cardGR.getValue('colors'),
-			sets: cardGR.getDisplayValue('sets'),
-			cn: cardGR.getValue('collector_number')
+            },
+            price: cardGR.getValue('price'),
+            quantity: 0,
+            name: cardGR.getValue('name'),
+            cmc: cardGR.getValue('cmc'),
+            colors: this.convertColors(cardGR.getValue('colors')),
+            sets: cardGR.getDisplayValue('sets'),
+            cn: cardGR.getValue('collector_number')
         };
         return cardData;
     },
@@ -174,14 +204,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>94</sys_mod_count>
+        <sys_mod_count>98</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-22 17:44:12</sys_updated_on>
+        <sys_updated_on>2025-09-23 17:12:24</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
