@@ -28,43 +28,47 @@
                 }
             }
         }
-
-        console.log('Legal formats:', $scope.legalFormats);
-        console.log('Illegal formats:', $scope.illegalFormats);
     }
 
     $scope.flipCard = function() {
         $scope.isFlipped = !$scope.isFlipped;
+        $scope.updateCurrentFace();
+    };
+
+    $scope.updateCurrentFace = function() {
+        $scope.currentFace = $scope.isFlipped ? $scope.card.face_two : $scope.card.face_one;
+		$scope.name = $scope.currentFace.name;
+		$scope.flavorName = $scope.currentFace.flavor_name;
+		$scope.colors = $scope.currentFace.colors;
+		$scope.power = $scope.currentFace.power;
+		$scope.toughness = $scope.currentFace.toughness;
+		$scope.flavorText = $scope.currentFace.flavor_text;
+		$scope.loyalty = $scope.currentFace.loyalty;
+		$scope.artist = $scope.currentFace.artist;
+		$scope.typeLine = $scope.currentFace.type_line;
+		// Fields with HTML
+        $scope.trustedOracleText = $sce.trustAsHtml($scope.currentFace.oracle_text);
+        $scope.trustedManaCost = $sce.trustAsHtml($scope.currentFace.mana_cost);
     };
 
     $scope.getCard = function() {
         const card = mtgCards.getCard();
         if (card) {
             $scope.card = card;
+			$scope.isFlipped = false;
 
             // Trust the oracle text HTML
-            $scope.trustedFaceOneOracle = $sce.trustAsHtml(card.face_one.oracle_text || '');
-            $scope.trustedFaceOneManaCost = $sce.trustAsHtml(card.face_one.mana_cost || '');
-            if (card.flags.is_multifaced) {
-                $scope.trustedFaceTwoOracle = $sce.trustAsHtml(card.face_two.oracle_text || '');
-                $scope.trustedFaceTwoManaCost = $sce.trustAsHtml(card.face_two.mana_cost || '');
-            }
             formatLegalityLists();
+			$scope.updateCurrentFace();
         }
     };
 
     mtgCards.onChange(function(updatedCard) {
         $scope.$evalAsync(function() {
             $scope.card = updatedCard;
-
-            // Trust the oracle text HTML
-            $scope.trustedFaceOneOracle = $sce.trustAsHtml(updatedCard.face_one.oracle_text || '');
-            $scope.trustedFaceOneManaCost = $sce.trustAsHtml(updatedCard.face_one.mana_cost || '');
-            if (updatedCard.flags.is_multifaced) {
-                $scope.trustedFaceTwoOracle = $sce.trustAsHtml(updatedCard.face_two.oracle_text || '');
-                $scope.trustedFaceTwoManaCost = $sce.trustAsHtml(updatedCard.face_two.mana_cost || '');
-            }
+			$scope.isFlipped = false;
             formatLegalityLists();
+			$scope.updateCurrentFace();
         });
     });
 
@@ -78,9 +82,24 @@
   gap: 20px;&#13;
   max-width: 70vw;&#13;
   margin: auto;&#13;
-  color: #eee;&#13;
+  padding: 2rem;&#13;
+  color: $brand-tertiary;&#13;
   background: $brand-primary;&#13;
   border-radius: 5px;&#13;
+}&#13;
+.left-col {&#13;
+  flex: 1.3; &#13;
+  text-align: center;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  align-items: center; &#13;
+  font-size:2rem;&#13;
+  font-weight:450;&#13;
+}&#13;
+.left-col strong {&#13;
+  font-weight: 700;&#13;
+  font-size: 2.2rem;&#13;
+  color:$brand-secondary;&#13;
 }&#13;
 .flip-card-wrapper{&#13;
   width:35rem;&#13;
@@ -216,18 +235,18 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-22 21:18:05</sys_updated_on>
+        <sys_updated_on>2025-09-23 16:46:02</sys_updated_on>
         <template><![CDATA[<div>
   <div class="card-modal-content" ng-if="card">
     <!-- Left Column -->
-    <div style="flex: 1.3; text-align: center; display: flex; flex-direction: column; align-items: center;">
+    <div class="left-col">
       <div class="flip-card-wrapper">
         <div class="flip-card" ng-class="{flipped: isFlipped}">
           <div class="flip-card-inner">
@@ -243,7 +262,6 @@
             <div class="flip-card-back">
               <div class="card-img-container">
                 <img ng-src="{{ card.face_two.image }}" alt="Card Back" />
-                <img class="foil-overlay" ng-if="card.flags.is_foil" src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
               </div>
             </div>
           </div>
@@ -266,30 +284,31 @@
 
     <!-- Right Column -->
     <div class="info-col" style="flex: 2.5;">
-      <h2 class="card-name">{{ card.face_one.flavor_name || card.face_one.name || card.name }}</h2>
+      <h2 class="card-name">{{ flavorName || name || card.name }}</h2>
 
-      <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="card.face_one.mana_cost || card.face_one.type_line">
-        <div ng-if="card.face_one.mana_cost">
+      <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="trustedManaCost || typeLine">
+        <div ng-if="card.face_one.mana_cost || (isFlipped && card.face_two.mana_cost)">
           <strong>Mana Cost:</strong><br>
-          <span ng-bind-html="trustedFaceOneManaCost"></span>
+          <span ng-bind-html="trustedManaCost"></span>
         </div>
 
-        <div ng-if="card.face_one.type_line"><strong>Type:</strong><br> {{ card.face_one.type_line }}</div>
+        <div ng-if="typeLine"><strong>Type:</strong><br> {{ typeLine }}</div>
       </div>
 
-      <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="card.face_one.colors || card.face_one.power || card.face_one.toughness">
-        <div ng-if="card.face_one.colors"><strong>Colors:</strong><br> {{ card.face_one.colors }}</div>
-        <div ng-if="card.face_one.power || card.face_one.toughness">
-          <strong>Power/Toughness:</strong><br> {{ card.face_one.power || '–' }} / {{ card.face_one.toughness || '–' }}
+      <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="colors || power || toughness || loyalty">
+        <div ng-if="colors"><strong>Colors:</strong><br> {{ colors }}</div>
+        <div ng-if="loyalty"><strong>Loyalty:</strong><br> {{ loyalty }}</div>
+        <div ng-if="power || toughness">
+          <strong>Power/Toughness:</strong><br> {{ power || '–' }} / {{ toughness || '–' }}
         </div>
       </div>
 
-      <div ng-if="card.face_one.oracle_text" style="margin-bottom: 10px;">
-        <strong>Oracle Text:</strong><br><span ng-bind-html="trustedFaceOneOracle"></span>
+      <div ng-if="trustedOracleText" style="margin-bottom: 10px;">
+        <strong>Oracle Text:</strong><br><span ng-bind-html="trustedOracleText"></span>
       </div>
 
-      <div ng-if="card.face_one.flavor_text" style="font-style: italic; margin-bottom: 12px;">
-        <strong>Flavor Text:</strong><br><em>{{ card.face_one.flavor_text }}</em>
+      <div ng-if="flavorText" style="font-style: italic; margin-bottom: 12px;">
+        <strong>Flavor Text:</strong><br><em>{{ flavorText }}</em>
       </div>
 
       <div ng-if="card.sets" style="margin-bottom: 8px;">
@@ -298,7 +317,7 @@
 
       <div style="display: flex; gap: 20px; margin-bottom: 12px;" ng-if="card.cn || card.face_one.artist">
         <div ng-if="card.cn"><strong>Number:</strong><br><em>{{ card.cn }}</em></div>
-        <div ng-if="card.face_one.artist"><strong>Artist:</strong><br><em>{{ card.face_one.artist }}</em></div>
+        <div ng-if="artist"><strong>Artist:</strong><br><em>{{ artist }}</em></div>
       </div>
 
       <hr style="border: none; border-top: 1px solid #555; margin: 20px 0;">
