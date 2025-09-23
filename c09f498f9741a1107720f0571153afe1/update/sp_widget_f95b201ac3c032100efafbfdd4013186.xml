@@ -69,7 +69,7 @@
 
     $scope.handleOverlayClick = function(event) {
         $scope.card = null;
-		mtgCards.setCard(null);
+        mtgCards.setCard(null);
     };
 
     function handleEscapeKey(event) {
@@ -88,12 +88,14 @@
 
 
     mtgCards.onChange(function(updatedCard) {
-        $scope.$evalAsync(function() {
-            $scope.card = updatedCard;
-            $scope.isFlipped = false;
-            formatLegalityLists();
-            $scope.updateCurrentFace();
-        });
+		if(updatedCard){
+			$scope.$evalAsync(function() {
+				$scope.card = updatedCard;
+				$scope.isFlipped = false;
+				formatLegalityLists();
+				$scope.updateCurrentFace();
+			});
+		}
     });
 
     // Initial load (optional)
@@ -292,14 +294,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-23 18:48:28</sys_updated_on>
+        <sys_updated_on>2025-09-23 19:13:19</sys_updated_on>
         <template><![CDATA[<div class="card-modal-overlay" ng-if="card" ng-click="handleOverlayClick($event)">
   <div class="card-modal-content" ng-if="card" ng-click="stopClick($event)">
     <button class="modal-close-btn" ng-click="handleOverlayClick($event)" aria-label="Close Modal">
