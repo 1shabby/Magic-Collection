@@ -88,14 +88,26 @@
 
 
     mtgCards.onChange(function(updatedCard) {
-		if(updatedCard){
-			$scope.$evalAsync(function() {
-				$scope.card = updatedCard;
-				$scope.isFlipped = false;
-				formatLegalityLists();
-				$scope.updateCurrentFace();
-			});
-		}
+        if (updatedCard) {
+            $scope.$evalAsync(function() {
+                $scope.card = updatedCard;
+                $scope.isFlipped = false;
+                formatLegalityLists();
+                $scope.updateCurrentFace();
+            });
+        }
+    });
+
+    $scope.$watch('card', function(newVal, oldVal) {
+        const body = document.body;
+
+        if (newVal) {
+            // Modal is now open
+            body.classList.add('modal-open');
+        } else {
+            // Modal is now closed
+            body.classList.remove('modal-open');
+        }
     });
 
     // Initial load (optional)
@@ -104,36 +116,33 @@
         <controller_as>c</controller_as>
         <css>.card-modal-overlay {&#13;
   position: fixed;&#13;
-  top: 0;&#13;
-  left: 0;&#13;
-  right: 0;&#13;
-  bottom: 0;&#13;
-  background-color: rgba(0, 0, 0, 0.5); /* dimmed background */&#13;
+  inset: 0; /* shorthand for top, right, bottom, left: 0 */&#13;
+  background-color: rgba(0, 0, 0, 0.5);&#13;
+  z-index: 9999;&#13;
+  overflow-y: auto;&#13;
   display: flex;&#13;
   justify-content: center;&#13;
   align-items: center;&#13;
-  z-index: 9999; /* make sure it's on top */&#13;
-  cursor:default;&#13;
+  padding: 2rem; /* Ensure some space on small screens */&#13;
 }&#13;
+&#13;
 .card-modal-content {&#13;
   display: flex;&#13;
-  flex-wrap: wrap;&#13;
-  gap: 20px;&#13;
+  flex-direction: row; /* Desktop: side-by-side */&#13;
+  flex-wrap: nowrap;&#13;
+  max-height: 90vh;&#13;
+  overflow-y: auto;&#13;
+  background-color: $brand-primary;&#13;
   width: 90%;&#13;
   max-width: 100rem;&#13;
-  margin: auto;&#13;
   padding: 2rem;&#13;
-  color: $brand-tertiary;&#13;
-  background: $brand-primary;&#13;
   border-radius: 5px;&#13;
+  border: 1px solid $brand-secondary;&#13;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);&#13;
-  cursor:default;&#13;
   position: relative;&#13;
-  border-style:solid;&#13;
-  border-color:$brand-secondary;&#13;
-  border-width:1px;&#13;
-  overflow-y:auto;&#13;
+  cursor:default;&#13;
 }&#13;
+&#13;
 .modal-close-btn {&#13;
   position: absolute;&#13;
   top: 16px;&#13;
@@ -152,14 +161,17 @@
 }&#13;
 &#13;
 .left-col {&#13;
-  flex: 1.3; &#13;
-  text-align: center;&#13;
+  flex: 1.2;&#13;
+  min-width: 0;&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
-  align-items: center; &#13;
+  align-items: center;&#13;
+  text-align: center;&#13;
   font-size:2rem;&#13;
   font-weight:450;&#13;
+  color: $brand-tertiary;&#13;
 }&#13;
+&#13;
 .left-col strong {&#13;
   font-weight: 700;&#13;
   font-size: 2.2rem;&#13;
@@ -171,7 +183,13 @@
   margin:2rem;&#13;
 }&#13;
 .card-name{&#13;
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);&#13;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive size */&#13;
+  font-weight: 700;&#13;
+  text-align: center;&#13;
+  margin-bottom: 1rem;&#13;
+  color: $brand-tertiary;&#13;
+}&#13;
+&#13;
 }&#13;
 .flipBtn&#13;
 .flip-card-wrapper {&#13;
@@ -224,7 +242,7 @@
 }&#13;
 .flip-card-front img, .flip-card-back img {&#13;
   max-width: 100%;&#13;
-  height: auto;&#13;
+  height: 100%;&#13;
 }&#13;
 .foil-overlay {&#13;
   position: absolute;&#13;
@@ -248,9 +266,12 @@
   line-height: 1.6;&#13;
   font-weight: 450;&#13;
   color: $brand-tertiary;&#13;
+  padding-left:2rem;&#13;
 }&#13;
 .info-col strong {&#13;
   font-weight: 700;&#13;
+  flex: 2;&#13;
+  overflow: hidden;&#13;
   font-size: 2.2rem;&#13;
   color:$brand-secondary;&#13;
 }&#13;
@@ -258,6 +279,11 @@
   border-style:solid;&#13;
   border-width:1px;&#13;
   border-color:#5e5f5e;&#13;
+}&#13;
+body.modal-open {&#13;
+  overflow: hidden;&#13;
+  position: fixed;&#13;
+  width: 100%;&#13;
 }&#13;
 #cardName {&#13;
   font-weight: 900;&#13;
@@ -288,6 +314,12 @@
     width: 100%;&#13;
     max-width: 100%;&#13;
     font-size: 1.6rem;&#13;
+    padding:0;&#13;
+  }&#13;
+  &#13;
+  .info-col {&#13;
+    padding-top: 1rem;&#13;
+    padding-left: 0;&#13;
   }&#13;
 &#13;
   .info-col strong, .left-col strong {&#13;
@@ -303,7 +335,7 @@
 &#13;
 @media (max-width: 480px) {&#13;
   .card-name {&#13;
-    font-size: 1.4rem;&#13;
+    font-size: 2rem;&#13;
   }&#13;
   .info-col {&#13;
     font-size: 1.4rem;&#13;
@@ -337,14 +369,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>93</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-24 15:14:25</sys_updated_on>
+        <sys_updated_on>2025-09-24 16:14:39</sys_updated_on>
         <template><![CDATA[<div class="card-modal-overlay" ng-if="card" ng-click="handleOverlayClick($event)">
   <div class="card-modal-content" ng-if="card" ng-click="stopClick($event)">
     <button class="modal-close-btn" ng-click="handleOverlayClick($event)" aria-label="Close Modal">
@@ -392,7 +424,7 @@
       <h2 class="card-name">{{ flavorName || name || card.name }}</h2>
 
       <div style="display: flex; gap: 20px; margin-bottom: 8px;" ng-if="trustedManaCost || typeLine">
-        <div ng-if="card.face_one.mana_cost || (isFlipped && card.face_two.mana_cost)">
+        <div ng-if="(!isFlipped && card.face_one.mana_cost) || (isFlipped && card.face_two.mana_cost)">
           <strong>Mana Cost:</strong><br>
           <span ng-bind-html="trustedManaCost"></span>
         </div>
