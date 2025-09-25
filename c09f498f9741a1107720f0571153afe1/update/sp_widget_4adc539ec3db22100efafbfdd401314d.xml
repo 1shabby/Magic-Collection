@@ -395,7 +395,7 @@
         <controller_as>c</controller_as>
         <css>.deck-container {&#13;
   display: flex;&#13;
-  flex-wrap: nowrap; /* no wrapping */&#13;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */&#13;
   align-items: flex-start;&#13;
   padding: $double-space;&#13;
   gap: 2rem;&#13;
@@ -411,7 +411,6 @@
 .card-illegal {&#13;
   position: relative;&#13;
   border: 0.5rem solid $brand-danger !important; /* red border */&#13;
-  box-shadow: 0 0 10px rgba(229, 57, 53, 0.6);&#13;
 }&#13;
 &#13;
 .card-illegal::after {&#13;
@@ -423,7 +422,7 @@
   font-weight: bold;&#13;
   padding: 6px 8px;&#13;
   text-align: center;&#13;
-  border-radius: 4px;&#13;
+&#13;
   position: absolute;&#13;
   bottom: 0;&#13;
   width: 100%;&#13;
@@ -786,6 +785,84 @@
   background-color:transparent;&#13;
   border:none;&#13;
 }&#13;
+&#13;
+@media screen and (max-width: 768px) {&#13;
+&#13;
+  .deck-container {&#13;
+    flex-direction: column;&#13;
+    align-items: center;&#13;
+  }&#13;
+&#13;
+  .deck-columns,&#13;
+  .deck-anchored-columns {&#13;
+    width: 100%;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center;&#13;
+  }&#13;
+&#13;
+  .deck-column {&#13;
+    width: 100%;&#13;
+    max-width: 25rem; /* preserve card width */&#13;
+    min-width: 0;&#13;
+    margin-bottom: 2rem;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center;&#13;
+  }&#13;
+&#13;
+  .card-stack {&#13;
+    width: 100%;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center;&#13;
+  }&#13;
+&#13;
+  .stacked-card {&#13;
+    margin-top: -33rem;&#13;
+  }&#13;
+&#13;
+  .stacked-card:first-child {&#13;
+    margin-top: 0;&#13;
+  }&#13;
+&#13;
+  .stacked-card:hover ~ .stacked-card {&#13;
+    transform: translateY(35rem);&#13;
+  }&#13;
+&#13;
+  .deck-grid {&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center; /* Centers each category block */&#13;
+    width: 100%;&#13;
+  }&#13;
+&#13;
+  .deck-grid-category {&#13;
+    width: 100%;&#13;
+    max-width: 100%;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center; /* Centers content within each category */&#13;
+    margin-bottom: 2rem;&#13;
+  }&#13;
+&#13;
+  .card-grid {&#13;
+    display: flex;                  /* Use flex instead of grid on mobile */&#13;
+    flex-wrap: wrap;&#13;
+    justify-content: center;        /* Center cards in the grid */&#13;
+    gap: 1.5rem;&#13;
+    width: 100%;&#13;
+    max-width: 100%;&#13;
+    padding: 1rem 0;&#13;
+  }&#13;
+&#13;
+  .grid-card {&#13;
+    max-width: 250px;&#13;
+    width: 100%;&#13;
+  }&#13;
+}&#13;
+&#13;
+&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -972,14 +1049,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>293</sys_mod_count>
+        <sys_mod_count>306</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-24 16:32:59</sys_updated_on>
+        <sys_updated_on>2025-09-24 19:04:50</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">

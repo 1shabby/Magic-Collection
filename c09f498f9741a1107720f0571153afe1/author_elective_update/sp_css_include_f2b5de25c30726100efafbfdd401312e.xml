@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="DELETE">
+        <lazy_load>false</lazy_load>
+        <name>Modal CSS</name>
+        <rtl_css_file_url/>
+        <source>local</source>
+        <sp_css display_value="Modal CSS">a1d55265c30726100efafbfdd40131a8</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-30 02:43:44</sys_created_on>
+        <sys_id>f2b5de25c30726100efafbfdd401312e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Modal CSS</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_css_include_f2b5de25c30726100efafbfdd401312e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-04 14:31:14</sys_updated_on>
+        <url/>
+    </sp_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>57a887b793e0e290611eddd548373cd3</instance_id>
+        <instance_name>dev315204</instance_name>
+        <name>sp_css_include_f2b5de25c30726100efafbfdd401312e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include"><sp_css_include action="INSERT_OR_UPDATE"><lazy_load>false</lazy_load><name>Modal CSS</name><rtl_css_file_url/><source>local</source><sp_css display_value="Modal CSS">a1d55265c30726100efafbfdd40131a8</sp_css><sys_class_name>sp_css_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-30 02:43:44</sys_created_on><sys_id>f2b5de25c30726100efafbfdd401312e</sys_id><sys_mod_count>3</sys_mod_count><sys_name>Modal CSS</sys_name><sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package><sys_policy/><sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope><sys_update_name>sp_css_include_f2b5de25c30726100efafbfdd401312e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-08-04 14:31:14</sys_updated_on><url/></sp_css_include></record_update>]]></payload>
+        <payload_hash>-439410916</payload_hash>
+        <record_name>Modal CSS</record_name>
+        <reverted_from/>
+        <source>11174b79c3baae100efafbfdd401313b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-04 14:31:14</sys_created_on>
+        <sys_id>fba72257c3c76e100efafbfdd40131cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>198757e63fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-04 14:31:14</sys_updated_on>
+        <type>CSS Include</type>
+        <update_guid>73a7225799c76e105be53dbc3feafccd</update_guid>
+        <update_guid_history>73a7225799c76e105be53dbc3feafccd:-439410916,4287225714c76e10391dfcd05e347124:-1873799127,c9e59a2597072610ca04498dd49df881:-42532557,dfc55a259b07261017ac5c3a3e8c87e6:1150491905</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Modal CSS">cc6ffd3bc3c8f2100efafbfdd4013178</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-24 17:54:52</sys_created_on>
+        <sys_db_object display_value="" name="sp_css_include">sp_css_include</sys_db_object>
+        <sys_id>03479e236ac24260818913a5f2105100</sys_id>
+        <sys_metadata>f2b5de25c30726100efafbfdd401312e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Modal CSS</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_css_include_f2b5de25c30726100efafbfdd401312e</sys_update_name>
+        <sys_update_version display_value="sp_css_include_f2b5de25c30726100efafbfdd401312e">fba72257c3c76e100efafbfdd40131cd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-24 17:54:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
