@@ -107,6 +107,24 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		return relArr;
     },
 
+	getOtherPrintings: function(name) {
+		var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+		cardGR.addQuery('is_token',false);
+		cardGR.addQuery('name',name);
+		cardGR.query();
+		printingArr = [];
+
+		while(cardGR.next()){
+			printingObj = {
+				image : this.getImgSrc(cardGR.getValue('front_image')),
+				price : cardGR.getValue('price'),
+				sets : cardGR.getDisplayValue('sets')
+			};
+			printingArr.push(printingObj);
+		}
+		return printingArr;
+	},
+
     /**
      * Description: Takes in an id string for a card. 
      * Parameters: [string]: id - The sys id of the card record.
@@ -209,6 +227,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 vigilance: 0
             },
             related_cards: this.getRelatedCards(id),
+			printings: this.getOtherPrintings(cardGR.getValue('name')),
             price: cardGR.getValue('price'),
             quantity: 0,
             name: cardGR.getValue('name'),
@@ -226,14 +245,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>99</sys_mod_count>
+        <sys_mod_count>103</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-25 15:53:03</sys_updated_on>
+        <sys_updated_on>2025-09-26 16:45:19</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
