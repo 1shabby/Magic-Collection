@@ -251,17 +251,18 @@ img {&#13;
     if (searchTerm){
 	countGR.addQuery('name', 'CONTAINS', searchTerm);
 	}
-	countGR.addEncodedQuery('is_token=false');
+	countGR.addQuery('is_token',false);
     countGR.query();
     data.totalCount = countGR.getRowCount();
 
     //Fetch paginated records
     var cardsGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardsGR.addQuery('is_token',false);
     if (searchTerm) {
 		cardsGR.addQuery('name', 'CONTAINS', searchTerm);
 	}
     cardsGR.orderBy('name');
-	countGR.addEncodedQuery('is_token=false');
+	
     cardsGR.query();
 
     var i = 0, added = 0;
@@ -288,14 +289,14 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>432</sys_mod_count>
+        <sys_mod_count>435</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-24 17:24:29</sys_updated_on>
+        <sys_updated_on>2025-09-30 20:59:09</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="card in data.records"
