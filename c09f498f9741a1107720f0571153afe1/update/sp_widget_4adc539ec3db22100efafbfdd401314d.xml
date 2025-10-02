@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $window, $timeout,mtgCards) {
+        <client_script><![CDATA[api.controller = function($scope, $window, $timeout, mtgCards) {
     var c = this;
 
     if (c.data.deck_name) {
@@ -232,8 +232,7 @@
     });
 
     // Layout change hook
-    $scope.onLayoutChange = function() {
-    };
+    $scope.onLayoutChange = function() {};
 
     $scope.setLayout = function(mode) {
         $scope.layoutMode = mode;
@@ -277,7 +276,7 @@
 
     // Modal open/close handlers
     $scope.openCardModal = function(card, event) {
-		mtgCards.setCard(card);
+        mtgCards.setCard(card);
         if (event) event.stopPropagation();
     };
 
@@ -337,6 +336,12 @@
         return false;
     };
 
+    /* Description: Returns the reason a card is marked as not being legal in a deck 
+    * Parameters: [object] - card: Card object that is marked as illegal
+    			  [string] - formatName: name of the format for the deck that's being checked
+    * Returns: [string] - Reason the card is not legal in the deck
+    */
+
     $scope.getIllegalityReason = function(card, formatName) {
         if (!card) return "";
 
@@ -347,16 +352,18 @@
             .some(type => name.includes(type));
         const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
 
+        // Format leglity rule
         if (card.legality[formatName] === false) {
             return "This card is illegal in " + formatName + ".";
         }
-
+        // Seven Dwarves rule
         if (sevenDwarves && qty > 7) {
             return "A deck can have up to 7 copies of this card.";
         }
-
+        // Commander / Oathbreaker / Brawl rules
         if ($scope.is_singleton) {
-            if (!isBasicLand && qty > 1) {
+            // Color Identity rule
+            if (!isBasicLand && qty > 1) { // Singleton rule
                 return "Only one copy of a card is allowed in " + formatName + " (except basic lands).";
             }
         } else {
@@ -382,9 +389,6 @@
         return cards.map(card => {
             const card_qty = card.quantity;
             const card_name = card.name || "Unknown";
-            // const card_cmc1 = card.face_one.mana_cost || 0;
-            // const card_cmc2 = card.face_two.mana_cost;
-            // const card_cmcStr = card_cmc2 !== undefined ? card_cmc1+'/'+card_cmc2 : card_cmc1;
             const card_cmc = card.cmc;
             const card_price = parseFloat(card.price || 0).toFixed(2);
             const line = card_qty + ' ' + card_name + ' ' + card_cmc + ' $' + card_price;
@@ -1049,14 +1053,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>306</sys_mod_count>
+        <sys_mod_count>307</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-24 19:04:50</sys_updated_on>
+        <sys_updated_on>2025-10-02 02:32:50</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
