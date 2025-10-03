@@ -15,6 +15,8 @@
     $scope.sortBy = 'alphabetical'; // default sort
     $scope.is_singleton = c.data.is_singleton; // Stores if it's a singleton deck
     $scope.format_name = c.data.format_name; // Stores the format name
+    $scope.color_identity = c.data.color_identity; // Stores the color identity of the deck
+    console.log($scope.color_identity);
 
     // Safely initialize card data
     $scope.all_cards = c.data.all_cards || [];
@@ -301,40 +303,50 @@
         const qty = parseInt(card.quantity, 10) || 1;
         const name = (card.name || "").toLowerCase();
         const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
+
         const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
             .some(type => name.includes(type));
 
         const isUnlimitedQtyCard = oracleText.includes("a deck can have any number of cards");
-        const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
+        const sevenDwarves = oracleText.includes("a deck can have up to seven cards");
 
         if (card.legality[formatName] === false) {
-            return true;
+            return true; // banned in format
         }
 
         if (isUnlimitedQtyCard) {
-            return false;
+            return false; // always allowed
         }
 
         if (sevenDwarves) {
-            if (qty <= 7) {
-                return true;
-            } else {
-                return false;
-            }
+            return qty > 7; // illegal if above 7
         }
 
         if ($scope.is_singleton) {
-            if (!isBasicLand && qty > 1) {
-                return true;
+            if (card.colors.toLowerCase() !== "colorless") {
+                const normalize = (str) => str.split(",").map(s => s.trim()).filter(s => s);
+
+                const deckColors = normalize($scope.color_identity);
+                const cardColors = normalize(card.colors);
+
+                const colorMismatch = !cardColors.every(color => deckColors.includes(color));
+                if (colorMismatch) {
+                    return true; // illegal if colors not subset of deck
+                }
             }
-        } else {
-            if (!isBasicLand && qty > 4) {
-                return true;
+
+            if (!isBasicLand && qty > 1) {
+                return true; // illegal if >1 copy of non-basic land
             }
         }
 
-        return false;
+        if (!isBasicLand && qty > 4) {
+            return true; // illegal if >4 copies
+        }
+
+        return false; // legal by default
     };
+
 
     /* Description: Returns the reason a card is marked as not being legal in a deck 
     * Parameters: [object] - card: Card object that is marked as illegal
@@ -350,23 +362,38 @@
         const oracleText = (card.face_one?.oracle_text || "").toLowerCase();
         const isBasicLand = ['plains', 'island', 'swamp', 'mountain', 'forest', 'wastes', 'snow-covered']
             .some(type => name.includes(type));
-        const sevenDwarves = oracleText.includes("A deck can have up to seven cards");
+        const sevenDwarves = oracleText.includes("a deck can have up to seven cards");
 
-        // Format leglity rule
+        // ]]>🔹<![CDATA[ Format legality rule
         if (card.legality[formatName] === false) {
-            return "This card is illegal in " + formatName + ".";
+            return "This card is banned in " + formatName + ".";
         }
-        // Seven Dwarves rule
+
+        // ]]>🔹<![CDATA[ Seven Dwarves rule
         if (sevenDwarves && qty > 7) {
             return "A deck can have up to 7 copies of this card.";
         }
-        // Commander / Oathbreaker / Brawl rules
+
+        // ]]>🔹<![CDATA[ Commander / Oathbreaker / Brawl singleton rules
         if ($scope.is_singleton) {
-            // Color Identity rule
-            if (!isBasicLand && qty > 1) { // Singleton rule
+            // ----- Color Identity Check -----
+            if (card.colors.toLowerCase() !== "colorless") {
+                const normalize = (str) => str.split(",").map(s => s.trim()).filter(s => s);
+                const deckColors = normalize($scope.color_identity);
+                const cardColors = normalize(card.colors);
+
+                const colorMismatch = !cardColors.every(color => deckColors.includes(color));
+                if (colorMismatch) {
+                    return "This card’s color identity (" + card.colors + ") does not match the deck’s color identity (" + $scope.color_identity + ").";
+                }
+            }
+
+            // ----- Singleton Rule -----
+            if (!isBasicLand && qty > 1) {
                 return "Only one copy of a card is allowed in " + formatName + " (except basic lands).";
             }
         } else {
+            // ]]>🔹<![CDATA[ Standard non-singleton quantity rule
             if (!isBasicLand && qty > 4) {
                 return "More than four copies are not allowed in " + formatName + ".";
             }
@@ -884,6 +911,7 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+	var magicUtils = new x_759224_magic_c_0.magic_utils();
     // --- Quantity Update Handler ---
     if (input && input.card_sys_id && input.new_quantity !== undefined) {
         var updateGR = new GlideRecord("x_759224_magic_c_0_deck_card");
@@ -929,13 +957,11 @@
 
     data.format_name = formatName.toLowerCase();
     data.is_singleton = isSingleton;
-
+	data.color_identity = magicUtils.convertColors(deckGR.getValue('color_identity'));
 
     data.deck_name = deckGR.getValue('name');
     var authors = deckGR.getValue("author");
     data.is_author = authors.indexOf(gs.getUserID()) !== -1;
-
-    var magicUtils = new x_759224_magic_c_0.magic_utils();
 
     var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
     deckCardGR.addQuery("deck", deckId);
@@ -1053,14 +1079,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>307</sys_mod_count>
+        <sys_mod_count>311</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-02 02:32:50</sys_updated_on>
+        <sys_updated_on>2025-10-03 23:00:42</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
