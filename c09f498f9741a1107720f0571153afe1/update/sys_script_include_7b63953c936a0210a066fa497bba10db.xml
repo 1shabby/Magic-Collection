@@ -11,24 +11,24 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-	initialize: function(debug, noDebugMethods) {
-		this.debug = false; // Flag to allow debug or not on this script include
-		this.noDebugMethods = []; // Array of methods to not log from
+    initialize: function(debug, noDebugMethods) {
+        this.debug = false; // Flag to allow debug or not on this script include
+        this.noDebugMethods = []; // Array of methods to not log from
 
-		if (debug){
-			this.debug = debug;
-		}
+        if (debug) {
+            this.debug = debug;
+        }
 
-		if (noDebugMethods) {
-			this.noDebugMethods = noDebugMethods.split(',');
-		}
+        if (noDebugMethods) {
+            this.noDebugMethods = noDebugMethods.split(',');
+        }
 
-		// Global Variables
-		this.CARDS = 'x_759224_magic_c_0_mtg_cards';
-		this.SETS = 'x_759224_magic_c_0_mtg_sets';
-		this.TOKEN_ASSOCIATION = 'x_759224_magic_c_0_token_association';
+        // Global Variables
+        this.CARDS = 'x_759224_magic_c_0_mtg_cards';
+        this.SETS = 'x_759224_magic_c_0_mtg_sets';
+        this.TOKEN_ASSOCIATION = 'x_759224_magic_c_0_token_association';
 
-	},
+    },
 
     /**
      * Description: Takes in set_id and returns the set record on the system
@@ -38,7 +38,83 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getSetRecord: function(set_id) {
         var setGR = new GlideRecord(this.SETS);
-        return setGR.get('id',set_id);
+        return setGR.get('id', set_id);
+    },
+
+    /* Description: Creates a token record for the provided name and scryfall ID 
+     * Parameters: [string] - name: Name of the token to be created
+     			  [id] - id: Scryfall ID of the token. Used for generating association later
+     * Returns: [object]: Contains a success flag and the record if success, or msg if failure
+     */
+
+    createToken: function(name, id) {
+        try {
+            var newToken = new GlideRecord(this.CARDS);
+            newToken.initialize();
+            newToken.setValue('name', name);
+            newToken.setValue('scryfall_id', id);
+            newToken.insert();
+
+            return {
+                success: true,
+                record: newToken
+            };
+        } catch (ex) {
+            return {
+                success: false,
+                msg: ex.message()
+            };
+        }
+    },
+
+    /** 
+    * Description: Creates a token association record for the provided card and token records
+	* Parameters: [object] - card: Card GlideRecord object
+				  [object] - token: Token Card GlideRecord object
+	* Returns: [object]: Contains a success flag and the record if success, or msg if failure
+	*/
+
+    createTokenAssociation: function(card, token) {
+        try {
+            var newTokenAssociation = new GlideRecord(this.TOKEN_ASSOCIATION);
+            newTokenAssociation.initialize();
+            newTokenAssociation.setValue('token', token.getUniqueValue());
+            newTokenAssociation.setValue('card', card.sys_id);
+            newTokenAssociation.insert();
+
+            return {
+                success: true,
+                record: newTokenAssociation
+            };
+        } catch (ex) {
+            return {
+                success: false,
+                msg: ex.message()
+            };
+        }
+    },
+
+    /**
+     * Description: Takes in either a object or sys_id of the card and token and returns the number of associations for them
+     * Parameters: [object / string] - card: Either a GlideRecord object or sys_id of the card record
+	 * 			   [object / string] - token: Either a GlideRecord object or sys_id of the token record
+     * Returns: [integer]: The number of associations for the provided card and token
+     */
+
+    getTokenAssociationCount: function(card, token) {
+        var associationGR = new GlideRecord(this.TOKEN_ASSOCIATION);
+
+        var cardSysId = (card && typeof card.getUniqueValue === 'function') ? card.getUniqueValue() : card;
+        var tokenSysId = (token && typeof token.getUniqueValue === 'function') ? token.getUniqueValue() : token;
+
+        if (!cardSysId || !tokenSysId)
+            return 0;
+
+        associationGR.addQuery('card', cardSysId);
+        associationGR.addQuery('token', tokenSysId);
+        associationGR.query();
+
+        return associationGR.getRowCount();
     },
 
     /**
@@ -141,7 +217,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 image: this.getImgSrc(cardGR.getValue('front_image')),
                 price: cardGR.getValue('price'),
                 sets: cardGR.getDisplayValue('sets'),
-				is_foil: cardGR.getValue('foiling') != 'none'
+                is_foil: cardGR.getValue('foiling') != 'none'
             };
             printingArr.push(printingObj);
         }
@@ -268,14 +344,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-04 15:15:45</sys_updated_on>
+        <sys_updated_on>2025-10-04 21:12:38</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
