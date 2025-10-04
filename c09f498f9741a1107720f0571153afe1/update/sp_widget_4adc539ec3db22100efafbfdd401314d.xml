@@ -475,7 +475,7 @@
 /* Right side fixed horizontal row of Maybeboard + Sideboard */&#13;
 .deck-anchored-columns {&#13;
   display: flex;&#13;
-  flex-direction: row;&#13;
+  flex-direction: column-reverse;&#13;
   gap: 1rem; /* smaller gap between Maybeboard and Sideboard */&#13;
   flex: 0 0 auto;&#13;
   min-width: auto;&#13;
@@ -1079,14 +1079,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>311</sys_mod_count>
+        <sys_mod_count>312</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-03 23:00:42</sys_updated_on>
+        <sys_updated_on>2025-10-04 15:59:08</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
