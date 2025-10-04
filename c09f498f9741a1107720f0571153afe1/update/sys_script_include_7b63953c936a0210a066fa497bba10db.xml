@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_759224_magic_c_0.magic_utils</api_name>
         <caller_access/>
@@ -11,24 +11,39 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	initialize: function(debug, noDebugMethods) {
+		this.debug = false; // Flag to allow debug or not on this script include
+		this.noDebugMethods = []; // Array of methods to not log from
+
+		if (debug){
+			this.debug = debug;
+		}
+
+		if (noDebugMethods) {
+			this.noDebugMethods = noDebugMethods.split(',');
+		}
+
+		// Global Variables
+		this.CARDS = 'x_759224_magic_c_0_mtg_cards';
+		this.SETS = 'x_759224_magic_c_0_mtg_sets';
+		this.TOKEN_ASSOCIATION = 'x_759224_magic_c_0_token_association';
+
+	},
 
     /**
-     * Description: Takes in set_id and returns the sys_id of the record on the system
-     * Parameters: [string]: set_id - the string id used to identify a set;
-     * Returns: [string]: sys_id of the set record from the system.
+     * Description: Takes in set_id and returns the set record on the system
+     * Parameters: [string] - set_id: the string id used to identify a set
+     * Returns: [object]: Set record object.
      */
 
     getSetRecord: function(set_id) {
-        var setGr = new GlideRecord('x_759224_magic_c_0_mtg_sets');
-        setGr.addQuery('id', set_id);
-        setGr.query();
-        setGr.next();
-        return setGr.getUniqueValue();
+        var setGR = new GlideRecord(this.SETS);
+        return setGR.get('id',set_id);
     },
 
     /**
      * Description: Takes in an image string (generally the html one from a card) and grabs the source link of the image. If there isn't one, sets it to be the default mtg backing.
-     * Parameters: [string]: img - The value from the image field on a card.
+     * Parameters: [string] - img: The value from the image field on a card.
      * Returns: [string]: source url for the image, or the default back image.
      */
 
@@ -48,7 +63,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /**
      * Description: Takes in HTML from an HTML field and returns the content inside without HTML. 
-     * Parameters: [string]: html - The HTML from a HTML field.
+     * Parameters: [string] - html: The HTML from a HTML field.
      * Returns: [string]: Contents inside of the HTML.
      */
 
@@ -86,12 +101,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
     /**
      * Description: Takes in an id string for a card. 
-     * Parameters: [string]: id - The sys id of the card record.
-     * Returns: [Array]: relArr - An array of JSON objects containg the related card name and image.
+     * Parameters: [string] - id: The sys id of the card record.
+     * Returns: [Array] - relArr: An array of JSON objects containg the related card name and image.
      */
 
     getRelatedCards: function(id) {
-        var relGR = new GlideRecord('x_759224_magic_c_0_token_association');
+        var relGR = new GlideRecord(this.TOKEN_ASSOCIATION);
         relGR.addQuery('card', id);
         relGR.query();
         var relArr = [];
@@ -110,12 +125,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /**
      * Description: Takes in an name string for a card. 
-     * Parameters: [string]: name - The name of the card record.
-     * Returns: [object]: cardData - JSON object containing all the data from the card record.
+     * Parameters: [string] - name: The name of the card record.
+     * Returns: [object] - cardData: JSON object containing all the data from the card record.
      */
 
     getOtherPrintings: function(name) {
-        var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        var cardGR = new GlideRecord(this.CARDS);
         cardGR.addQuery('is_token', false);
         cardGR.addQuery('name', name);
         cardGR.query();
@@ -134,13 +149,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
 
     /**
-     * Description: Takes in an id string for a card. 
-     * Parameters: [string]: id - The sys id of the card record.
-     * Returns: [object]: cardData - JSON object containing all the data from the card record.
+     * Description: Takes in an id string for a card, and builds out an object containing the data
+     * Parameters: [string] - id: The sys id of the card record.
+     * Returns: [object] - cardData: JSON object containing all the data from the card record.
      */
 
     getCardData: function(id) {
-        var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+        var cardGR = new GlideRecord(this.CARDS);
         cardGR.get('sys_id', id); // Get the card record.
         var cardData = {
             legality: { // Legalities for the card.
@@ -253,14 +268,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>105</sys_mod_count>
+        <sys_mod_count>108</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-28 16:01:57</sys_updated_on>
+        <sys_updated_on>2025-10-04 15:15:45</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
