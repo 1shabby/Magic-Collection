@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_759224_magic_c_0.scryfall_utils</api_name>
         <caller_access/>
@@ -11,46 +11,62 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var scryfall_utils = Class.create();
 scryfall_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    initialize: function(debug, noDebugMethods) {
+        this.debug = false; // Flag to allow debug or not on this script include
+        this.noDebugMethods = []; // Array of methods to not log from
 
-    /*
-     * Description: Used to return a URI containing all the sets in Scryfall
+        if (debug) {
+            this.debug = debug;
+        }
+
+        if (noDebugMethods) {
+            this.noDebugMethods = noDebugMethods.split(',');
+        }
+
+        // Global Variables
+        this.BASE_URL = 'https://api.scryfall.com';
+
+    },
+
+    
+    /* Description: Used to return a URI containing all the sets in Scryfall
      * Parameters: None
-     * Returns: {string}: returns the uri for sets
+     * Returns: [string]: returns the uri for sets
      */
 
     getAllSets: function() {
-        var uri = 'https://api.scryfall.com/sets';
+        var uri = this.BASE_URL + '/sets';
         return uri;
     },
 
-    /*
-     * Description: Used to return a URI containing all the keywords in Scryfall
+    
+    /* Description: Used to return a URI containing all the keywords in Scryfall
      * Parameters: None
-     * Returns: {string}: returns the uri for keywords
+     * Returns: [string]: returns the uri for keywords
      */
 
     getAllKeywords: function() {
-        var uri = 'https://api.scryfall.com/catalog/keyword-abilities';
+        var uri = this.BASE_URL + '/catalog/keyword-abilities';
         return uri;
     },
 
-    /*
-     * Description: Used to return a URI containing all the Symbols in Scryfall
+    
+    /* Description: Used to return a URI containing all the Symbols in Scryfall
      * Parameters: None
-     * Returns: {string}: returns the uri for Symbols
+     * Returns: [string]: Returns the uri for Symbols
      */
 
     getAllSymbols: function() {
-        var uri = 'https://api.scryfall.com/symbology';
+        var uri = this.BASE_URL + '/symbology';
         return uri;
     },
 
-    /*
-    * Description: Used to generate the uri used to make the api call to scryfall
-    * Parameters: {string}: name - Name of card; 
-    			  {string}: set - id of the set; 
-    			  {string}: cn - collector number of card
-    * Returns: {string}: returns the uri for a card lookup with the given paramaters
+    
+   /* Description: Used to generate the uri used to make the api call to scryfall
+    * Parameters: [string] - name: Name of card 
+    			  [string] - set: id of the set 
+    			  [string] - cn: collector number of card
+    * Returns: [string]: Returns the uri for a card lookup with the given paramaters
     */
 
     cardLookUpWithoutID: function(set_id, cn, name) {
@@ -58,7 +74,7 @@ scryfall_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         set_id = set_id || this.getParameter('set') || '';
         cn = cn || this.getParameter('cn') || '';
 
-        var base = 'https://api.scryfall.com/cards/search?q=';
+        var base = this.BASE_URL + '/cards/search?q=';
 
         var spc_name = this._removeSpaces(name);
         var enc_name = this._encodeInput(spc_name);
@@ -68,66 +84,65 @@ scryfall_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return this._constructURI('lookup', base, enc_set, enc_cn, enc_name);
     },
 
-	/*
-    * Description: Used to generate the uri used to make the api call to scryfall via ID
-    * Parameters: {string}: id - Unique scryfall ID; 
-    * Returns: {string}: returns the uri for a card lookup with the ID
-    */
-
-	cardLookUpWithID: function(id){
-		id = id || this.getParameter('id');
-
-		if(id){
-			var base = 'https://api.scryfall.com/cards/';
-			return base + id;
-		}
-	},
-
     /*
-    * Description: Used to generate the rules uri used to make the api call to scryfall
-    * Parameters: {string}: set - id of the set; 
-    			  {string}: cn - collector number of card
-    * Returns: {string}: returns the rules uri for a card lookup with the given paramaters
+     * Description: Used to generate the uri used to make the api call to scryfall via ID
+     * Parameters: [string] - id: Unique scryfall ID
+     * Returns: [string]: Returns the uri for a card lookup with the ID
+     */
+
+    cardLookUpWithID: function(id) {
+        id = id || this.getParameter('id');
+
+        if (id) {
+            var base = this.BASE_URL + '/cards/';
+            return base + id;
+        }
+    },
+
+    
+   /* Description: Used to generate the rules uri used to make the api call to scryfall
+    * Parameters: [string] - set: id of the set 
+    			  [string] - cn: collector number of card
+    * Returns: [string]: Returns the rules uri for a card lookup with the given paramaters
     */
 
     cardRulesLookup: function(set_id, cn) {
         set_id = set_id || this.getParameter('set');
         cn = cn || this.getParameter('cn');
         // Stores the base URI for looking up card rules
-        var base = 'https://api.scryfall.com/cards/';
+        var base = this.BASE_URL + '/cards/';
         // URI encoded cn
         var enc_cn = this._encodeInput(cn);
         // Returns the URI
         return this._constructURI('rules', base, set_id, enc_cn);
     },
-
-    /*
-     * Description: Used to encode special characters as they will cause the uri to fail if they exists
-     * Parameters: {string}: input - any string
-     * Returns: {string}: input that has been uri encoded
+    
+    /* Description: Used to encode special characters as they will cause the uri to fail if they exists
+     * Parameters: [string] - input: any string
+     * Returns: [string]: Input that has been uri encoded
      */
 
     _encodeInput: function(input) {
         return encodeURIComponent(input);
     },
 
-    /*
-     * Description: Used to remove extra spaces in strings when creating the uri for the api call
-     * Parameters: {string}: input - any string
-     * Returns: {string}: input without any spaces contained
+    
+    /* Description: Used to remove extra spaces in strings when creating the uri for the api call
+     * Parameters: [string] - input: any string
+     * Returns: [string]: Input without any spaces contained
      */
 
     _removeSpaces: function(input) {
         return input.replace(/ /g, '');
     },
 
-    /*
-    * Description: Used to create the URI
-    * Parameters: {string}: base - base URI; 
-    			  {string}: name - card name; 
-    			  {string}: set_id - id of the set; 
-    			  {string}: cn - collector number of card
-    * Returns: {string}: input without any spaces contained
+
+   /* Description: Used to create the URI
+    * Parameters: [string] - base: base URI; 
+    			  [string] - name: card name; 
+    			  [string] - set_id: id of the set; 
+    			  [string] - cn: collector number of card
+    * Returns: [string]: input without any spaces contained
     */
 
     _constructURI: function(operation, base, set_id, cn, name) {
@@ -161,13 +176,13 @@ scryfall_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-30 16:35:35</sys_created_on>
         <sys_id>628edba093220210a066fa497bba100b</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>scryfall_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_628edba093220210a066fa497bba100b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-06 16:22:38</sys_updated_on>
+        <sys_updated_on>2025-10-04 15:46:27</sys_updated_on>
     </sys_script_include>
 </record_update>

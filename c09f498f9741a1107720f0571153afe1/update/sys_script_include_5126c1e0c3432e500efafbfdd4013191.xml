@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_759224_magic_c_0.deck_utils</api_name>
         <caller_access/>
@@ -12,10 +12,10 @@
         <script><![CDATA[var deck_utils = Class.create();
 deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-    /*
-     * Description: Takes in a line from the deck input and checks if it's 	 	formatted as a txt file or csv
-     * Parameters: [string] line 
-     * Returns: [string] type of file; txt, csv, or unknown	
+
+    /* Description: Takes in a line from the deck input and checks if it's formatted as a txt file or csv
+     * Parameters: [string] - deckString: the full stringified input for the deck
+     * Returns: [string]: type of file txt, csv, or unknown	
      */
 
     parseDeck: function(deckString) {
@@ -46,10 +46,10 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     },
 
 
-    /*
-     * Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
-     * Parameters: [object] deck import GlideRecord object 
-     * Returns: [object] deck record GlideRecord object	
+
+    /* Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
+     * Parameters: [object] - importGR: Deck import GlideRecord object 
+     * Returns: [object] - deckGR: Created deck record GlideRecord object	
      */
 
     createDeckFromImport: function(importGR) {
@@ -89,7 +89,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         } else {
             // We need to create a cards record in the system first then create the deck card record.
             cardGr = this._createCard(card);
-            this._createDeckCard(card, cardGr, deck)
+            this._createDeckCard(card, cardGr, deck);
         }
     },
 
@@ -250,13 +250,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-20 18:29:51</sys_updated_on>
+        <sys_updated_on>2025-10-04 15:31:27</sys_updated_on>
     </sys_script_include>
 </record_update>
