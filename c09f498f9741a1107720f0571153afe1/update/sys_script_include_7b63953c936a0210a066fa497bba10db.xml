@@ -30,6 +30,19 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     },
 
+ /**
+  * Description: Takes in a method name and message and logs the message in gs.info if debug and method isn't in noDebugMethods
+  * Parameters: [string] - methodName: name of method calling log.
+                [string] - msg: message being called in log.
+  * Returns: None.
+  */
+
+    log: function(methodName, msg) {
+        if (this.debug && this.noDebugMethods.indexOf(methodName) === -1) {
+            gs.info('[Super_Utils - ' + methodName + '] ' + msg);
+        }
+    },
+
     /**
      * Description: Takes in set_id and returns the set record on the system
      * Parameters: [string] - set_id: the string id used to identify a set
@@ -97,7 +110,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     /**
      * Description: Takes in either a object or sys_id of the card and token and returns the number of associations for them
      * Parameters: [object / string] - card: Either a GlideRecord object or sys_id of the card record
-	 * 			   [object / string] - token: Either a GlideRecord object or sys_id of the token record
+     * 			   [object / string] - token: Either a GlideRecord object or sys_id of the token record
      * Returns: [integer]: The number of associations for the provided card and token
      */
 
@@ -232,7 +245,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getCardData: function(id) {
         var cardGR = new GlideRecord(this.CARDS);
-        cardGR.get('sys_id', id); // Get the card record.
+        cardGR.get(id); // Get the card record.
         var cardData = {
             legality: { // Legalities for the card.
                 alchemy: this.stripHTML(cardGR.getValue('alchemy_legality')) == 'Legal',
@@ -344,14 +357,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>118</sys_mod_count>
+        <sys_mod_count>119</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-04 21:12:38</sys_updated_on>
+        <sys_updated_on>2025-10-10 03:13:16</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
