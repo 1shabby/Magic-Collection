@@ -27,19 +27,20 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.CARDS = 'x_759224_magic_c_0_mtg_cards';
         this.SETS = 'x_759224_magic_c_0_mtg_sets';
         this.TOKEN_ASSOCIATION = 'x_759224_magic_c_0_token_association';
+        this.OWNED_CARDS = 'x_759224_magic_c_0_owned_card';
 
     },
 
- /**
-  * Description: Takes in a method name and message and logs the message in gs.info if debug and method isn't in noDebugMethods
-  * Parameters: [string] - methodName: name of method calling log.
-                [string] - msg: message being called in log.
-  * Returns: None.
-  */
+    /**
+     * Description: Takes in a method name and message and logs the message in gs.info if debug and method isn't in noDebugMethods
+     * Parameters: [string] - methodName: name of method calling log.
+                   [string] - msg: message being called in log.
+     * Returns: None.
+     */
 
     log: function(methodName, msg) {
         if (this.debug && this.noDebugMethods.indexOf(methodName) === -1) {
-            gs.info('[Super_Utils - ' + methodName + '] ' + msg);
+            gs.info('[Magic Utils - ' + methodName + '] ' + msg);
         }
     },
 
@@ -54,9 +55,37 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return setGR.get('id', set_id);
     },
 
+    /* Description: Creates a owned card record for the provided card and user with the qty or default to 1
+     * Parameters: [string] - card: sys id of the card to be associated to the user
+     			   [string] - user: sys id of the user the card will be associated to
+				   [integer] - qty: Quantity of the cards the user has, optional param defaults to 1
+     * Returns: [object]: Contains a success flag and the record if success, or msg if failure
+     */
+
+    createOwnedRecord: function(card, user, qty) {
+        try {
+            var newOwned = new GlideRecord(this.OWNED_CARDS);
+            newOwned.initialize();
+            newOwned.setValue('card', card);
+            newOwned.setValue('owner', user);
+            newOwned.setvalue('quantity', qty || 1);
+            newOwned.insert();
+
+            return {
+                success: true,
+                record: newOwned
+            };
+        } catch (ex) {
+            return {
+                success: false,
+                msg: ex.message()
+            };
+        }
+    },
+
     /* Description: Creates a token record for the provided name and scryfall ID 
      * Parameters: [string] - name: Name of the token to be created
-     			  [id] - id: Scryfall ID of the token. Used for generating association later
+     			   [string] - id: Scryfall ID of the token. Used for generating association later
      * Returns: [object]: Contains a success flag and the record if success, or msg if failure
      */
 
@@ -357,14 +386,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>119</sys_mod_count>
+        <sys_mod_count>121</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-10 03:13:16</sys_updated_on>
+        <sys_updated_on>2025-10-10 03:26:26</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
