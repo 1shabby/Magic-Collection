@@ -188,8 +188,8 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         '{U/R}': 'blue_red_mana.svg',
         '{R/G}': 'red_green_mana.svg',
         '{R/W}': 'red_white_mana.svg',
-        '{G/W}': 'white_blue_mana.svg',
-        '{G/U}': 'white_blue_mana.svg',
+        '{G/W}': 'green_white_mana.svg',
+        '{G/U}': 'green_blue_mana.svg',
         '{C/W}': 'colorless_white_mana.svg',
         '{C/U}': 'colorless_blue_mana.svg',
         '{C/B}': 'colorless_black_mana.svg',
@@ -246,13 +246,13 @@ symbology_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-08 20:22:08</sys_created_on>
         <sys_id>02e82a2f93664210a066fa497bba1043</sys_id>
-        <sys_mod_count>67</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>symbology_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_02e82a2f93664210a066fa497bba1043</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-15 21:08:28</sys_updated_on>
+        <sys_updated_on>2025-11-21 17:16:58</sys_updated_on>
     </sys_script_include>
 </record_update>
