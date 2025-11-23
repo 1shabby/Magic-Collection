@@ -266,6 +266,204 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return printingArr;
     },
 
+    setCardValues: function(card, resp) {
+        try {
+			var outputs = {};
+            // Fields to always populate
+            var topFields = [
+                'name', 'rarity', 'cmc', 'game_changer', 'keywords',
+                'reserved_list', 'is_multi_faced'
+            ];
+
+            topFields.forEach(function(field) {
+                if (resp[field] !== undefined && resp[field] !== null) {
+                    card.setValue(field, resp[field]);
+                }
+            });
+
+            // Set Color Identity
+            if (resp.color_identity) {
+                card.setValue('colors', resp.color_identity);
+            } else {
+                card.setValue('colors', 'C');
+            }
+
+            // Set Scryfall ID
+            if (resp.id && !card.getValue('scryfall_id')) {
+                card.setValue('scryfall_id', resp.id);
+            }
+
+            // Set token to true if type line contains token
+            if (resp.type_line.toLowerCase().indexOf('token') !== -1) {
+                card.setValue('is_token', 'true');
+            }
+
+            // Set set if not currently populated
+            if (!card.sets) {
+                var setsGR = new GlideRecord('x_759224_magic_c_0_mtg_sets');
+                setsGR.get('id', resp.set);
+                if (setsGR) {
+                    card.setValue('sets', setsGR.getUniqueValue());
+                }
+            }
+
+            // Set CN if not currently populated
+            if (!card.collector_number) {
+                card.setValue('collector_number', resp.collector_number);
+            }
+
+            // Related URIs (links)
+            if (resp.related_uris) {
+                if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);
+                if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);
+            }
+
+            if (resp.purchase_uris) {
+                if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);
+                if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);
+                if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);
+            }
+
+            // Legality
+            if (resp.legalities) {
+                for (var format in resp.legalities) {
+                    var fieldName = format + '_legality';
+                    if (card.isValidField(fieldName)) {
+                        card.setValue(fieldName, resp.legalities[format]);
+                    }
+                }
+            }
+
+            if (resp.uri) card.setValue('api_link', resp.uri);
+
+            // Price
+            if (resp.prices) {
+                var foiling = card.getValue('foiling'); // "none", "foil", or "etched"
+                var priceKey = 'usd';
+                if (foiling === 'foil') priceKey = 'usd_foil';
+                else if (foiling === 'etched') priceKey = 'usd_etched';
+
+                var newPrice = parseFloat(resp.prices[priceKey]);
+                var currentPrice = parseFloat(card.getValue('price'));
+                var priceChange = newPrice - currentPrice;
+
+                card.setValue('price', newPrice.toFixed(2));
+                if (priceChange != 0)
+                    card.setValue('price_change', priceChange);
+            }
+
+            // Multi-faced card logic
+            if (Array.isArray(resp.card_faces) && resp.card_faces.length > 1) {
+                var front = resp.card_faces[0];
+                var back = resp.card_faces[1];
+                card.setValue('is_multi_faced', true);
+
+                if (front) {
+                    if (front.name) card.setValue('face_one_name', front.name);
+                    if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);
+                    if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);
+                    if (front.type_line) card.setValue('type_line', front.type_line);
+                    if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);
+                    if (front.colors) card.setValue('face_one_colors', front.colors);
+                    if (front.artist) card.setValue('face_one_artist', front.artist);
+                    if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);
+                    if (front.power) card.setValue('face_one_power', front.power);
+                    if (front.toughness) card.setValue('face_one_toughness', front.toughness);
+                    if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);
+                    if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);
+                    if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);
+                    if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);
+                }
+
+                if (back) {
+                    if (back.name) card.setValue('face_two_name', back.name);
+                    if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);
+                    if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);
+                    if (back.type_line) card.setValue('face_two_type_line', back.type_line);
+                    if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);
+                    if (back.colors) card.setValue('face_two_colors', back.colors);
+                    if (back.artist) card.setValue('face_two_artist', back.artist);
+                    if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);
+                    if (back.power) card.setValue('face_two_power', back.power);
+                    if (back.toughness) card.setValue('face_two_toughness', back.toughness);
+                    if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);
+                    if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);
+                    if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);
+                    if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);
+                }
+            }
+
+            // Single-faced card logic → populate face_one_* fields from top-level
+            else {
+                if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);
+                if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);
+                if (resp.type_line) card.setValue('type_line', resp.type_line);
+                if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);
+                if (resp.colors) card.setValue('face_one_colors', resp.colors);
+                if (resp.artist) card.setValue('face_one_artist', resp.artist);
+                if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);
+                if (resp.power) card.setValue('face_one_power', resp.power);
+                if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);
+                if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);
+                if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);
+                if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);
+            }
+            // Update card record
+            card.update();
+
+            // Generate Historical Price record
+            var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');
+            historicalPriceGr.addEncodedQuery('card=' + card.sys_id + '^sys_created_onRELATIVEGT@hour@ago@36');
+            historicalPriceGr.query();
+            // Historical price is older than 32 hours ago and the current price is greater than 0.
+            if (historicalPriceGr.getRowCount() == 0 && card.price > 0) {
+                var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');
+                newRec.initialize();
+                newRec.setValue('card', card.sys_id);
+                newRec.setValue('price', card.price);
+                newRec.insert();
+            }
+
+            // Generate Tokens
+            if (resp.all_parts) {
+                var c = 0;
+                // Loop through all parts
+                while (c < resp.all_parts.length) {
+                    // If the part is token
+                    gs.info(resp.all_parts[c].component + " | " + resp.all_parts[c].id + ' | ' + card.scryfall_id);
+                    if (resp.all_parts[c].component == 'token' && resp.all_parts[c].id != card.scryfall_id) {
+                        var tokenGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+                        tokenGR.addQuery('scryfall_id', resp.all_parts[c].id);
+                        tokenGR.query();
+                        // If the token doesn't exist in the system
+                        if (!tokenGR.next()) {
+                            // Create token
+                            var newToken = this.createToken(resp.all_parts[c].name, resp.all_parts[c].id);
+                            // Create token association record
+                            if (!card.type_line.includes('token')) { // Creates an association if card is not a token
+                                this.createTokenAssociation(card, newToken.record);
+                            }
+                        } else { // Token exists, check if there's an association
+                            var associations = this.getTokenAssociationCount(card, tokenGR);
+                            if (associations == 0 && !card.type_line.includes('token')) { // If no association exists, create one
+                                this.createTokenAssociation(card, tokenGR);
+                            }
+                        }
+                    }
+                    c++;
+                }
+            }
+            // Update was a success
+            outputs.status = 'success';
+            outputs.card = card;
+        } catch (err) {
+            gs.error('Card population error: ' + err.message);
+            outputs.status = 'error: ' + err.message;
+            outputs.card = card;
+        }
+		return outputs;
+    },
+
     /**
      * Description: Takes in an id string for a card, and builds out an object containing the data
      * Parameters: [string] - id: The sys id of the card record.
@@ -386,14 +584,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>121</sys_mod_count>
+        <sys_mod_count>124</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-10 03:26:26</sys_updated_on>
+        <sys_updated_on>2025-11-23 17:37:30</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
