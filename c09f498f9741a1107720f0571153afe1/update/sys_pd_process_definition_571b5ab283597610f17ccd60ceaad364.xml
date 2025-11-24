@@ -15,9 +15,9 @@
         <run_strategy>run_once</run_strategy>
         <run_strategy_on_process_definition>true</run_strategy_on_process_definition>
         <schema_version>2</schema_version>
-        <snapshot/>
+        <snapshot display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</snapshot>
         <start_non_blocking>true</start_non_blocking>
-        <status>draft</status>
+        <status>published</status>
         <sync_state>COMPLETE</sync_state>
         <synced_on/>
         <sys_class_name>sys_pd_process_definition</sys_class_name>
@@ -31,7 +31,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_pd_process_definition_571b5ab283597610f17ccd60ceaad364</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 20:59:43</sys_updated_on>
+        <sys_updated_on>2025-11-23 14:43:25</sys_updated_on>
         <view_type>DIAGRAM</view_type>
     </sys_pd_process_definition>
     <sys_pd_process_input action="delete_multiple" query="model=571b5ab283597610f17ccd60ceaad364"/>
@@ -91,9 +91,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-22 20:59:41</sys_created_on>
         <sys_id>6f75f2106f75b6406f758e806f7561d0</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 20:59:41</sys_updated_on>
+        <sys_updated_on>2025-11-23 14:43:23</sys_updated_on>
         <type_vals/>
         <type_vals/>
         <variant/>
@@ -163,10 +163,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-22 20:59:41</sys_created_on>
         <sys_id>3a7f96fa83597610f17ccd60ceaad318</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 20:59:41</sys_updated_on>
-        <value>{{act.6f75f2106f75b6406f758e806f7561d0.label}}</value>
+        <sys_updated_on>2025-11-23 14:43:23</sys_updated_on>
+        <value/>
         <variable display_value="Title">85c88fee775442106ed97a8c8c5a9961</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -275,10 +275,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-22 20:59:41</sys_created_on>
         <sys_id>b27f96fa83597610f17ccd60ceaad30e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 20:59:41</sys_updated_on>
-        <value/>
+        <sys_updated_on>2025-11-23 14:43:23</sys_updated_on>
+        <value>e16e8c0e162eb0e161fb0e167e00e169</value>
         <variable display_value="User form for data collection">26e45b8b1b805010affd0e55cc4bcb4e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1624,11 +1624,251 @@
         <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
         <value>New {{vl.Wait For Create Record./start.table}} Record</value>
     </sys_element_mapping>
+    <sys_flow_data_definition action="delete_multiple" query="sys_id=e16e8c0e162eb0e161fb0e167e00e169^sys_idNOT INe16e8c0e162eb0e161fb0e167e00e169"/>
+    <sys_flow_data_definition action="INSERT_OR_UPDATE">
+        <name>Questionnaire</name>
+        <process_definition display_value="Import MTG Deck">571b5ab283597610f17ccd60ceaad364</process_definition>
+        <process_snapshot display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</process_snapshot>
+        <sys_class_name>sys_flow_data_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:23</sys_created_on>
+        <sys_id>e16e8c0e162eb0e161fb0e167e00e169</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-23 14:43:26</sys_updated_on>
+    </sys_flow_data_definition>
+    <sys_flow_data_var action="delete_multiple" query="model=e16e8c0e162eb0e161fb0e167e00e169^sys_idNOT IN44f2d2c383d5f610f17ccd60ceaad380"/>
+    <sys_flow_data_var action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>What's your deck name?</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>question_b6cda40b6c4640b6c8030b6cb470b6c0</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>What's your deck name?</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Questionnaire">e16e8c0e162eb0e161fb0e167e00e169</model>
+        <model_id>e16e8c0e162eb0e161fb0e167e00e169</model_id>
+        <model_table/>
+        <name>var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_flow_data_var</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:23</sys_created_on>
+        <sys_id>44f2d2c383d5f610f17ccd60ceaad380</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-23 14:43:23</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_flow_data_var>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169^sys_idNOT IN90f2da0783d5f610f17ccd60ceaad33f"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>question_b6cda40b6c4640b6c8030b6cb470b6c0</element>
+        <help/>
+        <hint/>
+        <label>What's your deck name?</label>
+        <language>en</language>
+        <name>var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169</name>
+        <plural>What's your deck name?</plural>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:23</sys_created_on>
+        <sys_id>90f2da0783d5f610f17ccd60ceaad33f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>What's your deck name?</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169_question_b6cda40b6c4640b6c8030b6cb470b6c0_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-23 14:43:23</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169"/>
+    <sys_choice_set action="delete_multiple" query="name=var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169"/>
+    <sys_ui_section action="delete_multiple" query="name=var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169"/>
+    <sys_ui_element action="delete_multiple" query="sys_ui_section.name=var__m_sys_flow_data_var_e16e8c0e162eb0e161fb0e167e00e169"/>
     <sys_pd_process_variant action="delete_multiple" query="process_definition=571b5ab283597610f17ccd60ceaad364"/>
     <sys_pd_derivative action="delete_multiple" query="derivative_parent=3762f190376224303762bb10376246e0"/>
     <sys_pd_derivative action="delete_multiple" query="derivative_parent=6f75f2106f75b6406f758e806f7561d0"/>
     <sys_pd_activity_override action="delete_multiple" query="override_parent=3762f190376224303762bb10376246e0"/>
     <sys_pd_activity_override action="delete_multiple" query="override_parent=6f75f2106f75b6406f758e806f7561d0"/>
+    <sys_pd_snapshot action="delete_multiple" query="sys_id=20f21e0783d5f610f17ccd60ceaad33d^sys_idNOT IN20f21e0783d5f610f17ccd60ceaad33d"/>
+    <sys_pd_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <derivatives>{"table":"sys_pd_snapshot","id":"20f21e0783d5f610f17ccd60ceaad33d","name":"derivatives","type":"com.snc.pd.model.serialization.DerivativeFetcher"}</derivatives>
+        <name>import_mtg_deck</name>
+        <process_definition>{"table":"sys_pd_snapshot","id":"20f21e0783d5f610f17ccd60ceaad33d","name":"process_definition","type":"com.snc.pd.model.ProcessDefinition"}</process_definition>
+        <process_dependencies>{"table":"sys_pd_snapshot","id":"20f21e0783d5f610f17ccd60ceaad33d","name":"process_dependencies","type":"com.snc.pd.model.dependency.InstructionBasedProcessDependenciesCollection"}</process_dependencies>
+        <process_plan>{"table":"sys_pd_snapshot","id":"20f21e0783d5f610f17ccd60ceaad33d","name":"process_plan","type":"com.snc.process_flow.engine.ProcessPlan"}</process_plan>
+        <source display_value="Import MTG Deck">571b5ab283597610f17ccd60ceaad364</source>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>20f21e0783d5f610f17ccd60ceaad33d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-23 14:43:25</sys_updated_on>
+    </sys_pd_snapshot>
+    <sys_json_chunk action="delete_multiple" query="document_id=20f21e0783d5f610f17ccd60ceaad33d"/>
+    <sys_pd_snapshot_chunk action="delete_multiple" query="document_id=20f21e0783d5f610f17ccd60ceaad33d^sys_idNOT IN74f21e0783d5f610f17ccd60ceaad33e,7cf21e0783d5f610f17ccd60ceaad33f,b0f21e0783d5f610f17ccd60ceaad341,b4f21e0783d5f610f17ccd60ceaad33f"/>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/+1X227bOBD9FYPYxxggJYqU8lQ38S4KpEmbOAEWi0DgZZgIlSUvJXsRBPn3HV18i53aDbbYl76YEDkznJlzODN+JpklpySSTEdKB3EYJVIw6pg0xgpqQCkbCk5OSKGmgJLZdFb6Op3WD6kF8w0PcqUhx5NP7cng8+SPwfnypICKnP713F0SxyYxnOJiAtosPFDtl2y/wvUlBfyTVrV6ANzC1dfktLchuAusolJHNnLoaMSBGptEAp2MmNB7bPzWWTghytTZIquf0HGXFVmdlQU5LeZ5vo5hV8lCZXw22xYu4LhwGslPdqlXegt++dHaT/08h92dtH6a7dteKI/pfH45IR529U1Z2DaotC7xYOWuhRkUFgqTtWDcNzs+WyhMRo+Oy/K68Yygy3hHpop67XWb9o3sHQPCy33v9znk6umqzV7v+WZo5QK8zyy0R3iGbq6AVv0dNujusKAdGKMTLsHy/UA3+j8Ic6fyC+RdkA8C8E6Q+6hWQEN/T6i7e1gScMasCQSHGPYDvbTxg2Cv1X4Bvgv4QSDeCfgShzMPqoa2Nwz6XnENBtNHtvOGLWYKNkPZtX/ZZh8RTkYuYLRZteDtGkPcroJZumbM33PMKHpZqMzDW2whxuoIm52TUmrJ0C7YRKrYxCZSSRLJjR739ZXBLR4R8h4WHSPbc4x9J1E7PCPgYqVjQ1XoKNcGNGMyEKGLGKeMSkqOYiG5vr1Mry4v/sSfszHZR0hC/hs6HoHrZhM6JH2QrjtovmJuT7dQisCxhDZrwMN21Zq1KxewQTfTMjz1S1bvp5tjIpBSJAhBSFskgCehpQ4nLfyOyXFPZpt6nWQ1UINmKht0U9pg5clPpWXwipbKIdDpxsvdx06ptMIpMzRhhKWG0UDFwmgaYn+h1opgLzu3ysEz+WByVVXN6FncqRw1PnSARTY0hsZDaV085FKIoUokDLGmmcgq4yIetSTM53Ac7WxWzZBDd8dr1DBFjRo6vj+qqtet/RyQ7sVsXt9WgN46lVe4UyFiOUy63Fx9GX29HXcuTlaGupeCDC39Z6iqZjru9zw48Pj2uqeH/NZeFebxu0lSnDoIrRjGLNRDjsEMExbSYSgt5UESCAUbSep7zlYaur23Au3j+rmR/p/V6oiysFGtDkofrlZ9MVgVgO1qdb8vqjcM7jysV6PGpLxeZupAemfgp1lVdTXo+aWNoldRutMY30xG15PRx4tx+vvo4ma8Tmjv5GsbiHzDOoz1rpM7e8xyi6iPXL2etGa+RBZUF7CAfLQ5JDRhm7LNmKGJ40nsEsmZwhojZUAdxf+6LAqVA9bUGHwmU3UHvrt/Wcouy+JjXppvWfGwfLNInpvao1cPT1fFl/M923gjfqUl0pO8/AttJkgYWQ8AAA==</data>
+        <document_id display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</document_id>
+        <field>process_definition</field>
+        <length>1408</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>74f21e0783d5f610f17ccd60ceaad33e</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/62SvW7DIBRG3wV19ACYH9tbpSwdOnWsMsDlEllysWWTLFHfvUCyQ6WwfCBd8R2OfSfbvgIexwk3DA4DzHiQ6U7erDkwb25mn02IH45M4bosHVlMwHeI822OafbTbHlqGGAEQVMApzkEN+Wky6kn0zfpteKejTQnF31Ja1lJoZCSjiivpeeM5rRKlBxwKKmYo+T82xETEnBc9y+M7e3nrt6fGOsADZCpLWHOAdafOVyejEp47gzVVjrpFaNSIAU3StUrIZmyuV1qZqWxfOjlqNOMZxrAKQpojEtz5IWvME8exx88Dq1HADsKjU48eKpd6Z4qc7qn2tVmte4we1+v8bL+z3uLrxbvLe9s8d7yH7T4etX3a/Ce1h84d9Z1TAQAAA==</data>
+        <document_id display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</document_id>
+        <field>process_dependencies</field>
+        <length>400</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>7cf21e0783d5f610f17ccd60ceaad33f</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/21STW/iMBT8Lz7nkEBpgBsLZYVUqARoOawq9Gq/JN46tmU/d4uq/ve1A8lWq73Z4/cxM54PJgWb66BUxjS0yOZMttY4OrdUnwXyV5YxYz2b/3zO2Isy/DWePz4z5gkolZ8Wm+Nm9511SI23StS11LgECy9SSbr8QOel0Ww+mhZ5njHpj+hpHyJSgfKYMYfcOHEC4g26XRDdqCsxku2/0Bu4Gw8X9CIemb94wpZ1wElSszeqJ2MheBR7BJ8YMHadeDR79KGTHJEG/AoIDuQQ2oEUOmfcFr2PyvrVFhxq2qz6e+x8SGVDkzAtSL0ZfOWglNT1wQTHhyncWIli7UzbI519jzKq0Oh6sFLm9woJpIpqGRn7LX3B8WIT7fXj0yl9j5N12rfQIj3cfEmdh7glFfJ8Vt3NptWsvCugKPKyHOVVPimLYjKGCos4RGpCp0Ht/h+CONC8RTekwHML1kY9PcWYjrVxe0wNX+GO1Y1Mb8GVz7UgJFPPbRQnovFfzeo0Lk3QtAXbPyjw1Pm8hFA3NLjNG6nE0kT677QRQ0CuAdzCL+P+Zi+arMH6xlD6HRZNGBWYl9OxmFT3RV4VJefiPucIIMZjkYJiCNSTRQcUR/iHd+SBMDbnn38ASlqfFDsDAAA=</data>
+        <document_id display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</document_id>
+        <field>process_plan</field>
+        <length>656</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>b0f21e0783d5f610f17ccd60ceaad341</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_chunk action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <document_id display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</document_id>
+        <field>derivatives</field>
+        <length>4364</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>b4f21e0783d5f610f17ccd60ceaad33f</sys_id>
+    </sys_pd_snapshot_chunk>
+    <sys_pd_snapshot_input action="delete_multiple" query="model=20f21e0783d5f610f17ccd60ceaad33d"/>
+    <sys_pd_snapshot_output action="delete_multiple" query="model=20f21e0783d5f610f17ccd60ceaad33d"/>
+    <sys_flow_compiled_flow action="delete_multiple" query="sys_id=74f21e07dfd5f6108293aa7e24033d42^sys_idNOT IN74f21e07dfd5f6108293aa7e24033d42"/>
+    <sys_flow_compiled_flow action="INSERT_OR_UPDATE">
+        <parent_snapshot_id/>
+        <signature/>
+        <snapshot_id>20f21e0783d5f610f17ccd60ceaad33d</snapshot_id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>74f21e07dfd5f6108293aa7e24033d42</sys_id>
+    </sys_flow_compiled_flow>
+    <sys_flow_compiled_flow_chunk action="delete_multiple" query="document_id=74f21e07dfd5f6108293aa7e24033d42^sys_idNOT IN78f21e0783d5f610f17ccd60ceaad345,f4f21e0783d5f610f17ccd60ceaad344,b4f21e0783d5f610f17ccd60ceaad343,30f21e0783d5f610f17ccd60ceaad345"/>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/zWPTWsCQQyG/0vOe5hplXX31iKC4AfUQo8SdjJrMDsZZseKiP+9o9brm+dJ8l7Bi57nlJEF2itkjZ+i3fH7EglaWKy2P1CBJu45LN1HcPfBWMhb9TB3nT7AzjR+0sx8U08sWmvq+s14M62tnb6jJ1uWcMiUAsoGh7vBQ9SU90Pu9466I5SF+kspsaM1xsihhzacRCooJ5jcIunwSg44zjHjLifCEnqUkQqHIkX7f+lJPtt5DpxZS4NXjqd80ERuG75ICMcimNsfOVvfmA0BAAA=</data>
+        <document_id display_value="Created 2025-11-23 06:43:25">74f21e07dfd5f6108293aa7e24033d42</document_id>
+        <field>flow_config_param</field>
+        <length>292</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>78f21e0783d5f610f17ccd60ceaad345</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/+2YbW/bNhCA/4uwj4ajd1n+NMfJMANtEtjZgKEoBIo8uUIlUpOotkaQ/94jJSu2pXR2NiMBui+hdW883j3mWXkwkkx8vc4gBy4rY/rhwahEXVJYMGNqpHkhShnlch0xoJ+NUau8ITn8QP1Hqr29wIo9EtsTxwsD3zITK6CU+SYFQpjju539LEsJ7m2UQkgUFqTEZFa7Kl5n2ciQm0Jteze7iu6Wt/Pr1UqFoEJLqRkmbjhJwsC1iGWZQWCbiYk5WJ5DErDQNE/5gleyrKlMBVc5migk3w6EnjUyoCxFeU/KNcjt7mh4raQD1iWoQqR8vRDG9MH4VSXa1mgJhN3ybHMFCakzeVvLopYV2o2MlONHtH8cGUKLm89s11KJHp/2nmdAeF08l3BfrVr6EbeqFr+vJBTGNCFZBbhhyaDE9G4uZiqTT9WT8nG0xwCHr1ElyRoOu99XtH2fTGhIXRMXaptqcW2inwL95PT63kWKjnAdoGMLzg4f72Y31/8WDnsIDtc7BQ5l/cpwdAmfFY5f8G8pn0XkQN2C4ruJzYgZxB7zErwgPBdMykLPx8vBs/z4eVCaeNERAYZwOYm3Hahm8/vFn4v7v84ClmWfApayfmWwuoTPAdbfNVQqEidp2bt5hpVbqJLAS2zLVGvsu3qdwESvvsXMHlR70aIj3N8iUpYzxJTtnMKUsn5lprqEz8EULYFIiEqg6HPI1LCyZcoJfDuxQlOttuvoNY4tvbo+9JnaixYd4f4WmbLdIaYc9xSmlPUrM9UlfN4BCLzH1LCyZYq0s4vZzexiECdAaRy6ATD3h8MPo0VHuL9Fphzv/x9VfabQvtqgIJ/pELpZ0AZS72cr/TO7rQpmm/K0yeRys9dedZj0KZXLzXuoKu36YFyIQslIpvb4ksqNrhvNSKUvLJGPK07HBRvngkE23gkzXuR5LUmcwd3VjLHbgzg7Z1cHU9UJRwbZahXrCkY2F1zCN6kE+w37DU+4hASQVqrG+ReS1fr1kmM6EW3cIgyMp0teFCY5DFNxUlSfxInJlIJiPaOnBkTbOG1Y3sTolxp5ajpxRzaZICft2nqo1lbb2htTLDneRcZFm9ScoGP2opY2rgNdnPzkXdwvrbpzSIXVOX6r1uGgc+0Y6eIvoXk5eknvWt9+8zzzoHn/9M8Y/K2yfUf7GZu87E7/n3xROTYQh9N7UnTTZi12BX0gULgWl4R+vhfNFNR3+uWmeXhHYv317llpRW8MPH4HtQlOPtgTAAA=</data>
+        <document_id display_value="Created 2025-11-23 06:43:25">74f21e07dfd5f6108293aa7e24033d42</document_id>
+        <field>flow_structure</field>
+        <length>1272</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>f4f21e0783d5f610f17ccd60ceaad344</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/+2cXW+bMBSG/wvXEcLGQOjVvqdqUzel3XYxTZHBJkUlgIJpV1X977Mp7bp81M5im4twRZPgD8457xs/stM7Jy8btmpTlldl45z8vHNepQVu+J9OWi3dpkzdmrjLitDCfXare7pctgwnBf367pzhFTv9+5kzcXLinHgTB/PX1zm7PeUvnSACSYATOPWDOAqBl4EoTUnopRRj4odo3oh+eOOavK1KRn8z0YzPh93W9AwvKe/jQ1HdzGhGV7RMKb/1GheteD8v+Szn6UOzOR/9fuJk/9VNtt5NU+K6uaz2nMyqSmnTzAnN8jIXQZk/9tN3Wz70kS/rasXmS7bg96ZXTzHImy+1aIYL5yTDRUPvJ/+RmXc0zQk9EzHYSA/YMz3Hkhg9kT+/rNqCvO4DPGvLzQTAiVPghBaiVy/OUDzN4ggBDIAXRdDLPJ4REPg4o8BdKxO3pDeiVBbUDVEGCfaiJCBBxtMWIOqlJA5CnrIAhMlTRf2TbFmrY0n2qi0fc/TZQi74cOra7ief8edzr2FfboRV20vuB87ZRXVFtxSaP3Gqmvc8e//x9Pzi/Yy/ffN49yd6q1AOc3H/nIkGjo7JXuDVgm7xJGRHEixf0pWWBxFR33yMwECAJX4z+1vIm/MJ7YT1obpHn9n5bV+2RXFQaUxEPdQFZb2CDCeUVKV4Ula16aWVAbuRxIhCoHZG7Kyg+yJ4U1TpVV4unBMuH2rIpnc5X2RHoqKWDBrf1L7xXYiS2W198WhIWw3Jytdsr2aR4tcLnJdWFN2VuGX1As9ORDtDNrxaBKBfLn47M7lgPIRc4SjqYdEV+HrqPYuCDAJPXJMQddcpnXbXEBBvB7tKWh1LtjWzqywXw7ArQHJ4lc3cEryCwI4oTNMrCA2E+BB8BZoWx2oVPnrNnvy6R21o5lfZyNr5VSpN7fyqZgZr/NoZs+0l8NSOSA0TLIjtm58EYeH6RtpoSvoYVlXRehlWqcgtCxgCOxG1wbAQqjCsaV2/xLDQH0U98Parns0mPwphBmJPXCHyu2uSgO6KQrqDYWWtjiXbehlWmothGBYGUoaVztwSw0I9W4XSxzHNsDAyEOJDGBbqWR4rVvjoNfsx7D61oZdhpSPrZli5NHUzrKIZDL8HC2M7GjWMsL5n3/skCOuvHzYcPUkbwioLWivCqhW5ZQH7eo5Uqnmy6UN7vgLCGtf1Swjro1HUwyKsr2fHCffb5wQ+bJ8TmmQ0TZMYRZSgXUeIZa2OJdt6EVaai4GOEIdShJXO3BLC+np2C6WPYxph/c3DdIeH+BCE9fUsjxUrfPSa/RB2n9rQi7DSkXUjrFyauhFW0QyGR1ik5yCiUjEZ9D4E7HufBGHR+qHD0ZO0IayyoLUirFqR2xawnpOVap5seNGIkALCGtf1SwiLglHUwyIserbhJP2BeL+QGH+2rIah0ng+rgLVTU6S8Ld9h1vyHK3l7Vjyolzcz5Kx438DvJiuXxOHTwK3Bbe5umXfxRx56u7un97/0rJ/Prj/A07bSUL8QQAA</data>
+        <document_id display_value="Created 2025-11-23 06:43:25">74f21e07dfd5f6108293aa7e24033d42</document_id>
+        <field>instructions</field>
+        <length>1540</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>b4f21e0783d5f610f17ccd60ceaad343</sys_id>
+    </sys_flow_compiled_flow_chunk>
+    <sys_flow_compiled_flow_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/6tWyswrLikqTS7JzM/zTAnJD0rNzS9L9U6tdEosSc5QsqqurQUAOtk80SQAAAA=</data>
+        <document_id display_value="Created 2025-11-23 06:43:25">74f21e07dfd5f6108293aa7e24033d42</document_id>
+        <field>runtime_value_metadata</field>
+        <length>76</length>
+        <position>0</position>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-23 14:43:25</sys_created_on>
+        <sys_id>30f21e0783d5f610f17ccd60ceaad345</sys_id>
+    </sys_flow_compiled_flow_chunk>
     <sys_pd_process_definition action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
@@ -1645,9 +1885,9 @@
         <run_strategy>run_once</run_strategy>
         <run_strategy_on_process_definition>true</run_strategy_on_process_definition>
         <schema_version>2</schema_version>
-        <snapshot/>
+        <snapshot display_value="import_mtg_deck">20f21e0783d5f610f17ccd60ceaad33d</snapshot>
         <start_non_blocking>true</start_non_blocking>
-        <status>draft</status>
+        <status>published</status>
         <sync_state>COMPLETE</sync_state>
         <synced_on/>
         <sys_class_name>sys_pd_process_definition</sys_class_name>
@@ -1661,7 +1901,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_pd_process_definition_571b5ab283597610f17ccd60ceaad364</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 20:59:43</sys_updated_on>
+        <sys_updated_on>2025-11-23 14:43:25</sys_updated_on>
         <view_type>DIAGRAM</view_type>
     </sys_pd_process_definition>
 </record_update>
