@@ -174,7 +174,6 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     getImgSrc: function(img) {
         var regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
-        //gs.info(img);
         if (img)
             var match = img.match(regex);
         var retval = '';
@@ -421,6 +420,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
             // Update card record
             card.update();
+
+			this.generateHistoricalPrices(card);
+			this.generateTokens(card, resp);
+
             // Update was a success
             outputs.status = 'success';
             outputs.card = card;
@@ -434,7 +437,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /*
      * Description: Generates a historical price record for the provided card if one hasn't been made in the price wait period
-     * Parameters: [GlideRecord]: Card - card record
+     * Parameters: [Object]: Card - card record
      * Returns: Creates a historical card price record
      */
 
@@ -456,7 +459,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /*
      * Description: Generates any tokens that are part of an api response if they don't exist already and create a token association if one doesn't exist between the token and
-     * Parameters: [GlideRecord]: Card - card record
+     * Parameters: [Object]: Card - card record
      *             [Object]: Resp - api response from scryfall
      * Returns: Creates any tokens / token associations for the provided card / response combo
      */
@@ -612,14 +615,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>130</sys_mod_count>
+        <sys_mod_count>133</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-26 00:45:05</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:53:27</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
