@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Set Card Values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_66cd0232c33ae2500efafbfdd40131b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:35</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:47</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -67,10 +67,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>63ed0672c33ae2500efafbfdd401310c</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:33</sys_updated_on>
-        <value>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
+        <sys_updated_on>2025-11-26 17:42:51</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">a7edc272c33ae2500efafbfdd40131fd</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=66cd0232c33ae2500efafbfdd40131b2"/>
@@ -434,7 +434,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e716ff06c3ebe2100efafbfdd40131e8</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -442,7 +442,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:32</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:45</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -569,10 +569,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:49</sys_created_on>
         <sys_id>f78126fac37ae2500efafbfdd40131b7</sys_id>
-        <sys_mod_count>57</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:32</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f78126fac37ae2500efafbfdd40131b7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -583,208 +583,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 14:31:50</sys_created_on>
         <sys_id>449126fac37ae2500efafbfdd40131d8</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:32</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:45</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
 &#13;
 var magicUtils = new x_759224_magic_c_0.magic_utils();&#13;
-&#13;
-try {&#13;
-    // Fields to always populate&#13;
-    var topFields = [&#13;
-        'name', 'rarity', 'cmc', 'game_changer', 'keywords',&#13;
-        'reserved_list', 'is_multi_faced'&#13;
-    ];&#13;
-&#13;
-    topFields.forEach(function(field) {&#13;
-        if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
-            card.setValue(field, resp[field]);&#13;
-        }&#13;
-    });&#13;
-&#13;
-    // Set Color Identity&#13;
-    if(resp.color_identity){&#13;
-        card.setValue('colors',resp.color_identity);&#13;
-    }else{&#13;
-        card.setValue('colors','C');&#13;
-    }&#13;
-&#13;
-    // Set Scryfall ID&#13;
-    if(resp.id &amp;&amp; !card.getValue('scryfall_id')){&#13;
-        card.setValue('scryfall_id',resp.id);&#13;
-    }&#13;
-&#13;
-    // Set token to true if type line contains token&#13;
-    if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
-        card.setValue('is_token','true');&#13;
-    }&#13;
-&#13;
-    // Set set if not currently populated&#13;
-    if (!card.sets){&#13;
-        var setsGR = new GlideRecord('x_759224_magic_c_0_mtg_sets');&#13;
-        setsGR.get('id',resp.set);&#13;
-        if(setsGR){&#13;
-            card.setValue('sets',setsGR.getUniqueValue());&#13;
-        }&#13;
-    }&#13;
-&#13;
-    // Set CN if not currently populated&#13;
-    if (!card.collector_number){&#13;
-        card.setValue('collector_number',resp.collector_number);&#13;
-    }&#13;
-&#13;
-    // Related URIs (links)&#13;
-    if (resp.related_uris) {&#13;
-        if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
-        if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
-    }&#13;
-&#13;
-    if (resp.purchase_uris) {&#13;
-        if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
-        if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
-        if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
-    }&#13;
-&#13;
-    // Legality&#13;
-    if (resp.legalities) {&#13;
-        for (var format in resp.legalities) {&#13;
-            var fieldName = format + '_legality';&#13;
-            if (card.isValidField(fieldName)) {&#13;
-                card.setValue(fieldName, resp.legalities[format]);&#13;
-            }&#13;
-        }&#13;
-    }&#13;
-&#13;
-    if (resp.uri) card.setValue('api_link', resp.uri);&#13;
-&#13;
-    // Price&#13;
-    if (resp.prices) {&#13;
-        var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
-        var priceKey = 'usd';&#13;
-        if (foiling === 'foil') priceKey = 'usd_foil';&#13;
-        else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
-&#13;
-        var newPrice = parseFloat(resp.prices[priceKey]);&#13;
-        var currentPrice = parseFloat(card.getValue('price'));&#13;
-        var priceChange = newPrice - currentPrice;&#13;
-&#13;
-        card.setValue('price', newPrice.toFixed(2));&#13;
-        if(priceChange != 0)&#13;
-            card.setValue('price_change', priceChange);&#13;
-    }   &#13;
-&#13;
-    // Multi-faced card logic&#13;
-    if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
-        var front = resp.card_faces[0];&#13;
-        var back = resp.card_faces[1];&#13;
-        card.setValue('is_multi_faced',true);&#13;
-&#13;
-        if (front) {&#13;
-            if (front.name) card.setValue('face_one_name', front.name);&#13;
-            if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
-            if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
-            if (front.type_line) card.setValue('type_line', front.type_line);&#13;
-            if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
-            if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
-            if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
-            if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
-            if (front.power) card.setValue('face_one_power', front.power);&#13;
-            if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
-            if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
-            if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
-            if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
-            if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-        }&#13;
-&#13;
-        if (back) {&#13;
-            if (back.name) card.setValue('face_two_name', back.name);&#13;
-            if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
-            if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
-            if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
-            if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
-            if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
-            if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
-            if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
-            if (back.power) card.setValue('face_two_power', back.power);&#13;
-            if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
-            if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
-            if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
-            if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
-            if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
-        }&#13;
-    }&#13;
-&#13;
-    // Single-faced card logic → populate face_one_* fields from top-level&#13;
-    else {&#13;
-        if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
-        if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
-        if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
-        if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
-        if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
-        if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
-        if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
-        if (resp.power) card.setValue('face_one_power', resp.power);&#13;
-        if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
-        if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
-        if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
-        if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-    }&#13;
-    // Update card record&#13;
-    card.update();&#13;
-&#13;
-    // Generate Historical Price record&#13;
-    var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-    historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
-    historicalPriceGr.query();&#13;
-    // Historical price is older than 32 hours ago and the current price is greater than 0.&#13;
-    if(historicalPriceGr.getRowCount() == 0 &amp;&amp; card.price &gt; 0){&#13;
-        var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-        newRec.initialize();&#13;
-        newRec.setValue('card',card.sys_id);&#13;
-        newRec.setValue('price',card.price);&#13;
-        newRec.insert();&#13;
-    }&#13;
-&#13;
-    // Generate Tokens&#13;
-    if(resp.all_parts){&#13;
-         var c = 0&#13;
-         // Loop through all parts&#13;
-         while(c &lt; resp.all_parts.length){&#13;
-             // If the part is token&#13;
-             gs.info(resp.all_parts[c].component + " | " + resp.all_parts[c].id + ' | ' + card.scryfall_id);&#13;
-             if(resp.all_parts[c].component == 'token' &amp;&amp; resp.all_parts[c].id != card.scryfall_id){&#13;
-                var tokenGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
-                tokenGR.addQuery('scryfall_id',resp.all_parts[c].id);&#13;
-                tokenGR.query();&#13;
-                // If the token doesn't exist in the system&#13;
-                if(!tokenGR.next()){&#13;
-                    // Create token&#13;
-                    var newToken = magicUtils.createToken(resp.all_parts[c].name, resp.all_parts[c].id)&#13;
-                    // Create token association record&#13;
-                    if(!card.type_line.includes('token')){ // Creates an association if card is not a token&#13;
-                        magicUtils.createTokenAssociation(card, newToken.record);&#13;
-                    }&#13;
-                }else{ // Token exists, check if there's an association&#13;
-                    var associations = magicUtils.getTokenAssociationCount(card,tokenGR);&#13;
-                    if(associations == 0 &amp;&amp; !card.type_line.includes('token')){ // If no association exists, create one&#13;
-                        magicUtils.createTokenAssociation(card, tokenGR);&#13;
-                    }&#13;
-                }&#13;
-            }&#13;
-             c++;&#13;
-         }&#13;
-    }&#13;
-    // Update was a success&#13;
-    outputs.status = 'success';&#13;
-    outputs.card = card;&#13;
-} catch (err) {&#13;
-    gs.error('Card population error: ' + err.message);&#13;
-    outputs.status = 'error: ' + err.message;&#13;
-    outputs.card = card;&#13;
-}&#13;
+var retObj = magicUtils.setCardValues(card, resp);&#13;
+outputs.status = retObj.status;&#13;
+outputs.card = retObj.card;&#13;
 &#13;
 })(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -832,11 +641,11 @@ try {&#13;
         <field>script</field>
         <id>f78126fac37ae2500efafbfdd40131b7</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-09-13 13:37:14</sys_created_on>
-        <sys_id>76ea1094c34cb6100efafbfdd401315c</sys_id>
+        <sys_created_on>2025-11-26 17:42:51</sys_created_on>
+        <sys_id>56c85e4883213210f17ccd60ceaad3ee</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-13 13:37:14</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:42:51</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -1459,14 +1268,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:06:03</sys_created_on>
         <sys_id>a3ed0672c33ae2500efafbfdd4013102</sys_id>
-        <sys_mod_count>141</sys_mod_count>
+        <sys_mod_count>147</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:32</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1898,17 +1707,17 @@ try {&#13;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Set Card Values">66cd0232c33ae2500efafbfdd40131b2</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"438b7b83c37666500efafbfdd401314d","name":"plan","plan_signature":null}}</plan>
-        <snapshot>78f0395fc3187e100efafbfdd401312c</snapshot>
+        <snapshot>ee9a128c83213210f17ccd60ceaad385</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>438b7b83c37666500efafbfdd401314d</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:36</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:49</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1974,10 +1783,10 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>f68b7b83c37666500efafbfdd401311c</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:35</sys_updated_on>
-        <value>{"version":"1.0","serializationFormat":"JSON","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}</value>
+        <sys_updated_on>2025-11-26 17:42:59</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">628b7b83c37666500efafbfdd401310e</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=da8b3b83c37666500efafbfdd40131ab"/>
@@ -2341,7 +2150,7 @@ try {&#13;
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>228b3b83c37666500efafbfdd40131c4</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -2349,7 +2158,7 @@ try {&#13;
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:34</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:47</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -2476,10 +2285,10 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:25</sys_created_on>
         <sys_id>6e8b3b83c37666500efafbfdd40131e8</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:35</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:47</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6e8b3b83c37666500efafbfdd40131e8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2490,208 +2299,17 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>6a8b7b83c37666500efafbfdd401310a</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:35</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:47</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
 var card = inputs.card;&#13;
 var resp = inputs.response;&#13;
 &#13;
 var magicUtils = new x_759224_magic_c_0.magic_utils();&#13;
-&#13;
-try {&#13;
-    // Fields to always populate&#13;
-    var topFields = [&#13;
-        'name', 'rarity', 'cmc', 'game_changer', 'keywords',&#13;
-        'reserved_list', 'is_multi_faced'&#13;
-    ];&#13;
-&#13;
-    topFields.forEach(function(field) {&#13;
-        if (resp[field] !== undefined &amp;&amp; resp[field] !== null) {&#13;
-            card.setValue(field, resp[field]);&#13;
-        }&#13;
-    });&#13;
-&#13;
-    // Set Color Identity&#13;
-    if(resp.color_identity){&#13;
-        card.setValue('colors',resp.color_identity);&#13;
-    }else{&#13;
-        card.setValue('colors','C');&#13;
-    }&#13;
-&#13;
-    // Set Scryfall ID&#13;
-    if(resp.id &amp;&amp; !card.getValue('scryfall_id')){&#13;
-        card.setValue('scryfall_id',resp.id);&#13;
-    }&#13;
-&#13;
-    // Set token to true if type line contains token&#13;
-    if (resp.type_line.toLowerCase().indexOf('token') !== -1){&#13;
-        card.setValue('is_token','true');&#13;
-    }&#13;
-&#13;
-    // Set set if not currently populated&#13;
-    if (!card.sets){&#13;
-        var setsGR = new GlideRecord('x_759224_magic_c_0_mtg_sets');&#13;
-        setsGR.get('id',resp.set);&#13;
-        if(setsGR){&#13;
-            card.setValue('sets',setsGR.getUniqueValue());&#13;
-        }&#13;
-    }&#13;
-&#13;
-    // Set CN if not currently populated&#13;
-    if (!card.collector_number){&#13;
-        card.setValue('collector_number',resp.collector_number);&#13;
-    }&#13;
-&#13;
-    // Related URIs (links)&#13;
-    if (resp.related_uris) {&#13;
-        if (resp.related_uris.edhrec) card.setValue('edhrec', resp.related_uris.edhrec);&#13;
-        if (resp.related_uris.gatherer) card.setValue('gatherer', resp.related_uris.gatherer);&#13;
-    }&#13;
-&#13;
-    if (resp.purchase_uris) {&#13;
-        if (resp.purchase_uris.tcgplayer) card.setValue('tcgplayer_purchase', resp.purchase_uris.tcgplayer);&#13;
-        if (resp.purchase_uris.cardhoarder) card.setValue('cardhoarder_purchase', resp.purchase_uris.cardhoarder);&#13;
-        if (resp.purchase_uris.cardmarket) card.setValue('cardmarket_purchase', resp.purchase_uris.cardmarket);&#13;
-    }&#13;
-&#13;
-    // Legality&#13;
-    if (resp.legalities) {&#13;
-        for (var format in resp.legalities) {&#13;
-            var fieldName = format + '_legality';&#13;
-            if (card.isValidField(fieldName)) {&#13;
-                card.setValue(fieldName, resp.legalities[format]);&#13;
-            }&#13;
-        }&#13;
-    }&#13;
-&#13;
-    if (resp.uri) card.setValue('api_link', resp.uri);&#13;
-&#13;
-    // Price&#13;
-    if (resp.prices) {&#13;
-        var foiling = card.getValue('foiling'); // "none", "foil", or "etched"&#13;
-        var priceKey = 'usd';&#13;
-        if (foiling === 'foil') priceKey = 'usd_foil';&#13;
-        else if (foiling === 'etched') priceKey = 'usd_etched';&#13;
-&#13;
-        var newPrice = parseFloat(resp.prices[priceKey]);&#13;
-        var currentPrice = parseFloat(card.getValue('price'));&#13;
-        var priceChange = newPrice - currentPrice;&#13;
-&#13;
-        card.setValue('price', newPrice.toFixed(2));&#13;
-        if(priceChange != 0)&#13;
-            card.setValue('price_change', priceChange);&#13;
-    }   &#13;
-&#13;
-    // Multi-faced card logic&#13;
-    if (Array.isArray(resp.card_faces) &amp;&amp; resp.card_faces.length &gt; 1) {&#13;
-        var front = resp.card_faces[0];&#13;
-        var back = resp.card_faces[1];&#13;
-        card.setValue('is_multi_faced',true);&#13;
-&#13;
-        if (front) {&#13;
-            if (front.name) card.setValue('face_one_name', front.name);&#13;
-            if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);&#13;
-            if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);&#13;
-            if (front.type_line) card.setValue('type_line', front.type_line);&#13;
-            if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);&#13;
-            if (front.colors) card.setValue('face_one_colors', front.colors);&#13;
-            if (front.artist) card.setValue('face_one_artist', front.artist);&#13;
-            if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);&#13;
-            if (front.power) card.setValue('face_one_power', front.power);&#13;
-            if (front.toughness) card.setValue('face_one_toughness', front.toughness);&#13;
-            if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);&#13;
-            if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);&#13;
-            if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);&#13;
-            if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-        }&#13;
-&#13;
-        if (back) {&#13;
-            if (back.name) card.setValue('face_two_name', back.name);&#13;
-            if (back.flavor_name) card.setValue('face_two_flavor_name', back.flavor_name);&#13;
-            if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);&#13;
-            if (back.type_line) card.setValue('face_two_type_line', back.type_line);&#13;
-            if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);&#13;
-            if (back.colors) card.setValue('face_two_colors', back.colors);&#13;
-            if (back.artist) card.setValue('face_two_artist', back.artist);&#13;
-            if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);&#13;
-            if (back.power) card.setValue('face_two_power', back.power);&#13;
-            if (back.toughness) card.setValue('face_two_toughness', back.toughness);&#13;
-            if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);&#13;
-            if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);&#13;
-            if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);&#13;
-            if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);&#13;
-        }&#13;
-    }&#13;
-&#13;
-    // Single-faced card logic → populate face_one_* fields from top-level&#13;
-    else {&#13;
-        if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);&#13;
-        if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);&#13;
-        if (resp.type_line) card.setValue('type_line', resp.type_line);&#13;
-        if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);&#13;
-        if (resp.colors) card.setValue('face_one_colors', resp.colors);&#13;
-        if (resp.artist) card.setValue('face_one_artist', resp.artist);&#13;
-        if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);&#13;
-        if (resp.power) card.setValue('face_one_power', resp.power);&#13;
-        if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);&#13;
-        if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);&#13;
-        if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);&#13;
-        if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);&#13;
-    }&#13;
-    // Update card record&#13;
-    card.update();&#13;
-&#13;
-    // Generate Historical Price record&#13;
-    var historicalPriceGr = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-    historicalPriceGr.addEncodedQuery('card='+card.sys_id+'^sys_created_onRELATIVEGT@hour@ago@36');&#13;
-    historicalPriceGr.query();&#13;
-    // Historical price is older than 32 hours ago and the current price is greater than 0.&#13;
-    if(historicalPriceGr.getRowCount() == 0 &amp;&amp; card.price &gt; 0){&#13;
-        var newRec = new GlideRecord('x_759224_magic_c_0_historical_card_prices');&#13;
-        newRec.initialize();&#13;
-        newRec.setValue('card',card.sys_id);&#13;
-        newRec.setValue('price',card.price);&#13;
-        newRec.insert();&#13;
-    }&#13;
-&#13;
-    // Generate Tokens&#13;
-    if(resp.all_parts){&#13;
-         var c = 0&#13;
-         // Loop through all parts&#13;
-         while(c &lt; resp.all_parts.length){&#13;
-             // If the part is token&#13;
-             gs.info(resp.all_parts[c].component + " | " + resp.all_parts[c].id + ' | ' + card.scryfall_id);&#13;
-             if(resp.all_parts[c].component == 'token' &amp;&amp; resp.all_parts[c].id != card.scryfall_id){&#13;
-                var tokenGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');&#13;
-                tokenGR.addQuery('scryfall_id',resp.all_parts[c].id);&#13;
-                tokenGR.query();&#13;
-                // If the token doesn't exist in the system&#13;
-                if(!tokenGR.next()){&#13;
-                    // Create token&#13;
-                    var newToken = magicUtils.createToken(resp.all_parts[c].name, resp.all_parts[c].id)&#13;
-                    // Create token association record&#13;
-                    if(!card.type_line.includes('token')){ // Creates an association if card is not a token&#13;
-                        magicUtils.createTokenAssociation(card, newToken.record);&#13;
-                    }&#13;
-                }else{ // Token exists, check if there's an association&#13;
-                    var associations = magicUtils.getTokenAssociationCount(card,tokenGR);&#13;
-                    if(associations == 0 &amp;&amp; !card.type_line.includes('token')){ // If no association exists, create one&#13;
-                        magicUtils.createTokenAssociation(card, tokenGR);&#13;
-                    }&#13;
-                }&#13;
-            }&#13;
-             c++;&#13;
-         }&#13;
-    }&#13;
-    // Update was a success&#13;
-    outputs.status = 'success';&#13;
-    outputs.card = card;&#13;
-} catch (err) {&#13;
-    gs.error('Card population error: ' + err.message);&#13;
-    outputs.status = 'error: ' + err.message;&#13;
-    outputs.card = card;&#13;
-}&#13;
+var retObj = magicUtils.setCardValues(card, resp);&#13;
+outputs.status = retObj.status;&#13;
+outputs.card = retObj.card;&#13;
 &#13;
 })(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -2739,11 +2357,11 @@ try {&#13;
         <field>script</field>
         <id>6e8b3b83c37666500efafbfdd40131e8</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-09-13 13:37:16</sys_created_on>
-        <sys_id>5fea5094c34cb6100efafbfdd401315a</sys_id>
+        <sys_created_on>2025-11-26 17:42:58</sys_created_on>
+        <sys_id>18d8128883213210f17ccd60ceaad373</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-13 13:37:16</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:42:58</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
         <value/>
     </sys_element_mapping>
@@ -3627,14 +3245,14 @@ try {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:43:26</sys_created_on>
         <sys_id>be8b7b83c37666500efafbfdd4013112</sys_id>
-        <sys_mod_count>111</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-05 13:50:35</sys_updated_on>
+        <sys_updated_on>2025-11-26 17:50:47</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3804,6 +3422,6 @@ try {&#13;
     <sys_hub_action_type_definition action="UPDATE">
         <sys_id>66cd0232c33ae2500efafbfdd40131b2</sys_id>
         <latest_snapshot>da8b3b83c37666500efafbfdd40131ab</latest_snapshot>
-        <compiler_build>glide-zurich-07-01-2025__patch0-07-15-2025_07-23-2025_1759.zip</compiler_build>
+        <compiler_build>glide-zurich-07-01-2025__patch3-10-16-2025_10-24-2025_0919.zip</compiler_build>
     </sys_hub_action_type_definition>
 </record_update>
