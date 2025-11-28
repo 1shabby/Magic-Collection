@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
-        <active>false</active>
-        <client>true</client>
+        <active>true</active>
+        <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
@@ -30,29 +30,28 @@
         <name>Update Card Info</name>
         <onclick>updateCard()</onclick>
         <order>100</order>
-        <script><![CDATA[function updateCard(){
-	var inputs = {};
-	var id =  g_form.getUniqueValue();
-	inputs['card_record'] = { // GlideRecord 
-		table: 'x_759224_magic_c_0_mtg_cards',
-		sys_id: id
-	};
+        <script><![CDATA[(function() {
+    try {
+        var inputs = {};
+        inputs.card_record = current;
 
-	GlideFlow.startSubflow('x_759224_magic_c_0.populate_card', inputs)
-		.then(function(execution) {
-			return execution.awaitCompletion();
-		}, errorResolver)
-		.then(function(completion) {
+        var result = sn_fd.FlowAPI.getRunner()
+            .subflow('x_759224_magic_c_0.copy_of_populate_card')
+            .inForeground()
+            .withInputs(inputs)
+            .run();
 
-			var status = completion.status;
-			
+        gs.addInfoMessage("Card populated successfully.");
 
-		});
+    } catch (ex) {
+        //gs.error('Error executing subflow: ' + ex.getMessage());
+        gs.addErrorMessage("Error: " + ex);
+    }
 
-	function errorResolver(error) {
-		// Handle errors in error resolver
-	}
-}]]></script>
+	action.setReturnURL(current);
+
+})();
+]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -63,7 +62,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b0bd564e471102102dbef1f4116d43dc</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Update Card Info</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -71,7 +70,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_ui_action_b0bd564e471102102dbef1f4116d43dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 20:51:44</sys_updated_on>
+        <sys_updated_on>2025-11-28 03:23:14</sys_updated_on>
         <table>x_759224_magic_c_0_mtg_cards</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

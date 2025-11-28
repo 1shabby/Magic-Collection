@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
     <sys_hub_flow action="INSERT_OR_UPDATE">
         <access>public</access>
-        <acls/>
+        <acls>53eb51a483e5f210f17ccd60ceaad378</acls>
         <active>true</active>
         <annotation/>
         <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=115088000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>27000</authored_on_release_version>
-        <callable_by_client_api>false</callable_by_client_api>
+        <callable_by_client_api>true</callable_by_client_api>
         <category/>
         <copied_from>f6e08663977cfd10dfffb3b6f053afc6</copied_from>
         <copied_from_name>Populate Card</copied_from_name>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d6dccafec3f6e2500efafbfdd40131a8</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Populate Card</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -44,10 +44,11 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_d6dccafec3f6e2500efafbfdd40131a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 20:59:30</sys_updated_on>
+        <sys_updated_on>2025-11-28 02:39:42</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
+        <version_record display_value="Created 2025-11-21 09:35:13">7517a4ee83d9b210f17ccd60ceaad3f8</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=d6dccafec3f6e2500efafbfdd40131a8"/>
     <sys_variable_value action="delete_multiple" query="document_key=d6dccafec3f6e2500efafbfdd40131a8"/>
@@ -169,13 +170,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 15:46:24</sys_created_on>
         <sys_id>ce3c3bc3c37666500efafbfdd40131a6</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-22 21:35:46</sys_updated_on>
+        <sys_updated_on>2025-11-21 16:16:17</sys_updated_on>
         <ui_id>5c6696b1-b368-4672-9f94-0d3dd3b0fdf3</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/71UyW7bMBD9F54lQQutxbciQYACbQMkbS5BIAwX2QQoSiGpJK7hfy9pqYqdpU2LIEc+zgzfvOGb6y0SDC3RAkqSkTKjWZHn+SKOeQMNaRjDcZIlwFGAFLTcRVLQzJ3uQA7+uN2agTSyu4/8Ra057TTb7VwEE6aXsLmaAh1C10IyzRVaXt8EqAftKlqu0XL75OqtlCQQLl3oycjpmKHd9P6kecNdYcon6MuUc3GAO8qeRhIg/mC5Yty934A0PEAtKAa20xu0tHpwgObAzpXczBFroezYXwsPRvx0j2ZpcPDuEj3UxaJKU1y3sBK0pnVct3ZVe6IGHYTWk2Z/T2lOwcKlY0TtoGd5O0G5GSVkTq1B2pNDbAw4763o1Jhigcg3EKSdHFr1bZQXzcUPRjsYR573XjuvxiRNc7nu7mehz4Tayzxdyo6CPAjloOn6THDph78fZYDAWi3IYH0HWzSI789nOoIvTZVL3jo2rqe+F2pV97q7E3sGrqE2Wkl3iPzXdcyNWKkIqFcmcvOG6Mzhp3v4CrTwMn11ZVyyf/GHErcD/+yJ4rwqkgKXIc+TJMQNJmFJiiQsGGRlkjRFDBXaBchszIkEYx5FdE3Ut4OXYJR0Eq8eZ+NTqBa9/eRI3fFJp10w+bXK/2QOgh/dcMFN3ynDjzwLKeYxoXlYZEUTYmBxWEGVhGVFs5zGVcIZi/SU+ZKb/6fEv9n/DR3Keehzi8+bntaAcR9JrZ7sgMvf4LQA0vdaAGUcx8cr4BWbv7+VP8aurxhzVvnYlbPOH2LJBSFNRoo0hARwiAmmIcFpFrovBJgVFWASv6Mlb34Bsn9Mp0QHAAA=</values>
+        <values>H4sIAAAAAAAA/71TyW7bMBD9F54lQQutxbciQYACbQMkbS5BIAwX2QQoSiGpJK7hfy9pKYqdpUiLIEcOZ3nvzbzrLRIMLdECSpKRMqNZkef5Io55Aw1pGMNxkiXAUYAUtNxlUtDMve5ADv653ZqBNLK7j/xHrTntNNvtXAYTppewuZoSXYSuhWSaK7S8vglQD9p1tFyj5fbZ13shSSBcutSTEdMxQrvp/UvzhrvGlE+hb1PNxUHcQfYwkgDxB8sV425+A9LwALWgGNhOb9DS6sEFNAd2ruRmzlgLZUd+LTwY8dsNzdLgYO4SPdTFokpTXLewErSmdVy3dlV7oAYdpNaTZhMl/9ecgoVLN5raQc86doJyM2rFnCyDtCeHsTHhvLeiU2OJBSLfgYR2cmjVj1FHNDc/2OFgHEree5E87UmD5nLd3c+Kngm113P6lB0FeZDKQdP1meDSb3m/swCBtVqQwXoGWzSIny+XNwZfWx+XvHVoHKe+F2pV97q7E3sEjlAbraR7RP5GHXIjVioC6pWJ3GIhOnPx0334CrTwMn13bVyxn/hLiduBf/VAcV4VSYHLkOdJEuIGk7AkRRIWDLIySZoihgrtAmQ25kSCMU8iOhL17eAlGCWdxKvH3fgSqkVvvzhQd3zSaRdMxqzyv7mA4Kezv+Cm75ThR+aEFPOY0DwssqIJMbA4rKBKwrKiWU7jKuGMRXqqfM22/9Pi33z+DoZyXvpM8SXpye/GHZJaPTP75WNwcnr6UU4v4zg+9vobfv54K3+OXd8w5qzysStnnT/FkgtCmowUaQgJ4BATTEOC0yx0JwSYFRVgEn+gJW/+AIFPoXctBwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ce3c3bc3c37666500efafbfdd40131a6"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=d6dccafec3f6e2500efafbfdd40131a8^sys_idNOT INc23c3bc3c37666500efafbfdd40131a5"/>
@@ -187,6 +188,7 @@
         <generation_source/>
         <order>1</order>
         <parent_ui_id/>
+        <show_stages>false</show_stages>
         <subflow display_value="Get Scryfall Data">c44b674fc3f266500efafbfdd40131eb</subflow>
         <subflow_inputs>H4sIAAAAAAAA/41S22rjMBD9Fz07RnactPXb0qWwsLuFvfSlFDGWRo5All1ZSpMN+fcdxW7IXqB9EcztzJlz9HhgRrGa8euqWV9VWi51uV6vOEcNutFKVbxYFqhYxhx0SJ0SfIq2YGMKD4cxNtr2L3kqCI+y9+p4pA5lxsHC/mFupIzcGKs8OlY/PmVsAE+IAT2rD3+Vwn5AYaFBS4PfUCNVJBLCe7m+zt5OZP+kntAp8he4xDnxKDKGu4BOEUitwY6YsQ6cgtD7PauDj5TwCOre2f25Y2NcmA7sYDeaXwS+LLML/JrtxNXqpiwr0UFrpJCCiy60IhEa2UWrmEV7e0RueiPxfgimd9PyAI19xy7Z29i5r5MiySZSL9pwYVMciQcOSYZ02Hyl/r7pX85e3Bl3Umwu2l6CPUcQgjdNDDgma6P58a/gU/LzfyxGix3tJfbDYFwrBt9vzWkXUe/y1lKQpw9HHEfTuhxk0iAnkyC/o/zHU/oBvEmCfCEYGk4bfzrzHPFT+kLQVJLrcrlQJfJFpYpicV1wetQNB7lCqBRnx5Mx4jmm0yapZlHEpDk1jNKbIXwgCluc7z8+/QYeBeJ1VQMAAA==</subflow_inputs>
         <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
@@ -1983,7 +1985,7 @@
         <model_table>sys_hub_flow</model_table>
         <name>var__m_sys_hub_flow_variable_d6dccafec3f6e2500efafbfdd40131a8</name>
         <next_element/>
-        <order>0</order>
+        <order>1</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -2001,14 +2003,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:01:20</sys_created_on>
         <sys_id>96dccafec3f6e2500efafbfdd40131b2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 13:01:20</sys_updated_on>
+        <sys_updated_on>2025-11-21 17:36:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2058,7 +2060,7 @@
         <help/>
         <hint/>
         <internal_type display_value="String">string</internal_type>
-        <label>Single Face Types</label>
+        <label>single_face_types</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
         <model display_value="Populate Card">d6dccafec3f6e2500efafbfdd40131a8</model>
@@ -2066,7 +2068,7 @@
         <model_table>sys_hub_flow</model_table>
         <name>var__m_sys_hub_flow_variable_d6dccafec3f6e2500efafbfdd40131a8</name>
         <next_element/>
-        <order>0</order>
+        <order>2</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -2084,14 +2086,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-21 13:01:20</sys_created_on>
         <sys_id>dedccafec3f6e2500efafbfdd40131b8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-21 13:01:20</sys_updated_on>
+        <sys_updated_on>2025-11-21 17:36:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -2117,11 +2119,11 @@
         <sys_created_on>2025-07-21 13:01:20</sys_created_on>
         <sys_id>2edccafec3f6e2500efafbfdd40131e8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Card Record</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_d6dccafec3f6e2500efafbfdd40131a8_card_record_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-07-21 13:01:20</sys_updated_on>
         <url/>
@@ -2310,6 +2312,7 @@
         <generation_source/>
         <order>1</order>
         <parent_ui_id/>
+        <show_stages>false</show_stages>
         <subflow display_value="Get Scryfall Data">c44b674fc3f266500efafbfdd40131eb</subflow>
         <subflow_inputs>H4sIAAAAAAAA/42SX2vbMBTFv4ueHWM7Ttr6baQEBtsK69aXUsS1dJUIZNmV5DSZyXffVWwy7w+sLwYdnXt17u/6eWBasoplt2W9vimVWKpivV5lGSpQtZKyzPJljpIlzEKD5BTg4ukApo/HYfB9rUz7lsYL7lC0Tp7P5JDadwZOT5ORFLHXRjq0rHp+SVgHjjoGdKwa/rh6byQDNRqybsZMvycMpy6eHCqkxgIn6dNU83WmU+QYI08YHgNaSc0rBcZjwhqwEkLrTqwKrifBIcgHa05Xx17bMM7XwNHrH/Toskhm71bsyG9Wd0VR8gZ2WnDBM96EHY9BPZtZ+cTs/yXqHgI8UiIRenfF22qBfkQoiVZvwmaujYaHLujWjiUBavOOgKI1fWO/jHjZtflstb2n8NhFdpHGhEY97tu3K+itthfM06VpBZiZFcGJ/Vajicu/rDJhEILTdR/iBAPr9be/dzqK/9oqGmwoDc3UddrueOfag74koIGadGfokMZfl5J7vbMpiEgmpX1DuiX9/iI/gdMR02dqQ8Xxxe9Wv/b4MQaFuhSZKpYLWWC2KGWeL27zjD7yLgOxQihlxs4J8ye/MeD9L4g0BH/tI4IR6QSPj7uJJcLpLnygUAecOJ1ffgLeUu3xsQMAAA==</subflow_inputs>
         <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
@@ -4240,11 +4243,11 @@
         <sys_created_on>2025-07-22 16:06:03</sys_created_on>
         <sys_id>06b0049bc37666500efafbfdd401310e</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Card Record</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_b5b0c09bc37666500efafbfdd40131f4_card_record_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-07-22 16:06:03</sys_updated_on>
         <url/>
@@ -4255,14 +4258,15 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>d6dccafec3f6e2500efafbfdd40131a8</sys_id>
         <latest_snapshot>b5b0c09bc37666500efafbfdd40131f4</latest_snapshot>
-        <compiler_build>glide-yokohama-12-18-2024__patch5-06-11-2025_06-25-2025_1836.zip</compiler_build>
+        <compiler_build>glide-zurich-07-01-2025__patch3-10-16-2025_10-24-2025_0919.zip</compiler_build>
+        <version_record/>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=d6dccafec3f6e2500efafbfdd40131a8"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=d6dccafec3f6e2500efafbfdd40131a8^sys_idNOT IN96b0049bc37666500efafbfdd4013152"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"96b0049bc37666500efafbfdd4013152","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="Populate Card">d6dccafec3f6e2500efafbfdd40131a8</plan_id>
-        <snapshot>332cc157c33e66500efafbfdd4013153</snapshot>
+        <snapshot>f426c7c083a53210f17ccd60ceaad3a9</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-22 16:06:04</sys_created_on>
         <sys_domain>global</sys_domain>
