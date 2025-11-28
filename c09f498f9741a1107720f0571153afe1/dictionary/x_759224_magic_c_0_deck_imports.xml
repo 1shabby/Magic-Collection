@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="5683e3a7c33ee6500efafbfdd40131c1" label="Deck Imports" max_length="40" name="x_759224_magic_c_0_deck_imports" type="collection">
+        <element choice="1" default="queued" label="Status" max_length="40" name="status" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Error" sequence="4" value="error"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+                <element inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
+                <element inactive_on_update="false" label="Queued" sequence="0" value="queued"/>
+            </choice>
+        </element>
+        <element label="Deck" max_length="32" name="deck" read_only="true" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
         <element choice="1" label="Source" max_length="40" name="source" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Moxfield" sequence="0" value="moxfield"/>
-                <element inactive_on_update="false" label="Archidekt" sequence="1" value="archidekt"/>
+                <element inactive_on_update="false" label="Moxfield" sequence="1" value="moxfield"/>
+                <element inactive_on_update="false" label="Archidekt" sequence="0" value="archidekt"/>
             </choice>
         </element>
         <element label="Deck Link" max_length="140" name="deck_link" type="url"/>
-        <element label="Processed At" max_length="40" name="processed_at" read_only="true" type="glide_date_time"/>
-        <element label="Name" max_length="40" name="name" type="string"/>
-        <element choice="1" default="queued" label="Status" max_length="40" name="status" read_only="true" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Queued" sequence="0" value="queued"/>
-                <element inactive_on_update="false" label="Processing" sequence="1" value="processing"/>
-                <element inactive_on_update="false" label="Error" sequence="4" value="error"/>
-                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
-            </choice>
-        </element>
         <element label="Raw Input" max_length="4000" name="raw_input" type="string"/>
+        <element label="Processed At" max_length="40" name="processed_at" read_only="true" type="glide_date_time"/>
         <element choice="1" label="Format" max_length="40" name="format" reference="x_759224_magic_c_0_deck_formats" type="reference">
             <choice/>
         </element>
+        <element label="Name" max_length="40" name="name" type="string"/>
         <element label="Card Count" max_length="3" name="card_count" read_only="true" type="integer"/>
-        <element label="Deck" max_length="32" name="deck" read_only="true" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
         <index name="index">
             <element name="deck"/>
+        </index>
+        <index name="index2">
+            <element name="format"/>
         </index>
     </element>
 </database>
