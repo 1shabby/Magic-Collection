@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="Add a Card">de2e05f7970165107720f0571153af0a</sc_cat_item>
+        <sc_category display_value="Services">109f0438c6112276003ae8ac13e7009d</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-20 03:35:30</sys_created_on>
+        <sys_id>cfd80ec5973cb110dfffb3b6f053afcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Add a Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sc_cat_item_category_cfd80ec5973cb110dfffb3b6f053afcc</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-20 03:35:30</sys_updated_on>
+    </sc_cat_item_category>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sc_cat_item_category_cfd80ec5973cb110dfffb3b6f053afcc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Add a Card">de2e05f7970165107720f0571153af0a</sc_cat_item>
+        <sc_category display_value="Services">109f0438c6112276003ae8ac13e7009d</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-08-20 03:35:30</sys_created_on>
+        <sys_id>cfd80ec5973cb110dfffb3b6f053afcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Add a Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sc_cat_item_category_cfd80ec5973cb110dfffb3b6f053afcc</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-08-20 03:35:30</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>]]></payload>
+        <payload_hash>-1627341696</payload_hash>
+        <record_name>Services.Add a Card</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:27</sys_created_on>
+        <sys_id>69c2582e8319b210f17ccd60ceaad3da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72abd260000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:27</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>29c2582eed19b2108c10fb8848c8eeda</update_guid>
+        <update_guid_history>29c2582eed19b2108c10fb8848c8eeda:-1627341696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Services.Add a Card">84ef187483ed3610f17ccd60ceaad31c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-11-28 16:50:01</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>39eaf1f20e6c4051b2784c67e4f334e9</sys_id>
+        <sys_metadata>cfd80ec5973cb110dfffb3b6f053afcc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Add a Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_cfd80ec5973cb110dfffb3b6f053afcc</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_cfd80ec5973cb110dfffb3b6f053afcc">69c2582e8319b210f17ccd60ceaad3da</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-11-28 16:50:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
