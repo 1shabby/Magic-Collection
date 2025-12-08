@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="DELETE">
+        <name>query</name>
+        <rest_message_function display_value="Card GET">a3754e06973de1107720f0571153af55</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 02:49:12</sys_created_on>
+        <sys_id>a9264e46973de1107720f0571153af42</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>query</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_a9264e46973de1107720f0571153af42</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 02:49:28</sys_updated_on>
+        <type>string</type>
+        <value>?q=set:CMR+Alharu,SolemnRitualist</value>
+    </sys_rest_message_fn_parameters>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sys_rest_message_fn_parameters_a9264e46973de1107720f0571153af42</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>query</name>
+        <rest_message_function display_value="Card GET">a3754e06973de1107720f0571153af55</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-03-27 02:49:12</sys_created_on>
+        <sys_id>a9264e46973de1107720f0571153af42</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>query</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_a9264e46973de1107720f0571153af42</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-03-27 02:49:28</sys_updated_on>
+        <type>string</type>
+        <value>?q=set:CMR+Alharu,SolemnRitualist</value>
+    </sys_rest_message_fn_parameters>
+</record_update>]]></payload>
+        <payload_hash>-582690546</payload_hash>
+        <record_name>query</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:07:16</sys_created_on>
+        <sys_id>9df250228359b210f17ccd60ceaad375</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72b7bb90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:07:16</sys_updated_on>
+        <type>Variable Substitutions</type>
+        <update_guid>5df25022a159b2102326e5febed47675</update_guid>
+        <update_guid_history>5df25022a159b2102326e5febed47675:-582690546</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2025-12-08 22:22:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_parameters">sys_rest_message_fn_parameters</sys_db_object>
+        <sys_id>3f0a0581467842789e222056eb5d5c24</sys_id>
+        <sys_metadata>a9264e46973de1107720f0571153af42</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>query</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_parameters_a9264e46973de1107720f0571153af42</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_parameters_a9264e46973de1107720f0571153af42">9df250228359b210f17ccd60ceaad375</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2025-12-08 22:22:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
