@@ -2,15 +2,15 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
-        <api_name>x_759224_magic_c_0.mtg_contstants</api_name>
+        <api_name>x_759224_magic_c_0.mtg_constants</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Stores many contstant for use in the Magic Collection App.</description>
         <mobile_callable>false</mobile_callable>
-        <name>mtg_contstants</name>
+        <name>mtg_constants</name>
         <sandbox_callable>false</sandbox_callable>
-        <script><![CDATA[var mtg_contstants = Class.create();
-mtg_contstants.prototype = {
+        <script><![CDATA[var mtg_constants = Class.create();
+mtg_constants.prototype = {
     initialize: function() {
         this.PREFIX = 'x_759224_magic_c_0';
         this.tables = {
@@ -53,13 +53,13 @@ mtg_contstants.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-12-08 22:09:53</sys_created_on>
         <sys_id>f2a80580833d7210f17ccd60ceaad31c</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>mtg_contstants</sys_name>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>mtg_constants</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_f2a80580833d7210f17ccd60ceaad31c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-17 21:00:22</sys_updated_on>
+        <sys_updated_on>2025-12-18 16:04:41</sys_updated_on>
     </sys_script_include>
 </record_update>

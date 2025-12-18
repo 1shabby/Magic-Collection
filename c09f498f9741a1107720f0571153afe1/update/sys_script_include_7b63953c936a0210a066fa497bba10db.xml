@@ -22,7 +22,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (noDebugMethods) {
             this.noDebugMethods = noDebugMethods.split(',');
         }
-		this.constants = new x_759224_magic_c_0.mtg_contstants();
+		this.constants = new x_759224_magic_c_0.mtg_constants();
         // Global Table Variables
         this.CARDS = this.constants.tables.CARDS;
 		this.HISTORICAL_PRICES = this.constants.tables.HISTORICAL_CARD_PRICES;
@@ -616,14 +616,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>135</sys_mod_count>
+        <sys_mod_count>136</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-10 21:24:12</sys_updated_on>
+        <sys_updated_on>2025-12-18 16:04:15</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
