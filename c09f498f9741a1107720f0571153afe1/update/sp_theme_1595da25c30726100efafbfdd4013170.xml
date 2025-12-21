@@ -6,34 +6,8 @@
 $white: #FFF;&#13;
 &#13;
 /* mtg dark green */&#13;
-$servos-mid-blue: #0874A5;&#13;
 $mtg-dark-purple: #32213A;&#13;
 $mtg-medium-tan: #D1CAA1;&#13;
-$servos-mid-blue-lightest: #F1F9FC;&#13;
-$servos-mid-blue-light: #9CC7DB;&#13;
-$servos-dark-blue: #00517D;&#13;
-&#13;
-/* servos orange */&#13;
-$servos-orange: #ED7D31;&#13;
-$servos-orange-lightest: #FDF2EA;&#13;
-$servos-orange-light: #F6BE98;&#13;
-$servos-orange-dark: #773F19;&#13;
-&#13;
-/* servos navy */&#13;
-$servos-navy: #012B49;&#13;
-$servos-navy-lighter: #678092;&#13;
-$servos-navy-light: #34556D;&#13;
-&#13;
-/* servos light blue */&#13;
-$servos-light-blue: #069BD1;&#13;
-$servos-light-blue-lightest: #CDEBF6;&#13;
-$servos-light-blue-light: #83CDE8;&#13;
-&#13;
-/* servos teal */&#13;
-$servos-teal: #00B49E;&#13;
-$servos-teal-lightest: #E6F8F5;&#13;
-$servos-teal-light: #99E1D8;&#13;
-$servos-teal-darker: #006C6F;&#13;
 &#13;
 /* grays */&#13;
 $gray: #5B5E62;&#13;
@@ -96,7 +70,7 @@ $table-border-color: $gray-lightest;&#13;
 $progress-bar-start: $servos-light-blue-lightest;&#13;
 &#13;
 /* footer */&#13;
-$footer-color: $servos-navy;&#13;
+$footer-color: $grey-dark;&#13;
 &#13;
 /* header */&#13;
 /*$sp-navbar-height: 72px !default;&#13;
@@ -132,14 +106,14 @@ $quintuple-space: 40px;</css_variables>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-24 16:32:28</sys_updated_on>
+        <sys_updated_on>2025-12-19 16:29:09</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>

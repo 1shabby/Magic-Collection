@@ -78,7 +78,7 @@
     c.updatePage(c.currentPage);
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {&#13;
+        <css>/*body {&#13;
   min-height: 100vh;&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
@@ -219,7 +219,7 @@ img {&#13;
 &#13;
 .go-to-page button:hover {&#13;
   background-color: #444;&#13;
-}</css>
+}*/</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description>A widget used to display an MTG card via the provided data on the card.</description>
@@ -236,6 +236,7 @@ img {&#13;
         <public>true</public>
         <roles>x_759224_magic_c_0.admin</roles>
         <script><![CDATA[(function() {
+    data.constants = new x_759224_magic_c_0.mtg_constants();
     data.records = [];
 
     //Detect first load vs. pagination
@@ -247,7 +248,7 @@ img {&#13;
     var utils = new x_759224_magic_c_0.magic_utils();
 
     //Count total cards
-    var countGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    var countGR = new GlideRecord(data.constants.tables.CARDS);
     if (searchTerm){
 	countGR.addQuery('name', 'CONTAINS', searchTerm);
 	}
@@ -256,7 +257,7 @@ img {&#13;
     data.totalCount = countGR.getRowCount();
 
     //Fetch paginated records
-    var cardsGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+    var cardsGR = new GlideRecord(data.constants.tables.CARDS);
 	cardsGR.addQuery('is_token',false);
     if (searchTerm) {
 		cardsGR.addQuery('name', 'CONTAINS', searchTerm);
@@ -276,7 +277,6 @@ img {&#13;
         if (added >= pageSize) break;
     }
 
-    //Final response
     data.records = data.records || [];
     data.totalCount = data.totalCount || 0;
     data.pageSize = pageSize;
@@ -289,21 +289,21 @@ img {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>435</sys_mod_count>
+        <sys_mod_count>441</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-30 20:59:09</sys_updated_on>
+        <sys_updated_on>2025-12-19 16:19:20</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="card in data.records"
           ng-click="openCardModal(card, $event)">
     <div class="image-container">
       <img class="image" ng-src="{{card.face_one.image}}" ng-alt="{{card.face_one.oracle_text}}" />
-      <img class="foil" ng-if="card.flags.is_foil" src="x_759224_magic_c_0.foil.png"/>
+      <img class="foil" ng-if="card.flags.is_foil" src={{::c.data.constants.images.FOIL_OVERLAY}} />
     </div>
   </button>
 </div>
