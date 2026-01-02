@@ -4,7 +4,7 @@
         <application display_value="Magic Collection">45892e0797c5a1107720f0571153af2b</application>
         <assessment/>
         <device_type/>
-        <filter table="sys_widgets">sys_scope=c09f498f9741a1107720f0571153afe1^EQ<item display_table="sys_scope" display_value="Magic Collection" endquery="false" field="sys_scope" goto="false" newquery="false" operator="=" or="false" value="c09f498f9741a1107720f0571153afe1"/>
+        <filter table="sp_widget">sys_scope=c09f498f9741a1107720f0571153afe1^EQ<item display_table="sys_scope" display_value="Magic Collection" endquery="false" field="sys_scope" goto="false" newquery="false" operator="=" or="false" value="c09f498f9741a1107720f0571153afe1"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint>Magic Collection Widgets</hint>
@@ -14,7 +14,7 @@
         <map_page/>
         <mobile_title>Widgets</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>sys_widgets</name>
+        <name>sp_widget</name>
         <order>14000</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
@@ -27,15 +27,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1e28a92f83b17a10f17ccd60ceaad3f6</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Widgets</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>sp_widget</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_app_module_1e28a92f83b17a10f17ccd60ceaad3f6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-19 21:27:02</sys_updated_on>
+        <sys_updated_on>2026-01-01 20:26:23</sys_updated_on>
         <timeline_page/>
         <title>Widgets</title>
         <uncancelable>false</uncancelable>
