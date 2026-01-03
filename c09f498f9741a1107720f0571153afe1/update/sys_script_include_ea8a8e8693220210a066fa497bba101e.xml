@@ -12,11 +12,33 @@
         <script><![CDATA[var playtest_utils = Class.create();
 playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     initialize: function() {
-       hand: [];
-       library: [];
-       sideboard: [];
-       graveyard: [];
-       exile: [];
+        hand: [];
+        library: [];
+        sideboard: [];
+        graveyard: [];
+        exile: [];
+    },
+
+	/**
+	* Description: Shuffles an array
+	* Parameters: [array] array
+	* Returns: [array] shuffled array
+	*/
+	
+    shuffle: function(array) {
+        var currentIndex = array.length,
+            randomIndex;
+
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            var temp = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temp;
+        }
+
+        return array;
     },
     type: 'playtest_utils'
 });]]></script>
@@ -24,13 +46,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-02 17:52:01</sys_updated_on>
+        <sys_updated_on>2026-01-03 23:38:24</sys_updated_on>
     </sys_script_include>
 </record_update>
