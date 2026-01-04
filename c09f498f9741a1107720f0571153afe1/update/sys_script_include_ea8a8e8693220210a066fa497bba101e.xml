@@ -11,6 +11,7 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var playtest_utils = Class.create();
 playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	constants : new x_759224_magic_c_0.mtg_constants(),
     initialize: function() {
         hand: [];
         library: [];
@@ -19,12 +20,32 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         exile: [];
     },
 
-	/**
-	* Description: Shuffles an array
-	* Parameters: [array] array
-	* Returns: [array] shuffled array
-	*/
-	
+    loadDeck: function(deckId) {
+        var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+        if (deckGR.get(deckId)) {
+            var formatSysId = deckGR.getValue('format');
+
+            // Load related format record
+            var formatGR = new GlideRecord('x_759224_magic_c_0_deck_formats');
+            if (formatGR.get(formatSysId)) {
+                var hp = parseInt(formatGR.getValue('starting_hp'), 10);
+                if (!isNaN(hp)) {
+                    data.playerHealth = hp;
+                }
+                // Check if commander is required for this format
+                showCommandZone = formatGR.getValue('commander_required') == '1';
+                // Check if sideboard is used for this format
+                showSideboardZone = formatGR.getValue('uses_sideboard') == '1' || deckGR.getValue('has_companion') == '1';
+            }
+        }
+    },
+
+    /**
+     * Description: Shuffles an array
+     * Parameters: [array] array
+     * Returns: [array] shuffled array
+     */
+
     shuffle: function(array) {
         var currentIndex = array.length,
             randomIndex;
@@ -40,19 +61,24 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         return array;
     },
+
+    draw: function(array) {
+
+    },
+
     type: 'playtest_utils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-03 23:38:24</sys_updated_on>
+        <sys_updated_on>2026-01-04 18:41:39</sys_updated_on>
     </sys_script_include>
 </record_update>
