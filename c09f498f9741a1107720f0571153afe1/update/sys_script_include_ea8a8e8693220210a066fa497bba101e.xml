@@ -11,13 +11,13 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var playtest_utils = Class.create();
 playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-	
+
     initialize: function(debug, noDebugMethods) {
-		this.debug = false; // Flag to allow debug or not on this script include
+        this.debug = false; // Flag to allow debug or not on this script include
         this.noDebugMethods = []; // Array of methods to not log from
 
-		this.constants = new x_759224_magic_c_0.mtg_constants();
-		this.hp;
+        this.constants = new x_759224_magic_c_0.mtg_constants();
+        this.hp;
         this.hand = [];
         this.library = [];
         this.sideboard = [];
@@ -33,7 +33,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             // Load related format record
             var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
             if (formatGR.get(formatSysId)) {
-				// Set hp
+                // Set hp
                 this.hp = parseInt(formatGR.getValue('starting_hp'), 10);
                 if (!isNaN(this.hp)) {
                     data.playerHealth = this.hp;
@@ -68,8 +68,38 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return array;
     },
 
-    draw: function(array) {
+    /**
+    * Description: Takes in two arrays then if the first array has at least 1 element it takes it and puts it on top of the second array.
+    * Parameters: [array] Array1: Array to draw from
+    			  [array] Array2: Array to draw to
+				  [integer] Count: Number of cards to draw
+    * Returns: [object] : Contains array1 and array 2 as keys
+    */
 
+    draw: function(array1, array2, count) {
+        if (array1.length >= parseInt(count)) {
+            for (i = 0; i < count; i++) {
+                var topCard = array1.shift();
+                array2.push(topCard);
+            }
+        }
+        return {
+            array1,
+            array2
+        };
+    },
+
+    /**
+     * Description: Copies the top n cards from an array to a temporary array for the user to view
+     * Parameters: [array] array: Array of cards to peek into
+	 * 			   [integer] count: Number of cards deep to peek
+     * Returns: [array] : Temporary array containing the elements that were peeked at
+     */
+
+    peek: function(array, count) {
+        if (array.length >= parseInt(count)) {
+            return array.slice(0, count);
+        }
     },
 
     type: 'playtest_utils'
@@ -78,13 +108,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-06 01:21:55</sys_updated_on>
+        <sys_updated_on>2026-01-07 00:23:52</sys_updated_on>
     </sys_script_include>
 </record_update>
