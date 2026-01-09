@@ -17,18 +17,24 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.noDebugMethods = []; // Array of methods to not log from
 
         this.constants = new x_759224_magic_c_0.mtg_constants();
+		this.magicUtils = new x_759224_magic_c_0.magic_utils();
+
         this.hp;
 		this.turn = 0;
-        this.hand = [];
-        this.library = [];
-        this.sideboard = [];
-        this.graveyard = [];
-        this.exile = [];
+		this.zones = {
+			commandZone : [],
+			hand : [],
+			library : [],
+			graveyard : [],
+			exile : [],
+			sideboard : [],
+			maybeboard : []
+		};
     },
 
-    loadDeck: function(deckId) {
+    loadDeck: function(deckID) {
         var deckGR = new GlideRecord(this.constants.tables.DECK);
-        if (deckGR.get(deckId)) {
+        if (deckGR.get(deckID)) {
             var formatSysId = deckGR.getValue('format');
 
             // Load related format record
@@ -37,14 +43,42 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 // Set hp
                 this.hp = parseInt(formatGR.getValue('starting_hp'), 10);
                 if (!isNaN(this.hp)) {
-                    data.playerHealth = this.hp;
+                    //data.playerHealth = this.hp;
                 }
                 // Check if commander is required for this format
                 showCommandZone = formatGR.getValue('commander_required') == '1';
                 // Check if sideboard is used for this format
                 showSideboardZone = formatGR.getValue('uses_sideboard') == '1' || deckGR.getValue('has_companion') == '1';
             }
+
+			var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
+			deckCardGR.addQuery('deck',deckID);
+			deckCardGR.query();
+			while(deckCardGR.next()){
+				if(deckCardGR.is_commander.toString() === 'true'){
+					var commander = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+					commander.flags.is_commander = true; // Set Commander Flag
+					commander.notes = deckCardGR.getValue('notes'); // Set any notes from deck card
+					this.zones.commandZone.push(commander);
+				}else if(deckCardGR.is_sideboard.toString() === 'true') {
+					var sideboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+					sideboard.flags.is_sideboard = true;
+					sideboard.notes = deckCardGR.getValue('notes');
+					this.zones.sideboard.push(sideboard);
+				}else if(deckCardGR.is_maybeboard.toString() === 'true') {
+					var maybeboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+					maybeboard.flags.is_maybeboard = true;
+					maybeboard.notes = deckCardGR.getValue('notes');
+					this.zones.maybeboard.push(maybeboard);
+				}else{
+					var library = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+					library.notes = deckCardGR.getValue('notes');
+					this.zones.library.push(library);
+				}
+			}
         }
+		this.shuffle(this.zones.library);
+		return this.zones;
     },
 
     /**
@@ -119,13 +153,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-08 02:08:50</sys_updated_on>
+        <sys_updated_on>2026-01-09 00:51:00</sys_updated_on>
     </sys_script_include>
 </record_update>
