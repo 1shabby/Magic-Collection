@@ -193,13 +193,61 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     /**
      * Description: Starts a new turn by untapping all cards, incrementing the turn counter, and drawing a card
      * Parameters: None
-     * Returns: None
+     * Returns: [object] : Contains execution information
+     * 			[boolean] Status: status
+     * 			[string] Message: any messages from the execution
      */
 
     newTurn: function() {
-        this.untapAll();
-        this.turn++;
-        this.draw(this.library, this.hand, 1);
+        try {
+            var retObj = {
+                success : true,
+                message : ''
+            }
+            this.untapAll(); // Untap all cards
+            this.turn++; // Increment turn counter
+            this.draw(this.library, this.hand, 1); // Draw a card
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.messsage;
+        }
+        return retObj; // Return status
+    },
+
+    /**
+     * Description: Sets a counter on a card to a specific amount
+     * Parameters: [object] card: Card object to set counter on
+     *             [string] counterType: Type of counter to set
+     *             [integer] amount: Amount to set the counter to
+     * Returns: [object] : Contains execution information
+     * 			[boolean] Status: status
+     * 			[string] Message: any messages from the execution
+     */
+
+    setCounters: function(card, counterType, amount) {
+        try {
+            var retObj = {
+                success: true,
+                message: ''
+            }
+            if (typeof counterType === 'string' && typeof amount === 'number' && card.hasOwnProperty('counters')) {
+                card.counters[counterType] = amount; // Set counters
+                retObj.message = amount.toString() + ' ' + counterType.toString() + ' counters added to card.'
+            }else if (typeof counterType != 'string'){
+                retObj.success = false;
+                retObj.message = 'Counter type of ' + counterType.toString() + ' is not a string.';
+            }else if (typeof amount != 'number'){
+                retObj.success = false;
+                retObj.message = 'Amount provided ' + amount.toString() + ' is not a number.';
+            }else if (!card.hasOwnProperty('counters')){
+                retObj.success = false;
+                retObj.message = 'Provided card object is missing counters property.';
+            }
+        }catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+        return retObj; // Return status
     },
 
     type: 'playtest_utils'
@@ -208,13 +256,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-09 18:11:15</sys_updated_on>
+        <sys_updated_on>2026-01-10 21:20:52</sys_updated_on>
     </sys_script_include>
 </record_update>
