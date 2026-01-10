@@ -16,6 +16,14 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.debug = false; // Flag to allow debug or not on this script include
         this.noDebugMethods = []; // Array of methods to not log from
 
+        if (debug) {
+            this.debug = debug;
+        }
+
+        if (noDebugMethods) {
+            this.noDebugMethods = noDebugMethods.split(',');
+        }
+        // Script Includes
         this.constants = new x_759224_magic_c_0.mtg_constants();
         this.magicUtils = new x_759224_magic_c_0.magic_utils();
 
@@ -40,69 +48,77 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             // Load related format record
             var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
             if (formatGR.get(formatSysId)) {
-                // Set hp
-                this.hp = parseInt(formatGR.getValue('starting_hp'), 10);
-                if (!isNaN(this.hp)) {
-                    //data.playerHealth = this.hp;
-                }
-                // Check if commander is required for this format
-                showCommandZone = formatGR.getValue('commander_required') == '1';
-                // Check if sideboard is used for this format
-                showSideboardZone = formatGR.getValue('uses_sideboard') == '1' || deckGR.getValue('has_companion') == '1';
+                this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
+                showCommandZone = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
+                showSideboardZone = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
             }
 
-            var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
-            deckCardGR.addQuery('deck', deckID);
-            deckCardGR.query();
-            this._populateZones(deckID);
+            this._populateZones(deckID); // Populate zones object with deck cards
         }
-		var drawn = this.draw(this.zones.library, this.zones.hand, 7);
-		this.zones.library = drawn.array1;
-		this.zones.hand = drawn.array2;
+        var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
+        this.zones.library = drawn.array1;
+        this.zones.hand = drawn.array2;
         this.shuffle(this.zones.library); // Shuffle the library
         return this.zones; // Return zones object
     },
 
-	/**
-	* Description: Helper method to populate the arrays in the zones object
-	* Parameters: [string] deckID: sys_id of the deck record
-	* Returns: None; Populates arrays in the zones object
-	*/
+    /**
+     * Description: Helper method to populate the arrays in the zones object
+     * Parameters: [string] deckID: sys_id of the deck record
+     * Returns: [object]: contains execution information
+	 * 				[boolean] Status: status
+	 * 				[string] Message: any messages from the execution
+     */
 
     _populateZones: function(deckID) {
-        var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
-        deckCardGR.addQuery('deck', deckID);
-        deckCardGR.query();
-        while (deckCardGR.next()) {
-            if (deckCardGR.is_commander.toString() === 'true') { // Card is commander
-                var commander = this.magicUtils.getCardData(deckCardGR.getValue('card'));
-                commander.flags.is_commander = true; // Set Commander Flag
-                commander.notes = deckCardGR.getValue('notes'); // Set any notes from deck card
-                for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to commandZone
-                    this.zones.commandZone.push(commander);
-                }
-            } else if (deckCardGR.is_sideboard.toString() === 'true') { // Card is sideboard
-                var sideboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
-                sideboard.flags.is_sideboard = true; // Set Sideboard flag
-                sideboard.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
-                for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to sideboard
-                    this.zones.sideboard.push(sideboard);
-                }
-            } else if (deckCardGR.is_maybeboard.toString() === 'true') { // Card is maybeboard
-                var maybeboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
-                maybeboard.flags.is_maybeboard = true; // Set maybeboard flag
-                maybeboard.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
-                for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to maybeboard
-                    this.zones.maybeboard.push(maybeboard);
-                }
-            } else { // Card is in the main deck
-                var library = this.magicUtils.getCardData(deckCardGR.getValue('card'));
-                library.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
-                for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push = to quantity
-                    this.zones.library.push(library);
+        try {
+			var status = {
+				success: true,
+				message: ''
+			};
+            var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
+            deckCardGR.addQuery('deck', deckID);
+            deckCardGR.query();
+            while (deckCardGR.next()) {
+                if (deckCardGR.is_commander.toString() === 'true') { // Card is commander
+                    var commander = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+                    commander.flags.is_commander = true; // Set Commander Flag
+                    commander.flags.is_tapped = false;
+                    commander.notes = deckCardGR.getValue('notes'); // Set any notes from deck card
+                    for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to commandZone
+                        this.zones.commandZone.push(commander);
+                    }
+                } else if (deckCardGR.is_sideboard.toString() === 'true') { // Card is sideboard
+                    var sideboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+                    sideboard.flags.is_sideboard = true; // Set Sideboard flag
+                    sideboard.flags.is_tapped = false;
+                    sideboard.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
+                    for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to sideboard
+                        this.zones.sideboard.push(sideboard);
+                    }
+                } else if (deckCardGR.is_maybeboard.toString() === 'true') { // Card is maybeboard
+                    var maybeboard = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+                    maybeboard.flags.is_maybeboard = true; // Set maybeboard flag
+                    maybeboard.flags.is_tapped = false;
+                    maybeboard.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
+                    for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push to maybeboard
+                        this.zones.maybeboard.push(maybeboard);
+                    }
+                } else { // Card is in the main deck
+                    var library = this.magicUtils.getCardData(deckCardGR.getValue('card'));
+                    library.notes = deckCardGR.getValue('notes'); // Set any notes from the deck card
+                    library.flags.is_tapped = false;
+                    for (i = 0; i < deckCardGR.getValue('quantity'); i++) { // Push = to quantity
+                        this.zones.library.push(library);
+                    }
                 }
             }
+        } catch (ex) {
+			status.success = false;
+			status.message = ex.message;
         }
+		return status;
+
     },
 
     /**
@@ -161,9 +177,24 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
     },
 
-    untapAll: function(array) {
+    /**
+     * Description: Iterates through an array and untaps all cards
+     * Parameters: [array] array: Array of cards to loop through
+     * Returns: [array] : Array with all cards untapped
+     */
 
+    untapAll: function(array) {
+        for (i = 0; i < array.length; i++) {
+            array[i].flags.is_tapped = false;
+        }
+        return array;
     },
+
+    /**
+     * Description: Starts a new turn by untapping all cards, incrementing the turn counter, and drawing a card
+     * Parameters: None
+     * Returns: None
+     */
 
     newTurn: function() {
         this.untapAll();
@@ -177,13 +208,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-09 01:54:21</sys_updated_on>
+        <sys_updated_on>2026-01-09 18:11:15</sys_updated_on>
     </sys_script_include>
 </record_update>
