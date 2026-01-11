@@ -33,6 +33,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             commandZone: [],
             hand: [],
             library: [],
+            battlefield: [],
             graveyard: [],
             exile: [],
             sideboard: [],
@@ -76,8 +77,11 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     }
                 }
                 var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
-                this.zones.library = drawn.array1;
-                this.zones.hand = drawn.array2;
+                if (!drawn.success) { // Draw method failed
+                    retObj.success = false;
+                    retObj.message = drawn.message;
+                    retObj.zones = this.zones;
+                }
                 this.shuffle(this.zones.library); // Shuffle the library
             } else { // DeckID is not valid
                 retObj.success = false;
@@ -184,14 +188,14 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     draw: function(array1, array2, count) {
         try {
-			var retObj = {
-				success: true,
-				message: '',
-				arrays: {
-					array1,
-					array2
-				}
-			}
+            var retObj = {
+                success: true,
+                message: '',
+                arrays: {
+                    array1,
+                    array2
+                }
+            }
             if (array1.length >= parseInt(count)) {
                 for (i = 0; i < count; i++) {
                     var topCard = array1.shift();
@@ -199,10 +203,10 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
         } catch (ex) {
-			retObj.success = false;
-			retObj.message = ex.message;
-			retObj.arrays.array1 = array1;
-			retObj.arrays.array2 = array2;
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.arrays.array1 = array1;
+            retObj.arrays.array2 = array2;
         }
         return retObj;
     },
@@ -246,10 +250,15 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: ''
-            }
-            this.untapAll(); // Untap all cards
+            };
+
+            this.untapAll(this.zones.battlefield); // Untap all cards
             this.turn++; // Increment turn counter
-            this.draw(this.library, this.hand, 1); // Draw a card
+            var draw = this.draw(this.zones.library, this.zones.hand, 1); // Draw a card
+            if (!draw.success) {
+                retObj.success = false;
+                retObj.message = draw.message;
+            }
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.messsage;
@@ -272,10 +281,11 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: ''
-            }
+            };
+
             if (typeof counterType === 'string' && typeof amount === 'number' && card.hasOwnProperty('counters')) {
                 card.counters[counterType] = amount; // Set counters
-                retObj.message = amount.toString() + ' ' + counterType.toString() + ' counters added to card.'
+                retObj.message = amount.toString() + ' ' + counterType.toString() + ' counters added to card.';
             } else if (typeof counterType != 'string') {
                 retObj.success = false;
                 retObj.message = 'Counter type of ' + counterType.toString() + ' is not a string.';
@@ -309,6 +319,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 message: '',
                 hp: this.hp
             };
+
             if (typeof(amount) === 'number') {
                 this.hp += amount;
                 retObj.message = amount + " life added to hp setting hp to " + this.hp;
@@ -328,13 +339,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-11 20:38:50</sys_updated_on>
+        <sys_updated_on>2026-01-11 22:25:53</sys_updated_on>
     </sys_script_include>
 </record_update>
