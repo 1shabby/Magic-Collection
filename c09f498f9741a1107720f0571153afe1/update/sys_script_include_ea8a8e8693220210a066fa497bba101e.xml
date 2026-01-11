@@ -39,43 +39,74 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             maybeboard: []
         };
     },
+    /**
+     * Description: Loads in a deck via the provided deckID
+     * Parameters: [string] deckID: Sys_id of a deck record
+     * Returns: [object] retObj: Object containing execution details
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[object] zones: Stores the zones object that is populated in a successful execution
+     */
 
     loadDeck: function(deckID) {
-        var deckGR = new GlideRecord(this.constants.tables.DECK);
-        if (deckGR.get(deckID)) {
-            var formatSysId = deckGR.getValue('format');
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                zones: this.zones
+            };
+            if (typeof(deckID) === 'string' && deckID != '') { // Validate deckID is a string and not empty
+                var deckGR = new GlideRecord(this.constants.tables.DECK);
+                if (deckGR.get(deckID)) {
+                    var formatSysId = deckGR.getValue('format');
 
-            // Load related format record
-            var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
-            if (formatGR.get(formatSysId)) {
-                this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
-                showCommandZone = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
-                showSideboardZone = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
+                    // Load related format record
+                    var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
+                    if (formatGR.get(formatSysId)) {
+                        this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
+                        showCommandZone = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
+                        showSideboardZone = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
+                    }
+
+                    var populated = this._populateZones(deckID); // Populate zones object with deck cards
+                    if (!populated.success) { // If populate zones failed
+                        retObj.success = false;
+                        retObj.message = populated.message;
+                        retObj.zones = this.zones;
+                    }
+                }
+                var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
+                this.zones.library = drawn.array1;
+                this.zones.hand = drawn.array2;
+                this.shuffle(this.zones.library); // Shuffle the library
+            } else { // DeckID is not valid
+                retObj.success = false;
+                retObj.message = "Deck ID '" + deckID + "' is not valid.";
+                retObj.zones = this.zones;
             }
-
-            this._populateZones(deckID); // Populate zones object with deck cards
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.zones = this.zones;
         }
-        var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
-        this.zones.library = drawn.array1;
-        this.zones.hand = drawn.array2;
-        this.shuffle(this.zones.library); // Shuffle the library
-        return this.zones; // Return zones object
+
+        return retObj;
     },
 
     /**
      * Description: Helper method to populate the arrays in the zones object
      * Parameters: [string] deckID: sys_id of the deck record
      * Returns: [object]: contains execution information
-	 * 				[boolean] Status: status
-	 * 				[string] Message: any messages from the execution
+     * 				[boolean] Status: status
+     * 				[string] Message: any messages from the execution
      */
 
     _populateZones: function(deckID) {
         try {
-			var status = {
-				success: true,
-				message: ''
-			};
+            var retObj = {
+                success: true,
+                message: ''
+            };
             var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
             deckCardGR.addQuery('deck', deckID);
             deckCardGR.query();
@@ -114,10 +145,10 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
         } catch (ex) {
-			status.success = false;
-			status.message = ex.message;
+            retObj.success = false;
+            retObj.message = ex.message;
         }
-		return status;
+        return retObj;
 
     },
 
@@ -152,16 +183,28 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     */
 
     draw: function(array1, array2, count) {
-        if (array1.length >= parseInt(count)) {
-            for (i = 0; i < count; i++) {
-                var topCard = array1.shift();
-                array2.push(topCard);
+        try {
+			var retObj = {
+				success: true,
+				message: '',
+				arrays: {
+					array1,
+					array2
+				}
+			}
+            if (array1.length >= parseInt(count)) {
+                for (i = 0; i < count; i++) {
+                    var topCard = array1.shift();
+                    array2.push(topCard);
+                }
             }
+        } catch (ex) {
+			retObj.success = false;
+			retObj.message = ex.message;
+			retObj.arrays.array1 = array1;
+			retObj.arrays.array2 = array2;
         }
-        return {
-            array1,
-            array2
-        };
+        return retObj;
     },
 
     /**
@@ -201,8 +244,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     newTurn: function() {
         try {
             var retObj = {
-                success : true,
-                message : ''
+                success: true,
+                message: ''
             }
             this.untapAll(); // Untap all cards
             this.turn++; // Increment turn counter
@@ -233,21 +276,50 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             if (typeof counterType === 'string' && typeof amount === 'number' && card.hasOwnProperty('counters')) {
                 card.counters[counterType] = amount; // Set counters
                 retObj.message = amount.toString() + ' ' + counterType.toString() + ' counters added to card.'
-            }else if (typeof counterType != 'string'){
+            } else if (typeof counterType != 'string') {
                 retObj.success = false;
                 retObj.message = 'Counter type of ' + counterType.toString() + ' is not a string.';
-            }else if (typeof amount != 'number'){
+            } else if (typeof amount != 'number') {
                 retObj.success = false;
                 retObj.message = 'Amount provided ' + amount.toString() + ' is not a number.';
-            }else if (!card.hasOwnProperty('counters')){
+            } else if (!card.hasOwnProperty('counters')) {
                 retObj.success = false;
                 retObj.message = 'Provided card object is missing counters property.';
             }
-        }catch (ex) {
+        } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
         }
         return retObj; // Return status
+    },
+
+    /**
+     * Description: Adds the provided amount to the player's hp
+     * Parameters: [integer] amount: The amount of hp to add to the user's hp
+     * Returns: [object] retObj: Contains execution information
+     * 				[boolean] success: Contains execution status information
+     * 				[string] message: Contains any execution messages
+     * 				[integer] hp: Updated HP
+     */
+
+    setLife: function(amount) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                hp: this.hp
+            };
+            if (typeof(amount) === 'number') {
+                this.hp += amount;
+                retObj.message = amount + " life added to hp setting hp to " + this.hp;
+                retObj.hp = this.hp;
+            }
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.hp = this.hp;
+        }
+        return retObj;
     },
 
     type: 'playtest_utils'
@@ -256,13 +328,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-10 21:20:52</sys_updated_on>
+        <sys_updated_on>2026-01-11 20:38:50</sys_updated_on>
     </sys_script_include>
 </record_update>
