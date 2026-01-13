@@ -82,7 +82,12 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     retObj.message = drawn.message;
                     retObj.zones = this.zones;
                 }
-                this.shuffle(this.zones.library); // Shuffle the library
+                var shuffled = this.shuffle(this.zones.library); // Shuffle the library
+                if (!shuffled.success) { // Shuffle method failed
+                    retObj.success = false;
+                    retObj.message = shuffled.message;
+                    retObj.zones = this.zones;
+                }
             } else { // DeckID is not valid
                 retObj.success = false;
                 retObj.message = "Deck ID '" + deckID + "' is not valid.";
@@ -101,8 +106,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Description: Helper method to populate the arrays in the zones object
      * Parameters: [string] deckID: sys_id of the deck record
      * Returns: [object]: contains execution information
-     * 				[boolean] Status: status
-     * 				[string] Message: any messages from the execution
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
      */
 
     _populateZones: function(deckID) {
@@ -158,33 +163,50 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /**
      * Description: Shuffles an array
-     * Parameters: [array] array
-     * Returns: [array] shuffled array
+     * Parameters: [array] array that is going to be shuffled
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[array] arr: Stores the shuffled array
      */
 
     shuffle: function(array) {
-        var currentIndex = array.length,
-            randomIndex;
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                array: array
+            };
 
-        while (currentIndex != 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
+            var currentIndex = array.length,
+                randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
 
-            var temp = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temp;
+                var temp = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temp;
+            }
+            retObj.arr = array;
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.array = array;
         }
-
-        return array;
+        return retObj;
     },
 
     /**
-    * Description: Takes in two arrays then if the first array has at least 1 element it takes it and puts it on top of the second array.
-    * Parameters: [array] Array1: Array to draw from
-    			  [array] Array2: Array to draw to
-				  [integer] Count: Number of cards to draw
-    * Returns: [object] : Contains array1 and array 2 as keys
-    */
+     * Description: Takes in two arrays then if the first array has at least 1 element it takes it and puts it on top of the second array.
+     * Parameters: [array] Array1: Array to draw from
+     *			   [array] Array2: Array to draw to
+     *			   [integer] Count: Number of cards to draw
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[object] arrays: Stores array1 and array2 post draw
+     */
 
     draw: function(array1, array2, count) {
         try {
@@ -215,34 +237,77 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Description: Copies the top n cards from an array to a temporary array for the user to view
      * Parameters: [array] array: Array of cards to peek into
      * 			   [integer] count: Number of cards deep to peek
-     * Returns: [array] : Temporary array containing the elements that were peeked at
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[array] temp: Temporary array that stores the peek items
      */
 
     peek: function(array, count) {
-        if (array.length >= parseInt(count)) {
-            return array.slice(0, count);
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                temp: []
+            };
+
+            if (count <= 0) {
+                retObj.success = false;
+				retObj.message = 'Count must be greater than 0';
+            } else {
+                if (array.length >= parseInt(count)) {
+                    retObj.temp = array.slice(0, count);
+                } else {
+                    retObj.success = false;
+                    retObj.message = 'Array length of ' + array.length + ' is shorter than ' + count;
+                }
+            }
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.temp = [];
         }
+        return retObj;
+
     },
 
     /**
      * Description: Iterates through an array and untaps all cards
      * Parameters: [array] array: Array of cards to loop through
-     * Returns: [array] : Array with all cards untapped
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[array] array: Stores the shuffled array
      */
 
     untapAll: function(array) {
-        for (i = 0; i < array.length; i++) {
-            array[i].flags.is_tapped = false;
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                array: array
+            };
+            // Loop through each item in the array and set the is_tapped flag to false
+            for (i = 0; i < array.length; i++) {
+                array[i].flags.is_tapped = false;
+            }
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.array = array;
         }
-        return array;
+
+        return retObj;
     },
 
     /**
      * Description: Starts a new turn by untapping all cards, incrementing the turn counter, and drawing a card
      * Parameters: None
-     * Returns: [object] : Contains execution information
-     * 			[boolean] Status: status
-     * 			[string] Message: any messages from the execution
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
      */
 
     newTurn: function() {
@@ -252,7 +317,11 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 message: ''
             };
 
-            this.untapAll(this.zones.battlefield); // Untap all cards
+            var untap = this.untapAll(this.zones.battlefield); // Untap all cards
+            if (!untap.success) {
+                retObj.success = false;
+                retObj.message = untap.message;
+            }
             this.turn++; // Increment turn counter
             var draw = this.draw(this.zones.library, this.zones.hand, 1); // Draw a card
             if (!draw.success) {
@@ -263,7 +332,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.success = false;
             retObj.message = ex.messsage;
         }
-        return retObj; // Return status
+        return retObj;
     },
 
     /**
@@ -272,15 +341,16 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      *             [string] counterType: Type of counter to set
      *             [integer] amount: Amount to set the counter to
      * Returns: [object] : Contains execution information
-     * 			[boolean] Status: status
-     * 			[string] Message: any messages from the execution
+     * 				[boolean] Status: status
+     * 				[string] Message: any messages from the execution
      */
 
     setCounters: function(card, counterType, amount) {
         try {
             var retObj = {
                 success: true,
-                message: ''
+                message: '',
+                card: card
             };
 
             if (typeof counterType === 'string' && typeof amount === 'number' && card.hasOwnProperty('counters')) {
@@ -299,8 +369,9 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
+            retObj.card = card;
         }
-        return retObj; // Return status
+        return retObj;
     },
 
     /**
@@ -339,13 +410,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>61</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-11 22:25:53</sys_updated_on>
+        <sys_updated_on>2026-01-13 01:20:57</sys_updated_on>
     </sys_script_include>
 </record_update>
