@@ -27,8 +27,11 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.constants = new x_759224_magic_c_0.mtg_constants();
         this.magicUtils = new x_759224_magic_c_0.magic_utils();
 
+        this.format;
+
         this.hp;
         this.turn = 0;
+        this.actions = [];
         this.zones = {
             commandZone: [],
             hand: [],
@@ -39,8 +42,12 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             sideboard: [],
             maybeboard: []
         };
+        this.flags = {
+            commander_required: false,
+            uses_sideboard: false
+        };
     },
-    /**
+    /*
      * Description: Loads in a deck via the provided deckID
      * Parameters: [string] deckID: Sys_id of a deck record
      * Returns: [object] retObj: Object containing execution details
@@ -54,19 +61,19 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                zones: this.zones
+                method: 'Load Deck'
             };
             if (typeof(deckID) === 'string' && deckID != '') { // Validate deckID is a string and not empty
                 var deckGR = new GlideRecord(this.constants.tables.DECK);
                 if (deckGR.get(deckID)) {
-                    var formatSysId = deckGR.getValue('format');
+                    this.addAction(retObj);
+                    var formatSysID = deckGR.getValue('format');
 
-                    // Load related format record
-                    var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
-                    if (formatGR.get(formatSysId)) {
-                        this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
-                        showCommandZone = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
-                        showSideboardZone = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
+                    var format = this._getFormatInfo(formatSysID);
+                    if (!format.success) {
+						retObj.success = false;
+						retObj.message = format.message;
+						retObj.this.zones;
                     }
 
                     var populated = this._populateZones(deckID); // Populate zones object with deck cards
@@ -93,16 +100,53 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.message = "Deck ID '" + deckID + "' is not valid.";
                 retObj.zones = this.zones;
             }
+
+			retObj.message = 'Deck properly loaded.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
-            retObj.zones = this.zones;
         }
 
         return retObj;
     },
 
-    /**
+    /*
+     * Description: Gets the format information for the format associated to the deck
+     * Parameters: [string] formatSysID: sys_id of the format associated to the deck record
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     */
+
+    _getFormatInfo: function(formatSysID) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                method: 'Get Format Info'
+            };
+
+            var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
+            if (formatGR.get(formatSysID)) {
+                this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
+				this.format = formatGR.getValue('name'); // Sets the name of the format
+                this.flags.commander_required = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
+                this.flags.uses_sideboard = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
+            }
+
+            retObj.message = 'Format information properly set.';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+		this.addAction(retObj);
+        return retObj;
+    },
+
+    /*
      * Description: Helper method to populate the arrays in the zones object
      * Parameters: [string] deckID: sys_id of the deck record
      * Returns: [object]: contains execution information
@@ -114,7 +158,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         try {
             var retObj = {
                 success: true,
-                message: ''
+                message: '',
+                method: 'Populate Zones'
             };
             var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
             deckCardGR.addQuery('deck', deckID);
@@ -153,15 +198,20 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     }
                 }
             }
+
+			retObj.message = 'Zones properly populated.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
         }
+
+        this.addAction(retObj);
         return retObj;
 
     },
 
-    /**
+    /*
      * Description: Shuffles an array
      * Parameters: [array] array that is going to be shuffled
      * Returns: [object]: contains execution information
@@ -175,6 +225,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
+                method: 'Shuffle',
                 array: array
             };
 
@@ -188,16 +239,21 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 array[currentIndex] = array[randomIndex];
                 array[randomIndex] = temp;
             }
+
             retObj.arr = array;
+			retObj.message = 'Array properly shuffled.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.array = array;
         }
+
+        this.addAction(retObj);
         return retObj;
     },
 
-    /**
+    /*
      * Description: Takes in two arrays then if the first array has at least 1 element it takes it and puts it on top of the second array.
      * Parameters: [array] Array1: Array to draw from
      *			   [array] Array2: Array to draw to
@@ -213,6 +269,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
+                method: 'Draw',
                 arrays: {
                     array1,
                     array2
@@ -224,16 +281,21 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     array2.push(topCard);
                 }
             }
+
+			retObj.message = count + ' cards were drawn successfully.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.arrays.array1 = array1;
             retObj.arrays.array2 = array2;
         }
+
+        this.addAction(retObj);
         return retObj;
     },
 
-    /**
+    /*
      * Description: Copies the top n cards from an array to a temporary array for the user to view
      * Parameters: [array] array: Array of cards to peek into
      * 			   [integer] count: Number of cards deep to peek
@@ -248,12 +310,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
+                method: 'Peek',
                 temp: []
             };
 
             if (count <= 0) {
                 retObj.success = false;
-				retObj.message = 'Count must be greater than 0';
+                retObj.message = 'Count must be greater than 0';
             } else {
                 if (array.length >= parseInt(count)) {
                     retObj.temp = array.slice(0, count);
@@ -263,16 +326,19 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
 
+			retObj.message = 'Peek performed successfully.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.temp = [];
         }
+        this.addAction(retObj);
         return retObj;
 
     },
 
-    /**
+    /*
      * Description: Iterates through an array and untaps all cards
      * Parameters: [array] array: Array of cards to loop through
      * Returns: [object]: contains execution information
@@ -286,23 +352,27 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
+                method: 'Untap All',
                 array: array
             };
+
             // Loop through each item in the array and set the is_tapped flag to false
             for (i = 0; i < array.length; i++) {
                 array[i].flags.is_tapped = false;
             }
+
+			this.message = 'All cards untapped.';
 
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.array = array;
         }
-
+        this.addAction(retObj);
         return retObj;
     },
 
-    /**
+    /*
      * Description: Starts a new turn by untapping all cards, incrementing the turn counter, and drawing a card
      * Parameters: None
      * Returns: [object]: contains execution information
@@ -314,7 +384,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         try {
             var retObj = {
                 success: true,
-                message: ''
+                message: '',
+                method: 'New Turn'
             };
 
             var untap = this.untapAll(this.zones.battlefield); // Untap all cards
@@ -328,14 +399,18 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.success = false;
                 retObj.message = draw.message;
             }
+
+			retObj.message - 'New turn started.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.messsage;
         }
+        this.addAction(retObj);
         return retObj;
     },
 
-    /**
+    /*
      * Description: Sets a counter on a card to a specific amount
      * Parameters: [object] card: Card object to set counter on
      *             [string] counterType: Type of counter to set
@@ -350,6 +425,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
+                method: 'Set Counters',
                 card: card
             };
 
@@ -366,15 +442,19 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.success = false;
                 retObj.message = 'Provided card object is missing counters property.';
             }
+
+			retObj.message = amount + ' ' + counterType + ' added to ' + card.name + '.';
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.card = card;
         }
+        this.addAction(retObj);
         return retObj;
     },
 
-    /**
+    /*
      * Description: Adds the provided amount to the player's hp
      * Parameters: [integer] amount: The amount of hp to add to the user's hp
      * Returns: [object] retObj: Contains execution information
@@ -388,18 +468,50 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                hp: this.hp
+                method: 'Set Life'
             };
 
             if (typeof(amount) === 'number') {
                 this.hp += amount;
-                retObj.message = amount + " life added to hp setting hp to " + this.hp;
+                retObj.message = amount + " life added to hp setting hp to " + this.hp + '.';
                 retObj.hp = this.hp;
             }
+
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
             retObj.hp = this.hp;
+        }
+		
+        this.addAction(retObj);
+        return retObj;
+    },
+
+    /**
+     * Description: Adds an action to the action log 
+     * Parameters: [object] action: Action to add to action log
+     * Returns: [object] retObj: Contains execution information
+     * 				[boolean] success: Contains execution status information
+     * 				[string] message: Contains any execution messages
+     */
+
+    addAction: function(action) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                method: 'Add Action'
+            };
+
+            if (action.hasOwnProperty('success')) {
+                this.actions.push(action);
+            } else {
+                retObj.success = false;
+                retObj.messate = 'Action missing success key.';
+            }
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
         }
         return retObj;
     },
@@ -410,13 +522,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-13 01:20:57</sys_updated_on>
+        <sys_updated_on>2026-01-14 02:51:07</sys_updated_on>
     </sys_script_include>
 </record_update>
