@@ -274,7 +274,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     array1,
                     array2
                 }
-            }
+            };
+			
             if (array1.length >= parseInt(count)) {
                 for (i = 0; i < count; i++) {
                     var topCard = array1.shift();
@@ -474,13 +475,14 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             if (typeof(amount) === 'number') {
                 this.hp += amount;
                 retObj.message = amount + " life added to hp setting hp to " + this.hp + '.';
-                retObj.hp = this.hp;
-            }
+            } else {
+				retObj.success = false;
+				retObj.message = amount + ' is not a number.';
+			}
 
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
-            retObj.hp = this.hp;
         }
 		
         this.addAction(retObj);
@@ -522,13 +524,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>79</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-14 02:51:07</sys_updated_on>
+        <sys_updated_on>2026-01-15 03:12:19</sys_updated_on>
     </sys_script_include>
 </record_update>
