@@ -71,9 +71,9 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
                     var format = this._getFormatInfo(formatSysID);
                     if (!format.success) {
-						retObj.success = false;
-						retObj.message = format.message;
-						retObj.this.zones;
+                        retObj.success = false;
+                        retObj.message = format.message;
+                        retObj.this.zones;
                     }
 
                     var populated = this._populateZones(deckID); // Populate zones object with deck cards
@@ -83,25 +83,26 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                         retObj.zones = this.zones;
                     }
                 }
-                var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
-                if (!drawn.success) { // Draw method failed
-                    retObj.success = false;
-                    retObj.message = drawn.message;
-                    retObj.zones = this.zones;
-                }
                 var shuffled = this.shuffle(this.zones.library); // Shuffle the library
                 if (!shuffled.success) { // Shuffle method failed
                     retObj.success = false;
                     retObj.message = shuffled.message;
                     retObj.zones = this.zones;
                 }
+                var drawn = this.draw(this.zones.library, this.zones.hand, 7); // Draw opening hand
+                if (!drawn.success) { // Draw method failed
+                    retObj.success = false;
+                    retObj.message = drawn.message;
+                    retObj.zones = this.zones;
+                }
+
             } else { // DeckID is not valid
                 retObj.success = false;
                 retObj.message = "Deck ID '" + deckID + "' is not valid.";
                 retObj.zones = this.zones;
             }
 
-			retObj.message = 'Deck properly loaded.';
+            retObj.message = 'Deck properly loaded.';
 
         } catch (ex) {
             retObj.success = false;
@@ -130,7 +131,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
             if (formatGR.get(formatSysID)) {
                 this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
-				this.format = formatGR.getValue('name'); // Sets the name of the format
+                this.format = formatGR.getValue('name'); // Sets the name of the format
                 this.flags.commander_required = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
                 this.flags.uses_sideboard = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
             }
@@ -142,7 +143,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.message = ex.message;
         }
 
-		this.addAction(retObj);
+        this.addAction(retObj);
         return retObj;
     },
 
@@ -199,7 +200,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
 
-			retObj.message = 'Zones properly populated.';
+            retObj.message = 'Zones properly populated.';
 
         } catch (ex) {
             retObj.success = false;
@@ -241,7 +242,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
 
             retObj.arr = array;
-			retObj.message = 'Array properly shuffled.';
+            retObj.message = 'Array properly shuffled.';
 
         } catch (ex) {
             retObj.success = false;
@@ -275,7 +276,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     array2
                 }
             };
-			
+
             if (array1.length >= parseInt(count)) {
                 for (i = 0; i < count; i++) {
                     var topCard = array1.shift();
@@ -283,7 +284,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
 
-			retObj.message = count + ' cards were drawn successfully.';
+            retObj.message = count + ' cards were drawn successfully.';
 
         } catch (ex) {
             retObj.success = false;
@@ -327,7 +328,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 }
             }
 
-			retObj.message = 'Peek performed successfully.';
+            retObj.message = 'Peek performed successfully.';
 
         } catch (ex) {
             retObj.success = false;
@@ -362,7 +363,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 array[i].flags.is_tapped = false;
             }
 
-			this.message = 'All cards untapped.';
+            this.message = 'All cards untapped.';
 
         } catch (ex) {
             retObj.success = false;
@@ -401,7 +402,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.message = draw.message;
             }
 
-			retObj.message - 'New turn started.';
+            retObj.message - 'New turn started.';
 
         } catch (ex) {
             retObj.success = false;
@@ -444,7 +445,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.message = 'Provided card object is missing counters property.';
             }
 
-			retObj.message = amount + ' ' + counterType + ' added to ' + card.name + '.';
+            retObj.message = amount + ' ' + counterType + ' added to ' + card.name + '.';
 
         } catch (ex) {
             retObj.success = false;
@@ -476,15 +477,15 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 this.hp += amount;
                 retObj.message = amount + " life added to hp setting hp to " + this.hp + '.';
             } else {
-				retObj.success = false;
-				retObj.message = amount + ' is not a number.';
-			}
+                retObj.success = false;
+                retObj.message = amount + ' is not a number.';
+            }
 
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
         }
-		
+
         this.addAction(retObj);
         return retObj;
     },
@@ -524,13 +525,13 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>79</sys_mod_count>
+        <sys_mod_count>80</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-15 03:12:19</sys_updated_on>
+        <sys_updated_on>2026-01-16 02:53:35</sys_updated_on>
     </sys_script_include>
 </record_update>
