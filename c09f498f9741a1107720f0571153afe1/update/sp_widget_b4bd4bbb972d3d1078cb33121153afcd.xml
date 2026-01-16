@@ -209,41 +209,66 @@
 
     // Draw from the top of the library; new card goes to LEFTMOST of the hand.
     c.drawCard = function() {
-		// c.server.get({
-		// 	action: "draw",
-		// 	param1: c.data.library,
-		// 	param2: c.data.hand,
-		// 	param3: 1
-		// }).then(function(response){
-		// 	console.log(response.message);
-		// 	c.layoutHand();
-		// });
+        c.server.get({
+            action: "draw",
+            param1: JSON.stringify(c.data.library || []),
+            param2: JSON.stringify(c.data.hand || []),
+            param3: 1,
+            actions: JSON.stringify(c.data.actions || [])
+        }).then(function(response){
+            // Response may be top-level or nested in response.data depending on platform
+            var resp = response && response.data ? response.data : response;
+            // Merge/replace actions: prefer full server-provided actions, otherwise append lastAction
+            if (resp.actions && Array.isArray(resp.actions)) {
+                c.data.actions = resp.actions;
+            } else if (resp.lastAction) {
+                c.data.actions = c.data.actions || [];
+                c.data.actions.push(resp.lastAction);
+            }
+            // Update zones from server response if provided
+            if (resp.library) c.data.library = resp.library;
+            if (resp.hand) c.data.hand = resp.hand;
 
-        if (c.data.library.length === 0) return;
+            // Rebuild visible card list (exclude library) from authoritative server zones
+            c.cards = (c.data.showCommandZone ? c.data.commanders : [])
+                .concat(c.data.hand)
+                .concat(c.data.battlefield)
+                .concat(c.data.graveyard)
+                .concat(c.data.exile)
+                .concat(c.data.showSideboardZone ? c.data.sideboard : []);
 
-        var drawnCard = c.data.library.shift();
-
-        // Add card to hand
-        c.data.hand.push(drawnCard);
-        c.cards.push(drawnCard);
-
-        // Layout hand to position the new card
-        c.layoutHand();
-
-        // Update DOM positions for hand cards
-        $timeout(function() {
-            var playmatEl = $element[0];
-            var cardsEls = playmatEl.querySelectorAll('.draggable-card');
-
-            cardsEls.forEach(function(cardEl, i) {
-                var card = c.cards[i];
-                if (card && c.data.hand.indexOf(card) !== -1) {
-                    cardEl.style.left = card.left + 'px';
-                    cardEl.style.top = card.top + 'px';
-                }
+            // Layout and render within $timeout to ensure DOM is ready
+            $timeout(function() {
+                c.layoutHand();
+                c.renderCards();
             });
-            c.renderCards();
         });
+
+        // if (c.data.library.length === 0) return;
+
+        // var drawnCard = c.data.library.shift();
+
+        // // Add card to hand
+        // c.data.hand.push(drawnCard);
+        // c.cards.push(drawnCard);
+
+        // // Layout hand to position the new card
+        // c.layoutHand();
+
+        // // Update DOM positions for hand cards
+        // $timeout(function() {
+        //     var playmatEl = $element[0];
+        //     var cardsEls = playmatEl.querySelectorAll('.draggable-card');
+
+        //     cardsEls.forEach(function(cardEl, i) {
+        //         var card = c.cards[i];
+        //         if (card && c.data.hand.indexOf(card) !== -1) {
+        //             cardEl.style.left = card.left + 'px';
+        //             cardEl.style.top = card.top + 'px';
+        //         }
+        //     });
+        //     c.renderCards();
+        // });
     };
 
     // Untap all cards
@@ -517,6 +542,7 @@
         c.data.graveyard = c.data.graveyard || [];
         c.data.exile = c.data.exile || [];
         c.data.sideboard = c.data.sideboard || [];
+        c.data.actions = c.data.actions || [];
 
         // Combine all cards into a single array for rendering
         // Only include visible/draggable zones in c.cards (not library)
@@ -1200,53 +1226,91 @@
     var urlDeckId = $sp && $sp.getParameter ? $sp.getParameter("deck_id") : null;
     var deckId = urlDeckId || options.deck_sys_id || input.deck_sys_id;
 
-    var playtestUtils = new x_759224_magic_c_0.playtest_utils(true);
+    var playtestUtils = new x_759224_magic_c_0.playtest_utils();
 
-    data.turn = 0;
     data.deck_id = deckId;
-	data.actions = playtestUtils.actions;
-
-    playtestUtils.loadDeck(deckId);
-
-    data.playerHealth = playtestUtils.hp;
-    var showCommandZone = playtestUtils.flags.commander_required;
-    var showSideboardZone = playtestUtils.flags.uses_sideboard;
-
-
-    data.commanders = playtestUtils.zones.commandZone;
-    data.hand = playtestUtils.zones.hand;
-    data.library = playtestUtils.zones.library;
-    data.showCommandZone = showCommandZone;
-    data.showSideboardZone = showSideboardZone;
-    data.sideboard = playtestUtils.zones.sideboard;
 
     if (input && input.action != null) {
+        // If the client sent an existing action log, seed the server instance so
+        // server-side logging/printing includes previous actions.
+        if (input.actions) {
+            try {
+                var clientActions = input.actions;
+                if (typeof clientActions === 'string') {
+                    clientActions = JSON.parse(clientActions);
+                }
+                if (Array.isArray(clientActions)) {
+                    playtestUtils.actions = clientActions.slice();
+                }
+            } catch (e) {
+                // ignore parse errors and continue with fresh actions
+                gs.info('playtest: failed to parse input.actions: ' + e.message);
+            }
+        }
+        // Ensure data.actions exists for server-side logging during action handling
+        data.actions = playtestUtils.actions;
         switch (input.action) {
             case 'shuffle':
-                if (input.param1)
-                    console.log(shuffle(input.param1));
-                for (i = 0; i < playtestUtils.actions.length; i++) {
-                    console.log(playtestUtils.actions[i].method + ' | ' + playtestUtils.actions[i].message);
+                if (input.param1) {
+                    // param1 may be a JSON string representing the library array
+                    try {
+                        var lib = input.param1;
+                        if (typeof lib === 'string') lib = JSON.parse(lib);
+                        if (Array.isArray(lib)) playtestUtils.zones.library = lib;
+                    } catch (e) { gs.info('playtest: failed to parse shuffle library: ' + e.message); }
+                    var shuffleResult = shuffle(playtestUtils.zones.library);
+                    data.lastAction = shuffleResult;
                 }
-				data.actions = playtestUtils.actions;
+                data.actions = playtestUtils.actions;
                 break;
             case 'draw':
-                if (input.param1 && input.param2 && input.param3)
-                    console.log(draw(input.param1, input.param2, input.param3));
-                console.log(playtestUtils.zones.hand.length);
-				data.actions = playtestUtils.actions;
+                if (input.param1 && input.param2 && input.param3) {
+                    // param1/param2 may be JSON strings (library/hand) from client — parse and seed server zones
+                    try {
+                        var lib = input.param1;
+                        var hand = input.param2;
+                        if (typeof lib === 'string') lib = JSON.parse(lib);
+                        if (typeof hand === 'string') hand = JSON.parse(hand);
+                        if (Array.isArray(lib)) playtestUtils.zones.library = lib;
+                        if (Array.isArray(hand)) playtestUtils.zones.hand = hand;
+                    } catch (e) { gs.info('playtest: failed to parse draw zones: ' + e.message); }
+                    // call draw using server-side zones so playtestUtils manages state consistently
+                    var drawResult = draw(playtestUtils.zones.library, playtestUtils.zones.hand, input.param3);
+                    data.lastAction = drawResult;
+                    // return updated zones
+                    data.library = playtestUtils.zones.library;
+                    data.hand = playtestUtils.zones.hand;
+                }
+                data.actions = playtestUtils.actions;
                 break;
         }
+    } else {
+
+        playtestUtils.loadDeck(deckId);
+
+        data.playerHealth = playtestUtils.hp;
+        var showCommandZone = playtestUtils.flags.commander_required;
+        var showSideboardZone = playtestUtils.flags.uses_sideboard;
+
+		data.actions = playtestUtils.actions;
+		data.turn = playtestUtils.turn;
+        data.commanders = playtestUtils.zones.commandZone;
+        data.hand = playtestUtils.zones.hand;
+        data.library = playtestUtils.zones.library;
+        data.showCommandZone = showCommandZone;
+        data.showSideboardZone = showSideboardZone;
+        data.sideboard = playtestUtils.zones.sideboard;
+
     }
 
     function draw(zone1, zone2, amount) {
         var results = playtestUtils.draw(zone1, zone2, amount);
-        if (results.sucess) {
+        if (results.success) {
+            // playtest_utils already logs the action into its internal actions array
+            // ensure server response contains the updated zones as well
+            data.actions = playtestUtils.actions;
             data.library = results.arrays.array1;
             data.hand = results.arrays.array2;
-        }
-        for (i = 0; i < playtestUtils.actions.length; i++) {
-            console.log(playtestUtils.actions[i].method + ' | ' + playtestUtils.actions[i].message);
         }
         return results;
     }
@@ -1266,14 +1330,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>268</sys_mod_count>
+        <sys_mod_count>287</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-16 04:27:34</sys_updated_on>
+        <sys_updated_on>2026-01-16 19:14:03</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
