@@ -1187,116 +1187,40 @@
     var deckId = urlDeckId || options.deck_sys_id || input.deck_sys_id;
 
     var magicUtils = new x_759224_magic_c_0.magic_utils();
+	var playtestUtils = new x_759224_magic_c_0.playtest_utils();
 
     data.turn = 0;
     data.deck_id = deckId;
+
+	playtestUtils.loadDeck(deckId);
+
     // Default fallback
-    data.playerHealth = 20;
-    var showCommandZone = false;
-    var showSideboardZone = false;
-    // Load deck record
-    var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
-    if (deckGR.get(deckId)) {
-        var formatSysId = deckGR.getValue('format');
+    data.playerHealth = playtestUtils.hp;
+    var showCommandZone = playtestUtils.flags.commander_required;
+    var showSideboardZone = playtestUtils.flags.uses_sideboard;
+    
 
-        // Load related format record
-        var formatGR = new GlideRecord('x_759224_magic_c_0_deck_formats');
-        if (formatGR.get(formatSysId)) {
-            var hp = parseInt(formatGR.getValue('starting_hp'), 10);
-            if (!isNaN(hp)) {
-                data.playerHealth = hp;
-            }
-            // Check if commander is required for this format
-            showCommandZone = formatGR.getValue('commander_required') == '1';
-            // Check if sideboard is used for this format
-            showSideboardZone = formatGR.getValue('uses_sideboard') == '1' || deckGR.getValue('has_companion') == '1';
-        }
-    }
-
-    data.commanders = [];
-    data.hand = [];
-    data.library = [];
+    data.commanders = playtestUtils.zones.commandZone;
+    data.hand = playtestUtils.zones.hand;
+    data.library = playtestUtils.zones.library;
     data.showCommandZone = showCommandZone;
     data.showSideboardZone = showSideboardZone;
-    data.sideboard = [];
+    data.sideboard = playtestUtils.zones.sideboard;
 
-    if (!deckId) {
-        data.error = "No deck_sys_id provided.";
-        return;
-    }
-
-    var deckCardGR = new GlideRecord('x_759224_magic_c_0_deck_card');
-    deckCardGR.addQuery('deck', deckId);
-    deckCardGR.query();
-
-    var commanders = [];
-    var nonCommanders = [];
-
-    // Add sideboard cards
-    var sideboard = [];
-    // Loop through each of the deck card records
-    while (deckCardGR.next()) {
-        // Get quantity so we add
-        var quantity = parseInt(deckCardGR.getValue('quantity'), 10) || 1;
-        var isCommander = deckCardGR.is_commander.toString() === 'true';
-        var isSideboard = deckCardGR.is_sideboard.toString() === 'true';
-        var isMaybeboard = deckCardGR.is_maybeboard.toString() === 'true';
-        // If the card exists and is not sideboard nor maybeboard
-        var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-        if (cardGR.get(deckCardGR.getValue('card')) && !isMaybeboard) {
-            var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
-            cardData.is_commander = isCommander;
-            cardData.notes = deckCardGR.getValue('notes');
-            if (isSideboard) {
-                for (var i = 0; i < quantity; i++) {
-                    sideboard.push(Object.assign({}, cardData));
-                }
-            } else if (!isSideboard) {
-                var targetArray = cardData.is_commander ? commanders : nonCommanders;
-                for (var i = 0; i < quantity; i++) {
-                    targetArray.push(Object.assign({}, cardData));
-                }
-            }
-        }
-    }
-    data.sideboard = sideboard;
-
-    // Shuffle non-commander cards
-    function shuffle(array) {
-        var currentIndex = array.length,
-            randomIndex;
-
-        while (currentIndex != 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-
-            var temp = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temp;
-        }
-
-        return array;
-    }
-
-    shuffle(nonCommanders);
-
-    data.hand = nonCommanders.slice(0, 7);
-    data.library = nonCommanders.slice(7);
-    data.commanders = commanders;
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>250</sys_mod_count>
+        <sys_mod_count>251</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-04 14:22:33</sys_updated_on>
+        <sys_updated_on>2026-01-16 02:07:43</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
