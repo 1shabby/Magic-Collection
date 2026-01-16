@@ -209,6 +209,16 @@
 
     // Draw from the top of the library; new card goes to LEFTMOST of the hand.
     c.drawCard = function() {
+		// c.server.get({
+		// 	action: "draw",
+		// 	param1: c.data.library,
+		// 	param2: c.data.hand,
+		// 	param3: 1
+		// }).then(function(response){
+		// 	console.log(response.message);
+		// 	c.layoutHand();
+		// });
+
         if (c.data.library.length === 0) return;
 
         var drawnCard = c.data.library.shift();
@@ -571,6 +581,10 @@
     };
 
     c.shuffleLibrary = function() {
+		// c.server.get({
+		// 	action: "shuffle",
+		// 	param1: c.data.library
+		// });
         for (let i = c.data.library.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [c.data.library[i], c.data.library[j]] = [c.data.library[j], c.data.library[i]];
@@ -1186,19 +1200,18 @@
     var urlDeckId = $sp && $sp.getParameter ? $sp.getParameter("deck_id") : null;
     var deckId = urlDeckId || options.deck_sys_id || input.deck_sys_id;
 
-    var magicUtils = new x_759224_magic_c_0.magic_utils();
-	var playtestUtils = new x_759224_magic_c_0.playtest_utils();
+    var playtestUtils = new x_759224_magic_c_0.playtest_utils(true);
 
     data.turn = 0;
     data.deck_id = deckId;
+	data.actions = playtestUtils.actions;
 
-	playtestUtils.loadDeck(deckId);
+    playtestUtils.loadDeck(deckId);
 
-    // Default fallback
     data.playerHealth = playtestUtils.hp;
     var showCommandZone = playtestUtils.flags.commander_required;
     var showSideboardZone = playtestUtils.flags.uses_sideboard;
-    
+
 
     data.commanders = playtestUtils.zones.commandZone;
     data.hand = playtestUtils.zones.hand;
@@ -1207,20 +1220,60 @@
     data.showSideboardZone = showSideboardZone;
     data.sideboard = playtestUtils.zones.sideboard;
 
+    if (input && input.action != null) {
+        switch (input.action) {
+            case 'shuffle':
+                if (input.param1)
+                    console.log(shuffle(input.param1));
+                for (i = 0; i < playtestUtils.actions.length; i++) {
+                    console.log(playtestUtils.actions[i].method + ' | ' + playtestUtils.actions[i].message);
+                }
+				data.actions = playtestUtils.actions;
+                break;
+            case 'draw':
+                if (input.param1 && input.param2 && input.param3)
+                    console.log(draw(input.param1, input.param2, input.param3));
+                console.log(playtestUtils.zones.hand.length);
+				data.actions = playtestUtils.actions;
+                break;
+        }
+    }
+
+    function draw(zone1, zone2, amount) {
+        var results = playtestUtils.draw(zone1, zone2, amount);
+        if (results.sucess) {
+            data.library = results.arrays.array1;
+            data.hand = results.arrays.array2;
+        }
+        for (i = 0; i < playtestUtils.actions.length; i++) {
+            console.log(playtestUtils.actions[i].method + ' | ' + playtestUtils.actions[i].message);
+        }
+        return results;
+    }
+
+    function peek(zone1, amount) {
+        return playtestUtils.peek(zone1, amount);
+    }
+
+    function shuffle(zone) {
+        return playtestUtils.shuffle(zone);
+    }
+
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>251</sys_mod_count>
+        <sys_mod_count>268</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-16 02:07:43</sys_updated_on>
+        <sys_updated_on>2026-01-16 04:27:34</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->

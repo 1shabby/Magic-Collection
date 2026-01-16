@@ -17,6 +17,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.noDebugMethods = []; // Array of methods to not log from
 
         if (debug) {
+            gs.info(debug);
             this.debug = debug;
         }
 
@@ -505,33 +506,38 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 message: '',
                 method: 'Add Action'
             };
-
-            if (action.hasOwnProperty('success')) {
-                this.actions.push(action);
-            } else {
-                retObj.success = false;
-                retObj.messate = 'Action missing success key.';
+        
+        if (action.hasOwnProperty('success')) {
+            this.actions.push(action);
+            if (this.debug) {
+                gs.info('[Playtester Utils] : ' + action.success + ' | ' +
+                    action.message + ' | ' +
+                    action.method);
             }
-        } catch (ex) {
+        } else {
             retObj.success = false;
-            retObj.message = ex.message;
+            retObj.messate = 'Action missing success key.';
         }
-        return retObj;
-    },
+    } catch (ex) {
+        retObj.success = false;
+        retObj.message = ex.message;
+    }
+    return retObj;
+},
 
-    type: 'playtest_utils'
+type: 'playtest_utils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>80</sys_mod_count>
+        <sys_mod_count>86</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-16 02:53:35</sys_updated_on>
+        <sys_updated_on>2026-01-16 04:24:23</sys_updated_on>
     </sys_script_include>
 </record_update>
