@@ -365,7 +365,41 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 array[i].flags.is_tapped = false;
             }
 
-            this.message = 'All cards untapped.';
+            retObj.message = 'All cards untapped.';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+            retObj.array = array;
+        }
+        this.addAction(retObj);
+        return retObj;
+    },
+
+    /*
+     * Description: Taps all cards in an array
+     * Parameters: [array] array: Array of cards to loop through
+     * Returns: [object]: contains execution information
+     * 				[boolean] success: Tracks whether the method exuected successfully
+     * 				[string] message: Stores any messages related to execution
+     * 				[array] array: Stores the shuffled array
+     */
+
+    tapAll: function(array) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                method: 'Tap All',
+                array: array
+            };
+
+            // Loop through each item in the array and set the is_tapped flag to true
+            for (i = 0; i < array.length; i++) {
+                array[i].flags.is_tapped = true;
+            }
+
+            retObj.message = 'All cards tapped.';
 
         } catch (ex) {
             retObj.success = false;
@@ -528,18 +562,20 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 },
 
 type: 'playtest_utils'
-});]]></script>
+});
+
+]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>89</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-18 01:27:49</sys_updated_on>
+        <sys_updated_on>2026-01-18 19:17:03</sys_updated_on>
     </sys_script_include>
 </record_update>
