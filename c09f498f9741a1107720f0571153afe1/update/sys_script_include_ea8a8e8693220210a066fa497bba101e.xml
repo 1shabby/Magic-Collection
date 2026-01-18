@@ -17,7 +17,6 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.noDebugMethods = []; // Array of methods to not log from
 
         if (debug) {
-            gs.info(debug);
             this.debug = debug;
         }
 
@@ -29,10 +28,12 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.magicUtils = new x_759224_magic_c_0.magic_utils();
 
         this.format;
-
-        this.hp;
-        this.turn = 0;
-        this.actions = [];
+		this.player = {
+			hp: 0,
+			turn: 0,
+			actions: []
+		};
+		
         this.zones = {
             commandZone: [],
             hand: [],
@@ -131,7 +132,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
             var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
             if (formatGR.get(formatSysID)) {
-                this.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
+                this.player.hp = parseInt(formatGR.getValue('starting_hp'), 10); // Set starting HP based on format
                 this.format = formatGR.getValue('name'); // Sets the name of the format
                 this.flags.commander_required = formatGR.getValue('commander_required') == '1'; // Check if commander is required for this format
                 this.flags.uses_sideboard = formatGR.getValue('uses_sideboard') == '1'; // Check if sideboard is used for this format
@@ -396,7 +397,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 retObj.success = false;
                 retObj.message = untap.message;
             }
-            this.turn++; // Increment turn counter
+            this.player.turn++; // Increment turn counter
             var draw = this.draw(this.zones.library, this.zones.hand, 1); // Draw a card
             if (!draw.success) {
                 retObj.success = false;
@@ -475,8 +476,8 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             };
 
             if (typeof(amount) === 'number') {
-                this.hp += amount;
-                retObj.message = amount + " life added to hp setting hp to " + this.hp + '.';
+                this.player.hp += amount;
+                retObj.message = amount + " life added to hp setting hp to " + this.player.hp + '.';
             } else {
                 retObj.success = false;
                 retObj.message = amount + ' is not a number.';
@@ -508,9 +509,9 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             };
         
         if (action.hasOwnProperty('success')) {
-            this.actions.push(action);
+            this.player.actions.push(action);
             if (this.debug) {
-                gs.info('[Playtester Utils] : ' + this.actions.length + ' | ' +
+                gs.info('[Playtester Utils] : ' + this.player.actions.length + ' | ' +
 					action.success + ' | ' +
                     action.message + ' | ' +
                     action.method);
@@ -532,13 +533,13 @@ type: 'playtest_utils'
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>87</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-16 17:27:18</sys_updated_on>
+        <sys_updated_on>2026-01-18 01:27:49</sys_updated_on>
     </sys_script_include>
 </record_update>

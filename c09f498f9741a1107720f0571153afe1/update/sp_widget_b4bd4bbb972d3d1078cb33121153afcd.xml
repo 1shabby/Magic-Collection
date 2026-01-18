@@ -100,6 +100,7 @@
             if (idx !== -1) zoneArray.splice(idx, 1);
         }
     }
+	
     // Gets the zone that the card is currently within
     function getCardZone(card) {
         if (c.data.showCommandZone && c.data.commanders.indexOf(card) !== -1) return 'command';
@@ -1281,14 +1282,14 @@
                     data.library = playtestUtils.zones.library;
                     data.hand = playtestUtils.zones.hand;
                 }
-                data.actions = playtestUtils.actions;
+                data.actions = playtestUtils.player.actions;
                 break;
         }
     } else {
 
         playtestUtils.loadDeck(deckId);
 
-        data.playerHealth = playtestUtils.hp;
+        data.playerHealth = playtestUtils.player.hp;
         var showCommandZone = playtestUtils.flags.commander_required;
         var showSideboardZone = playtestUtils.flags.uses_sideboard;
 
@@ -1306,8 +1307,6 @@
     function draw(zone1, zone2, amount) {
         var results = playtestUtils.draw(zone1, zone2, amount);
         if (results.success) {
-            // playtest_utils already logs the action into its internal actions array
-            // ensure server response contains the updated zones as well
             data.actions = playtestUtils.actions;
             data.library = results.arrays.array1;
             data.hand = results.arrays.array2;
@@ -1330,14 +1329,14 @@
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-10-05 04:26:39</sys_created_on>
         <sys_id>b4bd4bbb972d3d1078cb33121153afcd</sys_id>
-        <sys_mod_count>287</sys_mod_count>
+        <sys_mod_count>289</sys_mod_count>
         <sys_name>MTG Deck Playtest</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_b4bd4bbb972d3d1078cb33121153afcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-16 19:14:03</sys_updated_on>
+        <sys_updated_on>2026-01-18 01:35:44</sys_updated_on>
         <template><![CDATA[<div class="playtester-basic">
   <div class="playmat">
     <!-- Left Column -->
