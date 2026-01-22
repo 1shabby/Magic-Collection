@@ -17,8 +17,7 @@ spellbook_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 
     getRequest: function(deckID) {
-        this.generateRequest(deckID);
-        return body;
+        return this.generateRequest(deckID);
     },
 
     generateRequest: function(deckID) {
@@ -31,28 +30,34 @@ spellbook_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     commanders: []
                 }
             };
+            if (deckID != null && typeof(deckID) === 'string') { // If DeckID exists and is a string
+                var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
+                deckCardGR.addQuery('deck', deckID);
+                deckCardGR.addQuery('is_sideboard', false);
+                deckCardGR.addQuery('is_maybeboard', false);
+                deckCardGR.query();
 
-            var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
-            deckCardGR.addQuery('deck', deckID);
-            deckCardGR.addQuery('is_sideboard', false);
-            deckCardGR.addQuery('is_maybeboard', false);
-            deckCardGR.query();
+                while (deckCardGR.next()) { // Loop through main deck / commander cards
+                    var line = { // Generate the line object
+                        card: deckCardGR.card.name.toString(),
+                        quantity: parseInt(deckCardGR.quantity)
+                    };
 
-            while (deckCardGR.next()) {
-                var line = {
-                    card: deckCardGR.card.name.toString(),
-                    quantity: parseInt(deckCardGR.quantity)
-                };
-
-                if (deckCardGR.is_commander) {
-                    retObj.request.commanders.push(line);
-                } else {
-                    retObj.request.main.push(line);
+                    if (deckCardGR.is_commander) { // If commander, push line to commanders
+                        retObj.request.commanders.push(line);
+                    } else { // Else push line to main deck
+                        retObj.request.main.push(line);
+                    }
                 }
+                retObj.message = retObj.request.commanders.length + ' cards added to commanders. ' +
+                    retObj.request.main.length + ' cards added to main deck.';
+            } else { // deckID isn't valid
+                retObj.success = false;
+                retObj.message = 'DeckID ' + deckID + ' is either null or not a string';
             }
         } catch (ex) {
-			retObj.success = false;
-			retObj.message = ex.message;
+            retObj.success = false;
+            retObj.message = ex.message;
         }
         return retObj;
     },
@@ -64,13 +69,13 @@ spellbook_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-19 04:39:19</sys_created_on>
         <sys_id>2b0b291183aeb210f17ccd60ceaad327</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>spellbook_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_2b0b291183aeb210f17ccd60ceaad327</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-22 02:53:43</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:52:31</sys_updated_on>
     </sys_script_include>
 </record_update>
