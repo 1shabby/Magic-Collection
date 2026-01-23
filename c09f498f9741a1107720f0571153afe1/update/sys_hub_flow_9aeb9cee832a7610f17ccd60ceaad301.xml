@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=170000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>spellbook__get_my_combos</internal_name>
+        <label_cache>[{"name":"subflow.deckid","label":"Input➛deckID","type":"string","base_type":"string","usedInstances":{"8bbe277c-408f-40a8-92c6-25dc6a135662":["deckid"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"3d82c8a1-79dd-472d-adae-df300a83059d"}},{"name":"8bbe277c-408f-40a8-92c6-25dc6a135662.response.results.included","label":"1 - MTG  Spellbook - Get My Combos➛Response➛results➛included","reference":"","reference_display":"","type":"array.object","base_type":"array.object","column_name":"","usedInstances":{"b3dd85bb-039c-42f4-bcdb-a758f97e9434":["combos-0"]},"attributes":{}}]</label_cache>
+        <master_snapshot>e81c1422836a7610f17ccd60ceaad380</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Spellbook - Get My Combos</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:04:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9aeb9cee832a7610f17ccd60ceaad301</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Spellbook - Get My Combos</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_hub_flow_9aeb9cee832a7610f17ccd60ceaad301</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:49</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record display_value="Created 2026-01-22 12:07:44">909c1862836a7610f17ccd60ceaad353</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_variable_value action="delete_multiple" query="document_key=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_9aeb9cee832a7610f17ccd60ceaad301^id=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT INdaeb9cee832a7610f17ccd60ceaad305"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>9aeb9cee832a7610f17ccd60ceaad301</id>
+        <name>Spellbook - Get My Combos</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:04:51</sys_created_on>
+        <sys_id>daeb9cee832a7610f17ccd60ceaad305</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:04:51</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=daeb9cee832a7610f17ccd60ceaad305"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT IN0ffb9cee832a7610f17ccd60ceaad39e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3d82c8a1-79dd-472d-adae-df300a83059d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deckid</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>deckID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</model>
+        <model_id>9aeb9cee832a7610f17ccd60ceaad301</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9aeb9cee832a7610f17ccd60ceaad301</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:11</sys_created_on>
+        <sys_id>0ffb9cee832a7610f17ccd60ceaad39e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0ffb9cee832a7610f17ccd60ceaad39e"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT INaf7cd062836a7610f17ccd60ceaad3b2"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD278c94623b6a7610c188eda84b9e86c2</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD278c94623b6a7610c188eda84b9e86c2":{"$COCollectionField":[{"included_object":{"easyPrerequisites":"String","easyPrerequisites.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"easyPrerequisites\",\"mandatory\":\"false\",\"order\":\"19\",\"max_length\":\"0\",\"uiUniqueId\":\"2a86a640-335d-42ec-ba94-da50cea48268\"}"},"notes":"String","notes.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"notes\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"a15438d3-e892-4c85-9f6a-fceb2ea99478\"}"},"notablePrerequisites":"String","notablePrerequisites.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"notablePrerequisites\",\"mandatory\":\"false\",\"order\":\"20\",\"max_length\":\"0\",\"uiUniqueId\":\"833e28fe-ef71-4075-b00d-2222591a6479\"}"},"description":"String","description.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"description\",\"mandatory\":\"false\",\"order\":\"15\",\"max_length\":\"0\",\"uiUniqueId\":\"9f92031d-0011-4b9c-8ba5-9b2035b6ad4d\"}"},"legalities":{"standard":"String","standard.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"standard\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"cc193881-b1aa-4f46-9d6a-28647886603a\"}"},"legacy":"String","legacy.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"legacy\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"662a160d-c1b9-4034-b9dd-61e8ec652dbe\"}"},"oathbreaker":"String","oathbreaker.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oathbreaker\",\"mandatory\":\"false\",\"order\":\"11\",\"max_length\":\"0\",\"uiUniqueId\":\"cf4a6178-441b-4db5-96da-51d8c0b84fff\"}"},"pauperCommanderMain":"String","pauperCommanderMain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauperCommanderMain\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"4195a2e2-236e-4e70-a619-66ec8fae9e43\"}"},"pioneer":"String","pioneer.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pioneer\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"d431553f-268a-4f3d-85b5-c63ada5e79f2\"}"},"pauperCommander":"String","pauperCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauperCommander\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"9fc95081-fb97-49f8-963a-d4c196f64a6f\"}"},"commander":"String","commander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"commander\",\"mandatory\":\"false\",\"order\":\"9\",\"max_length\":\"0\",\"uiUniqueId\":\"9dfe7310-b58a-4c12-88b3-263916e3206e\"}"},"modern":"String","modern.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"modern\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"bb92079c-d8d7-45cd-9e27-fb33ce18a86e\"}"},"pauper":"String","pauper.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauper\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"a78c2c7a-aa12-41b0-b90a-8342a3dc27e3\"}"},"premodern":"String","premodern.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"premodern\",\"mandatory\":\"false\",\"order\":\"10\",\"max_length\":\"0\",\"uiUniqueId\":\"b599b12c-8d9a-48c7-b2f0-cf0f7d66a1c9\"}"},"vintage":"String","vintage.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"vintage\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"3d244bd1-57d0-4553-a430-5fd9e481d9af\"}"},"predh":"String","predh.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"predh\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"21e737c2-53ff-45c8-846c-79669b2732ce\"}"},"brawl":"String","brawl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"brawl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3986089b-cbe1-4661-961f-086774727d79\"}"}},"legalities.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"legalities\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"3af6662c-5d8e-4a59-ada9-fbe79c6a0613\"}"},"includes":[{"$0_includes":{"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"a7263da2-a85e-4c1d-9d2a-76d8f265b00f\"}"}}}],"includes.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"includes\",\"mandatory\":\"false\",\"child_name\":\"includes_object\",\"uiUniqueId\":\"f5235e1d-dfee-4f38-a6ce-fb86ed3d3847\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"includes_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"9\",\"max_length\":\"0\",\"child_uiUniqueId\":\"0235c84a-71e9-4c94-89d3-30e5fb93a70f\"}"},"manaValueNeeded":"String","manaValueNeeded.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"manaValueNeeded\",\"mandatory\":\"false\",\"order\":\"18\",\"max_length\":\"0\",\"uiUniqueId\":\"09f4055a-72ba-4ccc-98f5-3b9fe542afff\"}"},"variantCount":"String","variantCount.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"variantCount\",\"mandatory\":\"false\",\"order\":\"17\",\"max_length\":\"0\",\"uiUniqueId\":\"1d3560a1-c495-4242-8eec-598756ad85f9\"}"},"manaNeeded":"String","manaNeeded.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"manaNeeded\",\"mandatory\":\"false\",\"order\":\"16\",\"max_length\":\"0\",\"uiUniqueId\":\"38ac02a7-257d-4a66-adaf-d94916461403\"}"},"identity":"String","identity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"identity\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"f758e159-8f7c-476c-ae1f-de205e1ea6a4\"}"},"of":[{"$2_of":{"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4e179f19-658f-4456-9c55-b0ffdd2992aa\"}"}}}],"of.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"of\",\"mandatory\":\"false\",\"child_name\":\"of_object\",\"uiUniqueId\":\"a7cb6104-308e-4994-940b-f6490c5525f0\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"of_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"2\",\"max_length\":\"0\",\"child_uiUniqueId\":\"4621bc6a-0751-4847-8847-b02c37b0ddab\"}"},"popularity":"String","popularity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"popularity\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"2f7d4349-731b-443a-95e1-1cb03c7aa613\"}"},"produces":[{"$5_produces":{"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"85b4cfc1-fc61-4926-87c4-afd3e25abe76\"}"},"feature":{"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"5c21da26-d2ab-4436-91fe-e3fb6e313137\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6bd90e70-13ed-4c7c-8f6a-041dbd4098ad\"}"},"uncountable":"String","uncountable.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"uncountable\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"c35ee14b-8ed0-4469-aba0-ba8c4e378c4f\"}"},"status":"String","status.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"status\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"8d988d1b-0260-4632-a7c1-548872bdf855\"}"}},"feature.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"feature\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"23ffb334-722b-424d-b30a-8138019c56d1\"}"}}}],"produces.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"produces\",\"mandatory\":\"false\",\"child_name\":\"produces_object\",\"uiUniqueId\":\"4cdb9ec8-de09-4fc7-90c3-ad1cacf4841a\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"produces_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"10\",\"max_length\":\"0\",\"child_uiUniqueId\":\"4d557792-fc03-423f-b957-2ce4e4023995\"}"},"spoiler":"String","spoiler.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"spoiler\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"202a9191-cf93-4852-8a03-1d7b414fd0ca\"}"},"uses":[{"$11_uses":{"graveyardCardState":"String","graveyardCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"graveyardCardState\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"9a2c3694-8645-47d9-a411-9d09ff7dd08e\"}"},"battlefieldCardState":"String","battlefieldCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"battlefieldCardState\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"c640febe-bf30-4fc6-bdf5-6c0d309f58e8\"}"},"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dcf62ce8-1123-4c18-81d9-29ac84c60b99\"}"},"libraryCardState":"String","libraryCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"libraryCardState\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"5de24618-e77a-4687-8d6e-6c53106e845c\"}"},"exileCardState":"String","exileCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"exileCardState\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"191c39a8-c60e-4774-b235-0318a8adb637\"}"},"mustBeCommander":"String","mustBeCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"mustBeCommander\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ef303a3b-5697-470a-aff5-201a322e897b\"}"},"card":{"imageUriFrontPng":"String","imageUriFrontPng.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontPng\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"e0a19aa1-1159-4654-b886-ecde21bf2e6f\"}"},"typeLine":"String","typeLine.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"typeLine\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"04e706bc-283a-4665-b1c8-1d3c54879f5f\"}"},"imageUriBackNormal":"String","imageUriBackNormal.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackNormal\",\"mandatory\":\"false\",\"order\":\"10\",\"max_length\":\"0\",\"uiUniqueId\":\"77757605-ff19-404b-a8df-8bc1f6997128\"}"},"imageUriBackSmall":"String","imageUriBackSmall.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackSmall\",\"mandatory\":\"false\",\"order\":\"9\",\"max_length\":\"0\",\"uiUniqueId\":\"edc988fd-49b4-4deb-91d2-be8a8ecf6580\"}"},"imageUriBackArtCrop":"String","imageUriBackArtCrop.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackArtCrop\",\"mandatory\":\"false\",\"order\":\"14\",\"max_length\":\"0\",\"uiUniqueId\":\"46601c89-c760-4864-8625-ff44f6c3145c\"}"},"oracleId":"String","oracleId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracleId\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"483d6d6f-ea5b-455e-b038-563fb3da25f5\"}"},"imageUriFrontLarge":"String","imageUriFrontLarge.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontLarge\",\"mandatory\":\"false\",\"order\":\"11\",\"max_length\":\"0\",\"uiUniqueId\":\"9c4016c6-acd1-44b6-8176-a16fd23882e9\"}"},"imageUriBackPng":"String","imageUriBackPng.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackPng\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"dc320bd1-1f55-4a7f-bda6-d4b869a9cf23\"}"},"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"130c0371-706b-4f19-bf00-1a005076e588\"}"},"imageUriFrontSmall":"String","imageUriFrontSmall.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontSmall\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"6e367a31-8b0c-4288-bfb1-c2998baf3f9f\"}"},"spoiler":"String","spoiler.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"spoiler\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"a7184ef8-f2fb-4bff-9d37-9d21f2986a04\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"2249c9aa-ed19-43bb-8d2d-6b8d18890c17\"}"},"imageUriFrontArtCrop":"String","imageUriFrontArtCrop.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontArtCrop\",\"mandatory\":\"false\",\"order\":\"15\",\"max_length\":\"0\",\"uiUniqueId\":\"c1de76aa-225c-498e-bef3-f652fc66f574\"}"},"imageUriBackLarge":"String","imageUriBackLarge.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackLarge\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"3261bfbe-8092-4c9e-87f4-298c1b2fffeb\"}"},"imageUriFrontNormal":"String","imageUriFrontNormal.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontNormal\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"75234fcf-b938-40b5-8d16-a12feab8ed50\"}"}},"card.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"card\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"9a8b0cbc-d53d-4641-95f5-ffbdda36c6ba\"}"},"zoneLocations":["Any"],"zoneLocations.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"zoneLocations\",\"mandatory\":\"false\",\"child_name\":\"zoneLocations_string\",\"uiUniqueId\":\"fc8af363-85a9-46e2-918c-ea954de4fa73\",\"uiTypeLabel\":\"Array.String\",\"child_label\":\"zoneLocations_string\",\"child_type_label\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_defaultValue\":\"\",\"child_type\":\"string\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"58639c5d-34e8-41a4-9d34-1e0cb9a23383\"}"}}}],"uses.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"uses\",\"mandatory\":\"false\",\"child_name\":\"uses_object\",\"uiUniqueId\":\"bf217cfa-068d-40db-a15b-e39b5f6340fe\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"uses_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"038026dd-d454-490b-a377-f001f769d97b\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"39977a10-3ba4-4c36-ab42-f0f98249fc82\"}"},"prices":{"cardkingdom":"String","cardkingdom.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"cardkingdom\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"1fd07bd2-64dd-4e5d-9279-628f9f33e58e\"}"},"cardmarket":"String","cardmarket.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"cardmarket\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a26d71db-0af3-4de9-a83e-d1bcc54ebf53\"}"},"tcgplayer":"String","tcgplayer.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"tcgplayer\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"dabcf6b8-5d9e-40e0-940c-3f87c0b8c552\"}"}},"prices.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"prices\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"320d5d65-f6cd-4041-9c31-47115d3dcb80\"}"},"bracketTag":"String","bracketTag.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"bracketTag\",\"mandatory\":\"false\",\"order\":\"14\",\"max_length\":\"0\",\"uiUniqueId\":\"4df3b637-85bc-40b7-9d65-88fa6bf04edc\"}"},"requires":[{"$8_requires":{"graveyardCardState":"String","graveyardCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"graveyardCardState\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cce0d28b-8055-4e46-afc3-9090be9bda87\"}"},"template":{"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a5f01a2a-ba53-49ee-91a0-e70420826722\"}"},"scryfallApi":"String","scryfallApi.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"scryfallApi\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"04482b84-bdf6-47f0-b598-75486a4a54ec\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"fbe4e58c-ccf6-443b-bdbd-32cdb3890c45\"}"},"scryfallQuery":"String","scryfallQuery.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"scryfallQuery\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"f052097a-5670-460f-ad5c-9478eb58b960\"}"}},"template.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"template\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"b9e141c8-7842-4767-b624-4c0a1ee1ef53\"}"},"battlefieldCardState":"String","battlefieldCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"battlefieldCardState\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"53f1559a-501c-495e-916e-e78c26c012a0\"}"},"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"7f54fe47-a43e-4c0c-ace8-fa24eabcf8f9\"}"},"libraryCardState":"String","libraryCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"libraryCardState\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"5ad406ff-6caa-4a50-9527-116dcdeae873\"}"},"exileCardState":"String","exileCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"exileCardState\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"64c58bda-92eb-493c-963a-c7cada60d709\"}"},"mustBeCommander":"String","mustBeCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"mustBeCommander\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"c528da6e-fc44-4d8c-95b4-0ec9bdddf388\"}"},"zoneLocations":["Any"],"zoneLocations.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"zoneLocations\",\"mandatory\":\"false\",\"child_name\":\"zoneLocations_string\",\"uiUniqueId\":\"e8d235c2-b307-4591-9d50-59b78e9d5b13\",\"uiTypeLabel\":\"Array.String\",\"child_label\":\"zoneLocations_string\",\"child_type_label\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_defaultValue\":\"\",\"child_type\":\"string\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"37915059-48f0-41b7-b2f0-d5155913351c\"}"}}}],"requires.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"requires\",\"mandatory\":\"false\",\"child_name\":\"requires_object\",\"uiUniqueId\":\"10ece83b-c638-442c-a21f-cb0b66e4e75d\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"requires_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"11\",\"max_length\":\"0\",\"child_uiUniqueId\":\"d2cbe452-904a-4d7e-932e-62f3730c1ca1\"}"},"status":"String","status.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"status\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"7247c653-63ef-4a9a-964e-9e75ba5c1449\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"max_rows\":null,\"child_hint\":\"\",\"child_maxsize\":\"\",\"mandatory\":\"false\",\"child_name\":\"included_object\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD278c94623b6a7610c188eda84b9e86c2\",\"child_label\":\"included_object\",\"read_only\":\"false\",\"is_scriptable\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"pwd2droppable\":\"true\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Combos\",\"uiUniqueId\":\"c2fb0663-2937-4706-bea4-da0010f3c041\",\"child_type_label\":\"Object\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"action\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"child_uiUniqueId\":\"ca2976d7-3762-4d42-aa1b-e4529e809072\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD278c94623b6a7610c188eda84b9e86c2.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"max_rows\":null,\"child_hint\":\"\",\"child_maxsize\":\"\",\"mandatory\":\"false\",\"child_name\":\"included_object\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD278c94623b6a7610c188eda84b9e86c2\",\"child_label\":\"included_object\",\"read_only\":\"false\",\"is_scriptable\":\"true\",\"order\":\"1\",\"max_length\":\"0\",\"pwd2droppable\":\"true\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Combos\",\"uiUniqueId\":\"c2fb0663-2937-4706-bea4-da0010f3c041\",\"child_type_label\":\"Object\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"action\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"child_uiUniqueId\":\"ca2976d7-3762-4d42-aa1b-e4529e809072\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2b8c9462836a7610f17ccd60ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:41</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=included_object,child_name=included_object,child_type=object,child_type_label=Object,child_uiUniqueId=ca2976d7-3762-4d42-aa1b-e4529e809072,co_type_name=FD278c94623b6a7610c188eda84b9e86c2,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,is_scriptable=true,pwd2droppable=true,sourceType=action,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=c2fb0663-2937-4706-bea4-da0010f3c041</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>combos</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Combos</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</model>
+        <model_id>9aeb9cee832a7610f17ccd60ceaad301</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_9aeb9cee832a7610f17ccd60ceaad301</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:25</sys_created_on>
+        <sys_id>af7cd062836a7610f17ccd60ceaad3b2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=af7cd062836a7610f17ccd60ceaad3b2"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT IN4a0c9022836a7610f17ccd60ceaad369"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="MTG  Spellbook - Get My Combos">e557f2a983a67610f17ccd60ceaad3ce</action_type>
+        <action_type_parent display_value="MTG  Spellbook - Get My Combos">c9187d6d83ae3610f17ccd60ceaad3f0</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:24</sys_created_on>
+        <sys_id>4a0c9022836a7610f17ccd60ceaad369</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:41</sys_updated_on>
+        <ui_id>8bbe277c-408f-40a8-92c6-25dc6a135662</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/41Ry27jMAz8F50Tw87Lbm4FggIFti3Q16UoDFqiE2FlSdUjbRrk30vFTg5Bsdgjh+RwZvi2Z1KwJSvLEkQ1wWo6gXJR5G1Rci4WOUcAMRWCjZiGDmlSIP8rU70FFROw3/vYtMp8Zn3rcKCmkN4q2L3+a4ZvpBIONVu+vY+YBUcHAjq23F+0ws5iraBBRVRPwUm9pvX/1X1aTJdvV78YSfRU+xOxcSKpKEYMvwJqgXSoBeVxxDrQAoJxO7YMLhLgEMSDVrvzxEbqQGQszX55+U3MVZ7nabJFcsSx757Leoiqh/nGSI4PNkijeyRAo4YdblTs9H0vP4WMLUQVTiETEj3xoU2ik4xBU/u0MZ+Pp4M3Uh/9DU1lOKhzBYFSaGJAn94Q5fNFNj3y5/IXqLCji3UH1hJSW2e28niFRHfZWlGRpf+TOi/XOgOeHGYUJmQ3hK+O8Cs4mezeEQ0tp3MvWn5EvE2/XkxmV7CYzsZNMynHs2k+H4MQ83E1K0TVzgveNgU7HKOtP2Iy1Yc0xFH3idKA507acE0Stjg4P7z/AFzMzG8KAwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4a0c9022836a7610f17ccd60ceaad369"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT IN905c18ea832a7610f17ccd60ceaad3cb"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb8c9462836a7610f17ccd60ceaad3d3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>combos</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:06:38</sys_created_on>
+        <sys_id>905c18ea832a7610f17ccd60ceaad3cb</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:41</sys_updated_on>
+        <ui_id>b3dd85bb-039c-42f4-bcdb-a758f97e9434</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Z308bMQz+X+4Z0NaNwngrlSYhMcQE28uEkC9xS9ZccjhJWVf1f5/voBuUDWjjMiHx0h+u7zvb+WJ/uU4Ln2KdYjj1vRDM0BV736aFgwqLvUL5qvSh2CjGYFNjmE53yxI7Oztq8/2b3QG/wO7mh47qbna2terC23fb3W5nizDU3gVsPiQbw5ZxyiaNejZjMG1CbWHyVRJTXRirCe9EP3c49+V3VPFWGosXGH1tnF+o7/oGRaaOPRXNmC0DsAHnxmJvOptt3EPwgwfu9ttn7YGd/dXlH+ZHUkoBw+NJNV5Lp6WA9HOuTvuWicFkNBYpmygEyuJBdkpxUuOhcdlpmQqG+IXMPqjRsRtKwX0k76IgXhPeIdBQNN+TCqyVBDzyxJCiNRRNukUUzbpFlE27KWSPYp98LRrlSpgrdc7LBC6aOMkN/6d3eOgVRMNz8PFWfMf9PEQyT9h/q2WIP7gX9rmLn0SI2fSsUoj72PdVBU7nt1hrSgKaiIU3JBjjhNHEEEuI0eLAoF0VU3LQOx8XJ/3yIDUZ9aBeWJxfathowvzVbrREBTTCKIE04j2jffUMTSLwoqfssgupEqNRpGPdKPAnNKu554uSxDV5nR6m+YLn0ukNkGlBuL56rEkdi7A5OeWTi1BakXa4ljEtySfCy2ToKXyaey7NJyktErHifr04pl4AMRVN2M/2aiMF9TkhiZDmVf69yr//L/8sDsGaaJZRb1zhq+wDX02oL7JXm6NX2d2t8kw8l50QpDqfvzXvX8yHGRsepPmPDniwO33vcd0K4lpqezNrZFbLQ7woCWEkEFO78GIdbAHuE5glk11N3Po6WSABrcDdQfF57BSyH//xAaH9mbdE9hYHB0eIGrOpPOYisajqN1JVIqr2fxGZ0BDC5JiwVYvBCBzrnW/VeAbmUqOqMRvX/DvFU+ds47rUfP+brxoVh+DdaWM7uOWnJxyvUbdNV55GA+uv/thmvwAH27Fy+xoAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deckid</element>
+        <help/>
+        <hint/>
+        <label>deckID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9aeb9cee832a7610f17ccd60ceaad301</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:11</sys_created_on>
+        <sys_id>83fb1022836a7610f17ccd60ceaad3a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>combos</element>
+        <help/>
+        <hint/>
+        <label>Combos</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_9aeb9cee832a7610f17ccd60ceaad301</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:25</sys_created_on>
+        <sys_id>637cd062836a7610f17ccd60ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:25</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>spellbook__get_my_combos</internal_name>
+        <label_cache>[{"name":"subflow.deckid","label":"Input➛deckID","type":"string","base_type":"string","usedInstances":{"8bbe277c-408f-40a8-92c6-25dc6a135662":["deckid"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"3d82c8a1-79dd-472d-adae-df300a83059d"}},{"name":"8bbe277c-408f-40a8-92c6-25dc6a135662.response.results.included","label":"1 - MTG  Spellbook - Get My Combos➛Response➛results➛included","reference":"","reference_display":"","type":"array.object","base_type":"array.object","column_name":"","usedInstances":{"b3dd85bb-039c-42f4-bcdb-a758f97e9434":["combos-0"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Spellbook - Get My Combos</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e81c1422836a7610f17ccd60ceaad380</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:42</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_e81c1422836a7610f17ccd60ceaad380^id=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e81c1422836a7610f17ccd60ceaad380^sys_idNOT IN281c1422836a7610f17ccd60ceaad382"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e81c1422836a7610f17ccd60ceaad380</id>
+        <name>Spellbook - Get My Combos</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:34</sys_created_on>
+        <sys_id>281c1422836a7610f17ccd60ceaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:34</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=281c1422836a7610f17ccd60ceaad382"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e81c1422836a7610f17ccd60ceaad380^sys_idNOT IN241c1422836a7610f17ccd60ceaad384"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3d82c8a1-79dd-472d-adae-df300a83059d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deckid</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>deckID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Spellbook - Get My Combos">e81c1422836a7610f17ccd60ceaad380</model>
+        <model_id>e81c1422836a7610f17ccd60ceaad380</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e81c1422836a7610f17ccd60ceaad380</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:34</sys_created_on>
+        <sys_id>241c1422836a7610f17ccd60ceaad384</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=241c1422836a7610f17ccd60ceaad384"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e81c1422836a7610f17ccd60ceaad380^sys_idNOT IN338cd462836a7610f17ccd60ceaad353"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD3f8cd462ec6a7610ae8c4a927831b951</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD3f8cd462ec6a7610ae8c4a927831b951":{"$COCollectionField":[{"included_object":{"easyPrerequisites":"String","easyPrerequisites.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"easyPrerequisites\",\"mandatory\":\"false\",\"order\":\"19\",\"max_length\":\"0\",\"uiUniqueId\":\"2a86a640-335d-42ec-ba94-da50cea48268\"}"},"notes":"String","notes.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"notes\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"a15438d3-e892-4c85-9f6a-fceb2ea99478\"}"},"notablePrerequisites":"String","notablePrerequisites.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"notablePrerequisites\",\"mandatory\":\"false\",\"order\":\"20\",\"max_length\":\"0\",\"uiUniqueId\":\"833e28fe-ef71-4075-b00d-2222591a6479\"}"},"description":"String","description.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"description\",\"mandatory\":\"false\",\"order\":\"15\",\"max_length\":\"0\",\"uiUniqueId\":\"9f92031d-0011-4b9c-8ba5-9b2035b6ad4d\"}"},"legalities":{"standard":"String","standard.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"standard\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"cc193881-b1aa-4f46-9d6a-28647886603a\"}"},"legacy":"String","legacy.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"legacy\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"662a160d-c1b9-4034-b9dd-61e8ec652dbe\"}"},"oathbreaker":"String","oathbreaker.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oathbreaker\",\"mandatory\":\"false\",\"order\":\"11\",\"max_length\":\"0\",\"uiUniqueId\":\"cf4a6178-441b-4db5-96da-51d8c0b84fff\"}"},"pauperCommanderMain":"String","pauperCommanderMain.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauperCommanderMain\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"4195a2e2-236e-4e70-a619-66ec8fae9e43\"}"},"pioneer":"String","pioneer.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pioneer\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"d431553f-268a-4f3d-85b5-c63ada5e79f2\"}"},"pauperCommander":"String","pauperCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauperCommander\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"9fc95081-fb97-49f8-963a-d4c196f64a6f\"}"},"commander":"String","commander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"commander\",\"mandatory\":\"false\",\"order\":\"9\",\"max_length\":\"0\",\"uiUniqueId\":\"9dfe7310-b58a-4c12-88b3-263916e3206e\"}"},"modern":"String","modern.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"modern\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"bb92079c-d8d7-45cd-9e27-fb33ce18a86e\"}"},"pauper":"String","pauper.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"pauper\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"a78c2c7a-aa12-41b0-b90a-8342a3dc27e3\"}"},"premodern":"String","premodern.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"premodern\",\"mandatory\":\"false\",\"order\":\"10\",\"max_length\":\"0\",\"uiUniqueId\":\"b599b12c-8d9a-48c7-b2f0-cf0f7d66a1c9\"}"},"vintage":"String","vintage.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"vintage\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"3d244bd1-57d0-4553-a430-5fd9e481d9af\"}"},"predh":"String","predh.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"predh\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"21e737c2-53ff-45c8-846c-79669b2732ce\"}"},"brawl":"String","brawl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"brawl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"3986089b-cbe1-4661-961f-086774727d79\"}"}},"legalities.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"legalities\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"3af6662c-5d8e-4a59-ada9-fbe79c6a0613\"}"},"includes":[{"$0_includes":{"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"a7263da2-a85e-4c1d-9d2a-76d8f265b00f\"}"}}}],"includes.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"includes\",\"mandatory\":\"false\",\"child_name\":\"includes_object\",\"uiUniqueId\":\"f5235e1d-dfee-4f38-a6ce-fb86ed3d3847\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"includes_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"9\",\"max_length\":\"0\",\"child_uiUniqueId\":\"0235c84a-71e9-4c94-89d3-30e5fb93a70f\"}"},"manaValueNeeded":"String","manaValueNeeded.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"manaValueNeeded\",\"mandatory\":\"false\",\"order\":\"18\",\"max_length\":\"0\",\"uiUniqueId\":\"09f4055a-72ba-4ccc-98f5-3b9fe542afff\"}"},"variantCount":"String","variantCount.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"variantCount\",\"mandatory\":\"false\",\"order\":\"17\",\"max_length\":\"0\",\"uiUniqueId\":\"1d3560a1-c495-4242-8eec-598756ad85f9\"}"},"manaNeeded":"String","manaNeeded.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"manaNeeded\",\"mandatory\":\"false\",\"order\":\"16\",\"max_length\":\"0\",\"uiUniqueId\":\"38ac02a7-257d-4a66-adaf-d94916461403\"}"},"identity":"String","identity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"identity\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"f758e159-8f7c-476c-ae1f-de205e1ea6a4\"}"},"of":[{"$2_of":{"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"4e179f19-658f-4456-9c55-b0ffdd2992aa\"}"}}}],"of.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"of\",\"mandatory\":\"false\",\"child_name\":\"of_object\",\"uiUniqueId\":\"a7cb6104-308e-4994-940b-f6490c5525f0\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"of_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"2\",\"max_length\":\"0\",\"child_uiUniqueId\":\"4621bc6a-0751-4847-8847-b02c37b0ddab\"}"},"popularity":"String","popularity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"popularity\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"2f7d4349-731b-443a-95e1-1cb03c7aa613\"}"},"produces":[{"$5_produces":{"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"85b4cfc1-fc61-4926-87c4-afd3e25abe76\"}"},"feature":{"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"5c21da26-d2ab-4436-91fe-e3fb6e313137\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"6bd90e70-13ed-4c7c-8f6a-041dbd4098ad\"}"},"uncountable":"String","uncountable.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"uncountable\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"c35ee14b-8ed0-4469-aba0-ba8c4e378c4f\"}"},"status":"String","status.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"status\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"8d988d1b-0260-4632-a7c1-548872bdf855\"}"}},"feature.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"feature\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"23ffb334-722b-424d-b30a-8138019c56d1\"}"}}}],"produces.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"produces\",\"mandatory\":\"false\",\"child_name\":\"produces_object\",\"uiUniqueId\":\"4cdb9ec8-de09-4fc7-90c3-ad1cacf4841a\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"produces_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"10\",\"max_length\":\"0\",\"child_uiUniqueId\":\"4d557792-fc03-423f-b957-2ce4e4023995\"}"},"spoiler":"String","spoiler.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"spoiler\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"202a9191-cf93-4852-8a03-1d7b414fd0ca\"}"},"uses":[{"$11_uses":{"graveyardCardState":"String","graveyardCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"graveyardCardState\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"9a2c3694-8645-47d9-a411-9d09ff7dd08e\"}"},"battlefieldCardState":"String","battlefieldCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"battlefieldCardState\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"c640febe-bf30-4fc6-bdf5-6c0d309f58e8\"}"},"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"dcf62ce8-1123-4c18-81d9-29ac84c60b99\"}"},"libraryCardState":"String","libraryCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"libraryCardState\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"5de24618-e77a-4687-8d6e-6c53106e845c\"}"},"exileCardState":"String","exileCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"exileCardState\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"191c39a8-c60e-4774-b235-0318a8adb637\"}"},"mustBeCommander":"String","mustBeCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"mustBeCommander\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"ef303a3b-5697-470a-aff5-201a322e897b\"}"},"card":{"imageUriFrontPng":"String","imageUriFrontPng.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontPng\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"e0a19aa1-1159-4654-b886-ecde21bf2e6f\"}"},"typeLine":"String","typeLine.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"typeLine\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"04e706bc-283a-4665-b1c8-1d3c54879f5f\"}"},"imageUriBackNormal":"String","imageUriBackNormal.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackNormal\",\"mandatory\":\"false\",\"order\":\"10\",\"max_length\":\"0\",\"uiUniqueId\":\"77757605-ff19-404b-a8df-8bc1f6997128\"}"},"imageUriBackSmall":"String","imageUriBackSmall.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackSmall\",\"mandatory\":\"false\",\"order\":\"9\",\"max_length\":\"0\",\"uiUniqueId\":\"edc988fd-49b4-4deb-91d2-be8a8ecf6580\"}"},"imageUriBackArtCrop":"String","imageUriBackArtCrop.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackArtCrop\",\"mandatory\":\"false\",\"order\":\"14\",\"max_length\":\"0\",\"uiUniqueId\":\"46601c89-c760-4864-8625-ff44f6c3145c\"}"},"oracleId":"String","oracleId.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracleId\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"483d6d6f-ea5b-455e-b038-563fb3da25f5\"}"},"imageUriFrontLarge":"String","imageUriFrontLarge.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontLarge\",\"mandatory\":\"false\",\"order\":\"11\",\"max_length\":\"0\",\"uiUniqueId\":\"9c4016c6-acd1-44b6-8176-a16fd23882e9\"}"},"imageUriBackPng":"String","imageUriBackPng.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackPng\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"dc320bd1-1f55-4a7f-bda6-d4b869a9cf23\"}"},"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"130c0371-706b-4f19-bf00-1a005076e588\"}"},"imageUriFrontSmall":"String","imageUriFrontSmall.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontSmall\",\"mandatory\":\"false\",\"order\":\"12\",\"max_length\":\"0\",\"uiUniqueId\":\"6e367a31-8b0c-4288-bfb1-c2998baf3f9f\"}"},"spoiler":"String","spoiler.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"spoiler\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"a7184ef8-f2fb-4bff-9d37-9d21f2986a04\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"2249c9aa-ed19-43bb-8d2d-6b8d18890c17\"}"},"imageUriFrontArtCrop":"String","imageUriFrontArtCrop.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontArtCrop\",\"mandatory\":\"false\",\"order\":\"15\",\"max_length\":\"0\",\"uiUniqueId\":\"c1de76aa-225c-498e-bef3-f652fc66f574\"}"},"imageUriBackLarge":"String","imageUriBackLarge.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriBackLarge\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"3261bfbe-8092-4c9e-87f4-298c1b2fffeb\"}"},"imageUriFrontNormal":"String","imageUriFrontNormal.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"imageUriFrontNormal\",\"mandatory\":\"false\",\"order\":\"13\",\"max_length\":\"0\",\"uiUniqueId\":\"75234fcf-b938-40b5-8d16-a12feab8ed50\"}"}},"card.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"card\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"9a8b0cbc-d53d-4641-95f5-ffbdda36c6ba\"}"},"zoneLocations":["Any"],"zoneLocations.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"zoneLocations\",\"mandatory\":\"false\",\"child_name\":\"zoneLocations_string\",\"uiUniqueId\":\"fc8af363-85a9-46e2-918c-ea954de4fa73\",\"uiTypeLabel\":\"Array.String\",\"child_label\":\"zoneLocations_string\",\"child_type_label\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_defaultValue\":\"\",\"child_type\":\"string\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"58639c5d-34e8-41a4-9d34-1e0cb9a23383\"}"}}}],"uses.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"uses\",\"mandatory\":\"false\",\"child_name\":\"uses_object\",\"uiUniqueId\":\"bf217cfa-068d-40db-a15b-e39b5f6340fe\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"uses_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"038026dd-d454-490b-a377-f001f769d97b\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"39977a10-3ba4-4c36-ab42-f0f98249fc82\"}"},"prices":{"cardkingdom":"String","cardkingdom.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"cardkingdom\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"1fd07bd2-64dd-4e5d-9279-628f9f33e58e\"}"},"cardmarket":"String","cardmarket.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"cardmarket\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a26d71db-0af3-4de9-a83e-d1bcc54ebf53\"}"},"tcgplayer":"String","tcgplayer.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"tcgplayer\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"dabcf6b8-5d9e-40e0-940c-3f87c0b8c552\"}"}},"prices.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"prices\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"320d5d65-f6cd-4041-9c31-47115d3dcb80\"}"},"bracketTag":"String","bracketTag.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"bracketTag\",\"mandatory\":\"false\",\"order\":\"14\",\"max_length\":\"0\",\"uiUniqueId\":\"4df3b637-85bc-40b7-9d65-88fa6bf04edc\"}"},"requires":[{"$8_requires":{"graveyardCardState":"String","graveyardCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"graveyardCardState\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\",\"uiUniqueId\":\"cce0d28b-8055-4e46-afc3-9090be9bda87\"}"},"template":{"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a5f01a2a-ba53-49ee-91a0-e70420826722\"}"},"scryfallApi":"String","scryfallApi.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"scryfallApi\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"04482b84-bdf6-47f0-b598-75486a4a54ec\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"fbe4e58c-ccf6-443b-bdbd-32cdb3890c45\"}"},"scryfallQuery":"String","scryfallQuery.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"scryfallQuery\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"f052097a-5670-460f-ad5c-9478eb58b960\"}"}},"template.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"template\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"b9e141c8-7842-4767-b624-4c0a1ee1ef53\"}"},"battlefieldCardState":"String","battlefieldCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"battlefieldCardState\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\",\"uiUniqueId\":\"53f1559a-501c-495e-916e-e78c26c012a0\"}"},"quantity":"String","quantity.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"quantity\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"7f54fe47-a43e-4c0c-ace8-fa24eabcf8f9\"}"},"libraryCardState":"String","libraryCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"libraryCardState\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"5ad406ff-6caa-4a50-9527-116dcdeae873\"}"},"exileCardState":"String","exileCardState.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"exileCardState\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"64c58bda-92eb-493c-963a-c7cada60d709\"}"},"mustBeCommander":"String","mustBeCommander.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"mustBeCommander\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"c528da6e-fc44-4d8c-95b4-0ec9bdddf388\"}"},"zoneLocations":["Any"],"zoneLocations.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"zoneLocations\",\"mandatory\":\"false\",\"child_name\":\"zoneLocations_string\",\"uiUniqueId\":\"e8d235c2-b307-4591-9d50-59b78e9d5b13\",\"uiTypeLabel\":\"Array.String\",\"child_label\":\"zoneLocations_string\",\"child_type_label\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_defaultValue\":\"\",\"child_type\":\"string\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"37915059-48f0-41b7-b2f0-d5155913351c\"}"}}}],"requires.$field_facets":{"SimpleMapFacet":"{\"max_rows\":null,\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"requires\",\"mandatory\":\"false\",\"child_name\":\"requires_object\",\"uiUniqueId\":\"10ece83b-c638-442c-a21f-cb0b66e4e75d\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"requires_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"11\",\"max_length\":\"0\",\"child_uiUniqueId\":\"d2cbe452-904a-4d7e-932e-62f3730c1ca1\"}"},"status":"String","status.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"status\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\",\"uiUniqueId\":\"7247c653-63ef-4a9a-964e-9e75ba5c1449\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Combos\",\"mandatory\":\"false\",\"child_name\":\"included_object\",\"uiUniqueId\":\"c2fb0663-2937-4706-bea4-da0010f3c041\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD3f8cd462ec6a7610ae8c4a927831b951\",\"child_label\":\"included_object\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"action\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"is_scriptable\":\"true\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"ca2976d7-3762-4d42-aa1b-e4529e809072\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD3f8cd462ec6a7610ae8c4a927831b951.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Combos\",\"mandatory\":\"false\",\"child_name\":\"included_object\",\"uiUniqueId\":\"c2fb0663-2937-4706-bea4-da0010f3c041\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD3f8cd462ec6a7610ae8c4a927831b951\",\"child_label\":\"included_object\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"action\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"is_scriptable\":\"true\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"ca2976d7-3762-4d42-aa1b-e4529e809072\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>338cd462836a7610f17ccd60ceaad352</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:42</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=included_object,child_name=included_object,child_type=object,child_type_label=Object,child_uiUniqueId=ca2976d7-3762-4d42-aa1b-e4529e809072,co_type_name=FD3f8cd462ec6a7610ae8c4a927831b951,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,is_scriptable=true,pwd2droppable=true,sourceType=action,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=c2fb0663-2937-4706-bea4-da0010f3c041</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>combos</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Combos</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Spellbook - Get My Combos">e81c1422836a7610f17ccd60ceaad380</model>
+        <model_id>e81c1422836a7610f17ccd60ceaad380</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_e81c1422836a7610f17ccd60ceaad380</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:42</sys_created_on>
+        <sys_id>338cd462836a7610f17ccd60ceaad353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=338cd462836a7610f17ccd60ceaad353"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e81c1422836a7610f17ccd60ceaad380^sys_idNOT INf81c1422836a7610f17ccd60ceaad39b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="MTG  Spellbook - Get My Combos">e557f2a983a67610f17ccd60ceaad3ce</action_type>
+        <action_type_parent display_value="MTG  Spellbook - Get My Combos">c9187d6d83ae3610f17ccd60ceaad3f0</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>e557f2a983a67610f17ccd60ceaad3ce</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Spellbook - Get My Combos">e81c1422836a7610f17ccd60ceaad380</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:34</sys_created_on>
+        <sys_id>f81c1422836a7610f17ccd60ceaad39b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:34</sys_updated_on>
+        <ui_id>8bbe277c-408f-40a8-92c6-25dc6a135662</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/41Sy27bMBD8F55lQfJLqm9BjAAB2gZo2lyCQFiRK5soRSl8OFEF/3uXpuwWaRHkuLOz3JlZPo5MCrZhRVGAKOdYLuZQrPOsyQvOxTrjCCAWQrCEaWiRmAL5TxnqAygfgHG0vm5U95LG1vFITSFtr2B4eI/D91IJg5ptHp8S1oOhBQ4N24xvWh9VqKBGNUm83f5Hshv6UFtnpN5N9edp6P4MdkYEEXnC8NWhFkjbG1AWE9aCFuA6M7CNM54AgyDutBoujL3Ujh5jgftq5S9aV2ZZFpgNkiGOsXspqympCDdbcEBKPHfeTFS+7yRHG6MQ2IBX7vpvLBLueic7HUcc1Oo83Snf6q8xCHZ54HwYQrwlEdgHp0H7ZKS533cv384qb6Q+hTI1VcdBXSpwFF3tXdAzMi+/v0k5Iv/kjApb2li10PeEVL3pDvK0hUS36U5RkYY/Q+qs3OkUeHCY0gUgvSF8e4IfwMhg9ws9Q8Nh3Q8tnz3ehl+zni8/wXqxnNX1vJgtF9lqBkKsZuUyF2WzynlT5+yYMDvYawXW/gmKLlQ9+2AzxjYFVMWMwwg3sndXJOqAUxbHp9+aYxhoUAMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f81c1422836a7610f17ccd60ceaad39b"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e81c1422836a7610f17ccd60ceaad380^sys_idNOT IN338cd462836a7610f17ccd60ceaad366"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb8c9462836a7610f17ccd60ceaad3d3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Spellbook - Get My Combos">e81c1422836a7610f17ccd60ceaad380</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>combos</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:42</sys_created_on>
+        <sys_id>338cd462836a7610f17ccd60ceaad366</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:42</sys_updated_on>
+        <ui_id>b3dd85bb-039c-42f4-bcdb-a758f97e9434</ui_id>
+        <updation_source/>
+        <values>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</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deckid</element>
+        <help/>
+        <hint/>
+        <label>deckID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e81c1422836a7610f17ccd60ceaad380</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:34</sys_created_on>
+        <sys_id>b81c1422836a7610f17ccd60ceaad390</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:05:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>combos</element>
+        <help/>
+        <hint/>
+        <label>Combos</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_e81c1422836a7610f17ccd60ceaad380</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:07:42</sys_created_on>
+        <sys_id>3b8cd462836a7610f17ccd60ceaad35b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e81c1422836a7610f17ccd60ceaad380"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>9aeb9cee832a7610f17ccd60ceaad301</sys_id>
+        <latest_snapshot>e81c1422836a7610f17ccd60ceaad380</latest_snapshot>
+        <compiler_build/>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=9aeb9cee832a7610f17ccd60ceaad301"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=9aeb9cee832a7610f17ccd60ceaad301^sys_idNOT INf41c1422836a7610f17ccd60ceaad3e2"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@8d374ab</plan>
+        <plan_id display_value="Spellbook - Get My Combos">9aeb9cee832a7610f17ccd60ceaad301</plan_id>
+        <snapshot>e81c1422836a7610f17ccd60ceaad380</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 20:05:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f41c1422836a7610f17ccd60ceaad3e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 20:07:43</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

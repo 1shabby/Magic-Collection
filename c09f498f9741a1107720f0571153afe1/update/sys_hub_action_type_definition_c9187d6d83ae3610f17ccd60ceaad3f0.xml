@@ -16,7 +16,7 @@
         <flow_priority/>
         <ih_action>true</ih_action>
         <internal_name>mtg__spellbook__get_my_combos</internal_name>
-        <label_cache>[{"name":"{{action.request_body}}","label":"action➛Request Body","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bc278161-4455-49ab-a82f-618e0d588a20].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[72962b91-ebe2-46ae-9a58-d1946c64202d].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.request_body}}","label":"action➛Request Body","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.deckid}}","label":"action➛deckID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bc278161-4455-49ab-a82f-618e0d588a20].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[72962b91-ebe2-46ae-9a58-d1946c64202d].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>e557f2a983a67610f17ccd60ceaad3ce</master_snapshot>
         <master_snapshot_digest/>
         <name>MTG  Spellbook - Get My Combos</name>
@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c9187d6d83ae3610f17ccd60ceaad3f0</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>MTG  Spellbook - Get My Combos</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_c9187d6d83ae3610f17ccd60ceaad3f0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:48</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:42</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -338,13 +338,13 @@
         <input_name>body</input_name>
         <instance>6fc6726983a67610f17ccd60ceaad30c</instance>
         <referenced_table>sys_hub_step_instance</referenced_table>
-        <script>{"body":{"scriptActive":true,"script":"var utils \u003d new x_759224_magic_c_0.spellbook_utils();\nreturn utils.getRequest();"}}</script>
+        <script>{"body":{"scriptActive":true,"script":"var utils \u003d new x_759224_magic_c_0.spellbook_utils();\nreturn utils.getRequest(fd_data.action_inputs.deckid).request;"}}</script>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-20 05:05:34</sys_created_on>
         <sys_id>d9eafe6183e67610f17ccd60ceaad300</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:30:35</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:35</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="MTG  Spellbook - Get My Combos">c9187d6d83ae3610f17ccd60ceaad3f0</action>
@@ -25709,7 +25709,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>445143ed83e67610f17ccd60ceaad38a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -25717,7 +25717,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:44</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:35</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -25827,7 +25827,91 @@
         <url/>
         <url_target/>
     </sys_documentation>
-    <sys_hub_action_input action="delete_multiple" query="model=c9187d6d83ae3610f17ccd60ceaad3f0"/>
+    <sys_hub_action_input action="delete_multiple" query="model=c9187d6d83ae3610f17ccd60ceaad3f0^sys_idNOT INda7a582e832a7610f17ccd60ceaad3c9"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6249a634-bb27-4305-add5-841d8f51cfb1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deckid</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>deckID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="MTG  Spellbook - Get My Combos">c9187d6d83ae3610f17ccd60ceaad3f0</model>
+        <model_id>c9187d6d83ae3610f17ccd60ceaad3f0</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_c9187d6d83ae3610f17ccd60ceaad3f0</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 19:58:34</sys_created_on>
+        <sys_id>da7a582e832a7610f17ccd60ceaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 19:58:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=da7a582e832a7610f17ccd60ceaad3c9"/>
     <sys_hub_action_output action="delete_multiple" query="model=c9187d6d83ae3610f17ccd60ceaad3f0^sys_idNOT IN005143ed83e67610f17ccd60ceaad3a1,a3c6726983a67610f17ccd60ceaad376,abc6726983a67610f17ccd60ceaad37e"/>
     <sys_complex_object action="INSERT_OR_UPDATE">
         <label/>
@@ -25841,7 +25925,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>005143ed83e67610f17ccd60ceaad3a0</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -25849,7 +25933,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:44</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:36</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -26091,14 +26175,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-20 04:47:42</sys_created_on>
         <sys_id>abc6726983a67610f17ccd60ceaad37e</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:44</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:36</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -26125,6 +26209,29 @@
         <sys_updated_on>2026-01-20 04:47:42</sys_updated_on>
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=b3c6726983a67610f17ccd60ceaad39e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deckid</element>
+        <help/>
+        <hint/>
+        <label>deckID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_c9187d6d83ae3610f17ccd60ceaad3f0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 19:58:35</sys_created_on>
+        <sys_id>9e7a582e832a7610f17ccd60ceaad3f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 19:58:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_c9187d6d83ae3610f17ccd60ceaad3f0"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__dont_treat_as_error__</element>
@@ -26200,17 +26307,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="MTG  Spellbook - Get My Combos">c9187d6d83ae3610f17ccd60ceaad3f0</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"f55736a983a67610f17ccd60ceaad385","name":"plan","plan_signature":null}}</plan>
-        <snapshot>875107ed83e67610f17ccd60ceaad371</snapshot>
+        <snapshot>488a1c2e832a7610f17ccd60ceaad37b</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-20 04:50:02</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f55736a983a67610f17ccd60ceaad385</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:53</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:47</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -26227,7 +26334,7 @@
         <description/>
         <flow_priority/>
         <internal_name>mtg__spellbook__get_my_combos</internal_name>
-        <label_cache>[{"name":"{{action.request_body}}","label":"action➛Request Body","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bc278161-4455-49ab-a82f-618e0d588a20].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[72962b91-ebe2-46ae-9a58-d1946c64202d].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"{{action.request_body}}","label":"action➛Request Body","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.deckid}}","label":"action➛deckID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bc278161-4455-49ab-a82f-618e0d588a20].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[72962b91-ebe2-46ae-9a58-d1946c64202d].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
         <name>MTG  Spellbook - Get My Combos</name>
         <natlang/>
@@ -26240,7 +26347,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e557f2a983a67610f17ccd60ceaad3ce</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -26248,7 +26355,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:47</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -26533,13 +26640,13 @@
         <input_name>body</input_name>
         <instance>2957f2a983a67610f17ccd60ceaad3d9</instance>
         <referenced_table>sys_hub_step_instance</referenced_table>
-        <script>{"body":{"scriptActive":true,"script":"var utils \u003d new x_759224_magic_c_0.spellbook_utils();\nreturn utils.getRequest();"}}</script>
+        <script>{"body":{"scriptActive":true,"script":"var utils \u003d new x_759224_magic_c_0.spellbook_utils();\nreturn utils.getRequest(fd_data.action_inputs.deckid).request;"}}</script>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-20 05:33:47</sys_created_on>
         <sys_id>b25107ed83e67610f17ccd60ceaad318</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:47</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="MTG  Spellbook - Get My Combos">e557f2a983a67610f17ccd60ceaad3ce</action>
@@ -51904,7 +52011,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f25107ed83e67610f17ccd60ceaad341</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -51912,7 +52019,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:47</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -52022,7 +52129,91 @@
         <url/>
         <url_target/>
     </sys_documentation>
-    <sys_hub_action_input action="delete_multiple" query="model=e557f2a983a67610f17ccd60ceaad3ce"/>
+    <sys_hub_action_input action="delete_multiple" query="model=e557f2a983a67610f17ccd60ceaad3ce^sys_idNOT IN777ad82e832a7610f17ccd60ceaad3dd"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6249a634-bb27-4305-add5-841d8f51cfb1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deckid</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>deckID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="MTG  Spellbook - Get My Combos">e557f2a983a67610f17ccd60ceaad3ce</model>
+        <model_id>e557f2a983a67610f17ccd60ceaad3ce</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_e557f2a983a67610f17ccd60ceaad3ce</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 19:58:41</sys_created_on>
+        <sys_id>777ad82e832a7610f17ccd60ceaad3dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=777ad82e832a7610f17ccd60ceaad3dd"/>
     <sys_hub_action_output action="delete_multiple" query="model=e557f2a983a67610f17ccd60ceaad3ce^sys_idNOT IN215736a983a67610f17ccd60ceaad32a,3e5107ed83e67610f17ccd60ceaad354,6d5736a983a67610f17ccd60ceaad322"/>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -52089,14 +52280,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-20 04:50:01</sys_created_on>
         <sys_id>215736a983a67610f17ccd60ceaad32a</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:48</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -52123,7 +52314,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3e5107ed83e67610f17ccd60ceaad353</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -52131,7 +52322,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 05:33:48</sys_updated_on>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -52320,6 +52511,29 @@
         <sys_updated_on>2026-01-20 04:50:01</sys_updated_on>
     </sys_hub_action_status_metadata>
     <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=2d5736a983a67610f17ccd60ceaad33b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deckid</element>
+        <help/>
+        <hint/>
+        <label>deckID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_e557f2a983a67610f17ccd60ceaad3ce</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-22 19:58:41</sys_created_on>
+        <sys_id>b37ad82e832a7610f17ccd60ceaad3e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-22 19:58:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_e557f2a983a67610f17ccd60ceaad3ce"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>__action_status__</element>
