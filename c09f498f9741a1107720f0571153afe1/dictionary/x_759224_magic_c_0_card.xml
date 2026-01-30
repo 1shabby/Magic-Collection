@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="3eec0eb483f2fa10f17ccd60ceaad3a5" label="Card" max_length="40" name="x_759224_magic_c_0_card" type="collection">
+        <element label="Face Two Mana Cost" max_length="40" name="face_two_mana_cost" type="html"/>
+        <element label="Face One Power" max_length="40" name="face_one_power" type="integer"/>
+        <element choice="1" label="Foiling" max_length="40" name="foiling" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Etched" sequence="0" value="etched"/>
+                <element inactive_on_update="false" label="Foil" sequence="1" value="foil"/>
+            </choice>
+        </element>
+        <element label="Commander Legality" max_length="40" name="commander_legality" type="html"/>
+        <element label="Legacy Legality" max_length="40" name="legacy_legality" type="html"/>
+        <element display="true" label="Name" max_length="1000" name="name" type="string"/>
+        <element label="Modern Legality" max_length="40" name="modern_legality" type="html"/>
+        <element label="Face One Image" max_length="40" name="face_one_image" type="html"/>
+        <element label="Penny Legality" max_length="40" name="penny_legality" type="html"/>
+        <element label="Standardbrawl Legality" max_length="40" name="standardbrawl_legality" type="html"/>
+        <element label="Face Two Flavor Text" max_length="1000" name="face_two_flavor_text" type="string"/>
+        <element label="Standard Legality" max_length="40" name="standard_legality" type="html"/>
+        <element label="Gatherer" max_length="1024" name="gatherer" type="url"/>
+        <element label="Face Two Image" max_length="40" name="face_two_image" type="html"/>
+        <element label="Oldschool Legality" max_length="40" name="oldschool_legality" type="html"/>
+        <element label="Oathbreaker Legality" max_length="40" name="oathbreaker_legality" type="html"/>
+        <element label="Price" max_length="38" name="price" type="currency"/>
+        <element label="Face One Oracle Text" max_length="40" name="face_one_oracle_text" type="html"/>
+        <element label="TCGPlayer Purchase" max_length="1024" name="tcgplayer_purchase" type="url"/>
+        <element label="Pioneer Legality" max_length="40" name="pioneer_legality" type="html"/>
+        <element label="Reserved List" max_length="40" name="reserved_list" type="boolean"/>
+        <element label="Color Identity" max_length="40" name="color_identity" type="glide_list"/>
+        <element label="Historic Legality" max_length="40" name="historic_legality" type="html"/>
+        <element label="Face Two Colors" max_length="40" name="face_two_colors" type="glide_list"/>
+        <element label="Is Multi-Faced" max_length="40" name="is_multi_faced" type="boolean"/>
+        <element label="Pauper Legality" max_length="40" name="pauper_legality" type="html"/>
+        <element label="Face Two Flavor Name" max_length="200" name="face_two_flavor_name" type="string"/>
+        <element label="CMC" max_length="40" name="cmc" type="integer"/>
+        <element label="Oracle ID" max_length="200" name="oracle_id" type="string"/>
+        <element label="Premodern Legality" max_length="40" name="premodern_legality" type="html"/>
+        <element label="Keywords" max_length="1024" name="keywords" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
+        <element label="Previous Price" max_length="40" name="p_price" type="currency"/>
+        <element label="Cardmarket Purchase" max_length="1024" name="cardmarket_purchase" type="url"/>
+        <element label="Face Two Loyalty" max_length="40" name="face_two_loyalty" type="integer"/>
+        <element label="Face One Artist" max_length="200" name="face_one_artist" type="string"/>
+        <element label="Gladiator Legality" max_length="40" name="gladiator_legality" type="html"/>
+        <element label="Explorer Legality" max_length="40" name="explorer_legality" type="html"/>
+        <element label="Face Two Artist" max_length="200" name="face_two_artist" type="string"/>
+        <element label="Game Changer" max_length="40" name="game_changer" type="boolean"/>
+        <element label="Face One Mana Cost" max_length="40" name="face_one_mana_cost" type="html"/>
+        <element label="Price Change" max_length="38" name="price_change" type="currency"/>
+        <element label="Cardhoarder Purchase" max_length="1024" name="cardhoarder_purchase" type="url"/>
+        <element label="Face One Type Line" max_length="40" name="face_one_type_line" type="html"/>
+        <element label="Duel Legality" max_length="40" name="duel_legality" type="html"/>
+        <element choice="3" label="Rarity" max_length="40" name="rarity" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Special" sequence="4" value="special"/>
+                <element inactive_on_update="false" label="Uncommon" sequence="2" value="uncommon"/>
+                <element inactive_on_update="false" label="Mythic Rare" sequence="0" value="mythic"/>
+                <element inactive_on_update="false" label="Rare" sequence="1" value="rare"/>
+                <element inactive_on_update="false" label="Common" sequence="3" value="common"/>
+            </choice>
+        </element>
+        <element label="API Link" max_length="1024" name="api_link" type="url"/>
+        <element label="Produced Mana" max_length="40" name="produced_mana" type="glide_list"/>
+        <element label="Timeless Legality" max_length="40" name="timeless_legality" type="html"/>
+        <element label="Face One Toughness" max_length="40" name="face_one_toughness" type="integer"/>
+        <element label="Face Two Power" max_length="40" name="face_two_power" type="integer"/>
+        <element label="Scryfall ID" max_length="20" name="scryfall_id" type="string"/>
+        <element label="Face One Loyalty" max_length="40" name="face_one_loyalty" type="integer"/>
+        <element label="Sets" max_length="32" name="sets" reference="x_759224_magic_c_0_mtg_sets" type="reference"/>
+        <element label="Future Legality" max_length="40" name="future_legality" type="html"/>
+        <element label="Vintage Legality" max_length="40" name="vintage_legality" type="html"/>
+        <element label="Face Two Name" max_length="200" name="face_two_name" type="string"/>
+        <element label="Brawl Legality" max_length="40" name="brawl_legality" type="html"/>
+        <element label="Face One Name" max_length="200" name="face_one_name" type="string"/>
+        <element label="Collector Number" max_length="40" name="collector_number" type="string"/>
+        <element label="Paupercommander Legality" max_length="40" name="paupercommander_legality" type="html"/>
+        <element label="Predh Legality" max_length="40" name="predh_legality" type="html"/>
+        <element label="Alchemy Legality" max_length="65536" name="alchemy_legality" type="html"/>
+        <element label="Token" max_length="40" name="token" type="boolean"/>
+        <element label="Face One Colors" max_length="40" name="face_one_colors" type="glide_list"/>
+        <element label="EDHREC" max_length="1024" name="edhrec" type="url"/>
+        <element label="Face Two Type Line" max_length="40" name="face_two_type_line" type="html"/>
+        <element label="Face Two Toughness" max_length="40" name="face_two_toughness" type="integer"/>
+        <element label="Face One Flavor Name" max_length="200" name="face_one_flavor_name" type="string"/>
+        <element label="Face One Flavor Text" max_length="1000" name="face_one_flavor_text" type="string"/>
+        <element label="Face Two Oracle Text" max_length="40" name="face_two_oracle_text" type="html"/>
+        <index name="index">
+            <element name="sets"/>
+        </index>
+    </element>
+</database>
