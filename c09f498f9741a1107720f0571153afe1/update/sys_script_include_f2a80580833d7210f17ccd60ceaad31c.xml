@@ -15,7 +15,7 @@ mtg_constants.prototype = {
         this.PREFIX = 'x_759224_magic_c_0';
         this.tables = {
             // CORE TABLES // 
-            CARDS : this.PREFIX + '_mtg_cards',
+            CARDS : this.PREFIX + '_mtg_card',
             SETS : this.PREFIX + '_mtg_sets',
             KEYWORDS : this.PREFIX + '_mtg_keywords',
             USERS : this.PREFIX + '_magic_users',
@@ -55,13 +55,13 @@ mtg_constants.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-12-08 22:09:53</sys_created_on>
         <sys_id>f2a80580833d7210f17ccd60ceaad31c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>mtg_constants</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_f2a80580833d7210f17ccd60ceaad31c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-20 00:25:45</sys_updated_on>
+        <sys_updated_on>2026-01-30 05:29:59</sys_updated_on>
     </sys_script_include>
 </record_update>
