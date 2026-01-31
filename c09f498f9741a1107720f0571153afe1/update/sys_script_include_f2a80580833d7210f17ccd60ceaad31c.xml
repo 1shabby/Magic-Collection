@@ -15,38 +15,59 @@ mtg_constants.prototype = {
         this.PREFIX = 'x_759224_magic_c_0';
         this.tables = {
             // CORE TABLES // 
-            CARDS : this.PREFIX + '_mtg_card',
-            SETS : this.PREFIX + '_mtg_sets',
-            KEYWORDS : this.PREFIX + '_mtg_keywords',
-            USERS : this.PREFIX + '_magic_users',
-            TOKEN_ASSOCIATION : this.PREFIX + '_token_association',
+            CARDS: this.PREFIX + '_card',
+            COLORS: this.PREFIX + '_colors',
+            SETS: this.PREFIX + '_mtg_sets',
+            KEYWORDS: this.PREFIX + '_mtg_keywords',
+            USERS: this.PREFIX + '_magic_users',
+            TOKEN_ASSOCIATION: this.PREFIX + '_token_association',
             // DECK TABLES //
-            DECK : this.PREFIX + '_mtg_deck',
-            DECK_CARDS : this.PREFIX + '_deck_card',
-            DECK_FORMATS : this.PREFIX + '_deck_formats',
-            DECK_IMPORTS : this.PREFIX + '_deck_imports',
+            DECK: this.PREFIX + '_mtg_deck',
+            DECK_CARDS: this.PREFIX + '_deck_card',
+            DECK_FORMATS: this.PREFIX + '_deck_formats',
+            DECK_IMPORTS: this.PREFIX + '_deck_imports',
             // CARD TABLES //
-            HISTORICAL_CARD_PRICES : this.PREFIX + '_historical_card_prices',
-            OWNED_CARDS : this.PREFIX + '_owned_card',
+            HISTORICAL_CARD_PRICES: this.PREFIX + '_historical_card_prices',
+            OWNED_CARDS: this.PREFIX + '_owned_card',
             // API TABLES //
-            SCRYFALL_QUEUE : this.PREFIX + '_scryfall_api_queue',
+            SCRYFALL_QUEUE: this.PREFIX + '_scryfall_api_queue',
         };
         this.api = {
-			// Scryfall Base //
-            SCRYFALL_BASE_URL : 'https://api.scryfall.com/',
-			// Spellbook Base //
-			SPELLBOOK_BASE_URL : 'https://backend.commanderspellbook.com/'
+            // Scryfall Base //
+            SCRYFALL_BASE_URL: 'https://api.scryfall.com/',
+            // Spellbook Base //
+            SPELLBOOK_BASE_URL: 'https://backend.commanderspellbook.com/'
         };
-		this.images = {
-			// Images //
-			FOIL_OVERLAY : this.PREFIX + '.foil.png',
-			icons : { // Icons used across the platform
-				TCGPLAYER : this.PREFIX + '.icon_tcgplayer.png',
-				CARDMARKET : this.PREFIX + '.icon_cardmarket.png',
-				CARDHOARDER : this.PREFIX + '.icon_cardhoarder.png',
-				EDHREC : this.PREFIX + '.icon_edhrec.png'
-			}
-		};
+        this.images = {
+            // Images //
+            FOIL_OVERLAY: this.PREFIX + '.foil.png',
+            icons: { // Icons used across the platform
+                TCGPLAYER: this.PREFIX + '.icon_tcgplayer.png',
+                CARDMARKET: this.PREFIX + '.icon_cardmarket.png',
+                CARDHOARDER: this.PREFIX + '.icon_cardhoarder.png',
+                EDHREC: this.PREFIX + '.icon_edhrec.png'
+            }
+        };
+
+        // Colors object to hold sys_ids of color choices
+        this.colors = {
+            W: '',
+            U: '',
+            B: '',
+            R: '',
+            G: '',
+            C: ''
+        };
+
+        // Set Colors Object
+        var colorGR = new GlideRecord(this.tables.COLORS);
+        colorGR.addQuery('active', true);
+        colorGR.query();
+
+        while (colorGR.next()) {
+            var colorKey = colorGR.getValue('value');
+            this.colors[colorKey] = colorGR.getUniqueValue();
+        }
     },
 
     type: 'mtg_contstants'
@@ -55,13 +76,13 @@ mtg_constants.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-12-08 22:09:53</sys_created_on>
         <sys_id>f2a80580833d7210f17ccd60ceaad31c</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>mtg_constants</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_f2a80580833d7210f17ccd60ceaad31c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-30 05:29:59</sys_updated_on>
+        <sys_updated_on>2026-01-31 20:30:57</sys_updated_on>
     </sys_script_include>
 </record_update>
