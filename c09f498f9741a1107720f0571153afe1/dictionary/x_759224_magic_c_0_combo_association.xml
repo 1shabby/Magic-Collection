@@ -2,11 +2,10 @@
     <element db_object_id="0c00e23f83e6f210f17ccd60ceaad323" label="Combo Association" max_length="40" name="x_759224_magic_c_0_combo_association" type="collection">
         <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
         <element label="Combo" max_length="40" name="combo" read_only="true" type="string"/>
-        <element label="Card" max_length="32" name="card" read_only="true" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
         <element choice="3" label="Inclusion" max_length="40" name="inclusion" read_only="true" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Almost Included" sequence="1" value="almost_included"/>
                 <element inactive_on_update="false" label="Included" sequence="0" value="included"/>
+                <element inactive_on_update="false" label="Almost Included" sequence="1" value="almost_included"/>
             </choice>
         </element>
         <element label="Deck" max_length="32" name="deck" read_only="true" reference="x_759224_magic_c_0_mtg_deck" type="reference"/>
@@ -16,14 +15,15 @@
                 <element inactive_on_update="false" label="Deck" sequence="0" value="deck"/>
             </choice>
         </element>
+        <element label="Card" max_length="32" name="card" read_only="true" reference="x_759224_magic_c_0_card" type="reference"/>
         <index name="index">
-            <element name="card"/>
-        </index>
-        <index name="index2">
             <element name="deck"/>
         </index>
-        <index name="index3">
+        <index name="index2">
             <element name="sys_class_name"/>
+        </index>
+        <index name="index3">
+            <element name="card"/>
         </index>
     </element>
 </database>

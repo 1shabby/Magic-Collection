@@ -240,7 +240,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var token = relGR.token.getRefRecord();
             relObj = {
                 name: token.getValue('name'),
-                image: this.getImgSrc(token.getValue('front_image')),
+                image: this.getImgSrc(token.getValue('face_one_image')),
                 is_foil: token.getValue('foiling') != 'none'
             };
             relArr.push(relObj);
@@ -263,7 +263,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         while (cardGR.next()) {
             printingObj = {
-                image: this.getImgSrc(cardGR.getValue('front_image')),
+                image: this.getImgSrc(cardGR.getValue('face_one_image')),
                 price: cardGR.getValue('price'),
                 sets: cardGR.getDisplayValue('sets'),
                 is_foil: cardGR.getValue('foiling') != 'none'
@@ -390,8 +390,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (front.toughness) card.setValue('face_one_toughness', front.toughness);
                     if (front.produced_mana) card.setValue('face_one_produced_mana', front.produced_mana);
                     if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);
-                    if (front.image_uris.normal) card.setValue('front_image', front.image_uris.normal);
-                    if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);
+                    if (front.image_uris.normal) card.setValue('face_one_image', front.image_uris.normal);
+                    if (resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
                 }
 
                 if (back) {
@@ -407,8 +407,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (back.toughness) card.setValue('face_two_toughness', back.toughness);
                     if (back.produced_mana) card.setValue('face_two_produced_mana', back.produced_mana);
                     if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);
-                    if (back.image_uris.normal) card.setValue('back_image', back.image_uris.normal);
-                    if (resp.image_uris.normal) card.setValue('back_image', resp.image_uris.normal);
+                    if (back.image_uris.normal) card.setValue('face_two_image', back.image_uris.normal);
+                    if (resp.image_uris.normal) card.setValue('face_two_image', resp.image_uris.normal);
                 }
             }
 
@@ -425,7 +425,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);
                 if (resp.produced_mana) card.setValue('face_one_produced_mana', resp.produced_mana);
                 if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);
-                if (resp.image_uris.normal) card.setValue('front_image', resp.image_uris.normal);
+                if (resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
             }
             // Update card record
             card.update();
@@ -570,7 +570,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 colors: this.convertColors(cardGR.getValue('face_two_colors')),
                 flavor_name: cardGR.getValue('face_two_flavor_name'),
                 flavor_text: cardGR.getValue('face_two_flavor_text'),
-                image: this.getImgSrc(cardGR.getValue('back_image')),
+                image: this.getImgSrc(cardGR.getValue('face_two_image')),
                 loyalty: cardGR.getValue('face_two_loyalty'),
                 mana_cost: cardGR.getValue('face_two_mana_cost'),
                 name: cardGR.getValue('face_two_name'),
@@ -626,14 +626,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>139</sys_mod_count>
+        <sys_mod_count>140</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-19 04:47:37</sys_updated_on>
+        <sys_updated_on>2026-01-30 06:06:11</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>

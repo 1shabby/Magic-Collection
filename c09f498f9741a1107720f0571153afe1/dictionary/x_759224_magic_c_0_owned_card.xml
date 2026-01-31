@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="40ffb6c0c3e032100efafbfdd4013131" label="Owned Card" max_length="40" name="x_759224_magic_c_0_owned_card" type="collection">
-        <element display="true" label="Card" max_length="32" name="card" reference="x_759224_magic_c_0_mtg_cards" type="reference"/>
+        <element display="true" label="Card" max_length="32" name="card" reference="x_759224_magic_c_0_card" type="reference"/>
         <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
         <element default="1" label="Quantity" max_length="40" name="quantity" type="integer"/>
         <index name="index">
