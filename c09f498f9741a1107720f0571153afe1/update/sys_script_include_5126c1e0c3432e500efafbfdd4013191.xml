@@ -22,15 +22,16 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (noDebugMethods) {
             this.noDebugMethods = noDebugMethods.split(',');
         }
-		this.constants = new x_759224_magic_c_0.mtg_constants();
+        this.constants = new x_759224_magic_c_0.mtg_constants();
         // Global Table Variables
         this.CARDS = this.constants.tables.CARDS;
-		this.HISTORICAL_PRICES = this.constants.tables.HISTORICAL_CARD_PRICES;
+        this.HISTORICAL_PRICES = this.constants.tables.HISTORICAL_CARD_PRICES;
         this.SETS = this.constants.tables.SETS;
         this.TOKEN_ASSOCIATION = this.constants.tables.TOKEN_ASSOCIATION;
         this.OWNED_CARDS = this.constants.tables.OWNED_CARDS;
         this.DECK = this.constants.tables.DECK;
         this.DECK_CARDS = this.constants.tables.DECK_CARDS;
+        this.DECK_COMBOS = this.constants.tables.DECK_COMBOS;
     },
 
     /* Description: Takes in a line from the deck input and checks if it's formatted as a txt file or csv
@@ -150,9 +151,9 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return newCardGr;
     },
 
-	_createOwnedCard: function(card){
-		var ownedCardGr = new GlideRecord();
-	},
+    _createOwnedCard: function(card) {
+        var ownedCardGr = new GlideRecord();
+    },
 
     /*
      * Description: Takes in a line from the deck input and checks if it's 	 	formatted as a txt file or csv
@@ -267,7 +268,104 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         };
     },
 
+    /*
+     * Description: Deletes associated records for a given deck ID, including deck cards and combos.
+     * Parameters: [string] deckID: The unique value of the deck record to delete associated records for.
+     * Returns: [object]: Contains execution information
+     *              [boolean] success: Status indicating whether the operation was successful
+     *              [string] message: Any messages from the execution
+     */
 
+    deleteAssociatedRecords: function(deckID) {
+        try {
+            var retObj = {
+                success: true,
+                message: ''
+            };
+
+            var cardStatus = this._deleteDeckCards(deckID);
+            if (cardStatus && !cardStatus.success) { // If success is false
+                retObj.success = false; // update success to false
+                retObj.message = cardStatus.message; // set message to the fail message
+                return retObj; // stop execution and return
+            } else if (cardStatus && cardStatus.success) { // Else if success is true
+                retObj.message = cardStatus.message; // Pass success message through
+            }
+            var comboStatus = this._deleteCombos(deckID);
+            if (comboStatus && !comboStatus.success) { // If success is false
+                retObj.sucess = false; // update success to false
+                retObj.message += "\n" + comboStatus.message; // Add this failure message to message
+                return retObj; // stop execution and return
+            } else if (comboStatus && comboStatus.success) { // Else if success is true
+                retObj.message += "\n" + comboStatus.message; // Pass success message through
+            }
+            return retObj; // return retObj
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+    },
+
+    /*
+     * Description: Deletes all records associated with a given deck ID from the DECK_CARDS table.
+     * Parameters: [string] deckID: The unique value of the deck record to delete associated records for.
+     * Returns: [object]: Contains execution information
+     *              [boolean] success: Status indicating whether the operation was successful
+     *              [string] message: Any messages from the execution
+     */
+
+    _deleteDeckCards: function(deckID) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+            };
+
+            var deckCardGR = new GlideRecord(this.DECK_CARDS);
+            deckCardGR.get('deck', deckID);
+            if (deckCardGR.getRowCount() > 0) {
+                deckCardGR.deleteMultiple();
+                retObj.message = deckCardGR.getRowCount() + ' deck card records deleted.';
+            } else {
+                retObj.message = '0 deck card records found.';
+            }
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+        return retObj;
+    },
+
+    /*
+     * Description: Deletes all records associated with a given deck ID from the DECK_COMBOS table.
+     * Parameters: [string] deckID: The unique value of the deck record to delete associated records for.
+     * Returns: [object]: Contains execution information
+     *              [boolean] success: Status indicating whether the operation was successful
+     *              [string] message: Any messages from the execution
+     */
+
+    _deleteCombos: function(deckID) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+            };
+            var comboGR = new GlideRecord(this.DECK_COMBOS);
+            comboGR.get('deck', deckID);
+            if (comboGR.getRowCount() > 0) { // If a combo was found
+                comboGR.deleteMultiple();
+                retObj.message = comboGR.getRowCount() + ' combo records deleted.';
+            } else { // Else no combos were found
+                retObj.message = '0 combo records found.';
+            }
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+        return retObj;
+	},
 
     type: 'deck_utils'
 });]]></script>
@@ -275,13 +373,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-18 16:04:00</sys_updated_on>
+        <sys_updated_on>2026-02-01 03:35:45</sys_updated_on>
     </sys_script_include>
 </record_update>
