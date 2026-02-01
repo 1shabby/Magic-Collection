@@ -408,7 +408,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             else {
                 if (resp.flavor_name) card.setValue('face_one_flavor_name', resp.flavor_name);
                 if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);
-                if (resp.type_line) card.setValue('type_line', resp.type_line);
+                if (resp.type_line) card.setValue('face_one_type_line', resp.type_line);
                 if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);
                 if (resp.colors) card.setValue('face_one_colors', this.convertColors(resp.colors));
                 if (resp.artist) card.setValue('face_one_artist', resp.artist);
@@ -483,12 +483,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                         // Create token
                         var newToken = this.createToken(resp.all_parts[c].name, resp.all_parts[c].id);
                         // Create token association record
-                        if (!card.type_line.includes('token')) { // Creates an association if card is not a token
+                        if (!card.face_one_type_line.includes('token')) { // Creates an association if card is not a token
                             this.createTokenAssociation(card, newToken.record);
                         }
                     } else { // Token exists, check if there's an association
                         var associations = this.getTokenAssociationCount(card, tokenGR);
-                        if (associations == 0 && !card.type_line.includes('token')) { // If no association exists, create one
+                        if (associations == 0 && !card.face_one_type_line.includes('token')) { // If no association exists, create one
                             this.createTokenAssociation(card, tokenGR);
                         }
                     }
@@ -618,14 +618,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>150</sys_mod_count>
+        <sys_mod_count>158</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-31 22:21:58</sys_updated_on>
+        <sys_updated_on>2026-02-01 04:54:07</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>

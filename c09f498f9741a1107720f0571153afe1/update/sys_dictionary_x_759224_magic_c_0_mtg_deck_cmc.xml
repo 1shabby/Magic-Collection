@@ -5,8 +5,6 @@
         <attributes/>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
 	var sum = 0;
 	var cards = 0;
 	var deckCardGR = new GlideRecord('x_759224_magic_c_0_deck_card');
@@ -15,14 +13,11 @@
 	deckCardGR.query();
 
 	while(deckCardGR.next()){
-		var cardGR = new GlideRecord('x_759224_magic_c_0_mtg_cards');
-		cardGR.get('sys_id',deckCardGR.getValue('card'));
-
-		sum += (deckCardGR.getValue('quantity') * parseFloat(cardGR.getValue('cmc')));
-		cards += deckCardGR.getValue('quantity');
+		sum += (parseInt(deckCardGR.getValue('quantity')) * parseInt(deckCardGR.card.cmc));
+		cards += parseInt(deckCardGR.getValue('quantity'));
 	}
 	var cmc = sum /cards;
-	return Number(cmc.toFixed(2));  // return the calculated value
+	return cmc.toFixed(2);  // return the calculated value
 
 })(current);]]></calculation>
         <choice/>
@@ -73,7 +68,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_dictionary_x_759224_magic_c_0_mtg_deck_cmc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-23 17:37:58</sys_updated_on>
+        <sys_updated_on>2026-02-01 04:01:33</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
