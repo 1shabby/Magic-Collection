@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Allow write for records in x_759224_magic_c_0_mtg_cards, for users with roles (x_759224_magic_c_0.admin, x_759224_magic_c_0.user).</description>
+        <local_or_existing/>
+        <name>x_759224_magic_c_0_mtg_cards</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-20 18:40:00</sys_created_on>
+        <sys_id>3f1055cf9741a1107720f0571153af89</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_security_acl_3f1055cf9741a1107720f0571153af89</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 18:41:22</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sys_security_acl_3f1055cf9741a1107720f0571153af89</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Allow write for records in x_759224_magic_c_0_mtg_cards, for users with roles (x_759224_magic_c_0.admin, x_759224_magic_c_0.user).</description>
+        <local_or_existing/>
+        <name>x_759224_magic_c_0_mtg_cards</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-20 18:40:00</sys_created_on>
+        <sys_id>3f1055cf9741a1107720f0571153af89</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_security_acl_3f1055cf9741a1107720f0571153af89</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-27 18:41:22</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>]]></payload>
+        <payload_hash>-1531264824</payload_hash>
+        <record_name>x_759224_magic_c_0_mtg_cards</record_name>
+        <reverted_from/>
+        <source>7c5bbca0837a3a10f17ccd60ceaad358</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-29 03:31:35</sys_created_on>
+        <sys_id>e8bbbca4837a3a10f17ccd60ceaad3bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c07ce70ec0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-29 03:31:35</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>24bbbca49e7a3a103783182741956bbd</update_guid>
+        <update_guid_history>24bbbca49e7a3a103783182741956bbd:0,54caf420867a3a10c75ffebe6de086fd:735521164,4ef2d0228859b210c0d37037fb6f9a5e:-1531264824</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-02 02:58:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>826fa8ac4e62485095a3b5e3b789b040</sys_id>
+        <sys_metadata>3f1055cf9741a1107720f0571153af89</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent display_value="">3c8b7824837a3a10f17ccd60ceaad326</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_security_acl_3f1055cf9741a1107720f0571153af89</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_3f1055cf9741a1107720f0571153af89">e8bbbca4837a3a10f17ccd60ceaad3bd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-02 02:58:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
