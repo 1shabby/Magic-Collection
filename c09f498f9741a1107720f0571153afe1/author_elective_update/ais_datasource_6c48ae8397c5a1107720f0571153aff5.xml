@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource">
+    <ais_datasource action="DELETE">
+        <active>true</active>
+        <conflict>false</conflict>
+        <filter/>
+        <force_late_binding>false</force_late_binding>
+        <name>Cards Table</name>
+        <retention_policy/>
+        <source>x_759224_magic_c_0_mtg_cards</source>
+        <sys_class_name>ais_datasource</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>6c48ae8397c5a1107720f0571153aff5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards Table</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_datasource_6c48ae8397c5a1107720f0571153aff5</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+        <type>internal</type>
+    </ais_datasource>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>ais_datasource_6c48ae8397c5a1107720f0571153aff5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource">
+    <ais_datasource action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conflict>false</conflict>
+        <filter/>
+        <force_late_binding>false</force_late_binding>
+        <name>Cards Table</name>
+        <retention_policy/>
+        <source>x_759224_magic_c_0_mtg_cards</source>
+        <sys_class_name>ais_datasource</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>6c48ae8397c5a1107720f0571153aff5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards Table</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_datasource_6c48ae8397c5a1107720f0571153aff5</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+        <type>internal</type>
+    </ais_datasource>
+</record_update>]]></payload>
+        <payload_hash>-1471498242</payload_hash>
+        <record_name>Cards Table</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:19</sys_created_on>
+        <sys_id>6bb2142e8319b210f17ccd60ceaad359</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72a9dc70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:19</sys_updated_on>
+        <type>AI Search Indexed Source</type>
+        <update_guid>2bb2142e3a19b210de80327292f7d459</update_guid>
+        <update_guid_history>2bb2142e3a19b210de80327292f7d459:-1471498242</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Cards Table">348f123583f6f250f17ccd60ceaad36b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-02 08:00:10</sys_created_on>
+        <sys_db_object display_value="" name="ais_datasource">ais_datasource</sys_db_object>
+        <sys_id>c4e3228c39a24d80937de5646b7f2ca1</sys_id>
+        <sys_metadata>6c48ae8397c5a1107720f0571153aff5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards Table</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>ais_datasource_6c48ae8397c5a1107720f0571153aff5</sys_update_name>
+        <sys_update_version display_value="ais_datasource_6c48ae8397c5a1107720f0571153aff5">6bb2142e8319b210f17ccd60ceaad359</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-02 08:00:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
