@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="DELETE">
+        <directory>update</directory>
+        <documentkey>10d8b56347c502102dbef1f4116d4375</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_759224_magic_c_0_mtg_sets">
+    <x_759224_magic_c_0_mtg_sets action="INSERT_OR_UPDATE">
+        <card_count>5</card_count>
+        <cards_link>https://scryfall.com/sets/pss1</cards_link>
+        <icon>https://svgs.scryfall.io/sets/bfz.svg?1711339200</icon>
+        <id>pss1</id>
+        <name>BFZ Standard Series</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-26 03:17:04</sys_created_on>
+        <sys_id>10d8b56347c502102dbef1f4116d4375</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-26 03:17:04</sys_updated_on>
+    </x_759224_magic_c_0_mtg_sets>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-26 16:06:51</sys_created_on>
+        <sys_id>6809287f470542102dbef1f4116d435e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pss1</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_metadata_link_6809287f470542102dbef1f4116d435e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-26 16:06:51</sys_updated_on>
+        <tablename>x_759224_magic_c_0_mtg_sets</tablename>
+    </sys_metadata_link>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sys_metadata_link_6809287f470542102dbef1f4116d435e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_metadata_link"&gt;
+    &lt;sys_metadata_link action="INSERT_OR_UPDATE"&gt;
+        &lt;directory&gt;update&lt;/directory&gt;
+        &lt;documentkey&gt;10d8b56347c502102dbef1f4116d4375&lt;/documentkey&gt;
+        &lt;payload&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="x_759224_magic_c_0_mtg_sets"&gt;
+    &lt;x_759224_magic_c_0_mtg_sets action="INSERT_OR_UPDATE"&gt;
+        &lt;card_count&gt;5&lt;/card_count&gt;
+        &lt;cards_link&gt;https://scryfall.com/sets/pss1&lt;/cards_link&gt;
+        &lt;icon&gt;https://svgs.scryfall.io/sets/bfz.svg?1711339200&lt;/icon&gt;
+        &lt;id&gt;pss1&lt;/id&gt;
+        &lt;name&gt;BFZ Standard Series&lt;/name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2024-03-26 03:17:04&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;10d8b56347c502102dbef1f4116d4375&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2024-03-26 03:17:04&lt;/sys_updated_on&gt;
+    &lt;/x_759224_magic_c_0_mtg_sets&gt;
+&lt;/record_update&gt;
+]]&gt;&lt;/payload&gt;
+        &lt;sys_class_name&gt;sys_metadata_link&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2024-03-26 16:06:51&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;6809287f470542102dbef1f4116d435e&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;pss1&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_metadata_link_6809287f470542102dbef1f4116d435e&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2024-03-26 16:06:51&lt;/sys_updated_on&gt;
+        &lt;tablename&gt;x_759224_magic_c_0_mtg_sets&lt;/tablename&gt;
+    &lt;/sys_metadata_link&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-979247278</payload_hash>
+        <record_name>pss1</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:07:02</sys_created_on>
+        <sys_id>46e21cae8319b210f17ccd60ceaad3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72b482b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:07:02</sys_updated_on>
+        <type>Metadata Snapshot</type>
+        <update_guid>06e21cae4519b2104d5e5820785a63c5</update_guid>
+        <update_guid_history>06e21cae4519b2104d5e5820785a63c5:-979247278</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-02 15:05:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_metadata_link">sys_metadata_link</sys_db_object>
+        <sys_id>ac3e2f4aa8d64db8957c65b0b4473ce9</sys_id>
+        <sys_metadata>6809287f470542102dbef1f4116d435e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pss1</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_metadata_link_6809287f470542102dbef1f4116d435e</sys_update_name>
+        <sys_update_version display_value="sys_metadata_link_6809287f470542102dbef1f4116d435e">46e21cae8319b210f17ccd60ceaad3c5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-02 15:05:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

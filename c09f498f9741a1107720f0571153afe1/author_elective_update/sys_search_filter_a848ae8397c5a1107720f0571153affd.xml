@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="DELETE">
+        <active>true</active>
+        <ais_search_source display_value="Cards">6448ae8397c5a1107720f0571153aff8</ais_search_source>
+        <label>Cards</label>
+        <name>Cards</name>
+        <order>500</order>
+        <search_context_config display_value="Collection-Workspace AI Search Configuration">f638ea836cc5a1103df4131e38fee78f</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>a848ae8397c5a1107720f0571153affd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_search_filter_a848ae8397c5a1107720f0571153affd</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+    </sys_search_filter>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sys_search_filter_a848ae8397c5a1107720f0571153affd</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ais_search_source display_value="Cards">6448ae8397c5a1107720f0571153aff8</ais_search_source>
+        <label>Cards</label>
+        <name>Cards</name>
+        <order>500</order>
+        <search_context_config display_value="Collection-Workspace AI Search Configuration">f638ea836cc5a1103df4131e38fee78f</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>a848ae8397c5a1107720f0571153affd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_search_filter_a848ae8397c5a1107720f0571153affd</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+    </sys_search_filter>
+</record_update>]]></payload>
+        <payload_hash>45554959</payload_hash>
+        <record_name>Cards</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:07:17</sys_created_on>
+        <sys_id>b5f290228359b210f17ccd60ceaad3c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72b82cb0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:07:17</sys_updated_on>
+        <type>Source Facet Bucket</type>
+        <update_guid>75f290224e59b2104c778adc35176ac7</update_guid>
+        <update_guid_history>75f290224e59b2104c778adc35176ac7:45554959</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-02 08:00:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_search_filter">sys_search_filter</sys_db_object>
+        <sys_id>454e66dfc77147e1a162bf4c26081899</sys_id>
+        <sys_metadata>a848ae8397c5a1107720f0571153affd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sys_search_filter_a848ae8397c5a1107720f0571153affd</sys_update_name>
+        <sys_update_version display_value="sys_search_filter_a848ae8397c5a1107720f0571153affd">b5f290228359b210f17ccd60ceaad3c7</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-02 08:00:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_search_source_m2m">
+    <ais_search_profile_ais_search_source_m2m action="DELETE">
+        <exclude_attachments_in_now_assist_genius_results>false</exclude_attachments_in_now_assist_genius_results>
+        <exclude_in_now_assist_genius_results>false</exclude_in_now_assist_genius_results>
+        <exclude_in_regular_search>false</exclude_in_regular_search>
+        <profile display_value="collection-workspace search profile">8338ea835cc5a110d8bdf140e873c69e</profile>
+        <search_source display_value="Cards">6448ae8397c5a1107720f0571153aff8</search_source>
+        <sys_class_name>ais_search_profile_ais_search_source_m2m</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>a448ae8397c5a1107720f0571153affa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>collection-workspace search profile.Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_search_profile_ais_search_source_m2m_a448ae8397c5a1107720f0571153affa</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+    </ais_search_profile_ais_search_source_m2m>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>ais_search_profile_ais_search_source_m2m_a448ae8397c5a1107720f0571153affa</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_search_source_m2m">
+    <ais_search_profile_ais_search_source_m2m action="INSERT_OR_UPDATE">
+        <exclude_attachments_in_now_assist_genius_results>false</exclude_attachments_in_now_assist_genius_results>
+        <exclude_in_now_assist_genius_results>false</exclude_in_now_assist_genius_results>
+        <exclude_in_regular_search>false</exclude_in_regular_search>
+        <profile display_value="collection-workspace search profile">8338ea835cc5a110d8bdf140e873c69e</profile>
+        <search_source display_value="Cards">6448ae8397c5a1107720f0571153aff8</search_source>
+        <sys_class_name>ais_search_profile_ais_search_source_m2m</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>a448ae8397c5a1107720f0571153affa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>collection-workspace search profile.Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_search_profile_ais_search_source_m2m_a448ae8397c5a1107720f0571153affa</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+    </ais_search_profile_ais_search_source_m2m>
+</record_update>]]></payload>
+        <payload_hash>-278575242</payload_hash>
+        <record_name>collection-workspace search profile.Cards</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:19</sys_created_on>
+        <sys_id>abb2142e8319b210f17ccd60ceaad38d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72a9e9c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:19</sys_updated_on>
+        <type>AI Search Search Profile Search Source M</type>
+        <update_guid>6bb2142e3b19b21082afe7eb0b9dbb8d</update_guid>
+        <update_guid_history>6bb2142e3b19b21082afe7eb0b9dbb8d:-278575242</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="collection-workspace search profile.Cards">637fdef183f6f250f17ccd60ceaad367</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-02 08:00:01</sys_created_on>
+        <sys_db_object display_value="" name="ais_search_profile_ais_search_source_m2m">ais_search_profile_ais_search_source_m2m</sys_db_object>
+        <sys_id>62db001cda9348e0917f75d736f14fe4</sys_id>
+        <sys_metadata>a448ae8397c5a1107720f0571153affa</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>collection-workspace search profile.Cards</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>ais_search_profile_ais_search_source_m2m_a448ae8397c5a1107720f0571153affa</sys_update_name>
+        <sys_update_version display_value="ais_search_profile_ais_search_source_m2m_a448ae8397c5a1107720f0571153affa">abb2142e8319b210f17ccd60ceaad38d</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-02 08:00:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

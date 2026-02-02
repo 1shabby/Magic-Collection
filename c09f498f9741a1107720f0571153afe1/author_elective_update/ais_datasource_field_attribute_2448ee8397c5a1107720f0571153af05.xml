@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource_field_attribute">
+    <ais_datasource_field_attribute action="DELETE">
+        <attribute display_value="map_to">f734a634c7320010d1cfd9795cc26094</attribute>
+        <datasource display_value="Cards Table">6c48ae8397c5a1107720f0571153aff5</datasource>
+        <field>number</field>
+        <source>x_759224_magic_c_0_mtg_cards</source>
+        <sys_class_name>ais_datasource_field_attribute</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>2448ee8397c5a1107720f0571153af05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards.number</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_datasource_field_attribute_2448ee8397c5a1107720f0571153af05</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+        <value>text</value>
+    </ais_datasource_field_attribute>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>ais_datasource_field_attribute_2448ee8397c5a1107720f0571153af05</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource_field_attribute">
+    <ais_datasource_field_attribute action="INSERT_OR_UPDATE">
+        <attribute display_value="map_to">f734a634c7320010d1cfd9795cc26094</attribute>
+        <datasource display_value="Cards Table">6c48ae8397c5a1107720f0571153aff5</datasource>
+        <field>number</field>
+        <source>x_759224_magic_c_0_mtg_cards</source>
+        <sys_class_name>ais_datasource_field_attribute</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-02-21 01:05:05</sys_created_on>
+        <sys_id>2448ee8397c5a1107720f0571153af05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards.number</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>ais_datasource_field_attribute_2448ee8397c5a1107720f0571153af05</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-02-21 01:05:05</sys_updated_on>
+        <value>text</value>
+    </ais_datasource_field_attribute>
+</record_update>]]></payload>
+        <payload_hash>-1983406875</payload_hash>
+        <record_name>x_759224_magic_c_0_mtg_cards.number</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:19</sys_created_on>
+        <sys_id>efb2142e8319b210f17ccd60ceaad35d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72a9dde0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:19</sys_updated_on>
+        <type>AI Search Indexed Source Field Attribute</type>
+        <update_guid>afb2142e0a19b210925fab6dcf13da5d</update_guid>
+        <update_guid_history>afb2142e0a19b210925fab6dcf13da5d:-1983406875</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_759224_magic_c_0_mtg_cards.number">c18f123583f6f250f17ccd60ceaad371</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-02 08:00:07</sys_created_on>
+        <sys_db_object display_value="" name="ais_datasource_field_attribute">ais_datasource_field_attribute</sys_db_object>
+        <sys_id>18be27db07bf440b85d00ea8819c03e9</sys_id>
+        <sys_metadata>2448ee8397c5a1107720f0571153af05</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_759224_magic_c_0_mtg_cards.number</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>ais_datasource_field_attribute_2448ee8397c5a1107720f0571153af05</sys_update_name>
+        <sys_update_version display_value="ais_datasource_field_attribute_2448ee8397c5a1107720f0571153af05">efb2142e8319b210f17ccd60ceaad35d</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-02 08:00:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
