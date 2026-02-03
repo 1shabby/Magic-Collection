@@ -27,6 +27,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.CARDS = this.constants.tables.CARDS;
         this.HISTORICAL_PRICES = this.constants.tables.HISTORICAL_CARD_PRICES;
         this.SETS = this.constants.tables.SETS;
+        this.KEYWORDS = this.constants.tables.KEYWORDS;
         this.TOKEN_ASSOCIATION = this.constants.tables.TOKEN_ASSOCIATION;
         this.OWNED_CARDS = this.constants.tables.OWNED_CARDS;
         // Fields to always populate on a card.
@@ -50,6 +51,97 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (this.debug && this.noDebugMethods.indexOf(methodName) === -1) {
             gs.info('[Magic Utils - ' + methodName + '] ' + msg);
         }
+    },
+
+    convertResponse: function(inputs) {
+        var utils = new x_759224_magic_c_0.symbology_utils();
+        var body = JSON.parse(inputs.response);
+        var nBody;
+        if (body.data != null) {
+            nBody = body.data[0]; // get the first card object
+        } else {
+            (nBody = body);
+        }
+        nBody.foiling = inputs.foiling;
+
+        // Format legalities with game changer support
+        if (nBody.legalities) {
+            var gameChanger = nBody.game_changer;
+            nBody.legalities = utils.formatLegalities(nBody.legalities, gameChanger);
+        }
+
+        if (nBody.colors && Array.isArray(nBody.colors)) {
+            nBody.colors = nBody.colors.join(",");
+        }
+        var foiling = inputs.foiling.toString()
+        // Manage faces
+        if (nBody.card_faces && Array.isArray(nBody.card_faces)) {
+            if (!nBody.image_uris) {
+                nBody.card_faces = utils.convertImageUrisToHtml(nBody, true);
+            } else {
+                nBody.image_uris = utils.convertImageUrisToHtml(nBody, false);
+            }
+
+            for (var face = 0; face < nBody.card_faces.length; face++) {
+                var thisFace = nBody.card_faces[face];
+
+                // Convert oracle text to contain symbols
+                if (typeof thisFace.oracle_text === 'string') {
+                    thisFace.oracle_text = utils.convertSymbolsToImages(thisFace.oracle_text);
+                }
+
+                // Convert mana cost to contain symbols
+                if (typeof thisFace.mana_cost === 'string') {
+                    thisFace.mana_cost = utils.convertSymbolsToImages(thisFace.mana_cost);
+                }
+
+                // Convert colors array to comma-separated string
+                if (Array.isArray(thisFace.colors)) {
+                    thisFace.colors = thisFace.colors.join(",");
+                }
+            }
+
+        } else if (typeof nBody.oracle_text === 'string' && typeof nBody.mana_cost === 'string') {
+            // If it's a single-faced card
+            nBody.oracle_text = utils.convertSymbolsToImages(nBody.oracle_text);
+            nBody.mana_cost = utils.convertSymbolsToImages(nBody.mana_cost);
+
+            // Set colors
+            if (nBody.colors && Array.isArray(nBody.colors)) {
+                nBody.colors = nBody.colors.join(",");
+            }
+
+            if (nBody.image_uris) {
+                nBody.image_uris = utils.convertImageUrisToHtml(nBody, false);
+            }
+        }
+
+        // These keys are always outside of the faces array
+        if (nBody.color_identity && Array.isArray(nBody.color_identity)) {
+            nBody.color_identity = nBody.color_identity.join(",");
+        }
+
+        if (nBody.produced_mana && Array.isArray(nBody.produced_mana)) {
+            nBody.produced_mana = nBody.produced_mana.join(",");
+        }
+        // Set keywords
+        if (nBody.keywords && Array.isArray(nBody.keywords)) {
+            var keywords = [];
+            var c = 0;
+            var input = nBody.keywords;
+            var l = nBody.keywords.length;
+            while (c < l) {
+                var keywordGr = new GlideRecord(this.KEYWORDS);
+                keywordGr.get('name', input[c]);
+                if (keywordGr)
+                    keywords.push(keywordGr.getUniqueValue());
+                c++;
+            }
+            nBody.keywords = keywords.join(',');
+        }
+
+        // Set the modified card object as the new response
+        return nBody;
     },
 
     /**
@@ -509,27 +601,27 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         cardGR.get(id); // Get the card record.
         var cardData = {
             legality: { // Legalities for the card.
-                alchemy: this.stripHTML(cardGR.getValue('alchemy_legality')) == 'Legal',
-                brawl: this.stripHTML(cardGR.getValue('brawl_legality')) == 'Legal',
-                commander: this.stripHTML(cardGR.getValue('commander_legality')) == 'Legal',
-                duel: this.stripHTML(cardGR.getValue('duel_legality')) == 'Legal',
-                future: this.stripHTML(cardGR.getValue('future_legality')) == 'Legal',
-                gladiator: this.stripHTML(cardGR.getValue('gladiator_legality')) == 'Legal',
-                historic: this.stripHTML(cardGR.getValue('historic_legality')) == 'Legal',
-                legacy: this.stripHTML(cardGR.getValue('legacy_legality')) == 'Legal',
-                modern: this.stripHTML(cardGR.getValue('modern_legality')) == 'Legal',
-                oathbreaker: this.stripHTML(cardGR.getValue('oathbreaker_legality')) == 'Legal',
-                oldschool: this.stripHTML(cardGR.getValue('oldschool_legality')) == 'Legal',
-                pauper_commander: this.stripHTML(cardGR.getValue('paupercommander_legality')) == 'Legal',
-                pauper: this.stripHTML(cardGR.getValue('pauper_legality')) == 'Legal',
-                penny: this.stripHTML(cardGR.getValue('penny_legality')) == 'Legal',
-                pioneer: this.stripHTML(cardGR.getValue('pioneer_legality')) == 'Legal',
+                alchemy: this.stripHTML(cardGR.getValue('alchemy_legality')) == 'Legal' || false,
+                brawl: this.stripHTML(cardGR.getValue('brawl_legality')) == 'Legal' || false,
+                commander: this.stripHTML(cardGR.getValue('commander_legality')) == 'Legal' || false,
+                duel: this.stripHTML(cardGR.getValue('duel_legality')) == 'Legal' || false,
+                future: this.stripHTML(cardGR.getValue('future_legality')) == 'Legal' || false,
+                gladiator: this.stripHTML(cardGR.getValue('gladiator_legality')) == 'Legal' || false,
+                historic: this.stripHTML(cardGR.getValue('historic_legality')) == 'Legal' || false,
+                legacy: this.stripHTML(cardGR.getValue('legacy_legality')) == 'Legal' || false,
+                modern: this.stripHTML(cardGR.getValue('modern_legality')) == 'Legal' || false,
+                oathbreaker: this.stripHTML(cardGR.getValue('oathbreaker_legality')) == 'Legal' || false,
+                oldschool: this.stripHTML(cardGR.getValue('oldschool_legality')) == 'Legal' || false,
+                pauper_commander: this.stripHTML(cardGR.getValue('paupercommander_legality')) == 'Legal' || false,
+                pauper: this.stripHTML(cardGR.getValue('pauper_legality')) == 'Legal' || false,
+                penny: this.stripHTML(cardGR.getValue('penny_legality')) == 'Legal' || false,
+                pioneer: this.stripHTML(cardGR.getValue('pioneer_legality')) == 'Legal' || false,
                 predh: this.stripHTML(cardGR.getValue('predh_legality')) == 'Legal',
-                premodern: this.stripHTML(cardGR.getValue('premodern_legality')) == 'Legal',
-                standard_brawl: this.stripHTML(cardGR.getValue('standardbrawl_legality')) == 'Legal',
-                standard: this.stripHTML(cardGR.getValue('standard_legality')) == 'Legal',
-                timeless: this.stripHTML(cardGR.getValue('timeless_legality')) == 'Legal',
-                vintage: this.stripHTML(cardGR.getValue('vintage_legality')) == 'Legal'
+                premodern: this.stripHTML(cardGR.getValue('premodern_legality')) == 'Legal' || false,
+                standard_brawl: this.stripHTML(cardGR.getValue('standardbrawl_legality')) == 'Legal' || false,
+                standard: this.stripHTML(cardGR.getValue('standard_legality')) == 'Legal' || false,
+                timeless: this.stripHTML(cardGR.getValue('timeless_legality')) == 'Legal' || false,
+                vintage: this.stripHTML(cardGR.getValue('vintage_legality')) == 'Legal' || false
             },
             flags: { // Card flags.
                 is_foil: cardGR.getValue('foiling') != 'none',
@@ -548,7 +640,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 colors: cardGR.getDisplayValue('face_one_colors'),
                 flavor_name: cardGR.getValue('face_one_flavor_name'),
                 flavor_text: cardGR.getValue('face_one_flavor_text'),
-                image: this.getImgSrc(cardGR.getValue('front_image')),
+                image: this.getImgSrc(cardGR.getValue('face_one_image')),
                 loyalty: cardGR.getValue('face_one_loyalty'),
                 mana_cost: cardGR.getValue('face_one_mana_cost'),
                 name: cardGR.getValue('face_one_name'),
@@ -618,14 +710,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>158</sys_mod_count>
+        <sys_mod_count>161</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-01 04:54:07</sys_updated_on>
+        <sys_updated_on>2026-02-03 16:25:44</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>

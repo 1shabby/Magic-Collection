@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $rootScope) {
+  var c = this;
+
+  // Initial filters model
+  c.filters = {
+    name: '',
+    oracle: '',
+    flavor: '',
+    artist: '',
+    set: '',
+    rarity: '',
+    supertype: '',
+    type: '',
+    subtype: '',
+    manaCost: '',
+    manaValue: '',
+    power: '',
+    toughness: '',
+    loyalty: '',
+    format: '',
+    colors: [] // Gets populated dynamically
+  };
+
+  // Options for dropdowns and color checkboxes
+  c.setOptions = ['KHM', 'DMU', 'ONE', 'ELD'];
+  c.supertypeOptions = ['Legendary', 'Basic', 'Snow'];
+  c.typeOptions = ['Creature', 'Sorcery', 'Instant', 'Artifact', 'Land', 'Planeswalker'];
+  c.subtypeOptions = ['Elf', 'Zombie', 'Cat', 'Warrior'];
+  c.formatOptions = ['Standard', 'Modern', 'Commander', 'Legacy'];
+
+  c.colorOptions = [
+    { name: 'White', value: 'W', selected: false },
+    { name: 'Blue', value: 'U', selected: false },
+    { name: 'Black', value: 'B', selected: false },
+    { name: 'Red', value: 'R', selected: false },
+    { name: 'Green', value: 'G', selected: false },
+    { name: 'Colorless', value: 'C', selected: false }
+  ];
+
+  // Main filter trigger
+  c.applyFilters = function() {
+    // Gather selected colors
+    const selectedColors = c.colorOptions
+      .filter(color => color.selected)
+      .map(color => color.value);
+
+    // Construct input payload
+    const payload = angular.copy(c.filters);
+    payload.colors = selectedColors;
+
+    // Send to server
+    c.server.update(payload);
+  };
+
+  // Auto-reload data when coming back or listening to external triggers
+  $rootScope.$on('searchTerm', function(event, term) {
+    c.filters.name = term;
+    c.applyFilters();
+  });
+
+  // Optional: Reset filters
+  c.resetFilters = function() {
+    for (const key in c.filters) {
+      if (Array.isArray(c.filters[key])) {
+        c.filters[key] = [];
+      } else {
+        c.filters[key] = '';
+      }
+    }
+    c.colorOptions.forEach(c => c.selected = false);
+    c.applyFilters();
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.advanced-search-widget {&#13;
+  background-color: #1e1e2f;&#13;
+  padding: 1.5rem;&#13;
+  border-radius: 12px;&#13;
+  color: #ffffff;&#13;
+  max-width: 340px; /* Increased from ~250px */&#13;
+  margin: 1rem;&#13;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);&#13;
+  font-family: 'Segoe UI', sans-serif;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 0.75rem;&#13;
+}&#13;
+&#13;
+.advanced-search-widget input[type="text"],&#13;
+.advanced-search-widget input[type="number"],&#13;
+.advanced-search-widget select {&#13;
+  width: 100%;&#13;
+  background-color: #2b2b3c;&#13;
+  border: 1px solid #444;&#13;
+  border-radius: 6px;&#13;
+  padding: 0.6rem 0.8rem;&#13;
+  color: #fff;&#13;
+  font-size: 14px;&#13;
+}&#13;
+&#13;
+.advanced-search-widget label {&#13;
+  font-weight: 600;&#13;
+  margin-top: 0.75rem;&#13;
+  color: #ccc;&#13;
+}&#13;
+&#13;
+.color-filters {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  gap: 0.5rem;&#13;
+}&#13;
+&#13;
+.color-filters label {&#13;
+  background-color: #2b2b3c;&#13;
+  border: 1px solid #444;&#13;
+  border-radius: 6px;&#13;
+  padding: 0.3rem 0.6rem;&#13;
+  color: #fff;&#13;
+  cursor: pointer;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+}&#13;
+&#13;
+.btn-primary {&#13;
+  background-color: #3f51b5;&#13;
+  border: none;&#13;
+  border-radius: 6px;&#13;
+  padding: 0.6rem 1.2rem;&#13;
+  color: #fff;&#13;
+  font-weight: bold;&#13;
+  margin-top: 1rem;&#13;
+  cursor: pointer;&#13;
+  transition: background-color 0.2s ease;&#13;
+}&#13;
+&#13;
+.btn-primary:hover {&#13;
+  background-color: #5c6bc0;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mtg_advanced_search</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>MTG Advanced Search</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-01 01:13:54</sys_created_on>
+        <sys_id>c90458d2c3c7e6100efafbfdd4013119</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>MTG Advanced Search</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_c90458d2c3c7e6100efafbfdd4013119</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-01 01:23:58</sys_updated_on>
+        <template><![CDATA[<div class="advanced-search-widget">
+  <!-- Text-based Fields -->
+  <input type="text" ng-model="c.filters.name" placeholder="Card Name" />
+  <input type="text" ng-model="c.filters.oracle" placeholder="Rules Text" />
+  <input type="text" ng-model="c.filters.flavor" placeholder="Flavor Text" />
+  <input type="text" ng-model="c.filters.artist" placeholder="Artist Name" />
+
+  <!-- Dropdowns -->
+  <select ng-model="c.filters.set">
+    <option value="">Any Set</option>
+    <option ng-repeat="set in c.setOptions" value="{{set}}">{{set}}</option>
+  </select>
+
+  <select ng-model="c.filters.rarity">
+    <option value="">Any Rarity</option>
+    <option value="common">Common</option>
+    <option value="uncommon">Uncommon</option>
+    <option value="rare">Rare</option>
+    <option value="mythic">Mythic</option>
+  </select>
+
+  <select ng-model="c.filters.supertype">
+    <option value="">Any Supertype</option>
+    <option ng-repeat="type in c.supertypeOptions" value="{{type}}">{{type}}</option>
+  </select>
+
+  <select ng-model="c.filters.type">
+    <option value="">Any Type</option>
+    <option ng-repeat="type in c.typeOptions" value="{{type}}">{{type}}</option>
+  </select>
+
+  <select ng-model="c.filters.subtype">
+    <option value="">Any Subtype</option>
+    <option ng-repeat="type in c.subtypeOptions" value="{{type}}">{{type}}</option>
+  </select>
+
+  <!-- Mana Cost -->
+  <input type="text" ng-model="c.filters.manaCost" placeholder="Mana Cost (e.g., {1}{W}{U})" />
+
+  <!-- Color Selector -->
+  <label>Colors:</label>
+  <div class="color-filters">
+    <label ng-repeat="color in c.colorOptions">
+      <input type="checkbox" ng-model="color.selected" />
+      <span class="mana-symbol {{color.value}}"></span> {{color.name}}
+    </label>
+  </div>
+
+  <!-- Numerical Filters -->
+  <label>Mana Value:</label>
+  <input type="number" ng-model="c.filters.manaValue" min="0" placeholder="e.g. 3" />
+
+  <label>Power:</label>
+  <input type="number" ng-model="c.filters.power" placeholder="Power" />
+
+  <label>Toughness:</label>
+  <input type="number" ng-model="c.filters.toughness" placeholder="Toughness" />
+
+  <label>Loyalty:</label>
+  <input type="number" ng-model="c.filters.loyalty" placeholder="Loyalty" />
+
+  <!-- Legalities -->
+  <label>Format:</label>
+  <select ng-model="c.filters.format">
+    <option value="">Any Format</option>
+    <option ng-repeat="f in c.formatOptions" value="{{f}}">{{f}}</option>
+  </select>
+
+  <!-- Search Button -->
+  <button class="btn btn-primary" ng-click="c.applyFilters()">Search</button>
+</div>
+]]></template>
+    </sp_widget>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sp_widget_c90458d2c3c7e6100efafbfdd4013119</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller = function($scope, $rootScope) {
+  var c = this;
+
+  // Initial filters model
+  c.filters = {
+    name: '',
+    oracle: '',
+    flavor: '',
+    artist: '',
+    set: '',
+    rarity: '',
+    supertype: '',
+    type: '',
+    subtype: '',
+    manaCost: '',
+    manaValue: '',
+    power: '',
+    toughness: '',
+    loyalty: '',
+    format: '',
+    colors: [] // Gets populated dynamically
+  };
+
+  // Options for dropdowns and color checkboxes
+  c.setOptions = ['KHM', 'DMU', 'ONE', 'ELD'];
+  c.supertypeOptions = ['Legendary', 'Basic', 'Snow'];
+  c.typeOptions = ['Creature', 'Sorcery', 'Instant', 'Artifact', 'Land', 'Planeswalker'];
+  c.subtypeOptions = ['Elf', 'Zombie', 'Cat', 'Warrior'];
+  c.formatOptions = ['Standard', 'Modern', 'Commander', 'Legacy'];
+
+  c.colorOptions = [
+    { name: 'White', value: 'W', selected: false },
+    { name: 'Blue', value: 'U', selected: false },
+    { name: 'Black', value: 'B', selected: false },
+    { name: 'Red', value: 'R', selected: false },
+    { name: 'Green', value: 'G', selected: false },
+    { name: 'Colorless', value: 'C', selected: false }
+  ];
+
+  // Main filter trigger
+  c.applyFilters = function() {
+    // Gather selected colors
+    const selectedColors = c.colorOptions
+      .filter(color =&gt; color.selected)
+      .map(color =&gt; color.value);
+
+    // Construct input payload
+    const payload = angular.copy(c.filters);
+    payload.colors = selectedColors;
+
+    // Send to server
+    c.server.update(payload);
+  };
+
+  // Auto-reload data when coming back or listening to external triggers
+  $rootScope.$on('searchTerm', function(event, term) {
+    c.filters.name = term;
+    c.applyFilters();
+  });
+
+  // Optional: Reset filters
+  c.resetFilters = function() {
+    for (const key in c.filters) {
+      if (Array.isArray(c.filters[key])) {
+        c.filters[key] = [];
+      } else {
+        c.filters[key] = '';
+      }
+    }
+    c.colorOptions.forEach(c =&gt; c.selected = false);
+    c.applyFilters();
+  };
+};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css&gt;.advanced-search-widget {&amp;#13;
+  background-color: #1e1e2f;&amp;#13;
+  padding: 1.5rem;&amp;#13;
+  border-radius: 12px;&amp;#13;
+  color: #ffffff;&amp;#13;
+  max-width: 340px; /* Increased from ~250px */&amp;#13;
+  margin: 1rem;&amp;#13;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);&amp;#13;
+  font-family: 'Segoe UI', sans-serif;&amp;#13;
+  display: flex;&amp;#13;
+  flex-direction: column;&amp;#13;
+  gap: 0.75rem;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.advanced-search-widget input[type="text"],&amp;#13;
+.advanced-search-widget input[type="number"],&amp;#13;
+.advanced-search-widget select {&amp;#13;
+  width: 100%;&amp;#13;
+  background-color: #2b2b3c;&amp;#13;
+  border: 1px solid #444;&amp;#13;
+  border-radius: 6px;&amp;#13;
+  padding: 0.6rem 0.8rem;&amp;#13;
+  color: #fff;&amp;#13;
+  font-size: 14px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.advanced-search-widget label {&amp;#13;
+  font-weight: 600;&amp;#13;
+  margin-top: 0.75rem;&amp;#13;
+  color: #ccc;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.color-filters {&amp;#13;
+  display: flex;&amp;#13;
+  flex-wrap: wrap;&amp;#13;
+  gap: 0.5rem;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.color-filters label {&amp;#13;
+  background-color: #2b2b3c;&amp;#13;
+  border: 1px solid #444;&amp;#13;
+  border-radius: 6px;&amp;#13;
+  padding: 0.3rem 0.6rem;&amp;#13;
+  color: #fff;&amp;#13;
+  cursor: pointer;&amp;#13;
+  display: flex;&amp;#13;
+  align-items: center;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.btn-primary {&amp;#13;
+  background-color: #3f51b5;&amp;#13;
+  border: none;&amp;#13;
+  border-radius: 6px;&amp;#13;
+  padding: 0.6rem 1.2rem;&amp;#13;
+  color: #fff;&amp;#13;
+  font-weight: bold;&amp;#13;
+  margin-top: 1rem;&amp;#13;
+  cursor: pointer;&amp;#13;
+  transition: background-color 0.2s ease;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.btn-primary:hover {&amp;#13;
+  background-color: #5c6bc0;&amp;#13;
+}&amp;#13;
+&lt;/css&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;false&lt;/has_preview&gt;
+        &lt;id&gt;mtg_advanced_search&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;
+        &lt;name&gt;MTG Advanced Search&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;true&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-08-01 01:13:54&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;c90458d2c3c7e6100efafbfdd4013119&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;MTG Advanced Search&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_c90458d2c3c7e6100efafbfdd4013119&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-08-01 01:23:58&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div class="advanced-search-widget"&gt;
+  &lt;!-- Text-based Fields --&gt;
+  &lt;input type="text" ng-model="c.filters.name" placeholder="Card Name" /&gt;
+  &lt;input type="text" ng-model="c.filters.oracle" placeholder="Rules Text" /&gt;
+  &lt;input type="text" ng-model="c.filters.flavor" placeholder="Flavor Text" /&gt;
+  &lt;input type="text" ng-model="c.filters.artist" placeholder="Artist Name" /&gt;
+
+  &lt;!-- Dropdowns --&gt;
+  &lt;select ng-model="c.filters.set"&gt;
+    &lt;option value=""&gt;Any Set&lt;/option&gt;
+    &lt;option ng-repeat="set in c.setOptions" value="{{set}}"&gt;{{set}}&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select ng-model="c.filters.rarity"&gt;
+    &lt;option value=""&gt;Any Rarity&lt;/option&gt;
+    &lt;option value="common"&gt;Common&lt;/option&gt;
+    &lt;option value="uncommon"&gt;Uncommon&lt;/option&gt;
+    &lt;option value="rare"&gt;Rare&lt;/option&gt;
+    &lt;option value="mythic"&gt;Mythic&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select ng-model="c.filters.supertype"&gt;
+    &lt;option value=""&gt;Any Supertype&lt;/option&gt;
+    &lt;option ng-repeat="type in c.supertypeOptions" value="{{type}}"&gt;{{type}}&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select ng-model="c.filters.type"&gt;
+    &lt;option value=""&gt;Any Type&lt;/option&gt;
+    &lt;option ng-repeat="type in c.typeOptions" value="{{type}}"&gt;{{type}}&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;select ng-model="c.filters.subtype"&gt;
+    &lt;option value=""&gt;Any Subtype&lt;/option&gt;
+    &lt;option ng-repeat="type in c.subtypeOptions" value="{{type}}"&gt;{{type}}&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Mana Cost --&gt;
+  &lt;input type="text" ng-model="c.filters.manaCost" placeholder="Mana Cost (e.g., {1}{W}{U})" /&gt;
+
+  &lt;!-- Color Selector --&gt;
+  &lt;label&gt;Colors:&lt;/label&gt;
+  &lt;div class="color-filters"&gt;
+    &lt;label ng-repeat="color in c.colorOptions"&gt;
+      &lt;input type="checkbox" ng-model="color.selected" /&gt;
+      &lt;span class="mana-symbol {{color.value}}"&gt;&lt;/span&gt; {{color.name}}
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Numerical Filters --&gt;
+  &lt;label&gt;Mana Value:&lt;/label&gt;
+  &lt;input type="number" ng-model="c.filters.manaValue" min="0" placeholder="e.g. 3" /&gt;
+
+  &lt;label&gt;Power:&lt;/label&gt;
+  &lt;input type="number" ng-model="c.filters.power" placeholder="Power" /&gt;
+
+  &lt;label&gt;Toughness:&lt;/label&gt;
+  &lt;input type="number" ng-model="c.filters.toughness" placeholder="Toughness" /&gt;
+
+  &lt;label&gt;Loyalty:&lt;/label&gt;
+  &lt;input type="number" ng-model="c.filters.loyalty" placeholder="Loyalty" /&gt;
+
+  &lt;!-- Legalities --&gt;
+  &lt;label&gt;Format:&lt;/label&gt;
+  &lt;select ng-model="c.filters.format"&gt;
+    &lt;option value=""&gt;Any Format&lt;/option&gt;
+    &lt;option ng-repeat="f in c.formatOptions" value="{{f}}"&gt;{{f}}&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Search Button --&gt;
+  &lt;button class="btn btn-primary" ng-click="c.applyFilters()"&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-650220873</payload_hash>
+        <record_name>MTG Advanced Search</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:29</sys_created_on>
+        <sys_id>0ec2d82e8319b210f17ccd60ceaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72ac7630000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:29</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>cac2d82e2319b210c74d63ea33f9946d</update_guid>
+        <update_guid_history>cac2d82e2319b210c74d63ea33f9946d:-650220873</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="MTG Advanced Search">ecbcf28683ba7650f17ccd60ceaad3c2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-03 04:46:05</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>1ab1cdeb9dae48b2a7cb2ad5ab1928e4</sys_id>
+        <sys_metadata>c90458d2c3c7e6100efafbfdd4013119</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTG Advanced Search</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_widget_c90458d2c3c7e6100efafbfdd4013119</sys_update_name>
+        <sys_update_version display_value="sp_widget_c90458d2c3c7e6100efafbfdd4013119">0ec2d82e8319b210f17ccd60ceaad36d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-03 04:46:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

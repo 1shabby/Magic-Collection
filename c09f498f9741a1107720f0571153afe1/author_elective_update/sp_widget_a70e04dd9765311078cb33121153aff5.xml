@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+
+  c.dragStart = function (event) {
+    //change target appearance so we can see we have grabbed it
+    event.target.style.opacity = '0.7';
+    //change cursor
+    event.target.style.cursor = 'grabbing';
+    //prep for move
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/html', event.target.innerHTML);
+    c.draggedNode = event.target.id;
+    //ignore all other tasks until we are done
+    document.querySelectorAll('.task').forEach(function (cur) {
+      if (cur.id !== event.target.id) {
+        cur.classList.add('disabled');
+      }
+    })
+  };
+
+  c.dragEnd = function (event) {
+    event.target.style.opacity = '1';
+    event.target.style.cursor = 'grab';
+    var cols = document.querySelectorAll('.task-col-content');
+    cols.forEach(function (cur) {
+      cur.classList.remove('over')
+    });
+    document.querySelectorAll('.task').forEach(function (cur) {
+      cur.classList.remove('disabled');
+    })
+  };
+
+  c.dragEnter = function (event) {
+    //set class for things being dragged over
+    if (event.target && event.target.classList) {
+      event.target.classList.add('over');
+    }
+  };
+
+  c.dragLeave = function (event) {
+    //remove class for things being dragged over
+    if (event.target && event.target.classList) {
+      event.target.classList.remove('over');
+    }
+  };
+
+  c.dragOver = function (event) {
+    if (event.preventDefault) {
+      event.preventDefault(); // Necessary. Allows us to drop.
+    }
+    event.dataTransfer.dropEffect = 'move';
+    return false;
+  };
+
+  //recursive function to determine where we drop
+  function findColType(element) {
+    var maxLevels = 4;
+    return checkElement(element, 1);
+
+    function checkElement(element, level) {
+      if (!element) {
+        return null;
+      }
+      if (level >= maxLevels) {
+        return null;
+      }
+      if (element.classList && element.classList.contains('task-col')) {
+        return element.id;
+      }
+      return checkElement(element.parentElement, level++);
+    }
+  }
+
+  c.drop = function (event) {
+    if (event.stopPropagation) {
+      event.stopPropagation(); // stops the browser from redirecting.
+    }
+    var colType = findColType(event.target);
+    c.data.tasks[parseInt(c.draggedNode)].state = colType;
+    //apply changes to angular if necessary
+    $scope.$apply();
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>[draggable] {&#13;
+  -moz-user-select: none;&#13;
+  -khtml-user-select: none;&#13;
+  -webkit-user-select: none;&#13;
+  user-select: none;&#13;
+  /* Required to make elements draggable in old WebKit */&#13;
+  -khtml-user-drag: element;&#13;
+  -webkit-user-drag: element;&#13;
+}&#13;
+&#13;
+div{&#13;
+    --col-header-color: rgb(242, 242, 242);&#13;
+    --taskboard-border-color: rgb(210, 214, 215); &#13;
+    --col-highlight-color: rgb(255, 255, 210);&#13;
+}&#13;
+&#13;
+#drag-n-drop{&#13;
+    background-color:white;&#13;
+    border-radius: 6px;&#13;
+    padding: 6px;&#13;
+}&#13;
+&#13;
+#taskboard-container {&#13;
+    display:grid;&#13;
+    grid-template-columns: 1fr 1fr 1fr 1fr;&#13;
+    grid-template-rows: 85px auto;&#13;
+    border: 1px solid var(--taskboard-border-color);&#13;
+    height: 600px;&#13;
+}&#13;
+&#13;
+.taskboard-header {&#13;
+    grid-column: 1/5;&#13;
+    font-weight: bold;&#13;
+    border-bottom: 1px solid var(--taskboard-border-color);&#13;
+}&#13;
+&#13;
+.taskboard-header&gt;h1 {&#13;
+    text-align:center;&#13;
+}&#13;
+&#13;
+.task-col {&#13;
+    overflow-y: auto;&#13;
+    display:flex;&#13;
+    flex-direction: column;&#13;
+}&#13;
+&#13;
+.task-col-content{&#13;
+    padding: 6px;&#13;
+    height: 100%;&#13;
+}&#13;
+&#13;
+.task-col-content.over {&#13;
+    background-color: var(--col-highlight-color);&#13;
+}&#13;
+&#13;
+.task-col-header {&#13;
+    background-color: var(--col-header-color);&#13;
+    text-align: center;&#13;
+    font-weight: bold;&#13;
+}&#13;
+&#13;
+.task-col.right-border {&#13;
+    border-right: 1px solid var(--taskboard-border-color);&#13;
+}&#13;
+&#13;
+.task {&#13;
+    margin: 6px;&#13;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.37);&#13;
+    border-radius: 3px;&#13;
+    padding: 3px;&#13;
+    cursor: grab;&#13;
+    pointer-events: all;&#13;
+}&#13;
+&#13;
+.task.disabled {&#13;
+    pointer-events:none;&#13;
+}&#13;
+&#13;
+.task-header {&#13;
+    font-weight: bold;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>drag_drop</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Drag&amp;Drop</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  var tasks = [
+    {"id":0, "title":"My Task!", "description":"this is a description text","state":"todo"},
+    {"id":1, "title":"Task2", "description":"task2 description :D","state":"todo"},
+    {"id":2, "title":"Delete Task2", "description":"I find it offensive","state":"todo"}
+  ];
+	var cards = [];
+	var cardsGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardsGr.addEncodedQuery('ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe');
+	cardsGr.query();
+	
+	while (cardsGr.next()){
+		cards.push(cardsGr.getValue('front_image'));
+	}
+	
+  data.tasks = tasks;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-09-26 20:07:13</sys_created_on>
+        <sys_id>a70e04dd9765311078cb33121153aff5</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Drag&amp;Drop</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_a70e04dd9765311078cb33121153aff5</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-09-26 21:10:02</sys_updated_on>
+        <template><![CDATA[<div id="drag-n-drop">
+    <!-- script for accessing angular from outside -->
+    <script>
+        //gets the angular scope from outside because 
+        //we don't have access to it for drag events
+        function getScope() {
+            return angular.element('#drag-n-drop').scope().c;
+        }
+    </script>
+    <!-- container for drag n drop task board -->
+    <div id="taskboard-container">
+        <div class="taskboard-header">
+            <h1>My Mock Task Board</h1>
+        </div>
+        <div class="task-col right-border" id="todo">
+            <div class="task-col-header">
+                To Do
+            </div>
+            <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)">
+                <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='todo'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+                    <div class="task-header">
+                        {{task.title}}
+                    </div>
+                    <div class="task-description">
+                        {{task.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="task-col right-border" id="in-progress">
+            <div class="task-col-header">
+                In Progress
+            </div>
+            <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)">
+                <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='in-progress'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+                    <div class="task-header">
+                        {{task.title}}
+                    </div>
+                    <div class="task-description">
+                        {{task.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="task-col right-border" id="review">
+            <div class="task-col-header">
+                Review
+            </div>
+            <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)">
+                <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='review'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+                    <div class="task-header">
+                        {{task.title}}
+                    </div>
+                    <div class="task-description">
+                        {{task.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="task-col" id="done">
+            <div class="task-col-header">
+                Done
+            </div>
+            <div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)">
+                <div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='done'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)">
+                    <div class="task-header">
+                        {{task.title}}
+                    </div>
+                    <div class="task-description">
+                        {{task.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sp_widget_a70e04dd9765311078cb33121153aff5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+
+  c.dragStart = function (event) {
+    //change target appearance so we can see we have grabbed it
+    event.target.style.opacity = '0.7';
+    //change cursor
+    event.target.style.cursor = 'grabbing';
+    //prep for move
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/html', event.target.innerHTML);
+    c.draggedNode = event.target.id;
+    //ignore all other tasks until we are done
+    document.querySelectorAll('.task').forEach(function (cur) {
+      if (cur.id !== event.target.id) {
+        cur.classList.add('disabled');
+      }
+    })
+  };
+
+  c.dragEnd = function (event) {
+    event.target.style.opacity = '1';
+    event.target.style.cursor = 'grab';
+    var cols = document.querySelectorAll('.task-col-content');
+    cols.forEach(function (cur) {
+      cur.classList.remove('over')
+    });
+    document.querySelectorAll('.task').forEach(function (cur) {
+      cur.classList.remove('disabled');
+    })
+  };
+
+  c.dragEnter = function (event) {
+    //set class for things being dragged over
+    if (event.target &amp;&amp; event.target.classList) {
+      event.target.classList.add('over');
+    }
+  };
+
+  c.dragLeave = function (event) {
+    //remove class for things being dragged over
+    if (event.target &amp;&amp; event.target.classList) {
+      event.target.classList.remove('over');
+    }
+  };
+
+  c.dragOver = function (event) {
+    if (event.preventDefault) {
+      event.preventDefault(); // Necessary. Allows us to drop.
+    }
+    event.dataTransfer.dropEffect = 'move';
+    return false;
+  };
+
+  //recursive function to determine where we drop
+  function findColType(element) {
+    var maxLevels = 4;
+    return checkElement(element, 1);
+
+    function checkElement(element, level) {
+      if (!element) {
+        return null;
+      }
+      if (level &gt;= maxLevels) {
+        return null;
+      }
+      if (element.classList &amp;&amp; element.classList.contains('task-col')) {
+        return element.id;
+      }
+      return checkElement(element.parentElement, level++);
+    }
+  }
+
+  c.drop = function (event) {
+    if (event.stopPropagation) {
+      event.stopPropagation(); // stops the browser from redirecting.
+    }
+    var colType = findColType(event.target);
+    c.data.tasks[parseInt(c.draggedNode)].state = colType;
+    //apply changes to angular if necessary
+    $scope.$apply();
+  };
+};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css&gt;[draggable] {&amp;#13;
+  -moz-user-select: none;&amp;#13;
+  -khtml-user-select: none;&amp;#13;
+  -webkit-user-select: none;&amp;#13;
+  user-select: none;&amp;#13;
+  /* Required to make elements draggable in old WebKit */&amp;#13;
+  -khtml-user-drag: element;&amp;#13;
+  -webkit-user-drag: element;&amp;#13;
+}&amp;#13;
+&amp;#13;
+div{&amp;#13;
+    --col-header-color: rgb(242, 242, 242);&amp;#13;
+    --taskboard-border-color: rgb(210, 214, 215); &amp;#13;
+    --col-highlight-color: rgb(255, 255, 210);&amp;#13;
+}&amp;#13;
+&amp;#13;
+#drag-n-drop{&amp;#13;
+    background-color:white;&amp;#13;
+    border-radius: 6px;&amp;#13;
+    padding: 6px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+#taskboard-container {&amp;#13;
+    display:grid;&amp;#13;
+    grid-template-columns: 1fr 1fr 1fr 1fr;&amp;#13;
+    grid-template-rows: 85px auto;&amp;#13;
+    border: 1px solid var(--taskboard-border-color);&amp;#13;
+    height: 600px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.taskboard-header {&amp;#13;
+    grid-column: 1/5;&amp;#13;
+    font-weight: bold;&amp;#13;
+    border-bottom: 1px solid var(--taskboard-border-color);&amp;#13;
+}&amp;#13;
+&amp;#13;
+.taskboard-header&amp;gt;h1 {&amp;#13;
+    text-align:center;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-col {&amp;#13;
+    overflow-y: auto;&amp;#13;
+    display:flex;&amp;#13;
+    flex-direction: column;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-col-content{&amp;#13;
+    padding: 6px;&amp;#13;
+    height: 100%;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-col-content.over {&amp;#13;
+    background-color: var(--col-highlight-color);&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-col-header {&amp;#13;
+    background-color: var(--col-header-color);&amp;#13;
+    text-align: center;&amp;#13;
+    font-weight: bold;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-col.right-border {&amp;#13;
+    border-right: 1px solid var(--taskboard-border-color);&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task {&amp;#13;
+    margin: 6px;&amp;#13;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.37);&amp;#13;
+    border-radius: 3px;&amp;#13;
+    padding: 3px;&amp;#13;
+    cursor: grab;&amp;#13;
+    pointer-events: all;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task.disabled {&amp;#13;
+    pointer-events:none;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.task-header {&amp;#13;
+    font-weight: bold;&amp;#13;
+}&lt;/css&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;true&lt;/has_preview&gt;
+        &lt;id&gt;drag_drop&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;
+        &lt;name&gt;Drag&amp;amp;Drop&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  var tasks = [
+    {"id":0, "title":"My Task!", "description":"this is a description text","state":"todo"},
+    {"id":1, "title":"Task2", "description":"task2 description :D","state":"todo"},
+    {"id":2, "title":"Delete Task2", "description":"I find it offensive","state":"todo"}
+  ];
+	var cards = [];
+	var cardsGr = new GlideRecord('x_759224_magic_c_0_mtg_cards');
+	cardsGr.addEncodedQuery('ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe');
+	cardsGr.query();
+	
+	while (cardsGr.next()){
+		cards.push(cardsGr.getValue('front_image'));
+	}
+	
+  data.tasks = tasks;
+})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-09-26 20:07:13&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;a70e04dd9765311078cb33121153aff5&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Drag&amp;amp;Drop&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_a70e04dd9765311078cb33121153aff5&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-09-26 21:10:02&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;div id="drag-n-drop"&gt;
+    &lt;!-- script for accessing angular from outside --&gt;
+    &lt;script&gt;
+        //gets the angular scope from outside because 
+        //we don't have access to it for drag events
+        function getScope() {
+            return angular.element('#drag-n-drop').scope().c;
+        }
+    &lt;/script&gt;
+    &lt;!-- container for drag n drop task board --&gt;
+    &lt;div id="taskboard-container"&gt;
+        &lt;div class="taskboard-header"&gt;
+            &lt;h1&gt;My Mock Task Board&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class="task-col right-border" id="todo"&gt;
+            &lt;div class="task-col-header"&gt;
+                To Do
+            &lt;/div&gt;
+            &lt;div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)"&gt;
+                &lt;div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='todo'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)"&gt;
+                    &lt;div class="task-header"&gt;
+                        {{task.title}}
+                    &lt;/div&gt;
+                    &lt;div class="task-description"&gt;
+                        {{task.description}}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="task-col right-border" id="in-progress"&gt;
+            &lt;div class="task-col-header"&gt;
+                In Progress
+            &lt;/div&gt;
+            &lt;div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)"&gt;
+                &lt;div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='in-progress'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)"&gt;
+                    &lt;div class="task-header"&gt;
+                        {{task.title}}
+                    &lt;/div&gt;
+                    &lt;div class="task-description"&gt;
+                        {{task.description}}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="task-col right-border" id="review"&gt;
+            &lt;div class="task-col-header"&gt;
+                Review
+            &lt;/div&gt;
+            &lt;div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)"&gt;
+                &lt;div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='review'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)"&gt;
+                    &lt;div class="task-header"&gt;
+                        {{task.title}}
+                    &lt;/div&gt;
+                    &lt;div class="task-description"&gt;
+                        {{task.description}}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="task-col" id="done"&gt;
+            &lt;div class="task-col-header"&gt;
+                Done
+            &lt;/div&gt;
+            &lt;div class="task-col-content" ondragenter="getScope().dragEnter(event)" 
+            ondragleave="getScope().dragLeave(event)" 
+            ondragover="getScope().dragOver(event)" 
+            ondrop="getScope().drop(event)"&gt;
+                &lt;div class="task" ng-repeat="task in c.data.tasks" ng-if="task.state=='done'" id="{{task.id}}"
+                draggable="true" ondragstart="getScope().dragStart(event)" ondragend="getScope().dragEnd(event)"&gt;
+                    &lt;div class="task-header"&gt;
+                        {{task.title}}
+                    &lt;/div&gt;
+                    &lt;div class="task-description"&gt;
+                        {{task.description}}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>1324844126</payload_hash>
+        <record_name>Drag&amp;Drop</record_name>
+        <reverted_from/>
+        <source>ca9294aa8319b210f17ccd60ceaad309</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-21 16:06:29</sys_created_on>
+        <sys_id>c2c2d82e8319b210f17ccd60ceaad34e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19aa72ac7180000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-21 16:06:29</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>82c2d82efd19b21072da939f26da8b4e</update_guid>
+        <update_guid_history>82c2d82efd19b21072da939f26da8b4e:1324844126</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Drag&amp;Drop">4f87ea0e83f67650f17ccd60ceaad3f0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-03 03:13:41</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>39e55ef3a4824d9484585a1d02323199</sys_id>
+        <sys_metadata>a70e04dd9765311078cb33121153aff5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Drag&amp;Drop</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_widget_a70e04dd9765311078cb33121153aff5</sys_update_name>
+        <sys_update_version display_value="sp_widget_a70e04dd9765311078cb33121153aff5">c2c2d82e8319b210f17ccd60ceaad34e</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-03 03:13:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
