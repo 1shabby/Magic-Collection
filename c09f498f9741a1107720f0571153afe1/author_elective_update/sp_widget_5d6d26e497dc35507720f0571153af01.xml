@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>add_card</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Add Card</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2023-07-24 20:26:46</sys_created_on>
+        <sys_id>5d6d26e497dc35507720f0571153af01</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Add Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_5d6d26e497dc35507720f0571153af01</sys_update_name>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2023-07-24 20:40:58</sys_updated_on>
+        <template><![CDATA[<container>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">Card Name</label>  
+    <div class="col-md-4">
+    <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+    <span class="help-block">help</span>  
+    </div>
+  </div>
+
+  <!-- Search input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="searchinput">Search Input</label>
+    <div class="col-md-4">
+      <input id="searchinput" name="searchinput" type="search" placeholder="placeholder" class="form-control input-md">
+      <p class="help-block">help</p>
+    </div>
+  </div>
+
+  <!-- Button Drop Down -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="buttondropdown">Button Drop Down</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input id="buttondropdown" name="buttondropdown" class="form-control" placeholder="placeholder" type="text">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Action
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu pull-right">
+            <li><a href="#">Option one</a></li>
+            <li><a href="#">Option two</a></li>
+            <li><a href="#">Option three</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">Text Input</label>  
+    <div class="col-md-4">
+    <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+    <span class="help-block">help</span>  
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">Text Input</label>  
+    <div class="col-md-4">
+    <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+    <span class="help-block">help</span>  
+    </div>
+  </div>
+  <button>Add Card</button>
+</container>
+
+]]></template>
+    </sp_widget>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</application>
+        <file_path/>
+        <instance_id>9bab7f2e1be2b1909377eb9b2d4bcb3c</instance_id>
+        <instance_name>dev218015</instance_name>
+        <name>sp_widget_5d6d26e497dc35507720f0571153af01</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;
+    &lt;sp_widget action="INSERT_OR_UPDATE"&gt;
+        &lt;category&gt;custom&lt;/category&gt;
+        &lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;
+        &lt;controller_as&gt;c&lt;/controller_as&gt;
+        &lt;css/&gt;
+        &lt;data_table&gt;sp_instance&lt;/data_table&gt;
+        &lt;demo_data/&gt;
+        &lt;description/&gt;
+        &lt;docs/&gt;
+        &lt;field_list/&gt;
+        &lt;has_preview&gt;false&lt;/has_preview&gt;
+        &lt;id&gt;add_card&lt;/id&gt;
+        &lt;internal&gt;false&lt;/internal&gt;
+        &lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;
+        &lt;name&gt;Add Card&lt;/name&gt;
+        &lt;option_schema/&gt;
+        &lt;public&gt;false&lt;/public&gt;
+        &lt;roles/&gt;
+        &lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;
+        &lt;servicenow&gt;false&lt;/servicenow&gt;
+        &lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;greg&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-07-24 20:26:46&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;5d6d26e497dc35507720f0571153af01&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;Add Card&lt;/sys_name&gt;
+        &lt;sys_package display_value="Magic Collection" source="x_759224_magic_c_0"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="Magic Collection"&gt;c09f498f9741a1107720f0571153afe1&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sp_widget_5d6d26e497dc35507720f0571153af01&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;greg&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-07-24 20:40:58&lt;/sys_updated_on&gt;
+        &lt;template&gt;&lt;![CDATA[&lt;container&gt;
+  &lt;!-- Text input--&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-md-4 control-label" for="textinput"&gt;Card Name&lt;/label&gt;  
+    &lt;div class="col-md-4"&gt;
+    &lt;input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"&gt;
+    &lt;span class="help-block"&gt;help&lt;/span&gt;  
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Search input--&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-md-4 control-label" for="searchinput"&gt;Search Input&lt;/label&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;input id="searchinput" name="searchinput" type="search" placeholder="placeholder" class="form-control input-md"&gt;
+      &lt;p class="help-block"&gt;help&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Button Drop Down --&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-md-4 control-label" for="buttondropdown"&gt;Button Drop Down&lt;/label&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;div class="input-group"&gt;
+        &lt;input id="buttondropdown" name="buttondropdown" class="form-control" placeholder="placeholder" type="text"&gt;
+        &lt;div class="input-group-btn"&gt;
+          &lt;button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"&gt;
+            Action
+            &lt;span class="caret"&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;ul class="dropdown-menu pull-right"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Option one&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Option two&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Option three&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-md-4 control-label" for="textinput"&gt;Text Input&lt;/label&gt;  
+    &lt;div class="col-md-4"&gt;
+    &lt;input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"&gt;
+    &lt;span class="help-block"&gt;help&lt;/span&gt;  
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Text input--&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-md-4 control-label" for="textinput"&gt;Text Input&lt;/label&gt;  
+    &lt;div class="col-md-4"&gt;
+    &lt;input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"&gt;
+    &lt;span class="help-block"&gt;help&lt;/span&gt;  
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button&gt;Add Card&lt;/button&gt;
+&lt;/container&gt;
+
+]]&gt;&lt;/template&gt;
+    &lt;/sp_widget&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>285481161</payload_hash>
+        <record_name>Add Card</record_name>
+        <reverted_from/>
+        <source>a163d3878371b610f17ccd60ceaad361</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-18 15:56:34</sys_created_on>
+        <sys_id>f36397878371b610f17ccd60ceaad374</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19b322d63b70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-18 15:56:34</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>3f6397877571b6107e0b7b76e375da73</update_guid>
+        <update_guid_history>3f6397877571b6107e0b7b76e375da73:0,071ac7c3d431b6101abab2e27e26910a:1300820286,4ec2d82e7519b210ce788205212ef74a:285481161</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Add Card">16cc768683ba7650f17ccd60ceaad35f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>greg</sys_created_by>
+        <sys_created_on>2026-02-03 04:46:29</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>210fa9a653fc46809ec0450129ed2d81</sys_id>
+        <sys_metadata>5d6d26e497dc35507720f0571153af01</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add Card</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_scope_delete display_value="">1991af2ffb9d47658a98688db2236f19</sys_scope_delete>
+        <sys_update_name>sp_widget_5d6d26e497dc35507720f0571153af01</sys_update_name>
+        <sys_update_version display_value="sp_widget_5d6d26e497dc35507720f0571153af01">f36397878371b610f17ccd60ceaad374</sys_update_version>
+        <sys_updated_by>greg</sys_updated_by>
+        <sys_updated_on>2026-02-03 04:46:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
