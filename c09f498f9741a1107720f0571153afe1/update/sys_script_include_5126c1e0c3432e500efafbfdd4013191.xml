@@ -40,9 +40,9 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [object]: Contains execution information
      *              [boolean] success: Status indicating whether the operation was successful
      *              [string] message: Any messages from the execution
-	 * 				[integer] sum: Total CMC of all the main deck cards in the deck
-	 * 				[integer] cards: Total number of non-land main deck cards in the deck
-	 * 				[float] cmc: Sum / Cards rounded to 2 decimal places
+     * 				[integer] sum: Total CMC of all the main deck cards in the deck
+     * 				[integer] cards: Total number of non-land main deck cards in the deck
+     * 				[float] cmc: Sum / Cards rounded to 2 decimal places
      */
 
     calculateCMC: function(deckID) {
@@ -77,22 +77,36 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     },
 
-	getCardCount: function(deckID){
-		try{
-			var retObj = {
-				success: true,
-				message: '',
-				cards: 0
-			};
+    /*
+     * Description: Returns the number of main deck cards in the deck.
+     * Parameters: [string] deckID: The unique value of the deck record to delete associated records for.
+     * Returns: [object]: Contains execution information
+     *              [boolean] success: Status indicating whether the operation was successful
+     *              [string] message: Any messages from the execution
+     * 				[integer] cards: Total number of cards in the main deck
+     */
 
-			var deckCardAG = new GlideAggregate(this.DECK_CARDS);
-			//deckCardAG.get('deck',deckID);
+    getCardCount: function(deckID) {
+        try {
+            var retObj = {
+                success: true,
+                message: '',
+                cards: 0
+            };
 
-		}catch(ex){
-			retObj.success = false;
-			retObj.message = ex.message;
-		}
-	},
+            var deckCardAG = new GlideAggregate(this.DECK_CARDS);
+            deckCardAG.addQuery('deck', deckID);
+			deckCardAG.addQuery('is_maybeboard', 'false');
+            deckCardAG.query();
+            retObj.cards = deckCardAG.getRowCount();
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+		return retObj;
+    },
 
     /* Description: Takes in a line from the deck input and checks if it's formatted as a txt file or csv
      * Parameters: [string] - deckString: the full stringified input for the deck
@@ -121,11 +135,6 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         return results;
     },
-
-    _stripHtmlTags: function(html) {
-        return html.replace(/<[^>]*>/g, '').trim();
-    },
-
 
 
     /* Description: Takes in a GlideRecord object then creates a deck record if it's a valid record
@@ -433,13 +442,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-06 05:29:32</sys_updated_on>
+        <sys_updated_on>2026-02-06 19:08:34</sys_updated_on>
     </sys_script_include>
 </record_update>
