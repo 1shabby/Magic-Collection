@@ -34,6 +34,21 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.DECK_COMBOS = this.constants.tables.DECK_COMBOS;
     },
 
+    /**
+     * Description: Takes in a method name and message and logs the message in gs.info if debug and method isn't in noDebugMethods
+     * Parameters: [string] - methodName: name of method calling log.
+                   [string] - msg: message being called in log.
+     * Returns: None.
+     */
+
+    log: function(methodName, msg) {
+        if (this.debug && this.noDebugMethods.indexOf(methodName) === -1 && msg != null) {
+			if(typeof(msg) == 'object')
+				msg = JSON.stringify(msg);
+            gs.info('[Deck Utils - ' + methodName + '] ' + msg);
+        }
+    },
+
     /*
      * Description: Calculates the CMC for the provided DeckID
      * Parameters: [string] deckID: The unique value of the deck record to delete associated records for.
@@ -68,6 +83,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             }
             // calculate cmc
             retObj.cmc = (retObj.sum / retObj.cards).toFixed(2);
+			retObj.message = 'CMC calculated and set.';
         } catch (ex) {
             retObj.success = false;
             retObj.message = ex.message;
@@ -96,7 +112,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
             var deckCardAG = new GlideAggregate(this.DECK_CARDS);
             deckCardAG.addQuery('deck', deckID);
-			deckCardAG.addQuery('is_maybeboard', 'false');
+            deckCardAG.addQuery('is_maybeboard', 'false');
             deckCardAG.query();
             retObj.cards = deckCardAG.getRowCount();
 
@@ -105,7 +121,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.message = ex.message;
         }
 
-		return retObj;
+        return retObj;
     },
 
     /* Description: Takes in a line from the deck input and checks if it's formatted as a txt file or csv
@@ -442,13 +458,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-06 19:08:34</sys_updated_on>
+        <sys_updated_on>2026-02-07 20:43:39</sys_updated_on>
     </sys_script_include>
 </record_update>
