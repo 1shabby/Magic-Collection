@@ -28,12 +28,12 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         this.magicUtils = new x_759224_magic_c_0.magic_utils();
 
         this.format;
-		this.player = {
-			hp: 0,
-			turn: 0,
-			actions: []
-		};
-		
+        this.player = {
+            hp: 0,
+            turn: 0,
+            actions: []
+        };
+
         this.zones = {
             commandZone: [],
             hand: [],
@@ -49,6 +49,22 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             uses_sideboard: false
         };
     },
+
+    /**
+     * Description: Takes in a method name and message and logs the message in gs.info if debug and method isn't in noDebugMethods
+     * Parameters: [string] - methodName: name of method calling log.
+                   [string] - msg: message being called in log.
+     * Returns: None.
+     */
+
+    log: function(methodName, msg) {
+        if (this.debug && this.noDebugMethods.indexOf(methodName) === -1 && msg != null) {
+            if (typeof(msg) == 'object')
+                msg = JSON.stringify(msg);
+            gs.info('[Playtest Utils - ' + methodName + '] ' + msg);
+        }
+    },
+
     /*
      * Description: Loads in a deck via the provided deckID
      * Parameters: [string] deckID: Sys_id of a deck record
@@ -127,7 +143,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'Get Format Info'
+                method: 'GetFormatInfo'
             };
 
             var formatGR = new GlideRecord(this.constants.tables.DECK_FORMATS);
@@ -162,7 +178,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'Populate Zones'
+                method: 'PopulateZones'
             };
             var deckCardGR = new GlideRecord(this.constants.tables.DECK_CARDS);
             deckCardGR.addQuery('deck', deckID);
@@ -356,7 +372,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'Untap All',
+                method: 'UntapAll',
                 array: array
             };
 
@@ -423,7 +439,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'New Turn'
+                method: 'NewTurn'
             };
 
             var untap = this.untapAll(this.zones.battlefield); // Untap all cards
@@ -506,7 +522,7 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'Set Life'
+                method: 'SetLife'
             };
 
             if (typeof(amount) === 'number') {
@@ -539,43 +555,41 @@ playtest_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             var retObj = {
                 success: true,
                 message: '',
-                method: 'Add Action'
+                method: 'AddAction'
             };
-        
-        if (action.hasOwnProperty('success')) {
-            this.player.actions.push(action);
-            if (this.debug) {
-                gs.info('[Playtester Utils] : ' + this.player.actions.length + ' | ' +
-					action.success + ' | ' +
-                    action.message + ' | ' +
-                    action.method);
+
+            if (action.hasOwnProperty('success')) {
+                this.player.actions.push(action);
+                if (this.debug) {
+                    gs.info('[Playtester Utils] : ' + this.player.actions.length + ' | ' +
+                        action.success + ' | ' +
+                        action.message + ' | ' +
+                        action.method);
+                }
+            } else {
+                retObj.success = false;
+                retObj.messate = 'Action missing success key.';
             }
-        } else {
+        } catch (ex) {
             retObj.success = false;
-            retObj.messate = 'Action missing success key.';
+            retObj.message = ex.message;
         }
-    } catch (ex) {
-        retObj.success = false;
-        retObj.message = ex.message;
-    }
-    return retObj;
-},
+        return retObj;
+    },
 
-type: 'playtest_utils'
-});
-
-]]></script>
+    type: 'playtest_utils'
+});]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-04 02:18:12</sys_created_on>
         <sys_id>ea8a8e8693220210a066fa497bba101e</sys_id>
-        <sys_mod_count>92</sys_mod_count>
+        <sys_mod_count>93</sys_mod_count>
         <sys_name>playtest_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_ea8a8e8693220210a066fa497bba101e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-18 19:17:03</sys_updated_on>
+        <sys_updated_on>2026-02-08 18:27:49</sys_updated_on>
     </sys_script_include>
 </record_update>
