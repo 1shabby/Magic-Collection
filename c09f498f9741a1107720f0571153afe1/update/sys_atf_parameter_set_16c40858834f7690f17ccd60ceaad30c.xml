@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_parameter_set">
+    <sys_atf_parameter_set action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Name = Sol Ring
+Foiling = none
+Sets = 3ED - Revised Edition
+Collector Number = 274</description>
+        <order>1</order>
+        <parameters/>
+        <sys_class_name>sys_atf_parameter_set</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-09 15:10:15</sys_created_on>
+        <sys_id>16c40858834f7690f17ccd60ceaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_atf_parameter_set_16c40858834f7690f17ccd60ceaad30c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-09 15:10:15</sys_updated_on>
+        <test display_value="MTG Card Creation">12c02bbb837af290f17ccd60ceaad306</test>
+    </sys_atf_parameter_set>
+    <sys_variable_value action="delete_multiple" query="document_key=16c40858834f7690f17ccd60ceaad30c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_parameter_set</document>
+        <document_key>16c40858834f7690f17ccd60ceaad30c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-09 15:10:15</sys_created_on>
+        <sys_id>1615c498834f7690f17ccd60ceaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-09 15:10:15</sys_updated_on>
+        <value>Sol Ring</value>
+        <variable display_value="Name">350123fb837af290f17ccd60ceaad338</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_parameter_set</document>
+        <document_key>16c40858834f7690f17ccd60ceaad30c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-09 15:10:15</sys_created_on>
+        <sys_id>1a15c498834f7690f17ccd60ceaad37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-09 15:10:15</sys_updated_on>
+        <value>none</value>
+        <variable display_value="Foiling">3d5223bf837af290f17ccd60ceaad391</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_parameter_set</document>
+        <document_key>16c40858834f7690f17ccd60ceaad30c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-09 15:10:15</sys_created_on>
+        <sys_id>5e15c498834f7690f17ccd60ceaad37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-09 15:10:15</sys_updated_on>
+        <value>b4d8f56347c502102dbef1f4116d436a</value>
+        <variable display_value="Sets">eb51effb837af290f17ccd60ceaad3dd</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_parameter_set</document>
+        <document_key>16c40858834f7690f17ccd60ceaad30c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-09 15:10:15</sys_created_on>
+        <sys_id>d215c498834f7690f17ccd60ceaad37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-09 15:10:15</sys_updated_on>
+        <value>274</value>
+        <variable display_value="Collector Number">ef21e7fb837af290f17ccd60ceaad381</variable>
+    </sys_variable_value>
+</record_update>
