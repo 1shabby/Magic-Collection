@@ -11,7 +11,7 @@
         <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var magic_utils = Class.create();
 magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-    initialize: function(debug, noDebugMethods) {
+    initialize: function (debug, noDebugMethods) {
         this.debug = false; // Flag to allow debug or not on this script include
         this.noDebugMethods = []; // Array of methods to not log from
 
@@ -37,7 +37,6 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         ]
         // Time in hours to wait before creating another historic price record for a card.
         this.HISTORIC_PRICE_WAIT = 24;
-
     },
 
     /**
@@ -47,100 +46,74 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: None.
      */
 
-    log: function(methodName, msg) {
+    log: function (methodName, msg) {
         if (this.debug && this.noDebugMethods.indexOf(methodName) === -1) {
             gs.info('[Magic Utils - ' + methodName + '] ' + msg);
         }
     },
 
-    convertResponse: function(inputs) {
+    /**
+     * Description: Normalize a Scryfall API response into the internal card object
+     * Parameters: [object] - inputs: object containing the raw `response` (JSON string) and `foiling` info
+     * Returns: [object] - normalized card object ready for internal use
+     */
+
+    convertResponse: function (inputs) {
         var utils = new x_759224_magic_c_0.symbology_utils();
-        var body = JSON.parse(inputs.response);
-        var nBody;
-        if (body.data != null) {
-            nBody = body.data[0]; // get the first card object
-        } else {
-            (nBody = body);
-        }
-        nBody.foiling = inputs.foiling;
 
-        // Format legalities with game changer support
+        var parsed = {};
+        try {
+            parsed = JSON.parse(inputs && inputs.response ? inputs.response : '{}');
+        } catch (e) {
+            parsed = {};
+        }
+
+        var nBody = (parsed && Array.isArray(parsed.data) && parsed.data.length) ? parsed.data[0] : parsed || {};
+        nBody.foiling = (inputs && inputs.foiling) || nBody.foiling || 'none';
+
+        // Format legalities (preserves game_changer behaviour)
         if (nBody.legalities) {
-            var gameChanger = nBody.game_changer;
-            nBody.legalities = utils.formatLegalities(nBody.legalities, gameChanger);
+            nBody.legalities = utils.formatLegalities(nBody.legalities, nBody.game_changer);
         }
 
-        if (nBody.colors && Array.isArray(nBody.colors)) {
-            nBody.colors = nBody.colors.join(",");
-        }
-        var foiling = inputs.foiling.toString()
-        // Manage faces
-        if (nBody.card_faces && Array.isArray(nBody.card_faces)) {
+        // Normalize simple arrays to comma-separated strings
+        if (Array.isArray(nBody.colors)) nBody.colors = nBody.colors.join(',');
+        if (Array.isArray(nBody.color_identity)) nBody.color_identity = nBody.color_identity.join(',');
+        if (Array.isArray(nBody.produced_mana)) nBody.produced_mana = nBody.produced_mana.join(',');
+
+        // Handle multi-faced vs single-faced cards
+        if (Array.isArray(nBody.card_faces) && nBody.card_faces.length) {
             if (!nBody.image_uris) {
                 nBody.card_faces = utils.convertImageUrisToHtml(nBody, true);
             } else {
                 nBody.image_uris = utils.convertImageUrisToHtml(nBody, false);
             }
 
-            for (var face = 0; face < nBody.card_faces.length; face++) {
-                var thisFace = nBody.card_faces[face];
-
-                // Convert oracle text to contain symbols
-                if (typeof thisFace.oracle_text === 'string') {
-                    thisFace.oracle_text = utils.convertSymbolsToImages(thisFace.oracle_text);
-                }
-
-                // Convert mana cost to contain symbols
-                if (typeof thisFace.mana_cost === 'string') {
-                    thisFace.mana_cost = utils.convertSymbolsToImages(thisFace.mana_cost);
-                }
-
-                // Convert colors array to comma-separated string
-                if (Array.isArray(thisFace.colors)) {
-                    thisFace.colors = thisFace.colors.join(",");
-                }
+            for (var i = 0; i < nBody.card_faces.length; i++) {
+                var face = nBody.card_faces[i] || {};
+                if (typeof face.oracle_text === 'string') face.oracle_text = utils.convertSymbolsToImages(face.oracle_text);
+                if (typeof face.mana_cost === 'string') face.mana_cost = utils.convertSymbolsToImages(face.mana_cost);
+                if (Array.isArray(face.colors)) face.colors = face.colors.join(',');
             }
-
-        } else if (typeof nBody.oracle_text === 'string' && typeof nBody.mana_cost === 'string') {
-            // If it's a single-faced card
-            nBody.oracle_text = utils.convertSymbolsToImages(nBody.oracle_text);
-            nBody.mana_cost = utils.convertSymbolsToImages(nBody.mana_cost);
-
-            // Set colors
-            if (nBody.colors && Array.isArray(nBody.colors)) {
-                nBody.colors = nBody.colors.join(",");
-            }
-
-            if (nBody.image_uris) {
-                nBody.image_uris = utils.convertImageUrisToHtml(nBody, false);
-            }
+        } else {
+            if (typeof nBody.oracle_text === 'string') nBody.oracle_text = utils.convertSymbolsToImages(nBody.oracle_text);
+            if (typeof nBody.mana_cost === 'string') nBody.mana_cost = utils.convertSymbolsToImages(nBody.mana_cost);
+            if (nBody.image_uris) nBody.image_uris = utils.convertImageUrisToHtml(nBody, false);
         }
 
-        // These keys are always outside of the faces array
-        if (nBody.color_identity && Array.isArray(nBody.color_identity)) {
-            nBody.color_identity = nBody.color_identity.join(",");
-        }
-
-        if (nBody.produced_mana && Array.isArray(nBody.produced_mana)) {
-            nBody.produced_mana = nBody.produced_mana.join(",");
-        }
-        // Set keywords
-        if (nBody.keywords && Array.isArray(nBody.keywords)) {
-            var keywords = [];
-            var c = 0;
-            var input = nBody.keywords;
-            var l = nBody.keywords.length;
-            while (c < l) {
+        // Resolve keywords to sys_ids when possible
+        if (Array.isArray(nBody.keywords) && nBody.keywords.length) {
+            var kws = [];
+            for (var j = 0; j < nBody.keywords.length; j++) {
+                var kwName = nBody.keywords[j];
                 var keywordGr = new GlideRecord(this.KEYWORDS);
-                keywordGr.get('name', input[c]);
-                if (keywordGr)
-                    keywords.push(keywordGr.getUniqueValue());
-                c++;
+                if (keywordGr.get('name', kwName)) {
+                    kws.push(keywordGr.getUniqueValue());
+                }
             }
-            nBody.keywords = keywords.join(',');
+            nBody.keywords = kws.join(',');
         }
 
-        // Set the modified card object as the new response
         return nBody;
     },
 
@@ -150,19 +123,19 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [object]: Set record object.
      */
 
-    getSetRecord: function(set_id) {
+    getSetRecord: function (set_id) {
         var setGR = new GlideRecord(this.SETS);
         return setGR.get('id', set_id);
     },
 
     /* Description: Creates a owned card record for the provided card and user with the qty or default to 1
      * Parameters: [string] - card: sys id of the card to be associated to the user
-     			   [string] - user: sys id of the user the card will be associated to
-				   [integer] - qty: Quantity of the cards the user has, optional param defaults to 1
+                       [string] - user: sys id of the user the card will be associated to
+                   [integer] - qty: Quantity of the cards the user has, optional param defaults to 1
      * Returns: [object]: Contains a success flag and the record if success, or msg if failure
      */
 
-    createOwnedRecord: function(card, user, qty) {
+    createOwnedRecord: function (card, user, qty) {
         try {
             var newOwned = new GlideRecord(this.OWNED_CARDS);
             newOwned.initialize();
@@ -185,11 +158,11 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /* Description: Creates a token record for the provided name and scryfall ID 
      * Parameters: [string] - name: Name of the token to be created
-     			   [string] - id: Scryfall ID of the token. Used for generating association later
+                       [string] - id: Scryfall ID of the token. Used for generating association later
      * Returns: [object]: Contains a success flag and the record if success, or msg if failure
      */
 
-    createToken: function(name, id) {
+    createToken: function (name, id) {
         try {
             var newToken = new GlideRecord(this.CARDS);
             newToken.initialize();
@@ -211,12 +184,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     /** 
     * Description: Creates a token association record for the provided card and token records
-	* Parameters: [object] - card: Card GlideRecord object
-				  [object] - token: Token Card GlideRecord object
-	* Returns: [object]: Contains a success flag and the record if success, or msg if failure
-	*/
+    * Parameters: [object] - card: Card GlideRecord object
+                  [object] - token: Token Card GlideRecord object
+    * Returns: [object]: Contains a success flag and the record if success, or msg if failure
+    */
 
-    createTokenAssociation: function(card, token) {
+    createTokenAssociation: function (card, token) {
         try {
             var newTokenAssociation = new GlideRecord(this.TOKEN_ASSOCIATION);
             newTokenAssociation.initialize();
@@ -243,7 +216,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [integer]: The number of associations for the provided card and token
      */
 
-    getTokenAssociationCount: function(card, token) {
+    getTokenAssociationCount: function (card, token) {
         var associationGR = new GlideRecord(this.TOKEN_ASSOCIATION);
 
         var cardSysId = (card && typeof card.getUniqueValue === 'function') ? card.getUniqueValue() : card;
@@ -265,7 +238,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [string]: source url for the image, or the default back image.
      */
 
-    getImgSrc: function(img) {
+    getImgSrc: function (img) {
         var regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
         if (img)
             var match = img.match(regex);
@@ -284,7 +257,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [string]: Contents inside of the HTML.
      */
 
-    stripHTML: function(html) {
+    stripHTML: function (html) {
         return html.replace(/<[^>]*>/g, '');
     },
 
@@ -294,7 +267,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [string]: Comma separated string of colors in the form of sys_ids since the fields use a reference to a colors table instead of specified choices.
      */
 
-    convertColors: function(colors) {
+    convertColors: function (colors) {
         if (!colors) return "";
 
         var order = ['W', 'U', 'B', 'R', 'G', 'C'];
@@ -314,7 +287,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [Array] - relArr: An array of JSON objects containg the related card name and image.
      */
 
-    getRelatedCards: function(id) {
+    getRelatedCards: function (id) {
         var relGR = new GlideRecord(this.TOKEN_ASSOCIATION);
         relGR.addQuery('card', id);
         relGR.query();
@@ -338,7 +311,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [object] - cardData: JSON object containing all the data from the card record.
      */
 
-    getOtherPrintings: function(name) {
+    getOtherPrintings: function (name) {
         var cardGR = new GlideRecord(this.CARDS);
         cardGR.addQuery('token', false);
         cardGR.addQuery('name', name);
@@ -360,17 +333,17 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     /** 
     * Description: Takes in a card GlideRecord and a response object
     * Parameters: [GlideRecord]: Card - card record to update values of
-    			  [Object]: Resp - Object to pull data from to set on the card
+                  [Object]: Resp - Object to pull data from to set on the card
     * Returns: 
     */
 
-    setCardValues: function(card, resp) {
+    setCardValues: function (card, resp) {
         try {
             var outputs = {};
             // Fields to always populate
             var topFields = this.GENERAL_FIELDS;
 
-            topFields.forEach(function(field) {
+            topFields.forEach(function (field) {
                 if (resp[field] !== undefined && resp[field] !== null) {
                     card.setValue(field, resp[field]);
                 }
@@ -536,7 +509,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: Creates a historical card price record
      */
 
-    generateHistoricalPrices: function(card) {
+    generateHistoricalPrices: function (card) {
 
         // Generate Historical Price record
         var historicalPriceGr = new GlideRecord(this.HISTORICAL_PRICES);
@@ -559,7 +532,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: Creates any tokens / token associations for the provided card / response combo
      */
 
-    generateTokens: function(card, resp) {
+    generateTokens: function (card, resp) {
         // Generate Tokens
         if (resp.all_parts) {
             var c = 0;
@@ -596,7 +569,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Returns: [object] - cardData: JSON object containing all the data from the card record.
      */
 
-    getCardData: function(id) {
+    getCardData: function (id) {
         var cardGR = new GlideRecord(this.CARDS);
         cardGR.get(id); // Get the card record
         var cardData = {
@@ -710,14 +683,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>162</sys_mod_count>
+        <sys_mod_count>164</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-13 05:32:43</sys_updated_on>
+        <sys_updated_on>2026-02-13 22:41:45</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
