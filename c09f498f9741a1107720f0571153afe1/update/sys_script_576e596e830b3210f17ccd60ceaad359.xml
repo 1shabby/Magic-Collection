@@ -6,7 +6,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -27,16 +27,19 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-	var utils = new x_759224_magic_c_0.deck_utils();
-	var cmcResp = utils.calculateCMC(current.getValue('deck'));
-	if(cmcResp.success && cmcResp.cmc)
-		current.deck.cmc = cmcResp.cmc;
-	var countResp = utils.getCardCount(current.getValue('deck'));
-	if(countResp.success && countResp.cards)
-		current.deck.cards = countResp.cards;
-	current.update();
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var utils = new x_759224_magic_c_0.deck_utils();
+    var cmcResp = utils.calculateCMC(current.getValue('deck'));
+    const deckGR = new GlideRecord(utils.constants.tables.DECK);
+    if (deckGR.get(current.getValue('deck'))) {
+        gs.addInfoMessage(JSON.stringify(cmcResp));
+        if (cmcResp.success && cmcResp.cmc && deckGR.cmc != cmcResp.cmc)
+            deckGR.cmc = cmcResp.cmc;
+        var countResp = utils.getCardCount(current.getValue('deck'));
+        if (countResp.success && countResp.cards && deckGR.cards != countResp.cards)
+            deckGR.cards = countResp.cards;
+        deckGR.update();
+    }
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -44,7 +47,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>576e596e830b3210f17ccd60ceaad359</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Set CMC &amp; Cards</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -52,7 +55,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_576e596e830b3210f17ccd60ceaad359</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-16 21:44:14</sys_updated_on>
+        <sys_updated_on>2026-02-18 01:59:26</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
