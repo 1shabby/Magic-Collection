@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9e70a57b83d7b210f17ccd60ceaad331" label="MTG Card Rulings" max_length="40" name="x_759224_magic_c_0_mtg_card_rulings" type="collection">
+        <element label="Card" max_length="32" name="card" reference="x_759224_magic_c_0_card" type="reference"/>
+        <index name="index">
+            <element name="card"/>
+        </index>
+    </element>
+</database>
