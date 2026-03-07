@@ -16,7 +16,7 @@
         <flow_priority/>
         <ih_action>true</ih_action>
         <internal_name>mtg_scryfall__get_rulings</internal_name>
-        <label_cache>[{"name":"{{action.oracle_id}}","label":"action➛Oracle ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.scryfall_id}}","label":"action➛Scryfall ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.credential_alias}}","label":"action➛credential_alias","type":"action","ref":"","reference_display":"","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.base_url}}","label":"action➛Base URL","type":"action","ref":"","reference_display":"","base_type":"url","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"URL","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"url","uiUniqueId":"c68eb7b2-ae4c-4bc1-85a4-489016587631"}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}}]</label_cache>
+        <label_cache>[{"name":"{{action.oracle_id}}","label":"action➛Oracle ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.scryfall_id}}","label":"action➛Scryfall ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.credential_alias}}","label":"action➛credential_alias","type":"action","ref":"","reference_display":"","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.base_url}}","label":"action➛Base URL","type":"action","ref":"","reference_display":"","base_type":"url","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"URL","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"url","uiUniqueId":"c68eb7b2-ae4c-4bc1-85a4-489016587631"}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[6e71e3b3-1eaa-468e-8b71-29a40d0193e7].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master_snapshot>67399f4e83537610f17ccd60ceaad36d</master_snapshot>
         <master_snapshot_digest/>
         <name>MTG Scryfall - Get Rulings</name>
@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>70b652f5839bb210f17ccd60ceaad34d</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>MTG Scryfall - Get Rulings</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_70b652f5839bb210f17ccd60ceaad34d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -67,10 +67,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-27 03:54:13</sys_created_on>
         <sys_id>b6f6d239839bb210f17ccd60ceaad308</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:44:25</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <sys_updated_on>2026-03-07 21:10:01</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
         <variable display_value="Action Status">7ef69239839bb210f17ccd60ceaad3ef</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=70b652f5839bb210f17ccd60ceaad34d"/>
@@ -80,11 +80,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-03 04:49:17</sys_created_on>
         <sys_id>6cf98fcf835b7610f17ccd60ceaad3fa</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:17</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:03</sys_updated_on>
         <table>var__m_sys_hub_action_output_70b652f5839bb210f17ccd60ceaad34d</table>
-        <value>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}</value>
+        <value>{{step[6e71e3b3-1eaa-468e-8b71-29a40d0193e7].root}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>__action_status__</field>
@@ -110,7 +110,248 @@
         <table>var__m_sys_hub_action_output_70b652f5839bb210f17ccd60ceaad34d</table>
         <value/>
     </sys_element_mapping>
-    <sys_hub_step_instance action="delete_multiple" query="action=70b652f5839bb210f17ccd60ceaad34d^sys_idNOT INfaf69239839bb210f17ccd60ceaad3b1"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=70b652f5839bb210f17ccd60ceaad34d^sys_idNOT IN7d10572483efb210f17ccd60ceaad3dd,faf69239839bb210f17ccd60ceaad3b1"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</action>
+        <cid>6e71e3b3-1eaa-468e-8b71-29a40d0193e7</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <inputs/>
+        <label>JSON Parser step</label>
+        <order>2</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="JSON Parser">502328c387523300f917e55936cb0bf0</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>7d10572483efb210f17ccd60ceaad3dd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>7d10572483efb210f17ccd60ceaad3dd</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>0210972483efb210f17ccd60ceaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"list"},{"name":"has_more","children":[],"type":"string","jpath":"$.has_more","previewValue":"false"},{"name":"data","children":[{"name":"data_object","children":[{"name":"object","children":[],"type":"string","jpath":"$.data[*].object","previewValue":"ruling"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.data[*].oracle_id","previewValue":"f5ca7b13-8003-4361-b827-7095c89f2750"},{"name":"source","children":[],"type":"string","jpath":"$.data[*].source","previewValue":"wotc"},{"name":"published_at","children":[],"type":"string","jpath":"$.data[*].published_at","previewValue":"2004-10-04"},{"name":"comment","children":[],"type":"string","jpath":"$.data[*].comment","previewValue":"It must flip like a coin and not like a Frisbee."}],"type":"object","jpath":"$.data[*]","previewValue":""}],"type":"array.object","jpath":"$.data[*]","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
+        <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>7d10572483efb210f17ccd60ceaad3dd</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>c210972483efb210f17ccd60ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <value>{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "f5ca7b13-8003-4361-b827-7095c89f2750",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "It must flip like a coin and not like a Frisbee."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f5ca7b13-8003-4361-b827-7095c89f2750",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "Only cards touched when it stops moving are affected. Not ones touched while it is moving."
+    }
+  ]
+}</value>
+        <variable display_value="Sample payload">d335ac0787523300f917e55936cb0b1d</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_7d10572483efb210f17ccd60ceaad3dd^id=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_element_mapping action="delete_multiple" query="id=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>sample_payload</field>
+        <id>7d10572483efb210f17ccd60ceaad3dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>4e10972483efb210f17ccd60ceaad30b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_data</field>
+        <id>7d10572483efb210f17ccd60ceaad3dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>0a10972483efb210f17ccd60ceaad30b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_schema</field>
+        <id>7d10572483efb210f17ccd60ceaad3dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>c610972483efb210f17ccd60ceaad30a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=7d10572483efb210f17ccd60ceaad3dd^sys_idNOT INfd10572483efb210f17ccd60ceaad3f4"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD351057245cefb210062dcccaca3a81f1</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD351057245cefb210062dcccaca3a81f1":{"data":[{"$0_data":{"oracle_id":"String","oracle_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracle_id\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"f7d75065-3366-4924-915b-9cbf0f5ba75a\"}"},"comment":"String","comment.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"comment\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"80d9f966-6c79-494c-bcb3-406b11942375\"}"},"source":"String","source.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"source\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"9e7d333e-ecd5-42d5-b1f4-89e43cfde8ba\"}"},"published_at":"String","published_at.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"published_at\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"7e66685e-cd70-415b-b420-3e440b865e97\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"be8ed342-5704-4944-b5a3-9b67b60bb7bf\"}"}}}],"data.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"data\",\"mandatory\":\"false\",\"child_name\":\"data_object\",\"uiUniqueId\":\"85f3dffb-9bc3-4864-b420-3295c1f2b964\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"data_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"ad0cf25f-527c-4400-a461-a77ec5b1d03c\"}"},"has_more":"String","has_more.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"has_more\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a429aa38-ba16-46b6-b168-7d60b71e19bd\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"98d51c83-7f43-49bf-8b92-35c8adb8610e\"}"}},"FlowDesigner:FD351057245cefb210062dcccaca3a81f1.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"root\",\"mandatory\":\"false\",\"uiUniqueId\":\"0e067201-7486-4a2b-bedd-654a295cdfc9\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD351057245cefb210062dcccaca3a81f1\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3910572483efb210f17ccd60ceaad3f1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:30:02</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>co_type_name=FD351057245cefb210062dcccaca3a81f1,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=0e067201-7486-4a2b-bedd-654a295cdfc9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>root</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>root</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="JSON Parser step">7d10572483efb210f17ccd60ceaad3dd</model>
+        <model_id>7d10572483efb210f17ccd60ceaad3dd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_7d10572483efb210f17ccd60ceaad3dd</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>fd10572483efb210f17ccd60ceaad3f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7d10572483efb210f17ccd60ceaad3dd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>root</element>
+        <help/>
+        <hint/>
+        <label>root</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_7d10572483efb210f17ccd60ceaad3dd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:02</sys_created_on>
+        <sys_id>c210972483efb210f17ccd60ceaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</action>
         <cid>bb38424a-ebc8-4efa-97ff-2c61f64e33f2</cid>
@@ -128,10 +369,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-27 03:54:13</sys_created_on>
         <sys_id>faf69239839bb210f17ccd60ceaad3b1</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-02 04:46:48</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:10:00</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=faf69239839bb210f17ccd60ceaad3b1"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -279,11 +520,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:11</sys_created_on>
         <sys_id>d3395f4e83537610f17ccd60ceaad3e2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-02 04:46:48</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:10:00</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_07a762fb47222200b4fad7527c9a7129</table>
-        <value>{{action.base_url}}/{{action.scryfall_id}}/rulings</value>
+        <value>https://api.scryfall.com/{{action.scryfall_id}}/rulings</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>capabilities</field>
@@ -373,91 +614,7 @@
     <sys_hub_step_ext_input action="delete_multiple" query="model=faf69239839bb210f17ccd60ceaad3b1"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=faf69239839bb210f17ccd60ceaad3b1"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=faf69239839bb210f17ccd60ceaad3b1"/>
-    <sys_hub_action_input action="delete_multiple" query="model=70b652f5839bb210f17ccd60ceaad34d^sys_idNOT IN97eeb5ba8353f210f17ccd60ceaad3a8,e6f69239839bb210f17ccd60ceaad345"/>
-    <sys_hub_action_input action="INSERT_OR_UPDATE">
-        <active>true</active>
-        <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=url,uiTypeLabel=URL,uiUniqueId=c68eb7b2-ae4c-4bc1-85a4-489016587631</attributes>
-        <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
-        <choice_field/>
-        <choice_table/>
-        <column_label/>
-        <comments/>
-        <create_roles/>
-        <default_value/>
-        <defaultsort/>
-        <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
-        <display>false</display>
-        <dynamic_creation>false</dynamic_creation>
-        <dynamic_creation_script/>
-        <dynamic_default_value/>
-        <dynamic_ref_qual/>
-        <element>base_url</element>
-        <element_reference>false</element_reference>
-        <foreign_database/>
-        <formula/>
-        <function_definition/>
-        <function_field>false</function_field>
-        <help/>
-        <hint/>
-        <internal_type display_value="URL">url</internal_type>
-        <label>Base URL</label>
-        <mandatory>true</mandatory>
-        <max_length>1024</max_length>
-        <model display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</model>
-        <model_id>70b652f5839bb210f17ccd60ceaad34d</model_id>
-        <model_table>sys_hub_action_type_definition</model_table>
-        <name>var__m_sys_hub_action_input_70b652f5839bb210f17ccd60ceaad34d</name>
-        <next_element/>
-        <order>2</order>
-        <primary>false</primary>
-        <read_only>false</read_only>
-        <read_roles/>
-        <reference/>
-        <reference_cascade_rule/>
-        <reference_floats>false</reference_floats>
-        <reference_key/>
-        <reference_qual/>
-        <reference_qual_condition/>
-        <reference_type/>
-        <sizeclass/>
-        <spell_check>false</spell_check>
-        <staged>false</staged>
-        <sys_class_name>sys_hub_action_input</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-02 04:43:02</sys_created_on>
-        <sys_id>97eeb5ba8353f210f17ccd60ceaad3a8</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name/>
-        <sys_package/>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:40:45</sys_updated_on>
-        <table_reference>false</table_reference>
-        <text_index>false</text_index>
-        <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
-        <widget/>
-        <write_roles/>
-        <xml_view>false</xml_view>
-    </sys_hub_action_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=97eeb5ba8353f210f17ccd60ceaad3a8"/>
+    <sys_hub_action_input action="delete_multiple" query="model=70b652f5839bb210f17ccd60ceaad34d^sys_idNOT INe6f69239839bb210f17ccd60ceaad345"/>
     <sys_hub_action_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -543,11 +700,34 @@
     </sys_hub_action_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e6f69239839bb210f17ccd60ceaad345"/>
     <sys_hub_action_output action="delete_multiple" query="model=70b652f5839bb210f17ccd60ceaad34d^sys_idNOT IN10f98fcf835b7610f17ccd60ceaad3d2,7ef69239839bb210f17ccd60ceaad3ef,7ef69239839bb210f17ccd60ceaad3f7"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDf2555becfdefb210f820107cb884a7ab</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FDf2555becfdefb210f820107cb884a7ab":{"data":[{"$0_data":{"oracle_id":"String","oracle_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracle_id\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"f7d75065-3366-4924-915b-9cbf0f5ba75a\"}"},"comment":"String","comment.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"comment\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"80d9f966-6c79-494c-bcb3-406b11942375\"}"},"source":"String","source.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"source\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"9e7d333e-ecd5-42d5-b1f4-89e43cfde8ba\"}"},"published_at":"String","published_at.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"published_at\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"7e66685e-cd70-415b-b420-3e440b865e97\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"be8ed342-5704-4944-b5a3-9b67b60bb7bf\"}"}}}],"data.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"data\",\"mandatory\":\"false\",\"child_name\":\"data_object\",\"uiUniqueId\":\"85f3dffb-9bc3-4864-b420-3295c1f2b964\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"data_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"ad0cf25f-527c-4400-a461-a77ec5b1d03c\"}"},"has_more":"String","has_more.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"has_more\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a429aa38-ba16-46b6-b168-7d60b71e19bd\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"98d51c83-7f43-49bf-8b92-35c8adb8610e\"}"}},"FlowDesigner:FDf2555becfdefb210f820107cb884a7ab.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"6e71e3b3-1eaa-468e-8b71-29a40d0193e7\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"f51b8fb3-e6a8-4f26-b4e1-d9efb54787bf\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDf2555becfdefb210f820107cb884a7ab\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"0e067201-7486-4a2b-bedd-654a295cdfc9\",\"sourceType\":\"step\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"0\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:30:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f6555bec83efb210f17ccd60ceaad3ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:30:02</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=bbdc6c7e-ecd4-454a-9c69-2cf45a40b424</attributes>
+        <attributes>co_type_name=FDf2555becfdefb210f820107cb884a7ab,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=6e71e3b3-1eaa-468e-8b71-29a40d0193e7,sourceType=step,sourceUiUniqueId=0e067201-7486-4a2b-bedd-654a295cdfc9,uiType=object,uiTypeLabel=Object,uiUniqueId=f51b8fb3-e6a8-4f26-b4e1-d9efb54787bf</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -572,7 +752,7 @@
         <dynamic_default_value/>
         <dynamic_ref_qual/>
         <element>response</element>
-        <element_prototype display_value="Response Body" element="response_body" name="var__m_sys_flow_step_definition_output_07a762fb47222200b4fad7527c9a7129">a804c77347622200b4fad7527c9a7119</element_prototype>
+        <element_prototype/>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -583,8 +763,8 @@
         <internal_link/>
         <internal_type display_value="String">string</internal_type>
         <label>Response</label>
-        <mandatory>true</mandatory>
-        <max_length>8000</max_length>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
         <model display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</model>
         <model_id>70b652f5839bb210f17ccd60ceaad34d</model_id>
         <model_table>sys_hub_action_type_definition</model_table>
@@ -608,14 +788,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-03 04:49:16</sys_created_on>
         <sys_id>10f98fcf835b7610f17ccd60ceaad3d2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:17</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:02</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -782,14 +962,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-27 03:54:13</sys_created_on>
         <sys_id>7ef69239839bb210f17ccd60ceaad3f7</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:17</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:03</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -815,34 +995,20 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-02-27 03:54:13</sys_updated_on>
     </sys_hub_action_status_metadata>
-    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=baf6d239839bb210f17ccd60ceaad30a^sys_idNOT IN55d8cb4f835b7610f17ccd60ceaad3b3,97d0cc6a83133210f17ccd60ceaad3ba,e3eef5ba8353f210f17ccd60ceaad357"/>
-    <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 2026-02-26 19:54:13">baf6d239839bb210f17ccd60ceaad30a</action_status_metadata_id>
-        <condition>{{action.base_url}}ISEMPTY</condition>
-        <dont_treat_as_error>false</dont_treat_as_error>
-        <label>No Base URL</label>
-        <order>3</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Base URL"}}},"serializationFormat":"JSON"}</status>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:44:25</sys_created_on>
-        <sys_id>55d8cb4f835b7610f17ccd60ceaad3b3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:44:25</sys_updated_on>
-    </sys_hub_status_condition>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=baf6d239839bb210f17ccd60ceaad30a^sys_idNOT IN97d0cc6a83133210f17ccd60ceaad3ba,e3eef5ba8353f210f17ccd60ceaad357"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-26 19:54:13">baf6d239839bb210f17ccd60ceaad30a</action_status_metadata_id>
         <condition>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}!=200</condition>
         <dont_treat_as_error>false</dont_treat_as_error>
         <label>REST Code is not 200</label>
         <order>1</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</status>
+        <status>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</status>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-01 00:53:47</sys_created_on>
         <sys_id>97d0cc6a83133210f17ccd60ceaad3ba</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-01 00:53:47</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:03</sys_updated_on>
     </sys_hub_status_condition>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-26 19:54:13">baf6d239839bb210f17ccd60ceaad30a</action_status_metadata_id>
@@ -850,13 +1016,13 @@
         <dont_treat_as_error>false</dont_treat_as_error>
         <label>No Scryfall ID</label>
         <order>2</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Scryfall ID input."}}},"serializationFormat":"JSON"}</status>
+        <status>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Scryfall ID input."}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</status>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-02 04:43:03</sys_created_on>
         <sys_id>e3eef5ba8353f210f17ccd60ceaad357</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-02 04:43:03</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:03</sys_updated_on>
     </sys_hub_status_condition>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>credential_alias</element>
@@ -901,29 +1067,6 @@
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-02-27 03:54:12</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>base_url</element>
-        <help/>
-        <hint/>
-        <label>Base URL</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_input_70b652f5839bb210f17ccd60ceaad34d</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-02 04:43:02</sys_created_on>
-        <sys_id>d7eeb5ba8353f210f17ccd60ceaad3b3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-02 04:46:48</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -1002,17 +1145,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"0c49df4e83537610f17ccd60ceaad38f","name":"plan","plan_signature":null}}</plan>
-        <snapshot>b4f9cfcf835b7610f17ccd60ceaad3ed</snapshot>
+        <snapshot>e7559bec83efb210f17ccd60ceaad3d6</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:14</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0c49df4e83537610f17ccd60ceaad38f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:19</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:06</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1029,7 +1172,7 @@
         <description>Gets the rulings for the specified card.</description>
         <flow_priority/>
         <internal_name>mtg_scryfall__get_rulings</internal_name>
-        <label_cache>[{"name":"{{action.oracle_id}}","label":"action➛Oracle ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.scryfall_id}}","label":"action➛Scryfall ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.credential_alias}}","label":"action➛credential_alias","type":"action","ref":"","reference_display":"","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.base_url}}","label":"action➛Base URL","type":"action","ref":"","reference_display":"","base_type":"url","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"URL","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"url","uiUniqueId":"c68eb7b2-ae4c-4bc1-85a4-489016587631"}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}}]</label_cache>
+        <label_cache>[{"name":"{{action.oracle_id}}","label":"action➛Oracle ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.scryfall_id}}","label":"action➛Scryfall ID","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.credential_alias}}","label":"action➛credential_alias","type":"action","ref":"","reference_display":"","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.base_url}}","label":"action➛Base URL","type":"action","ref":"","reference_display":"","base_type":"url","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"URL","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"url","uiUniqueId":"c68eb7b2-ae4c-4bc1-85a4-489016587631"}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"hidden_for":"DATASTREAM"}},{"name":"{{step[6e71e3b3-1eaa-468e-8b71-29a40d0193e7].root}}","label":"step➛JSON Parser step➛root","type":"step","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}}]</label_cache>
         <master>true</master>
         <name>MTG Scryfall - Get Rulings</name>
         <natlang/>
@@ -1042,7 +1185,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>67399f4e83537610f17ccd60ceaad36d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1050,7 +1193,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:17</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:04</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -1078,10 +1221,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:13</sys_created_on>
         <sys_id>7739df4e83537610f17ccd60ceaad315</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-01 00:54:00</sys_updated_on>
-        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
         <variable display_value="Action Status">3b399f4e83537610f17ccd60ceaad3fe</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=67399f4e83537610f17ccd60ceaad36d"/>
@@ -1091,11 +1234,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-03 04:49:18</sys_created_on>
         <sys_id>b8f9cfcf835b7610f17ccd60ceaad3e9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
         <table>var__m_sys_hub_action_output_67399f4e83537610f17ccd60ceaad36d</table>
-        <value>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}</value>
+        <value>{{step[6e71e3b3-1eaa-468e-8b71-29a40d0193e7].root}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>__action_status__</field>
@@ -1121,7 +1264,7 @@
         <table>var__m_sys_hub_action_output_67399f4e83537610f17ccd60ceaad36d</table>
         <value/>
     </sys_element_mapping>
-    <sys_hub_step_instance action="delete_multiple" query="action=67399f4e83537610f17ccd60ceaad36d^sys_idNOT IN2b399f4e83537610f17ccd60ceaad39f"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=67399f4e83537610f17ccd60ceaad36d^sys_idNOT IN2b399f4e83537610f17ccd60ceaad39f,6610d72483efb210f17ccd60ceaad34a"/>
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
         <action display_value="MTG Scryfall - Get Rulings">67399f4e83537610f17ccd60ceaad36d</action>
         <cid>bb38424a-ebc8-4efa-97ff-2c61f64e33f2</cid>
@@ -1139,10 +1282,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:12</sys_created_on>
         <sys_id>2b399f4e83537610f17ccd60ceaad39f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:40:48</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:10:03</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2b399f4e83537610f17ccd60ceaad39f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1290,11 +1433,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:13</sys_created_on>
         <sys_id>33399f4e83537610f17ccd60ceaad3f5</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:40:48</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:10:03</sys_updated_on>
         <table>var__m_sys_flow_step_definition_input_07a762fb47222200b4fad7527c9a7129</table>
-        <value>{{action.base_url}}/{{action.scryfall_id}}/rulings</value>
+        <value>https://api.scryfall.com/{{action.scryfall_id}}/rulings</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>capabilities</field>
@@ -1384,12 +1527,145 @@
     <sys_hub_step_ext_input action="delete_multiple" query="model=2b399f4e83537610f17ccd60ceaad39f"/>
     <sys_hub_step_ext_output action="delete_multiple" query="model=2b399f4e83537610f17ccd60ceaad39f"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=2b399f4e83537610f17ccd60ceaad39f"/>
-    <sys_hub_action_input action="delete_multiple" query="model=67399f4e83537610f17ccd60ceaad36d^sys_idNOT IN4808430f835b7610f17ccd60ceaad333,67399f4e83537610f17ccd60ceaad373"/>
-    <sys_hub_action_input action="INSERT_OR_UPDATE">
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="MTG Scryfall - Get Rulings">67399f4e83537610f17ccd60ceaad36d</action>
+        <cid>6e71e3b3-1eaa-468e-8b71-29a40d0193e7</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <inputs/>
+        <label>JSON Parser step</label>
+        <order>2</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="JSON Parser">502328c387523300f917e55936cb0bf0</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>6610d72483efb210f17ccd60ceaad34a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>6610d72483efb210f17ccd60ceaad34a</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>2210d72483efb210f17ccd60ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <value>{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "f5ca7b13-8003-4361-b827-7095c89f2750",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "It must flip like a coin and not like a Frisbee."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f5ca7b13-8003-4361-b827-7095c89f2750",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "Only cards touched when it stops moving are affected. Not ones touched while it is moving."
+    }
+  ]
+}</value>
+        <variable display_value="Sample payload">d335ac0787523300f917e55936cb0b1d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>6610d72483efb210f17ccd60ceaad34a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>ea10d72483efb210f17ccd60ceaad35d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <value>{"name":"root","children":[{"name":"object","children":[],"type":"string","jpath":"$.object","previewValue":"list"},{"name":"has_more","children":[],"type":"string","jpath":"$.has_more","previewValue":"false"},{"name":"data","children":[{"name":"data_object","children":[{"name":"object","children":[],"type":"string","jpath":"$.data[*].object","previewValue":"ruling"},{"name":"oracle_id","children":[],"type":"string","jpath":"$.data[*].oracle_id","previewValue":"f5ca7b13-8003-4361-b827-7095c89f2750"},{"name":"source","children":[],"type":"string","jpath":"$.data[*].source","previewValue":"wotc"},{"name":"published_at","children":[],"type":"string","jpath":"$.data[*].published_at","previewValue":"2004-10-04"},{"name":"comment","children":[],"type":"string","jpath":"$.data[*].comment","previewValue":"It must flip like a coin and not like a Frisbee."}],"type":"object","jpath":"$.data[*]","previewValue":""}],"type":"array.object","jpath":"$.data[*]","previewValue":""}],"type":"object","jpath":"$","previewValue":""}</value>
+        <variable display_value="Target">4674240787523300f917e55936cb0b0e</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_6610d72483efb210f17ccd60ceaad34a^id=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_element_mapping action="delete_multiple" query="id=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>sample_payload</field>
+        <id>6610d72483efb210f17ccd60ceaad34a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>2a10d72483efb210f17ccd60ceaad35d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>source_data</field>
+        <id>6610d72483efb210f17ccd60ceaad34a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>e210d72483efb210f17ccd60ceaad35d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>target_schema</field>
+        <id>6610d72483efb210f17ccd60ceaad34a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>ae10d72483efb210f17ccd60ceaad35c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_502328c387523300f917e55936cb0bf0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=6610d72483efb210f17ccd60ceaad34a^sys_idNOT INa610d72483efb210f17ccd60ceaad350"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD2610d72456efb210844e7fe675c6524f</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FD2610d72456efb210844e7fe675c6524f":{"data":[{"$0_data":{"oracle_id":"String","oracle_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracle_id\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"f7d75065-3366-4924-915b-9cbf0f5ba75a\"}"},"comment":"String","comment.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"comment\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"80d9f966-6c79-494c-bcb3-406b11942375\"}"},"source":"String","source.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"source\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"9e7d333e-ecd5-42d5-b1f4-89e43cfde8ba\"}"},"published_at":"String","published_at.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"published_at\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"7e66685e-cd70-415b-b420-3e440b865e97\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"be8ed342-5704-4944-b5a3-9b67b60bb7bf\"}"}}}],"data.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"data\",\"mandatory\":\"false\",\"child_name\":\"data_object\",\"uiUniqueId\":\"85f3dffb-9bc3-4864-b420-3295c1f2b964\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"data_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"ad0cf25f-527c-4400-a461-a77ec5b1d03c\"}"},"has_more":"String","has_more.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"has_more\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a429aa38-ba16-46b6-b168-7d60b71e19bd\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"98d51c83-7f43-49bf-8b92-35c8adb8610e\"}"}},"FlowDesigner:FD2610d72456efb210844e7fe675c6524f.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"root\",\"mandatory\":\"false\",\"uiUniqueId\":\"0e067201-7486-4a2b-bedd-654a295cdfc9\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD2610d72456efb210844e7fe675c6524f\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2a10d72483efb210f17ccd60ceaad34f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:30:04</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=url,uiTypeLabel=URL,uiUniqueId=c68eb7b2-ae4c-4bc1-85a4-489016587631</attributes>
+        <attributes>co_type_name=FD2610d72456efb210844e7fe675c6524f,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=0e067201-7486-4a2b-bedd-654a295cdfc9</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -1413,7 +1689,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>base_url</element>
+        <element>root</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -1421,16 +1697,16 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="URL">url</internal_type>
-        <label>Base URL</label>
-        <mandatory>true</mandatory>
-        <max_length>1024</max_length>
-        <model display_value="MTG Scryfall - Get Rulings">67399f4e83537610f17ccd60ceaad36d</model>
-        <model_id>67399f4e83537610f17ccd60ceaad36d</model_id>
-        <model_table>sys_hub_action_type_snapshot</model_table>
-        <name>var__m_sys_hub_action_input_67399f4e83537610f17ccd60ceaad36d</name>
+        <internal_type display_value="String">string</internal_type>
+        <label>root</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="JSON Parser step">6610d72483efb210f17ccd60ceaad34a</model>
+        <model_id>6610d72483efb210f17ccd60ceaad34a</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_6610d72483efb210f17ccd60ceaad34a</name>
         <next_element/>
-        <order>2</order>
+        <order>1</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -1444,10 +1720,10 @@
         <sizeclass/>
         <spell_check>false</spell_check>
         <staged>false</staged>
-        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:40:47</sys_created_on>
-        <sys_id>4808430f835b7610f17ccd60ceaad333</sys_id>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>a610d72483efb210f17ccd60ceaad350</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -1455,7 +1731,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:40:47</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1467,8 +1743,32 @@
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
-    </sys_hub_action_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4808430f835b7610f17ccd60ceaad333"/>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=6610d72483efb210f17ccd60ceaad34a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>root</element>
+        <help/>
+        <hint/>
+        <label>root</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_6610d72483efb210f17ccd60ceaad34a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_id>2610d72483efb210f17ccd60ceaad355</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:07:05</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=67399f4e83537610f17ccd60ceaad36d^sys_idNOT IN67399f4e83537610f17ccd60ceaad373"/>
     <sys_hub_action_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -1619,14 +1919,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-28 03:22:13</sys_created_on>
         <sys_id>3739df4e83537610f17ccd60ceaad306</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1641,11 +1941,34 @@
     </sys_hub_action_output>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3739df4e83537610f17ccd60ceaad306"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=3739df4e83537610f17ccd60ceaad306"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDf210d7246cefb2105a20c3d61337d061</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>c09f498f9741a1107720f0571153afe1</scope_name>
+        <serialized_content>{"FlowDesigner:FDf210d7246cefb2105a20c3d61337d061":{"data":[{"$0_data":{"oracle_id":"String","oracle_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"oracle_id\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"f7d75065-3366-4924-915b-9cbf0f5ba75a\"}"},"comment":"String","comment.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"comment\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\",\"uiUniqueId\":\"80d9f966-6c79-494c-bcb3-406b11942375\"}"},"source":"String","source.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"source\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"9e7d333e-ecd5-42d5-b1f4-89e43cfde8ba\"}"},"published_at":"String","published_at.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"published_at\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"7e66685e-cd70-415b-b420-3e440b865e97\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"be8ed342-5704-4944-b5a3-9b67b60bb7bf\"}"}}}],"data.$field_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"data\",\"mandatory\":\"false\",\"child_name\":\"data_object\",\"uiUniqueId\":\"85f3dffb-9bc3-4864-b420-3295c1f2b964\",\"uiTypeLabel\":\"Array.Object\",\"child_label\":\"data_object\",\"child_type_label\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"3\",\"max_length\":\"0\",\"child_uiUniqueId\":\"ad0cf25f-527c-4400-a461-a77ec5b1d03c\"}"},"has_more":"String","has_more.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"has_more\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"a429aa38-ba16-46b6-b168-7d60b71e19bd\"}"},"object":"String","object.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"object\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"98d51c83-7f43-49bf-8b92-35c8adb8610e\"}"}},"FlowDesigner:FDf210d7246cefb2105a20c3d61337d061.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"6e71e3b3-1eaa-468e-8b71-29a40d0193e7\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Response\",\"mandatory\":\"false\",\"uiUniqueId\":\"f51b8fb3-e6a8-4f26-b4e1-d9efb54787bf\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDf210d7246cefb2105a20c3d61337d061\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"0e067201-7486-4a2b-bedd-654a295cdfc9\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-07 21:07:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f610d72483efb210f17ccd60ceaad361</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=bbdc6c7e-ecd4-454a-9c69-2cf45a40b424</attributes>
+        <attributes>co_type_name=FDf210d7246cefb2105a20c3d61337d061,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,sourceId=6e71e3b3-1eaa-468e-8b71-29a40d0193e7,sourceType=step,sourceUiUniqueId=0e067201-7486-4a2b-bedd-654a295cdfc9,uiType=object,uiTypeLabel=Object,uiUniqueId=f51b8fb3-e6a8-4f26-b4e1-d9efb54787bf</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -1670,7 +1993,7 @@
         <dynamic_default_value/>
         <dynamic_ref_qual/>
         <element>response</element>
-        <element_prototype display_value="Response Body" element="response_body" name="var__m_sys_flow_step_definition_output_07a762fb47222200b4fad7527c9a7129">a804c77347622200b4fad7527c9a7119</element_prototype>
+        <element_prototype/>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -1681,8 +2004,8 @@
         <internal_link/>
         <internal_type display_value="String">string</internal_type>
         <label>Response</label>
-        <mandatory>true</mandatory>
-        <max_length>8000</max_length>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
         <model display_value="MTG Scryfall - Get Rulings">67399f4e83537610f17ccd60ceaad36d</model>
         <model_id>67399f4e83537610f17ccd60ceaad36d</model_id>
         <model_table>sys_hub_action_type_snapshot</model_table>
@@ -1706,14 +2029,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-03 04:49:18</sys_created_on>
         <sys_id>38f9cfcf835b7610f17ccd60ceaad3cd</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1826,48 +2149,34 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-02-28 03:22:13</sys_updated_on>
     </sys_hub_action_status_metadata>
-    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=7b39df4e83537610f17ccd60ceaad317^sys_idNOT IN38f9cfcf835b7610f17ccd60ceaad3ec,74f9cfcf835b7610f17ccd60ceaad3ec,f8f9cfcf835b7610f17ccd60ceaad3ec"/>
-    <sys_hub_status_condition action="INSERT_OR_UPDATE">
-        <action_status_metadata_id display_value="Created 2026-02-27 19:22:13">7b39df4e83537610f17ccd60ceaad317</action_status_metadata_id>
-        <condition>{{action.scryfall_id}}ISEMPTY</condition>
-        <dont_treat_as_error>false</dont_treat_as_error>
-        <label>No Scryfall ID</label>
-        <order>2</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Scryfall ID input."}}},"serializationFormat":"JSON"}</status>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:49:18</sys_created_on>
-        <sys_id>38f9cfcf835b7610f17ccd60ceaad3ec</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
-    </sys_hub_status_condition>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=7b39df4e83537610f17ccd60ceaad317^sys_idNOT IN2b559bec83efb210f17ccd60ceaad3d5,eb559bec83efb210f17ccd60ceaad3d5"/>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-27 19:22:13">7b39df4e83537610f17ccd60ceaad317</action_status_metadata_id>
         <condition>{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}!=200</condition>
         <dont_treat_as_error>false</dont_treat_as_error>
         <label>REST Code is not 200</label>
         <order>1</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</status>
+        <status>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{\\\"code\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].status_code}}\\\"}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{\\\"message\\\":\\\"{{step[bb38424a-ebc8-4efa-97ff-2c61f64e33f2].error_message}}\\\"}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</status>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:49:18</sys_created_on>
-        <sys_id>74f9cfcf835b7610f17ccd60ceaad3ec</sys_id>
+        <sys_created_on>2026-03-07 21:30:05</sys_created_on>
+        <sys_id>2b559bec83efb210f17ccd60ceaad3d5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
     </sys_hub_status_condition>
     <sys_hub_status_condition action="INSERT_OR_UPDATE">
         <action_status_metadata_id display_value="Created 2026-02-27 19:22:13">7b39df4e83537610f17ccd60ceaad317</action_status_metadata_id>
-        <condition>{{action.base_url}}ISEMPTY</condition>
+        <condition>{{action.scryfall_id}}ISEMPTY</condition>
         <dont_treat_as_error>false</dont_treat_as_error>
-        <label>No Base URL</label>
-        <order>3</order>
-        <status>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Base URL"}}},"serializationFormat":"JSON"}</status>
+        <label>No Scryfall ID</label>
+        <order>2</order>
+        <status>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":"1"}},"message":{"$cv":{"$c":"java.lang.String","$v":"Missing Scryfall ID input."}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"4adfb7bc-9d67-498d-88d0-8d6c3d584fed\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</status>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:49:18</sys_created_on>
-        <sys_id>f8f9cfcf835b7610f17ccd60ceaad3ec</sys_id>
+        <sys_created_on>2026-03-07 21:30:05</sys_created_on>
+        <sys_id>eb559bec83efb210f17ccd60ceaad3d5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:49:18</sys_updated_on>
+        <sys_updated_on>2026-03-07 21:30:05</sys_updated_on>
     </sys_hub_status_condition>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>scryfall_id</element>
@@ -1889,29 +2198,6 @@
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-02-28 03:22:12</sys_updated_on>
-        <url/>
-        <url_target/>
-    </sys_documentation>
-    <sys_documentation action="INSERT_OR_UPDATE">
-        <element>base_url</element>
-        <help/>
-        <hint/>
-        <label>Base URL</label>
-        <language>en</language>
-        <name>var__m_sys_hub_action_input_67399f4e83537610f17ccd60ceaad36d</name>
-        <plural/>
-        <sys_class_name>sys_documentation</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-03 04:40:47</sys_created_on>
-        <sys_id>c408430f835b7610f17ccd60ceaad33d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
-        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
-        <sys_policy/>
-        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
-        <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-03 04:40:47</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
