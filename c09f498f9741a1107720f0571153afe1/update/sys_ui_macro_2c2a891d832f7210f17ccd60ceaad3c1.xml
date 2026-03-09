@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description>MTG Price trend for a card</description>
+        <media_type/>
+        <name>mtg_price_trend</name>
+        <scoped_name>x_759224_magic_c_0_mtg_price_trend</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 19:19:16</sys_created_on>
+        <sys_id>2c2a891d832f7210f17ccd60ceaad3c1</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>mtg_price_trend</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_ui_macro_2c2a891d832f7210f17ccd60ceaad3c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 19:40:21</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide">
+
+    <g:evaluate>
+        var cardId = current.getUniqueValue();
+    </g:evaluate>
+	
+    <iframe 
+        src="/sys_report.do?sysparm_report_id=00ae51c781f21010f8773175af5ad90e&amp;sysparm_query=card=${cardId}"
+        width="100%"
+        height="400"
+        frameborder="0">
+    </iframe>
+
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>
