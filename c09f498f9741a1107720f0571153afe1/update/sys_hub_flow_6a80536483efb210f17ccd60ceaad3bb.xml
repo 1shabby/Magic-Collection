@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=713000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=102732000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>28100</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,10 +15,10 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>get_scryfall_card_rulings</internal_name>
-        <label_cache>[{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":"","choices":null,"usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"":""}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"":""}}]</label_cache>
+        <label_cache>[{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","uiTypeLabel":"Reference"}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","usedInstances":{"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - MTG Scryfall - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","usedInstances":{},"attributes":{}},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}}]</label_cache>
         <master_snapshot>f84353e883efb210f17ccd60ceaad36a</master_snapshot>
         <master_snapshot_digest/>
-        <name>Create Card Rulings</name>
+        <name>Scryfall - Create Card Rulings</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
@@ -28,7 +28,7 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>draft</status>
+        <status>published</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -36,19 +36,19 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6a80536483efb210f17ccd60ceaad3bb</sys_id>
-        <sys_mod_count>19</sys_mod_count>
-        <sys_name>Create Card Rulings</sys_name>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Scryfall - Create Card Rulings</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_6a80536483efb210f17ccd60ceaad3bb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:25:00</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:18</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
-        <version_record display_value="Created 2026-03-07 13:24:51">3224176c83efb210f17ccd60ceaad3e9</version_record>
+        <version_record display_value="Created 2026-03-08 19:41:15">2726610d83233210f17ccd60ceaad393</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_variable_value action="delete_multiple" query="document_key=6a80536483efb210f17ccd60ceaad3bb"/>
@@ -66,12 +66,12 @@
         <sys_updated_on>2026-03-07 21:09:00</sys_updated_on>
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=2a80d76483efb210f17ccd60ceaad330"/>
-    <sys_hub_flow_input action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT INb5d1532883efb210f17ccd60ceaad3ca"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT IN9ce5a1c983233210f17ccd60ceaad3da"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=7764ec5a-f4cc-42da-a8d4-469f490f0a58</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=7f4a71a4-8f0c-4192-809d-76a42051f8be</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -81,7 +81,7 @@
 })(current);]]></calculation>
         <choice/>
         <choice_field/>
-        <choice_table/>
+        <choice_table>x_759224_magic_c_0_card</choice_table>
         <column_label/>
         <comments/>
         <create_roles/>
@@ -95,7 +95,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>scryfall_id</element>
+        <element>card</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -103,11 +103,11 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Scryfall ID</label>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Card</label>
         <mandatory>true</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</model>
+        <max_length>32</max_length>
+        <model display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</model>
         <model_id>6a80536483efb210f17ccd60ceaad3bb</model_id>
         <model_table>sys_hub_flow</model_table>
         <name>var__m_sys_hub_flow_input_6a80536483efb210f17ccd60ceaad3bb</name>
@@ -116,7 +116,7 @@
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference/>
+        <reference display_value="" name="x_759224_magic_c_0_card">x_759224_magic_c_0_card</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -128,8 +128,8 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_flow_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-07 21:14:41</sys_created_on>
-        <sys_id>b5d1532883efb210f17ccd60ceaad3ca</sys_id>
+        <sys_created_on>2026-03-09 02:39:56</sys_created_on>
+        <sys_id>9ce5a1c983233210f17ccd60ceaad3da</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
@@ -137,7 +137,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:52</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:39:57</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -150,7 +150,7 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_flow_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b5d1532883efb210f17ccd60ceaad3ca"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9ce5a1c983233210f17ccd60ceaad3da"/>
     <sys_hub_flow_output action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=6a80536483efb210f17ccd60ceaad3bb"/>
@@ -162,7 +162,7 @@
         <comment/>
         <compiled_snapshot/>
         <display_text/>
-        <flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <generation_source/>
         <order>1</order>
         <parent_ui_id/>
@@ -170,13 +170,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:20:14</sys_created_on>
         <sys_id>5b13dba883efb210f17ccd60ceaad3d8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:53</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:08</sys_updated_on>
         <ui_id>6b35995c-cb4c-4016-b7f8-7eb3d695cc5b</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/41R0WrjMBD8lUPPjnHqJk7ydlAKhbsrtL2+lGLW0ioRyJIqS2l9If9+K9sJpVDax52d3Z2ZfTowJdiGLatyvZaXuCoXZbWcF3JecS6WBUcAUVYly5iBFonZcd9L0LqmuYztQceEHg5dbKS2r/m7/vFIDKE6p6F//JLId0oLj4Ztnp4z5sDTvYCebQ4fWqF3WGtoUNO+++CV2dL4d22cB6fzP26uPjOXDiXwdMJ6kfTMM4ZvAY1AOknsDjPWghEQrO/ZJvhIgEcQt0b3Z8ZOmUDLWOK+deofbV4VRZGYEskbx7F7LuspuRHmO6s43rqgrBmRAI2eZrjVsTV/Rg8pc5QQdThlTkjsaB+6JDrJmDTJ+519vTsdvFZm8Dc1teWgzxUESqGJAbv0kKgeKJtfH3+AGlvaX7fgHCG183avhp0ksc23moo8PZ+0dGprcuDJT07RQX5N+NUAP4JXydxvWkPD2XTu/Sui+mvUS8Sb4evrkpdQlbP5hWhml9ViMYNKrmcgJL9YFVKuGsmOQ7T1S0ymxpCmOOoxUSLQ+5ULP0nUHifnx+f/uPvS0iMDAAA=</values>
+        <values>H4sIAAAAAAAA/41SXWvjMBD8K4eeHePUTZzk7aAUCndX6NdLKWYtrRKBLKmylNYN+e+3sp1wBA76qNnZnZ1ZvR6YEmzDllW5XstrXJWLslrOCzmvOBfLgiOAKKuSZcxAi8TsuO8laF1TX8b2oGNCD4cuNlLbj5yDF/k/pOORaEJ1TkP/8j023yktPBq2eX3LmANPygE92xwuSqF3WGtoUNPQx+CV2VL7dw2dGyf5H3c3/7OZhBJ4krBepH3mGcPPgEYgSRK7w4y1YAQE63u2CT4S4BHEvdH9mbFTJtAwlrifnfqiyauiKBJTInnjOFbPz3qKb4T5ziqO9y4oa0YkQKOnHm51bM2f0UMKHiVEHU7BExI7mocuLZ3WmHaSjzv78XASvFVm8DcVteWgzy8IlEITA3bpIFE9XWQzIr8ur4IaW1KsW3COkNp5u1eDCi3d5ltNjzz9CdquU1uTA08OcwoT8lvCbwb4BbxKdn/TGGpOcs9GvUe8G66+LnkJVTmbX4lmdl0tFjOo5HoGQvKrVSHlqpHsOERbv8dkagxpiqMeEyUCnV+58JNW2OPk/Pj2F3gJ+0wtAwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=5b13dba883efb210f17ccd60ceaad3d8"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -186,7 +186,7 @@
         <comment/>
         <compiled_snapshot/>
         <display_text/>
-        <flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <generation_source/>
         <order>5</order>
         <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
@@ -194,13 +194,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:22:51</sys_created_on>
         <sys_id>69b3532c83efb210f17ccd60ceaad38b</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:24:10</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:40:41</sys_updated_on>
         <ui_id>b4beedaa-bd51-418d-af6a-3189924e7b8f</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/9VSTU/jMBD9K8jnKEoatoLeVqCeWJAW1AtC0SSetJYcJ2s7hWzFf9/xR9IKgdgDF3LyPM+M33t5jwcmOFuxJcfs8jJf1kVeFIssW1yc59WyqPIFLwDziiVMQYvUuQc5oKHaHwigIxemlzBujki9E5JrVGz1+JSwHjQNW9RsdXhz9b+vS6hQUutaoOTmHTp27F1tsSUqFstAL+A3cfghXp5t4mWnuSOVJwxfLCqOxKYBaTBhLSgOttMjW1k9EKAR+J2S49yxE8oGtS28GPGXns+Xmf9cd4Mkso5+zGUZvQpwcw0W7ml/bQc9W9eJmiR5ezg2MEh7dYqFhrveik6FEQuVnKY7ObTqNpjD5gUnv2YwRAJ7p9bxD+Ka+133/HsiuRbK+xKFyq4GOVdgrRbVYB2dA0OJLe0pW+h7obZlr7u98MNEpU23koq0kd0zvWnEVqVQO94peQvpmvBrD29ACyfiF62h4deEmdFcSTDmKIU8LP8MjkkQFiWU3gVvQelD4YZrLXr7k57aYyT+mkxRzzH78WHY8PyYrZOdXxv3zxlMcX/wf/Z9RlPi32I3p7Nnt+EiJj37qqRffKeMRxnfPuQfRfvpHyT5GYTHBQAA</values>
+        <values>H4sIAAAAAAAA/9VSy27bMBD8FYNnQdDDcWPfihbuKQmQBrmkAUGRK5kARal8OHYN/3uXEuWkDwNGUaCoT97V7M4Md54ORAqyIgsB2XKZL3iZl2WRZcX1PK8WZZUXomSQVyQhmrWAyC1THizWwx9scGbEF59lpTgcrK9q1b2koXc8IkhI2yu2f7wEyzdSCQOarJ6eE9Izg4QODFkdfvrk9j1QxSpQuPIBWmRwMBs5kov9TAvWEpSwvzEYaLB2kYBuI0FnRFCVJwR2DrQAJKyZspCQlmnBXGf2ZOWMx4YBJu602p8QG6kdLiUBu7PyGzLki2z4BXQN6JLDiDiVND7j2OabTnK4653s9NhxrFJxhnfKt/p2tBIOADXzyk0HwI63uA/6IDxIGXXWnzfdy/3Et5Z6sBg1q44zdaqYc0ZW3uEb4WVAQYt7aMv6XuqG9qbbymEYpbRpo7BIw52R08pGp4wH3Sk+E0vX2P84tB+ZkcHEDa7B4eNgnn71gXe0EQXTwfNgmA4HQ6jlRvbuPS7eQpR5TKZg55BdnQ0CzF/v/mbna7h39N3Vsijm6K+RnHKa0dY1NGSWGq/Qsf015TcPn2YfEDG7PyH+MNtB0ux2lHSpnR+Gz9ibov22F2Od/a1YX/+jQEdF/1miz+X4+Tvnj40ZogUAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=69b3532c83efb210f17ccd60ceaad38b"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -210,7 +210,7 @@
         <comment/>
         <compiled_snapshot/>
         <display_text/>
-        <flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <generation_source/>
         <order>2</order>
         <parent_ui_id/>
@@ -218,13 +218,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:24:10</sys_created_on>
         <sys_id>bc04df2c83efb210f17ccd60ceaad30f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:24:50</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:40:17</sys_updated_on>
         <ui_id>fe09a384-1214-4a98-aefd-26e11dd7ee1d</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+VWyW7bMBD9FYNnwaDXLLfCQYoCWYAkyKUNCEqkZKK0pJKUlxj+9w6pzbUVxy50cNGToJkh583MeyS/r5Fg6BrhcIgx7Y0uLzAeDDAejwcB7fn+YBz42B9dIQ/FdMYhUifKELNKOZjmVGaVjeoATEzoVNLVa+GhHZN03sEeTIVkisfo+vubh1KqYDfDFbpe77iOhSOpzyWEPkPuzkuOpwGi+1xDjkQE5f9dsXRSGhPFLJSBh/jS8JhxwBBSqbmHZjRm1CRqVVkUp+wxlrVhKmIDuyEbvNTiHfIN+jYu5FBVwHNf9UuKFuXm8IYa+mxUFphMFaE5WA39WFdlVo1s6HkBH2+8Ov7dxtPdeMa3F/Q20G/GQ5pJM/m7nL1Tc/ZtzrzAx9SIBKaOBnYu1Jdl+YnMZvFDPktUIXxtIFvuufmAc5mGZvPUDtROqBhX+DxNFk/lNG5F7HAVTpkEVFZ/1Bgl/MzYvqxRyEgouGRExFLENhOMzdKHSz6DDGRG01TEEUlVMhduV6hl1o0k/HRDmSxsL0QUd2lgK+8CsWj3Fuw3zvxKlbBduIdtYLFnE05haZGP6ECJ1JCFYBE3dfYyiiVmQeXPJn/BOFIOypWHNh7SKz2RVOu62UBT8iuzPchbX3SPuEG5JQ7FF6hgzotGWQ442QYXB2U72pFoPugtvuyfHyefHEdAKLvwaBnZ8VcfoSqOjnzmLuLP4+PWOjoPuaOkd2tHyCVu5whpkvi+BE9S4L60LNX+HWWdTvy8N5+wf3jw0hr3ap7BkIniGlqqt9jfwxjvK6Dn5ebTZHAEllIG93TZearANCIslAAk5ZE7mbZl8K2yFhoYtqaB4flqoBxW4w1UzqzlC+hc1PCZEC4Pv95wTbMgiZmwGLd1EFDFurD/CnaVRLAfGWzD1mud+ba4bddmsy+YU5efJqwjaiuFNdkurqng8m26a7tr2qB8cLUoLny+8mr9ijkX7Rx1kxwm2dCv+ZRvV2tnSS5GV/3+EOqMREACgsnMRMRqgqgMLtdI7yvm/uVrZwIRnacqok1ROLylKF4KwDv4Cym436a3llu289bC/+db6zxvEQAkJDCE5CPUSaZcK+ckkJl2DkVjne/V4p3z9htET4odwhAAAA==</values>
+        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4bPRqB8ts1tSNFhh65AW/TSFYIsyY4wRfZkOR8N8t9HWbaTJm6apumwATsFpijy8fGR0ePSF8wf+ijqIUTa/fMzhLpdhAaDLiXtMOwOaIjC/oUf+IpMOHhmiTbYLFIOpimReW0jGQUTE1kqyeKhPCGeSbxnsNOxkExz5Q8fnwI/JRqiGa794XLryIbGkoRcwvXROBHUZjoUZHXxDhB59w5lA/DiZwiZy/CJZhZLN/D53HDFOKSLiMx44E+IYsQkelFbNCfsRsm1YSyUgWi+dZ5n4hlCdzvWL+JQFuXurP7EJUfO7DBkUPyyRl+z1kBwCRWtgrX/s/Un2/6Mb15or4BcxiOSSzM6Lmf7vTk7Nqcr8CY1IoEW+11LPwllyQpNZD5R312L/BrhQ4Oy3MnlKwLLMyCWp7Z5thtla6K7cTK7rZi/EqrAVR7KhBJZfxFjtAhzY3lZ+hHDkeCSYaGkUDaT0bmVCpd8AhnwhKSpUDFOdTIVRVSoZdKKJXy0IpnMLBciVi1CbeUtEBFpXYH9sjA/EC0sC9cQBi4HNuEYrpb5cEa1SA2eCRZzs85eebHEzIj82XReqqueoaI8f1UIEP/KbcWO6JIrXLTFOricXwDvlJe02I4Xs0fP9s5ef2vOXFs31LG7Go5eCle2L14hmeBgcNXlG6tML1y8hrfcDK73yuWo1Hyy7XCO3rcd6uF51+zsDoUVyQdm4hOl3zRrb0nWMfGGbnt7/zMG7bUOoDtY8wwIzDZ020YI7Wq3HTjzcQL+pgyPi8oPhVjdvCZz77bG2Ai8FLCoc5Tq7Z1Mvb0/ot6K+MatX/F/4qX/OQL/6Oo93//sQWsl0EQxYRFtKpgSzVoQfwFRJRbsRw5h2HKZ5aEtpbV9vlrt6v2oGEc++TZrOLT+xstNpFQPv01b9bo54YCg/wv+cP0ftMf3i6AXrvvtwq31P8dn/YtOpwdVxYJiihGemBhbyWKdwx9OnO0K/vr+qzcCD++29jhOzvcWzYvHygGVvLi8W1kp4uJz642C/vk3yt+5wwGQkNBt7EjPklwXrEwxlXlWHGiiMhfr6I3/9BuBPEDHjw8AAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bc04df2c83efb210f17ccd60ceaad30f"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=6a80536483efb210f17ccd60ceaad3bb"/>
@@ -236,7 +236,7 @@
         <connected_to/>
         <decision_table/>
         <display_text/>
-        <flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
@@ -247,13 +247,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:21:18</sys_created_on>
         <sys_id>8b53d7a083efb210f17ccd60ceaad339</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:24:10</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:12</sys_updated_on>
         <ui_id>e1dff522-c092-4e6e-8ea6-0c86d3350d61</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Wf2yhpmm7t29iYNImtiFWTEAzLsZ3WwrGDP9qFKv+d6yTtJjZEJ3jggbf4+N7rc67viXdIe1d5Z5f6zFqxUmj+6X6IhAoYfO+QYGiOZiQrsiTOaDqepuM4Hp9Oknya5smYpYRPpmiIFCk5RFKtmHBCK4A2RPqA7XbTPM1ms4yOaD6ho0mcTEf5SXE6OuF5yqawQbM8wpjQkImtI85bjCOqGW+azz6OUxZ/ObKM4bbSyvKIEUea5ur2ZrF8e/1++REYMWErSeq7f44YXQvJDO/bXxED3XTcoPnup61jr0OSnEsIPX9yHy9ckaurAFlnhFr163d96u0e1IYFKuN4iPiD44pxIFEQafkQlUSBHG1qNHfGA2A4YQsl60PEWigH1VCIfbDiOw+V4jhEFhx0Ud7tHpa4v6UOLi6gW0DFU+dNH0rXWlBuu44wXhAv3flTrAtYVK3KNsWRXO6ztfSluumagQ4F9kMBiLdAgldBaeDeCylu13r7Yc/yUqi2K/2m1JTIw4o46F3uXeCzQ1zyEgrhklQVdBRXRm9EmwxcymglYREVUm/h0ODBqBu3dk6iS8AvWviOGBFUXEMZSIZZsNhSI6q9tvZw1AyRre25JNY+aoTm4m8+MOwU99pw156Q0hY6g4M3vJfRDHv3FzEpkhlNXh43kr4wWrgFHn8BZ60iOxB2YD2Fe7IDGJzBG83qgCntBrysXP3co6/IfJ2JjlD1zESDzhu/1vsaPyW/8VOPHGWoLPvvpz/2U6CZEysobt8/KBd+aX/RUPfBEN2hh2ZTYYHbMmBX+1c3bNQwUYI+hbbafA2qHrHmB/l3LlS/BwAA</values>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnW5Asy4l9cx8BAjRJ0RgBijYlKHIVE6VIlaSSqIb+PUs9kqBJ0bTooYfezFnu7uzO0NoTU/uq9m5rNs7JK03Wny6nROqA4e890awEsibcaCG9NJpMyTVTdcD2+2WeZqtVxmc8X/DZIk6Ws/ygOJwdQJ6KJQZ4lkeUMh4yqfPM147SiBsBbfu5juNUxF9eWMaCq4x2EAnmWdsen5+ebd+evN9+REZCukqx5uKfI8Z3UgkLw1orZnGbHixZ738I+aYCqlgOCvmfeyv1FaZLgacVy4osiTOezpfpPI7nh4skX6Z5Mhcpg8US742Jrx+p9IxwoQlCbixvrAhc5vGUwK0HLQD7FUw5mJKSaZzH2Iasva0RsMDEmVbN/Y2d1B6rkXD31snvECrFcbhZAA7GoY/eH+kgUw/znZEczqqOW4d4lqshhxtVl/q0HyEIDAWrlR8FRqR2WA+qQDrQGDgV5ztz82FseCR1N+AQVIYzdX9iHteQ1x5cUAMUlFiIlqyqcDm0suZadsnIpYyuFB6iQpkbbBreSdRbp9M8OkL8TQdfMCvDFCdYBpNRQUcdt7IaZ+uak7bbCv1WBz79fMMktF8GXujTNtjmGgbS7fTpe6Qd8PAoNx0vN5Fu4mrOwbkJKjl5ZUQTMG38BMrKN09fzW9k/g1bFzErkhVPnrc1S5+z9eRdhzw197iFnzg8+YXDB+RFFs+y/w5/7PBAM2dOctp9NbBc+L/4Y4tfBiv3LVzvIQFcOmSyDdjx+GUKgQZVl/wxdGPs1zDDA9beATAKgXXjBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -263,7 +263,7 @@
         <connected_to/>
         <decision_table/>
         <display_text/>
-        <flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
@@ -274,29 +274,29 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:22:33</sys_created_on>
         <sys_id>9da39fe883efb210f17ccd60ceaad388</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:24:10</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:12</sys_updated_on>
         <ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/6VTy27bMBD8F55lQQ9biXwLEgQI0DZAEuRSBAJFrmyiFMmSlB1V0L93aT0S5FSgJ2lnd4czI2oguvOm8+5F3zgnDorsf75FRKiA4ftABCd7kpa8KdOkZHlW5FmSZNfbtC7yOs14ToEXJCKKtoCTwkPrsDxR2YV6GIo635Xljm1YvWWbbZIWm/qqud5cQZ3zAhtsV8cWnNHKQcypp+OIBFw4I2n/+r887CgktzAbM9SiTg+W7IcvrX81KmkNEkcfZqdfjPvehNIC05YvwLd552lF8RFEZElE4N2D4oDHN1Q6iEhLFcrXtid7bzsELFD+qGS/ThyF8khHwuy7E3/wxDRJwmADaIjB1FzLak5zgps7DOcZqZnv7DzKjlowcFMUHBraSX/7GZsGHo0XWk0rntZy2daya9WPKQmyEiwfD5HOoQgwwWiQPvtono/6/LSovBfqEsrclJpRuVbUeyvqzgc9AwEJLRJVLTVGqENlrD6JyzJqaeODxCJupD7joeFax5QF4ZdrEd8jfneBX6kVwcV3pMHlMSKud7eSOvfhBUOsfndByeRs9lBNMYQVZoXxN3jACWa541v4AybuNVMmHEp4CdjD8n+FRo83SLDP0FnbX0H8Bzb+BYG0ObepAwAA</values>
+        <values>H4sIAAAAAAAA/6VSy27bMBD8F55tQQ9biXwLUATIoQ2QBrkUgcDHyiZKkSwfdlRB/96lJLtFrj1JO7s7O8PdkZgYbAz+1Tx4L4+aHH68b4jUCcP/kWjaAzkQGaD3ZEPOVMUUj2PNqn3T7PmWsx3f7vKi3rK77n57B6wSNSb4nmUOvDXaQyZooNOEBEJ6q+jw9r88/CSVcLAKttShzgCOHMZPqTBYaBVloHDcC3DjRDIiBYZFI7qmyBtelXVV5nl5vytYXbGiFBUFUWPdtfNpfYBP75HYMXQ3XvwkFWW+IfARQAvAQR1VHjakpxr1GzeQQ3ARAQdUPGs13CpOUgekI6n2w8vfyF3keSrsAB1xWJK3sF2fc4H5yUgOzzZIoxckUKbWHm5U7PW3RX5aBHQ0qnBdBCLRIx/YpDmpWCV130/m8nId+Cj17G9NKsOpukU0BCdZDODTGkBBj0RtT62V+thaZ85ybkYtfXZUGGSdMhccmk4vozwJn1ecPSL+ZYbfqJPJxVekweZpdt/+imnu4mNV3C6mscBzJ214QLozrOKm93S7C5NfDkMAlx4Hvibs6XrxKTHgkiX/F7oY9zNJ/YtNfwAa89NoOwMAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>scryfall_id</element>
+        <element>card</element>
         <help/>
         <hint/>
-        <label>Scryfall ID</label>
+        <label>Card</label>
         <language>en</language>
         <name>var__m_sys_hub_flow_input_6a80536483efb210f17ccd60ceaad3bb</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-07 21:14:41</sys_created_on>
-        <sys_id>c6d1532883efb210f17ccd60ceaad3cf</sys_id>
+        <sys_created_on>2026-03-09 02:39:57</sys_created_on>
+        <sys_id>60e5e1c983233210f17ccd60ceaad305</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -304,7 +304,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:14:41</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:39:57</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -324,12 +324,12 @@
         <description>Gets the Scryfall card rulings for the provided ID.</description>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>get_scryfall_card_rulings</internal_name>
-        <label_cache>[{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","type":"string","base_type":"string","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7764ec5a-f4cc-42da-a8d4-469f490f0a58"}}]</label_cache>
+        <label_cache>[{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","uiTypeLabel":"Reference"}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","usedInstances":{"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - MTG Scryfall - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","usedInstances":{},"attributes":{}},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}}]</label_cache>
         <master>true</master>
-        <name>Create Card Rulings</name>
+        <name>Scryfall - Create Card Rulings</name>
         <natlang/>
         <outputs/>
-        <parent_flow display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</parent_flow>
+        <parent_flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</parent_flow>
         <remote_trigger_id/>
         <run_as>user</run_as>
         <run_with_roles/>
@@ -341,7 +341,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f84353e883efb210f17ccd60ceaad36a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -349,7 +349,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:53</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:13</sys_updated_on>
         <type>subflow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -369,12 +369,12 @@
         <sys_updated_on>2026-03-07 21:20:53</sys_updated_on>
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=384353e883efb210f17ccd60ceaad36c"/>
-    <sys_hub_flow_input action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a^sys_idNOT IN344353e883efb210f17ccd60ceaad36e"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a^sys_idNOT INa306a9c983233210f17ccd60ceaad3d4"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=7764ec5a-f4cc-42da-a8d4-469f490f0a58</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=7f4a71a4-8f0c-4192-809d-76a42051f8be</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -384,7 +384,7 @@
 })(current);]]></calculation>
         <choice/>
         <choice_field/>
-        <choice_table/>
+        <choice_table>x_759224_magic_c_0_card</choice_table>
         <column_label/>
         <comments/>
         <create_roles/>
@@ -398,7 +398,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>scryfall_id</element>
+        <element>card</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -406,11 +406,11 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
-        <label>Scryfall ID</label>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Card</label>
         <mandatory>true</mandatory>
-        <max_length>8000</max_length>
-        <model display_value="Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</model>
+        <max_length>32</max_length>
+        <model display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</model>
         <model_id>f84353e883efb210f17ccd60ceaad36a</model_id>
         <model_table>sys_hub_flow_snapshot</model_table>
         <name>var__m_sys_hub_flow_input_f84353e883efb210f17ccd60ceaad36a</name>
@@ -419,7 +419,7 @@
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference/>
+        <reference display_value="" name="x_759224_magic_c_0_card">x_759224_magic_c_0_card</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -431,16 +431,16 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_flow_input</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-07 21:20:53</sys_created_on>
-        <sys_id>344353e883efb210f17ccd60ceaad36e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2026-03-09 02:40:42</sys_created_on>
+        <sys_id>a306a9c983233210f17ccd60ceaad3d4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:53</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:40:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -453,11 +453,35 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_flow_input>
-    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=344353e883efb210f17ccd60ceaad36e"/>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a306a9c983233210f17ccd60ceaad3d4"/>
     <sys_hub_flow_output action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=f84353e883efb210f17ccd60ceaad36a"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a"/>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a^sys_idNOT IN894353e883efb210f17ccd60ceaad391"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a^sys_idNOT IN2065a18983233210f17ccd60ceaad3ec,894353e883efb210f17ccd60ceaad391,a865a18983233210f17ccd60ceaad3e9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 02:37:46</sys_created_on>
+        <sys_id>2065a18983233210f17ccd60ceaad3ec</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 02:40:43</sys_updated_on>
+        <ui_id>b4beedaa-bd51-418d-af6a-3189924e7b8f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VTTW/iMBD9K8jnKEoIZQu3ioq99ENqEZduZTn2BCw5TtYfFBbx33ecD0DdVttKvZRT/Pxm/N4w72lPpCBTMhaQTCbpmGdplg2TZHg5SvNxlqdDkTFIcxIRzUpA5oYpDxbPzQcCnBnxyydJJvZ76/NCVS9xwA4HJAlpa8V2y49w+VoqYUCT6dNzRGpm8EEHhkz3r64+qlixHBRS5xKUsG9YcLs6nB2UKNIBbS21+E1XvOguB8vusjIiiEojAlsHWgCqKZiyEJGSacFcZXZk6oxHwAAT91rtjoy11A6bksDdWvkHn0/HSfML7ALQJIeWcTzSbootXFwzxx6xP3fedFS+riRHS814BBTMKzc7x1rCfe1kpdsSx3LVV1fKl/quHQ45Nuj/NES8RRFQB7dBf2uueFxXLw+9yLnUzVw6o6riTB1PzDkjc++CnD0BBSX2oSWra6lXtDbVRjbFKKWMVwoPcdgNfNPKlY4ZD7pjnC2L54hfN/CSGRlM3GIbLD5ExO7sTDFrT1ZwhvS3D0paY50F2kyhGQFtliIUcyNrd4VPbaATfoj6eKSQXLy7bDA67dZZz1NEtvTHxWQ4HKHjleSU04SWbkXD5lPjFc7A/puV28XPwQwZg4cj45MJ+b/oPiGLZhneNtGH5DV2c147uGsvunAkXxWOy+8Ui87Gt8/Fe2l4/gv1OBgSLgYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2065a18983233210f17ccd60ceaad3ec"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="MTG Scryfall - Get Rulings">67399f4e83537610f17ccd60ceaad36d</action_type>
         <action_type_parent display_value="MTG Scryfall - Get Rulings">70b652f5839bb210f17ccd60ceaad34d</action_type_parent>
@@ -465,7 +489,7 @@
         <comment/>
         <compiled_snapshot>67399f4e83537610f17ccd60ceaad36d</compiled_snapshot>
         <display_text/>
-        <flow display_value="Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
         <generation_source/>
         <order>1</order>
         <parent_ui_id/>
@@ -473,31 +497,109 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:20:54</sys_created_on>
         <sys_id>894353e883efb210f17ccd60ceaad391</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:54</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:13</sys_updated_on>
         <ui_id>6b35995c-cb4c-4016-b7f8-7eb3d695cc5b</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/41SXW/bMAz8K4OeHcOpmzjJ29CgQIFtBdatL0Vh0BKVCJBlVx9pPSP/fVRsp0WHonvk8UjenfTQMyXYhi2LfL2Wl7jKF3mxnGdyXnAulhlHAJEXOUuYgRqJ6bjtJGhd0lzCDqBDRPvehUrq5jl90z8eiSGUazV0958S+V5pYdGwzcNjwlqwdM+jZZv+Xet/BWuoUBP1bjz05Wb7kQ3ftSfQW2V2Y/1tGp/AxoooZ54wfPFoBJIOWuEwYTUYAb6xHdt4GwiwCOLW6O7M2CvjaRmL3Ben/tC5VZZlkSmRrHEcuueyHIMbYLkFD6QkcB/sSOX7RnF0QygCJQTtr95iA+G29aoxw4iHSk/TjQ61+TGkwc4LpnciJDgSgW10GrWPRuTdvnn+Oam8VuYUytjUDQd9rsBTdFXwUU/Pgvr1LuUB+Sdn1FjTxbKGtiWkbG1zUKcrJLpOd5qKNH4hUufUzqTAo8OUXgDSa8K3J/gerIp2v9MaGo7nfhv1FPDm9H/WOc+hyGfzC1HNLovFYgaFXM9ASH6xyqRcVZIdE+Y6d6XBudeg6IXKpxBtDrGNAZVDxnGEW9X6ryTqgGMWx8e/fkD+jmkDAAA=</values>
+        <values>H4sIAAAAAAAA/41SXWvjMBD8K4eeHePUTZzk7WgoFHpXuN71pRSzllaJQJZdfaT1mfz3W8V2WnoU+rij2d2ZWT32TAm2YcsiX6/lJa7yRV4s55mcF5yLZcYRQORFzhJmoEZiOm47CVqX1JewA+gQ0b53oZK6eUk5WJG+Ix2PRBPKtRq6h6+x+V5pYdGwzeNTwlqwtNmjZZv+w9NXpWuoUBP1flz07Wb7mSHftSfQW2V2Y307tU9gY0WUM08Yvno0AkkHjXCYsBqMAN/Yjm28DQRYBHFndHdm7JXxNIxF7qtTf2ndKsuyyJRI1jgOr+eyHNMbYLkFD6QkcB/sSOX7RnF0QygCJQTtr95jA+Gu9aoxQ4uHSk/djQ61+Tmkwc4DpmMREhyJwDY6jdpHI/J+37z8mlReK3MKZXzUDQd9rsBTdFXwUU/Pgvr9IeUB+S9n1FjTxrKGtiWkbG1zUKctJLpOd5qKNP4jUufUzqTAo8OULgDpNeHbE/wAVkW7P2gMNcd1f4x6Dnhz+j/rnOdQ5LP5hahml8ViMYNCrmcgJL9YZVKuKsmOCXOdu9Lg3FtQdKHyOUSbQ2xjQOWQcWzhVrX+O4k64JjF8ekfQtV8SXMDAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=894353e883efb210f17ccd60ceaad391"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 02:37:46</sys_created_on>
+        <sys_id>a865a18983233210f17ccd60ceaad3e9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 02:40:43</sys_updated_on>
+        <ui_id>fe09a384-1214-4a98-aefd-26e11dd7ee1d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VWyW7bMBD9FUFnwaDXJL4VDlIUyAIkQS5pQFAkJROlJZWkvMTwv3eo1bUV104VIEVPgobDmTcz75F8XruCuWMXBQOESHd4foZQv4/QaNSnpOv7/RH1kT+8cD03IjMOnjpWBptVwsE0JzKtbERTMDGhE0lWT8UKcUzsvIKdToVkikfu+PnFcxOiIJrhyh2vd5aOhSOJzyW4PkBu5zHH0wAx+4whRyxo+X9dbJ2UxlgxC6XvuXxpeMQ4YAiI1NxzZyRixMRqVVkUJ+wukrVhKiID0VzrvNTiFfL1e9Yv4FAV5fla9YuLFuXm4JIY8mBUSk2qCtccrIZ+rKsyq0Y29LyAjzZe7f9q/cmuP+PbG7ob6DfjAUmlmbwvZ/fUnD2bMy/wLjEihqm7fTsX4suy/Fims+g2n6VbIXxqIFu+cvkG51INzeaJHaidUDGu4GEaL+7LaVyJKMNVLMqYEln9EWOU8FNj+7J2A4YDwSXDIpIisplgbJY+XPIZZMAzkiQiCnGi4rnIokIts04o4acTyHhheyHCqEOorbwDxCKdK7BfZuYnooTtwg2Egc2eTTiFrUU+rKkSicELwUJu6uylF4vNgsgfTesF43A5qKw8d+O5eqUnkmhdNxtoin+mtgd564vu4WxQ2ZYMxReoYM6LRlkOZLKlZwdlO9yRaD7oLb7snx8nnxxHQCi7cGcZ6firt1AVR0c+88zj9+Pjyi44t/lCSe/WjpBz1M4R0iTxfQmepMB9aVmq/YWyPlBATYo9nfh5b/7A/sHBS2vUrXkGQ8aKa2ip3mJ/FyG0r4Cul5tPk8ERWEoZ3JClc1+BaURYKAFIysOssdsy+FZZCw0MWtPA4PNqoBxW4w1UzqzlC+hjZNL+NXB++PWGaprROGLCYtzWASWKdSD+CqJKLNj3FMKw9Vqnvi2us7u+2eyr5l0xTpPYEVWWEptsl9lUevlK3bVdNwUon14tygx9XqH9I5fNB90ph0k28Gs+5eFqFS3x2fCi1xtAnaGgmGKEZybElvhYpXAdhnpfNjePX50JeDj3lUebosjwlqJ4LADv4C+kkP02vbqybTuvLvR/vro+530CgIQEhuB8hDpOVdbKOaYy1dmCIpHOY7V4+7z8Ai2GxSrMEAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a865a18983233210f17ccd60ceaad3e9"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a^sys_idNOT INa865a18983233210f17ccd60ceaad3ed,ac65a18983233210f17ccd60ceaad3ef"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c753d7a083efb210f17ccd60ceaad338</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 02:37:46</sys_created_on>
+        <sys_id>a865a18983233210f17ccd60ceaad3ed</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 02:41:13</sys_updated_on>
+        <ui_id>e1dff522-c092-4e6e-8ea6-0c86d3350d61</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wf2yhpmkL71pUhIQ2YRoU0bcxybIdac+zMH0BW5b9znY+CRqWBtoc97K0+9r0+5/ieZoe0d5V3dqNX1opbhZZfbsZIqIDB7x1SpORoiahWTDihFRqjOyJ9wHa7eZ5mi0VGJzSf0cksTuaT/Kg4nhzxPGVz2KBZHmFMaKjE1hHnLcYR1Yw3zVcfxymLv72yjeG20sryiBFHmubs6uJy8/784+YzMGLCVpLU1/8cMboVkhne21oRA246btBy98uWYMB7QbIiS+KMptN5Oo3j6fEsyedpnkxZSvhsDg0lybmEo+tn73HgiVxdBcg6I9Rtv/7Ql14NoDYsUJnGY8QfHFeMA4mCSMvHqCQK5GhTo6UzHgDDCbtUst6f2ArloBsKZx+s+MlDpzgOJwsOuijvdvdL3L9SBxcn4BZQ8dR50x+lWy0ot50jjBfES7d+jnUHLqtWZVviSC6Hai19qS46M9C+wTAUgHgLJHgVlAbuvZDiaqvvPw0sT4VqXek3paZE7lfEgXe5d4HPDnHJS2iES1JV4CiujL4TbTFwKaNbCYuokPoeLg3Zirpxa+ckOgX8pIWviRFBxTm0gWKYBYstNaIatLWXo2aMbG3Xklj7pBHMxT98YNgp7rXhzp5Q0jZawcV3vJfRjF+mGrfAU7RXLVM7EnZkPQX/7QgGYvROszpgSrsRLytXv8zeGyrfFo4iJkWyoMnhcJD0UDhG3cy/jMig9y05SX6Tkx55VVCy7H9O/jgngWZOrKC4/V5Bu/BX9ReDchMC0V26N5sKC9w2ATsbvpJho4aJEvQ5dK/N96DqCWseAerUo8pvBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">19a39fe883efb210f17ccd60ceaad388</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>e1dff522-c092-4e6e-8ea6-0c86d3350d61</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 02:37:46</sys_created_on>
+        <sys_id>ac65a18983233210f17ccd60ceaad3ef</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 02:41:13</sys_updated_on>
+        <ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6VTTU/jMBD9Lz6nUT7aQHpDICSk3UUCxGWFIseetNY6ttd2WrJR/vuOmw8QV07xvJl5897EHojuvOm8e9E3zomDIvvfbxERKmB4HoiiLZA9ER5aRyJyorIL8TAUdb4ryx3bsHrLNtskLTb1VXO9uYI65wUm2K6OLTijlYOYU0/HEQm4cEbS/vW7POwoJLcwCzbUok4PluyHLynBcUxa8qZMk5LlWZFnSZJdb9O6yOs04zkFXiChpDVILH2YnX4x7nsTQgtMW74AP+aepxXFTxCRJRGBdw+KA45vqHQQkZYqlK9tT/bedghYoPxRyX6tOArlkY6E2ncn/uHENElCYQNoiMGUXMNq3uYEN3e4nGekZr6zcyk7asHATavg0NBO+tvP2FTwaLzQamrxtJZLt5Zdq35NmyArwfLzEOkcigATjAbps4/m+ajPT4vKe6EuS5mTUjMq14h6b0Xd+aBnICChRaKqpcYIdaiM1SdxaUYtbXyQGMSN1GccGq5rTFkQfrkW8T3idxf4lVoRXPxEGmweI+J6dyupcx9ecInV3y4omZzNHqppDaGFWWH8DQ44wSx3fAsvYOJed8qEQwkvAXtY3k1I9HiDBPsMnbX9E8R/YON/ilZNR4EDAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=f84353e883efb210f17ccd60ceaad36a"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a"/>
     <sys_documentation action="INSERT_OR_UPDATE">
-        <element>scryfall_id</element>
+        <element>card</element>
         <help/>
         <hint/>
-        <label>Scryfall ID</label>
+        <label>Card</label>
         <language>en</language>
         <name>var__m_sys_hub_flow_input_f84353e883efb210f17ccd60ceaad36a</name>
         <plural/>
         <sys_class_name>sys_documentation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-03-07 21:20:54</sys_created_on>
-        <sys_id>854353e883efb210f17ccd60ceaad37a</sys_id>
+        <sys_created_on>2026-03-09 02:40:42</sys_created_on>
+        <sys_id>6b06a9c983233210f17ccd60ceaad3e9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -505,7 +607,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:54</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:40:42</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
@@ -520,18 +622,18 @@
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT INc14353e883efb210f17ccd60ceaad3b8"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@39bda422</plan>
-        <plan_id display_value="Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</plan_id>
+        <plan>com.snc.process_flow.engine.ProcessPlan@25fa11c1</plan>
+        <plan_id display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</plan_id>
         <snapshot>f84353e883efb210f17ccd60ceaad36a</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:20:54</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c14353e883efb210f17ccd60ceaad3b8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-07 21:20:54</sys_updated_on>
+        <sys_updated_on>2026-03-09 02:41:14</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>
