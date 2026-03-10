@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=95626104000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=95754079000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority/>
         <generation_source/>
         <internal_name>card_insert_flow</internal_name>
-        <label_cache>[{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets","label":"2 - For Each➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.collector_number","label":"2 - For Each➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.foiling","label":"2 - For Each➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.name","label":"2 - For Each➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item","label":"2 - For Each➛Card Record","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"c5ee44e3-a24b-4b0a-a40b-3df776dd32fd":["card_record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"2f57f013-56c0-4194-8df5-bbabc738c2eb.Records","label":"1 - Look Up Records➛Card Records","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"records","base_type":"records","usedInstances":{"a479dd99-9c35-431f-8f45-7237c1a125cb":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets.id","label":"2 - For Each➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.api_link","label":"2 - For Each➛Card Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"}]</label_cache>
+        <label_cache>[{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.api_link","label":"2 - For Each➛Card Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets.id","label":"2 - For Each➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"2f57f013-56c0-4194-8df5-bbabc738c2eb.Records","label":"1 - Look Up Records➛Card Records","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"records","base_type":"records","usedInstances":{"a479dd99-9c35-431f-8f45-7237c1a125cb":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item","label":"2 - For Each➛Card Record","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"c5ee44e3-a24b-4b0a-a40b-3df776dd32fd":["card_record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.name","label":"2 - For Each➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.foiling","label":"2 - For Each➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.collector_number","label":"2 - For Each➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets","label":"2 - For Each➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"}]</label_cache>
         <master_snapshot>09f0671a977165107720f0571153aff1</master_snapshot>
         <master_snapshot_digest/>
         <name>Scryfall - Update Card Prices</name>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1ba8ad78979d29107720f0571153af19</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Scryfall - Update Card Prices</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -44,11 +44,11 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_1ba8ad78979d29107720f0571153af19</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:09</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:18:00</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
-        <version_record display_value="Created 2026-03-08 19:45:00">da076d8d83233210f17ccd60ceaad359</version_record>
+        <version_record display_value="Created 2026-03-10 07:16:12">05de85e1836ff210f17ccd60ceaad3d4</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=1ba8ad78979d29107720f0571153af19"/>
     <sys_variable_value action="delete_multiple" query="document_key=1ba8ad78979d29107720f0571153af19"/>
@@ -175,13 +175,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:03</sys_created_on>
         <sys_id>5613804ac3feae100efafbfdd4013133</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:02</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:16:15</sys_updated_on>
         <ui_id>2f57f013-56c0-4194-8df5-bbabc738c2eb</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/9VXTU/jMBD9K1XOVeU0TVu4rUBIHAAJEBeELMdxWmtdJ2s7/QDx33ccO2lpC9tWZYFjxvPxZvze1H18CQg1PJeXUhsiKbtb6Ms0OA2yeBBm3WH/ZJClLAzRYNBFGQJjGEck66dBO+DWb5j1ECJhPBwgFEUI9fsRJWGSRH2aoKSXgJ8kEwaehiSCweeUiNJ+z/EgPul2e3hCRpxiihGmRNnEKdeFIIsH73jmrHTMRaqYDE4fn9pBQRSkNUwFpy9rR2ZRMCxIwgQE39uqrWsLYXfEb4I3O7AF6k8sXepcpRYLagdsbphMGZTKiNCsHUyITInJ1aKxKEbSGymWhjGXBjIG1nmu+TOkHyLrlzFoizJ31nxiPyFnpuOcU3ZT2Gt0FgfUHeainMhr14CdLctIKUw9W7CUGvKxwmK2IDyi7G6cz27rghdcVu35Q5FTIpovYoziSWmYtnfBBJtAIrjVouByhAuVT3kVDFgmnZGAj04m8hkU1XwkO45/HRgR6VyA/bwyPxDFbRdXkAaCARAXcNvYDV3npaqmMsVUlLo6UERqlyt4rWaF/5QWpeva94fdiMBBU8UL8wsCpsy38tr+XDXEaMklmsuU21J6RRKb3D+Y92er+XfFtjV4G2CvgDc2r4DwaAoAuF+kAaPK7yeBf5HaNfxZzKaDD9kTL4mic2WwG/kKtf2aXKO3tx5G8QvORPpmte8Asg6+sWxtJYv3cHuGZ7bG2o7v/vgd/y35DYBS7ObNpeCy+okFoF9MfPTx2jxZI1DFmyXtKxvRdJP6pGXy1vPh+70ixB4g68A7QNS6dyi3AK83e53ecz46Guej7n6cB8Y9vjTom6ltGXD9BLN3Xvs/W3+y7g+0XAkIX58azZwdVjPct2bX1lwTdbSXqleZ5U7O3yHYkR9476i0/ZlrYQyhvh52Ksczno6YWVavvdLczIj4ve3cs6vRUNXe1z0Wex+Kth8uBQriwYppuOPV12IM76PNvRK3nfmwtXIpDRtVU98VYh15Reat2wbjVuB+t/CmhhdD74hPxv/xgxr6wW+VXejn/yP+Vh3K/ae/bsmW7zgQAAA=</values>
+        <values>H4sIAAAAAAAA/9VXTU/jMBD9K1XOVZU0TVu4rUBIHAAJEBeELMd2WmtdJ2s7/QDx33ccO2lpC9tWZYFjxvPxZvze1H18CTAxPJeXUhssCbtb6EsanAZZMoiy7rB/Msgoi6JwMOiGWQjGKIlx1qdBO+DWb5j1whBHyXAQhnEchv1+THCUpnGfpGHaS8FP4gkDT4NTweBzikVpv+dokJx0uz00wSNOEEEhIljZxJTrQuDFg3c8c1Yy5oIqJoPTx6d2UGAFaQ1TwenL2pFZFAwJnDIBwfe2auvaQtgd8ZvgzQ5sgfoTSZc6V9RiCdsBmxsmKYNSGRaatYMJlhSbXC0ai2KY3kixNIy5NJAxsM5zzZ8h/TC0fhmDtghzZ80n8hNyZjLOOWE3hb1GZ3FA3WEuyom8dg3Y2bIMl8LUswVLqSEfKyxmC8Ijyu7G+ey2LnjBZdWePxQ5waL5wsYonpaGaXsXTLAJJIJbLQouR6hQ+ZRXwYBl0hkJ+OhkIp9BUc1HsuP414ER4c4F2M8r8wNW3HZxBWkgGABxAbeN3NB1XqpqKlNERKmrA4WldrmC12pW6E9pUbqufX/IjQgcNFG8ML8gYMp8K6/tz1VDEi65RHJJuS2lVySxyf2DeX+2mn9XbFuDtwH2Cnhj8wqIjqYAgPtFGjCq/H4S+BepXcOfxWwy+JA9yZIoOlcGuZGvUFsvNCoL6JBRC3eD6Bvnh9H+gjNB36z7HYDXwTeWwa108V4vnvWZrbG297s/fu9/S84DIIrcvLkUXFY/uwD0i8UQfrxKT9YIVPFmRQrWhjXZFAFumbz1fPjOrwixB8g68A4Qte4dyi3A621fp/ecj4/G+bi7H+eBcY8vDfpmalsGXD/L7J3X/s/WH6/7Ay1XAqLXp0YzZ4fVjPat2bU110Qd76XqVWa5k/N3CHbkR987Km1/5loYQ6ivh5zK0YzTETPL6rUXzc0Mi9/bzj27Gg1V7X3dA7L3oWj70VKgIB6kmIY7Xn1BJvBm2twrSduZD1srl9KwUTX1XSHWkVd43rptMG4F7ncLb2p4MfSO+Iz8Hz+okR/8VtlFfv4/4q/Wodx/+gt5SIMzTBAAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=5613804ac3feae100efafbfdd4013133"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=1ba8ad78979d29107720f0571153af19^sys_idNOT IN60218c9bc37666500efafbfdd401317e"/>
@@ -227,10 +227,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:03</sys_created_on>
         <sys_id>1e13804ac3feae100efafbfdd401313d</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:02</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:17:57</sys_updated_on>
         <ui_id>57fa0c3d-307a-40fd-8487-b03990a16cbf</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1YWY+bMBD+K4jnNMUQYJO3qttKfeihbrQvVYWMPSRWHaDG7DZd7X+vbQxhE5K9sr2lSIlnzJzfDDO5cotalrWs5sWLqmKL3J19+jxyWa5p6veVm+MVuDOX1gJLVuSJXJfgjtwLzGtNh28lZ4TJpL2geJRVJcfrc3vllb3i9K6QJeNUgFVXYqG0SBDu7GqLpdUlHKfAlaSXy4IRrZ1RdZpM4yA8QZM48AIUeF4aIYiiSRylWYTjk1Ddax88tZqdeWP9HqfM10xZYNUUgmqbkOeNlKMScgpKcYZ5BSN3hXOKZSHWHUUApu9zviEsWS6VPFdf/lax70r4xNP3MlAOEmh43TGxgWvIjRVNElo/hkJ5KBPWAe96tJHxEbhiX8CQDGF5AzJQX8YHEARyiReDUsqOOyDHv1ZZpZDhmsuXx3MRHcFF/0guBtrFJn3vS8OauYGGF065zTkpeL3K3zUwdLuAnB+qqubK6e3FVVfKKig1XDX+LBizs2Vx+bHF2muWG1stkxcE8+6EpRQsraVOzZULHFZKULLCZcnyRVKK4oKZh5Ubq/GCq8M448WlUqpbyBgTbchYVQcev1b0U0M+x4LpALxVYtTD1wb4ydda621CYC1OTMD0hYoIVsoXROfLGqdTZKu3lwPJViAS07USpRb0uZet3Z704BZ0qqQ/nzfiTRdKM0QjFKE0DiJfdaFgQiIC0RQAITz1vV4X6kHKGOwYgx1tsGMtvrNrtlWZ4Bt6YhlP0LOMrPs0rQ719wL9n4JclfgqaaBpfTPKj4DoJteb5D8NhN/kEhaNHxrAJ14QBN6UhEHcAZhSgCyLU+QDGgTwBqoDNltssk7Pf0z+6ZgceAWiaew985D6OJ430x+0C1LknAEpcvrwfrtRbNAKGZqEZN/Ql8LA0LeN1Z4vN7vo7kDwCwe//3h9DF53prykUGp11noIxpk0pmxhtiUfY0ehBE+QF+6Bqx/14Do3I4HYHl2dnuF3d3HPJhP8NptMG+TtXAxtLClkhei/DDtCN/wf3iluUYbupcx/9HTf4W5wom+5W3UsRf07lnFrIVknhzas3jULzQ3obqv5m1v6gxvAT94LUOaHdG/lx8GByt/dB+7g020LweQveJc9sgaGXzmjf642KrIEWvMnqoQuM20lZGkYqqFtTyVE/s2RTSXAkUtwsoKryOpTz9x9bti4iZ5qC/vwiLAP/JuwJ6u8b8RQCZxt2P/CWPfQ8e2zRmIjqWogRYGwSimca9qb9u9ozVgrEDDSJ10W4os2dUO7/gGS2z+W2BYAAA==</values>
@@ -254,10 +254,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:03</sys_created_on>
         <sys_id>da13804ac3feae100efafbfdd4013136</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:02</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:17:57</sys_updated_on>
         <ui_id>a479dd99-9c35-431f-8f45-7237c1a125cb</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+SNMmtwFCgh65AV/QyFAYtUYlQWdIkOaln+L+Pip1s6HEnm4/k43siB2a76LoYXu19COpg2P7n+4IpkzD6H5iBFtmeqYhtYAt2At2leBhKub6TeVEt1xueL1fFbrXcCrleNg00/K7a8hKb7AW59SKMI7UKFZyG/u3/GfhRaeFxFunAk7aInu2HL6nYO6w1NKhp0MxA/UpQWOyE3BX5jlflpirzvNyuimZTNUUpKkCxobpr5+Ns+ssbJHYK/Y2XPklFmS8YfkY0AmmQBB1wwVowAqL1PdtH3xHgEcSz0f2t4qhMJDqWaj+D+k3cRZ6nQonkiOOUvIX1/JATzI9WcXx2UVkzIREaPfdwq7vWfJ/kpxWghE7H6woI6QLxoUuak4pZkvxxtOeX68AHZS7+5qS2HPQtghi9arqIIa0BNbZEVLfgnDKH2nl7Updm0tJmB01BJrU909B0bhnwJDyjJ4LsgfBvF/gNvEounoiGmseL+/pXl+ZOPmbF9WSaCgL3ysV7ojvhLG58T/c6MYXpMARyFWjga8Ier1eeEj0tWfF/obP1H0nqX2z8AxXUEPwvAwAA</values>
@@ -332,7 +332,7 @@
         <description>Fires whenever a card is inserted into the table.</description>
         <flow_priority/>
         <internal_name>update_card_prices</internal_name>
-        <label_cache>[{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets","label":"2 - For Each➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.collector_number","label":"2 - For Each➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.foiling","label":"2 - For Each➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.name","label":"2 - For Each➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item","label":"2 - For Each➛Card Record","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"c5ee44e3-a24b-4b0a-a40b-3df776dd32fd":["card_record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"2f57f013-56c0-4194-8df5-bbabc738c2eb.Records","label":"1 - Look Up Records➛Card Records","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"records","base_type":"records","usedInstances":{"a479dd99-9c35-431f-8f45-7237c1a125cb":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets.id","label":"2 - For Each➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.api_link","label":"2 - For Each➛Card Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"}]</label_cache>
+        <label_cache>[{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.api_link","label":"2 - For Each➛Card Record➛API Link","reference":"","reference_display":"API Link","type":"url","base_type":"url","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"api_link"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets.id","label":"2 - For Each➛Card Record➛Sets➛ID","reference":"","reference_display":"ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_sets","column_name":"id"},{"name":"2f57f013-56c0-4194-8df5-bbabc738c2eb.Records","label":"1 - Look Up Records➛Card Records","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"records","base_type":"records","usedInstances":{"a479dd99-9c35-431f-8f45-7237c1a125cb":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item","label":"2 - For Each➛Card Record","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","usedInstances":{"c5ee44e3-a24b-4b0a-a40b-3df776dd32fd":["card_record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.name","label":"2 - For Each➛Card Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"name"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.foiling","label":"2 - For Each➛Card Record➛Foiling","reference":"","reference_display":"Foiling","type":"choice","base_type":"choice","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"foiling","choices":[{"used":false,"label":"None","image":"","reference":false,"rawLabel":"None","selected":false,"missing":false,"value":"none","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Foil","image":"","reference":false,"rawLabel":"Foil","selected":false,"missing":false,"value":"foil","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}},{"used":false,"label":"Etched","image":"","reference":false,"rawLabel":"Etched","selected":false,"missing":false,"value":"etched","parameters":{"name":"x_759224_magic_c_0_mtg_cards","dependent_values":[""]}}]},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.collector_number","label":"2 - For Each➛Card Record➛Collector Number","reference":"","reference_display":"Collector Number","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"collector_number"},{"name":"a479dd99-9c35-431f-8f45-7237c1a125cb.item.sets","label":"2 - For Each➛Card Record➛Sets","reference":"x_759224_magic_c_0_mtg_sets","reference_display":"MTG Sets","type":"reference","base_type":"reference","parent_table_name":"x_759224_magic_c_0_mtg_cards","column_name":"sets"}]</label_cache>
         <master>true</master>
         <name>Scryfall - Update Card Prices</name>
         <natlang/>
@@ -349,7 +349,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>09f0671a977165107720f0571153aff1</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -357,7 +357,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:04</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:17:59</sys_updated_on>
         <type>flow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -418,13 +418,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:07</sys_created_on>
         <sys_id>9f13c04ac3feae100efafbfdd401311a</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-02 02:56:43</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:16:17</sys_updated_on>
         <ui_id>2f57f013-56c0-4194-8df5-bbabc738c2eb</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+WXbWvqMBTHv4r0tUhrrbq9uzgGgz3AHHszLiFNUw03pr1J6sNk3/2eNGkt2g0FB477Micnyf88/NL0betholkm7oTSWBA63ai7xLv20mgUpP3x8GqUJjQI/NGo76c+GIMoxOkw8boeM37jdOD7OIjGI98PQ98fDkOCgzgOhyT240EMfgIvKHhqHHMKwyXmhRmv0Si66vcHaIFnjCCCfESwNBsnTOUcb16d48RayZzxRFLhXb/97no5lrCtptK73u5NHauL45hycH1xwvZ06k1eD1E5Z233zWWdRzuRycRI8bseXWsqEgoaUswV7XoLLBKsM7mpLZLi5EnwnWHOhIYdPeO8Vuwdzh37xi+lEBWhdq4eIpcga05vsMZTLQuiC+lcyTxjhCqbj4SmuOB60rRZh6fclN4usWHb1RkvFuLRpsOrN6jqAZZCgQiam0CNchdGOp1nq+dK5S0TZU7cJM8I5vUIay1ZXGijZ+tRThewEXRCnjMxQ7nMlqxcDFoWvRmHQS/l2QoOVWwmerZne5BX3LsF+01pfsWSmSgeYBtYDIIYhw5BtoQqK2SZyiUivFDlhMRC2b28j66nNmrCsVK7yCHl6G9hdNs8uIiRTZpZQiTL9S/YYkldcB/d72Uq8ne9SjKRMHOUaoB1SNCZ6SkVVPRMmhLaZDmODmz3bRs4joKzcQRx/CSS4PDLA+l0NGwKvosPMvqyO6NdI6pMamSL0ADEXeZ7kDjraaAcIaUC5cm0difefKbOcZIyypO2782tmdj73vT/z+/NRVICghJkq8cEZ6J8PIDQi8PH//pyv9pr0LIvd/CUNqzIIUC4o7PO+8kIHSGnQmgKZ3derJ4WidWXpuy1/a9MZXTkhGcjJ+yfh5xtHWadyJacVw9N0waV/7vxx/v+0LuNBcFHG5knnRmcemb/45D88CT0m81mZ24+6bkzv0g/Qbn7nXfHHJa685AFH61YMqN6d3rllWR6hfmftnnXcagqVBneJb1uB1/yPgx2bANiSFIFVW8+byN40R1ePlHXmk+7e47QUuXxAa87z7WYVoXu/oErgs7KojYvoLva6ugYnPGNe7Hf7sAVqxXewNXsR/xNno+g3/8AlV8SPHURAAA=</values>
+        <values>H4sIAAAAAAAA/+WXbWvqMBTHv4r0tUhrrbq9uzgGgz3AHHszLiFNUw03pr1J6sNk3/2eNGkt2g0FB477Micnyf88/NL0betholkm7oTSWBA63ai7xLv20mgUpP3x8GqUJjQI/NGo76c+GIMoxOkw8boeM37jdOD7OIjGI98PQ98fDkOCgzgOhyT240EMfgIvKHhqHHMKwyXmhRmv0Si66vcHaIFnjCCCfESwNBsnTOUcb16d48RayZzxRFLhXb/97no5lrCtptK73u5NHauL45hycH1xwvZ06k1eD1E5Z233zWWdRzuRycRI8bseXWsqEgoaUswV7XoLLBKsM7mpLZLi5EnwnWHOhIYdPeO8Vuwdzh37xi+lEBWhdq4eIpcga05vsMZTLQuiC+lcyTxjhCqbj4SmuOB60rRZh6fclN4usWHb1RkvFuLRpsOrN6jqAZZCgQiam0CNchdGOp1nq+dK5S0TZU7cJM8I5vUIay1ZXGijZ+tRThewEXRCnjMxQ7nMlqxcDFoWvRmHQS/l2QoOVWwmerZne5BX3LsF+01pfsWSmSgeYBtYDIIYhw5BtoQqK2SZyiUivFDlhMRC2b28j66nNmrCsVK7yCHl6G9hdNs8uIiRTZpZQiTL9S/YYkldcB/d72Uq8ne9SjKRMHOUaoB1SNCZ6SkVVPRMmhLaZDmODmz3bRs4joKzcQRx/CSS4PDLA+l0NGwKvosPMvqyO6NdI6pMamSL0AAEgkFFDjHTxMg9wOVg/jR4jpBXwfNk2r0Tbz5T7NhJGeVJ2zfo1kzsfYP6/+c36CLJAUEJstVjgjNRPihA6MUh5X994V/tNWjZlw2gjA0rcogS7uis834yQkfIqRCawtmdF6unRWL19Sl7bf/LUxkdOeHZyAn75yFnW4dZJ7Il59Xj07RB5f9u/PG+P/RuY0Hw0UbmSWcGp57Z/zgkPzwJ/Waz2ZmbT3ruzK/UT1DufufdMYel7jxkwUcrlsyo3p1eeSWZXmH+p23edRyqClWGd0kv3sGXvA+DHduAGJJUQdWbT94IXnmHl0/UtebT7p4jtFR5fMDrznMtplWhu3/giqCzsqjNC+iutjo6Bmd8917stztwxWqFN3A1+xF/mOcj6Pc/bquz+okRAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=9f13c04ac3feae100efafbfdd401311a"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=09f0671a977165107720f0571153aff1^sys_idNOT IN8d21cc9bc37666500efafbfdd4013160"/>
@@ -470,10 +470,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:07</sys_created_on>
         <sys_id>1713c04ac3feae100efafbfdd4013124</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:03</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:17:59</sys_updated_on>
         <ui_id>57fa0c3d-307a-40fd-8487-b03990a16cbf</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1ZbW/iOBD+K1E+c1ycQCh8W7VXaaW921NB/bJaRY4zAWtNknWcdrmq//3GifMCBLbs0hUrVUJqPXbGz8w8z8SGJzstVFaofJG+y3O+TOzZp88Dmyfahv8/2Qldgz2zo0JSxdMkUJsM7IH9QEWh7fAtE5xxFdQLcC7ieSbo5t4s+csssTpL2IqLSILZLqMSd1Eg7dnTzhSP0MNoOvHGV2Q08RyPeI4T+gR8fzTxw9ink6sxOhQ0BIFLb8we1qLCeQB++WeGe6Wc1eMPxsV1bUxlpCERxxlgnAqSCBBNTEUOA3tNk4iqVG4aiwQafUxEa1jxRKE/Wy/+lvP/cMeRo9fFgPExqOaaYWDyVpnjG6roXMmCqUKapRXcqi51wH3ZPVYcE5TzPGh93IHA6Qfo8yHNXI8P0vXxL0gGiaLLXi9ZM9vjx33GQkcQ00Ko6/OFSM4QonumED0dYlW+j1k5NbM9zTsairq4qSjWyT8VX+0mIffHhFYtufm+3oocUUGmKaw5aQgaz1fp413Nv1uelFjNpEgZFc2IKiV5WChdmicbBKzRUbCmWcaTZZDJ9IGXD2MY6+FS4GAYi/QRN9VdZUiZBjJExdDhLdpvSvM9lVwn4G90gw8/D+x8k18LmudtGlAewddCI6mSYmIIyhSWjzDJM/WO6QoauLpoRvidqii+BhmUrS1AIKDHnfrtN66T+1QYk8gnPgknnu9in/JGzGfgTwEIoVPX6fSpDpdKXFaJy9K4LAPsxRGYZlZmvbQHnYm6q2E7gT8Xlf0VGlvp6xydra8V7GvnJOn8LvxHFuVBRWcTW7n5q+iiolLLrfMK4crxPM+ZsrE3aYQQRQBxPAmJC6RXCC3le8AZjiPxYFmmqsvt9431jdlvzC7J0/OCJtOJ84dD8GM5zkx/yD7ViTUHlibRyZSHmIzG7NAZNYSeM+ou4TuYt1v6tv3Dvpv6tHKBJ9U31v9C1u+dZIMUgejid3RAY1WC22F+bT6N9hGjI+KMD9De9Tu0X5TnHLl7ELc6EF8ezCkXOO8CZdHeKuq875an76IWQpzK7ru6MTR3nuNXqe9sRk7azP3pS01Dxd6LTD27I3ZM6SVqvUbINsGxi2VnmeFwS8TTG8P29xo/3CVe5zpEYnccHewNE+9Ib9i/Br0A+o/eg0YX2B9+yWvzJ5XU/3YbvCkM07KCqBBn1lMcjsd4yDygJ9/dPmJi5i21AitOBaZUjzqoDqE1CWsZvC2eu47diGd8RvF47rZ42DrpgusT0rydvgBBnX4OjedAJVvdchC6xGVdfrdv2z5rlle+m0wzniOEhba9r39M0BMbjJCzrukxlV80+Nb2/D8qwgnRlhgAAA==</values>
@@ -497,10 +497,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-18 19:04:07</sys_created_on>
         <sys_id>5313c04ac3feae100efafbfdd401311e</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:03</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:17:59</sys_updated_on>
         <ui_id>a479dd99-9c35-431f-8f45-7237c1a125cb</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI8kTfJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cc+wY53Z2cG0zPT+qb17sXcOicPmu1+v0VM6oDRe8801Mh2THqsHYvYCVQb6r7PqtVNlaT5YrXmyWKZbpeLjahWi7KEkt/kG55hGe+RGyvcMNCokK5R0L1+n4EfpRIWJ5ENWNLm0bJd/+VIClqQbkW1TZMtz7N1niVJtlmm5Tov00zkgGJNhApKVNT6OLn7YtZ3TSjtKGECfkwz+xmlRxCRJRHDd49aIK2vQDmMWA1agDe2YztvWwIsgnjSqps7jlJ7omOh993Jf7QxTZLQWCEZ4jgezmUx5TjC1T14eCZq7ls7tfKjkRzdGIXAClrl7z5jY8NT46XR44iHUl2njWpr/WtMgs0E189GSOtIBDbBaJA++aiej+a8v6p8kPoSynSoDAc1V+C9lWXrg56eocKaiIoamkbqQ9FYc5KXYdJSxwdFRVwpc6al4YrGwIPwmHKF+IHw+wv8ClYGFz+JhoaHiLnO3Slw7sMLhVj8bYOS0dnkoRhjCCPcysbf0oITTnKHt3DrR+45Uy4dSXgJ2OP1XwkHHd0gyT9DZ2P/BPEf2PAf/zgTanUDAAA=</values>
@@ -578,11 +578,11 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ddf0a71a977165107720f0571153af67</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-09 02:45:05</sys_updated_on>
+        <sys_updated_on>2026-03-10 14:16:18</sys_updated_on>
         <trigger display_value="">572ad5f983beb250f17ccd60ceaad307</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=1ba8ad78979d29107720f0571153af19"/>
