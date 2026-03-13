@@ -22,7 +22,7 @@
         <element label="Face Two Image" max_length="1000" name="face_two_image" read_only="true" type="html"/>
         <element label="Oldschool Legality" max_length="1000" name="oldschool_legality" read_only="true" type="html"/>
         <element label="Oathbreaker Legality" max_length="1000" name="oathbreaker_legality" read_only="true" type="html"/>
-        <element label="Price" max_length="38" name="price" read_only="true" type="currency"/>
+        <element label="Price" max_length="38" name="price" read_only="true" type="decimal"/>
         <element label="Face One Oracle Text" max_length="4000" name="face_one_oracle_text" read_only="true" type="html"/>
         <element label="TCGPlayer Purchase" max_length="1024" name="tcgplayer_purchase" read_only="true" type="url"/>
         <element label="Pioneer Legality" max_length="1000" name="pioneer_legality" read_only="true" type="html"/>
@@ -37,7 +37,7 @@
         <element label="Oracle ID" max_length="200" name="oracle_id" read_only="true" type="string"/>
         <element label="Premodern Legality" max_length="1000" name="premodern_legality" read_only="true" type="html"/>
         <element label="Keywords" max_length="1024" name="keywords" read_only="true" reference="x_759224_magic_c_0_mtg_keywords" type="glide_list"/>
-        <element label="Previous Price" max_length="40" name="p_price" type="currency"/>
+        <element label="Previous Price" max_length="40" name="p_price" type="decimal"/>
         <element label="Cardmarket Purchase" max_length="1024" name="cardmarket_purchase" read_only="true" type="url"/>
         <element label="Face Two Loyalty" max_length="40" name="face_two_loyalty" read_only="true" type="integer"/>
         <element label="Face One Artist" max_length="200" name="face_one_artist" read_only="true" type="string"/>
@@ -46,7 +46,7 @@
         <element label="Face Two Artist" max_length="200" name="face_two_artist" read_only="true" type="string"/>
         <element label="Game Changer" max_length="40" name="game_changer" read_only="true" type="boolean"/>
         <element label="Face One Mana Cost" max_length="1000" name="face_one_mana_cost" read_only="true" type="html"/>
-        <element label="Price Change" max_length="38" name="price_change" read_only="true" type="currency"/>
+        <element label="Price Change" max_length="38" name="price_change" read_only="true" type="decimal"/>
         <element label="Cardhoarder Purchase" max_length="1024" name="cardhoarder_purchase" read_only="true" type="url"/>
         <element label="Face One Type Line" max_length="1000" name="face_one_type_line" read_only="true" type="html"/>
         <element label="Duel Legality" max_length="1000" name="duel_legality" read_only="true" type="html"/>
