@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=840920000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=firefox,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=842136000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>28100</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>get_scryfall_card_rulings</internal_name>
-        <label_cache>[{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.published_at","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"],"9529a6a8-24b7-40c5-89b4-5b6b51486651":["items"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.source","label":"4 - For Each➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Count","label":"2 - Look Up Records➛Count","reference":null,"reference_display":"Count","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.comment","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","choices":null,"usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]},"attributes":null},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":"","choices":null,"usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.rulings","label":"1 - MTG Scryfall - Get Rulings➛Rulings","reference":null,"reference_display":"Rulings","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a3352c70-acc1-419a-86a5-15fc81eb58ab"}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.published_at","label":"4 - For Each➛data_object➛published_at","reference":"","reference_display":"","type":"string","base_type":"string","parent_table_name":null,"column_name":"","choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on","published_at"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.comment","label":"4 - For Each➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response_code","label":"1 - MTG Scryfall - Get Rulings➛Response Code","reference":null,"reference_display":"Response Code","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"06af7974-f9c1-4c2c-b0e4-964a27551f38"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.source","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Records","label":"2➛MTG Card Rulings Records","reference":"x_759224_magic_c_0_mtg_card_rulings","reference_display":"MTG Card Rulings Records","type":"records","base_type":"records","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{}},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","parent_table_name":null,"column_name":"","choices":null,"usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["card"],"1cd868ad-833e-4c43-b5bf-d9937f110a42":["card"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response","reference":null,"reference_display":"Parsed Response","type":"object","base_type":"object","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"uiType":"object","uiTypeLabel":"Object","co_type_name":"FD74e7a4af66633210d40999271f882f2f","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dae6dd0-d379-44b4-b887-f6a88570a3ad"}}]</label_cache>
+        <label_cache>[{"name":"flow_variable.match_found","label":"Flow Variables➛Match Found","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"6e7c454a-f365-4c40-a1a9-c510013777bb":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"a9b43080-23df-4e61-a5e5-33f523cf4f36"}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.comment","label":"5 - For Each➛MTG Card Rulings Record➛Comment","reference":"","reference_display":"Comment","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"comment","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.published_at","label":"5 - For Each➛MTG Card Rulings Record➛Published At","reference":"","reference_display":"Published At","type":"glide_date","base_type":"glide_date","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"published_at","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.source","label":"5 - For Each➛MTG Card Rulings Record➛Source","reference":"","reference_display":"Source","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"source","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Records","label":"2 - Look Up Records➛MTG Card Rulings Records","reference":"x_759224_magic_c_0_mtg_card_rulings","reference_display":"MTG Card Rulings","type":"records","base_type":"records","usedInstances":{"32ff3cba-98d6-49e1-b2e6-a3578db78d58":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.comment","label":"4 - For Each➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.source","label":"4 - For Each➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.published_at","label":"4 - For Each➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on","published_at"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.comment","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.source","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.published_at","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.rulings","label":"1 - MTG Scryfall - Get Rulings➛Rulings","reference_display":"Rulings","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a3352c70-acc1-419a-86a5-15fc81eb58ab"}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Count","label":"2 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["card"],"1cd868ad-833e-4c43-b5bf-d9937f110a42":["card"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","usedInstances":{},"attributes":{}},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response_code","label":"1 - MTG Scryfall - Get Rulings➛Response Code","reference_display":"Response Code","type":"string","base_type":"string","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"06af7974-f9c1-4c2c-b0e4-964a27551f38"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response","reference_display":"Parsed Response","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","uiTypeLabel":"Object","co_type_name":"FD74e7a4af66633210d40999271f882f2f","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dae6dd0-d379-44b4-b887-f6a88570a3ad"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"],"9529a6a8-24b7-40c5-89b4-5b6b51486651":["items"]},"attributes":{}}]</label_cache>
         <master_snapshot>f84353e883efb210f17ccd60ceaad36a</master_snapshot>
         <master_snapshot_digest/>
         <name>Scryfall - Create Card Rulings</name>
@@ -28,7 +28,7 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>draft</status>
+        <status>published</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -36,7 +36,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6a80536483efb210f17ccd60ceaad3bb</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>100</sys_mod_count>
         <sys_name>Scryfall - Create Card Rulings</sys_name>
         <sys_overrides/>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
@@ -44,11 +44,11 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_hub_flow_6a80536483efb210f17ccd60ceaad3bb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:56:20</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:41</sys_updated_on>
         <type>subflow</type>
         <updation_source/>
         <version>2</version>
-        <version_record display_value="Created 2026-03-17 08:56:11">4ad869b7836bb210f17ccd60ceaad3b0</version_record>
+        <version_record display_value="Created 2026-03-17 09:04:44">8bca2dfb836bb210f17ccd60ceaad37a</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_variable_value action="delete_multiple" query="document_key=6a80536483efb210f17ccd60ceaad3bb"/>
@@ -188,16 +188,16 @@
         <display_text/>
         <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
         <generation_source/>
-        <order>6</order>
-        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <order>9</order>
+        <parent_ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</parent_ui_id>
         <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-17 14:52:32</sys_created_on>
         <sys_id>6d4a19f783e7b210f17ccd60ceaad33a</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:55:55</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:02:56</sys_updated_on>
         <ui_id>1cd868ad-833e-4c43-b5bf-d9937f110a42</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+VUyW7bMBD9FYNnWdAey7eihXtKAqRBLmlCUOTYJkAtJSknrqF/71CL66Y1kBQFiqK6cZY3782M5v5ApCBLkoUQpHmY8TiM4ygIokUSFllchJGIGUBCPFKxEjDSskIB7R8e2THVOuMzvUjzKEpoyTaSU04DWtoN5UwLqlslq43BaCFNo9j+bky6vP04e48Rs5tjBN9KJTRUZHn/4JGGaSxjQZPl4YXL7hugihWgEOjWUZpdDZReK+eH5DPyXJWXtloLRyjwCDxbqARgvTVTBjxSskowW+s9WVrdokEDE9eV2h8jtrKyCEhc7LORXxF9Ebi4NaA0DoPv+KRjxwYz39aSw3VjZV0Nlp7Y6KxVW1ZXgwjXa1izVtmp12hpDeJB4yg7EiOj9adt/XQzFVzJqlc3OlXNmTq+mLVaFq0F4+YBCkoEwok3DU6PNrreyT4ZuZT+RuHDX6v6CYsaual8xh1xHzvE/BXaP/TmO6alU3GJMJjc9erpl9bVHXSMjOkgGgMM17Kx7xBuByO5zpv2WECQnx18WHwfdL+65mSHm7ZQ0mxBUGY/t0EQi8MhT6OcZWwxj5LiYp4EPJ0v8iKZp0VWpGGyyLI09KWF0j/N7rpHU7eaw9thhjwEwB669r4dYUx0EPhvTfmmLdwsfGfrup//xf9L/G+eGSixZRZmQ9O8V2/cBLCSoIT5xQpOd2YsQHdjgfHWhH/q1oRZ0H9/5+IMPP+xg3Ny+8+cnodv7y7LtkQHAAA=</values>
@@ -218,20 +218,74 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:24:10</sys_created_on>
         <sys_id>bc04df2c83efb210f17ccd60ceaad30f</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:08:11</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:31</sys_updated_on>
         <ui_id>fe09a384-1214-4a98-aefd-26e11dd7ee1d</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4bPRqB8ts1taNFhh65AW/TSDYIsyY4wxfZkOR8N8t9HWbKTxl6apumwATsZpkTx8fGR0tPKF8wf+ygaIES6w/MzhPp9hEajPiXdMOyPaIjC4YUf+AmZctiZp0pjvcw4mGZEFrWN8ZyCjYk8k2T56JaePZ16BOx0IiRTPPHHT98DPyMKjtNc+ePVzpI5G0sScgnul5NUUBPqUJSV4z1A8h4szBbk5WcMkd3xqWIGSz/w+ULzhHEIFxGZ88CfkoQRnaplbVGcsNtEbgwTkWg4zTebF7l4hqP7PbMv4pAW5Xat/sWOI2u2GHJIflWjJ4a1512GSUmwg4rWwWZ/zXJbRZxDdw3kMh6RQurL42J23xqzZ2LaBG8zLVIosd839JNQOlZoKotp8tWWyK8RPjZBuJWrlwKrYRc5EMszUzxTDVea6H6Szu8q5q9FUuJyizKlRNZ/RGslwkIbXlZ+xHAkuGRYJFIkJpJWhZEKl3wKEfCUZJlIYpypdCbKUyGXaSeW8NOJZDo3XIg46RBqMu+AiEjnGuxXpfmRKGFYuIFjwDkwASfg6uLhnCqRaTwXLOZ6E73axVI9J/JH27pTV91DZXr+uhQg/lmYjC3RjitclsVssDE/Ad4Zd7SYipe9R8/29t5wp89sWbfVscwxhc7RnJmAjUHRWD9uYFybmnmlnIKDgVfOt0a1Xrj8XS5ualhdJDZGpfSTTY5z9LbJUTfWm/qq2TBGQO/olw9si7Y+fE3OlolXND3Ye5+MuhsdQHWw4jkQmG9puosQaiq5G1jzcQL+kmgel5kfCrHyvCEL767G2ArcCVjUMZx6BydT7+CPqLcivvVGqPg/8YXwMQJ/71g+3/8kQhsl0DRhwiDaVjAlin0rwJWtVnkRGvgdY1uvm7reu/fI5902pkPzaXVuS7J65G3bqpfMCQWP/g/sw/V80FzeL4JBuKm3PW6j5wU+G170egPIKhYUU4zwVMfYyBSrAi6QOG8K++bhs3cJO7y7esdxcn4waF48Pg7I5IVzMzMn4vJ3582B/vk3x985kwGQkFBtbEnP00KVrMwwlUVeLiiS5Pasoyf4919UICu1fA8AAA==</values>
+        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4bPQaB8ts1taNFhh65AW/TSDYIsyY4wxfYkOR8N8t9HWbKTJl6apumwATsZpkTx8fGR0tMyFCwchSjuI0Q6g/MzhHo9hIbDHiWdKOoNaYSiwUXYClMy4bBTZ8pgs8g5mKZEFrWNcU3BxoTOJVk8+qXnwGQBATsdC8kUT8PR0/dWmBMFxxmuwtFya8mejSWJuAT3y3EmqA11KMrK8R4gBQ8OZgPy8jOCyP74TDGLpdcK+dzwlHEIFxOpeSuckJQRk6lFbVGcsNtUrg1jkRo4LbSb51o8w9G9rt0Xc0iLcrdW/2LPkTM7DBqSX9boiWXteZthUhLsoaJVa72/ZrmpIt6hswJyGY9JIc3lcTE7b43ZtTFdgre5ERmUOOxZ+kkkPSs0k8Uk/epKFNYIH3dB+JWrlwKrYRcaiOW5LZ6thi9NfD/OZncV89ciLXH5RZlRIus/YowSUWEsL8swZjgWXDIsUilSG8mowkqFSz6BCHhC8lykCc5VNhXlqZDLpJ1I+GnHMptZLkSStgm1mbdBRKR9Dfar0vxIlLAs3MAx4NyyAcfg6uNhTZXIDZ4JlnCzjl7tYpmZEfmjad2rq+6hMr1wVQoQ/yxsxo5ozxUuy2I3uJifAO+Ue1psxcveo2d7e2+w1WeurBvqyItICj3mDBOzOya2Vo8bFte2XkEppdbBoCvnW6vYIFr8Lg8/MZwmUhejUvnJpsY5etvUqJvqTT212yxWPO/olQ9siaYefE3KjolX9Nzfe5cMO2sdQHWw4hoI1Bt67iCEdnXcaTnzcQL+khqelJkfCrHyvCHz4K7G2AjcC1jUMbx6+ydTb/+PqLcivvE2qPg/8WXwMQJ/70g+3/8cQmsl0CxlwiLaVDAlin0rwJUtl7qILPy2ta1Wu7reu/fIp90mpkPzaXRuSrJ64G3aqlfMCQWP/g/sw/V80FzeL4J+tK63O26t5zk+G1x0u33IKhEUU4zwxCTYyhSrAi6QRO8K++bhc3AJO4K7esdxcn6waF48Pg7I5IXzbmZexOXv1psD/fNvjr9zJgMgIaHa2JGus0KVrEwxlYUuFxRJtTvr6An+/Rc3FZN/eA8AAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bc04df2c83efb210f17ccd60ceaad30f"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=6a80536483efb210f17ccd60ceaad3bb"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT IN42c8a5f3836bb210f17ccd60ceaad37d,8b53d7a083efb210f17ccd60ceaad339,9da39fe883efb210f17ccd60ceaad388"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT IN027a2dbb836bb210f17ccd60ceaad36a,3d1a6d7b836bb210f17ccd60ceaad35e,42c8a5f3836bb210f17ccd60ceaad37d,8b53d7a083efb210f17ccd60ceaad339,914a25bb836bb210f17ccd60ceaad3ca,9da39fe883efb210f17ccd60ceaad388,a2a9a93b836bb210f17ccd60ceaad35c"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">02c8a5f3836bb210f17ccd60ceaad37c</block>
+        <block display_value="">b9aae1fb836bb210f17ccd60ceaad39c</block>
+        <comment>Reset match variable to false</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow_variables_assigned>match_found</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:03:18</sys_created_on>
+        <sys_id>027a2dbb836bb210f17ccd60ceaad36a</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
+        <ui_id>b0939aac-9c6d-4d46-97c8-bf4eb28c044f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9K5XPsIVdIAm3SBFSpKaRWppLFa1m7TFY9dobrw2hiP/eGXYhUZpD781t/ebjvXkea/fCp9ik2C79ddualRPzn48DYRxj9L0XDmoUc1FDlOtS++SUGIgN2MToiL6VaRsLu4dXkFwbqwL2zRoI1CNiEPP9m1DcNVhaqNBS5TIk/LwA2yK1MIp7VTmAuqgui1lV5eORHl9IqWYjiQQXsynlnYrvWN+nRa/vXdFMRmDlvUVwBPigWNR4IPA5olNInJr5B1TpFEQfdmckIKh7Z1+AtXGR2glOfm7Nb+pd5JynkeaT2MXOx7L3qYPl2huJ9000nqwQBcuDyvZF0ttUu6/dEGwxakg2nizWvUc9fPP3BaSW+LDhmVhkr1h/X/vtt5OghXHH8fug9RLs+QQxBlOliC1fWjLLt9510Jf3rg4t1kRb1tA0xq3KJviNOVLRYHW2snTItPVbksgrl4FkGzIyHLIF4TdH+AGCYUvuqA0VM+UPZ54S3vJqwFU1KUaXo2FeKD2c4Gw8hClOh0Whp3kh9UQXM3E4+l8+JZ6sM7L3pDzazgmtDKaJ1yRhg/34h0fe8I69ewT/uo0fj+XjsfyHj0WhNC2pWrKE29O/gwM7Wi4jX0NbH37xPC/Y4Q8tXrnnhQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b9aae1fb836bb210f17ccd60ceaad396</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow_variables_assigned>match_found</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>30e4f03b-1a9d-4839-bbb3-3e4c09c92d90</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:01:38</sys_created_on>
+        <sys_id>3d1a6d7b836bb210f17ccd60ceaad35e</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
+        <ui_id>85951b76-26c2-408b-8dd7-f281e3f7f115</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9K5XPQBcWSMItUoQUqWmkluZSRatZewxWvfbGa0Mo4r93ZnchaZRD781t/ebjvXkeaw/Cp1in2Kz8ddOYtROLn48DYRxj9H0QDioUC1FBlJtC++SUGIgt2MTomL6VaWoL+4dXkNwYqwL2zWoI1CNiEIvDm1Dc11hYKNFS5Sok/LwE2yC1MIqQrJwAqIvyMp+X5WSc6fGFlGqeSSQ4n88o71R8x/o+LXt974pmMgJL7y2CI8AHxaLGA4HPEZ1C4tTMP6BKpyD6sD8jAUHdO/sCbIyL1E5w8nNjflPvfMJ5Gmk+iV3sfCx6nzpYbryReF9H48kKkbM8KG1fJL1NlfvaDcEWo4Zk48li3XvUwzd/X0BGkdQQH9Y8E4vsFevvG7/7dhK0NK4dvw9aL8GeTxBjMGWK2PClJbN6610HfXnv6tBiRbRFBXVt3Lqog9+alooGq0ZrS4eRtn5HEnnlRiDZhhEZDqMl4Tct/ADBsCV31IaKmfKHM08Jb3k14Kqc5tllNpzkSg+nOB8PYYazYZ7r2SSXeqrzuTi2/hdPiSfrjOw9KVrbOaGRwdTxmiRssR//+Mgb3rF3j+Bft/HjsXw8lv/wsSiUpiFVK5Zwe/p3cGBPy2Xka2jnwy+e5wU7/gEzvMaDhQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a1aae1fb836bb210f17ccd60ceaad391</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -247,13 +301,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-17 15:55:55</sys_created_on>
         <sys_id>42c8a5f3836bb210f17ccd60ceaad37d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:56:10</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
         <ui_id>32ff3cba-98d6-49e1-b2e6-a3578db78d58</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/51TTW+jMBD9Lz4TxEeUDblVrSpV2t1KadXLqkKDPSTWGpu1TVIW8d93HAiteqr2BPPm673HMDDT+bbz7tncOCcPmu1+vUZM6oDR+8CkYDuWFqIu0qTgebbJsyTJtuu02uRVmokcUGxYxDQ0SJXSY+MoPIHqQjwMNSYF5Nv1Ks3S9WoNxXYFWItVtsE0FeIbYiriPXJjhRtHahXStQr6l/+fwI9SCYuzmBYscfNo2W74lPqqOAUVKip9mNV9Euv7NoR2ojAD3+ee/YLSI5DIkojhm0ctkNbXoBxGrAEtwBvbs523HQEWQTxq1S8VR6k9jWOh9s3Jv7QxTZJQWCMJ4jgll7CcfZzg+g48PNFo7js7l/KjkRzdZIXAGjrlbz9iU8Fj66XRU4uHSl27jeoa/XNygi0Drp+NkM4RCWyD0EB91lE/Hc15f2V5L/XFlDmpDAe1ROC9lVXnA5+BocKGBpUNtK3Uh7K15iQvzcSliQ+KgrhW5kxLwynHwAPxmHyF+J7wuwv8AlYGFT9oDDWPEXO9u1Xg3LsWMrH80wUmk7JZQznZEFq4la2/oQUnnOmOr+Hqp9mLp1w6ovAcsIfrPxUSPV2Q5B+hs7G/A/l3bPwHIufDJJ0DAAA=</values>
+        <values>H4sIAAAAAAAA/51SwW7bMAz9F50Tw7KDLM6twFCgh7VAV/QyFAYt0YkwWdIkOaln+N9HxU5a9LiTzUfy8T2RI7N9dH0ML/YuBHUwbP/rbcWUSRj9j8xAh2zPVMQusBU7ge5TPI4t5hWUu82aF3yz3kC1WwO2cl1skXMpvyFymT2jsF6GaaJWqYLTMLz+P4M4Ki09LiIdeNIW0bP9+CUVB4e1hgY1DVoYqF9JCnkl24rnlSiLbVnkebHb8GZbNryQJaDcUt2182Ex/eUNEjuF/sZLn6SiyFcM3yMaiTSoBR1wxTowEqL1A9tH3xPgEeST0cOt4qhMJDqWat+D+kvcPM9TYYvkSOCcvIX18pAzLI5WCXxyUVkzIxEavfQIq/vOPM7y0wqwhV7H6woI6QPxoUuak4pFUvvzaM/P14H3ylz8LUltBehbBDF61fQRQ1oDauyIqO7AOWUOtfP2pC7NpKXLDpqCrNX2TEPTuWUgkvCMngiye8K/X+BX8Cq5+EE01Dxd3Nd/+jR39rEormfTVBCEVy7eEd0JF3HTW7rXmSnMhyFRqEADXxL2cL3ylBhoyUp8hs7W/05SP7DpH3K4fyUvAwAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -274,13 +328,40 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:21:18</sys_created_on>
         <sys_id>8b53d7a083efb210f17ccd60ceaad339</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:20</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
         <ui_id>e1dff522-c092-4e6e-8ea6-0c86d3350d61</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+2V227UMBCGX2Xl602Uc3f3rhQqVaItoqtKCErk2JOuhWOH2GkbVnl3xjm0FS2iIO7gLv7tmfln/CXZE93aurVmqw+NEdeKbD5eLYlQTsPnPVG0ArIhTCsurNCKLMkNla3T9vusiNP1OmUeKxLmJUGYecVBufIOoIh5hhssLfwGTK2VgZxpDn3/qQ2CmEdB8PmF8TVtDPB8TuNzamnfn1ycnW/fnL7bfsA8JQRrGq8SL4zCxEvoeuVRKLkXZRCGnB8AhNw/0q2yU332Uu+tFOra9D22zYWpJe0u/83u2U5I3sAECLpCLiw0ZLP/Yct2NeSSFiBxSBe2wQwYLjiu1jQt0zBIWRxlMc4gWiVhkcVFGPGYQpLhuTnw6BFvzyDoiqBk5vS64c5LFCwJ3FlQHLBeSaWBJamowqHppiMb27QoNED5uZLd/YmdUBazEXf2zohv4DIFgTtZAjbGYNy9X+YTC6PMdlowOK8Hb4NiaSGnGKZlW6mzsQVHEZS0lXamCJUW4eBQO9POxuSpvNjp2/dzwWOhhganTakZlfcranEMRWvBuNsACRUmyita1zicvG70jRiC0UvlX0tc+KXUt1jUvfE+Zc74AJZ/jPrrQb6kjXBdnGIaDMYbNLlhjajn3obipB+mkn9tnZ+xv6mTfBwGHhjDDrHMDUym++XTL0s+CA+fl8PBl1kIszAtY2DMAm9y8UrzzmlK2wVUte2evpq/Efk3sC4DWoZrFj6PNY2fw3rxdlCewj1P4SeEh78gfFJehHia/if8MeHOZkGNYPnw/8N07nvxx4hfOZTHEmZkiAMTBp1snXYy/2PdRoe3Lthj6VY3X1wPD1r/HYPkNLCtBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f1aae1fb836bb210f17ccd60ceaad399</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:02:25</sys_created_on>
+        <sys_id>914a25bb836bb210f17ccd60ceaad3ca</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
+        <ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UXWvbMBSG/0rQtTH+aMKau9JRGGwtrKU3WzHHkpyIyZInyUmz4P++I8lOw5puXdnl7qL3fL3n+CF7onvX9c7e6QtrxUqR5ZeHhAjlNfy9JwpaTpaEasWEE1pVQUjIBmTvA9d61oKj69kW7KzRvWIYZMJ2Enb3v8uhayGZ4ePEDgz2ddyQ5f6XkNt1vJJQc4mtbp0RaoXlguGryaDJz2lOy2JRFllWvDvL60VZ5wUrgUOJeVPh5bTA7GNQkhc38/NQt9MkbZi3lWcJ4Y+OK8ZxdAPS8oS0oBg4bXYHxXBgN0o+CWuhHLYjPvnRih/Yu5jPfWLDcUfKY/DwrMbjRZmutaD8pvMGo+KglmMN1bJv1XXcw5+dN9BLN50dld5iP955097FaKm5Xevt52nglVBhwTEoNQV5eIHDM9S949Z/GC55i42qFroOj1N1Rm9EKEYvbbqS+Egbqbc41NOUAvXGU7wRpFeovw/yPRjht/iEbbA42qzBCloF8rCdM7jCEM5Sfe+9objguEoVr4EJlhrRuQucs+Gj6yF5ju0Rsft9cLgZTaQBzSpgOQxf+ywrWWjznOO/qPwXdJ/DvJnn2fw03WeLU3Sf4PplpIs/IO0/wiuJzrLsP9LHSAtbRTTH3SIYbyX6weMbJ9jIDeNUWDRy57UP0/+1D+wQAEGPpa023/wKT9rwE9tBIAH5BQAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -301,17 +382,127 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-07 21:22:33</sys_created_on>
         <sys_id>9da39fe883efb210f17ccd60ceaad388</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:55:55</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
         <ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/61TTU/jMBD9Lz6nUT7aQHpDICSk3UUCxGWFIseetNY6ttd2WrJR/vuOmw8QZ07xvJl58+bFHojuvOm8e9E3zomDIvvfbxERKmB4HoiiLZA9ER5aRyJyorIL8TAUdb4ryx3bsHrLNtskLTb1VXO9uYI65wUm2K6ODbUOeGXBGa0cxJx6Oo7Iw4Uzkvav30THjkJyC7N8LEPVHizZD19SguO0tORNmSYly7Miz5Iku96mdZHXacZzCrxAQklrkFj6MO/9xQbfmxBaYNryBfgx9zytKH6CiCyJCLx7UBxwfEOlg4i0VKF8bXuy97ZDwALlj0r2a8VRKI90JNS+O/EPJ6ZJEgobwIUYTMk1rGZTJ7i5Q3OekZr5zs6l7KgFAzdZwaGhnfS3n7Gp4NF4odXU4mktl24tu1b9mpwgK8HyDxHpHIoAExYN0uc9muejPj8tKu+FupgyJ6VmVK4R9d6KuvNBz0BAQotEVUuNEepQGatP4tKMWtr4IDGIG6nPODRc3piyIPxyLeJ7xO8u8Cu1ImzxE2mweYyI692tpM597IImVn+7oGTabN6hmmwILcwK429wwAlmueNbeA8T9+opEw4lvATsYXlFIdHjDRLsM3TW9k8Q/4GN/wEIsNLXjwMAAA==</values>
+        <values>H4sIAAAAAAAA/61Sy27bMBD8F55tQQ9biXwLUATIoQ2QBrkUgcDHyiZKkSwfdlRB/96lJLtFzj1JO7s7O8PdkZgYbAz+1Tx4L4+aHH68b4jUCcP/kWjaAzkQGaD3ZEPOVMUUj2PNqn3T7PmWsx3f7vKi3rK77n57B6wSNSb4nmWWOg+ideCt0R4yQQOdJuQR0ltFh7f/RMdPUgkHq3wsQ9UBHDmMn1JhsNAqykDh1BfgxolkSwoMi0Z0TZE3vCrrqszz8n5XsLpiRSkqCqLGumvn0/ocn14nsWPobrz4SSrKfEPgI4AWgIM6qjxsSE816jduIIfgIgIOqHjWarhVnKQOSEdS7YeXv5G7yPNU2AE64rAkb2G7vuoC85ORHJ5tkEYvSKBMrT3cqNjrb4v8tA/oaFThug9Eokc+sElzUrFK6r6fzOXlOvBR6tnfmlSGU3WLaAhOshjApzWAgh6J2p5aK/Wxtc6c5dyMWvrsqDDIOmUuODQdYkZ5Ej6vOHtE/MsMv1Enk4uvSIPN0+y+/RXT3MXHqrhdTGOB507a8IB0Z1jFTe/pkhcmvxyGAC49DnxN2NP1/lNiwCVL/i90Me5nkvoXm/4AB009WkkDAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">edaae1fb836bb210f17ccd60ceaad393</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>32ff3cba-98d6-49e1-b2e6-a3578db78d58</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 15:59:46</sys_created_on>
+        <sys_id>a2a9a93b836bb210f17ccd60ceaad35c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:36</sys_updated_on>
+        <ui_id>30e4f03b-1a9d-4839-bbb3-3e4c09c92d90</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WTU/cMBT8K6uckyjfJNxQKySktkgFcWlp5I8X1qoTp7YDbKP9731OsgsUUAG1tx5WWo/93sw8e0c7emqw/WDNuToyRlx13uGXS98TncPw++h1pAXv0GOq48IK1dUT4HvXRA5u46RZ2TWs9CBFd7UiUgPhmxXcCoMNfI8L00uyuXjZabYWkmtYVPREI5cF7R2Ov23ZTQ+1JBQkNj2zGrthueC4aiLSxBWLWZoUaRJFSZnFtEhpnPCUAEnx3K7w3c7U6sOE+M+6dXyImx2T0tzJiiPfg1sLHQekbog04Hst6TixSm/2iHN52sk7YC06i+08d/jWiJ/YO8lzd7AB9Mhg3twv62WMM8zWSjA47Z3AGbGEyqWGKTm03afZh7sAaMgg7e4CEBkM9oPeiXYqFknN2VrdfN4RHotuMrhsSsWI3K+IxTHQwYJxFwMSWmxUt6TvcTh1r9W1mIpRSxteSVyEjVQ3SOpeWEiYEx7ijEh4jPj7Cb4gWjgXH7ENFs8yKTGC1dNrxHZWo4XtNJb6x+AEzQYXK/U8DTxgmBa9PUKea1hUb/3HT/neKx7HKk8qUpAySDJ6EGQRy4OyolmQ04LmcVYWRR6HwkIbGjVoBtvt1yGKUj6OadI0KaMkqEpeBFkFcUATKAKS5gclp/jJy4eV315D1w9UCrMGXhP7FtKH9a+ixvtzV/sW1n3p4wz4P+t/OOu/kaAVyZs8jvKnEzQrnkrQJ7Lz+dhM/hCb7of+wtSMouh/bN6PTWHqOf4WbxP5m1Pz0kXkzGDmd8OBCYNCzh12svuf4DY2+AAEuw/dKP3dWbjDtr8APFSRwXEIAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=6a80536483efb210f17ccd60ceaad3bb"/>
-    <sys_hub_flow_variable action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT IN0b2aad7b836bb210f17ccd60ceaad365"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a9b43080-23df-4e61-a5e5-33f523cf4f36</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>match_found</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Match Found</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</model>
+        <model_id>6a80536483efb210f17ccd60ceaad3bb</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_6a80536483efb210f17ccd60ceaad3bb</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:01:59</sys_created_on>
+        <sys_id>0b2aad7b836bb210f17ccd60ceaad365</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>card</element>
         <help/>
@@ -351,7 +542,7 @@
         <description>Gets the Scryfall card rulings for the provided ID.</description>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>get_scryfall_card_rulings</internal_name>
-        <label_cache>[{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.comment","label":"4 - For Each➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.source","label":"4 - For Each➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.published_at","label":"4 - For Each➛data_object➛published_at","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on","published_at"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.comment","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.source","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.published_at","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.rulings","label":"1 - MTG Scryfall - Get Rulings➛Rulings","reference_display":"Rulings","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a3352c70-acc1-419a-86a5-15fc81eb58ab"}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Count","label":"2 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["card"],"1cd868ad-833e-4c43-b5bf-d9937f110a42":["card"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","usedInstances":{},"attributes":{}},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response_code","label":"1 - MTG Scryfall - Get Rulings➛Response Code","reference_display":"Response Code","type":"string","base_type":"string","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"06af7974-f9c1-4c2c-b0e4-964a27551f38"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response","reference_display":"Parsed Response","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","uiTypeLabel":"Object","co_type_name":"FD74e7a4af66633210d40999271f882f2f","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dae6dd0-d379-44b4-b887-f6a88570a3ad"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"],"9529a6a8-24b7-40c5-89b4-5b6b51486651":["items"]},"attributes":{}}]</label_cache>
+        <label_cache>[{"name":"flow_variable.match_found","label":"Flow Variables➛Match Found","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"6e7c454a-f365-4c40-a1a9-c510013777bb":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"a9b43080-23df-4e61-a5e5-33f523cf4f36"}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.comment","label":"5 - For Each➛MTG Card Rulings Record➛Comment","reference":"","reference_display":"Comment","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"comment","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.published_at","label":"5 - For Each➛MTG Card Rulings Record➛Published At","reference":"","reference_display":"Published At","type":"glide_date","base_type":"glide_date","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"published_at","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"32ff3cba-98d6-49e1-b2e6-a3578db78d58.item.source","label":"5 - For Each➛MTG Card Rulings Record➛Source","reference":"","reference_display":"Source","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_mtg_card_rulings","column_name":"source","usedInstances":{"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Records","label":"2 - Look Up Records➛MTG Card Rulings Records","reference":"x_759224_magic_c_0_mtg_card_rulings","reference_display":"MTG Card Rulings","type":"records","base_type":"records","usedInstances":{"32ff3cba-98d6-49e1-b2e6-a3578db78d58":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.comment","label":"4 - For Each➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.source","label":"4 - For Each➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"9529a6a8-24b7-40c5-89b4-5b6b51486651.item.published_at","label":"4 - For Each➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on","published_at"],"30e4f03b-1a9d-4839-bbb3-3e4c09c92d90":["condition"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.comment","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛comment","reference":"","reference_display":"comment","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["comment"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.source","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛source","reference":"","reference_display":"source","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["source"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data.data_object.published_at","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data➛data_object➛published_at","reference":"","reference_display":"published_at","type":"string","base_type":"string","usedInstances":{"1cd868ad-833e-4c43-b5bf-d9937f110a42":["sys_created_on"]},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.rulings","label":"1 - MTG Scryfall - Get Rulings➛Rulings","reference_display":"Rulings","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a3352c70-acc1-419a-86a5-15fc81eb58ab"}},{"name":"fe09a384-1214-4a98-aefd-26e11dd7ee1d.Count","label":"2 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.card","label":"Input➛Card","reference":"x_759224_magic_c_0_card","reference_display":"Card","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b4beedaa-bd51-418d-af6a-3189924e7b8f":["card"],"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["card"],"1cd868ad-833e-4c43-b5bf-d9937f110a42":["card"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"7f4a71a4-8f0c-4192-809d-76a42051f8be","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.card.scryfall_id","label":"Input➛Card➛Scryfall ID","reference":"","reference_display":"Scryfall ID","type":"string","base_type":"string","parent_table_name":"x_759224_magic_c_0_card","column_name":"scryfall_id","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"]}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response.data","label":"1 - Get Rulings➛Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.__action_status__.code","label":"1 - MTG Scryfall - Get Rulings➛Action Status➛Code","reference":"","reference_display":"Code","type":"integer","base_type":"integer","usedInstances":{},"attributes":{}},{"name":"subflow.scryfall_id","label":"Input➛Scryfall ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b":["scryfall_id"],"fe09a384-1214-4a98-aefd-26e11dd7ee1d":["conditions"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.response_code","label":"1 - MTG Scryfall - Get Rulings➛Response Code","reference_display":"Response Code","type":"string","base_type":"string","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"06af7974-f9c1-4c2c-b0e4-964a27551f38"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response","reference_display":"Parsed Response","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","uiTypeLabel":"Object","co_type_name":"FD74e7a4af66633210d40999271f882f2f","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dae6dd0-d379-44b4-b887-f6a88570a3ad"}},{"name":"6b35995c-cb4c-4016-b7f8-7eb3d695cc5b.parsed_response.data","label":"1 - MTG Scryfall - Get Rulings➛Parsed Response➛data","reference":"","reference_display":"data","type":"array.object","base_type":"array.object","usedInstances":{"e1dff522-c092-4e6e-8ea6-0c86d3350d61":["condition"],"9529a6a8-24b7-40c5-89b4-5b6b51486651":["items"]},"attributes":{}}]</label_cache>
         <master>true</master>
         <name>Scryfall - Create Card Rulings</name>
         <natlang/>
@@ -368,7 +559,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f84353e883efb210f17ccd60ceaad36a</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -376,7 +567,7 @@
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:22</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
         <type>subflow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -524,13 +715,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-09 02:37:46</sys_created_on>
         <sys_id>a865a18983233210f17ccd60ceaad3e9</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:08:17</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
         <ui_id>fe09a384-1214-4a98-aefd-26e11dd7ee1d</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+VWyW7bMBD9FUFnw6DXLLfCQYoCWYAkyKUNCIqkbKK0pJKUlxj+9w4pSnZs1bVbBUjRk6CZIefNm3kkv65CwcLLEMV9hEhncH6GUK+H0HDYo6QTRb0hjVA0uAhbYUKmHCJ1qgw2y4yDaUZkXtkY1xRsTOhMkuWzd70GJg0I2OlESKZ4El5+fWmFGVGwneEqvFztuI7FI0nEJYQ+QvLgqQBUg9F9LiFHKmj5f+OXjkpjqpiF0muFfGF4wjhgiInUvBVOScKISdWysihO2H0iN4aJSAzsFtrghRavkK/XtXExh6ooL3zVL/YUFeb4ihjyaFROTa58aAFWAx+rqkxiiXzdJZ04zj18tG5t4ivi65rkF3TWwDfjMcmlGf1Zzs6pObs2Z1HgfWZECl0Pe7YvJJJl+anMp8ld0cuwQvi8D8J7rt7OXAU710A2z2xDbYd8u+LHSTp/KLtxLRKHyztlSoms/ogxSkS5sbyswpjhWHDJsEikSGwmaJsdHy75FDLgKckykYxxptKZcLtCLdP2WMJPO5bp3HIhxkmbUFt5GwaLtK/BfuXMz0QJy8ItbAOLWzbhBJb6fFhTJTKD54KNudlkL6NYauZEfq/z+4nDZaNceeG6FeqlHkmi9YZsGFP8I7ccFNR79rBrlFviUHyCCmbcE2VnwMmWnh2U7WBHokWjt+dlqTEFfRnObMK902TPf9qpcgS8kqF7O61BtPwVYn+sFPPgIt4eLdfWEdwVjnL0GztezlEzx0ud/PfleZI692Vnx/AvVPeO4qpT8+miKLj5jTL6By+0YWczZ9BkrLgGSvWWMjoIoX09dFqF+TQZHIGllMEtWQQPFZhahF4JMKR87IjdlsGXyuo10G9MA/2Pq4GyWbW3U9mzhi+n95FJ81fE+eGXHdqMGU0TJizGbR1Qoti3HJay1UrnkS2obW3r9b46DsaeJpkjUJeSGW3DriulfJHu2m7qNiifWQ3KBn1c4fwjl8c73RGHh6wfbeap2G6jigU+G1x0u32ocywophjhqRljO+xY5XC9jfW+PG6fPgcjiAgeqogmReHwlqJ48oB38HspuN+6V5RbtvOKQv/nK+pj3g8ASEiYEFy0UKe5clTOMJW5dg5FEl3s1eBt8vITJecGorkQAAA=</values>
+        <values>H4sIAAAAAAAA/+VWyW7bMBD9FUNnwaDXLLfCQYoCWYAkyKUNCEqkZKK0pJKUlxj+9w4pSnJs1bVbBUjRk6CZIefNm3kkv649Tr1LD0VDhEhvdH6G0GCA0Hg8CEkvCAbjMEDB6MLzvYTMGESqVGqsVxkD05yIvLJRpkKwUa4yQVbPzvXa0WmHgD2cckElS7zLry++lxEJ22kmvcv1jutYPIIETEDoIyTvPBWAGjDazyXkSHlY/t+4pZPSmEpqoAx8jy01SygDDBERivnejCSU6FSuKotkhN4nojZMeaJhN88ELxV/hXyDvomLGFQVssJX/WJHUWGOrogmj1rmoc6lCy3AKuBjXZVJDJGvu6QTy7mDjzZ+HV8R39Qkt6C3Ab4pi0gu9OTPcvZOzdk3OYsC7zPNU+i6NzB9IYEoy09FPkvuil56FcLnfRDOc/V25irYuQKyWWYaajrk2hU9TtPFQ9mNa55YXM4p0pCI6o9oLXmQa8PL2osojjgTFPNE8MRkgraZ8WGCzSADnpEs40mMM5nOud0Vapl1YwE/3UikC8MFj5MuCU3lXRgs0r0G+5U1PxPJDQu3sA0s9k3CKSx1+bAKJc80XnAaM11nL6NoqhdEfG/yu4nDZaNsed7G99RKTQRRqiYbxhT/yA0HBfWOPWwbZZdYFJ+ggjlzRJkZsLINzw7KdrQj0aLRW/OS5YHgasooJnr/LNnxnnaiHAGtZOfeTGonWP0KrTtSilmwEW+PlWvj6NwVjnLsWztazlE7R0uT9PeleZIy9yVnRvAvFPeOwmpS8umCKLj5jSqGBy+zca+eM2gylkwBpWpLFT2E0L4aen5hPk0GR2ApZXBLlp2HCkwjQqcEGFIWW2K3ZfClsjoNDFvTwPDjaqBsVuPNVPas5YvpfWTS/vVwfvhVh+oxC9OEcoNxWwchkfRbDkvpeq3ywBTUNbbNZl8dB2NPk8wRqEvJTLZhN5VSvkZ3bTdNG5RPrBZlgz6ucP6Ry+Od7ojDQzYM6nkqtqtVscRno4t+fwh1xjzEIUZ4pmNshh3LHK63WO3L4/bpc2cCEZ2HKqJNUVi8pSieHOAd/E4K9rfpFWWX7byi0P/5ivqY9wMA4gImBBctVGkuLZVzHIpcWYckiSr2avE2efkJaluUtbUQAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=a865a18983233210f17ccd60ceaad3e9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -542,23 +733,77 @@
         <display_text/>
         <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
         <generation_source/>
-        <order>5</order>
-        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <order>9</order>
+        <parent_ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</parent_ui_id>
         <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-17 14:53:49</sys_created_on>
         <sys_id>dc9ad13b83e7b210f17ccd60ceaad340</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:22</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:07</sys_updated_on>
         <ui_id>1cd868ad-833e-4c43-b5bf-d9937f110a42</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+VVTW/bMAz9K4HOjmE7tpvkNqToLmsLtEUuXSvIEp0IkD+mj7ZZkP8+ynbSoGuwFdilmG8i+aj3KJK+3xIpyJzkMUTZLM75JJ5MkihKpmlc5JMiTsSEAaQkIDWrACMtKxTQ7hCQJ6acN77Qs2yWJCmt2EpyymlEK7uinGlBtVOyXhmMFtK0im2WA+jy7utogRGjm0MEX0slNNRkfv8QkJZpvMaCJvPtG9ffklasAIWhd571CRF2075r+3aMHV31jkYLzycKCLxYqAUgkZIpAwGpWC2YbfSGzK12aNDAxHWtNoeItawtJiQ+9sXIn3jtNPJxJaAyDr3vcKRDwXpzec4su8XM3Do9hPJ1IzmYviYCSuaUXRzb+oDr1sqm7iGdzAHdKFfVV31JyCHB/n3Q4gySgNbr9MwHGeXtunm+2bO8kHVXksGpGs7U4cSs1bJw1vPZElBQYSLskrbFF6etbp5kB0YuVbhSeAhL1TzjpUau6pBxTzzEsrLwAu3nnXnJtPQqLjENgncBMRuzUMyYVy1YRPrDeSa9skED7cvgIVzL1n7BC55goLsL9tMgIJqdbKy4eG2kbgDM0SS0rlDSrEFQZr+7KJqI7XaWJTOWs+k4SYuzcRrxbDydFek4K/Iii9NpnmdxKC1U4TF6t3s0jdMcPp6mx2ECrKov+MczDECfAid0jzeu8K8Tettu9/tE/1/iP7is/txT+2V1IUEJ806T7TcVVFh1C7RvujfbanCOloNz2Fjxv9pYcR513yfaW724T7+2jv5QJxbYwy/Fh9p40AcAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=dc9ad13b83e7b210f17ccd60ceaad340"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a^sys_idNOT INa865a18983233210f17ccd60ceaad3ed,ac65a18983233210f17ccd60ceaad3ef"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f84353e883efb210f17ccd60ceaad36a^sys_idNOT IN46aa25fb836bb210f17ccd60ceaad37f,4eaa25fb836bb210f17ccd60ceaad37d,a865a18983233210f17ccd60ceaad3ed,ac65a18983233210f17ccd60ceaad3ef,c6aa25fb836bb210f17ccd60ceaad37a,ceaa25fb836bb210f17ccd60ceaad378,ceaa25fb836bb210f17ccd60ceaad37b"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b9aae1fb836bb210f17ccd60ceaad39c</block>
+        <comment>Reset match variable to false</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned>match_found</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>46aa25fb836bb210f17ccd60ceaad37f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <ui_id>b0939aac-9c6d-4d46-97c8-bf4eb28c044f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9K5XPQIEFknKLgpAiNY3U0FyqaDVrj8Gq1974A0JR/nvHrPlQmkNPPXFbvxnPvPfGo90xG0MTg1/YG+/V0rDpz+cOUyZh9L1jSrAp61dDAHFVXReTqhoO+nJwxbmY9DkSXEzGrMMM1EiZNQS+KqWNRhC4Bh0T2qdvoXyjYft0BvGV0sJhbtqAoxoBHZvu3oX+lYSGCjWl3icWn+aZxYfUwrZJYGWtRjAZ+JrvL1zEz3PQHilgnUicBh2GrwGNQCIjU6xDJY2AYN32iDgE8WD0CVgpE6giS8mvXv2mpsUw5UkkeRzb2PFYZptaWM4gwGNwkYfocipfWcXRt8YIlBB1uD3H2oSHJihL9rEiaYNKH65bHWvzrbWEHSscxiKz6AzP/h5a9EQSm2REUpZlyseV3Xw/qJgrs/csB7XloI8nCMGpKobEd8eiWryfRAt9OAvUWFPbsoamUWZZNs6u1b4VCat7S02HntR2QxTTc+4BTzb0aErQmxM+28NP4FSy5J7K0OXU8odRLxHv0kODL9Wo6F/3u8NCyO4IJ4MujHHcLQo5HhZcjmQxYW8d5rf+VoP3JzNpjOVLTFpba7NL5X4Q+yvcqSbcEKk1ZkPentOetHwuK3dZucvK/ZeVE8iVJ56LROru8L9LgS09XsXPoY11v5LCE/b2B2FMhoc5BwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f1aae1fb836bb210f17ccd60ceaad399</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>4eaa25fb836bb210f17ccd60ceaad37d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <ui_id>6e7c454a-f365-4c40-a1a9-c510013777bb</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxthxE9a8lZTCoGthLX3ZirmW5EZMljx9JM1M/vuuLDsJa/YRtse9Red+nXN9D+mI9q71zj7qK2vFiyKLT88JESpg+LsjChpOFoRqxYQTWpU9kJA1SB8Cd3rSgKOryQbspNZeMQwyYVsJ26df5dCVkMzwYWILBvs6bsii+yEkGLaoM6jzS5rTYjovplk2fXeRV/OiyqesAA4FNpRQcYmpy5Hq5LZHkp9qcNs24NYZoV6G9+3Q5WEEtWGBVZ4lhL86rhhHPjVIyxPSgGLgtNnuEcOB3St5AFZCOWxHQvKrFd9w4HQ2C4k1R4mUx+D+WQ67i3B9DQ6QiqfOmyGVrrSg3MblMF6Dl255jMWE+zZIjSUOKjlWa+kbdRc3QvYNxk+FiLdIgrdBaaA+6KgfVnrzcWR5I1S/lSEoNQW5f4HD3VXeBT4d4ZI32KhsoG1xo2Vr9Fr0xcilSV8kPtJa6g0ODReYAg3EU1wspDeIX/fwExgRVHzANlgcaVZgBS37a8V2uCZOdgmxW7uUYO1BJG63/OoDxSh5EFfG/YQSakTrrnDymg86dsnb4z+6+67rOa8HWml/4GV/3LvdZ59lBevbvHXDGZXneeQSZvUsz2anPXIxP+WRE+440xjT3xgjfJU/9EWWZf+N8dfGELaM5zxoi8f073zxHEwQZ+53TYVFao8Bez/+d4TAFo9L0GNoo82XIOqA7b4D2tnlCoUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">c753d7a083efb210f17ccd60ceaad338</block>
@@ -577,10 +822,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-09 02:37:46</sys_created_on>
         <sys_id>a865a18983233210f17ccd60ceaad3ed</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:22</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
         <ui_id>e1dff522-c092-4e6e-8ea6-0c86d3350d61</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1VXU/bMBT9K5WfmyhpmtD2jZUhIQ2YRoU0bSxy7BtqzbWz2IZlVf77rvNR0EAaaHvb3upj3+tzbs9x9kQ7WzlrNvrYGHGryOrTzZQI5TH8vSeK7oCsCNOKCyu0IlNyR6Xz2H6fFUm6XKYsYMWcBfMozoLiqFwER1AkPMMNlhZhDabSykDONIe2/eyiKOGzKPrywvqK1gZ4PrYJObW0bc+uLi43b8/fbz5inxKiJU0W8yCexfNgTpeLgELJg1kGccz5EUDMw7V2yg73s5dyd1KoW9O2KJsLU0naXP+b6tlWSF7DYBBkhb6wUJPV/pctwXE4S5qWaRylLJllCaqdLeZxkSVFPOMJhXmGDSUtQOLR9SNnPWM221QeMrZGKsP63VB6NYK65p7KLJoS+G5BcUASJZUGpmRHFc5M1w1Z2dohUAPll0o2hxNboSx2I/7sdyN+gO8URf5kCaiLQb97WOaDFXq4PMG/BKk4Zl09HGVbLRiYfiIcSuqkXT/G+gOXVaeyK7G0kGO1lm6nLvphkEOD0XmIODQUh8or9dwHIeXVVt9/GFmeCtVNZdiUmlF5WFGLsyuc9Xz2BCTssFG+o1WFE82rWt+Jrhi57MJbiYuwlPoeL/WvREiZJ96ZMTxF/KSDr2ktvIpzbIPF6AWTG1aLatTWXU7aKTGNWUtqzINGHG7+zXmGveJBW96Px5d0jY7x4jsYZLTTp+9T3gEPj9Rxx9RMhJkYx3D+ZoKGmLzRvPGY0nYCu8o2TwP+isrXhaOMaBkvWfx8OGjyXDgmveefRmTU+5qcxL/JyYC8KChp+j8nf5wTT7OgRrC8+/JiO/9U/cWg3PhA9Jcehs2EQW4bj52N33u/0aCjBHsM3ev6q1f1gLU/ARe6Gk45CAAA</values>
@@ -604,17 +849,181 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-09 02:37:46</sys_created_on>
         <sys_id>ac65a18983233210f17ccd60ceaad3ef</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:22</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
         <ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/61TTU/jMBD9Lz6nUT7aQHpDICSk3UUCxGWFIseetNY6ttd2WrJR/vuOmw8QZ07xvJl58+bFHojuvOm8e9E3zomDIvvfbxERKmB4HoiiLZA9ER5aRyJyorIL8TAUdb4ryx3bsHrLNtskLTb1VXO9uYI65wUm2K6ODbUOeGXBGa0cxJx6Oo7Iw4Uzkvav30THjkJyC7N8LEPVHizZD19SguO0tORNmSYly7Miz5Iku96mdZHXacZzCrxAQklrkFj6MO/9xQbfmxBaYNryBfgx9zytKH6CiCyJCLx7UBxwfEOlg4i0VKF8bXuy97ZDwALlj0r2a8VRKI90JNS+O/EPJ6ZJEgobwIUYTMk1rGZTJ7i5Q3OekZr5zs6l7KgFAzdZwaGhnfS3n7Gp4NF4odXU4mktl24tu1b9mpwgK8HyDxHpHIoAExYN0uc9muejPj8tKu+FupgyJ6VmVK4R9d6KuvNBz0BAQotEVUuNEepQGatP4tKMWtr4IDGIG6nPODRc3piyIPxyLeJ7xO8u8Cu1ImzxE2mweYyI692tpM597IImVn+7oGTabN6hmmwILcwK429wwAlmueNbeA8T9+opEw4lvATsYXlFIdHjDRLsM3TW9k8Q/4GN/wEIsNLXjwMAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">edaae1fb836bb210f17ccd60ceaad393</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>32ff3cba-98d6-49e1-b2e6-a3578db78d58</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>c6aa25fb836bb210f17ccd60ceaad37a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <ui_id>30e4f03b-1a9d-4839-bbb3-3e4c09c92d90</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Wy07cMBT9lZHXSZQ3yewQCAmJFqkgNi2Nrh9hrDqPxg4wjebfe51kBihUZWi7YzHS+Nj33nOOk6MMpOlN2xt92RxqLW9qsvx87RBZWwz/D6SGSpAlYU3NpZFNXYyAQ25B9XbjtFyYlVh0vZL1zQJUJ4CvF+JeamzgEC51q2B99brTbCUV78TMooUOZxnRkeXwy5bk2Kz0oQxyFrAoTKPQ98MsDmga0SDkEQiIsKECKhQePdrSX5yNiPNbXWbdWlybDhnO67O5y8UWbDpuWQW+Q8S9ETUXyKcEpYVDKqg5mKZb7xAr8rxWD8BK1gbbEXv4XssfODBMEnuwFCiRiWlztyxmFye4PAYDSKVnpu/mo2zVSCb0ZA4XJfTKHD3GpgPnrZU6lRigalvdqL6qP06OkF2D7aUh0mskIVqr1FKfdZQXq+bu05bliaxHV+ZN1TBQuxUY9I72xvIZiFCiwkZFBW2LjhZt19zKsRi5VN6NwoVXquYOh9qn0gNmiXtoLHgniB+P8BV00qr4gG2weKJJQUtWjE8wtkObBNk4RK/1kQKtH0Siu8X33lKcJM/iiskfW8I62ZpDnHwrZh0b5/kL8ehdGIY8CXNIIXPDmB64sc8SN8tp7CY0pUkQZ2maBJ40ovJ003dMbDZfet+P+DBEYVlGjIKbZzx141wELg1F6kKUHGSc4i/JnlZ+3Wdc21Ml9UrwAsxbhj6t32s03qi97LdM3ZU+T5J3r/+j1/vlcA5JmQR+8nIOx+lLOfxCAu8ZvuEfwte++a/MXt/338P3r8NX6mKKzFnbOPwfZu+1Ddpp5s5rJjVSu7TY6fabxW6s8eGS7DF013TfrKgHbPMTH+XRSf0IAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a1aae1fb836bb210f17ccd60ceaad391</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>9529a6a8-24b7-40c5-89b4-5b6b51486651</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>ceaa25fb836bb210f17ccd60ceaad378</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <ui_id>32ff3cba-98d6-49e1-b2e6-a3578db78d58</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI8oF/JWtapUqb1KadWXU4UWe0msMzZnm6Qc4r/fOhBa9fGeYMe7szODGZjpfNt592punJMHzXa/3iMmdcDofWAaGmQ7Jj02jkXsBKoL9TDUmBSQb9erNEvXqzUU2xVgLVbZBtNUiB+IqYj3yI0VbhxpVEjXKujf/p+BH6USFmeRLVjS5tGy3fDtSApakBaiLtKk4Hm2ybMkybbrtNrkVZqJHFBsiFBBhYpaH2Z338z6vg2lnSTMwOM8s19QegQRWRIx/PCoBdL6GpTDiDWgBXhje7bztiPAIohnrfql4yi1JzoWej+c/Esb0yQJjTWSIY7T4VKWc44TXN+Bhxei5r6zcys/GsnRTVEIrKFT/vYrNjU8t14aPY14qNR12qiu0T+nJNhCcP1shHSORGAbjAbps4/65WjO+6vKe6kvocyHynBQSwXeW1l1PugZGCpsiKhsoG2lPpStNSd5GSYtTXxQVMS1MmdaGq5oDDwIjylXiO8Jv7vAb2BlcPFENDQ8Rsz17laBc59eKMTyTxeUTM5mD+UUQxjhVrb+hhaccJY7vodbP3EvmXLpSMJrwB6u/0o46OkGSf4VOhv7O4j/xMZ/X/PCB3UDAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b9aae1fb836bb210f17ccd60ceaad396</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</flow>
+        <flow_variables_assigned>match_found</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>30e4f03b-1a9d-4839-bbb3-3e4c09c92d90</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>ceaa25fb836bb210f17ccd60ceaad37b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <ui_id>85951b76-26c2-408b-8dd7-f281e3f7f115</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9K5XPQIEFknKLgpAiNY3U0FyqaDVrj8Gq1974A0JR/nvHrPlolENPPXFbvxnPvPfGo90xG0MTg1/YG+/V0rDpz+cOUyZh9L1jSrAp61dDAHFVXReTqhoO+nJwxbmY9DkSXEzGrMMM1EiZNQS+KqWNRhC4Bh0TOqBvoXyjYft0BvGV0sJhbtqAoxoBHZvu3oX+lYSGCjWl3icWn+aZxYfUwrZJYGWtRjAZ+JrvL1zEz3PQHilgnUicBh2GrwGNQCIjU6xDJY2AYN32iDgE8WD0CVgpE6giS8mvXv2mpsUw5UkkeRzb2PFYZptaWM4gwGNwkYfocipfWcXRt8YIlBB1uD3H2oSHJihL9rEiaYNKH65bHWvzrbWEHSscxiKz6AzP/h5anyLRE0lskhFJWZYpH1d28/2gYq7M3rMc1JaDPp4gBKeqGBLfHYtq8X4SLfThLFBjTW3LGppGmWXZOLtW+1YkrO4tNR16UtsNUUzPuQc82dCjKUFvTvhsDz+BU8mSeypDl1PLH0a9RLxLDw2+VKOif93vDgshuyOcDLowxnG3KOR4WHA5ksWEvXWY3/pbDd6fzKQxli8xaW2tzS6V+0Hsr3CnmnBDpNaYDXl7TnvS8rms3GXlLiv3X1ZOIFeeeC4SqbvD/y4FtvR4FT+HNtb9SgpP2Nsf0dzU5jkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=f84353e883efb210f17ccd60ceaad36a"/>
-    <sys_hub_flow_variable action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f84353e883efb210f17ccd60ceaad36a^sys_idNOT IN46aa25fb836bb210f17ccd60ceaad34b"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a9b43080-23df-4e61-a5e5-33f523cf4f36</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>match_found</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Match Found</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Scryfall - Create Card Rulings">f84353e883efb210f17ccd60ceaad36a</model>
+        <model_id>f84353e883efb210f17ccd60ceaad36a</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_f84353e883efb210f17ccd60ceaad36a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-17 16:04:07</sys_created_on>
+        <sys_id>46aa25fb836bb210f17ccd60ceaad34b</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-17 16:04:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>card</element>
         <help/>
@@ -649,7 +1058,7 @@
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=6a80536483efb210f17ccd60ceaad3bb"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=6a80536483efb210f17ccd60ceaad3bb^sys_idNOT INc14353e883efb210f17ccd60ceaad3b8"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@7b2490c0</plan>
+        <plan>com.snc.process_flow.engine.ProcessPlan@68f100b6</plan>
         <plan_id display_value="Scryfall - Create Card Rulings">6a80536483efb210f17ccd60ceaad3bb</plan_id>
         <snapshot>f84353e883efb210f17ccd60ceaad36a</snapshot>
         <sys_created_by>admin</sys_created_by>
@@ -657,10 +1066,10 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c14353e883efb210f17ccd60ceaad3b8</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-17 15:44:22</sys_updated_on>
+        <sys_updated_on>2026-03-17 16:04:39</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>
