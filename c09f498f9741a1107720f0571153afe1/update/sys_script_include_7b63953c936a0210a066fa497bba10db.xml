@@ -577,7 +577,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	getCardRulings: function(id){
 		var rulings = [];
 		var rulingGR = new GlideRecord(this.RULINGS);
-		rulingGR.addQuery('card',id);
+		rulingGR.addQuery('oracle_id',id);
 		rulingGR.query();
 		while(rulingGR.next()){
 			var ruling = {};
@@ -691,7 +691,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 vigilance: 0
             },
             related_cards: this.getRelatedCards(id),
-			rulings: this.getCardRulings(id),
+			rulings: this.getCardRulings(cardGR.getValue('oracle_id')),
             printings: this.getOtherPrintings(cardGR.getValue('name')),
             price: cardGR.getValue('price'),
             quantity: 0,
@@ -710,14 +710,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>171</sys_mod_count>
+        <sys_mod_count>172</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-18 16:43:49</sys_updated_on>
+        <sys_updated_on>2026-03-18 20:11:16</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
