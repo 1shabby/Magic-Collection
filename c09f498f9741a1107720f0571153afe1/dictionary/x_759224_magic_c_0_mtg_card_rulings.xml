@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="9e70a57b83d7b210f17ccd60ceaad331" label="MTG Card Rulings" max_length="40" name="x_759224_magic_c_0_mtg_card_rulings" type="collection">
         <element label="Oracle ID" max_length="200" name="oracle_id" read_only="true" type="string"/>
-        <element label="Comment" max_length="4000" name="comment" read_only="true" type="string"/>
+        <element label="Comment" max_length="4000" name="comment" read_only="true" type="html"/>
         <element label="Published At" max_length="40" name="published_at" read_only="true" type="glide_date"/>
         <element label="Card Name" max_length="200" name="card_name" read_only="true" type="string"/>
         <element label="Source" max_length="40" name="source" read_only="true" type="string"/>
