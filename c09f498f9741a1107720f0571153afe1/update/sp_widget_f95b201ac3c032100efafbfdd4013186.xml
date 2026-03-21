@@ -225,7 +225,7 @@
   overflow: hidden;&#13;
   background-color: $brand-primary;&#13;
   width: 90%;&#13;
-  max-width: 115rem;&#13;
+  max-width: 120rem;&#13;
   padding: 2rem;&#13;
   border-radius: 5px;&#13;
   box-shadow: 0rem 0rem .8rem $brand-secondary;&#13;
@@ -362,6 +362,7 @@
   font-weight: 450;&#13;
   color: $brand-tertiary;&#13;
   padding-left: 2rem;&#13;
+  padding-right: 2rem;&#13;
   overflow-y: auto;&#13;
   max-height: 100%;&#13;
 }&#13;
@@ -598,14 +599,14 @@ body.modal-open {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-09-19 19:57:05</sys_created_on>
         <sys_id>f95b201ac3c032100efafbfdd4013186</sys_id>
-        <sys_mod_count>184</sys_mod_count>
+        <sys_mod_count>187</sys_mod_count>
         <sys_name>MTG Card Modal</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_f95b201ac3c032100efafbfdd4013186</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-19 17:32:21</sys_updated_on>
+        <sys_updated_on>2026-03-19 20:12:06</sys_updated_on>
         <template><![CDATA[<div class="card-modal-overlay" ng-if="card" ng-click="handleOverlayClick($event)">
   <div class="card-modal-content" ng-if="card" ng-click="stopClick($event)">
     <!-- Tab Menu Column -->
@@ -714,10 +715,9 @@ body.modal-open {&#13;
 
           <!-- === RULINGS TAB === -->
           <div ng-if="activeTab === 'rulings'">
-            <strong>Rulings:</strong>
               <ul>
                 <li ng-repeat="ruling in card.rulings">
-                  <em>{{ ruling.published_at }}</em>: <span ng-bind-html="trustHtml(ruling.comment)"></span>
+                  <strong>{{ ruling.published_at }}</strong>: <span ng-bind-html="trustHtml(ruling.comment)"></span>
                 </li>
               </ul>
           </div>
