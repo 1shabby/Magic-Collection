@@ -567,27 +567,45 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	/**
 	 *  Description: Takes in an id string for a card, and gets each of the ruling records for the card in an array of objects.
 	 * 	Parameters: [string] - id: The sys id of the card record.
-	 * 	Returns: [Array] - List of Rulings
-	 * 				[Object] - Ruling object
-	 * 					[String] - Comment
-	 * 					[Source] - Source of the ruling
-	 * 					[String] - Published At
+	 * 	Returns:    [object] - retObj: Object containing a success flag, message, method name, and rulings array.
+     *              [string] - success: Flag indicating if the retrieval was successful.
+     *              [string] - message: Message providing additional information about the retrieval.
+     *              [string] - method: The name of the method being executed.
+     *              [Array] - List of Rulings
+     * 				    [Object] - Ruling object
+     * 					[String] - Comment
+     * 					[Source] - Source of the ruling
+     * 					[String] - Published At
 	 */
 
 	getCardRulings: function(id){
-		var rulings = [];
-		var rulingGR = new GlideRecord(this.RULINGS);
-		rulingGR.addQuery('oracle_id',id);
-		rulingGR.orderBy('published_at');
-		rulingGR.query();
-		while(rulingGR.next()){
-			var ruling = {};
-			ruling.comment = rulingGR.getValue('comment');
-			ruling.source = rulingGR.getValue('source');
-			ruling.published_at = rulingGR.getValue('published_at');
-			rulings.push(ruling);
+        var retObj = {
+            success: true,
+            message: '',
+            method: 'getCardRulings',
+            rulings: []
+        }
+        try{
+            var rulingGR = new GlideRecord(this.RULINGS);
+		    rulingGR.addQuery('oracle_id',id);
+		    rulingGR.orderBy('published_at');
+		    rulingGR.query();
+		    while(rulingGR.next()){
+			    var ruling = {};
+			    if(ruling.comment) ruling.comment = rulingGR.getValue('comment');
+			    if(ruling.source) ruling.source = rulingGR.getValue('source');
+			    if(ruling.published_at) ruling.published_at = rulingGR.getValue('published_at');
+			    retObj.rulings.push(JSON.stringify(ruling));
+            retObj.message = 'Rulings retrieved successfully.';
 		}
-		return rulings;
+
+        }catch(ex){
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+
+		return retObj;
 	},
 
     /**
@@ -597,6 +615,13 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     getCardData: function (id) {
+        var retObj = {
+            success: true,
+            message: '',
+            method: 'getCardData',
+            cardData: {}
+        }
+        try {
         var cardGR = new GlideRecord(this.CARDS);
         cardGR.get(id); // Get the card record
         var cardData = {
@@ -692,7 +717,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 vigilance: 0
             },
             related_cards: this.getRelatedCards(id),
-			rulings: this.getCardRulings(cardGR.getValue('oracle_id')),
+			rulings: this.getCardRulings(cardGR.getValue('oracle_id')).rulings,
             printings: this.getOtherPrintings(cardGR.getValue('name')),
             price: cardGR.getValue('price'),
             quantity: 0,
@@ -702,6 +727,11 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             sets: cardGR.getDisplayValue('sets'),
             cn: cardGR.getValue('collector_number')
         };
+        retObj.message = 'Card data retrieved successfully.';
+    } catch (ex) {
+        retObj.success = false;
+        retObj.message = ex.message;
+    }
         return cardData;
     },
 
@@ -711,14 +741,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>173</sys_mod_count>
+        <sys_mod_count>179</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-19 17:08:35</sys_updated_on>
+        <sys_updated_on>2026-03-21 04:26:10</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
