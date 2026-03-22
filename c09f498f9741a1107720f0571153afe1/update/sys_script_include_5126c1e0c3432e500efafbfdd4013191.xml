@@ -45,7 +45,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         if (this.debug && this.noDebugMethods.indexOf(methodName) === -1 && msg != null) {
             if (typeof(msg) == 'object')
                 msg = JSON.stringify(msg);
-            gs.info('[Deck Utils - ' + methodName + '] ' + msg);
+            gs.debug('[Deck Utils - ' + methodName + '] ' + msg);
         }
     },
 
@@ -136,26 +136,45 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     parseDeck: function(deckString) {
-        var lines = deckString.split('\n');
-        var results = [];
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'parseDeck',
+            results: []
+        };
 
-        if (lines.length === 0) return results;
+        try {
+            var lines = deckString.split('\n');
+            var results = [];
 
-        var format = this._detectFormat(lines[0]);
+            if (lines.length === 0) return results;
 
-        for (var i = 0; i < lines.length; i++) {
-            var line = lines[i].trim();
-            if (!line) continue;
+            var format = this._detectFormat(lines[0]);
 
-            var parsed = (format === "txt") ? this._parseTxtLine(line) :
-                (format === "csv") ? this._parseCsvLine(line) :
-                (format === "moxfield") ? this._parseMoxfieldLine(line) :
-                null;
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                if (!line) continue;
 
-            if (parsed) results.push(parsed);
+                var parsed = (format === "txt") ? this._parseTxtLine(line) :
+                    (format === "csv") ? this._parseCsvLine(line) :
+                    (format === "moxfield") ? this._parseMoxfieldLine(line) :
+                    null;
+
+                if (parsed) retObj.results.push(parsed);
+            }
+            if(retObj.results.length === 0) { // If no lines were parsed successfully set success to false and add message
+                retObj.success = false;
+                retObj.message = 'No valid lines parsed. Please check the formatting of your deck input.';
+            }else{
+                retObj.message = 'Deck parsed successfully with format: ' + format;
+            }
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
         }
+        
 
-        return results;
+        return retObj;
     },
 
 
@@ -165,7 +184,15 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     createDeckFromImport: function(importGR) {
-        if (!importGR || !importGR.isValidRecord()) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'createDeckFromImport',
+            deckGR: null
+        };
+
+        try {
+            if (!importGR || !importGR.isValidRecord()) {
             gs.warn("DeckImportUtils: Invalid import record");
             return null;
         }
@@ -176,8 +203,15 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         deckGR.format = importGR.format;
         deckGR.deck_import = importGR.sys_id; // Optional back-reference
         deckGR.insert();
+        retObj.deckGR = deckGR;
+        retObj.message = 'Deck created successfully with sys_id: ' + deckGR.getUniqueValue();
 
-        return deckGR;
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+        
+        return retObj;
     },
 
     processCards: function(cardArray, deck) {
@@ -254,7 +288,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     _createOwnedCard: function(card, user, quantity) {
-        var retObj = {
+        let retObj = {
             success: true,
             message: '',
             method: '_createOwnedCard'
@@ -402,7 +436,7 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
     deleteAssociatedRecords: function(deckID) {
         try {
-            var retObj = {
+            let retObj = {
                 success: true,
                 message: ''
             };
@@ -497,13 +531,13 @@ deck_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-26 18:22:46</sys_created_on>
         <sys_id>5126c1e0c3432e500efafbfdd4013191</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>deck_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_5126c1e0c3432e500efafbfdd4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-23 00:05:32</sys_updated_on>
+        <sys_updated_on>2026-03-22 03:22:17</sys_updated_on>
     </sys_script_include>
 </record_update>
