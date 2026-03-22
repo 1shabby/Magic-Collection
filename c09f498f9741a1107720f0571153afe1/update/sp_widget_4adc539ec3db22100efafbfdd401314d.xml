@@ -911,7 +911,7 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	var magicUtils = new x_759224_magic_c_0.magic_utils();
+    var magicUtils = new x_759224_magic_c_0.magic_utils();
     // --- Quantity Update Handler ---
     if (input && input.card_sys_id && input.new_quantity !== undefined) {
         var updateGR = new GlideRecord("x_759224_magic_c_0_deck_card");
@@ -957,7 +957,7 @@
 
     data.format_name = formatName.toLowerCase();
     data.is_singleton = isSingleton;
-	data.color_identity = magicUtils.convertColors(deckGR.getValue('color_identity'));
+    data.color_identity = magicUtils.convertColors(deckGR.getValue('color_identity'));
 
     data.deck_name = deckGR.getValue('name');
     var authors = deckGR.getValue("author");
@@ -971,84 +971,87 @@
     var allCards = [];
 
     while (deckCardGR.next()) {
-        var cardData = magicUtils.getCardData(deckCardGR.getValue('card'));
-        cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
-        cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
-        cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
-        cardData.quantity = deckCardGR.getValue('quantity');
-        cardData.sys_id = deckCardGR.getUniqueValue();
+        let cardDataCall = magicUtils.getCardData(deckCardGR.getValue('card'));
+        if (cardDataCall.success) {
+			var cardData = cardDataCall.cardData;
+            cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
+            cardData.flags.is_maybeboard = deckCardGR.getValue("is_maybeboard") == "1";
+            cardData.flags.is_sideboard = deckCardGR.getValue("is_sideboard") == "1";
+            cardData.quantity = deckCardGR.getValue('quantity');
+            cardData.sys_id = deckCardGR.getUniqueValue();
 
-        let category = "";
-        if (cardData.flags.is_commander) {
-            category = "Commander";
-        } else {
-            var notes = deckCardGR.getValue("notes") || "";
-            var trimmedNote = notes.trim();
-            if (trimmedNote) {
-                var tags = trimmedNote.split(",");
-                if (tags.length && tags[0].trim()) {
-                    category = tags[0].trim();
-                }
-            }
-            if (!category) {
-                if (cardData.is_maybeboard) {
-                    category = "Maybeboard";
-                } else if (cardData.is_sideboard) {
-                    category = "Sideboard";
-                }
-            }
-            if (!category) {
-                var typeLine = (cardData.face_one.type_line || "").toLowerCase();
-                typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
-                var typePriority = [{
-                        type: "creature",
-                        category: "Creature"
-                    },
-                    {
-                        type: "planeswalker",
-                        category: "Planeswalker"
-                    },
-                    {
-                        type: "instant",
-                        category: "Instant"
-                    },
-                    {
-                        type: "sorcery",
-                        category: "Sorcery"
-                    },
-                    {
-                        type: "enchantment",
-                        category: "Enchantment"
-                    },
-                    {
-                        type: "artifact",
-                        category: "Artifact"
-                    },
-                    {
-                        type: "battle",
-                        category: "Battle"
-                    },
-                    {
-                        type: "land",
-                        category: "Land"
-                    }
-                ];
-                for (var i = 0; i < typePriority.length; i++) {
-                    if (typeLine.indexOf(typePriority[i].type) !== -1) {
-                        category = typePriority[i].category;
-                        break;
+            let category = "";
+            if (cardData.flags.is_commander) {
+                category = "Commander";
+            } else {
+                var notes = deckCardGR.getValue("notes") || "";
+                var trimmedNote = notes.trim();
+                if (trimmedNote) {
+                    var tags = trimmedNote.split(",");
+                    if (tags.length && tags[0].trim()) {
+                        category = tags[0].trim();
                     }
                 }
                 if (!category) {
-                    category = "Other";
+                    if (cardData.is_maybeboard) {
+                        category = "Maybeboard";
+                    } else if (cardData.is_sideboard) {
+                        category = "Sideboard";
+                    }
+                }
+                if (!category) {
+                    var typeLine = (cardData.face_one.type_line || "").toLowerCase();
+                    typeLine = typeLine.replace(/legendary|basic|snow|token|tribal/g, '').trim();
+                    var typePriority = [{
+                            type: "creature",
+                            category: "Creature"
+                        },
+                        {
+                            type: "planeswalker",
+                            category: "Planeswalker"
+                        },
+                        {
+                            type: "instant",
+                            category: "Instant"
+                        },
+                        {
+                            type: "sorcery",
+                            category: "Sorcery"
+                        },
+                        {
+                            type: "enchantment",
+                            category: "Enchantment"
+                        },
+                        {
+                            type: "artifact",
+                            category: "Artifact"
+                        },
+                        {
+                            type: "battle",
+                            category: "Battle"
+                        },
+                        {
+                            type: "land",
+                            category: "Land"
+                        }
+                    ];
+                    for (var i = 0; i < typePriority.length; i++) {
+                        if (typeLine.indexOf(typePriority[i].type) !== -1) {
+                            category = typePriority[i].category;
+                            break;
+                        }
+                    }
+                    if (!category) {
+                        category = "Other";
+                    }
                 }
             }
+            if (!categoryMap[category]) {
+                categoryMap[category] = [];
+            }
+            categoryMap[category].push(cardData);
+            allCards.push(cardData);
         }
-        if (!categoryMap[category]) {
-            categoryMap[category] = [];
-        }
-        categoryMap[category].push(cardData);
-        allCards.push(cardData);
     }
 
     // Sort cards within each category
@@ -1079,14 +1082,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>312</sys_mod_count>
+        <sys_mod_count>316</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-10-04 15:59:08</sys_updated_on>
+        <sys_updated_on>2026-03-22 18:22:47</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">
