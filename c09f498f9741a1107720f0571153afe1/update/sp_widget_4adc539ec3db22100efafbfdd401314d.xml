@@ -349,10 +349,10 @@
 
 
     /* Description: Returns the reason a card is marked as not being legal in a deck 
-    * Parameters: [object] - card: Card object that is marked as illegal
+     * Parameters: [object] - card: Card object that is marked as illegal
     			  [string] - formatName: name of the format for the deck that's being checked
-    * Returns: [string] - Reason the card is not legal in the deck
-    */
+     * Returns: [string] - Reason the card is not legal in the deck
+     */
 
     $scope.getIllegalityReason = function(card, formatName) {
         if (!card) return "";
@@ -364,17 +364,17 @@
             .some(type => name.includes(type));
         const sevenDwarves = oracleText.includes("a deck can have up to seven cards");
 
-        // ]]>🔹<![CDATA[ Format legality rule
+        //  Format legality rule
         if (card.legality[formatName] === false) {
             return "This card is banned in " + formatName + ".";
         }
 
-        // ]]>🔹<![CDATA[ Seven Dwarves rule
+        //  Seven Dwarves rule
         if (sevenDwarves && qty > 7) {
             return "A deck can have up to 7 copies of this card.";
         }
 
-        // ]]>🔹<![CDATA[ Commander / Oathbreaker / Brawl singleton rules
+        //  Commander / Oathbreaker / Brawl singleton rules
         if ($scope.is_singleton) {
             // ----- Color Identity Check -----
             if (card.colors.toLowerCase() !== "colorless") {
@@ -393,7 +393,7 @@
                 return "Only one copy of a card is allowed in " + formatName + " (except basic lands).";
             }
         } else {
-            // ]]>🔹<![CDATA[ Standard non-singleton quantity rule
+            //  Standard non-singleton quantity rule
             if (!isBasicLand && qty > 4) {
                 return "More than four copies are not allowed in " + formatName + ".";
             }
@@ -911,10 +911,11 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-    var magicUtils = new x_759224_magic_c_0.magic_utils();
+    const magicUtils = new x_759224_magic_c_0.magic_utils();
+	const constants = new x_759224_magic_c_0.mtg_constants();
     // --- Quantity Update Handler ---
     if (input && input.card_sys_id && input.new_quantity !== undefined) {
-        var updateGR = new GlideRecord("x_759224_magic_c_0_deck_card");
+        var updateGR = new GlideRecord(constants.tables.DECK_CARD);
         if (updateGR.get(input.card_sys_id)) {
             updateGR.quantity = input.new_quantity;
             updateGR.update();
@@ -937,7 +938,7 @@
         return;
     }
 
-    var deckGR = new GlideRecord('x_759224_magic_c_0_mtg_deck');
+    var deckGR = new GlideRecord(constants.tables.DECK);
     deckGR.addQuery('sys_id', deckId);
     deckGR.query();
 
@@ -946,7 +947,7 @@
         return;
     }
 
-    var formatGR = deckGR.getValue('format') ? new GlideRecord('x_759224_magic_c_0_deck_formats') : null;
+    var formatGR = deckGR.getValue('format') ? new GlideRecord(constants.tables.DECK_FORMATS) : null;
     var formatName = '';
     var isSingleton = false;
 
@@ -963,7 +964,7 @@
     var authors = deckGR.getValue("author");
     data.is_author = authors.indexOf(gs.getUserID()) !== -1;
 
-    var deckCardGR = new GlideRecord("x_759224_magic_c_0_deck_card");
+    var deckCardGR = new GlideRecord(constants.tables.DECK_CARDS);
     deckCardGR.addQuery("deck", deckId);
     deckCardGR.query();
 
@@ -971,7 +972,7 @@
     var allCards = [];
 
     while (deckCardGR.next()) {
-        let cardDataCall = magicUtils.getCardData(deckCardGR.getValue('card'));
+        const cardDataCall = magicUtils.getCardData(deckCardGR.getValue('card'));
         if (cardDataCall.success) {
 			var cardData = cardDataCall.cardData;
             cardData.flags.is_commander = deckCardGR.getValue("is_commander") == "1";
@@ -1082,14 +1083,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-14 02:06:20</sys_created_on>
         <sys_id>4adc539ec3db22100efafbfdd401314d</sys_id>
-        <sys_mod_count>316</sys_mod_count>
+        <sys_mod_count>319</sys_mod_count>
         <sys_name>MTG Deck View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_4adc539ec3db22100efafbfdd401314d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-22 18:22:47</sys_updated_on>
+        <sys_updated_on>2026-03-22 18:40:50</sys_updated_on>
         <template><![CDATA[<div class="deck-controls" style="display: flex; gap: 2rem; align-items: flex-end; margin-bottom: 1rem;">
   <!-- Display As -->
   <div class="form-group">

@@ -137,6 +137,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     createOwnedRecord: function(card, user, qty) {
+		let retObj = {
+			success: true,
+			message: '',
+			method: 'createOwnedRecord',
+			record: null
+		}
         try {
             var newOwned = new GlideRecord(this.OWNED_CARDS);
             newOwned.initialize();
@@ -145,16 +151,15 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             newOwned.setvalue('quantity', qty || 1);
             newOwned.insert();
 
-            return {
-                success: true,
-                record: newOwned
-            };
+			retObj.record = newOwned;
+			retObj.message = 'Owned record created successfully';
+
         } catch (ex) {
-            return {
-                success: false,
-                msg: ex.message()
-            };
+            retObj.message = ex.message;
+			retObj.success = false;
         }
+		this.log(retObj.method, JSON.stringify(retObj));
+		return retObj;
     },
 
     /* Description: Creates a token record for the provided name and scryfall ID 
@@ -240,7 +245,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     getImgSrc: function(img) {
-        var regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
+        const regex = /<img[^>]*\s+src=["']([^"']+)["']/i;
         if (img)
             var match = img.match(regex);
         var retval = '';
@@ -435,6 +440,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 var back = resp.card_faces[1];
                 card.setValue('is_multi_faced', true);
 
+				if(resp.layout == 'split'){ // Handle split card images
+					if(resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
+				}
+
                 if (front) {
                     if (front.name) card.setValue('face_one_name', front.name);
                     if (front.flavor_name) card.setValue('face_one_flavor_name', front.flavor_name);
@@ -448,7 +457,6 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (front.toughness) card.setValue('face_one_toughness', front.toughness);
                     if (front.produced_mana) card.setValue('face_one_produced_mana', this.convertColors(front.produced_mana));
                     if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);
-                    if (front.image_uris.normal) card.setValue('face_one_image', front.image_uris.normal);
                     if (front.image_uris.normal) card.setValue('face_one_image', front.image_uris.normal);
                 }
 
@@ -465,7 +473,6 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (back.toughness) card.setValue('face_two_toughness', back.toughness);
                     if (back.produced_mana) card.setValue('face_two_produced_mana', this.convertColors(back.produced_mana));
                     if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);
-                    if (back.image_uris.normal) card.setValue('face_two_image', back.image_uris.normal);
                     if (back.image_uris.normal) card.setValue('face_two_image', back.image_uris.normal);
                 }
             }
@@ -592,10 +599,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             rulingGR.query();
             while (rulingGR.next()) {
                 var ruling = {};
-                if (ruling.comment) ruling.comment = rulingGR.getValue('comment');
-                if (ruling.source) ruling.source = rulingGR.getValue('source');
-                if (ruling.published_at) ruling.published_at = rulingGR.getValue('published_at');
-                retObj.rulings.push(JSON.stringify(ruling));
+                if (rulingGR.comment) ruling.comment = rulingGR.getValue('comment');
+                if (rulingGR.source) ruling.source = rulingGR.getValue('source');
+                if (rulingGR.published_at) ruling.published_at = rulingGR.getValue('published_at');
+				// Log Rulings
+				this.log(retObj.method, JSON.stringify(ruling));
+                retObj.rulings.push(ruling);
                 retObj.message = 'Rulings retrieved successfully.';
             }
 
@@ -603,8 +612,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.success = false;
             retObj.message = ex.message;
         }
-
-
+		// Log RetObj
+		this.log(retObj.method, JSON.stringify(retObj));
         return retObj;
     },
 
@@ -733,6 +742,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.success = false;
             retObj.message = ex.message;
         }
+		// Log RetObj
+		this.log(retObj.method,JSON.stringify(retObj));
         return retObj;
     },
 
@@ -742,14 +753,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>183</sys_mod_count>
+        <sys_mod_count>191</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-22 18:18:20</sys_updated_on>
+        <sys_updated_on>2026-03-23 14:38:13</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
