@@ -396,7 +396,7 @@ $quintuple-space: 40px;
   display: flex;
   flex-direction: column;
   font-size: 0.85rem;
-  color: #333;
+  color: $brand-primary;
 }
 .mtg-advanced-search__colors {
   display: flex;
@@ -443,7 +443,7 @@ $quintuple-space: 40px;
 .mtg-advanced-search__submit {
   padding: 0.5rem 1.25rem;
   border-radius: 6px;
-  background: #3b82f6;
+  background: $brand-secondary;
   color: black;
   border: none;
   cursor: pointer;
@@ -451,7 +451,7 @@ $quintuple-space: 40px;
 }
 
 .mtg-advanced-search__submit:hover {
-  background: #2563eb;
+  background: $brand-secondary;
 }</css_variables>
         <footer display_value="LegalFooter">64407ec3532332000d620d0323dc3436</footer>
         <footer_fixed>true</footer_fixed>
@@ -463,14 +463,14 @@ $quintuple-space: 40px;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 02:14:49</sys_updated_on>
+        <sys_updated_on>2026-03-24 13:18:37</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>

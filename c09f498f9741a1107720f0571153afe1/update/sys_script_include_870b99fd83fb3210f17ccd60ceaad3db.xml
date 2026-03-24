@@ -43,7 +43,7 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
 
         this.DEFAULTS = {
             PAGE: 1,
-            SIZE: 24
+            SIZE: 15
         };
 
         this.isLoggedIn = gs.getUserID() !== '';
@@ -141,34 +141,58 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
     },
 
     /* Description: Applies advanced query filters to GlideRecord based on parsed query object
- * Parameters: [GlideRecord] - gr
-               [object] - queryObj
- * Returns: [object]: status object
- */
-    applyAdvancedQuery: function(gr, queryObj) {
+ 	 * Parameters: [GlideRecord] - cardGR
+    	           [object] - queryObj
+ 	 * Returns: [object]: status object
+ 	 */
+    applyAdvancedQuery: function(cardGR, queryObj) {
         let retObj = {
             success: true,
             message: '',
             method: 'applyAdvancedQuery',
             record: null
         };
-        gs.info('@GS: gr: ' + gr.getTableName() + ', queryObj: ' + JSON.stringify(queryObj));
+        
         try {
-            gs.info("@GS: Applying advanced query: " + JSON.stringify(queryObj));
+            this.log(retObj.method, JSON.stringify(queryObj));
             // NAME (contains)
             if (queryObj.name) {
-                gr.addQuery('name', 'CONTAINS', queryObj.name);
+                let qc = cardGR.addQuery('name', 'CONTAINS', queryObj.name);
+				qc.addOrCondition('face_one_flavor_name', 'CONTAINS', queryObj.name);
+				qc.addOrCondition('face_two_flavor_name', 'CONTAINS', queryObj.name);
             }
+
+			// TEXT (contains)
+			if (queryObj.text) {
+				let qc = cardGR.addQuery('face_one_oracle_text', 'CONTAINS', queryObj.text);
+				qc.addOrCondition('face_two_oracle_text', 'CONTAINS', queryObj.text);
+			}
+
+			// FLAVOR (contains)
+			if (queryObj.flavor) {
+				let qc = cardGR.addQuery('face_one_flavor_text', 'CONTAINS', queryObj.flavor);
+				qc.addOrCondition('face_two_flavor_text', 'CONTAINS', queryObj.flavor);
+			}
+
+			// ARTIST (constains)
+			if (queryObj.artist) {
+				let qc = cardGR.addQuery('face_one_artist', 'CONTAINS', queryObj.artist);
+				cardGR.addOrCondition('face_two_artist', 'CONTAINS', queryObj.artist);
+			}
 
             // RARITY (exact match)
             if (queryObj.rarity) {
-
-                gr.addQuery('rarity', queryObj.rarity.toLowerCase());
+                cardGR.addQuery('rarity', queryObj.rarity.toLowerCase());
             }
+
+			// PRICE (Relative)
+			if (queryObj.price) {
+				cardGR.addQuery('price','<', parseFloat(queryObj.price));
+			}
 
             // TYPE (OR condition across 2 fields)
             if (queryObj.type) {
-                let qc = gr.addQuery('face_one_type_line', 'CONTAINS', queryObj.type);
+                let qc = cardGR.addQuery('face_one_type_line', 'CONTAINS', queryObj.type);
                 qc.addOrCondition('face_two_type_line', 'CONTAINS', queryObj.type);
             }
 
@@ -185,7 +209,7 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
                 });
 
                 if (colorSysIds.length) {
-                    let qc = gr.addQuery('color_identity', colorSysIds[0]);
+                    let qc = cardGR.addQuery('color_identity', colorSysIds[0]);
 
                     for (let i = 1; i < colorSysIds.length; i++) {
                         qc.addOrCondition('color_identity', colorSysIds[i]);
@@ -208,6 +232,7 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
      * Parameters: None
      * Returns: [object]: Contains success flag and parsed query object
      */
+	
     parseQuery: function() {
         let retObj = {
             success: true,
@@ -315,34 +340,34 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         };
 
         try {
-            var gr = new GlideRecord(config.table);
+            var cardGR = new GlideRecord(config.table);
 
             let parsedQuery = this.parseQuery();
 
             // If structured query exists → use advanced only
             if (this.query && Object.keys(parsedQuery.record).length > 0) {
-
-                this.applyAdvancedQuery(gr, parsedQuery.record);
+                this.applyAdvancedQuery(cardGR, parsedQuery.record);
 
             } else {
                 // fallback to simple search
-                this.applySearch(gr, config.search_fields);
+                this.applySearch(cardGR, config.search_fields);
             }
 
             // Order
             if (config.order_by) {
-                gr.orderBy(config.order_by);
+                cardGR.orderBy(config.order_by);
             }
 
             // Pagination
             let offset = (this.page - 1) * this.size;
-            gr.chooseWindow(offset, offset + this.size);
+            cardGR.chooseWindow(offset, offset + this.size);
 
-            gr.query();
+            cardGR.query();
 
             let sysIds = [];
-            while (gr.next()) {
-                sysIds.push(gr.getUniqueValue());
+			this.log(retObj.method, sysIds);
+            while (cardGR.next()) {
+                sysIds.push(cardGR.getUniqueValue());
             }
 
             // Enrich records
@@ -401,13 +426,13 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:04:26</sys_created_on>
         <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>mtg_portal_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 01:57:12</sys_updated_on>
+        <sys_updated_on>2026-03-24 20:55:48</sys_updated_on>
     </sys_script_include>
 </record_update>
