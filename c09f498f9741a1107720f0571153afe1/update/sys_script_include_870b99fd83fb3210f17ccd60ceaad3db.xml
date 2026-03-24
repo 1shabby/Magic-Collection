@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_759224_magic_c_0.mtg_portal_utils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>mtg_portal_utils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var mtg_portal_utils = Class.create();
+mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    /* Description: Initializes the widget service with $sp context and debug configuration
+     * Parameters: [object] - $sp: Service Portal API object
+                   [boolean] - debug: flag to enable debug logging
+                   [array|string] - noDebugMethods: array or comma separated string of methods to exclude from logging
+     * Returns: None
+     */
+    initialize: function(debug, noDebugMethods, $sp, mtgConstants) {
+
+        this.mtgUtils = new x_759224_magic_c_0.magic_utils(debug, noDebugMethods);
+        this.constants = mtgConstants;
+        this.$sp = $sp;
+
+        this.debug = false;
+        this.noDebugMethods = [];
+
+        if (debug) {
+            this.debug = debug;
+        }
+
+        if (noDebugMethods) {
+            this.noDebugMethods = noDebugMethods.split(',');
+        }
+
+        this.PARAMS = {
+            PAGE: 'p',
+            SIZE: 's',
+            QUERY: 'q'
+        };
+
+        this.DEFAULTS = {
+            PAGE: 1,
+            SIZE: 24
+        };
+
+        this.isLoggedIn = gs.getUserID() !== '';
+        this.isAdmin = gs.hasRole('admin');
+
+        this._initParams();
+    },
+
+    /* Description: Logs a message if debug is enabled and method is not excluded
+     * Parameters: [string] - methodName: name of method calling log
+                   [string] - msg: message to log
+     * Returns: None
+     */
+    log: function(methodName, msg) {
+        if (this.debug && this.noDebugMethods.indexOf(methodName) === -1) {
+            gs.info('[MTG Portal Utils - ' + methodName + '] ' + msg);
+        }
+    },
+
+    /* Description: Initializes and sets URL parameters onto the instance
+     * Parameters: None
+     * Returns: None
+     */
+    _initParams: function() {
+        this.page = this._getIntParam(this.PARAMS.PAGE, this.DEFAULTS.PAGE);
+        this.size = this._getIntParam(this.PARAMS.SIZE, this.DEFAULTS.SIZE);
+        this.query = this._getStringParam(this.PARAMS.QUERY, '');
+    },
+
+    /* Description: Retrieves an integer URL parameter with default fallback
+     * Parameters: [string] - name: parameter name
+                   [integer] - defaultValue: fallback value if param invalid
+     * Returns: [integer]: parsed integer value
+     */
+    _getIntParam: function(name, defaultValue) {
+        var val = parseInt(this.$sp.getParameter(name), 10);
+        return isNaN(val) || val < 1 ? defaultValue : val;
+    },
+
+    /* Description: Retrieves a string URL parameter with default fallback
+     * Parameters: [string] - name: parameter name
+                   [string] - defaultValue: fallback value if param missing
+     * Returns: [string]: parameter value
+     */
+    _getStringParam: function(name, defaultValue) {
+        var val = this.$sp.getParameter(name);
+        return val ? val.toString() : defaultValue;
+    },
+
+    /* Description: Retrieves an array from a comma separated URL parameter
+     * Parameters: [string] - name: parameter name
+     * Returns: [array]: array of trimmed values
+     */
+    _getArrayParam: function(name) {
+        var val = this.$sp.getParameter(name);
+        if (!val) return [];
+        return val.split(',').map(function(item) {
+            return item.trim();
+        }).filter(Boolean);
+    },
+
+    /* Description: Applies a CONTAINS search across multiple fields on a GlideRecord
+     * Parameters: [GlideRecord] - gr: GlideRecord or GlideAggregate instance
+                   [array] - fields: list of fields to search against
+     * Returns: [object]: Contains success flag and message
+     */
+    applySearch: function(gr, fields) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'applySearch',
+            record: null
+        };
+
+        try {
+            if (!this.query || !fields || !fields.length) {
+                retObj.message = 'No search applied';
+                return retObj;
+            }
+
+            var qc = gr.addQuery(fields[0], 'CONTAINS', this.query);
+            for (var i = 1; i < fields.length; i++) {
+                qc.addOrCondition(fields[i], 'CONTAINS', this.query);
+            }
+
+            retObj.message = 'Search applied';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        if (this.debug) this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Applies advanced query filters to GlideRecord based on parsed query object
+ * Parameters: [GlideRecord] - gr
+               [object] - queryObj
+ * Returns: [object]: status object
+ */
+    applyAdvancedQuery: function(gr, queryObj) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'applyAdvancedQuery',
+            record: null
+        };
+        gs.info('@GS: gr: ' + gr.getTableName() + ', queryObj: ' + JSON.stringify(queryObj));
+        try {
+            gs.info("@GS: Applying advanced query: " + JSON.stringify(queryObj));
+            // NAME (contains)
+            if (queryObj.name) {
+                gr.addQuery('name', 'CONTAINS', queryObj.name);
+            }
+
+            // RARITY (exact match)
+            if (queryObj.rarity) {
+
+                gr.addQuery('rarity', queryObj.rarity.toLowerCase());
+            }
+
+            // TYPE (OR condition across 2 fields)
+            if (queryObj.type) {
+                let qc = gr.addQuery('face_one_type_line', 'CONTAINS', queryObj.type);
+                qc.addOrCondition('face_two_type_line', 'CONTAINS', queryObj.type);
+            }
+
+            // COLORS (multi-select OR logic)
+            if (queryObj.color) {
+                let colors = queryObj.color.split(',');
+                let colorSysIds = [];
+
+                colors.forEach(c => {
+                    let sysId = this.constants.colors[c];
+                    if (sysId) {
+                        colorSysIds.push(sysId);
+                    }
+                });
+
+                if (colorSysIds.length) {
+                    let qc = gr.addQuery('color_identity', colorSysIds[0]);
+
+                    for (let i = 1; i < colorSysIds.length; i++) {
+                        qc.addOrCondition('color_identity', colorSysIds[i]);
+                    }
+                }
+            }
+
+            retObj.message = 'Advanced query applied';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Parses unified q parameter into query object
+     * Parameters: None
+     * Returns: [object]: Contains success flag and parsed query object
+     */
+    parseQuery: function() {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'parseQuery',
+            record: {}
+        };
+
+        try {
+            let raw = this.query || '';
+            let queryObj = {};
+
+            if (raw) {
+                raw.split(';').forEach(pair => {
+                    let parts = pair.split(':');
+
+                    if (parts.length === 2) {
+                        let key = parts[0].trim();
+                        let value = parts[1].trim();
+
+                        if (key && value) {
+                            queryObj[key] = value;
+                        }
+                    }
+                });
+            }
+
+            retObj.record = queryObj;
+            retObj.message = 'Query parsed successfully';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Retrieves total record count for a table with optional search applied
+    * Parameters: 
+    *   [string] - table: table name
+    *   [array] - fields: fields to apply simple search against (optional)
+    * Returns: [object]: Contains success flag and count in record property
+    */
+    getCount: function(table, fields) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'getCount',
+            record: 0
+        };
+
+        try {
+            var gr = new GlideAggregate(table);
+
+            // Parse the unified query param
+            let parsedQuery = this.parseQuery();
+
+            if (this.query && Object.keys(parsedQuery.record).length > 0) {
+                // Apply advanced query filters if structured query exists
+                this.applyAdvancedQuery(gr, parsedQuery.record);
+            } else if (fields && fields.length) {
+                // fallback to simple search
+                this.applySearch(gr, fields);
+            }
+
+            gr.addAggregate('COUNT');
+            gr.query();
+
+            if (gr.next()) {
+                retObj.record = parseInt(gr.getAggregate('COUNT'), 10);
+            }
+
+            retObj.message = 'Count retrieved';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        if (this.debug) this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Queries a table with pagination and optional search applied
+     * Parameters: [object] - config: configuration object
+                        [string] - table: table name
+                        [array] - search_fields: fields to search against
+                        [array] - fields: fields to return
+                        [string] - order_by: field to sort by
+     * Returns: [object]: Contains success flag and array of records
+     */
+    /* Description: Queries a table with pagination and optional search applied,
+     * then enriches each record using MTG_UTILS.getCardData
+     * Parameters: [object] - config: configuration object
+     * Returns: [object]: Contains success flag and array of enriched card records
+     */
+    queryTable: function(config) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'queryTable',
+            record: []
+        };
+
+        try {
+            var gr = new GlideRecord(config.table);
+
+            let parsedQuery = this.parseQuery();
+
+            // If structured query exists → use advanced only
+            if (this.query && Object.keys(parsedQuery.record).length > 0) {
+
+                this.applyAdvancedQuery(gr, parsedQuery.record);
+
+            } else {
+                // fallback to simple search
+                this.applySearch(gr, config.search_fields);
+            }
+
+            // Order
+            if (config.order_by) {
+                gr.orderBy(config.order_by);
+            }
+
+            // Pagination
+            let offset = (this.page - 1) * this.size;
+            gr.chooseWindow(offset, offset + this.size);
+
+            gr.query();
+
+            let sysIds = [];
+            while (gr.next()) {
+                sysIds.push(gr.getUniqueValue());
+            }
+
+            // Enrich records
+            sysIds.forEach(id => {
+                let cardData = this.mtgUtils.getCardData(id);
+                retObj.record.push(cardData);
+            });
+
+            retObj.message = 'Records retrieved with advanced filters';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Builds pagination metadata based on total record count
+     * Parameters: [integer] - total: total number of records
+     * Returns: [object]: Contains success flag and pagination object
+     */
+    getPagination: function(total) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'getPagination',
+            record: {}
+        };
+
+        try {
+            retObj.record = {
+                page: this.page,
+                size: this.size,
+                total: total,
+                total_pages: Math.ceil(total / this.size),
+                has_next: (this.page * this.size) < total,
+                has_prev: this.page > 1
+            };
+
+            retObj.message = 'Pagination built';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        if (this.debug) this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    type: 'mtg_portal_utils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-23 20:04:26</sys_created_on>
+        <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>mtg_portal_utils</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-24 01:57:12</sys_updated_on>
+    </sys_script_include>
+</record_update>

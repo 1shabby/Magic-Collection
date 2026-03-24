@@ -6,11 +6,25 @@
   c.searchTerm = '';
 
   c.searchCards = function() {
+    // persist query as `q` in URL
+    try {
+      var _u = new URL(window.location.href);
+      if (c.searchTerm) _u.searchParams.set('q', c.searchTerm);
+      else _u.searchParams.delete('q');
+      _u.searchParams.set('page', 1);
+      history.replaceState(null, '', _u.toString());
+    } catch (e) {}
     $rootScope.$broadcast('searchTerm', c.searchTerm);
   };
 
   c.clearSearch = function() {
     c.searchTerm = '';
+    try {
+      var _u2 = new URL(window.location.href);
+      _u2.searchParams.delete('q');
+      _u2.searchParams.set('page', 1);
+      history.replaceState(null, '', _u2.toString());
+    } catch (e) {}
     $rootScope.$broadcast('searchTerm', c.searchTerm);
   };
 };]]></client_script>
@@ -83,14 +97,14 @@ input {&#13;
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-08-02 21:20:57</sys_created_on>
         <sys_id>e3ff81eb979031907720f0571153af2d</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>MTG Search</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e3ff81eb979031907720f0571153af2d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-19 15:59:39</sys_updated_on>
+        <sys_updated_on>2026-03-23 15:26:18</sys_updated_on>
         <template><![CDATA[<div class="input-container">
   <div class="input-wrapper">
     <input type="text"
