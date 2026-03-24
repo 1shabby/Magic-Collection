@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $location) {
+    var c = this;
+
+    // Track whether modal is open
+    c.showAdvancedSearch = false;
+
+    /* ==============================
+       COLOR OPTIONS CONFIG
+       ============================== */
+    c.colorOptions = [{
+            label: 'White',
+            value: 'W',
+            icon: 'white'
+        },
+        {
+            label: 'Blue',
+            value: 'U',
+            icon: 'blue'
+        },
+        {
+            label: 'Black',
+            value: 'B',
+            icon: 'black'
+        },
+        {
+            label: 'Red',
+            value: 'R',
+            icon: 'red'
+        },
+        {
+            label: 'Green',
+            value: 'G',
+            icon: 'green'
+        },
+        {
+            label: 'Colorless',
+            value: 'C',
+            icon: 'colorless'
+        }
+    ];
+
+    /* ==============================
+       ADVANCED QUERY MODEL
+       ============================== */
+    c.advQuery = {
+        name: '',
+        type: '',
+        rarity: '',
+        colors: {} // dynamic checkbox map
+    };
+
+    /* ==============================
+       NAVIGATION: Go to specific page
+       ============================== */
+    /* Description: Updates the URL with a new page parameter to trigger re-query
+     * Parameters: [integer] - page: the page number to navigate to
+     * Returns: None
+     */
+    c.goToPage = function(page) {
+        if (!page || page < 1) return;
+
+        // Copy current URL parameters
+        var params = angular.copy($location.search());
+
+        // Set new page
+        params.p = page;
+
+        // Update URL (Service Portal will re-run widget server)
+        $location.search(params);
+    };
+
+    /* ==============================
+       NEXT PAGE
+       ============================== */
+    /* Description: Navigates to the next page if available
+     * Parameters: None
+     * Returns: None
+     */
+    c.nextPage = function() {
+        if ($scope.data.pagination && $scope.data.pagination.has_next) {
+            c.goToPage($scope.data.pagination.page + 1);
+        }
+    };
+
+    /* ==============================
+       PREVIOUS PAGE
+       ============================== */
+    /* Description: Navigates to the previous page if available
+     * Parameters: None
+     * Returns: None
+     */
+    c.prevPage = function() {
+        if ($scope.data.pagination && $scope.data.pagination.has_prev) {
+            c.goToPage($scope.data.pagination.page - 1);
+        }
+    };
+
+    /* ==============================
+       FIRST PAGE
+       ============================== */
+    /* Description: Navigates to the first page
+     * Parameters: None
+     * Returns: None
+     */
+    c.firstPage = function() {
+        c.goToPage(1);
+    };
+
+    /* ==============================
+       LAST PAGE
+       ============================== */
+    /* Description: Navigates to the last page
+     * Parameters: None
+     * Returns: None
+     */
+    c.lastPage = function() {
+        if ($scope.data.pagination) {
+            c.goToPage($scope.data.pagination.total_pages);
+        }
+    };
+
+    /* ==============================
+       SEARCH FUNCTION
+       ============================== */
+
+    /* Description: Updates the URL with the search query and resets page to 1
+     * Parameters: None
+     * Returns: None
+     */
+    c.submitSearch = function() {
+        var params = angular.copy($location.search());
+
+        params.q = c.searchQuery; // set search query
+        params.p = 1; // reset page to first
+
+        $location.search(params); // triggers server reload with new query
+    };
+
+    /* ==============================
+       DEBUG: Log current pagination
+       ============================== */
+    /* Description: Logs the current pagination object if debug is enabled
+     * Parameters: None
+     * Returns: None
+     */
+    c.debugPagination = function() {
+        if ($scope.data.debug && $scope.data.pagination) {
+            console.log('MTG Grid Pagination:', $scope.data.pagination);
+        }
+    };
+
+    /* ==============================
+       TOGGLE ADVANCED SEARCH
+       ============================== */
+    /* Description: Opens or closes the advanced search modal
+     * Parameters: None
+     * Returns: None
+     */
+    c.toggleAdvancedSearch = function() {
+        c.showAdvancedSearch = !c.showAdvancedSearch;
+        console.log(c.showAdvancedSearch);
+    };
+
+    /* ==============================
+       SUBMIT ADVANCED SEARCH
+       ============================== */
+    /* Description: Applies advanced search selections to URL params and triggers server reload
+     * Parameters: None
+     * Returns: None
+     */
+    c.submitAdvancedSearch = function() {
+        var params = angular.copy($location.search());
+
+        let queryParts = [];
+
+        if (c.advQuery.name) {
+            queryParts.push('name:' + c.advQuery.name);
+        }
+
+        if (c.advQuery.type) {
+            queryParts.push('type:' + c.advQuery.type);
+        }
+
+        if (c.advQuery.rarity) {
+            queryParts.push('rarity:' + c.advQuery.rarity);
+        }
+
+        // COLORS (multi-select)
+        let selectedColors = Object.keys(c.advQuery.colors)
+            .filter(key => c.advQuery.colors[key]);
+
+        if (selectedColors.length) {
+            queryParts.push('color:' + selectedColors.join(','));
+        }
+
+        params.q = queryParts.join(';');
+        params.p = 1;
+
+        $location.search(params);
+        c.showAdvancedSearch = false;
+    };
+
+    // Initial debug log
+    c.debugPagination();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mtg_cards_view</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>MTG Cards View</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    /* ==============================
+     * CONSTANTS
+     * ============================== */
+    const PARAMS = {
+        DEBUG: 'db',
+        DEBUG_METHODS: 'dbm'
+    };
+
+    /* ==============================
+     * PARAM HELPERS
+     * ============================== */
+    function getStringParam(name, defaultValue) {
+        var val = $sp.getParameter(name);
+        return val ? val.toString() : defaultValue;
+    }
+
+    function getArrayParam(name) {
+        var val = $sp.getParameter(name);
+        if (!val) return [];
+        return val.split(',').map(function(item) {
+            return item.trim();
+        }).filter(Boolean);
+    }
+
+    /* ==============================
+     * USER CONTEXT
+     * ============================== */
+    const isLoggedIn = gs.getUserID() !== '';
+    const isAdmin = gs.hasRole('admin');
+
+    /* ==============================
+     * DEBUG PARAMS
+     * ============================== */
+    const rawDebug = getStringParam(PARAMS.DEBUG, 'false');
+    const rawDebugIgnoreMethods = getStringParam(PARAMS.DEBUG_METHODS, '');
+    console.log(rawDebug + ' | ' + rawDebugIgnoreMethods);
+
+    const debugEnabled = (
+        (rawDebug === 'true' || rawDebug === '1') &&
+        isLoggedIn &&
+        isAdmin
+    );
+
+    const DebugIgnoreMethods = debugEnabled ? rawDebugIgnoreMethods : '';
+
+    /* ==============================
+     * SERVICES INIT
+     * ============================== */
+    const MTG_CONSTANTS = new x_759224_magic_c_0.mtg_constants(debugEnabled, DebugIgnoreMethods);
+    const MTG_UTILS = new x_759224_magic_c_0.magic_utils(debugEnabled, DebugIgnoreMethods);
+    const PORTAL_UTILS = new x_759224_magic_c_0.mtg_portal_utils(debugEnabled, DebugIgnoreMethods, $sp, MTG_CONSTANTS);
+
+
+
+    /* ==============================
+     * CONFIG
+     * ============================== */
+    const CONFIG = {
+        table: MTG_CONSTANTS.tables.CARDS,
+        search_fields: ['name'],
+        fields: ['name', 'short_description', 'sys_created_on'],
+        order_by: 'sys_created_on'
+    };
+
+    /* ==============================
+     * EXECUTION
+     * ============================== */
+    let countRes = PORTAL_UTILS.getCount(CONFIG.table, CONFIG.search_fields);
+    let queryRes = PORTAL_UTILS.queryTable(CONFIG);
+    let paginationRes = PORTAL_UTILS.getPagination(countRes.record);
+
+    /* ==============================
+     * RESPONSE MAPPING
+     * ============================== */
+    data.records = queryRes.record || [];
+    data.pagination = paginationRes.record || {};
+    data.query = PORTAL_UTILS.query;
+    data.debug = PORTAL_UTILS.debug;
+
+    /* ==============================
+     * OPTIONAL ERROR SURFACING
+     * ============================== */
+    data.errors = [];
+
+    if (!countRes.success) data.errors.push(countRes.message);
+    if (!queryRes.success) data.errors.push(queryRes.message);
+    if (!paginationRes.success) data.errors.push(paginationRes.message);
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-23 20:27:13</sys_created_on>
+        <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>MTG Cards View</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-24 02:12:55</sys_updated_on>
+        <template><![CDATA[<div class="mtg-grid">
+
+  <!-- Debug Output -->
+  <div class="mtg-debug" ng-if="data.debug">
+    <h4 class="mtg-debug__title">Debug: data.records.length</h4>
+    <pre class="mtg-debug__pre">{{::data | json}}</pre>
+  </div>
+
+  <!-- Standard Search Bar -->
+  <div class="mtg-grid__search">
+    <form ng-submit="c.submitSearch()" class="mtg-search__form">
+      <input type="text"
+             class="mtg-search__input"
+             ng-model="c.searchQuery"
+             placeholder="Search cards..."
+             aria-label="Search cards" />
+
+      <button type="submit" class="mtg-btn mtg-search__btn">
+        Search
+      </button>
+
+      <button type="button" class="mtg-btn mtg-advanced-search-trigger"
+              ng-click="c.toggleAdvancedSearch()">
+        Advanced Search
+      </button>
+    </form>
+  </div>
+
+  <!-- Advanced Search Modal -->
+  <div class="mtg-advanced-search" ng-if="c.showAdvancedSearch">
+
+    <!-- Overlay -->
+    <div class="mtg-advanced-search__overlay" ng-click="c.toggleAdvancedSearch()"></div>
+
+    <!-- Modal Content -->
+    <div class="mtg-advanced-search__content">
+
+      <!-- Header with Close -->
+      <div class="mtg-advanced-search__header">
+        <h3>Advanced Search</h3>
+        <button class="mtg-advanced-search__close" ng-click="c.toggleAdvancedSearch()">×</button>
+      </div>
+
+      <!-- Body: Fields Columns -->
+      <div class="mtg-advanced-search__body">
+        <div class="mtg-advanced-search__column">
+          <label>
+            Name:
+            <input type="text" ng-model="c.advQuery.name" placeholder="Card name"/>
+          </label>
+          <label>
+            Type:
+            <select ng-model="c.advQuery.type">
+              <option value="">Any</option>
+              <option value="creature">Creature</option>
+              <option value="spell">Spell</option>
+              <option value="artifact">Artifact</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="mtg-advanced-search__column">
+          <label>
+            Rarity:
+            <select ng-model="c.advQuery.rarity">
+              <option value="">Any</option>
+              <option value="common">Common</option>
+              <option value="uncommon">Uncommon</option>
+              <option value="rare">Rare</option>
+              <option value="mythic">Mythic</option>
+            </select>
+          </label>
+          <label>Colors:</label>
+          <div class="mtg-advanced-search__colors">
+
+            <label class="mtg-color-option" ng-repeat="color in c.colorOptions">
+              <input type="checkbox"
+                     ng-model="c.advQuery.colors[color.value]" />
+
+              <img class="mtg-color-option__icon"
+                   ng-src="x_759224_magic_c_0.{{color.icon}}_mana.svg"
+                   alt="{{color.label}}" />
+
+              <span class="mtg-color-option__label">
+                {{color.label}}
+              </span>
+            </label>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Search Button -->
+      <div class="mtg-advanced-search__footer">
+        <button class="mtg-btn mtg-advanced-search__submit"
+                ng-click="c.submitAdvancedSearch()">
+          Search
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Results Info -->
+  <div class="mtg-grid__controls" ng-if="data.query">
+    <span class="mtg-grid__results-count">
+      {{data.pagination.total}} results for "{{data.query}}"
+    </span>
+  </div>
+
+  <!-- Grid -->
+  <div class="mtg-grid__container">
+    <div class="mtg-grid__item" ng-repeat="rec in data.records">
+
+      <div class="mtg-card" tabindex="0">
+        <div class="mtg-card__body">
+          <img class="mtg-card__image" ng-src="{{rec.cardData.face_one.image}}" alt="{{rec}}" />
+          
+           <!-- Foil Overlay -->
+      <img class="mtg-card__foil" ng-if="rec.cardData.flags.is_foil" ng-src="x_759224_magic_c_0.foil.png" alt="Foil Overlay" />
+        </div>
+
+        <div class="mtg-card__footer">
+          <span ng-if="rec.cardData.price" class="mtg-card__meta">$ {{rec.cardData.price}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="mtg-grid__pagination">
+    <button class="mtg-btn"
+            ng-disabled="!data.pagination.has_prev"
+            ng-click="c.goToPage(data.pagination.page - 1)">
+      Previous
+    </button>
+
+    <span class="mtg-grid__page-info">
+      Page {{data.pagination.page}} of {{data.pagination.total_pages}}
+    </span>
+
+    <button class="mtg-btn"
+            ng-disabled="!data.pagination.has_next"
+            ng-click="c.goToPage(data.pagination.page + 1)">
+      Next
+    </button>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
