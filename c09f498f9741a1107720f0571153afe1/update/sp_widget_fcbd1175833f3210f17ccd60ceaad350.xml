@@ -274,10 +274,8 @@
      * SERVICES INIT
      * ============================== */
     const MTG_CONSTANTS = new x_759224_magic_c_0.mtg_constants(debugEnabled, DebugIgnoreMethods);
-    const MTG_UTILS = new x_759224_magic_c_0.magic_utils(debugEnabled, DebugIgnoreMethods);
+    //const MTG_UTILS = new x_759224_magic_c_0.magic_utils(debugEnabled, DebugIgnoreMethods);
     const PORTAL_UTILS = new x_759224_magic_c_0.mtg_portal_utils(debugEnabled, DebugIgnoreMethods, $sp, MTG_CONSTANTS);
-
-
 
     /* ==============================
      * CONFIG
@@ -286,7 +284,7 @@
         table: MTG_CONSTANTS.tables.CARDS,
         search_fields: ['name'],
         fields: ['name', 'short_description', 'sys_created_on'],
-        order_by: 'sys_created_on'
+        order_by: 'name'
     };
 
     /* ==============================
@@ -299,10 +297,11 @@
     /* ==============================
      * RESPONSE MAPPING
      * ============================== */
-    data.records = queryRes.record || [];
+	data.records = queryRes.record || [];
     data.pagination = paginationRes.record || {};
     data.query = PORTAL_UTILS.query;
     data.debug = PORTAL_UTILS.debug;
+	
 
     /* ==============================
      * OPTIONAL ERROR SURFACING
@@ -319,14 +318,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 02:12:55</sys_updated_on>
+        <sys_updated_on>2026-03-24 20:23:15</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid">
 
   <!-- Debug Output -->
@@ -399,23 +398,20 @@
               <option value="mythic">Mythic</option>
             </select>
           </label>
-          <label>Colors:</label>
-          <div class="mtg-advanced-search__colors">
-
-            <label class="mtg-color-option" ng-repeat="color in c.colorOptions">
-              <input type="checkbox"
-                     ng-model="c.advQuery.colors[color.value]" />
-
-              <img class="mtg-color-option__icon"
-                   ng-src="x_759224_magic_c_0.{{color.icon}}_mana.svg"
-                   alt="{{color.label}}" />
-
-              <span class="mtg-color-option__label">
-                {{color.label}}
-              </span>
-            </label>
-
-          </div>
+          <label>Colors:
+            <div class="mtg-advanced-search__colors">
+              <label class="mtg-color-option" ng-repeat="color in c.colorOptions">
+                <input type="checkbox"
+                      ng-model="c.advQuery.colors[color.value]" />
+                <img class="mtg-color-option__icon"
+                    ng-src="x_759224_magic_c_0.{{color.icon}}_mana.svg"
+                    alt="{{color.label}}" />
+                <span class="mtg-color-option__label">
+                  {{color.label}}
+                </span>
+              </label>
+            </div>
+          </label>
         </div>
       </div>
 
@@ -458,7 +454,7 @@
   </div>
 
   <!-- Pagination -->
-  <div class="mtg-grid__pagination">
+  <div ng-if="data.pagination.total_pages > 1" class="mtg-grid__pagination">
     <button class="mtg-btn"
             ng-disabled="!data.pagination.has_prev"
             ng-click="c.goToPage(data.pagination.page - 1)">

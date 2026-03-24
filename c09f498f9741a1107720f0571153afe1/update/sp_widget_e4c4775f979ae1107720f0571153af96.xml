@@ -7,9 +7,37 @@
     c.pageInput = c.currentPage;
     c.searchTerm = c.data.searchTerm || '';
 
+    // pageSize from server data, but allow URL override; default to 24 when missing or invalid
+    c.pageSize = parseInt(c.data.pageSize, 10) || 24;
+    c.loading = false;
+    try {
+        var _params = new URLSearchParams(window.location.search);
+        var _urlPage = parseInt(_params.get('page'), 10);
+        if (!isNaN(_urlPage) && _urlPage >= 1) {
+            c.currentPage = _urlPage;
+            c.pageInput = _urlPage;
+        }
+        var _urlPageSize = parseInt(_params.get('pageSize'), 10);
+        if (!isNaN(_urlPageSize) && _urlPageSize > 0) {
+            c.pageSize = _urlPageSize;
+        }
+        var _q = _params.get('q');
+        if (_q !== null && _q !== undefined) {
+            c.searchTerm = _q;
+        }
+    } catch (e) {}
+
     // Listen for searchTerm broadcasts
     $scope.$on('searchTerm', function(event, term) {
         c.searchTerm = term || '';
+        // update URL `q` and reset to page 1
+        try {
+            var _u = new URL(window.location.href);
+            if (c.searchTerm) _u.searchParams.set('q', c.searchTerm);
+            else _u.searchParams.delete('q');
+            _u.searchParams.set('page', 1);
+            history.replaceState(null, '', _u.toString());
+        } catch (e) {}
         c.currentPage = 1;
         c.pageInput = 1;
         c.updatePage(1);
@@ -21,7 +49,8 @@
     };
 
     c.pageCount = function() {
-        return Math.ceil(c.data.totalCount / c.data.pageSize);
+        var size = c.pageSize || c.data.pageSize || 24;
+        return Math.ceil((c.data.totalCount || 0) / size) || 0;
     };
 
     c.middlePages = function() {
@@ -35,16 +64,32 @@
     c.updatePage = function(page) {
         c.currentPage = page;
         c.pageInput = page;
+        // set loading to indicate work in progress; keep current records until new data arrives
+        c.loading = true;
+
+        // update the browser URL (no reload) so page and pageSize persist
+        try {
+            var _u = new URL(window.location.href);
+            _u.searchParams.set('page', page);
+            _u.searchParams.set('pageSize', c.pageSize);
+            if (c.searchTerm) _u.searchParams.set('q', c.searchTerm);
+            else _u.searchParams.delete('q');
+            history.replaceState(null, '', _u.toString());
+        } catch (e) {}
 
         c.server.get({
             page: page,
+            pageSize: c.pageSize,
             searchTerm: c.searchTerm.trim()
         }).then(function(response) {
             c.data.records = response.data.records;
             c.data.totalCount = response.data.totalCount;
-            c.data.pageSize = response.data.pageSize;
+            c.data.pageSize = response.data.pageSize || c.pageSize;
             c.currentPage = response.data.currentPage;
             c.pageInput = response.data.currentPage;
+            c.pageSize = c.data.pageSize;
+        }).finally(function() {
+            c.loading = false;
         });
     };
 
@@ -240,10 +285,13 @@ img {&#13;
 	const utils = new x_759224_magic_c_0.magic_utils();
     data.records = [];
 
-    //Detect first load vs. pagination
+    //Detect first load vs. pagination (allow URL override)
     var page = (input && input.page) ? parseInt(input.page, 10) : 1;
-    var pageSize = parseInt(options.page_limit || 18, 10);
-    var offset = (page - 1) * pageSize;
+    if (isNaN(page) || page < 1) page = 1;
+
+    // pageSize may come from URL param `pageSize`, then widget option `page_limit`, else default 24
+    var pageSize = (input && input.pageSize) ? parseInt(input.pageSize, 10) : (options.page_limit ? parseInt(options.page_limit, 10) : 0);
+    if (!pageSize || pageSize <= 0) pageSize = 24;
     var searchTerm = (input && input.searchTerm) ? input.searchTerm.trim() : '';
 
     //Fetch paginated records
@@ -254,8 +302,38 @@ img {&#13;
     }
     cardsGR.orderBy('name');
 
-    cardsGR.query();
-    data.totalCount = cardsGR.getRowCount();
+    // Use GlideAggregate for an efficient total count instead of fetching all records
+    var didQuery = false;
+    try {
+        var ga = new GlideAggregate(data.constants.tables.CARDS);
+        ga.addQuery('token', false);
+        if (searchTerm) ga.addQuery('name', 'CONTAINS', searchTerm);
+        ga.addAggregate('COUNT');
+        ga.query();
+        data.totalCount = 0;
+        if (ga.next()) data.totalCount = parseInt(ga.getAggregate('COUNT'), 10) || 0;
+    } catch (e) {
+        // fallback to previous approach if GlideAggregate isn't available
+        cardsGR.query();
+        data.totalCount = cardsGR.getRowCount();
+        didQuery = true;
+    }
+
+    // Ensure the GlideRecord is queried so the subsequent iteration can run
+    if (!didQuery) {
+        cardsGR.query();
+    }
+
+    // Clamp page to last page if URL requested page is greater than total pages
+    try {
+        var totalPages = Math.ceil(data.totalCount / pageSize) || 0;
+        if (totalPages < 1) totalPages = 1;
+        if (page > totalPages) page = totalPages;
+    } catch (e) {
+        page = 1;
+    }
+
+    var offset = (page - 1) * pageSize;
 
     var i = 0,
         added = 0;
@@ -277,20 +355,34 @@ img {&#13;
     data.pageSize = pageSize;
     data.currentPage = page;
     data.searchTerm = searchTerm;
-})();]]></script>
+
+    // Optional debug mode controlled via URL param; only enable if user is logged in and has admin role
+    try {
+        data.debug = false;
+        if (input && (input.debug === true || input.debug === 'true' || input.debug === '1')) {
+            if (gs && gs.getUserID && gs.getUserID()) {
+                if (gs.hasRole && (gs.hasRole('admin') || gs.hasRole('x_759224_magic_c_0.admin'))) {
+                    data.debug = true;
+                }
+            }
+        }
+    } catch (e) {
+        data.debug = false;
+    }
+})(); ]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>greg</sys_created_by>
         <sys_created_on>2023-04-25 04:37:10</sys_created_on>
         <sys_id>e4c4775f979ae1107720f0571153af96</sys_id>
-        <sys_mod_count>449</sys_mod_count>
+        <sys_mod_count>455</sys_mod_count>
         <sys_name>MTG Card</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_e4c4775f979ae1107720f0571153af96</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-23 14:01:02</sys_updated_on>
+        <sys_updated_on>2026-03-23 19:31:14</sys_updated_on>
         <template><![CDATA[<div class="wrapper">
   <button class="card"
           ng-repeat="card in data.records"
