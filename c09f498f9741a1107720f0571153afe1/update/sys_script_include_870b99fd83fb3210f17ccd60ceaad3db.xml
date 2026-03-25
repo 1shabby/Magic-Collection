@@ -140,11 +140,12 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         return retObj;
     },
 
-    /* Description: Applies advanced query filters to GlideRecord based on parsed query object
- 	 * Parameters: [GlideRecord] - cardGR
-    	           [object] - queryObj
- 	 * Returns: [object]: status object
- 	 */
+   /* Description: Applies advanced query filters to GlideRecord based on parsed query object
+    * Parameters: [GlideRecord] - cardGR
+    *             [object] - queryObj
+    * Returns: [object]: status object
+    */
+   
     applyAdvancedQuery: function(cardGR, queryObj) {
         let retObj = {
             success: true,
@@ -155,69 +156,159 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         
         try {
             this.log(retObj.method, JSON.stringify(queryObj));
-            // NAME (contains)
+
+            // NAME
             if (queryObj.name) {
-                let qc = cardGR.addQuery('name', 'CONTAINS', queryObj.name);
-				qc.addOrCondition('face_one_flavor_name', 'CONTAINS', queryObj.name);
-				qc.addOrCondition('face_two_flavor_name', 'CONTAINS', queryObj.name);
+                let parsed = this.parseLogicalExpression(queryObj.name);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['name', 'face_one_flavor_name', 'face_two_flavor_name'],
+                    parsed.record.groups,
+                    'CONTAINS',
+                    'string'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
             }
 
-			// TEXT (contains)
-			if (queryObj.text) {
-				let qc = cardGR.addQuery('face_one_oracle_text', 'CONTAINS', queryObj.text);
-				qc.addOrCondition('face_two_oracle_text', 'CONTAINS', queryObj.text);
-			}
+            // TEXT
+            if (queryObj.text) {
+                let parsed = this.parseLogicalExpression(queryObj.text);
+                if (!parsed.success) throw new Error(parsed.message);
 
-			// FLAVOR (contains)
-			if (queryObj.flavor) {
-				let qc = cardGR.addQuery('face_one_flavor_text', 'CONTAINS', queryObj.flavor);
-				qc.addOrCondition('face_two_flavor_text', 'CONTAINS', queryObj.flavor);
-			}
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_oracle_text', 'face_two_oracle_text'],
+                    parsed.record.groups,
+                    'CONTAINS',
+                    'string'
+                );
 
-			// ARTIST (constains)
-			if (queryObj.artist) {
-				let qc = cardGR.addQuery('face_one_artist', 'CONTAINS', queryObj.artist);
-				cardGR.addOrCondition('face_two_artist', 'CONTAINS', queryObj.artist);
-			}
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
 
-            // RARITY (exact match)
+            // FLAVOR
+            if (queryObj.flavor) {
+                let parsed = this.parseLogicalExpression(queryObj.flavor);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_flavor_text', 'face_two_flavor_text'],
+                    parsed.record.groups,
+                    'CONTAINS',
+                    'string'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // ARTIST
+            if (queryObj.artist) {
+                let parsed = this.parseLogicalExpression(queryObj.artist);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_artist', 'face_two_artist'],
+                    parsed.record.groups,
+                    'CONTAINS',
+                    'string'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // TYPE
+            if (queryObj.type) {
+                let parsed = this.parseLogicalExpression(queryObj.type);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_type_line', 'face_two_type_line'],
+                    parsed.record.groups,
+                    'CONTAINS',
+                    'string'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // PRICE
+            if (queryObj.price) {
+                let parsed = this.parseLogicalExpression(queryObj.price);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['price'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // CMC
+            if (queryObj.cmc) {
+                let parsed = this.parseLogicalExpression(queryObj.cmc);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['cmc'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // LOYALTY
+            if (queryObj.loyalty) {
+                let parsed = this.parseLogicalExpression(queryObj.loyalty);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_loyalty', 'face_two_loyalty'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // RARITY (unchanged)
             if (queryObj.rarity) {
                 cardGR.addQuery('rarity', queryObj.rarity.toLowerCase());
             }
 
-			// PRICE (Relative)
-			if (queryObj.price) {
-				cardGR.addQuery('price','<', parseFloat(queryObj.price));
-			}
-
-            // TYPE (OR condition across 2 fields)
-            if (queryObj.type) {
-                let qc = cardGR.addQuery('face_one_type_line', 'CONTAINS', queryObj.type);
-                qc.addOrCondition('face_two_type_line', 'CONTAINS', queryObj.type);
-            }
-
-            // COLORS (multi-select OR logic)
+            // COLORS (unchanged)
             if (queryObj.color) {
                 let colors = queryObj.color.split(',');
                 let colorSysIds = [];
 
                 colors.forEach(c => {
                     let sysId = this.constants.colors[c];
-                    if (sysId) {
-                        colorSysIds.push(sysId);
-                    }
+                    if (sysId) colorSysIds.push(sysId);
                 });
 
                 if (colorSysIds.length) {
                     let qc = cardGR.addQuery('color_identity', colorSysIds[0]);
-
                     for (let i = 1; i < colorSysIds.length; i++) {
                         qc.addOrCondition('color_identity', colorSysIds[i]);
                     }
                 }
             }
 
-            retObj.message = 'Advanced query applied';
+            retObj.message = 'Advanced query applied: ' + cardGR.getEncodedQuery();
 
         } catch (ex) {
             retObj.success = false;
@@ -262,6 +353,152 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
 
             retObj.record = queryObj;
             retObj.message = 'Query parsed successfully';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Parses relative numeric expressions (e.g. >5, <=10)
+     * Parameters: [string] value - raw query value
+     * Returns: [object]: Contains success flag and parsed operator/value
+     */
+    parseRelativeNumeric: function(value) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'parseRelativeNumeric',
+            record: {
+                operator: '=',
+                value: null
+            }
+        };
+
+        try {
+            let operatorMatch = value.match(/^(<=|>=|<|>|=)/);
+            let operator = operatorMatch ? operatorMatch[0] : '=';
+
+            let numericPortion = value.replace(/^(<=|>=|<|>|=)/, '');
+            let parsedValue = parseFloat(numericPortion);
+
+            if (isNaN(parsedValue)) {
+                throw new Error('Invalid numeric value: ' + value);
+            }
+
+            retObj.record.operator = operator;
+            retObj.record.value = parsedValue;
+            retObj.message = 'Relative numeric parsed successfully';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Parses logical expressions with AND (&&) / OR (||) for any field type
+     * Parameters: [string] value - raw query value
+     * Returns: [object]: Contains success flag and parsed logical groups
+     */
+    parseLogicalExpression: function(value) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'parseLogicalExpression',
+            record: {
+                groups: [] // OR groups, each group contains AND conditions
+            }
+        };
+
+        try {
+            let orGroups = value.split('||');
+
+            orGroups.forEach(group => {
+                let andConditions = group.split('&&');
+                let parsedConditions = [];
+
+                andConditions.forEach(cond => {
+                    let trimmed = cond.trim();
+                    if (trimmed) {
+                        parsedConditions.push(trimmed);
+                    }
+                });
+
+                if (parsedConditions.length) {
+                    retObj.record.groups.push(parsedConditions);
+                }
+            });
+
+            retObj.message = 'Logical expression parsed successfully';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
+    },
+
+    /* Description: Builds encoded query string for logical conditions across fields
+     * Parameters: [array] fields
+     *             [array] groups
+     *             [string] operator
+     *             [string] type - 'string' | 'number'
+     * Returns: [object]: status object with encoded query
+     */
+    buildLogicalEncodedQuery: function(fields, groups, operator, type) {
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'buildLogicalEncodedQuery',
+            record: ''
+        };
+
+        try {
+            let orGroupStrings = [];
+
+            groups.forEach(group => {
+                let andParts = [];
+
+                group.forEach(rawValue => {
+                    let op = operator;
+                    let value = rawValue;
+
+                    if (type === 'number') {
+                        let parsed = this.parseRelativeNumeric(rawValue);
+
+                        if (!parsed.success) {
+                            throw new Error(parsed.message);
+                        }
+
+                        op = parsed.record.operator;
+                        value = parsed.record.value;
+                    }
+
+                    // OR across fields
+                    let fieldParts = fields.map(field => {
+                        return field + op + value;
+                    });
+
+                    let fieldQuery = fieldParts.join('^OR');
+                    andParts.push(fieldQuery);
+                });
+
+                // AND inside group
+                let groupQuery = andParts.join('^');
+                orGroupStrings.push(groupQuery);
+            });
+
+            // OR across groups
+            retObj.record = orGroupStrings.join('^OR');
+            retObj.message = 'Encoded query built successfully';
 
         } catch (ex) {
             retObj.success = false;
@@ -478,13 +715,13 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:04:26</sys_created_on>
         <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>mtg_portal_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-25 00:07:17</sys_updated_on>
+        <sys_updated_on>2026-03-25 20:56:31</sys_updated_on>
     </sys_script_include>
 </record_update>
