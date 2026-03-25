@@ -272,6 +272,58 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         return retObj;
     },
 
+    /* Description: Parses an arbitrary raw query string into a query object
+     * Parameters: None (uses sysparm_q when invoked via GlideAjax) or internal callers can pass a string
+     * Returns: [object]: retObj { success, message, method, record }
+     */
+    parseRawQuery: function() {
+        var retObj = {
+            success: true,
+            message: '',
+            method: 'parseRawQuery',
+            record: {}
+        };
+
+        try {
+            var raw = null;
+
+            // If called via GlideAjax, read sysparm_q
+            if (typeof this.getParameter === 'function') {
+                raw = this.getParameter('sysparm_q');
+            }
+
+            // allow internal callers to pass a string as an argument
+            if (!raw && arguments && arguments.length && typeof arguments[0] === 'string') {
+                raw = arguments[0];
+            }
+
+            raw = raw || '';
+
+            var queryObj = {};
+
+            if (raw) {
+                raw.split(';').forEach(function(pair) {
+                    var parts = pair.split(':');
+                    if (parts.length === 2) {
+                        var key = parts[0].trim();
+                        var value = parts[1].trim();
+                        if (key && value) queryObj[key] = value;
+                    }
+                });
+            }
+
+            retObj.record = queryObj;
+            retObj.message = 'Raw query parsed';
+
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message;
+        }
+
+        this.log(retObj.method, JSON.stringify(retObj));
+        return typeof this.getParameter === 'function' ? JSON.stringify(retObj) : retObj;
+    },
+
     /* Description: Retrieves total record count for a table with optional search applied
     * Parameters: 
     *   [string] - table: table name
@@ -426,13 +478,13 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:04:26</sys_created_on>
         <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>mtg_portal_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 20:55:48</sys_updated_on>
+        <sys_updated_on>2026-03-25 00:07:17</sys_updated_on>
     </sys_script_include>
 </record_update>

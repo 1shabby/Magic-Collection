@@ -47,10 +47,33 @@
        ============================== */
     c.advQuery = {
         name: '',
+        text: '',
+        flavor: '',
+        artist: '',
         type: '',
         rarity: '',
+        price: '',
         colors: {} // dynamic checkbox map
     };
+
+    /* ==============================
+       CARD SCALE (s|m|l)
+       ============================== */
+    /* Description: Initialize card scale from URL or server-provided data
+     * Parameters: None
+     * Returns: None
+     */
+    c.cardScale = (function() {
+        var scale = 'm';
+        try {
+            var qScale = ($location && $location.search && $location.search().c) || null;
+            if (!qScale && $scope.data && $scope.data.card_scale) qScale = $scope.data.card_scale;
+            if (qScale && ['s', 'm', 'l'].indexOf(qScale) !== -1) scale = qScale;
+        } catch (e) {
+            scale = ($scope.data && $scope.data.card_scale) || 'm';
+        }
+        return scale;
+    })();
 
     /* ==============================
        NAVIGATION: Go to specific page
@@ -160,8 +183,52 @@
      * Returns: None
      */
     c.toggleAdvancedSearch = function() {
+        c._populateFromParsed(c.data.query);
         c.showAdvancedSearch = !c.showAdvancedSearch;
-        console.log(c.showAdvancedSearch);
+
+
+    };
+
+    /* Description: Map server parsed query object to advanced query model
+     * Parameters: [string] - query: raw query string (key:value;key:value)
+     */
+    c._populateFromParsed = function(query) {
+
+        if (!query) return;
+
+        var parsed = query.split(';');
+
+        parsed.forEach(function(pair) {
+            var parts = pair.split(':');
+            if (parts.length !== 2) return;
+
+            var key = parts[0].trim();
+            var value = parts[1].trim();
+
+            // Special handling for color → colors object
+            if (key === 'color') {
+
+                // Ensure colors object exists (don’t overwrite if already there)
+                if (!c.advQuery.colors) {
+                    c.advQuery.colors = {};
+                }
+
+                value.split(',').forEach(function(code) {
+                    var k = code.trim();
+                    if (k) {
+                        c.advQuery.colors[k] = true;
+                    }
+                });
+
+            } else if (key === 'price') {
+
+                var num = Number(value);
+                c.advQuery.price = isNaN(num) ? null : num;
+
+            } else {
+                c.advQuery[key] = value;
+            }
+        });
     };
 
     /* ==============================
@@ -180,12 +247,28 @@
             queryParts.push('name:' + c.advQuery.name);
         }
 
+        if (c.advQuery.text) {
+            queryParts.push('text:' + c.advQuery.text);
+        }
+
+        if (c.advQuery.flavor) {
+            queryParts.push('flavor:' + c.advQuery.flavor);
+        }
+
+        if (c.advQuery.artist) {
+            queryParts.push('artist:' + c.advQuery.artist);
+        }
+
         if (c.advQuery.type) {
             queryParts.push('type:' + c.advQuery.type);
         }
 
         if (c.advQuery.rarity) {
             queryParts.push('rarity:' + c.advQuery.rarity);
+        }
+
+        if (c.advQuery.price) {
+            queryParts.push('price:' + c.advQuery.price);
         }
 
         // COLORS (multi-select)
@@ -260,7 +343,6 @@
      * ============================== */
     const rawDebug = getStringParam(PARAMS.DEBUG, 'false');
     const rawDebugIgnoreMethods = getStringParam(PARAMS.DEBUG_METHODS, '');
-    console.log(rawDebug + ' | ' + rawDebugIgnoreMethods);
 
     const debugEnabled = (
         (rawDebug === 'true' || rawDebug === '1') &&
@@ -292,7 +374,15 @@
      * ============================== */
     let countRes = PORTAL_UTILS.getCount(CONFIG.table, CONFIG.search_fields);
     let queryRes = PORTAL_UTILS.queryTable(CONFIG);
+    // expose parsed query for client-side pre-population of advanced modal
+    let parsedQueryRes = PORTAL_UTILS.parseQuery();
+    if (debugEnabled) PORTAL_UTILS.log('init', JSON.stringify(parsedQueryRes.record));
     let paginationRes = PORTAL_UTILS.getPagination(countRes.record);
+
+    // Card scale param (c): s | m | l. Expose to client in `data.card_scale`.
+    var rawScale = getStringParam('c', 'm');
+    var cardScale = ['s', 'm', 'l'].indexOf(rawScale) !== -1 ? rawScale : 'm';
+    if (debugEnabled) PORTAL_UTILS.log('init', 'card_scale=' + cardScale);
 
     /* ==============================
      * RESPONSE MAPPING
@@ -300,6 +390,8 @@
 	data.records = queryRes.record || [];
     data.pagination = paginationRes.record || {};
     data.query = PORTAL_UTILS.query;
+    data.parsedQuery = parsedQueryRes.record || {};
+    data.card_scale = cardScale;
     data.debug = PORTAL_UTILS.debug;
 	
 
@@ -318,15 +410,19 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 20:23:15</sys_updated_on>
-        <template><![CDATA[<div class="mtg-grid">
+        <sys_updated_on>2026-03-25 00:56:56</sys_updated_on>
+        <template><![CDATA[<div class="mtg-grid" ng-class="{
+  'mtg-grid--small': (c.cardScale === 's'),
+  'mtg-grid--large': (c.cardScale === 'l'),
+  'mtg-grid--medium': (c.cardScale === 'm')
+}">
 
   <!-- Debug Output -->
   <div class="mtg-debug" ng-if="data.debug">
@@ -376,6 +472,22 @@
             Name:
             <input type="text" ng-model="c.advQuery.name" placeholder="Card name"/>
           </label>
+
+          <label>
+            Text:
+            <input type="text" ng-model="c.advQuery.text" placeholder="Oracle / rules text" />
+          </label>
+
+          <label>
+            Flavor:
+            <input type="text" ng-model="c.advQuery.flavor" placeholder="Flavor text" />
+          </label>
+
+          <label>
+            Artist:
+            <input type="text" ng-model="c.advQuery.artist" placeholder="Artist name" />
+          </label>
+
           <label>
             Type:
             <select ng-model="c.advQuery.type">
@@ -398,6 +510,12 @@
               <option value="mythic">Mythic</option>
             </select>
           </label>
+
+          <label>
+            Max Price:
+            <input type="number" step="0.01" ng-model="c.advQuery.price" placeholder="Max price ($)" />
+          </label>
+
           <label>Colors:
             <div class="mtg-advanced-search__colors">
               <label class="mtg-color-option" ng-repeat="color in c.colorOptions">

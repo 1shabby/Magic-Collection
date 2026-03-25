@@ -146,8 +146,8 @@ $quintuple-space: 40px;
 /* Container */
 .mtg-grid__container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(calc(220px * var(--mtg-card-scale)), 1fr));
+  gap: calc(1rem * var(--mtg-card-scale));
 }
 
 /* Grid Item */
@@ -172,12 +172,10 @@ $quintuple-space: 40px;
   cursor: pointer;
 }
 
-/* Hover + Focus */
-.mtg-card__image:hover,
-.mtg-card__image:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 3px $brand-secondary;
-  border-color: $brand-secondary;
+/* Hover + Focus moved to whole card to ensure foil and children scale together */
+.mtg-card:focus,
+.mtg-card:hover {
+  outline: none;
 }
 
 /* Header */
@@ -205,6 +203,62 @@ $quintuple-space: 40px;
   
 }
 
+/* Card scaling via CSS variable set on the grid. Rather than scaling the image
+   alone (which can cause hover transform overrides and foil mismatch), scale
+   the entire `.mtg-card` so layout remains consistent and overlay follows. For
+   large mode increase the grid min column width to prevent overlap. */
+.mtg-grid {
+  --mtg-card-scale: 1;
+}
+
+.mtg-grid--small {
+  --mtg-card-scale: 0.65;
+}
+
+.mtg-grid--medium {
+  --mtg-card-scale: 1;
+}
+
+.mtg-grid--large {
+  --mtg-card-scale: 1.25;
+}
+
+/* Increase grid cell minimum for large mode so scaled cards have room */
+.mtg-grid--large .mtg-grid__container {
+  grid-template-columns: repeat(auto-fill, minmax(calc(220px * var(--mtg-card-scale)), 1fr));
+  gap: calc(1.25rem * var(--mtg-card-scale));
+}
+
+/* Ensure each grid item reserves extra space proportional to scale so the
+   visually-scaled card never intrudes into its neighbor's area. */
+.mtg-grid__item {
+  padding: calc(0.75rem * var(--mtg-card-scale));
+  box-sizing: border-box;
+  overflow: visible; /* allow hover shadow/scale to render without clipping */
+}
+
+/* Provide more breathing room between controls and the grid when cards are large */
+.mtg-grid__search {
+  margin-bottom: calc(1.5rem * var(--mtg-card-scale));
+}
+
+.mtg-card {
+  transform-origin: center center;
+  transform: none; /* base size provided by grid cell sizing */
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mtg-card:hover {
+  transform: scale(1.06); /* always grow slightly relative to base */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.mtg-card__body {
+  display: block;
+}
+
 .mtg-card__image {
   display: block;
   width: auto;      
@@ -222,7 +276,9 @@ $quintuple-space: 40px;
   height: 100%;     /* Matches card image height */
   pointer-events: none; /* So overlay doesn’t block card interaction */
   z-index: 2;       /* On top of the card image */
+  border-radius: 5%;
 }
+
 
 .mtg-card__desc {
   font-size: 0.875rem;
@@ -283,6 +339,12 @@ $quintuple-space: 40px;
   background: #eee;
 }
 
+.mtg-grid__results-count {
+  font-size: 2rem;
+  color: $brand-primary;
+  margin-left: 1rem;
+}
+
 /* ==============================
    PAGINATION
    ============================== */
@@ -292,6 +354,7 @@ $quintuple-space: 40px;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 2rem;
 
   margin-top: 1rem;
 }
@@ -355,7 +418,7 @@ $quintuple-space: 40px;
   background: #fff;
   border-radius: 8px;
   padding: 1.5rem;
-  width: 500px;
+  width: 100rem;
   max-width: 90%;
   z-index: 10;
   display: flex;
@@ -380,13 +443,13 @@ $quintuple-space: 40px;
 
 /* Body with Columns */
 .mtg-advanced-search__body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .mtg-advanced-search__column {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -395,14 +458,14 @@ $quintuple-space: 40px;
 .mtg-advanced-search__column label {
   display: flex;
   flex-direction: column;
-  font-size: 0.85rem;
+  font-size: 2rem;
   color: $brand-primary;
 }
 .mtg-advanced-search__colors {
   display: flex;
-  flex-direction:row;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .mtg-color-option {
@@ -410,7 +473,7 @@ $quintuple-space: 40px;
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 2rem;
 }
 
 .mtg-color-option input {
@@ -418,13 +481,14 @@ $quintuple-space: 40px;
 }
 
 .mtg-color-option__icon {
-  width: 18px;
-  height: 18px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .mtg-color-option__label {
-  font-size: 0.8rem;
-  display:none;
+  font-size: 2rem;
+  display: inline-block;
+  margin-left: 0.25rem;
 }
 
 .mtg-advanced-search__column input,
@@ -432,6 +496,14 @@ $quintuple-space: 40px;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mtg-advanced-search__column input[type="number"] {
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 /* Footer Search Button */
@@ -463,14 +535,14 @@ $quintuple-space: 40px;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 13:18:37</sys_updated_on>
+        <sys_updated_on>2026-03-25 01:45:23</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>
