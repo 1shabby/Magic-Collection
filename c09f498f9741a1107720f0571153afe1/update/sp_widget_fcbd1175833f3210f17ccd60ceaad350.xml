@@ -292,8 +292,8 @@
                 .replace(/%7C%7C/g, '||');
 
             /* ==============================
-            COLORS (UNCHANGED)
-            ============================== */
+               COLORS (UNCHANGED)
+               ============================== */
             if (key === 'color') {
                 value.split(',').forEach(function(code) {
                     var k = code.trim();
@@ -305,8 +305,8 @@
             }
 
             /* ==============================
-            NUMERIC FIELDS
-            ============================== */
+               NUMERIC FIELDS
+               ============================== */
             var numericMap = {
                 cmc: 'cmcRules',
                 price: 'priceRules',
@@ -352,8 +352,8 @@
             }
 
             /* ==============================
-            TEXT / SELECT FIELDS
-            ============================== */
+               TEXT / SELECT FIELDS
+               ============================== */
             var textMap = {
                 name: 'nameRules',
                 text: 'textRules',
@@ -395,8 +395,8 @@
         });
 
         /* ==============================
-        FALLBACK: ENSURE AT LEAST ONE RULE
-        ============================== */
+           FALLBACK: ENSURE AT LEAST ONE RULE
+           ============================== */
         [
             'nameRules','textRules','flavorRules','artistRules',
             'typeRules','rarityRules',
@@ -443,7 +443,7 @@
      *   - index [number]: the index of the condition to remove
      * Returns: None
      */
-    
+
     c.removeRule = function(fieldName, index) {
         if (!c.advQuery[fieldName] || !c.advQuery[fieldName].length) return;
 
@@ -750,14 +750,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>105</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-26 18:08:04</sys_updated_on>
+        <sys_updated_on>2026-03-26 19:56:30</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
@@ -779,11 +779,13 @@
              placeholder="Search cards..."
              aria-label="Search cards" />
 
-      <button type="submit" class="mtg-btn mtg-search__btn">
+      <button type="submit"
+        class="mtg-btn mtg-search__btn mtg-search__btn--primary">
         Search
       </button>
 
-      <button type="button" class="mtg-btn mtg-advanced-search-trigger"
+      <button type="button"
+              class="mtg-btn mtg-search__btn mtg-search__btn--primary"
               ng-click="c.toggleAdvancedSearch()">
         Advanced Search
       </button>
@@ -998,21 +1000,49 @@
 
   <!-- Pagination -->
   <div ng-if="data.pagination.total_pages > 1" class="mtg-grid__pagination">
+
+    <!-- First Page -->
+    <button class="mtg-btn"
+            ng-disabled="data.pagination.page === 1"
+            ng-click="c.firstPage()">
+      « First
+    </button>
+
+    <!-- Previous Page -->
     <button class="mtg-btn"
             ng-disabled="!data.pagination.has_prev"
-            ng-click="c.goToPage(data.pagination.page - 1)">
-      Previous
+            ng-click="c.prevPage()">
+      ‹ Previous
     </button>
 
+    <!-- Current Page / Total Pages (editable) -->
     <span class="mtg-grid__page-info">
-      Page {{data.pagination.page}} of {{data.pagination.total_pages}}
+      Page 
+      <!-- Pagination Input -->
+      <input type="number"
+       ng-model="c.tempPage"
+       ng-init="c.tempPage = data.pagination.page"
+       ng-blur="c.goToPage(c.tempPage)"   
+       ng-keypress="($event.which === 13) && c.goToPage(c.tempPage)"
+       min="1"
+       max="{{data.pagination.total_pages}}"/>
+      of {{data.pagination.total_pages}}
     </span>
 
+    <!-- Next Page -->
     <button class="mtg-btn"
             ng-disabled="!data.pagination.has_next"
-            ng-click="c.goToPage(data.pagination.page + 1)">
-      Next
+            ng-click="c.nextPage()">
+      Next ›
     </button>
+
+    <!-- Last Page -->
+    <button class="mtg-btn"
+            ng-disabled="data.pagination.page === data.pagination.total_pages"
+            ng-click="c.lastPage()">
+      Last »
+    </button>
+
   </div>
 
 </div>]]></template>
