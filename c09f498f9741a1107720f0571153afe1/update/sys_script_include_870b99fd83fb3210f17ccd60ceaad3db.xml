@@ -156,7 +156,6 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         
         try {
             this.log(retObj.method, JSON.stringify(queryObj));
-
             // NAME
             if (queryObj.name) {
                 let parsed = this.parseLogicalExpression(queryObj.name);
@@ -285,12 +284,55 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
                 cardGR.addEncodedQuery(built.record);
             }
 
-            // RARITY (unchanged)
-            if (queryObj.rarity) {
-                cardGR.addQuery('rarity', queryObj.rarity.toLowerCase());
+            // POWER
+            if (queryObj.power) {
+                let parsed = this.parseLogicalExpression(queryObj.power);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_power', 'face_two_power'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
             }
 
-            // COLORS (unchanged)
+            // TOUGHNESS
+            if (queryObj.toughness) {
+                let parsed = this.parseLogicalExpression(queryObj.toughness);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['face_one_toughness', 'face_two_toughness'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // RARITY
+            if (queryObj.rarity) {
+                let parsed = this.parseLogicalExpression(queryObj.rarity);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['rarity'],
+                    parsed.record.groups,
+                    '=',
+                    'string'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
+            // COLORS
             if (queryObj.color) {
                 let colors = queryObj.color.split(',');
                 let colorSysIds = [];
@@ -363,6 +405,92 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         return retObj;
     },
 
+    /* Description: Converts a raw q parameter into a human-readable string
+     * Parameters: None (expects `this.query` to be set)
+     * Returns: [object]: Contains success flag and `human_readable` string
+     */
+    
+    toHumanReadableQuery: function() {
+		var retObj = {
+			success: true,
+			message: '',
+			method: 'toHumanReadableQuery',
+			record: {
+				human_readable: ''
+			}
+		};
+
+		try {
+			var raw = this.query || '';
+			if (!raw) {
+				retObj.message = 'No query provided';
+				return retObj;
+			}
+
+			// Decode URL encoding (double decode for safety)
+			var decoded = decodeURIComponent(decodeURIComponent(raw));
+			var parts = decoded.split(';');
+			var humanParts = [];
+
+			// Numeric operator mapping
+			var numericOperators = {
+				'>': 'Greater Than',
+				'>=': 'Greater Than or Equal to',
+				'<': 'Less Than',
+				'<=': 'Less Than or Equal to',
+				'=': 'Equals'
+			};
+
+			parts.forEach(function(part) {
+				if (!part) return;
+
+				var splitIndex = part.indexOf(':');
+				if (splitIndex === -1) {
+					humanParts.push(part);
+					return;
+				}
+
+				var key = part.substring(0, splitIndex);
+				var value = part.substring(splitIndex + 1);
+
+				// Split by logical operators
+				var segments = value.split(/(&&|\|\|)/); // keep operators
+				for (var i = 0; i < segments.length; i++) {
+					var seg = segments[i].trim();
+
+					// Convert logical operators
+					if (seg === '&&') {
+						segments[i] = 'AND';
+						continue;
+					}
+					if (seg === '||') {
+						segments[i] = 'OR';
+						continue;
+					}
+
+					// Convert numeric operator if present
+					var opMatch = seg.match(/^([><=]=?)(.*)$/);
+					if (opMatch && numericOperators[opMatch[1]]) {
+						segments[i] = numericOperators[opMatch[1]] + ' ' + opMatch[2].trim();
+					}
+				}
+
+				humanParts.push(key + ': ' + segments.join(' '));
+			});
+
+			// Join all field conditions with ' AND ' instead of ';'
+			retObj.record.human_readable = humanParts.join(' AND ');
+			retObj.message = 'Human-readable query generated successfully';
+
+		} catch (ex) {
+			retObj.success = false;
+			retObj.message = ex.message;
+		}
+
+		this.log(retObj.method, JSON.stringify(retObj));
+		return retObj;
+	},
+
     /* Description: Parses relative numeric expressions (e.g. >5, <=10)
      * Parameters: [string] value - raw query value
      * Returns: [object]: Contains success flag and parsed operator/value
@@ -403,11 +531,11 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
     },
 
     /* Description: Parses logical expressions with AND (&&) / OR (||) for any field type
-     * Parameters: [string] value - raw query value
-     * Returns: [object]: Contains success flag and parsed logical groups
-     */
+    * Parameters: [string] value - raw query value (may contain URL-encoded && / ||)
+    * Returns: [object]: Contains success flag and parsed logical groups
+    */
     parseLogicalExpression: function(value) {
-        let retObj = {
+        var retObj = {
             success: true,
             message: '',
             method: 'parseLogicalExpression',
@@ -417,14 +545,24 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         };
 
         try {
-            let orGroups = value.split('||');
+            if (!value) {
+                retObj.message = 'No value provided';
+                return retObj;
+            }
 
-            orGroups.forEach(group => {
-                let andConditions = group.split('&&');
-                let parsedConditions = [];
+            // Decode URL-encoded characters first
+            var decodedValue = decodeURIComponent(value);
 
-                andConditions.forEach(cond => {
-                    let trimmed = cond.trim();
+            // Split into OR groups
+            var orGroups = decodedValue.split('||');
+
+            orGroups.forEach(function(group) {
+                // Split into AND conditions
+                var andConditions = group.split('&&');
+                var parsedConditions = [];
+
+                andConditions.forEach(function(cond) {
+                    var trimmed = cond.trim();
                     if (trimmed) {
                         parsedConditions.push(trimmed);
                     }
@@ -715,13 +853,13 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:04:26</sys_created_on>
         <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name>mtg_portal_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-25 20:56:31</sys_updated_on>
+        <sys_updated_on>2026-03-26 17:55:09</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -43,18 +43,89 @@
     ];
 
     /* ==============================
-       ADVANCED QUERY MODEL
-       ============================== */
+    ADVANCED QUERY MODEL
+    ============================== */
     c.advQuery = {
-        name: '',
-        text: '',
-        flavor: '',
-        artist: '',
-        type: '',
-        rarity: '',
-        price: '',
-        colors: {} // dynamic checkbox map
+        nameRules: [],
+        textRules: [],
+        flavorRules: [],
+        artistRules: [],
+        typeRules: [],
+        rarityRules: [],
+
+        cmcRules: [],
+        priceRules: [],
+        powerRules: [],
+        toughnessRules: [],
+        loyaltyRules: [],
+
+        colors: {}
     };
+
+    /* ==============================
+       TEXT FIELD CONFIG
+       ============================== */
+    c.textFieldConfigs = [
+        { label: 'Name', model: 'nameRules', placeholder: 'Card name' },
+        { label: 'Text', model: 'textRules', placeholder: 'Oracle / rules text' },
+        { label: 'Flavor', model: 'flavorRules', placeholder: 'Flavor text' },
+        { label: 'Artist', model: 'artistRules', placeholder: 'Artist name' },
+        { label: 'Type', model: 'typeRules', placeholder: 'e.g. legendary, creature, artifact' }
+    ];
+
+    /* ==============================
+       NUMERIC FIELD CONFIG
+       ============================== */
+    /* Description: Defines all numeric fields that support
+     * operator-based query building with chaining
+     * Parameters: None
+     * Returns: None
+     */
+
+    c.numericFieldConfigs = [
+        {
+            label: 'CMC',
+            model: 'cmcRules',
+            step: null // integers only
+        },
+        {
+            label: 'Price',
+            model: 'priceRules',
+            step: '0.01' // currency precision
+        },
+        {
+            label: 'Power',
+            model: 'powerRules',
+            step: null
+        },
+        {
+            label: 'Toughness',
+            model: 'toughnessRules',
+            step: null
+        },
+        {
+            label: 'Loyalty',
+            model: 'loyaltyRules',
+            step: null
+        }
+    ];
+
+    /* ==============================
+       SELECT FIELD CONFIG
+       ============================== */
+    c.selectFieldConfigs = [
+        {
+            label: 'Rarity',
+            model: 'rarityRules',
+            options: [
+                { value: 'common', label: 'Common' },
+                { value: 'uncommon', label: 'Uncommon' },
+                { value: 'rare', label: 'Rare' },
+                { value: 'mythic', label: 'Mythic' },
+                { value: 'special', label: 'Special' },
+            ]
+        }
+    ];
 
     /* ==============================
        CARD SCALE (s|m|l)
@@ -163,19 +234,6 @@
     };
 
     /* ==============================
-       DEBUG: Log current pagination
-       ============================== */
-    /* Description: Logs the current pagination object if debug is enabled
-     * Parameters: None
-     * Returns: None
-     */
-    c.debugPagination = function() {
-        if ($scope.data.debug && $scope.data.pagination) {
-            console.log('MTG Grid Pagination:', $scope.data.pagination);
-        }
-    };
-
-    /* ==============================
        TOGGLE ADVANCED SEARCH
        ============================== */
     /* Description: Opens or closes the advanced search modal
@@ -189,52 +247,337 @@
 
     };
 
-    /* Description: Map server parsed query object to advanced query model
-     * Parameters: [string] - query: raw query string (key:value;key:value)
+    /* ==============================
+       POPULATE FROM PARSED QUERY
+       ============================== */
+    /* Description: Parses query string and hydrates advanced search UI
+     * Parameters:
+     *  - query (String): query string from URL
+     * Returns: None
      */
+
     c._populateFromParsed = function(query) {
 
         if (!query) return;
 
+        // Reset everything first (important for re-open)
+        c.advQuery = {
+            nameRules: [],
+            textRules: [],
+            flavorRules: [],
+            artistRules: [],
+            typeRules: [],
+            rarityRules: [],
+            cmcRules: [],
+            priceRules: [],
+            powerRules: [],
+            toughnessRules: [],
+            loyaltyRules: [],
+            colors: {}
+        };
+
         var parsed = query.split(';');
 
         parsed.forEach(function(pair) {
+
             var parts = pair.split(':');
             if (parts.length !== 2) return;
 
             var key = parts[0].trim();
-            var value = parts[1].trim();
+            var rawValue = parts[1].trim();
 
-            // Special handling for color → colors object
+            // Decode connectors
+            var value = rawValue
+                .replace(/%26%26/g, '&&')
+                .replace(/%7C%7C/g, '||');
+
+            /* ==============================
+               COLORS (UNCHANGED)
+               ============================== */
             if (key === 'color') {
-
-                // Ensure colors object exists (don’t overwrite if already there)
-                if (!c.advQuery.colors) {
-                    c.advQuery.colors = {};
-                }
-
                 value.split(',').forEach(function(code) {
                     var k = code.trim();
                     if (k) {
                         c.advQuery.colors[k] = true;
                     }
                 });
+                return;
+            }
 
-            } else if (key === 'price') {
+            /* ==============================
+               NUMERIC FIELDS
+               ============================== */
+            var numericMap = {
+                cmc: 'cmcRules',
+                price: 'priceRules',
+                power: 'powerRules',
+                toughness: 'toughnessRules',
+                loyalty: 'loyaltyRules'
+            };
 
-                var num = Number(value);
-                c.advQuery.price = isNaN(num) ? null : num;
+            if (numericMap[key]) {
 
-            } else {
-                c.advQuery[key] = value;
+                var rules = [];
+                var tokens = value.split(/(&&|\|\|)/); // keep connectors
+
+                var currentConnector = null;
+
+                tokens.forEach(function(token) {
+
+                    if (token === '&&' || token === '||') {
+                        currentConnector = token;
+                        return;
+                    }
+
+                    // Extract operator + value
+                    var match = token.match(/(<=|>=|=|<|>)(.*)/);
+                    if (!match) return;
+
+                    var operator = match[1];
+                    var num = Number(match[2]);
+
+                    if (isNaN(num)) return;
+
+                    rules.push({
+                        operator: operator,
+                        value: num,
+                        connector: currentConnector || '&&'
+                    });
+
+                    currentConnector = null;
+                });
+
+                c.advQuery[numericMap[key]] = rules;
+                return;
+            }
+
+            /* ==============================
+               TEXT / SELECT FIELDS
+               ============================== */
+            var textMap = {
+                name: 'nameRules',
+                text: 'textRules',
+                flavor: 'flavorRules',
+                artist: 'artistRules',
+                type: 'typeRules',
+                rarity: 'rarityRules'
+            };
+
+            if (textMap[key]) {
+
+                var rules = [];
+                var tokens = value.split(/(&&|\|\|)/);
+
+                var currentConnector = null;
+
+                tokens.forEach(function(token) {
+
+                    if (token === '&&' || token === '||') {
+                        currentConnector = token;
+                        return;
+                    }
+
+                    var decoded = decodeURIComponent(token.trim());
+
+                    if (!decoded) return;
+
+                    rules.push({
+                        value: decoded,
+                        connector: currentConnector || '&&'
+                    });
+
+                    currentConnector = null;
+                });
+
+                c.advQuery[textMap[key]] = rules;
+            }
+
+        });
+
+        /* ==============================
+           FALLBACK: ENSURE AT LEAST ONE RULE
+           ============================== */
+        [
+            'nameRules','textRules','flavorRules','artistRules',
+            'typeRules','rarityRules',
+            'cmcRules','priceRules','powerRules','toughnessRules','loyaltyRules'
+        ].forEach(function(field) {
+            if (!c.advQuery[field] || !c.advQuery[field].length) {
+                c.addRule(field);
             }
         });
     };
 
     /* ==============================
+       ADD RULE
+       ============================== */
+    /* Description: Adds a new rule (numeric or text)
+    * Parameters:
+    *  - field (String)
+    * Returns: None
+    */
+   
+    c.addRule = function(field) {
+        let isNumeric = field.indexOf('Rules') > -1 &&
+            ['cmcRules','priceRules','powerRules','toughnessRules','loyaltyRules'].includes(field);
+
+        c.advQuery[field].push(isNumeric ? {
+            operator: '>=',
+            value: '',
+            connector: '&&'
+        } : {
+            value: '',
+            connector: '&&'
+        });
+    };
+
+
+    /* ==============================
+       REMOVE RULE
+       ============================== */
+    /* Description: Removes a condition from a field's advanced query rules.
+     *              If removing the first condition, clears all subsequent AND/OR connectors
+     *              and leaves only the remaining values intact. Prevents orphaned connectors.
+     * Parameters:
+     *   - fieldName [string]: the field to remove a rule from
+     *   - index [number]: the index of the condition to remove
+     * Returns: None
+     */
+
+    c.removeRule = function(fieldName, index) {
+        if (!c.advQuery[fieldName] || !c.advQuery[fieldName].length) return;
+
+        // Remove the rule at the given index
+        c.advQuery[fieldName].splice(index, 1);
+
+        // Approach #1: If first rule is removed, clear all remaining connectors
+        if (index === 0 && c.advQuery[fieldName].length > 0) {
+            c.advQuery[fieldName].forEach(rule => {
+                rule.connector = null;
+            });
+        }
+
+        // If no conditions remain, add an empty placeholder for user convenience
+        if (c.advQuery[fieldName].length === 0) {
+            c.advQuery[fieldName].push({ value: '', connector: null, operator: '=' });
+        }
+    };
+
+    /* ==============================
+       BUILD NUMERIC QUERY
+       ============================== */
+    /* Description: Converts rule array into encoded query string
+     * Parameters:
+     *  - fieldName (String): API field name (e.g., 'cmc')
+     *  - rules (Array): Rule objects
+     * Returns:
+     *  - String | null
+     */
+
+    c.buildNumericQuery = function(fieldName, rules) {
+        if (!rules || !rules.length) return null;
+
+        let expression = '';
+
+        rules.forEach(function(rule, index) {
+            if (!rule.value && rule.value !== 0) return;
+
+            let part = rule.operator + rule.value;
+
+            if (index > 0) {
+                let connector = rule.connector || '&&';
+
+                // CRITICAL: encode connectors
+                if (connector === '&&') {
+                    expression += '%26%26';
+                } else if (connector === '||') {
+                    expression += '%7C%7C';
+                }
+            }
+
+            expression += part;
+        });
+
+        return expression ? fieldName + ':' + expression : null;
+    };
+
+    /* ==============================
+       BUILD TEXT QUERY
+       ============================== */
+    /* Description: Builds encoded query string for text/select fields
+     * Parameters:
+     *  - fieldName (String)
+     *  - rules (Array)
+     * Returns:
+     *  - String | null
+     */
+
+    c.buildTextQuery = function(fieldName, rules) {
+        if (!rules || !rules.length) return null;
+
+        let expression = '';
+
+        rules.forEach(function(rule, index) {
+            if (!rule.value) return;
+
+            if (index > 0) {
+                let connector = rule.connector || '&&';
+
+                if (connector === '&&') {
+                    expression += '%26%26';
+                } else if (connector === '||') {
+                    expression += '%7C%7C';
+                }
+            }
+
+            expression += rule.value;
+        });
+
+        return expression ? fieldName + ':' + expression : null;
+    };
+
+    /* ==============================
+       GET HUMAN READABLE QUERY
+       ============================== */
+    /* Description: Converts the raw query string into a human-readable version
+     * Parameters: [string] rawQuery - raw URL query (e.g., name:Aerith%7C%7CAb)
+     * Returns: [string] - human-readable query
+     */
+    
+    c.getReadableQuery = function(rawQuery) {
+        console.log('Raw query:', rawQuery);
+        if (!rawQuery) return '';
+
+        // Handle if passed object instead of string
+        if (typeof rawQuery === 'object') {
+            rawQuery = rawQuery.q || '';
+        }
+
+        // Double decode
+        let decoded = decodeURIComponent(decodeURIComponent(rawQuery));
+
+        // Split into key:value parts
+        let parts = decoded.split(';');
+
+        let humanParts = parts.map(part => {
+            if (!part) return '';
+            let [key, value] = part.split(':');
+            if (!value) return part; // fallback
+
+            // Replace logical operators
+            value = value.replace(/&&/g, ' AND ').replace(/\|\|/g, ' OR ');
+
+            return `${key}: ${value}`;
+        });
+
+        return humanParts.join('; ');
+    };
+
+    /* ==============================
        SUBMIT ADVANCED SEARCH
        ============================== */
-    /* Description: Applies advanced search selections to URL params and triggers server reload
+    /* Description: Builds advanced query string with support for
+     * complex numeric expressions and applies it to URL params
      * Parameters: None
      * Returns: None
      */
@@ -243,35 +586,34 @@
 
         let queryParts = [];
 
-        if (c.advQuery.name) {
-            queryParts.push('name:' + c.advQuery.name);
-        }
+        // TEXT FIELDS
+        [
+            { name: 'name', rules: c.advQuery.nameRules },
+            { name: 'text', rules: c.advQuery.textRules },
+            { name: 'flavor', rules: c.advQuery.flavorRules },
+            { name: 'artist', rules: c.advQuery.artistRules },
+            { name: 'type', rules: c.advQuery.typeRules },
+            { name: 'rarity', rules: c.advQuery.rarityRules }
+        ].forEach(function(field) {
+            let result = c.buildTextQuery(field.name, field.rules);
+            if (result) queryParts.push(result);
+        });
 
-        if (c.advQuery.text) {
-            queryParts.push('text:' + c.advQuery.text);
-        }
+        // NUMERIC FIELDS (NEW)
+        let numericFields = [
+            { name: 'cmc', rules: c.advQuery.cmcRules },
+            { name: 'price', rules: c.advQuery.priceRules },
+            { name: 'power', rules: c.advQuery.powerRules },
+            { name: 'toughness', rules: c.advQuery.toughnessRules },
+            { name: 'loyalty', rules: c.advQuery.loyaltyRules }
+        ];
 
-        if (c.advQuery.flavor) {
-            queryParts.push('flavor:' + c.advQuery.flavor);
-        }
+        numericFields.forEach(function(field) {
+            let result = c.buildNumericQuery(field.name, field.rules);
+            if (result) queryParts.push(result);
+        });
 
-        if (c.advQuery.artist) {
-            queryParts.push('artist:' + c.advQuery.artist);
-        }
-
-        if (c.advQuery.type) {
-            queryParts.push('type:' + c.advQuery.type);
-        }
-
-        if (c.advQuery.rarity) {
-            queryParts.push('rarity:' + c.advQuery.rarity);
-        }
-
-        if (c.advQuery.price) {
-            queryParts.push('price:' + c.advQuery.price);
-        }
-
-        // COLORS (multi-select)
+        // COLORS
         let selectedColors = Object.keys(c.advQuery.colors)
             .filter(key => c.advQuery.colors[key]);
 
@@ -282,12 +624,14 @@
         params.q = queryParts.join(';');
         params.p = 1;
 
+        // DEBUG MODE (toggle via URL: &debug=true)
+        if ($location.search().debug === 'true') {
+            console.log('[MTG Advanced Search] Query:', params.q);
+        }
+
         $location.search(params);
         c.showAdvancedSearch = false;
     };
-
-    // Initial debug log
-    c.debugPagination();
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -324,14 +668,6 @@
         return val ? val.toString() : defaultValue;
     }
 
-    function getArrayParam(name) {
-        var val = $sp.getParameter(name);
-        if (!val) return [];
-        return val.split(',').map(function(item) {
-            return item.trim();
-        }).filter(Boolean);
-    }
-
     /* ==============================
      * USER CONTEXT
      * ============================== */
@@ -356,7 +692,6 @@
      * SERVICES INIT
      * ============================== */
     const MTG_CONSTANTS = new x_759224_magic_c_0.mtg_constants(debugEnabled, DebugIgnoreMethods);
-    //const MTG_UTILS = new x_759224_magic_c_0.magic_utils(debugEnabled, DebugIgnoreMethods);
     const PORTAL_UTILS = new x_759224_magic_c_0.mtg_portal_utils(debugEnabled, DebugIgnoreMethods, $sp, MTG_CONSTANTS);
 
     /* ==============================
@@ -376,7 +711,12 @@
     let queryRes = PORTAL_UTILS.queryTable(CONFIG);
     // expose parsed query for client-side pre-population of advanced modal
     let parsedQueryRes = PORTAL_UTILS.parseQuery();
-    if (debugEnabled) PORTAL_UTILS.log('init', JSON.stringify(parsedQueryRes.record));
+    let humanReadableQueryRes = PORTAL_UTILS.toHumanReadableQuery();
+    if (humanReadableQueryRes.success) {
+        data.human_readable_query = humanReadableQueryRes.record.human_readable;
+    }else{
+		data.human_readable_query = data.query;
+	}
     let paginationRes = PORTAL_UTILS.getPagination(countRes.record);
 
     // Card scale param (c): s | m | l. Expose to client in `data.card_scale`.
@@ -410,14 +750,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-25 00:56:56</sys_updated_on>
+        <sys_updated_on>2026-03-26 19:56:30</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
@@ -439,11 +779,13 @@
              placeholder="Search cards..."
              aria-label="Search cards" />
 
-      <button type="submit" class="mtg-btn mtg-search__btn">
+      <button type="submit"
+        class="mtg-btn mtg-search__btn mtg-search__btn--primary">
         Search
       </button>
 
-      <button type="button" class="mtg-btn mtg-advanced-search-trigger"
+      <button type="button"
+              class="mtg-btn mtg-search__btn mtg-search__btn--primary"
               ng-click="c.toggleAdvancedSearch()">
         Advanced Search
       </button>
@@ -467,69 +809,154 @@
 
       <!-- Body: Fields Columns -->
       <div class="mtg-advanced-search__body">
+
+        <!-- ===================== -->
+        <!-- LEFT COLUMN (TEXT/SELECT RULES) -->
+        <!-- ===================== -->
         <div class="mtg-advanced-search__column">
-          <label>
-            Name:
-            <input type="text" ng-model="c.advQuery.name" placeholder="Card name"/>
+
+          <!-- TEXT INPUT FIELDS -->
+          <label ng-repeat="field in c.textFieldConfigs">
+            {{field.label}}:
+
+            <div class="mtg-query-builder">
+
+              <div class="mtg-advanced-search__condition-row"
+                  ng-repeat="rule in c.advQuery[field.model] track by $index">
+
+                <!-- Connector for 2nd+ rules -->
+                <select ng-if="$index > 0" ng-model="rule.connector">
+                  <option value="&&">AND</option>
+                  <option value="||">OR</option>
+                </select>
+
+                <input type="text"
+                      ng-model="rule.value"
+                      placeholder="{{field.placeholder}}" />
+
+                <button type="button"
+                        ng-if="rule.value || $index > 0"
+                        ng-click="$index === 0 ? (rule.value='') : c.removeRule(field.model, $index)">
+                  ✕
+                </button>
+
+              </div>
+
+              <button type="button"
+                      ng-click="c.addRule(field.model)">
+                + Add Condition
+              </button>
+
+            </div>
           </label>
 
-          <label>
-            Text:
-            <input type="text" ng-model="c.advQuery.text" placeholder="Oracle / rules text" />
+          <!-- SELECT FIELDS -->
+          <label ng-repeat="field in c.selectFieldConfigs">
+            {{field.label}}:
+
+            <div class="mtg-query-builder">
+
+              <div class="mtg-advanced-search__condition-row"
+                  ng-repeat="rule in c.advQuery[field.model] track by $index">
+
+                <!-- Connector for 2nd+ rules -->
+                <select ng-if="$index > 0" ng-model="rule.connector">
+                  <option value="&&">AND</option>
+                  <option value="||">OR</option>
+                </select>
+
+                <select ng-model="rule.value">
+                  <option value="">Any</option>
+                  <option ng-repeat="opt in field.options" value="{{opt.value}}">
+                    {{opt.label}}
+                  </option>
+                </select>
+
+                <button type="button"
+                        ng-if="rule.value || $index > 0"
+                        ng-click="$index === 0 ? (rule.value='') : c.removeRule(field.model, $index)">
+                  ✕
+                </button>
+
+              </div>
+
+              <button type="button"
+                      ng-click="c.addRule(field.model)">
+                + Add Condition
+              </button>
+
+            </div>
           </label>
 
-          <label>
-            Flavor:
-            <input type="text" ng-model="c.advQuery.flavor" placeholder="Flavor text" />
-          </label>
-
-          <label>
-            Artist:
-            <input type="text" ng-model="c.advQuery.artist" placeholder="Artist name" />
-          </label>
-
-          <label>
-            Type:
-            <select ng-model="c.advQuery.type">
-              <option value="">Any</option>
-              <option value="creature">Creature</option>
-              <option value="spell">Spell</option>
-              <option value="artifact">Artifact</option>
-            </select>
-          </label>
         </div>
 
+        <!-- ===================== -->
+        <!-- RIGHT COLUMN (NUMERIC + COLORS) -->
+        <!-- ===================== -->
         <div class="mtg-advanced-search__column">
-          <label>
-            Rarity:
-            <select ng-model="c.advQuery.rarity">
-              <option value="">Any</option>
-              <option value="common">Common</option>
-              <option value="uncommon">Uncommon</option>
-              <option value="rare">Rare</option>
-              <option value="mythic">Mythic</option>
-            </select>
-          </label>
 
-          <label>
-            Max Price:
-            <input type="number" step="0.01" ng-model="c.advQuery.price" placeholder="Max price ($)" />
-          </label>
+          <!-- NUMERIC QUERY BUILDER -->
+          <div class="mtg-advanced-search__numeric-group">
 
-          <label>Colors:
+            <label ng-repeat="field in c.numericFieldConfigs">
+              {{field.label}}:
+
+              <div class="mtg-query-builder">
+
+                <div class="mtg-advanced-search__condition-row"
+                    ng-repeat="rule in c.advQuery[field.model] track by $index">
+
+                  <!-- Connector for 2nd+ rules -->
+                  <select ng-if="$index > 0" ng-model="rule.connector">
+                    <option value="&&">AND</option>
+                    <option value="||">OR</option>
+                  </select>
+
+                  <select ng-model="rule.operator">
+                    <option value=">">Greater Than</option>
+                    <option value=">=">Greater Than or Equal</option>
+                    <option value="<">Less Than</option>
+                    <option value="<=">Less Than or Equal</option>
+                    <option value="=">Equal</option>
+                  </select>
+
+                  <input type="number"
+                        ng-model="rule.value"
+                        ng-attr-step="{{field.step}}"
+                        placeholder="Value"/>
+
+                  <button type="button"
+                          ng-if="rule.value || $index > 0"
+                          ng-click="$index === 0 ? (rule.value='') : c.removeRule(field.model, $index)">
+                    ✕
+                  </button>
+
+                </div>
+
+                <button type="button"
+                        ng-click="c.addRule(field.model)">
+                  + Add Condition
+                </button>
+
+              </div>
+            </label>
+
+          </div>
+
+          <!-- COLORS (ICON-ONLY, NO LOGIC CHAINS) -->
+          <label>Color Identity:
             <div class="mtg-advanced-search__colors">
-              <label class="mtg-color-option" ng-repeat="color in c.colorOptions">
-                <input type="checkbox"
-                      ng-model="c.advQuery.colors[color.value]" />
+              <label class="mtg-color-option" 
+                    ng-repeat="color in c.colorOptions" 
+                    data-label="{{color.label}}">
+                <input type="checkbox" ng-model="c.advQuery.colors[color.value]" />
                 <img class="mtg-color-option__icon"
                     ng-src="x_759224_magic_c_0.{{color.icon}}_mana.svg"
                     alt="{{color.label}}" />
-                <span class="mtg-color-option__label">
-                  {{color.label}}
-                </span>
               </label>
             </div>
           </label>
+
         </div>
       </div>
 
@@ -547,7 +974,7 @@
   <!-- Results Info -->
   <div class="mtg-grid__controls" ng-if="data.query">
     <span class="mtg-grid__results-count">
-      {{data.pagination.total}} results for "{{data.query}}"
+        {{data.pagination.total}} results for "{{data.human_readable_query}}"
     </span>
   </div>
 
@@ -573,21 +1000,49 @@
 
   <!-- Pagination -->
   <div ng-if="data.pagination.total_pages > 1" class="mtg-grid__pagination">
+
+    <!-- First Page -->
+    <button class="mtg-btn"
+            ng-disabled="data.pagination.page === 1"
+            ng-click="c.firstPage()">
+      « First
+    </button>
+
+    <!-- Previous Page -->
     <button class="mtg-btn"
             ng-disabled="!data.pagination.has_prev"
-            ng-click="c.goToPage(data.pagination.page - 1)">
-      Previous
+            ng-click="c.prevPage()">
+      ‹ Previous
     </button>
 
+    <!-- Current Page / Total Pages (editable) -->
     <span class="mtg-grid__page-info">
-      Page {{data.pagination.page}} of {{data.pagination.total_pages}}
+      Page 
+      <!-- Pagination Input -->
+      <input type="number"
+       ng-model="c.tempPage"
+       ng-init="c.tempPage = data.pagination.page"
+       ng-blur="c.goToPage(c.tempPage)"   
+       ng-keypress="($event.which === 13) && c.goToPage(c.tempPage)"
+       min="1"
+       max="{{data.pagination.total_pages}}"/>
+      of {{data.pagination.total_pages}}
     </span>
 
+    <!-- Next Page -->
     <button class="mtg-btn"
             ng-disabled="!data.pagination.has_next"
-            ng-click="c.goToPage(data.pagination.page + 1)">
-      Next
+            ng-click="c.nextPage()">
+      Next ›
     </button>
+
+    <!-- Last Page -->
+    <button class="mtg-btn"
+            ng-disabled="data.pagination.page === data.pagination.total_pages"
+            ng-click="c.lastPage()">
+      Last »
+    </button>
+
   </div>
 
 </div>]]></template>
