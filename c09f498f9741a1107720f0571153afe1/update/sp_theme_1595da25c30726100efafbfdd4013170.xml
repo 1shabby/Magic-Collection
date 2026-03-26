@@ -391,6 +391,10 @@ $quintuple-space: 40px;
    ADVANCED SEARCH MODAL
    ============================== */
 
+/* ==============================
+   ADVANCED SEARCH MODAL - FULL STYLING UPDATE
+   ============================== */
+
 .mtg-advanced-search {
   position: fixed;
   top: 0;
@@ -401,7 +405,7 @@ $quintuple-space: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color:black;
+  color: black;
 }
 
 /* Overlay */
@@ -437,7 +441,7 @@ $quintuple-space: 40px;
   background: transparent;
   border: none;
   font-size: 1.5rem;
-  color:black;
+  color: black;
   cursor: pointer;
 }
 
@@ -452,64 +456,142 @@ $quintuple-space: 40px;
 .mtg-advanced-search__column {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
+/* Field label styling */
 .mtg-advanced-search__column label {
   display: flex;
   flex-direction: column;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: $brand-primary;
+  margin-bottom: 0.25rem;
 }
-.mtg-advanced-search__colors {
+
+/* Query builder rows (text, numeric, select) */
+.mtg-advanced-search__condition-row {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.mtg-color-option {
-  display: flex;
   align-items: center;
   gap: 0.4rem;
-  cursor: pointer;
-  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
-.mtg-color-option input {
-  cursor: pointer;
+/* Connector span (AND/OR display) */
+.mtg-advanced-search__condition-connector {
+  font-weight: bold;
+  color: #555;
+  min-width: 2.5rem;
+  text-align: center;
+  font-size: 1.6rem;
 }
 
-.mtg-color-option__icon {
-  width: 2rem;
-  height: 2rem;
+/* Connector select dropdown for 2nd+ rules */
+.mtg-advanced-search__condition-row select {
+  width: 6rem;       /* fits AND / OR */
+  min-width: 3.5rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.6rem;
 }
 
-.mtg-color-option__label {
-  font-size: 2rem;
-  display: inline-block;
-  margin-left: 0.25rem;
-}
-
-.mtg-advanced-search__column input,
-.mtg-advanced-search__column select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
+/* Inputs and numeric selects */
+.mtg-advanced-search__condition-row input,
+.mtg-advanced-search__condition-row select:not([ng-if="$index &gt; 0"]) {
+  flex: 1;
+  padding: 0.4rem 0.5rem;
   border-radius: 6px;
-  width: 100%;
+  border: 1px solid #ccc;
+  font-size: 1.6rem;
   box-sizing: border-box;
 }
 
-.mtg-advanced-search__column input[type="number"] {
-  appearance: textfield;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
+/* Remove button */
+.mtg-advanced-search__condition-row button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Add condition button */
+.mtg-query-builder &gt; button {
+  margin-top: 0.25rem;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.mtg-advanced-search__colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.mtg-color-option {
+  position: relative;
+  display: inline-block;  /* make label itself inline-block */
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* Hide the checkbox itself */
+.mtg-color-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Icon inside the circle */
+.mtg-color-option__icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  pointer-events: none; /* ensures click goes to input */
+}
+
+/* Checked state styling */
+.mtg-color-option input:checked + .mtg-color-option__icon {
+  background: #0077cc;
+  border: 2px solid #004a99;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+}
+
+/* Hover tooltip */
+.mtg-color-option:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 20;
 }
 
 /* Footer Search Button */
 .mtg-advanced-search__footer {
   display: flex;
   justify-content: center;
+  margin-top: 0.75rem;
 }
 
 .mtg-advanced-search__submit {
@@ -535,14 +617,14 @@ $quintuple-space: 40px;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-30 02:43:03</sys_created_on>
         <sys_id>1595da25c30726100efafbfdd4013170</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>Magic Theme</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_theme_1595da25c30726100efafbfdd4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-25 01:45:23</sys_updated_on>
+        <sys_updated_on>2026-03-26 16:46:28</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>
