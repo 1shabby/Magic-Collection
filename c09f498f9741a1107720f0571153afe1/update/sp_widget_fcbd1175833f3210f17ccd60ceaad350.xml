@@ -65,12 +65,31 @@
     /* ==============================
        TEXT FIELD CONFIG
        ============================== */
-    c.textFieldConfigs = [
-        { label: 'Name', model: 'nameRules', placeholder: 'Card name' },
-        { label: 'Text', model: 'textRules', placeholder: 'Oracle / rules text' },
-        { label: 'Flavor', model: 'flavorRules', placeholder: 'Flavor text' },
-        { label: 'Artist', model: 'artistRules', placeholder: 'Artist name' },
-        { label: 'Type', model: 'typeRules', placeholder: 'e.g. legendary, creature, artifact' }
+    c.textFieldConfigs = [{
+            label: 'Name',
+            model: 'nameRules',
+            placeholder: 'Card name'
+        },
+        {
+            label: 'Text',
+            model: 'textRules',
+            placeholder: 'Oracle / rules text'
+        },
+        {
+            label: 'Flavor',
+            model: 'flavorRules',
+            placeholder: 'Flavor text'
+        },
+        {
+            label: 'Artist',
+            model: 'artistRules',
+            placeholder: 'Artist name'
+        },
+        {
+            label: 'Type',
+            model: 'typeRules',
+            placeholder: 'e.g. legendary, creature, artifact'
+        }
     ];
 
     /* ==============================
@@ -82,8 +101,7 @@
      * Returns: None
      */
 
-    c.numericFieldConfigs = [
-        {
+    c.numericFieldConfigs = [{
             label: 'CMC',
             model: 'cmcRules',
             step: null // integers only
@@ -113,19 +131,31 @@
     /* ==============================
        SELECT FIELD CONFIG
        ============================== */
-    c.selectFieldConfigs = [
-        {
-            label: 'Rarity',
-            model: 'rarityRules',
-            options: [
-                { value: 'common', label: 'Common' },
-                { value: 'uncommon', label: 'Uncommon' },
-                { value: 'rare', label: 'Rare' },
-                { value: 'mythic', label: 'Mythic' },
-                { value: 'special', label: 'Special' },
-            ]
-        }
-    ];
+    c.selectFieldConfigs = [{
+        label: 'Rarity',
+        model: 'rarityRules',
+        options: [{
+                value: 'common',
+                label: 'Common'
+            },
+            {
+                value: 'uncommon',
+                label: 'Uncommon'
+            },
+            {
+                value: 'rare',
+                label: 'Rare'
+            },
+            {
+                value: 'mythic',
+                label: 'Mythic'
+            },
+            {
+                value: 'special',
+                label: 'Special'
+            },
+        ]
+    }];
 
     /* ==============================
        CARD SCALE (s|m|l)
@@ -398,9 +428,9 @@
            FALLBACK: ENSURE AT LEAST ONE RULE
            ============================== */
         [
-            'nameRules','textRules','flavorRules','artistRules',
-            'typeRules','rarityRules',
-            'cmcRules','priceRules','powerRules','toughnessRules','loyaltyRules'
+            'nameRules', 'textRules', 'flavorRules', 'artistRules',
+            'typeRules', 'rarityRules',
+            'cmcRules', 'priceRules', 'powerRules', 'toughnessRules', 'loyaltyRules'
         ].forEach(function(field) {
             if (!c.advQuery[field] || !c.advQuery[field].length) {
                 c.addRule(field);
@@ -412,14 +442,13 @@
        ADD RULE
        ============================== */
     /* Description: Adds a new rule (numeric or text)
-    * Parameters:
-    *  - field (String)
-    * Returns: None
-    */
-   
+     * Parameters:
+     *  - field (String)
+     * Returns: None
+     */
+
     c.addRule = function(field) {
-        let isNumeric = field.indexOf('Rules') > -1 &&
-            ['cmcRules','priceRules','powerRules','toughnessRules','loyaltyRules'].includes(field);
+        let isNumeric = field.indexOf('Rules') > -1 && ['cmcRules', 'priceRules', 'powerRules', 'toughnessRules', 'loyaltyRules'].includes(field);
 
         c.advQuery[field].push(isNumeric ? {
             operator: '>=',
@@ -459,7 +488,11 @@
 
         // If no conditions remain, add an empty placeholder for user convenience
         if (c.advQuery[fieldName].length === 0) {
-            c.advQuery[fieldName].push({ value: '', connector: null, operator: '=' });
+            c.advQuery[fieldName].push({
+                value: '',
+                connector: null,
+                operator: '='
+            });
         }
     };
 
@@ -543,7 +576,7 @@
      * Parameters: [string] rawQuery - raw URL query (e.g., name:Aerith%7C%7CAb)
      * Returns: [string] - human-readable query
      */
-    
+
     c.getReadableQuery = function(rawQuery) {
         console.log('Raw query:', rawQuery);
         if (!rawQuery) return '';
@@ -587,25 +620,56 @@
         let queryParts = [];
 
         // TEXT FIELDS
-        [
-            { name: 'name', rules: c.advQuery.nameRules },
-            { name: 'text', rules: c.advQuery.textRules },
-            { name: 'flavor', rules: c.advQuery.flavorRules },
-            { name: 'artist', rules: c.advQuery.artistRules },
-            { name: 'type', rules: c.advQuery.typeRules },
-            { name: 'rarity', rules: c.advQuery.rarityRules }
+        [{
+                name: 'name',
+                rules: c.advQuery.nameRules
+            },
+            {
+                name: 'text',
+                rules: c.advQuery.textRules
+            },
+            {
+                name: 'flavor',
+                rules: c.advQuery.flavorRules
+            },
+            {
+                name: 'artist',
+                rules: c.advQuery.artistRules
+            },
+            {
+                name: 'type',
+                rules: c.advQuery.typeRules
+            },
+            {
+                name: 'rarity',
+                rules: c.advQuery.rarityRules
+            }
         ].forEach(function(field) {
             let result = c.buildTextQuery(field.name, field.rules);
             if (result) queryParts.push(result);
         });
 
         // NUMERIC FIELDS (NEW)
-        let numericFields = [
-            { name: 'cmc', rules: c.advQuery.cmcRules },
-            { name: 'price', rules: c.advQuery.priceRules },
-            { name: 'power', rules: c.advQuery.powerRules },
-            { name: 'toughness', rules: c.advQuery.toughnessRules },
-            { name: 'loyalty', rules: c.advQuery.loyaltyRules }
+        let numericFields = [{
+                name: 'cmc',
+                rules: c.advQuery.cmcRules
+            },
+            {
+                name: 'price',
+                rules: c.advQuery.priceRules
+            },
+            {
+                name: 'power',
+                rules: c.advQuery.powerRules
+            },
+            {
+                name: 'toughness',
+                rules: c.advQuery.toughnessRules
+            },
+            {
+                name: 'loyalty',
+                rules: c.advQuery.loyaltyRules
+            }
         ];
 
         numericFields.forEach(function(field) {
@@ -631,6 +695,34 @@
 
         $location.search(params);
         c.showAdvancedSearch = false;
+    };
+
+        /* ==============================
+           SUBMIT ADVANCED SEARCH
+           ============================== */
+        /* Description: Opens the card detail page for the selected card, passing necessary identifiers via URL params.
+        * Parameters: rec (Object): the card record object containing card data
+        * Returns: None
+        */
+
+    c.openCard = function(card) {
+        try {
+            var json = JSON.stringify(card);
+            sessionStorage.setItem('mtg_selected_card', json);
+        } catch (e) {
+            console.error('Storage error:', e);
+        }
+
+        // Get current URL params
+        var params = $location.search();
+
+        $location.search({
+            id: 'card',
+            name: card.name,
+            cn: card.cn,
+            set: card.set_code || '',
+            db: params.db || ''   // <-- preserve debug flag
+        });
     };
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -733,6 +825,7 @@
     data.parsedQuery = parsedQueryRes.record || {};
     data.card_scale = cardScale;
     data.debug = PORTAL_UTILS.debug;
+	data.theme = gs.getUser().theme;
 	
 
     /* ==============================
@@ -750,14 +843,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>112</sys_mod_count>
+        <sys_mod_count>134</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-26 19:56:30</sys_updated_on>
+        <sys_updated_on>2026-03-27 03:23:42</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
@@ -980,7 +1073,9 @@
 
   <!-- Grid -->
   <div class="mtg-grid__container">
-    <div class="mtg-grid__item" ng-repeat="rec in data.records">
+    <div class="mtg-grid__item"
+     ng-repeat="rec in data.records"
+     ng-click="c.openCard(rec.cardData)">
 
       <div class="mtg-card" tabindex="0">
         <div class="mtg-card__body">

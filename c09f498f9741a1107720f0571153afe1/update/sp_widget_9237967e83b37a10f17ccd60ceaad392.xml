@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window, $location) {
+    var c = this;
+
+    c.$onInit = function() {
+
+        var params = $location.search();
+
+        if (params.name && params.cn && params.set) {
+            console.log('Loading card via URL params');
+
+            // Call server / script include here using params
+            c.data = {
+                name: params.name,
+                cn: params.cn,
+                set: params.set
+            };
+
+            return;
+        }
+
+        // Fallback to sessionStorage (optional)
+        var stored = $window.sessionStorage.getItem('mtg_selected_card');
+
+        console.log('Fallback sessionStorage:', stored);
+
+        if (stored) {
+            c.card = JSON.parse(stored);
+        } else {
+            console.warn('No card data available');
+        }
+    };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.mtg-card-detail {&#13;
+  max-width: 1200px;&#13;
+  margin: 0 auto;&#13;
+}&#13;
+&#13;
+.mtg-card-detail__main {&#13;
+  display: grid;&#13;
+  grid-template-columns: 300px 1fr;&#13;
+  gap: var(--mtg-spacing-lg);&#13;
+}&#13;
+&#13;
+/* Reuse existing card image behavior */&#13;
+.mtg-card__image-wrapper {&#13;
+  position: relative;&#13;
+}&#13;
+&#13;
+.mtg-card__image {&#13;
+  width: 100%;&#13;
+  border-radius: var(--mtg-radius-md);&#13;
+}&#13;
+&#13;
+/* Keep foil overlay consistent */&#13;
+.mtg-card__foil {&#13;
+  position: absolute;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  pointer-events: none;&#13;
+}&#13;
+&#13;
+/* Info section spacing */&#13;
+.mtg-card__info {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: var(--mtg-spacing-sm);&#13;
+}&#13;
+&#13;
+/* Sections */&#13;
+.mtg-card-detail__section {&#13;
+  margin-top: var(--mtg-spacing-xl);&#13;
+}&#13;
+&#13;
+/* Rulings */&#13;
+.mtg-card-detail__rulings {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: var(--mtg-spacing-sm);&#13;
+}&#13;
+&#13;
+.mtg-card-detail__ruling {&#13;
+  padding: var(--mtg-spacing-sm);&#13;
+  border-radius: var(--mtg-radius-sm);&#13;
+  background: var(--mtg-surface);&#13;
+}&#13;
+&#13;
+.mtg-card-detail__ruling img{&#13;
+ width: var(--fs-lg);&#13;
+}&#13;
+&#13;
+/* Printings grid aligns with your existing grid system */&#13;
+.mtg-printings-grid {&#13;
+  margin-top: var(--mtg-spacing-md);&#13;
+}&#13;
+&#13;
+.mtg-card__oracle img{&#13;
+ width: var(--fs-lg);&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mtg_card_details</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>MTG Card Details</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    data.result = {
+        success: true,
+        message: '',
+        method: 'cardDetailInit',
+        record: {}
+    };
+
+    try {
+
+        data.params = {
+            name: $sp.getParameter('name'),
+            cn: $sp.getParameter('cn'),
+            set: $sp.getParameter('set'),
+            foil: $sp.getParameter('foil'),
+            debug: $sp.getParameter('db')
+        };
+
+        // Only call server if we have params
+        if (data.params.name && data.params.cn && data.params.set) {
+
+            var cardAPI = new x_759224_magic_c_0.CardAPI();
+
+            var res = cardAPI.getCardByNaturalKey({
+                name: data.params.name,
+                collector_number: data.params.cn,
+                set_code: data.params.set,
+                foil: data.params.foil
+            });
+
+            data.result = res;
+
+        } else {
+            data.result.success = false;
+            data.result.message = 'Missing required parameters';
+        }
+
+        data.showDebug = gs.hasRole('admin') && data.params.db === 'true';
+
+    } catch (ex) {
+        data.result.success = false;
+        data.result.message = ex.message;
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-27 03:02:36</sys_created_on>
+        <sys_id>9237967e83b37a10f17ccd60ceaad392</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>MTG Card Details</sys_name>
+        <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
+        <sys_update_name>sp_widget_9237967e83b37a10f17ccd60ceaad392</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-27 03:40:39</sys_updated_on>
+        <template><![CDATA[<div class="mtg-page">
+  <div class="mtg-card__body mtg-card-detail" ng-if="c.card">
+
+    <!-- HEADER -->
+    <div class="mtg-card__header mtg-flex mtg-flex--between mtg-mb-md">
+      <h1 class="mtg-card__title">
+        {{c.card.name}}
+      </h1>
+
+      <div class="mtg-card__price">
+        ${{c.card.price}}
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="mtg-card-detail__main">
+
+      <!-- IMAGE (reuse card styling where possible) -->
+      <div class="mtg-card__image-wrapper">
+        <img class="mtg-card__image"
+             ng-src="{{c.card.face_one.image}}" />
+
+        <!-- FOIL OVERLAY -->
+        <img ng-if="c.card.flags.is_foil"
+             class="mtg-card__foil"
+             src="x_759224_magic_c_0.foil_overlay.png" />
+      </div>
+
+      <!-- DETAILS -->
+      <div class="mtg-card__info">
+
+        <div class="mtg-card__type">
+          {{c.card.face_one.type_line}}
+        </div>
+
+        <div class="mtg-card__oracle"
+             ng-bind-html="c.card.face_one.oracle_text">
+        </div>
+
+        <div class="mtg-card__stats"
+             ng-if="c.card.face_one.power">
+          {{c.card.face_one.power}} / {{c.card.face_one.toughness}}
+        </div>
+
+        <div class="mtg-card__set mtg-mt-sm">
+          {{c.card.sets}}
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RULINGS -->
+    <div class="mtg-card-detail__section mtg-mt-lg"
+         ng-if="c.card.rulings.length">
+
+      <h3 class="mtg-section__title">Rulings</h3>
+
+      <div class="mtg-card-detail__rulings">
+        <div class="mtg-card-detail__ruling"
+             ng-repeat="r in c.card.rulings">
+
+          <div class="mtg-card-detail__ruling-date">
+            {{r.published_at}}
+          </div>
+
+          <div ng-bind-html="r.comment"></div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PRINTINGS -->
+    <div class="mtg-card-detail__section mtg-mt-lg"
+         ng-if="c.card.printings.length">
+
+      <h3 class="mtg-section__title">Printings</h3>
+
+      <div class="mtg-grid mtg-printings-grid">
+        <div class="mtg-grid__item"
+             ng-repeat="p in c.card.printings">
+
+          <img class="mtg-card__image"
+               ng-src="{{p.image}}" />
+
+          <div class="mtg-card__set">
+            {{p.sets}}
+          </div>
+
+          <div class="mtg-card__price">
+            ${{p.price}}
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- DEBUG -->
+<div class="mtg-debug" ng-if="data.showDebug">
+  <div class="mtg-debug__title">Debug</div>
+  <pre class="mtg-debug__pre">{{data | json}}</pre>
+</div>]]></template>
+    </sp_widget>
+</record_update>
