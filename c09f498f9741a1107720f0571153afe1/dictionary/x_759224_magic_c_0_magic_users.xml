@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="4f4c8ad6c35722100efafbfdd40131c8" extends="sys_user" label="Magic Users" max_length="40" name="x_759224_magic_c_0_magic_users" type="collection"/>
+    <element db_object_id="4f4c8ad6c35722100efafbfdd40131c8" extends="sys_user" label="Magic Users" max_length="40" name="x_759224_magic_c_0_magic_users" type="collection">
+        <element choice="1" default="light" label="Theme" max_length="40" name="theme" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Dark" sequence="2" value="dark"/>
+                <element inactive_on_update="false" label="Light" sequence="1" value="light"/>
+            </choice>
+        </element>
+    </element>
 </database>
