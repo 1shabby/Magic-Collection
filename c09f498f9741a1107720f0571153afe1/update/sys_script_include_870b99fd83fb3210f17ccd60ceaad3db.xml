@@ -252,6 +252,22 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
                 cardGR.addEncodedQuery(built.record);
             }
 
+            // PriceChange
+            if (queryObj.price_change) {
+                let parsed = this.parseLogicalExpression(queryObj.price_change);
+                if (!parsed.success) throw new Error(parsed.message);
+
+                let built = this.buildLogicalEncodedQuery(
+                    ['price_change'],
+                    parsed.record.groups,
+                    '=',
+                    'number'
+                );
+
+                if (!built.success) throw new Error(built.message);
+                cardGR.addEncodedQuery(built.record);
+            }
+
             // CMC
             if (queryObj.cmc) {
                 let parsed = this.parseLogicalExpression(queryObj.cmc);
@@ -853,13 +869,13 @@ mtg_portal_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:04:26</sys_created_on>
         <sys_id>870b99fd83fb3210f17ccd60ceaad3db</sys_id>
-        <sys_mod_count>57</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>mtg_portal_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_870b99fd83fb3210f17ccd60ceaad3db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-26 17:55:09</sys_updated_on>
+        <sys_updated_on>2026-03-27 14:37:41</sys_updated_on>
     </sys_script_include>
 </record_update>
