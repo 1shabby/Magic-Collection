@@ -55,6 +55,7 @@
 
         cmcRules: [],
         priceRules: [],
+        priceChangeRules: [],
         powerRules: [],
         toughnessRules: [],
         loyaltyRules: [],
@@ -65,31 +66,12 @@
     /* ==============================
        TEXT FIELD CONFIG
        ============================== */
-    c.textFieldConfigs = [{
-            label: 'Name',
-            model: 'nameRules',
-            placeholder: 'Card name'
-        },
-        {
-            label: 'Text',
-            model: 'textRules',
-            placeholder: 'Oracle / rules text'
-        },
-        {
-            label: 'Flavor',
-            model: 'flavorRules',
-            placeholder: 'Flavor text'
-        },
-        {
-            label: 'Artist',
-            model: 'artistRules',
-            placeholder: 'Artist name'
-        },
-        {
-            label: 'Type',
-            model: 'typeRules',
-            placeholder: 'e.g. legendary, creature, artifact'
-        }
+    c.textFieldConfigs = [
+        { label: 'Name', model: 'nameRules', placeholder: 'Card name' },
+        { label: 'Text', model: 'textRules', placeholder: 'Oracle / rules text' },
+        { label: 'Flavor', model: 'flavorRules', placeholder: 'Flavor text' },
+        { label: 'Artist', model: 'artistRules', placeholder: 'Artist name' },
+        { label: 'Type', model: 'typeRules', placeholder: 'e.g. legendary, creature, artifact' }
     ];
 
     /* ==============================
@@ -101,7 +83,8 @@
      * Returns: None
      */
 
-    c.numericFieldConfigs = [{
+    c.numericFieldConfigs = [
+        {
             label: 'CMC',
             model: 'cmcRules',
             step: null // integers only
@@ -109,7 +92,12 @@
         {
             label: 'Price',
             model: 'priceRules',
-            step: '0.01' // currency precision
+            step: '0.01'
+        },
+        {
+            label: 'Price Change',
+            model: 'priceChangeRules',
+            step: '0.01'
         },
         {
             label: 'Power',
@@ -131,31 +119,19 @@
     /* ==============================
        SELECT FIELD CONFIG
        ============================== */
-    c.selectFieldConfigs = [{
-        label: 'Rarity',
-        model: 'rarityRules',
-        options: [{
-                value: 'common',
-                label: 'Common'
-            },
-            {
-                value: 'uncommon',
-                label: 'Uncommon'
-            },
-            {
-                value: 'rare',
-                label: 'Rare'
-            },
-            {
-                value: 'mythic',
-                label: 'Mythic'
-            },
-            {
-                value: 'special',
-                label: 'Special'
-            },
-        ]
-    }];
+    c.selectFieldConfigs = [
+        {
+            label: 'Rarity',
+            model: 'rarityRules',
+            options: [
+                { value: 'common', label: 'Common' },
+                { value: 'uncommon', label: 'Uncommon' },
+                { value: 'rare', label: 'Rare' },
+                { value: 'mythic', label: 'Mythic' },
+                { value: 'special', label: 'Special' },
+            ]
+        }
+    ];
 
     /* ==============================
        CARD SCALE (s|m|l)
@@ -249,7 +225,6 @@
     /* ==============================
        SEARCH FUNCTION
        ============================== */
-
     /* Description: Updates the URL with the search query and resets page to 1
      * Parameters: None
      * Returns: None
@@ -290,7 +265,6 @@
 
         if (!query) return;
 
-        // Reset everything first (important for re-open)
         c.advQuery = {
             nameRules: [],
             textRules: [],
@@ -300,6 +274,7 @@
             rarityRules: [],
             cmcRules: [],
             priceRules: [],
+            priceChangeRules: [],
             powerRules: [],
             toughnessRules: [],
             loyaltyRules: [],
@@ -340,6 +315,7 @@
             var numericMap = {
                 cmc: 'cmcRules',
                 price: 'priceRules',
+                price_change: 'priceChangeRules',
                 power: 'powerRules',
                 toughness: 'toughnessRules',
                 loyalty: 'loyaltyRules'
@@ -428,9 +404,9 @@
            FALLBACK: ENSURE AT LEAST ONE RULE
            ============================== */
         [
-            'nameRules', 'textRules', 'flavorRules', 'artistRules',
-            'typeRules', 'rarityRules',
-            'cmcRules', 'priceRules', 'powerRules', 'toughnessRules', 'loyaltyRules'
+            'nameRules','textRules','flavorRules','artistRules',
+            'typeRules','rarityRules',
+            'cmcRules','priceRules','priceChangeRules','powerRules','toughnessRules','loyaltyRules'
         ].forEach(function(field) {
             if (!c.advQuery[field] || !c.advQuery[field].length) {
                 c.addRule(field);
@@ -442,13 +418,14 @@
        ADD RULE
        ============================== */
     /* Description: Adds a new rule (numeric or text)
-     * Parameters:
-     *  - field (String)
-     * Returns: None
-     */
-
+    * Parameters:
+    *  - field (String)
+    * Returns: None
+    */
+   
     c.addRule = function(field) {
-        let isNumeric = field.indexOf('Rules') > -1 && ['cmcRules', 'priceRules', 'powerRules', 'toughnessRules', 'loyaltyRules'].includes(field);
+        let isNumeric = field.indexOf('Rules') > -1 &&
+            ['cmcRules','priceRules','priceChangeRules','powerRules','toughnessRules','loyaltyRules'].includes(field);
 
         c.advQuery[field].push(isNumeric ? {
             operator: '>=',
@@ -488,11 +465,7 @@
 
         // If no conditions remain, add an empty placeholder for user convenience
         if (c.advQuery[fieldName].length === 0) {
-            c.advQuery[fieldName].push({
-                value: '',
-                connector: null,
-                operator: '='
-            });
+            c.advQuery[fieldName].push({ value: '', connector: null, operator: '=' });
         }
     };
 
@@ -576,7 +549,7 @@
      * Parameters: [string] rawQuery - raw URL query (e.g., name:Aerith%7C%7CAb)
      * Returns: [string] - human-readable query
      */
-
+    
     c.getReadableQuery = function(rawQuery) {
         console.log('Raw query:', rawQuery);
         if (!rawQuery) return '';
@@ -620,56 +593,26 @@
         let queryParts = [];
 
         // TEXT FIELDS
-        [{
-                name: 'name',
-                rules: c.advQuery.nameRules
-            },
-            {
-                name: 'text',
-                rules: c.advQuery.textRules
-            },
-            {
-                name: 'flavor',
-                rules: c.advQuery.flavorRules
-            },
-            {
-                name: 'artist',
-                rules: c.advQuery.artistRules
-            },
-            {
-                name: 'type',
-                rules: c.advQuery.typeRules
-            },
-            {
-                name: 'rarity',
-                rules: c.advQuery.rarityRules
-            }
+        [
+            { name: 'name', rules: c.advQuery.nameRules },
+            { name: 'text', rules: c.advQuery.textRules },
+            { name: 'flavor', rules: c.advQuery.flavorRules },
+            { name: 'artist', rules: c.advQuery.artistRules },
+            { name: 'type', rules: c.advQuery.typeRules },
+            { name: 'rarity', rules: c.advQuery.rarityRules }
         ].forEach(function(field) {
             let result = c.buildTextQuery(field.name, field.rules);
             if (result) queryParts.push(result);
         });
 
-        // NUMERIC FIELDS (NEW)
-        let numericFields = [{
-                name: 'cmc',
-                rules: c.advQuery.cmcRules
-            },
-            {
-                name: 'price',
-                rules: c.advQuery.priceRules
-            },
-            {
-                name: 'power',
-                rules: c.advQuery.powerRules
-            },
-            {
-                name: 'toughness',
-                rules: c.advQuery.toughnessRules
-            },
-            {
-                name: 'loyalty',
-                rules: c.advQuery.loyaltyRules
-            }
+        // NUMERIC FIELDS
+        let numericFields = [
+            { name: 'cmc', rules: c.advQuery.cmcRules },
+            { name: 'price', rules: c.advQuery.priceRules },
+            { name: 'price_change', rules: c.advQuery.priceChangeRules },
+            { name: 'power', rules: c.advQuery.powerRules },
+            { name: 'toughness', rules: c.advQuery.toughnessRules },
+            { name: 'loyalty', rules: c.advQuery.loyaltyRules }
         ];
 
         numericFields.forEach(function(field) {
@@ -695,34 +638,6 @@
 
         $location.search(params);
         c.showAdvancedSearch = false;
-    };
-
-        /* ==============================
-           SUBMIT ADVANCED SEARCH
-           ============================== */
-        /* Description: Opens the card detail page for the selected card, passing necessary identifiers via URL params.
-        * Parameters: rec (Object): the card record object containing card data
-        * Returns: None
-        */
-
-    c.openCard = function(card) {
-        try {
-            var json = JSON.stringify(card);
-            sessionStorage.setItem('mtg_selected_card', json);
-        } catch (e) {
-            console.error('Storage error:', e);
-        }
-
-        // Get current URL params
-        var params = $location.search();
-
-        $location.search({
-            id: 'card',
-            name: card.name,
-            cn: card.cn,
-            set: card.set_code || '',
-            db: params.db || ''   // <-- preserve debug flag
-        });
     };
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -843,14 +758,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>134</sys_mod_count>
+        <sys_mod_count>146</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-27 03:23:42</sys_updated_on>
+        <sys_updated_on>2026-03-27 16:20:44</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
@@ -1019,7 +934,7 @@
                         placeholder="Value"/>
 
                   <button type="button"
-                          ng-if="rule.value || $index > 0"
+                          ng-if="rule.value !== undefined && rule.value !== null && rule.value !== ''"
                           ng-click="$index === 0 ? (rule.value='') : c.removeRule(field.model, $index)">
                     ✕
                   </button>
@@ -1055,7 +970,7 @@
 
       <!-- Footer Search Button -->
       <div class="mtg-advanced-search__footer">
-        <button class="mtg-btn mtg-advanced-search__submit"
+        <button class="mtg-btn mtg-search__btn mtg-search__btn--primary"
                 ng-click="c.submitAdvancedSearch()">
           Search
         </button>
@@ -1097,14 +1012,14 @@
   <div ng-if="data.pagination.total_pages > 1" class="mtg-grid__pagination">
 
     <!-- First Page -->
-    <button class="mtg-btn"
+    <button class="mtg-btn mtg-search__btn--primary mtg-search__btn"
             ng-disabled="data.pagination.page === 1"
             ng-click="c.firstPage()">
       « First
     </button>
 
     <!-- Previous Page -->
-    <button class="mtg-btn"
+    <button class="mtg-btn mtg-search__btn--primary mtg-search__btn"
             ng-disabled="!data.pagination.has_prev"
             ng-click="c.prevPage()">
       ‹ Previous
@@ -1125,14 +1040,14 @@
     </span>
 
     <!-- Next Page -->
-    <button class="mtg-btn"
+    <button class="mtg-btn mtg-search__btn--primary mtg-search__btn"
             ng-disabled="!data.pagination.has_next"
             ng-click="c.nextPage()">
       Next ›
     </button>
 
     <!-- Last Page -->
-    <button class="mtg-btn"
+    <button class="mtg-btn mtg-search__btn--primary mtg-search__btn"
             ng-disabled="data.pagination.page === data.pagination.total_pages"
             ng-click="c.lastPage()">
       Last »
