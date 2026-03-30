@@ -8,42 +8,30 @@
     c.showAdvancedSearch = false;
 
     /* ==============================
-       COLOR OPTIONS CONFIG
-       ============================== */
-    c.colorOptions = [{
-            label: 'White',
-            value: 'W',
-            icon: 'white'
-        },
-        {
-            label: 'Blue',
-            value: 'U',
-            icon: 'blue'
-        },
-        {
-            label: 'Black',
-            value: 'B',
-            icon: 'black'
-        },
-        {
-            label: 'Red',
-            value: 'R',
-            icon: 'red'
-        },
-        {
-            label: 'Green',
-            value: 'G',
-            icon: 'green'
-        },
-        {
-            label: 'Colorless',
-            value: 'C',
-            icon: 'colorless'
-        }
+       TEXT OPERATORS
+    ============================== */
+    c.textOperators = [
+        { value: 'CONTAINS', label: 'Contains' },
+        { value: 'STARTSWITH', label: 'Starts With' },
+        { value: '=', label: 'Is' },
+        { value: '!=', label: 'Is Not' },
+        { value: 'NOT CONTAINS', label: 'Does Not Contain' }
     ];
 
     /* ==============================
-    ADVANCED QUERY MODEL
+       COLOR OPTIONS CONFIG
+    ============================== */
+    c.colorOptions = [
+        { label: 'White', value: 'W', icon: 'white' },
+        { label: 'Blue', value: 'U', icon: 'blue' },
+        { label: 'Black', value: 'B', icon: 'black' },
+        { label: 'Red', value: 'R', icon: 'red' },
+        { label: 'Green', value: 'G', icon: 'green' },
+        { label: 'Colorless', value: 'C', icon: 'colorless' }
+    ];
+
+    /* ==============================
+       ADVANCED QUERY MODEL
     ============================== */
     c.advQuery = {
         nameRules: [],
@@ -52,20 +40,18 @@
         artistRules: [],
         typeRules: [],
         rarityRules: [],
-
         cmcRules: [],
         priceRules: [],
         priceChangeRules: [],
         powerRules: [],
         toughnessRules: [],
         loyaltyRules: [],
-
         colors: {}
     };
 
     /* ==============================
-       TEXT FIELD CONFIG
-       ============================== */
+       FIELD CONFIGS
+    ============================== */
     c.textFieldConfigs = [
         { label: 'Name', model: 'nameRules', placeholder: 'Card name' },
         { label: 'Text', model: 'textRules', placeholder: 'Oracle / rules text' },
@@ -74,51 +60,6 @@
         { label: 'Type', model: 'typeRules', placeholder: 'e.g. legendary, creature, artifact' }
     ];
 
-    /* ==============================
-       NUMERIC FIELD CONFIG
-       ============================== */
-    /* Description: Defines all numeric fields that support
-     * operator-based query building with chaining
-     * Parameters: None
-     * Returns: None
-     */
-
-    c.numericFieldConfigs = [
-        {
-            label: 'CMC',
-            model: 'cmcRules',
-            step: null // integers only
-        },
-        {
-            label: 'Price',
-            model: 'priceRules',
-            step: '0.01'
-        },
-        {
-            label: 'Price Change',
-            model: 'priceChangeRules',
-            step: '0.01'
-        },
-        {
-            label: 'Power',
-            model: 'powerRules',
-            step: null
-        },
-        {
-            label: 'Toughness',
-            model: 'toughnessRules',
-            step: null
-        },
-        {
-            label: 'Loyalty',
-            model: 'loyaltyRules',
-            step: null
-        }
-    ];
-
-    /* ==============================
-       SELECT FIELD CONFIG
-       ============================== */
     c.selectFieldConfigs = [
         {
             label: 'Rarity',
@@ -128,24 +69,53 @@
                 { value: 'uncommon', label: 'Uncommon' },
                 { value: 'rare', label: 'Rare' },
                 { value: 'mythic', label: 'Mythic' },
-                { value: 'special', label: 'Special' },
+                { value: 'special', label: 'Special' }
             ]
         }
     ];
 
+    c.numericFieldConfigs = [
+        { label: 'CMC', model: 'cmcRules', step: null },
+        { label: 'Price', model: 'priceRules', step: '0.01' },
+        { label: 'Price Change', model: 'priceChangeRules', step: '0.01' },
+        { label: 'Power', model: 'powerRules', step: null },
+        { label: 'Toughness', model: 'toughnessRules', step: null },
+        { label: 'Loyalty', model: 'loyaltyRules', step: null }
+    ];
+
     /* ==============================
-       CARD SCALE (s|m|l)
-       ============================== */
-    /* Description: Initialize card scale from URL or server-provided data
-     * Parameters: None
-     * Returns: None
-     */
+       FIELD MAPS (FIXES BUG)
+    ============================== */
+    c.textFieldMap = {
+        name: 'nameRules',
+        text: 'textRules',
+        flavor: 'flavorRules',
+        artist: 'artistRules',
+        type: 'typeRules',
+        rarity: 'rarityRules'
+    };
+
+    c.numericFieldMap = {
+        cmc: 'cmcRules',
+        price: 'priceRules',
+        price_change: 'priceChangeRules',
+        power: 'powerRules',
+        toughness: 'toughnessRules',
+        loyalty: 'loyaltyRules'
+    };
+
+    /* ==============================
+       CARD SCALE
+    ============================== */
     c.cardScale = (function() {
         var scale = 'm';
         try {
-            var qScale = ($location && $location.search && $location.search().c) || null;
-            if (!qScale && $scope.data && $scope.data.card_scale) qScale = $scope.data.card_scale;
-            if (qScale && ['s', 'm', 'l'].indexOf(qScale) !== -1) scale = qScale;
+            var qScale = ($location.search().c) || null;
+            if (!qScale && $scope.data && $scope.data.card_scale)
+                qScale = $scope.data.card_scale;
+
+            if (qScale && ['s', 'm', 'l'].indexOf(qScale) !== -1)
+                scale = qScale;
         } catch (e) {
             scale = ($scope.data && $scope.data.card_scale) || 'm';
         }
@@ -153,493 +123,221 @@
     })();
 
     /* ==============================
-       NAVIGATION: Go to specific page
-       ============================== */
-    /* Description: Updates the URL with a new page parameter to trigger re-query
-     * Parameters: [integer] - page: the page number to navigate to
-     * Returns: None
-     */
+       NAVIGATION
+    ============================== */
     c.goToPage = function(page) {
         if (!page || page < 1) return;
-
-        // Copy current URL parameters
         var params = angular.copy($location.search());
-
-        // Set new page
         params.p = page;
+        $location.search(params);
+    };
 
-        // Update URL (Service Portal will re-run widget server)
+    c.nextPage = function() {
+        if ($scope.data.pagination && $scope.data.pagination.has_next)
+            c.goToPage($scope.data.pagination.page + 1);
+    };
+
+    c.prevPage = function() {
+        if ($scope.data.pagination && $scope.data.pagination.has_prev)
+            c.goToPage($scope.data.pagination.page - 1);
+    };
+
+    c.firstPage = function() { c.goToPage(1); };
+    c.lastPage = function() {
+        if ($scope.data.pagination)
+            c.goToPage($scope.data.pagination.total_pages);
+    };
+
+    /* ==============================
+       BASIC SEARCH
+    ============================== */
+    c.submitSearch = function() {
+        var params = angular.copy($location.search());
+        params.q = c.searchQuery;
+        params.p = 1;
         $location.search(params);
     };
 
     /* ==============================
-       NEXT PAGE
-       ============================== */
-    /* Description: Navigates to the next page if available
-     * Parameters: None
-     * Returns: None
-     */
-    c.nextPage = function() {
-        if ($scope.data.pagination && $scope.data.pagination.has_next) {
-            c.goToPage($scope.data.pagination.page + 1);
-        }
-    };
-
-    /* ==============================
-       PREVIOUS PAGE
-       ============================== */
-    /* Description: Navigates to the previous page if available
-     * Parameters: None
-     * Returns: None
-     */
-    c.prevPage = function() {
-        if ($scope.data.pagination && $scope.data.pagination.has_prev) {
-            c.goToPage($scope.data.pagination.page - 1);
-        }
-    };
-
-    /* ==============================
-       FIRST PAGE
-       ============================== */
-    /* Description: Navigates to the first page
-     * Parameters: None
-     * Returns: None
-     */
-    c.firstPage = function() {
-        c.goToPage(1);
-    };
-
-    /* ==============================
-       LAST PAGE
-       ============================== */
-    /* Description: Navigates to the last page
-     * Parameters: None
-     * Returns: None
-     */
-    c.lastPage = function() {
-        if ($scope.data.pagination) {
-            c.goToPage($scope.data.pagination.total_pages);
-        }
-    };
-
-    /* ==============================
-       SEARCH FUNCTION
-       ============================== */
-    /* Description: Updates the URL with the search query and resets page to 1
-     * Parameters: None
-     * Returns: None
-     */
-    c.submitSearch = function() {
-        var params = angular.copy($location.search());
-
-        params.q = c.searchQuery; // set search query
-        params.p = 1; // reset page to first
-
-        $location.search(params); // triggers server reload with new query
-    };
-
-    /* ==============================
        TOGGLE ADVANCED SEARCH
-       ============================== */
-    /* Description: Opens or closes the advanced search modal
-     * Parameters: None
-     * Returns: None
-     */
+    ============================== */
     c.toggleAdvancedSearch = function() {
         c._populateFromParsed(c.data.query);
         c.showAdvancedSearch = !c.showAdvancedSearch;
-
-
     };
 
     /* ==============================
-       POPULATE FROM PARSED QUERY
-       ============================== */
-    /* Description: Parses query string and hydrates advanced search UI
-     * Parameters:
-     *  - query (String): query string from URL
-     * Returns: None
-     */
-
+       PARSE QUERY INTO UI
+    ============================== */
     c._populateFromParsed = function(query) {
-
         if (!query) return;
 
-        c.advQuery = {
-            nameRules: [],
-            textRules: [],
-            flavorRules: [],
-            artistRules: [],
-            typeRules: [],
-            rarityRules: [],
-            cmcRules: [],
-            priceRules: [],
-            priceChangeRules: [],
-            powerRules: [],
-            toughnessRules: [],
-            loyaltyRules: [],
-            colors: {}
-        };
+        Object.keys(c.advQuery).forEach(k => {
+            if (Array.isArray(c.advQuery[k])) c.advQuery[k] = [];
+            else c.advQuery[k] = {};
+        });
 
         var parsed = query.split(';');
 
         parsed.forEach(function(pair) {
-
             var parts = pair.split(':');
             if (parts.length !== 2) return;
 
             var key = parts[0].trim();
-            var rawValue = parts[1].trim();
+            var rawValue = decodeURIComponent(parts[1].trim());
 
-            // Decode connectors
-            var value = rawValue
-                .replace(/%26%26/g, '&&')
-                .replace(/%7C%7C/g, '||');
-
-            /* ==============================
-               COLORS (UNCHANGED)
-               ============================== */
             if (key === 'color') {
-                value.split(',').forEach(function(code) {
-                    var k = code.trim();
-                    if (k) {
-                        c.advQuery.colors[k] = true;
-                    }
+                rawValue.split(',').forEach(val => {
+                    if (val) c.advQuery.colors[val] = true;
                 });
                 return;
             }
 
-            /* ==============================
-               NUMERIC FIELDS
-               ============================== */
-            var numericMap = {
-                cmc: 'cmcRules',
-                price: 'priceRules',
-                price_change: 'priceChangeRules',
-                power: 'powerRules',
-                toughness: 'toughnessRules',
-                loyalty: 'loyaltyRules'
-            };
+            var tokens = rawValue.split(/(&&|\|\|)/);
+            var currentConnector = null;
 
-            if (numericMap[key]) {
+            tokens.forEach(function(token) {
 
-                var rules = [];
-                var tokens = value.split(/(&&|\|\|)/); // keep connectors
+                if (token === '&&' || token === '||') {
+                    currentConnector = token;
+                    return;
+                }
 
-                var currentConnector = null;
+                if (!token) return;
 
-                tokens.forEach(function(token) {
+                let operator = 'CONTAINS';
+                let value = token;
 
-                    if (token === '&&' || token === '||') {
-                        currentConnector = token;
-                        return;
-                    }
+                if (token.includes('|')) {
+                    let split = token.split('|');
+                    operator = split[0];
+                    value = split.slice(1).join('|');
+                }
 
-                    // Extract operator + value
-                    var match = token.match(/(<=|>=|=|<|>)(.*)/);
-                    if (!match) return;
+                let map = c.textFieldMap;
 
-                    var operator = match[1];
-                    var num = Number(match[2]);
-
-                    if (isNaN(num)) return;
-
-                    rules.push({
+                if (map[key]) {
+                    c.advQuery[map[key]].push({
                         operator: operator,
-                        value: num,
+                        value: value,
                         connector: currentConnector || '&&'
                     });
+                }
 
-                    currentConnector = null;
-                });
-
-                c.advQuery[numericMap[key]] = rules;
-                return;
-            }
-
-            /* ==============================
-               TEXT / SELECT FIELDS
-               ============================== */
-            var textMap = {
-                name: 'nameRules',
-                text: 'textRules',
-                flavor: 'flavorRules',
-                artist: 'artistRules',
-                type: 'typeRules',
-                rarity: 'rarityRules'
-            };
-
-            if (textMap[key]) {
-
-                var rules = [];
-                var tokens = value.split(/(&&|\|\|)/);
-
-                var currentConnector = null;
-
-                tokens.forEach(function(token) {
-
-                    if (token === '&&' || token === '||') {
-                        currentConnector = token;
-                        return;
-                    }
-
-                    var decoded = decodeURIComponent(token.trim());
-
-                    if (!decoded) return;
-
-                    rules.push({
-                        value: decoded,
-                        connector: currentConnector || '&&'
-                    });
-
-                    currentConnector = null;
-                });
-
-                c.advQuery[textMap[key]] = rules;
-            }
-
+                currentConnector = null;
+            });
         });
 
-        /* ==============================
-           FALLBACK: ENSURE AT LEAST ONE RULE
-           ============================== */
-        [
-            'nameRules','textRules','flavorRules','artistRules',
-            'typeRules','rarityRules',
-            'cmcRules','priceRules','priceChangeRules','powerRules','toughnessRules','loyaltyRules'
-        ].forEach(function(field) {
-            if (!c.advQuery[field] || !c.advQuery[field].length) {
+        c.ensureRules();
+    };
+
+    /* ==============================
+       RULE MANAGEMENT
+    ============================== */
+    c.addRule = function(field) {
+        let numericFields = Object.values(c.numericFieldMap);
+
+        c.advQuery[field].push(
+            numericFields.includes(field)
+                ? { operator: '>=', value: '', connector: '&&' }
+                : { operator: 'CONTAINS', value: '', connector: '&&' }
+        );
+    };
+
+    c.removeRule = function(field, index) {
+        if (!c.advQuery[field]) return;
+
+        c.advQuery[field].splice(index, 1);
+
+        if (!c.advQuery[field].length)
+            c.addRule(field);
+
+        if (index === 0)
+            c.advQuery[field].forEach(r => r.connector = null);
+    };
+
+    c.ensureRules = function() {
+        Object.keys(c.advQuery).forEach(field => {
+            if (Array.isArray(c.advQuery[field]) && !c.advQuery[field].length) {
                 c.addRule(field);
             }
         });
     };
 
     /* ==============================
-       ADD RULE
-       ============================== */
-    /* Description: Adds a new rule (numeric or text)
-    * Parameters:
-    *  - field (String)
-    * Returns: None
-    */
-   
-    c.addRule = function(field) {
-        let isNumeric = field.indexOf('Rules') > -1 &&
-            ['cmcRules','priceRules','priceChangeRules','powerRules','toughnessRules','loyaltyRules'].includes(field);
+       QUERY BUILDERS
+    ============================== */
+    c.buildTextQuery = function(field, rules) {
+        if (!Array.isArray(rules)) return null;
 
-        c.advQuery[field].push(isNumeric ? {
-            operator: '>=',
-            value: '',
-            connector: '&&'
-        } : {
-            value: '',
-            connector: '&&'
-        });
-    };
+        let exp = '';
 
+        rules.forEach((r, i) => {
+            if (!r.value) return;
 
-    /* ==============================
-       REMOVE RULE
-       ============================== */
-    /* Description: Removes a condition from a field's advanced query rules.
-     *              If removing the first condition, clears all subsequent AND/OR connectors
-     *              and leaves only the remaining values intact. Prevents orphaned connectors.
-     * Parameters:
-     *   - fieldName [string]: the field to remove a rule from
-     *   - index [number]: the index of the condition to remove
-     * Returns: None
-     */
+            if (i > 0)
+                exp += (r.connector === '||') ? '%7C%7C' : '%26%26';
 
-    c.removeRule = function(fieldName, index) {
-        if (!c.advQuery[fieldName] || !c.advQuery[fieldName].length) return;
-
-        // Remove the rule at the given index
-        c.advQuery[fieldName].splice(index, 1);
-
-        // Approach #1: If first rule is removed, clear all remaining connectors
-        if (index === 0 && c.advQuery[fieldName].length > 0) {
-            c.advQuery[fieldName].forEach(rule => {
-                rule.connector = null;
-            });
-        }
-
-        // If no conditions remain, add an empty placeholder for user convenience
-        if (c.advQuery[fieldName].length === 0) {
-            c.advQuery[fieldName].push({ value: '', connector: null, operator: '=' });
-        }
-    };
-
-    /* ==============================
-       BUILD NUMERIC QUERY
-       ============================== */
-    /* Description: Converts rule array into encoded query string
-     * Parameters:
-     *  - fieldName (String): API field name (e.g., 'cmc')
-     *  - rules (Array): Rule objects
-     * Returns:
-     *  - String | null
-     */
-
-    c.buildNumericQuery = function(fieldName, rules) {
-        if (!rules || !rules.length) return null;
-
-        let expression = '';
-
-        rules.forEach(function(rule, index) {
-            if (!rule.value && rule.value !== 0) return;
-
-            let part = rule.operator + rule.value;
-
-            if (index > 0) {
-                let connector = rule.connector || '&&';
-
-                // CRITICAL: encode connectors
-                if (connector === '&&') {
-                    expression += '%26%26';
-                } else if (connector === '||') {
-                    expression += '%7C%7C';
-                }
-            }
-
-            expression += part;
+            exp += (r.operator || 'CONTAINS') + '|' + encodeURIComponent(r.value);
         });
 
-        return expression ? fieldName + ':' + expression : null;
+        return exp ? field + ':' + exp : null;
     };
 
-    /* ==============================
-       BUILD TEXT QUERY
-       ============================== */
-    /* Description: Builds encoded query string for text/select fields
-     * Parameters:
-     *  - fieldName (String)
-     *  - rules (Array)
-     * Returns:
-     *  - String | null
-     */
+    c.buildNumericQuery = function(field, rules) {
+        if (!Array.isArray(rules)) return null;
 
-    c.buildTextQuery = function(fieldName, rules) {
-        if (!rules || !rules.length) return null;
+        let exp = '';
 
-        let expression = '';
+        rules.forEach((r, i) => {
+            if (r.value === '' || r.value === null || r.value === undefined) return;
 
-        rules.forEach(function(rule, index) {
-            if (!rule.value) return;
+            if (i > 0)
+                exp += (r.connector === '||') ? '%7C%7C' : '%26%26';
 
-            if (index > 0) {
-                let connector = rule.connector || '&&';
-
-                if (connector === '&&') {
-                    expression += '%26%26';
-                } else if (connector === '||') {
-                    expression += '%7C%7C';
-                }
-            }
-
-            expression += rule.value;
+            exp += r.operator + r.value;
         });
 
-        return expression ? fieldName + ':' + expression : null;
-    };
-
-    /* ==============================
-       GET HUMAN READABLE QUERY
-       ============================== */
-    /* Description: Converts the raw query string into a human-readable version
-     * Parameters: [string] rawQuery - raw URL query (e.g., name:Aerith%7C%7CAb)
-     * Returns: [string] - human-readable query
-     */
-    
-    c.getReadableQuery = function(rawQuery) {
-        console.log('Raw query:', rawQuery);
-        if (!rawQuery) return '';
-
-        // Handle if passed object instead of string
-        if (typeof rawQuery === 'object') {
-            rawQuery = rawQuery.q || '';
-        }
-
-        // Double decode
-        let decoded = decodeURIComponent(decodeURIComponent(rawQuery));
-
-        // Split into key:value parts
-        let parts = decoded.split(';');
-
-        let humanParts = parts.map(part => {
-            if (!part) return '';
-            let [key, value] = part.split(':');
-            if (!value) return part; // fallback
-
-            // Replace logical operators
-            value = value.replace(/&&/g, ' AND ').replace(/\|\|/g, ' OR ');
-
-            return `${key}: ${value}`;
-        });
-
-        return humanParts.join('; ');
+        return exp ? field + ':' + exp : null;
     };
 
     /* ==============================
        SUBMIT ADVANCED SEARCH
-       ============================== */
-    /* Description: Builds advanced query string with support for
-     * complex numeric expressions and applies it to URL params
-     * Parameters: None
-     * Returns: None
-     */
+    ============================== */
     c.submitAdvancedSearch = function() {
         var params = angular.copy($location.search());
-
         let queryParts = [];
 
-        // TEXT FIELDS
-        [
-            { name: 'name', rules: c.advQuery.nameRules },
-            { name: 'text', rules: c.advQuery.textRules },
-            { name: 'flavor', rules: c.advQuery.flavorRules },
-            { name: 'artist', rules: c.advQuery.artistRules },
-            { name: 'type', rules: c.advQuery.typeRules },
-            { name: 'rarity', rules: c.advQuery.rarityRules }
-        ].forEach(function(field) {
-            let result = c.buildTextQuery(field.name, field.rules);
-            if (result) queryParts.push(result);
+        Object.keys(c.textFieldMap).forEach(key => {
+            let rules = c.advQuery[c.textFieldMap[key]];
+            let q = c.buildTextQuery(key, rules);
+            if (q) queryParts.push(q);
         });
 
-        // NUMERIC FIELDS
-        let numericFields = [
-            { name: 'cmc', rules: c.advQuery.cmcRules },
-            { name: 'price', rules: c.advQuery.priceRules },
-            { name: 'price_change', rules: c.advQuery.priceChangeRules },
-            { name: 'power', rules: c.advQuery.powerRules },
-            { name: 'toughness', rules: c.advQuery.toughnessRules },
-            { name: 'loyalty', rules: c.advQuery.loyaltyRules }
-        ];
-
-        numericFields.forEach(function(field) {
-            let result = c.buildNumericQuery(field.name, field.rules);
-            if (result) queryParts.push(result);
+        Object.keys(c.numericFieldMap).forEach(key => {
+            let rules = c.advQuery[c.numericFieldMap[key]];
+            let q = c.buildNumericQuery(key, rules);
+            if (q) queryParts.push(q);
         });
 
-        // COLORS
-        let selectedColors = Object.keys(c.advQuery.colors)
-            .filter(key => c.advQuery.colors[key]);
+        let colors = Object.keys(c.advQuery.colors)
+            .filter(k => c.advQuery.colors[k]);
 
-        if (selectedColors.length) {
-            queryParts.push('color:' + selectedColors.join(','));
-        }
+        if (colors.length)
+            queryParts.push('color:' + colors.join(','));
 
         params.q = queryParts.join(';');
         params.p = 1;
 
-        // DEBUG MODE (toggle via URL: &debug=true)
-        if ($location.search().debug === 'true') {
-            console.log('[MTG Advanced Search] Query:', params.q);
-        }
-
         $location.search(params);
         c.showAdvancedSearch = false;
     };
-}]]></client_script>
+
+    /* ==============================
+       INIT
+    ============================== */
+    c.ensureRules();
+};]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -758,14 +456,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>146</sys_mod_count>
+        <sys_mod_count>154</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-27 16:20:44</sys_updated_on>
+        <sys_updated_on>2026-03-29 19:01:28</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
@@ -836,6 +534,14 @@
                 <select ng-if="$index > 0" ng-model="rule.connector">
                   <option value="&&">AND</option>
                   <option value="||">OR</option>
+                </select>
+
+                <select ng-model="rule.operator">
+                  <option value="contains">Contains</option>
+                  <option value="startswith">Starts With</option>
+                  <option value="equals">Is</option>
+                  <option value="notequals">Is Not</option>
+                  <option value="notcontains">Does Not Contain</option>
                 </select>
 
                 <input type="text"
