@@ -445,10 +445,11 @@
      * OPTIONAL ERROR SURFACING
      * ============================== */
     data.errors = [];
-
-    if (!countRes.success) data.errors.push(countRes.message);
-    if (!queryRes.success) data.errors.push(queryRes.message);
-    if (!paginationRes.success) data.errors.push(paginationRes.message);
+	if(data.debug){
+		if (!countRes.success) data.errors.push(countRes.message);
+		if (!queryRes.success) data.errors.push(queryRes.message);
+		if (!paginationRes.success) data.errors.push(paginationRes.message);
+	}
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -456,14 +457,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-23 20:27:13</sys_created_on>
         <sys_id>fcbd1175833f3210f17ccd60ceaad350</sys_id>
-        <sys_mod_count>154</sys_mod_count>
+        <sys_mod_count>155</sys_mod_count>
         <sys_name>MTG Cards View</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy/>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sp_widget_fcbd1175833f3210f17ccd60ceaad350</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-29 19:01:28</sys_updated_on>
+        <sys_updated_on>2026-03-31 03:16:16</sys_updated_on>
         <template><![CDATA[<div class="mtg-grid" ng-class="{
   'mtg-grid--small': (c.cardScale === 's'),
   'mtg-grid--large': (c.cardScale === 'l'),
