@@ -61,6 +61,7 @@
         </element>
         <element label="API Link" max_length="1024" name="api_link" read_only="true" type="url"/>
         <element label="Produced Mana" max_length="1000" name="produced_mana" read_only="true" reference="x_759224_magic_c_0_colors" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="glide_list"/>
+        <element label="Layout" max_length="40" name="layout" type="string"/>
         <element label="Timeless Legality" max_length="1000" name="timeless_legality" read_only="true" type="html"/>
         <element label="Face One Toughness" max_length="40" name="face_one_toughness" read_only="true" type="integer"/>
         <element label="Face Two Power" max_length="40" name="face_two_power" read_only="true" type="integer"/>
