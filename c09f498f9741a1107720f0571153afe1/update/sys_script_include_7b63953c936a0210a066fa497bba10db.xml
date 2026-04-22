@@ -137,12 +137,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     createOwnedRecord: function(card, user, qty) {
-		let retObj = {
-			success: true,
-			message: '',
-			method: 'createOwnedRecord',
-			record: null
-		}
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'createOwnedRecord',
+            record: null
+        }
         try {
             var newOwned = new GlideRecord(this.OWNED_CARDS);
             newOwned.initialize();
@@ -151,15 +151,15 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             newOwned.setvalue('quantity', qty || 1);
             newOwned.insert();
 
-			retObj.record = newOwned;
-			retObj.message = 'Owned record created successfully';
+            retObj.record = newOwned;
+            retObj.message = 'Owned record created successfully';
 
         } catch (ex) {
             retObj.message = ex.message;
-			retObj.success = false;
+            retObj.success = false;
         }
-		this.log(retObj.method, JSON.stringify(retObj));
-		return retObj;
+        this.log(retObj.method, JSON.stringify(retObj));
+        return retObj;
     },
 
     /* Description: Creates a token record for the provided name and scryfall ID 
@@ -290,50 +290,82 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     /**
      * Description: Takes in an id string for a card. 
      * Parameters: [string] - id: The sys id of the card record.
-     * Returns: [Array] - relArr: An array of JSON objects containg the related card name and image.
+     * Returns: [object] - retObj: Returns an object containing information pertaining to the execution.
+     * 				[boolean] - success
+     * 				[string] - message
+     * 				[string] - method
+     * 				[array] - cards
      */
 
     getRelatedCards: function(id) {
-        var relGR = new GlideRecord(this.TOKEN_ASSOCIATION);
-        relGR.addQuery('card', id);
-        relGR.query();
-        var relArr = [];
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'getRelatedCards',
+            cards: []
+        };
 
-        while (relGR.next()) {
-            var token = relGR.token.getRefRecord();
-            relObj = {
-                name: token.getValue('name'),
-                image: this.getImgSrc(token.getValue('face_one_image')),
-                is_foil: token.getValue('foiling') != 'none'
-            };
-            relArr.push(relObj);
+        try {
+            var relGR = new GlideRecord(this.TOKEN_ASSOCIATION);
+            relGR.addQuery('card', id);
+            relGR.query();
+
+            while (relGR.next()) {
+                var token = relGR.token.getRefRecord();
+                relObj = {
+                    name: token.getValue('name'),
+                    image: this.getImgSrc(token.getValue('face_one_image')),
+                    is_foil: token.getValue('foiling') != 'none'
+                };
+                retObj.cards.push(relObj);
+            }
+            retObj.message = retObj.cards.length + ' related cards found.';
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message();
         }
-        return relArr;
+        return retObj;
     },
 
     /**
-     * Description: Takes in an name string for a card. 
+     * Description: Takes in an name string for a card, returns each printing for that card. 
      * Parameters: [string] - name: The name of the card record.
-     * Returns: [object] - cardData: JSON object containing all the data from the card record.
+     * Returns: [object] - retObj: Returns an object containing information pertaining to the execution.
+     *      * 		[boolean] - success
+     * 				[string] - message
+     * 				[string] - method
+     * 				[array] - printings
      */
 
     getOtherPrintings: function(name) {
-        var cardGR = new GlideRecord(this.CARDS);
-        cardGR.addQuery('token', false);
-        cardGR.addQuery('name', name);
-        cardGR.query();
-        printingArr = [];
+        let retObj = {
+            success: true,
+            message: '',
+            method: 'getRelatedCards',
+            printings: []
+        };
 
-        while (cardGR.next()) {
-            printingObj = {
-                image: this.getImgSrc(cardGR.getValue('face_one_image')),
-                price: cardGR.getValue('price'),
-                sets: cardGR.getDisplayValue('sets'),
-                is_foil: cardGR.getValue('foiling') != 'none'
-            };
-            printingArr.push(printingObj);
+        try {
+            var cardGR = new GlideRecord(this.CARDS);
+            cardGR.addQuery('token', false);
+            cardGR.addQuery('name', name);
+            cardGR.query();
+
+            while (cardGR.next()) {
+                printingObj = {
+                    image: this.getImgSrc(cardGR.getValue('face_one_image')),
+                    price: cardGR.getValue('price'),
+                    sets: cardGR.getDisplayValue('sets'),
+                    is_foil: cardGR.getValue('foiling') != 'none'
+                };
+                retObj.printings.push(printingObj);
+            }
+            retObj.message = retObj.printings.length + ' printings found.';
+        } catch (ex) {
+            retObj.success = false;
+            retObj.message = ex.message();
         }
-        return printingArr;
+        return retObj;
     },
 
     /** 
@@ -377,10 +409,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 card.setValue('token', 'true');
             }
 
-			// Set card layout
-			if (resp.layout && !card.getValue('layout')){
-				card.setValue('layout',resp.layout);
-			}
+            // Set card layout
+            if (resp.layout && !card.getValue('layout')) {
+                card.setValue('layout', resp.layout);
+            }
 
             // Set set if not currently populated
             if (!card.sets) {
@@ -445,9 +477,9 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 var back = resp.card_faces[1];
                 card.setValue('is_multi_faced', true);
 
-				if(resp.layout == 'split'){ // Handle split card images
-					if(resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
-				}
+                if (resp.layout == 'split') { // Handle split card images
+                    if (resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
+                }
 
                 if (front) {
                     if (front.name) card.setValue('face_one_name', front.name);
@@ -607,8 +639,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 if (rulingGR.comment) ruling.comment = rulingGR.getValue('comment');
                 if (rulingGR.source) ruling.source = rulingGR.getValue('source');
                 if (rulingGR.published_at) ruling.published_at = rulingGR.getValue('published_at');
-				// Log Rulings
-				this.log(retObj.method, JSON.stringify(ruling));
+                // Log Rulings
+                this.log(retObj.method, JSON.stringify(ruling));
                 retObj.rulings.push(ruling);
                 retObj.message = 'Rulings retrieved successfully.';
             }
@@ -617,8 +649,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.success = false;
             retObj.message = ex.message;
         }
-		// Log RetObj
-		this.log(retObj.method, JSON.stringify(retObj));
+        // Log RetObj
+        this.log(retObj.method, JSON.stringify(retObj));
         return retObj;
     },
 
@@ -731,10 +763,10 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     reach: 0,
                     vigilance: 0
                 },
-				layout: cardGR.getValue('layout'),
-                related_cards: this.getRelatedCards(id),
+                layout: cardGR.getValue('layout'),
+                related_cards: this.getRelatedCards(id).cards,
                 rulings: this.getCardRulings(cardGR.getValue('oracle_id')).rulings,
-                printings: this.getOtherPrintings(cardGR.getValue('name')),
+                printings: this.getOtherPrintings(cardGR.getValue('name')).printings,
                 price: cardGR.getValue('price'),
                 quantity: 0,
                 name: cardGR.getValue('name'),
@@ -749,8 +781,8 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             retObj.success = false;
             retObj.message = ex.message;
         }
-		// Log RetObj
-		this.log(retObj.method,JSON.stringify(retObj));
+        // Log RetObj
+        this.log(retObj.method, JSON.stringify(retObj));
         return retObj;
     },
 
@@ -760,14 +792,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>195</sys_mod_count>
+        <sys_mod_count>198</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-20 23:54:31</sys_updated_on>
+        <sys_updated_on>2026-04-22 00:53:50</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
