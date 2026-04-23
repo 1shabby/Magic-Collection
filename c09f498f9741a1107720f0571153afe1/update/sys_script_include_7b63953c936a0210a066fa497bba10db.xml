@@ -274,17 +274,27 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      */
 
     convertColors: function(colors) {
-        if (!colors) return "";
+		let retObj = {
+			success : true,
+			message : '',
+			method : 'convertColors',
+			colors : colors
+		};
+		try{
+        if (!retObj.colors) return "";
 
         var order = ['W', 'U', 'B', 'R', 'G', 'C'];
-
-        return colors
+		} catch (ex) {
+			
+		}
+        retObj.colors = retObj.colors
             .toUpperCase()
             .split('')
             .filter(c => this.constants.colors[c]) // only valid color keys
             .sort((a, b) => order.indexOf(a) - order.indexOf(b))
             .map(c => this.constants.colors[c]) // convert to sys_ids
             .join(',');
+		return retObj;
 
     },
     /**
@@ -331,7 +341,7 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
      * Description: Takes in an name string for a card, returns each printing for that card. 
      * Parameters: [string] - name: The name of the card record.
      * Returns: [object] - retObj: Returns an object containing information pertaining to the execution.
-     *      * 		[boolean] - success
+     *       		[boolean] - success
      * 				[string] - message
      * 				[string] - method
      * 				[array] - printings
@@ -487,12 +497,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (front.oracle_text) card.setValue('face_one_oracle_text', front.oracle_text);
                     if (front.type_line) card.setValue('type_line', front.type_line);
                     if (front.mana_cost) card.setValue('face_one_mana_cost', front.mana_cost);
-                    if (front.colors) card.setValue('face_one_colors', this.convertColors(front.colors));
+                    if (front.colors) card.setValue('face_one_colors', this.convertColors(front.colors).colors);
                     if (front.artist) card.setValue('face_one_artist', front.artist);
                     if (front.loyalty) card.setValue('face_one_loyalty', front.loyalty);
                     if (front.power) card.setValue('face_one_power', front.power);
                     if (front.toughness) card.setValue('face_one_toughness', front.toughness);
-                    if (front.produced_mana) card.setValue('face_one_produced_mana', this.convertColors(front.produced_mana));
+                    if (front.produced_mana) card.setValue('face_one_produced_mana', this.convertColors(front.produced_mana).colors);
                     if (front.flavor_text) card.setValue('face_one_flavor_text', front.flavor_text);
                     if (front.image_uris.normal) card.setValue('face_one_image', front.image_uris.normal);
                 }
@@ -503,12 +513,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                     if (back.oracle_text) card.setValue('face_two_oracle_text', back.oracle_text);
                     if (back.type_line) card.setValue('face_two_type_line', back.type_line);
                     if (back.mana_cost) card.setValue('face_two_mana_cost', back.mana_cost);
-                    if (back.colors) card.setValue('face_two_colors', this.convertColors(back.colors));
+                    if (back.colors) card.setValue('face_two_colors', this.convertColors(back.colors).colors);
                     if (back.artist) card.setValue('face_two_artist', back.artist);
                     if (back.loyalty) card.setValue('face_two_loyalty', back.loyalty);
                     if (back.power) card.setValue('face_two_power', back.power);
                     if (back.toughness) card.setValue('face_two_toughness', back.toughness);
-                    if (back.produced_mana) card.setValue('face_two_produced_mana', this.convertColors(back.produced_mana));
+                    if (back.produced_mana) card.setValue('face_two_produced_mana', this.convertColors(back.produced_mana).colors);
                     if (back.flavor_text) card.setValue('face_two_flavor_text', back.flavor_text);
                     if (back.image_uris.normal) card.setValue('face_two_image', back.image_uris.normal);
                 }
@@ -520,12 +530,12 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
                 if (resp.oracle_text) card.setValue('face_one_oracle_text', resp.oracle_text);
                 if (resp.type_line) card.setValue('face_one_type_line', resp.type_line);
                 if (resp.mana_cost) card.setValue('face_one_mana_cost', resp.mana_cost);
-                if (resp.colors) card.setValue('face_one_colors', this.convertColors(resp.colors));
+                if (resp.colors) card.setValue('face_one_colors', this.convertColors(resp.colors).colors);
                 if (resp.artist) card.setValue('face_one_artist', resp.artist);
                 if (resp.loyalty) card.setValue('face_one_loyalty', resp.loyalty);
                 if (resp.power) card.setValue('face_one_power', resp.power);
                 if (resp.toughness) card.setValue('face_one_toughness', resp.toughness);
-                if (resp.produced_mana) card.setValue('face_one_produced_mana', this.convertColors(resp.produced_mana));
+                if (resp.produced_mana) card.setValue('face_one_produced_mana', this.convertColors(resp.produced_mana).colors);
                 if (resp.flavor_text) card.setValue('face_one_flavor_text', resp.flavor_text);
                 if (resp.image_uris.normal) card.setValue('face_one_image', resp.image_uris.normal);
             }
@@ -792,14 +802,14 @@ magic_utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-31 01:08:27</sys_created_on>
         <sys_id>7b63953c936a0210a066fa497bba10db</sys_id>
-        <sys_mod_count>198</sys_mod_count>
+        <sys_mod_count>199</sys_mod_count>
         <sys_name>magic_utils</sys_name>
         <sys_package display_value="Magic Collection" source="x_759224_magic_c_0">c09f498f9741a1107720f0571153afe1</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Magic Collection">c09f498f9741a1107720f0571153afe1</sys_scope>
         <sys_update_name>sys_script_include_7b63953c936a0210a066fa497bba10db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-22 00:53:50</sys_updated_on>
+        <sys_updated_on>2026-04-23 03:32:17</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>7b63953c936a0210a066fa497bba10db</id>
